@@ -13,13 +13,14 @@
 ```
 * ( done ) - start with R0 of phaser start project
 * ( done ) - extended the Group class in World to create new People class
+* ( done ) - start a Donations plugin that will be used for when the player starts working donations
+* ( done ) - See about using People class for Donators in Donations plugin
+
 * (      ) - pull code out of Reuse class into new People class
  
 
-* (      ) - start a Donations plugin that will be used for when the player starts working donations
 
 
-* (      ) - See about using People class for Donators in Donations plugin
 
 
 * (      ) - start an Item Database in the form one JSON file ( for now )

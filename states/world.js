@@ -2,24 +2,17 @@
 
 const MAX_PEOPLE = 20;
 
-
+/*
 class People extends Phaser.Physics.Arcade.Group {
 
     constructor (config) {
-    
-        console.log('Person Constructor');
-        
-    
-        console.log(config.world)
-    
         const scene = config.world;
         const world = config.world.scene.scene.physics.world;
-    
         super(world, scene, config);
-        
     }
 
 }
+*/
 
 
 class World extends Phaser.Scene {
@@ -35,7 +28,7 @@ class World extends Phaser.Scene {
     }
     
     createPeople () {
-        const p =  new People({
+        const p =  new this.People({
            world: this,
            defaultKey: 'people_16_16',
            frame: 'pl_down',
@@ -364,6 +357,9 @@ class World extends Phaser.Scene {
     }
 
     create () {
+    
+        this.People = this.plugins.get('PeoplePlugin').People;
+    
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
@@ -394,7 +390,9 @@ class World extends Phaser.Scene {
             }
         });
         
-        console.log()
+        this.donations = this.plugins.get('DonationsPlugin')
+        
+        console.log(this.donations);
         
     }
 
