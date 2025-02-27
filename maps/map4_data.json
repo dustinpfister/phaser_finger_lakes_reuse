@@ -1,0 +1,27 @@
+{
+  "name": "Back",
+  "spawnAt": { "x": 2, "y": 2 },
+  "peopleSpawnAt" : [ 0, 1, 2, 3 ],
+  "doors" : [
+    {
+      "desc": "The front west door to Mega T",
+      "position":[{ "x": 13, "y": 0 }, { "x": 14, "y": 0}],
+      "to": { "mapNum": 1, "doorIndex": 2 }
+    },
+    {
+      "desc": "The front east door to Mega T",
+      "position":[{ "x": 34, "y": 0 }, { "x": 35, "y": 0}],
+      "to": { "mapNum": 1, "doorIndex": 3 }
+    },
+    {
+      "desc": "",
+      "position":{ "x": 43, "y": 0 },
+      "to": { "mapNum": 3, "doorIndex": 1 }
+    },
+    {
+      "desc": "",
+      "position":[ { "x": 46, "y": 0 },{ "x": 47, "y": 0 },{ "x": 48, "y": 0 }],
+      "to": { "mapNum": 3, "doorIndex": 2 }
+    }
+  ]
+}

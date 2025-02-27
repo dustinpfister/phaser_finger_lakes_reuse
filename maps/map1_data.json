@@ -1,0 +1,27 @@
+{
+  "name": "Mega_T",
+  "spawnAt": { "x": 16, "y": 2 },
+  "peopleSpawnAt" : [ 0, 1 ],
+  "doors" : [
+    {
+      "desc": "The front east door to trip hallway",
+      "position":{ "x": 16, "y": 0 },
+      "to": { "mapNum": 2, "doorIndex": 0 }
+    },
+    {
+      "desc": "The front west door to trip hallway",
+      "position":{ "x": 33, "y": 0 },
+      "to": { "mapNum": 2, "doorIndex": 1 }
+    },
+    {
+      "desc": "The back east door to pickup, and transport",
+      "position": [ { "x": 22, "y": 54 },{ "x": 23, "y": 54 } ],
+      "to" : { "mapNum": 4, "doorIndex": 0 } 
+    },
+    {
+      "desc": "The back west door to donations",
+      "position": [ { "x": 34, "y": 54 },{ "x": 35, "y": 54 } ],
+      "to" : { "mapNum": 4, "doorIndex": 1 } 
+    }
+  ]
+}

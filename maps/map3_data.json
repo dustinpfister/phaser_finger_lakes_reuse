@@ -1,0 +1,25 @@
+{
+  "name": "Mega_R",
+  "spawnAt": {
+     "x": 3,
+     "y": 5
+  },
+  "peopleSpawnAt" : [ 0 ],
+  "doors" : [
+    {
+      "desc": "The east entertence to Mega R",
+      "position":{ "x": 0, "y": 6 },
+      "to": { "mapNum": 2, "doorIndex": 2 }
+    },
+    {
+      "desc": "The east rear door to out back",
+      "position":{ "x": 1, "y": 70 },
+      "to": { "mapNum": 4, "doorIndex": 2 }
+    },
+    {
+      "desc": "The west rear door to out back",
+      "position": [ { "x": 4, "y": 70 }, { "x": 5, "y": 70 }, { "x": 6, "y": 70 } ],
+      "to": { "mapNum": 4, "doorIndex": 3 }
+    }
+  ]
+}
