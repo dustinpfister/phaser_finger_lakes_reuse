@@ -344,7 +344,7 @@ class World extends Phaser.Scene {
         }
         sprite.setData('idleTime', t);
     }
-
+/*
     offGridCheck (sprite) {
     
         if(sprite.x < 0 || sprite.y < 0){
@@ -355,7 +355,7 @@ class World extends Phaser.Scene {
         return false
     
     }
-
+*/
     create () {
     
         this.People = this.plugins.get('PeoplePlugin').People;
@@ -412,12 +412,13 @@ class World extends Phaser.Scene {
         
         while(i_people--){
             const sprite = people[i_people];
-            
+            /*
             if( this.offGridCheck(sprite) ){
             
                 console.log('person went off grid!');
             
             }
+            */
             
             if(!sprite){
                 console.log('well that is not good is it');

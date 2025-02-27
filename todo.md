@@ -14,8 +14,11 @@
 * ( done ) - start with R0 of phaser start project
 * ( done ) - extended the Group class in World to create new People class
 * ( done ) - start a Donations plugin that will be used for when the player starts working donations
+* ( done ) - start new people plugin
 * ( done ) - See about using People class for Donators in Donations plugin
+* ( done ) - also now have a Person Class that is an extension of Sprite in new people plugin
 
+* (      ) - Rename World class to Reuse to help adress confustion with world phaser class
 * (      ) - pull code out of Reuse class into new People class
  
 
@@ -31,7 +34,5 @@
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
 * (      ) - start a customers plugin
 * (      ) - customers just magically buy inventory items
-
-* (      ) - Rename World class to Reuse to help adress confustion with world phaser class
 
 ```

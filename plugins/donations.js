@@ -26,6 +26,8 @@
                 }
             });
             
+            this.donators.get(0,0)
+            
             
             
             
