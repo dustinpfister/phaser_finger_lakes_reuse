@@ -2,6 +2,26 @@
 
 const MAX_PEOPLE = 20;
 
+
+class People extends Phaser.Physics.Arcade.Group {
+
+    constructor (config) {
+    
+        console.log('Person Constructor');
+        
+    
+        console.log(config.world)
+    
+        const scene = config.world;
+        const world = config.world.scene.scene.physics.world;
+    
+        super(world, scene, config);
+        
+    }
+
+}
+
+
 class World extends Phaser.Scene {
 
     createPlayer () {
@@ -15,7 +35,8 @@ class World extends Phaser.Scene {
     }
     
     createPeople () {
-        this.people = this.physics.add.group({
+        const p =  new People({
+           world: this,
            defaultKey: 'people_16_16',
            frame: 'pl_down',
            maxSize: MAX_PEOPLE,
@@ -25,6 +46,7 @@ class World extends Phaser.Scene {
                person.setData({ path:[], hits: 0, idleTime: 0 })                 
            }
         });
+        this.people = this.physics.add.existing(p);        
     }
     
     setRandomSpritePath (sprite) {
@@ -452,11 +474,6 @@ class World extends Phaser.Scene {
         this.doorCheck();       
     }
     
-    postUpdate () {
-    
-        console.log('post update');
-    
-    }
 }
 
 export {
