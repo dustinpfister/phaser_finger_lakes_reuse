@@ -1,6 +1,6 @@
 {
   "name": "Mega_T",
-  "spawnAt": { "x": 16, "y": 2 },
+  "spawnAt": { "x": 26, "y": 1 },
   "peopleSpawnAt" : [ 0, 1 ],
   "doors" : [
     {

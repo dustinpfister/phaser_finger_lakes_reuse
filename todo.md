@@ -3,10 +3,20 @@
 ## R1 ( ) - Households plugin, coworkers
 
 ```
+* (    ) - expand donations plugin to allow for one or more coworkers to help
 ```
 
 ## R0 ( ) - Donations plugin, items database, inventory, customers
 
 ```
+* ( done ) - start with R0 of phaser start project
+* (      ) - start a Donations plugin that will be used for when the player starts working donations
+* (      ) - start an Item Database in the form one JSON file ( for now )
+* (      ) - just household type items ( for now )
+* (      ) - donators come and drop off a single item ( for now )
+* (      ) - the player can place the item into a households bin, or gayload
+* (      ) - start an inventory plugin
+* (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
+* (      ) - start a customers plugin
+* (      ) - customers just magically buy inventory items
 ```
-
