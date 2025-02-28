@@ -14,11 +14,72 @@ class People extends Phaser.Physics.Arcade.Group {
 }
 */
 
+class Guy extends Phaser.Physics.Arcade.Sprite
+{
+
+    constructor (scene, x, y)
+    {
+        super(scene, x, y, 'people_16_16');
+
+        //  You can either do this:
+        scene.add.existing(this);
+        scene.physics.add.existing(this);
+
+        
+        
+
+        //  Set some default physics properties
+        this.setScale(2);
+        this.setBounce(1, 1);
+        this.setCollideWorldBounds(true);
+
+        this.body.onWorldBounds = true;
+
+        this.setVelocity(0, 0);
+    }
+}
+
+
 
 class World extends Phaser.Scene {
 
+
     createPlayer () {
+    
+        this.guy = new Guy(this.scene.scene, 100, 100);
+        this.guy.setTexture('people_16_16')
+    
+        this.guy.x = 250;
+    
+    
+        //const s = new Phaser.Physics.Arcade.Sprite(this, 32 * 10, 32 * 1, 'people_16_16', 'pl_down');
+        //s.setData({ path: [], hits:0, idleTime:0 });
+    
+        //this.add.existing(s);
+        //this.physics.add.existing(s);
+    
         this.player = this.physics.add.sprite(0, 0, 'people_16_16');
+        
+        
+        
+        console.log('here are the two');
+        console.log(this);
+        console.log(this.player);
+        console.log(this.guy);
+        
+        console.log('');
+        
+        //this.player = this.physics.add.existing(s, false);
+        
+        
+        //const p = new this.PeoplePlugin.Person(this, 0,32,'people_16_16', 'pl_down');
+        //this.player = this.physics.add.sprite(0, 0, 'people_16_16');
+        
+        
+        
+        
+        //this.player = this.physics.add.existing( p );
+        
         this.player.setCollideWorldBounds(true);
         this.player.depth = 2;
         this.player.setData({ path: [], hits: 0, idleTime: 0 })
@@ -28,7 +89,7 @@ class World extends Phaser.Scene {
     }
     
     createPeople () {
-        const p =  new this.People({
+        const p =  new this.PeoplePlugin.People({
            world: this,
            defaultKey: 'people_16_16',
            frame: 'pl_down',
@@ -323,6 +384,7 @@ class World extends Phaser.Scene {
         }
     }
     
+    /*
     offTileCheck (sprite) {
         const tx = ( sprite.x - 8 ) / 16;
         const ty = ( sprite.y - 8 ) / 16;
@@ -344,21 +406,16 @@ class World extends Phaser.Scene {
         }
         sprite.setData('idleTime', t);
     }
-/*
-    offGridCheck (sprite) {
-    
-        if(sprite.x < 0 || sprite.y < 0){
-            return true;
-            
-        }
-        
-        return false
-    
-    }
-*/
+    */
+
     create () {
     
-        this.People = this.plugins.get('PeoplePlugin').People;
+    
+    
+        this.PeoplePlugin = this.plugins.get('PeoplePlugin'); 
+    
+        //this.People = this.plugins.get('PeoplePlugin').People;
+        //this.Person
     
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -369,9 +426,6 @@ class World extends Phaser.Scene {
         this.setupMap(startMap);  
         
         
-        //const lifeCycle = this.plugins.get('lifecyclePlugin');
-        
-        //console.log(lifeCycle);
         
         this.events.on('postupdate', ()=>{
         
@@ -404,21 +458,12 @@ class World extends Phaser.Scene {
         const people = this.people.getChildren();
         let i_people = people.length;
         
-        //if(i_people < MAX_PEOPLE){
-        //    this.spawn();
-        //}
         
         this.spawnPerson();
         
         while(i_people--){
             const sprite = people[i_people];
-            /*
-            if( this.offGridCheck(sprite) ){
             
-                console.log('person went off grid!');
-            
-            }
-            */
             
             if(!sprite){
                 console.log('well that is not good is it');
@@ -462,7 +507,7 @@ class World extends Phaser.Scene {
             this.player.setVelocityY( v );
         }
         
-        this.offTileCheck(this.player);
+        //this.offTileCheck(this.player);
         
         this.playerX = Math.floor( this.player.x / 16); 
         this.playerY = Math.floor( this.player.y / 16);

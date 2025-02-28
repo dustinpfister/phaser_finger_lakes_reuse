@@ -18,6 +18,8 @@
 * ( done ) - See about using People class for Donators in Donations plugin
 * ( done ) - also now have a Person Class that is an extension of Sprite in new people plugin
 
+* (      ) - see about getting extended sprites working, by making a simple demo script in place of index
+
 * (      ) - Rename World class to Reuse to help adress confustion with world phaser class
 * (      ) - pull code out of Reuse class into new People class
  
