@@ -35,6 +35,8 @@ class Reuse extends Phaser.Scene {
         this.setSpritePath(sprite, this.map, pos.x, pos.y);
     }
     
+    
+    
     setSpritePath (sprite, map, tx=2, ty=2) {
         const pathFinder = this.plugins.get('PathFinderPlugin');
         const game = this;
@@ -48,7 +50,7 @@ class Reuse extends Phaser.Scene {
         pathFinder.preparePathCalculation([stx, sty], [tx, ty]);
         pathFinder.calculatePath();
     }
-
+    
     setMapData (mapNum=1) {
        return this.mapData = this.cache.json.get('map' + mapNum + '_data');
     }
