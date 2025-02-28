@@ -9,9 +9,6 @@
         
             super(scene, x, y, texture, frame);
         
-            //console.log(x,y,texture,frame)
-            
-            //console.log(this)
         
         }
         
@@ -54,6 +51,8 @@
             
         
             const scene = config.world;
+            
+            
             const world = config.world.scene.scene.physics.world;
             super(world, scene, config);
             
@@ -66,8 +65,6 @@
         constructor (pluginManager) {
             super(pluginManager);
             
-            console.log('People');
-            console.log(this);
             
             this.People = People;
             this.Person = Person;

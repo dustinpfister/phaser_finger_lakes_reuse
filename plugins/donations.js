@@ -7,15 +7,12 @@
         constructor (pluginManager) {
             super(pluginManager);
             
-            console.log('Donations Plugin');
             const People = pluginManager.get('PeoplePlugin').People;
-            
-            console.log(this.game.scene.keys.World);
             
             
             
             this.donators = new People({
-                world: this.game.scene.keys.World,
+                world: this.game.scene.keys.Reuse,
                 defaultKey: 'people_16_16',
                 frame: 'pl_down',
                 maxSize: 20,

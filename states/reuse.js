@@ -2,54 +2,28 @@
 
 const MAX_PEOPLE = 20;
 
-/*
-class People extends Phaser.Physics.Arcade.Group {
+class Guy extends Phaser.Physics.Arcade.Sprite {
 
-    constructor (config) {
-        const scene = config.world;
-        const world = config.world.scene.scene.physics.world;
-        super(world, scene, config);
-    }
-
-}
-*/
-
-class Guy extends Phaser.Physics.Arcade.Sprite
-{
-
-    constructor (scene, x, y)
-    {
-        super(scene, x, y, 'people_16_16');
-
-        //  You can either do this:
-        scene.add.existing(this);
-        scene.physics.add.existing(this);
-
-        
-        
-
-        //  Set some default physics properties
-        this.setScale(2);
-        this.setBounce(1, 1);
-        this.setCollideWorldBounds(true);
-
-        this.body.onWorldBounds = true;
-
-        this.setVelocity(0, 0);
+    constructor (scene, x, y, texture, frame) {    
+        super(scene, x, y, texture, frame)
     }
 }
 
 
 
-class World extends Phaser.Scene {
+class Reuse extends Phaser.Scene {
 
 
     createPlayer () {
     
-        this.guy = new Guy(this.scene.scene, 100, 100);
-        this.guy.setTexture('people_16_16')
     
-        this.guy.x = 250;
+        this.guy = new Guy(this, 100, 100, 'people_16_16', 'pl_down');
+    
+    
+        //this.guy = new Guy(this.scene.scene, 100, 100);
+        //this.guy.setTexture('people_16_16')
+    
+        //this.guy.x = 250;
     
     
         //const s = new Phaser.Physics.Arcade.Sprite(this, 32 * 10, 32 * 1, 'people_16_16', 'pl_down');
@@ -61,13 +35,6 @@ class World extends Phaser.Scene {
         this.player = this.physics.add.sprite(0, 0, 'people_16_16');
         
         
-        
-        console.log('here are the two');
-        console.log(this);
-        console.log(this.player);
-        console.log(this.guy);
-        
-        console.log('');
         
         //this.player = this.physics.add.existing(s, false);
         
@@ -446,8 +413,6 @@ class World extends Phaser.Scene {
         
         this.donations = this.plugins.get('DonationsPlugin')
         
-        console.log(this.donations);
-        
     }
 
     update () {
@@ -521,5 +486,5 @@ class World extends Phaser.Scene {
 }
 
 export {
-    World
+    Reuse
 }
