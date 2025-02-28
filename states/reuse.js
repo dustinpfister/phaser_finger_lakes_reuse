@@ -17,8 +17,6 @@ class Reuse extends Phaser.Scene {
     
     
         this.player.setCollideWorldBounds(true);
-        this.player.depth = 2;
-        this.player.setData({ path: [], hits: 0, idleTime: 0 })
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
         this.player.setFrame('pl_down');
@@ -31,9 +29,7 @@ class Reuse extends Phaser.Scene {
            frame: 'pl_down',
            maxSize: MAX_PEOPLE,
            createCallback : (person) => {
-               person.depth = 2;
-               person.body.setDrag(500, 500);
-               person.setData({ path:[], hits: 0, idleTime: 0 })                 
+               person.body.setDrag(100, 100);               
            }
         });
         this.people = this.physics.add.existing(p);        

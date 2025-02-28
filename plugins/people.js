@@ -5,20 +5,18 @@
     class Person extends Phaser.Physics.Arcade.Sprite {
     
         constructor (scene, x, y, texture, frame) {
-        
-        
             super(scene, x, y, texture, frame);
             
             scene.add.existing(this);
             scene.physics.add.existing(this);
-        
-        
+            
+            this.depth = 2;
+            this.setData({ path: [], hits: 0, idleTime: 0 });
+            
         }
         
         offTileCheck (map) {
-        
             const sprite = this;
-        
             const tx = ( sprite.x - 8 ) / 16;
             const ty = ( sprite.y - 8 ) / 16;
             const TX = Math.floor(tx);
