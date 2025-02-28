@@ -18,6 +18,7 @@
         }
         
         offTileCheck (map) {
+        /*
             const sprite = this;
             const tx = ( sprite.x - 8 ) / 16;
             const ty = ( sprite.y - 8 ) / 16;
@@ -38,8 +39,8 @@
                 if( fy >= 0.50 && t7.index === 1 ){ sprite.y = t7.y * 16 + 8; }
             }
             sprite.setData('idleTime', t);
+            */
         }
-    
     }
     
 

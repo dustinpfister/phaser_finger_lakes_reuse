@@ -20,6 +20,7 @@
 * ( done ) - see about getting extended sprites working, by making a simple demo script in place of index
 * ( done ) - Rename World class to Reuse to help adress confustion with world phaser class
 
+* (      ) - get Person.offTileCheck working again
 * (      ) - make set random path part of the person class.
 * (      ) - see about setting making setSpritePath part of Person class and rename it to just setPath
 

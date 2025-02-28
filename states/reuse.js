@@ -61,7 +61,7 @@ class Reuse extends Phaser.Scene {
         const tile = walkable[ Math.floor( walkable.length * Math.random() ) ];
         return { x: tile.x, y: tile.y };
     }
-    
+    /*
     spawnPerson () {       
         const people = this.people.getChildren();
         const now = new Date();
@@ -87,7 +87,7 @@ class Reuse extends Phaser.Scene {
             this.people.get(p.x * 16 + 8, p.y * 16 + 8);
         }
     }
-    
+    */
     reSpawn (sprite) {
         const pos = this.mapData.spawnAt;
         sprite.x = pos.x * 16 + 8;
@@ -102,14 +102,14 @@ class Reuse extends Phaser.Scene {
            this.map.destroy();
         }
         
-        
+        /*
         if(this.people){
         
             this.people.destroy(true, true);
         
         }
-        
-        this.createPeople();
+        */
+        //this.createPeople();
         
         const md = this.setMapData( startMap );
         x = x === undefined ? md.spawnAt.x : x;
@@ -127,7 +127,8 @@ class Reuse extends Phaser.Scene {
         // colliders
         this.physics.world.colliders.removeAll();
         this.physics.add.collider( this.player, layer0 );
-        this.physics.add.collider( this.people, layer0 );
+        //this.physics.add.collider( this.people, layer0 );
+        /*
         this.physics.add.collider( this.player, this.people, (a, b)=>{
             const pos = this.getRandomMapPos();
             game.setSpritePath(b, map, pos.x, pos.y);
@@ -141,6 +142,7 @@ class Reuse extends Phaser.Scene {
                 }
             }
         });
+        
         this.physics.add.collider( this.people, this.people, (a, b)=>{
             let hits = b.getData('hits');
             hits += 1;
@@ -151,6 +153,7 @@ class Reuse extends Phaser.Scene {
             }
             b.setData({hits: hits});
         });
+        */
         // layer1 will be used for tiles that should be renderd above a sprite
         const layer1 = map.createBlankLayer('layer1', tiles);
         layer1.depth = 2;
@@ -178,12 +181,14 @@ class Reuse extends Phaser.Scene {
             player.setVelocity(0);  
             game.data.mouseDown = false;
         });
+        /*
         const people = this.people.getChildren();
         let i_people = people.length;
         while(i_people--){
             const sprite = people[i_people];
             this.reSpawn(sprite);
         }
+        */
     }
     
     doorDisabledCheck () {
@@ -313,29 +318,6 @@ class Reuse extends Phaser.Scene {
         }
     }
     
-    /*
-    offTileCheck (sprite) {
-        const tx = ( sprite.x - 8 ) / 16;
-        const ty = ( sprite.y - 8 ) / 16;
-        const TX = Math.floor(tx);
-        const TY = Math.floor(ty);
-        let t = sprite.getData('idleTime');
-        t += 1;
-        if( t >= 50){
-            t = 0;
-            const t4 = this.map.getTileAt(TX, TY, 0);
-            const t5 = this.map.getTileAt(TX + 1, TY, 0);
-            const t7 = this.map.getTileAt(TX, TY + 1, 0);
-            const fx = tx - Math.floor(tx);
-            const fy = ty - Math.floor(ty);
-            if(  fx < 0.50 && t4.index === 1 ){ sprite.x = t4.x * 16 + 8; }
-            if( fx >= 0.50 && t5.index === 1 ){ sprite.x = t5.x * 16 + 8; }
-            if( fy < 0.50 && t4.index === 1 ){ sprite.y = t4.y * 16 + 8; }
-            if( fy >= 0.50 && t7.index === 1 ){ sprite.y = t7.y * 16 + 8; }
-        }
-        sprite.setData('idleTime', t);
-    }
-    */
 
     create () {
     
@@ -347,16 +329,14 @@ class Reuse extends Phaser.Scene {
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
-        //this.createPeople();
         this.doorDisable = false;
         const startMap = 1;
         this.setupMap(startMap);  
         
         
-        
+        /*
         this.events.on('postupdate', ()=>{
-        
-        const people = this.people.getChildren();
+            const people = this.people.getChildren();
             let i_people = people.length;
             const xMax = this.physics.world.bounds.width;
             const yMax = this.physics.world.bounds.height;
@@ -367,10 +347,10 @@ class Reuse extends Phaser.Scene {
                 }
                 if(sprite.x >= xMax || sprite.y >= yMax){
                     sprite.destroy(true, true);
-                }
+               }
             }
         });
-        
+        */
         this.donations = this.plugins.get('DonationsPlugin')
         
     }
@@ -380,6 +360,8 @@ class Reuse extends Phaser.Scene {
             this.player.setVelocity(0);
         }
         this.spritePathProcessor(this.player);
+
+/*
         const people = this.people.getChildren();
         let i_people = people.length;
         
@@ -413,6 +395,7 @@ class Reuse extends Phaser.Scene {
             }
             
         }
+        */
         // keyboard movement
         const v = 100; 
         if (this.cursors.left.isDown) {
@@ -430,7 +413,10 @@ class Reuse extends Phaser.Scene {
         if (this.cursors.down.isDown) {
             this.player.setData('idleTime', 0);
             this.player.setVelocityY( v );
+            
         }
+        
+        
         
         this.player.offTileCheck(this.map);
         
