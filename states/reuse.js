@@ -2,51 +2,20 @@
 
 const MAX_PEOPLE = 20;
 
-class Guy extends Phaser.Physics.Arcade.Sprite {
-
-    constructor (scene, x, y, texture, frame) {    
-        super(scene, x, y, texture, frame)
-    }
-}
-
-
-
 class Reuse extends Phaser.Scene {
 
 
     createPlayer () {
     
-    
-        this.guy = new Guy(this, 100, 100, 'people_16_16', 'pl_down');
-    
-    
-        //this.guy = new Guy(this.scene.scene, 100, 100);
-        //this.guy.setTexture('people_16_16')
-    
-        //this.guy.x = 250;
+        console.log(this)
     
     
-        //const s = new Phaser.Physics.Arcade.Sprite(this, 32 * 10, 32 * 1, 'people_16_16', 'pl_down');
-        //s.setData({ path: [], hits:0, idleTime:0 });
+        this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
+        //this.add.existing(this.player);
+        //this.physics.add.existing(this.player);
+
     
-        //this.add.existing(s);
-        //this.physics.add.existing(s);
     
-        this.player = this.physics.add.sprite(0, 0, 'people_16_16');
-        
-        
-        
-        //this.player = this.physics.add.existing(s, false);
-        
-        
-        //const p = new this.PeoplePlugin.Person(this, 0,32,'people_16_16', 'pl_down');
-        //this.player = this.physics.add.sprite(0, 0, 'people_16_16');
-        
-        
-        
-        
-        //this.player = this.physics.add.existing( p );
-        
         this.player.setCollideWorldBounds(true);
         this.player.depth = 2;
         this.player.setData({ path: [], hits: 0, idleTime: 0 })
@@ -381,8 +350,6 @@ class Reuse extends Phaser.Scene {
     
         this.PeoplePlugin = this.plugins.get('PeoplePlugin'); 
     
-        //this.People = this.plugins.get('PeoplePlugin').People;
-        //this.Person
     
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -472,7 +439,7 @@ class Reuse extends Phaser.Scene {
             this.player.setVelocityY( v );
         }
         
-        //this.offTileCheck(this.player);
+        this.player.offTileCheck(this.map);
         
         this.playerX = Math.floor( this.player.x / 16); 
         this.playerY = Math.floor( this.player.y / 16);

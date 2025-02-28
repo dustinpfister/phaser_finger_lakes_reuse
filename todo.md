@@ -17,17 +17,10 @@
 * ( done ) - start new people plugin
 * ( done ) - See about using People class for Donators in Donations plugin
 * ( done ) - also now have a Person Class that is an extension of Sprite in new people plugin
+* ( done ) - see about getting extended sprites working, by making a simple demo script in place of index
+* ( done ) - Rename World class to Reuse to help adress confustion with world phaser class
 
-* (      ) - see about getting extended sprites working, by making a simple demo script in place of index
-
-* (      ) - Rename World class to Reuse to help adress confustion with world phaser class
 * (      ) - pull code out of Reuse class into new People class
- 
-
-
-
-
-
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
 * (      ) - donators come and drop off a single item ( for now )

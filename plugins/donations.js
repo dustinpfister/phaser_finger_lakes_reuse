@@ -23,7 +23,7 @@
                 }
             });
             
-            this.donators.get(0,0)
+            //this.donators.get(0,0)
             
             
             
