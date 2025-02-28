@@ -10,6 +10,8 @@
             scene.add.existing(this);
             scene.physics.add.existing(this);
             
+            this.setCollideWorldBounds(true);
+            
             this.depth = 2;
             this.setData({ path: [], hits: 0, idleTime: 0 });
             
