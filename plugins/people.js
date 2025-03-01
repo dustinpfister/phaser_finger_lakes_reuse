@@ -59,20 +59,11 @@
     class People extends Phaser.Physics.Arcade.Group {
     
         constructor (config) {
-        
             config = config || {};
-            
-            config.classType = Person;
-            
-            
-        
-            const scene = config.world;
-            
-            
+            config.classType = Person;    
+            const scene = config.world;    
             const world = config.world.scene.scene.physics.world;
             super(world, scene, config);
-            
-            
         }
 
     }

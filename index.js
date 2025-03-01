@@ -1,16 +1,14 @@
 
 import { Boot } from './states/boot.js'
 import { Load } from './states/load.js'
-//import { World } from './states/world.js'
 import { Reuse } from './states/reuse.js'
 
 class Game extends Phaser.Scene {
     preload () {
-        this.scene.add('Boot', Boot, false);
+        
         this.scene.add('Load', Load, false);
-        //this.scene.add('World', World, false);
         this.scene.add('Reuse', Reuse, false);
-        this.scene.start('Boot');
+        this.scene.add('Boot', Boot, true);
     }
 }
 

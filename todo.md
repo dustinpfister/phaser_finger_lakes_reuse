@@ -23,6 +23,7 @@
 * ( done ) - see about setting making setSpritePath part of Person class and rename it to just setPath
 
 * (      ) - make set random path part of the person class.
+* (      ) - People class update method
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
 * (      ) - donators come and drop off a single item ( for now )
@@ -31,5 +32,5 @@
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
 * (      ) - start a customers plugin
 * (      ) - customers just magically buy inventory items
-
+* (      ) - favicon
 ```

@@ -102,6 +102,7 @@ class Reuse extends Phaser.Scene {
            this.map.destroy();
         }
         
+        
         /*
         if(this.people){
         
@@ -109,6 +110,12 @@ class Reuse extends Phaser.Scene {
         
         }
         */
+        
+        console.log(this);
+        
+        
+        
+        
         //this.createPeople();
         
         const md = this.setMapData( startMap );
