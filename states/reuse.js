@@ -210,40 +210,6 @@ class Reuse extends Phaser.Scene {
            return;
        }  
     }
-    /*
-    slideSet (axis, dir, rad, a, v1, v2) {
-        if(dir === 'left'){
-            if(a > 0){
-              a = (a + Math.PI * 0.32) * -1
-            }
-        }
-        let a2 = rad + 1.0;
-        let a3 = rad - 1.0;   
-        if (this.cursors[dir].isDown && a < a2 && a > a3) {
-            if(a < rad){
-                this.player['setVelocity' + axis]( v1 );
-            }
-            if(a > rad){
-                this.player['setVelocity' + axis]( v2 );
-            }
-        }
-    }
-    
-    doorSlide (i, d, p) {
-        const x1 = this.player.x;
-        const y1 = this.player.y;
-        const x2 = p.x * 16 + 8;
-        const y2 = p.y * 16 + 8;
-        const dist = Phaser.Math.Distance.Between(x1, y1, x2, y2);
-        const a = Phaser.Math.Angle.Between(x1, y1, x2, y2); 
-        if(dist < 16 * 2){
-            this.slideSet('X', 'down', Math.PI * 0.5, a, 100, -100);
-            this.slideSet('X', 'up', Math.PI * 0.5 * -1, a, -100, 100);    
-            this.slideSet('Y', 'right', Math.PI * 0, a, -100, 100);
-            this.slideSet('Y', 'left', Math.PI * 1.0 * -1, a, 100, -100);
-        } 
-    }
-    */
     doorEnterCheck (d, p) {
         let tiles = [];
         if(p instanceof Array){
@@ -280,7 +246,6 @@ class Reuse extends Phaser.Scene {
            if( this.doorEnterCheck(d,p) ){
                return;
            }
-           //this.doorSlide(i,d,p);
        }
     }
         
