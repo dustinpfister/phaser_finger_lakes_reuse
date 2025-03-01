@@ -35,6 +35,24 @@
             }
             sprite.setData('idleTime', t);
         }
+        
+        setPath (scene, tx=2, ty=2) {
+            const pathFinder = scene.plugins.get('PathFinderPlugin');
+            const map = scene.map;
+            const sprite = this;
+            //const game = this;
+            pathFinder.setGrid(map.layers[0].data, [1]);
+            pathFinder.setCallbackFunction( (path) => { 
+                path = path || [];
+                sprite.setData({ path: path }) 
+            });
+            const stx = Math.floor( sprite.x / 16 );
+            const sty = Math.floor( sprite.y / 16 );
+            pathFinder.preparePathCalculation([stx, sty], [tx, ty]);
+            pathFinder.calculatePath();
+        }
+        
+        
     }
     
 

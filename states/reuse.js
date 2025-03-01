@@ -39,7 +39,7 @@ class Reuse extends Phaser.Scene {
     
     setSpritePath (sprite, map, tx=2, ty=2) {
         const pathFinder = this.plugins.get('PathFinderPlugin');
-        const game = this;
+        //const game = this;
         pathFinder.setGrid(map.layers[0].data, [1]);
         pathFinder.setCallbackFunction(function(path) { 
             path = path || [];
@@ -166,13 +166,13 @@ class Reuse extends Phaser.Scene {
             const tile = map.getTileAt(tx, ty, false, 0);
             if(tile){
                 if(tile.index != 1){
-                    const sprite = this.people.getFirst(true, false);
-                    if(sprite){
-                        sprite.destroy();
-                    }
+                    //const sprite = this.people.getFirst(true, false);
+                    //if(sprite){
+                    //    sprite.destroy();
+                    //}
                 }
-                if(tile.index === 1){
-                    this.setSpritePath(player, map, tx, ty);
+                if(tile.index === 1){    
+                    player.setPath(this, tx, ty);
                 }
             }
             game.data.mouseDown = true; 

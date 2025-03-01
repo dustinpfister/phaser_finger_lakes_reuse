@@ -20,8 +20,8 @@
 * ( done ) - see about getting extended sprites working, by making a simple demo script in place of index
 * ( done ) - Rename World class to Reuse to help adress confustion with world phaser class
 * ( done ) - got Person.offTileCheck working by adressing mistake when calling map.getTileAt
+* ( done ) - make set random path part of the person class.
 
-* (      ) - make set random path part of the person class.
 * (      ) - see about setting making setSpritePath part of Person class and rename it to just setPath
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
