@@ -21,8 +21,10 @@
 * ( done ) - Rename World class to Reuse to help adress confustion with world phaser class
 * ( done ) - got Person.offTileCheck working by adressing mistake when calling map.getTileAt
 * ( done ) - see about setting making setSpritePath part of Person class and rename it to just setPath
-
 * ( done ) - make set random path part of the person class.
+
+
+* (      ) - start a customers plugin
 
 * (      ) - People class update method
 * (      ) - start an Item Database in the form one JSON file ( for now )
@@ -31,7 +33,7 @@
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - start an inventory plugin
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
-* (      ) - start a customers plugin
+
 * (      ) - customers just magically buy inventory items
 * (      ) - favicon
 ```

@@ -75,6 +75,11 @@
             super(world, scene, config);
         }
 
+        update (scene) {
+        
+        
+        }
+
     }
 
     class PeoplePlugin extends Phaser.Plugins.BasePlugin {

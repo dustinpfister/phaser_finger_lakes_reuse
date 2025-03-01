@@ -296,9 +296,8 @@ class Reuse extends Phaser.Scene {
 
     create () {
     
-    
-    
-        this.PeoplePlugin = this.plugins.get('PeoplePlugin'); 
+        this.PeoplePlugin = this.plugins.get('PeoplePlugin');
+        this.DonationsPlugin = this.plugins.get('DonationsPlugin');
     
     
         const camera = this.camera = this.cameras.main;
@@ -307,6 +306,9 @@ class Reuse extends Phaser.Scene {
         this.doorDisable = false;
         const startMap = 1;
         this.setupMap(startMap);
+        
+        this.customers = new this.PeoplePlugin.People();
+        
         
         //this.player.setRandomPath(this);
         
@@ -328,7 +330,6 @@ class Reuse extends Phaser.Scene {
             }
         });
         */
-        this.donations = this.plugins.get('DonationsPlugin')
         
     }
 
