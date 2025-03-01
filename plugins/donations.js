@@ -12,7 +12,7 @@
             
             
             this.donators = new People({
-                world: this.game.scene.keys.Reuse,
+                scene: this.game.scene.keys.Reuse,
                 defaultKey: 'people_16_16',
                 frame: 'pl_down',
                 maxSize: 20,
@@ -22,7 +22,7 @@
                     person.setData({ path:[], hits: 0, idleTime: 0 })                 
                 }
             });
-            
+           
             //this.donators.get(0,0)
             
             

@@ -114,7 +114,7 @@ class Reuse extends Phaser.Scene {
         }
         */
         
-        console.log(this);
+        //console.log(this);
         
         
         
@@ -307,7 +307,9 @@ class Reuse extends Phaser.Scene {
         const startMap = 1;
         this.setupMap(startMap);
         
-        this.customers = new this.PeoplePlugin.People();
+        this.customers = new this.PeoplePlugin.People({
+            scene: this
+        });
         
         
         //this.player.setRandomPath(this);

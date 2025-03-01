@@ -69,9 +69,11 @@
     
         constructor (config) {
             config = config || {};
-            config.classType = Person;    
-            const scene = config.world;    
-            const world = config.world.scene.scene.physics.world;
+            config.classType = Person;
+            
+            
+            const scene = config.scene
+            const world = scene.physics.world;
             super(world, scene, config);
         }
 
