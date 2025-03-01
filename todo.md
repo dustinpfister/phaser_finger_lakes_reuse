@@ -22,7 +22,8 @@
 * ( done ) - got Person.offTileCheck working by adressing mistake when calling map.getTileAt
 * ( done ) - see about setting making setSpritePath part of Person class and rename it to just setPath
 
-* (      ) - make set random path part of the person class.
+* ( done ) - make set random path part of the person class.
+
 * (      ) - People class update method
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )

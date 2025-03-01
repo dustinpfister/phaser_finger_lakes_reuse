@@ -36,11 +36,20 @@
             sprite.setData('idleTime', t);
         }
         
+        setRandomPath (scene) {
+        
+            scene.map.setLayer(0);
+            const walkable = scene.map.filterTiles((tile)=>{
+                return tile.index === 1
+            });
+            const tile = walkable[ Math.floor( walkable.length * Math.random() ) ];
+            this.setPath(scene, tile.x, tile.y);
+        }
+        
         setPath (scene, tx=2, ty=2) {
             const pathFinder = scene.plugins.get('PathFinderPlugin');
             const map = scene.map;
             const sprite = this;
-            //const game = this;
             pathFinder.setGrid(map.layers[0].data, [1]);
             pathFinder.setCallbackFunction( (path) => { 
                 path = path || [];

@@ -13,6 +13,9 @@ class Reuse extends Phaser.Scene {
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
         this.player.setFrame('pl_down');
+        
+        
+        
     }
     /*
     createPeople () {
@@ -303,7 +306,9 @@ class Reuse extends Phaser.Scene {
         this.createPlayer();
         this.doorDisable = false;
         const startMap = 1;
-        this.setupMap(startMap);  
+        this.setupMap(startMap);
+        
+        //this.player.setRandomPath(this);
         
         
         /*
