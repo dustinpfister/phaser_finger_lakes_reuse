@@ -6,19 +6,14 @@
     
         constructor (scene, x, y, texture, frame) {
             super(scene, x, y, texture, frame);
-            
             scene.add.existing(this);
             scene.physics.add.existing(this);
-            
             this.setCollideWorldBounds(true);
-            
             this.depth = 2;
             this.setData({ path: [], hits: 0, idleTime: 0 });
-            
         }
         
-        offTileCheck (map) {
-        /*
+        offTileCheck (map, layer = 0) {
             const sprite = this;
             const tx = ( sprite.x - 8 ) / 16;
             const ty = ( sprite.y - 8 ) / 16;
@@ -28,18 +23,17 @@
             t += 1;
             if( t >= 50){
                 t = 0;
-                const t4 = map.getTileAt(TX, TY, 0);
-                const t5 = map.getTileAt(TX + 1, TY, 0);
-                const t7 = map.getTileAt(TX, TY + 1, 0);
+                const t4 = map.getTileAt(TX, TY, true, layer);
+                const t5 = map.getTileAt(TX + 1, TY, true, layer);
+                const t7 = map.getTileAt(TX, TY + 1, true, layer);
                 const fx = tx - Math.floor(tx);
                 const fy = ty - Math.floor(ty);
-                if(  fx < 0.50 && t4.index === 1 ){ sprite.x = t4.x * 16 + 8; }
+                if( fx < 0.50 && t4.index === 1 ){ sprite.x = t4.x * 16 + 8; }
                 if( fx >= 0.50 && t5.index === 1 ){ sprite.x = t5.x * 16 + 8; }
                 if( fy < 0.50 && t4.index === 1 ){ sprite.y = t4.y * 16 + 8; }
                 if( fy >= 0.50 && t7.index === 1 ){ sprite.y = t7.y * 16 + 8; }
             }
             sprite.setData('idleTime', t);
-            */
         }
     }
     
@@ -50,7 +44,7 @@
         
             config = config || {};
             
-            config.classType = Person; //Phaser.Physics.Arcade.Sprite;
+            config.classType = Person;
             
             
         

@@ -7,8 +7,6 @@ class Reuse extends Phaser.Scene {
 
     createPlayer () {
     
-        console.log(this)
-    
     
         this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
        
@@ -16,7 +14,7 @@ class Reuse extends Phaser.Scene {
         this.text_player.depth = 1;
         this.player.setFrame('pl_down');
     }
-    
+    /*
     createPeople () {
         const p =  new this.PeoplePlugin.People({
            world: this,
@@ -29,12 +27,14 @@ class Reuse extends Phaser.Scene {
         });
         this.people = this.physics.add.existing(p);        
     }
+    */
     
+    /*
     setRandomSpritePath (sprite) {
         const pos = this.getRandomMapPos();
         this.setSpritePath(sprite, this.map, pos.x, pos.y);
     }
-    
+    */
     
     
     setSpritePath (sprite, map, tx=2, ty=2) {
@@ -210,7 +210,7 @@ class Reuse extends Phaser.Scene {
            return;
        }  
     }
-        
+    /*
     slideSet (axis, dir, rad, a, v1, v2) {
         if(dir === 'left'){
             if(a > 0){
@@ -243,7 +243,7 @@ class Reuse extends Phaser.Scene {
             this.slideSet('Y', 'left', Math.PI * 1.0 * -1, a, 100, -100);
         } 
     }
-    
+    */
     doorEnterCheck (d, p) {
         let tiles = [];
         if(p instanceof Array){
@@ -280,7 +280,7 @@ class Reuse extends Phaser.Scene {
            if( this.doorEnterCheck(d,p) ){
                return;
            }
-           this.doorSlide(i,d,p);
+           //this.doorSlide(i,d,p);
        }
     }
         
