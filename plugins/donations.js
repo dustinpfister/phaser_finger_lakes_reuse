@@ -17,9 +17,9 @@
                 frame: 'pl_down',
                 maxSize: 20,
                 createCallback : (person) => {
-                    person.depth = 2;
+                    //person.depth = 2;
                     person.body.setDrag(500, 500);
-                    person.setData({ path:[], hits: 0, idleTime: 0 })                 
+                    //person.setData({ path:[], hits: 0, idleTime: 0 })                 
                 }
             });
            

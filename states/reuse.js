@@ -308,21 +308,23 @@ class Reuse extends Phaser.Scene {
         this.setupMap(startMap);
         
         this.customers = new this.PeoplePlugin.People({
-            scene: this
+            scene: this,
+            defaultKey: 'people_16_16',
+            frame: 'pl_down',
+            maxSize: 20,
+            createCallback : (person) => {
+                person.body.setDrag(500, 500);                
+            }
         });
         
         
-        //this.player.setRandomPath(this);
-        
-        
-        /*
         this.events.on('postupdate', ()=>{
-            const people = this.people.getChildren();
-            let i_people = people.length;
+            const customers = this.customers.getChildren();
+            let i_customers = customers.length;
             const xMax = this.physics.world.bounds.width;
             const yMax = this.physics.world.bounds.height;
-            while(i_people--){
-                const sprite = people[i_people];
+            while(i_customers--){
+                const sprite = customers[i_customers];
                 if(sprite.x < 0 || sprite.y < 0){
                     sprite.destroy(true, true);
                 }
@@ -331,7 +333,7 @@ class Reuse extends Phaser.Scene {
                }
             }
         });
-        */
+        
         
     }
 
