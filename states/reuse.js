@@ -10,10 +10,9 @@ class Reuse extends Phaser.Scene {
     }
 
     createPlayer () {
-        this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'cus_down');
+        this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
-        //this.player.setFrame('pl_down');    
     }
     
     
@@ -42,15 +41,19 @@ class Reuse extends Phaser.Scene {
         if(this.customers){
             this.customers.destroy(true, true);
         }
+        
         this.customers = new this.PeoplePlugin.People({
             scene: this,
             defaultKey: 'people_16_16',
-            frame: 'cus_down',
-            maxSize: 20,
+            defaultFrame: 'cus_down',
+            maxSize: 3,
             createCallback : (person) => {
-                person.body.setDrag(500, 500);                
+                person.body.setDrag(500, 500);
+                console.log(person)
+                //person.setFrame('cus_down');            
             }
         });
+        
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
         map.setCollision( [ 0, 2, 10, 20, 21, 22] );
         const tiles = map.addTilesetImage('map_16_16');

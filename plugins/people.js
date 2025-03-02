@@ -11,6 +11,9 @@
             this.setCollideWorldBounds(true);
             this.depth = 2;
             this.setData({ path: [], hits: 0, idleTime: 0 });
+            
+            console.log(this.frame);
+            
         }
         
         pathProcessor (scene, v=200, min_d=8) {
@@ -99,6 +102,7 @@
     class People extends Phaser.Physics.Arcade.Group {
     
         constructor (config) {
+        
             config = config || {};
             config.classType = Person;
             
@@ -108,6 +112,8 @@
             const scene = config.scene
             const world = scene.physics.world;
             super(world, scene, config);
+            
+            console.log(config);
             
             this.lastPersonSpawn = new Date();
             
