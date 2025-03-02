@@ -25,8 +25,7 @@
 * ( done ) - People class update method
 * ( done ) - People class spawnPerson Method
 * ( done ) - People Class Path Processing
-
-* (      ) - Get Collision detection working with new Person Class 
+* ( done ) - Get Collision detection working with new Person Class 
 
 
 * (      ) - start an Item Database in the form one JSON file ( for now )

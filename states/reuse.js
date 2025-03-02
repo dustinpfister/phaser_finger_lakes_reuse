@@ -99,7 +99,7 @@ class Reuse extends Phaser.Scene {
     }
 
     setupMap ( startMap=1, x=undefined, y=undefined ) {
-        const game = this;
+        const scene = this;
         const player = this.player;
         if(this.map){
            this.map.destroy();
@@ -115,8 +115,22 @@ class Reuse extends Phaser.Scene {
         */
         
         //console.log(this);
+      
+        if(this.customers){
         
+            this.customers.destroy(true, true);
         
+        }
+        
+        this.customers = new this.PeoplePlugin.People({
+            scene: this,
+            defaultKey: 'people_16_16',
+            frame: 'pl_down',
+            maxSize: 20,
+            createCallback : (person) => {
+                person.body.setDrag(500, 500);                
+            }
+        });
         
         
         //this.createPeople();
@@ -137,14 +151,15 @@ class Reuse extends Phaser.Scene {
         // colliders
         this.physics.world.colliders.removeAll();
         this.physics.add.collider( this.player, layer0 );
-        //this.physics.add.collider( this.people, layer0 );
-        /*
-        this.physics.add.collider( this.player, this.people, (a, b)=>{
+        this.physics.add.collider( this.customers, layer0 );
+        
+        this.physics.add.collider( this.player, this.customers, ( a, b ) => {
             const pos = this.getRandomMapPos();
-            game.setSpritePath(b, map, pos.x, pos.y);
+            //scene.setSpritePath(b, map, pos.x, pos.y);
+            b.setPath(scene, pos.x, pos.y)
             const path = [];
-            const px = game.playerX;
-            const py = game.playerY;
+            const px = scene.playerX;
+            const py = scene.playerY;
             const tile = map.getTileAt(px, py - 1);
             if(tile){
                 if(tile.index === 1){
@@ -153,17 +168,19 @@ class Reuse extends Phaser.Scene {
             }
         });
         
-        this.physics.add.collider( this.people, this.people, (a, b)=>{
+        this.physics.add.collider( this.customers, this.customers, ( a, b ) => {
             let hits = b.getData('hits');
             hits += 1;
             if(hits >= 50){
                hits = 0;
-               game.setRandomSpritePath(b);
-               game.setRandomSpritePath(a);
+               //scene.setRandomSpritePath(b);
+               //scene.setRandomSpritePath(a);
+               a.setRandomPath(scene);
+               b.setRandomPath(scene);
             }
             b.setData({hits: hits});
         });
-        */
+        
         // layer1 will be used for tiles that should be renderd above a sprite
         const layer1 = map.createBlankLayer('layer1', tiles);
         layer1.depth = 2;
@@ -176,29 +193,18 @@ class Reuse extends Phaser.Scene {
             const tile = map.getTileAt(tx, ty, false, 0);
             if(tile){
                 if(tile.index != 1){
-                    //const sprite = this.people.getFirst(true, false);
-                    //if(sprite){
-                    //    sprite.destroy();
-                    //}
+                    console.log(tile.index);
                 }
                 if(tile.index === 1){    
                     player.setPath(this, tx, ty);
                 }
             }
-            game.data.mouseDown = true; 
+            scene.data.mouseDown = true; 
         });
         layer0.on('pointerup', (pointer)=>{
             player.setVelocity(0);  
-            game.data.mouseDown = false;
+            scene.data.mouseDown = false;
         });
-        /*
-        const people = this.people.getChildren();
-        let i_people = people.length;
-        while(i_people--){
-            const sprite = people[i_people];
-            this.reSpawn(sprite);
-        }
-        */
     }
     
     doorDisabledCheck () {
@@ -307,15 +313,7 @@ class Reuse extends Phaser.Scene {
         const startMap = 1;
         this.setupMap(startMap);
         
-        this.customers = new this.PeoplePlugin.People({
-            scene: this,
-            defaultKey: 'people_16_16',
-            frame: 'pl_down',
-            maxSize: 20,
-            createCallback : (person) => {
-                person.body.setDrag(500, 500);                
-            }
-        });
+        
         
 
         
