@@ -10,10 +10,10 @@ class Reuse extends Phaser.Scene {
     }
 
     createPlayer () {
-        this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
+        this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'cus_down');
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
-        this.player.setFrame('pl_down');    
+        //this.player.setFrame('pl_down');    
     }
     
     
@@ -45,7 +45,7 @@ class Reuse extends Phaser.Scene {
         this.customers = new this.PeoplePlugin.People({
             scene: this,
             defaultKey: 'people_16_16',
-            frame: 'pl_down',
+            frame: 'cus_down',
             maxSize: 20,
             createCallback : (person) => {
                 person.body.setDrag(500, 500);                
