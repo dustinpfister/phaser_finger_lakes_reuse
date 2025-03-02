@@ -22,11 +22,13 @@
 * ( done ) - got Person.offTileCheck working by adressing mistake when calling map.getTileAt
 * ( done ) - see about setting making setSpritePath part of Person class and rename it to just setPath
 * ( done ) - make set random path part of the person class.
+* ( done ) - People class update method
+* ( done ) - People class spawnPerson Method
+* ( done ) - People Class Path Processing
+
+* (      ) - Get Collision detection working with new Person Class 
 
 
-* (      ) - start a customers plugin
-
-* (      ) - People class update method
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
 * (      ) - donators come and drop off a single item ( for now )

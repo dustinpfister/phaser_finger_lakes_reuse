@@ -344,6 +344,10 @@ class Reuse extends Phaser.Scene {
         }
         this.spritePathProcessor(this.player);
 
+
+        this.customers.update(this);
+
+
 /*
         const people = this.people.getChildren();
         let i_people = people.length;

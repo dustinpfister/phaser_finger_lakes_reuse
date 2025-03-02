@@ -13,6 +13,37 @@
             this.setData({ path: [], hits: 0, idleTime: 0 });
         }
         
+        pathProcessor (scene, v=200, min_d=8) {
+        
+            const path = this.getData('path')
+           
+            if(path.length > 0){
+                const pos = path[0];
+                const tx = pos.x * 16 + 8;
+                const ty = pos.y * 16 + 8;
+                const at_pos = this.x === tx && this.y === ty;
+                if(at_pos){
+                    this.setData({path: path.slice(1, pos.length) })
+                }
+                if(!at_pos){
+                    let vx = 0, vy = 0;
+                    if(tx > this.x){ vx = v;     }
+                    if(tx < this.x){ vx = v * -1;}
+                    if(ty > this.y){ vy = v;     }
+                    if(ty < this.y){ vy = v * -1;}
+                    this.setVelocityX( vx );
+                    this.setVelocityY( vy );
+                    const d = Phaser.Math.Distance.Between(tx, ty, this.x, this.y);
+                    if(d <= min_d){
+                        this.x = tx;
+                        this.y = ty;
+                        this.setVelocity(0);
+                    }  
+                }
+            }
+        
+        }
+        
         offTileCheck (map, layer = 0) {
             const sprite = this;
             const tx = ( sprite.x - 8 ) / 16;
@@ -82,7 +113,7 @@
             
         }
         
-        /*
+        
         spawnPerson (scene) {
         
             const people = this.getChildren();
@@ -109,9 +140,9 @@
             }
             
         }
-*/
 
-/*
+
+
         update (scene) {
         
         
@@ -119,7 +150,7 @@
             let i_people = people.length;
         
         
-            this.spawnPerson();
+            this.spawnPerson(scene);
         
             while(i_people--){
                 const person = people[i_people];
@@ -136,16 +167,16 @@
                         //this.reSpawn(sprite);
                     }
                 }
-                //this.PathProcessor( person, 50, 1);
+                person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
                     
-                    sprite.setRandomPath(scene);
+                    person.setRandomPath(scene);
                 }
             
             }
         
         }
-        */
+        
         
 
     }
