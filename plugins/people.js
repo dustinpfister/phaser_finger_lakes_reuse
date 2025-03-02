@@ -72,15 +72,81 @@
             config.classType = Person;
             
             
+           
+            
             const scene = config.scene
             const world = scene.physics.world;
             super(world, scene, config);
+            
+            this.lastPersonSpawn = new Date();
+            
         }
+        
+        /*
+        spawnPerson (scene) {
+        
+            const people = this.getChildren();
+            const now = new Date();
+            if(people.length < this.maxSize && (!this.lastPersonSpawn || now - this.lastPersonSpawn >= 1000) ){
+                this.lastPersonSpawn = now;
+                const sa = scene.mapData.peopleSpawnAt;
+                const doorIndex = sa[ Math.floor( sa.length * Math.random() ) ];
+                const d = scene.mapData.doors[doorIndex];
+                let p = d.position;
+                if(p instanceof Array){
+                    p = p[ Math.floor( p.length * Math.random() ) ];
+                }
+            
+                // is a person there all ready?
+                let i = people.length;
+                while(i--){
+                    const person = people[i];
+                    if( Math.floor( person.x / 16 ) === p.x && Math.floor( person.y / 16 ) === p.y ){
+                        return;
+                    }
+                }
+                this.get(p.x * 16 + 8, p.y * 16 + 8);
+            }
+            
+        }
+*/
 
+/*
         update (scene) {
         
         
+            const people = this.getChildren();
+            let i_people = people.length;
+        
+        
+            this.spawnPerson();
+        
+            while(i_people--){
+                const person = people[i_people];
+            
+            
+                const tx = Math.floor(person.x / 16);
+                const ty = Math.floor(person.y / 16);
+                const tile = scene.map.getTileAt(tx, ty, false, 0);
+                if(!tile){
+                    //this.reSpawn(sprite);
+                }
+                if(tile){
+                    if(tile.index != 1){
+                        //this.reSpawn(sprite);
+                    }
+                }
+                //this.PathProcessor( person, 50, 1);
+                if(person.getData('path').length === 0 ){
+                    
+                    sprite.setRandomPath(scene);
+                }
+            
+            }
+        
         }
+        */
+        
 
     }
 

@@ -317,6 +317,7 @@ class Reuse extends Phaser.Scene {
             }
         });
         
+
         
         this.events.on('postupdate', ()=>{
             const customers = this.customers.getChildren();

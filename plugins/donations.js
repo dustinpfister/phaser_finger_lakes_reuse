@@ -7,10 +7,10 @@
         constructor (pluginManager) {
             super(pluginManager);
             
+     
             const People = pluginManager.get('PeoplePlugin').People;
-            
-            
-            
+       
+      
             this.donators = new People({
                 scene: this.game.scene.keys.Reuse,
                 defaultKey: 'people_16_16',
