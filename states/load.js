@@ -1,5 +1,10 @@
 class Load extends Phaser.Scene {
 
+    constructor (config) {
+        super(config);
+        this.key = 'Load';
+    }
+
     preload(){
     
         this.load.setBaseURL('./');

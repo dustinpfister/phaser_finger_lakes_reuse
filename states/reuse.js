@@ -4,6 +4,10 @@ const MAX_PEOPLE = 20;
 
 class Reuse extends Phaser.Scene {
 
+    constructor (config) {
+        super(config);
+        this.key = 'Reuse';
+    }
 
     createPlayer () {
         this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
