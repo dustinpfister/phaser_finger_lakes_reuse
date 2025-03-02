@@ -36,5 +36,8 @@
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
 
 * (      ) - customers just magically buy inventory items
+
+* (      ) - sprites for customers and donators
+* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - favicon
 ```
