@@ -28,8 +28,10 @@
 * ( done ) - Get Collision detection working with new Person Class 
 * ( done ) - start using main game data manager
 
-* (      ) - sprites for customers and donators
+* ( done ) - sprites for customers and donators
+
 * (      ) - customer / donator values in map JSON that tell what kind of person shows up, and max number for now.
+* (      ) - customer / donators should have their own spawn locations that are defined on a map by map basic 
 
 * (      ) - use the reUse data manager for keys like playerX and so forth
 
