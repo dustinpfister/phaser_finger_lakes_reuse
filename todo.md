@@ -27,6 +27,7 @@
 * ( done ) - People Class Path Processing
 * ( done ) - Get Collision detection working with new Person Class 
 
+* (      ) - start using main game data manager
 
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
