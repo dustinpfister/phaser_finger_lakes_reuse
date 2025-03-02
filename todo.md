@@ -28,6 +28,9 @@
 * ( done ) - Get Collision detection working with new Person Class 
 * ( done ) - start using main game data manager
 
+* (      ) - sprites for customers and donators
+* (      ) - customer / donator values in map JSON that tell what kind of person shows up, and max number for now.
+
 * (      ) - use the reUse data manager for keys like playerX and so forth
 
 * (      ) - start an Item Database in the form one JSON file ( for now )
@@ -39,7 +42,7 @@
 
 * (      ) - customers just magically buy inventory items
 
-* (      ) - sprites for customers and donators
+
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - favicon
 ```
