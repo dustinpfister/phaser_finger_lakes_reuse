@@ -10,8 +10,10 @@
             scene.physics.add.existing(this);
             this.setCollideWorldBounds(true);
             this.depth = 2;
-            this.setData({ path: [], hits: 0, idleTime: 0 });
-            
+            this.setData({ 
+                path: [], hits: 0, idleTime: 0, 
+                type: '', subType: ''
+            });
         }
         
         pathProcessor (scene, v=200, min_d=8) {
@@ -96,31 +98,29 @@
         
     }
     
+    
+    const PEOPLE_DEFAULTS = {
+        type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ]
+    };
 
     class People extends Phaser.Physics.Arcade.Group {
     
         constructor (config, pConfig) {
         
             config = config || {};
-            pConfig = Object.assign({}, { type: 'customer' }, pConfig || {} );
+            pConfig = Object.assign({}, PEOPLE_DEFAULTS, pConfig || {} );
             config.classType = Person;
-            
-            
-           
             
             const scene = config.scene
             const world = scene.physics.world;
             super(world, scene, config);
             
-            
-            //this.lastSpawn = new Date();
-            //this.type = pConfig.type;
-            
             this.data = new Phaser.Data.DataManager(this,  new Phaser.Events.EventEmitter() );
             
             this.setData('lastSpawn', new Date());
             this.setData('type', pConfig.type);
-            
+            this.setData('subTypes', pConfig.subTypes);
+            this.setData('subTypeProbs', pConfig.subTypeProbs);
             
         }
         
@@ -130,6 +130,8 @@
         spawnPerson (scene) {
         
             const people = this.getChildren();
+            const subTypes = this.getData('subTypes');
+            const subTypeProbs = this.getData('subTypeProbs');
             const now = new Date();
             const lastSpawn = this.getData('lastSpawn');
             if(people.length < this.maxSize && now - lastSpawn >= 1000 ){
@@ -150,7 +152,22 @@
                         return;
                     }
                 }
-                this.get(p.x * 16 + 8, p.y * 16 + 8);
+                const person = this.get(p.x * 16 + 8, p.y * 16 + 8);
+                person.setData('type', this.getData('type') );
+                
+                const roll = Math.random();
+                let a = subTypeProbs[0]
+                let i_subType = 0; //subTypes.length;
+                while(i_subType < subTypes.length){
+                    if(roll < a){
+                        person.setData('subType', subTypes[i_subType] );
+                        break;
+                    }
+                    a += subTypeProbs[i_subType];
+                    i_subType += 1;
+                }
+                
+                console.log(person.getData('subType'))
             }
             
         }
@@ -159,7 +176,8 @@
 
         update (scene) {
         
-        
+            const type = this.getData('type');
+            const subTypes = this.getData('subTypes');
             const people = this.getChildren();
             let i_people = people.length;
         
@@ -168,19 +186,21 @@
         
             while(i_people--){
                 const person = people[i_people];
+                
+                //TYPE.Update[type]
             
-            
+                /*
                 const tx = Math.floor(person.x / 16);
                 const ty = Math.floor(person.y / 16);
+                
                 const tile = scene.map.getTileAt(tx, ty, false, 0);
                 if(!tile){
-                    //this.reSpawn(sprite);
                 }
                 if(tile){
                     if(tile.index != 1){
-                        //this.reSpawn(sprite);
                     }
                 }
+                */
                 person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
                     
