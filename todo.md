@@ -35,9 +35,12 @@
 * ( done ) - have a data manager for the People class
 * ( done ) - Expand People class with a type property that can be just 'customer' ( for now )
 * ( done ) - Have a subType property for People that can be 'shoper', or 'donator'
-* (      ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
+* (      ) - Have a customer property for each map
+* (      ) - Use customer map objects for setting sub types and sub type props
 * (      ) - people.json data, generator, or both? Both might be best.
 * (      ) - Customers should have their own spawn locations that are defined on a map by map basis
+* (      ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
+
 
 
   DONATIONS, ITEMS DATABASE, INVENTORY: 

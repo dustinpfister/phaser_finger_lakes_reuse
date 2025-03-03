@@ -2,6 +2,10 @@
   "name": "Mega_T",
   "spawnAt": { "x": 21, "y": 52 },
   "peopleSpawnAt" : [ 0, 1 ],
+  "customer" : {
+     "subTypes" : ["shoper"],
+     "subTypeProbs ": [ 1.00 ]
+  },
   "doors" : [
     {
       "desc": "The front east door to trip hallway",

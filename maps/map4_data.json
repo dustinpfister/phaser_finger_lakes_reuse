@@ -2,6 +2,10 @@
   "name": "Back",
   "spawnAt": { "x": 2, "y": 2 },
   "peopleSpawnAt" : [ 0, 1, 2, 3 ],
+    "customer" : {
+     "subTypes" : ["donator"],
+     "subTypeProbs ": [ 1.00 ]
+  },
   "doors" : [
     {
       "desc": "The front west door to Mega T",

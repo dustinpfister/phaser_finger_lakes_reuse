@@ -5,6 +5,10 @@
      "y": 5
   },
   "peopleSpawnAt" : [ 0 ],
+    "customer" : {
+     "subTypes" : ["shoper"],
+     "subTypeProbs ": [ 1.00 ]
+  },
   "doors" : [
     {
       "desc": "The east entertence to Mega R",
