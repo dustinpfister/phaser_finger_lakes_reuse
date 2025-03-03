@@ -61,8 +61,7 @@ class Reuse extends Phaser.Scene {
         this.physics.add.collider( this.player, layer0 );
         this.physics.add.collider( this.customers, layer0 );
         this.physics.add.collider( this.player, this.customers, ( a, b ) => {
-            const pos = this.getRandomMapPos();
-            b.setPath(scene, pos.x, pos.y)
+            b.setRandomPath(scene);
             const path = [];
             const px = scene.playerX;
             const py = scene.playerY;
