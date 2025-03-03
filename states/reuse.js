@@ -166,7 +166,7 @@ class Reuse extends Phaser.Scene {
            }
        }
     }
-        
+        /*
     spritePathProcessor (sprite, v=200, min_d=8) {
         if(!sprite.data){
             return;
@@ -200,7 +200,7 @@ class Reuse extends Phaser.Scene {
             }
         }
     }
-    
+    */
 
     create () {
     
@@ -211,7 +211,7 @@ class Reuse extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
         this.doorDisable = false;
-        this.setupMap(4);
+        this.setupMap(1);
         
         this.events.on('postupdate', ()=>{
             const customers = this.customers.getChildren();
@@ -231,13 +231,17 @@ class Reuse extends Phaser.Scene {
     }
 
     update () {
+    
+        const v = 100; 
+    
         if(!this.data.mouseDown){
             this.player.setVelocity(0);
         }
-        this.spritePathProcessor(this.player);
+        this.player.pathProcessor(this, v, 8);
+        
         this.customers.update(this);
         // keyboard movement
-        const v = 100; 
+        
         if (this.cursors.left.isDown) {
             this.player.setData('idleTime', 0);
             this.player.setVelocityX( v * -1 );

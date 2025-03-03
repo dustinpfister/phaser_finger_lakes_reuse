@@ -42,7 +42,6 @@
 * (      ) - Customers should have their own spawn locations that are defined on a map by map basis
 
 
-
   DONATIONS, ITEMS DATABASE, INVENTORY: 
 * (      ) - customers just magically buy inventory items
 * (      ) - start an Item Database in the form one JSON file ( for now )

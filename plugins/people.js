@@ -177,11 +177,7 @@
                 person.setFrame( person.getData('subType') + '_down');
                 person.setConf({
                     cash: pConfig.cash
-                
                 });
-                
-                console.log(person)
-                
             }
         }
 

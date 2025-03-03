@@ -4,7 +4,8 @@
   "peopleSpawnAt" : [ 0, 1, 2, 3 ],
     "customer" : {
      "subTypes" : ["donator"],
-     "subTypeProbs": [ 1.00 ]
+     "subTypeProbs": [ 1.00 ],
+     "spawnAt" : { "x": 2, "y": 2 }
   },
   "doors" : [
     {
