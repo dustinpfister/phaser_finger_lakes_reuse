@@ -37,15 +37,9 @@ class Reuse extends Phaser.Scene {
         if(this.customers){
             this.customers.destroy(true, true);
         }
-        
-        console.log('setmap');
-        console.log(startMap);
-        console.log(md.customer.subTypeProbs);
-        
         this.customers = new this.PeoplePlugin.People({
             scene: this,
             defaultKey: 'people_16_16',
-            //defaultFrame: 'shoper_down',
             maxSize: 20,
             createCallback : (person) => {
                 person.body.setDrag(500, 500);           
@@ -55,7 +49,6 @@ class Reuse extends Phaser.Scene {
             subTypeProbs: md.customer.subTypeProbs
         
         });
-        
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
         map.setCollision( [ 0, 2, 10, 20, 21, 22] );
         const tiles = map.addTilesetImage('map_16_16');

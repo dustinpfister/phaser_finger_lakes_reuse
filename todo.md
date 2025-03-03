@@ -3,11 +3,12 @@
 ## R1 ( ) - Processing plugin, Workers
 
 ```
-* (    ) - expand people.js with 
-* (    ) - have 'employee', and 'mod' type workers
-* (    ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
-* (    ) - can switch between workers
-* (    ) - new worker sprites, have one for each worker added
+* (      ) - expand people.js with 
+* (      ) - have 'employee', and 'mod' type workers
+* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
+* (      ) - can switch between workers
+* (      ) - new worker sprites, have one for each worker added
+* (      ) - people.json data, generator, or both? Both might be best.
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
@@ -37,9 +38,8 @@
 * ( done ) - Have a subType property for People that can be 'shoper', or 'donator'
 * ( done ) - Have a customer property for each map
 * ( done ) - Use customer map objects for setting sub types and sub type props
-* (      ) - people.json data, generator, or both? Both might be best.
+* ( done ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
 * (      ) - Customers should have their own spawn locations that are defined on a map by map basis
-* (      ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
 
 
 

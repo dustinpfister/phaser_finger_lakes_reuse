@@ -16,6 +16,13 @@
             });
         }
         
+        setConf (pConfig) {
+            const person = this;
+            Object.keys(pConfig).forEach((key)=>{
+                person.setData(key, pConfig[key])
+            });
+        }
+        
         pathProcessor (scene, v=200, min_d=8) {
         
             const path = this.getData('path')
@@ -100,7 +107,8 @@
     
     
     const PEOPLE_DEFAULTS = {
-        type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ]
+        type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ],
+        cash: 100
     };
 
     class People extends Phaser.Physics.Arcade.Group {
@@ -121,6 +129,9 @@
             this.setData('type', pConfig.type);
             this.setData('subTypes', pConfig.subTypes);
             this.setData('subTypeProbs', pConfig.subTypeProbs);
+            this.setData('pConfig', pConfig);
+            
+            
             
         }
         
@@ -128,8 +139,8 @@
         getData (key, value){ return this.data.get(key); }
         
         spawnPerson (scene) {
-        
             const people = this.getChildren();
+            const pConfig = this.getData('pConfig');
             const subTypes = this.getData('subTypes');
             const subTypeProbs = this.getData('subTypeProbs');
             const now = new Date();
@@ -143,8 +154,6 @@
                 if(p instanceof Array){
                     p = p[ Math.floor( p.length * Math.random() ) ];
                 }
-            
-                // is a person there all ready?
                 let i = people.length;
                 while(i--){
                     const person = people[i];
@@ -153,8 +162,7 @@
                     }
                 }
                 const person = this.get(p.x * 16 + 8, p.y * 16 + 8);
-                person.setData('type', this.getData('type') );
-                
+                person.setData('type', this.getData('type') );   
                 const roll = Math.random();
                 let a = subTypeProbs[0]
                 let i_subType = 0; //subTypes.length;
@@ -166,12 +174,15 @@
                     a += subTypeProbs[i_subType];
                     i_subType += 1;
                 }
-                
                 person.setFrame( person.getData('subType') + '_down');
+                person.setConf({
+                    cash: pConfig.cash
                 
-                console.log(person.getData('subType'), subTypes.length, subTypeProbs)
+                });
+                
+                console.log(person)
+                
             }
-            
         }
 
 

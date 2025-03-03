@@ -3,8 +3,8 @@
   "spawnAt": { "x": 10, "y": 2 },
   "peopleSpawnAt" : [ 0, 1, 2, 3 ],
     "customer" : {
-     "subTypes" : ["shoper", "donator"],
-     "subTypeProbs": [ 0.50, 0.50 ]
+     "subTypes" : ["donator"],
+     "subTypeProbs": [ 1.00 ]
   },
   "doors" : [
     {
