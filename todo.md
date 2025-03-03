@@ -32,6 +32,7 @@
 * ( done ) - sprites for customers
 
   CUSTOMERS:
+* ( done ) - have a data manager for the People class
 * (      ) - Expand People class with a type property that can be just 'customer' ( for now )
 * (      ) - Have a subType property for People that can be 'shoper', or 'donator'
 * (      ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.

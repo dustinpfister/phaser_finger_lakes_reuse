@@ -99,9 +99,10 @@
 
     class People extends Phaser.Physics.Arcade.Group {
     
-        constructor (config) {
+        constructor (config, pConfig) {
         
             config = config || {};
+            pConfig = Object.assign({}, { type: 'customer' }, pConfig || {} );
             config.classType = Person;
             
             
@@ -112,17 +113,27 @@
             super(world, scene, config);
             
             
-            this.lastPersonSpawn = new Date();
+            //this.lastSpawn = new Date();
+            //this.type = pConfig.type;
+            
+            this.data = new Phaser.Data.DataManager(this,  new Phaser.Events.EventEmitter() );
+            
+            this.setData('lastSpawn', new Date());
+            this.setData('type', pConfig.type);
+            
             
         }
         
+        setData (key, value){ return this.data.set(key, value); }
+        getData (key, value){ return this.data.get(key); }
         
         spawnPerson (scene) {
         
             const people = this.getChildren();
             const now = new Date();
-            if(people.length < this.maxSize && (!this.lastPersonSpawn || now - this.lastPersonSpawn >= 1000) ){
-                this.lastPersonSpawn = now;
+            const lastSpawn = this.getData('lastSpawn');
+            if(people.length < this.maxSize && now - lastSpawn >= 1000 ){
+                this.setData('lastSpawn', now);
                 const sa = scene.mapData.peopleSpawnAt;
                 const doorIndex = sa[ Math.floor( sa.length * Math.random() ) ];
                 const d = scene.mapData.doors[doorIndex];
