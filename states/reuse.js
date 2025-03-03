@@ -128,6 +128,7 @@ class Reuse extends Phaser.Scene {
            return;
        }  
     }
+    
     doorEnterCheck (d, p) {
         let tiles = [];
         if(p instanceof Array){
@@ -166,41 +167,6 @@ class Reuse extends Phaser.Scene {
            }
        }
     }
-        /*
-    spritePathProcessor (sprite, v=200, min_d=8) {
-        if(!sprite.data){
-            return;
-        }
-        const path = sprite.getData('path')
-        if(!path){
-            return;
-        }
-        if(path.length > 0){
-            const pos = path[0];
-            const tx = pos.x * 16 + 8;
-            const ty = pos.y * 16 + 8;
-            const at_pos = sprite.x === tx && sprite.y === ty;
-            if(at_pos){
-                sprite.setData({path: path.slice(1, pos.length) })
-            }
-            if(!at_pos){
-               let vx = 0, vy = 0;
-               if(tx > sprite.x){ vx = v;     }
-               if(tx < sprite.x){ vx = v * -1;}
-               if(ty > sprite.y){ vy = v;     }
-               if(ty < sprite.y){ vy = v * -1;}
-               sprite.setVelocityX( vx );
-               sprite.setVelocityY( vy );
-               const d = Phaser.Math.Distance.Between(tx, ty, sprite.x, sprite.y);
-               if(d <= min_d){
-                   sprite.x = tx;
-                   sprite.y = ty;
-                   sprite.setVelocity(0);
-               }  
-            }
-        }
-    }
-    */
 
     create () {
     

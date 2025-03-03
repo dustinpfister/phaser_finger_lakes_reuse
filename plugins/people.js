@@ -24,9 +24,7 @@
         }
         
         pathProcessor (scene, v=200, min_d=8) {
-        
             const path = this.getData('path')
-           
             if(path.length > 0){
                 const pos = path[0];
                 const tx = pos.x * 16 + 8;
@@ -147,10 +145,11 @@
             const lastSpawn = this.getData('lastSpawn');
             if(people.length < this.maxSize && now - lastSpawn >= 1000 ){
                 this.setData('lastSpawn', now);
-                const sa = scene.mapData.peopleSpawnAt;
-                const doorIndex = sa[ Math.floor( sa.length * Math.random() ) ];
-                const d = scene.mapData.doors[doorIndex];
-                let p = d.position;
+                //const sa = scene.mapData.peopleSpawnAt;
+                //const doorIndex = sa[ Math.floor( sa.length * Math.random() ) ];
+                //const d = scene.mapData.doors[doorIndex];
+                //let p = d.position;
+                let p = scene.mapData.customer.spawnAt;
                 if(p instanceof Array){
                     p = p[ Math.floor( p.length * Math.random() ) ];
                 }

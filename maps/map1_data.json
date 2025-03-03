@@ -1,11 +1,10 @@
 {
   "name": "Mega_T",
   "spawnAt": { "x": 13, "y": 4 },
-  "peopleSpawnAt" : [ 0, 1 ],
   "customer" : {
      "subTypes" : ["shoper"],
      "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 9, "y": 1 }
+     "spawnAt" : { "x": 16, "y": 0 }
   },
   "doors" : [
     {

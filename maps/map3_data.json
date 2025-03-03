@@ -4,11 +4,10 @@
      "x": 3,
      "y": 5
   },
-  "peopleSpawnAt" : [ 0 ],
-    "customer" : {
-     "subTypes" : ["shoper"],
-     "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 2, "y": 2 }
+  "customer" : {
+    "subTypes" : ["shoper"],
+    "subTypeProbs": [ 1.00 ],
+    "spawnAt" : { "x": 2, "y": 2 }
   },
   "doors" : [
     {

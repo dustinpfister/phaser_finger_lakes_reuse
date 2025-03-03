@@ -7,8 +7,9 @@
 * (      ) - have 'employee', and 'mod' type workers
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
-* (      ) - new worker sprites, have one for each worker added
-* (      ) - people.json data, generator, or both? Both might be best.
+* (      ) - new worker sprites, have one for each worker
+* (      ) - people_workers.json for data on each worker
+* (      ) - people_customers.json for data on each customers
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
@@ -31,15 +32,13 @@
 * ( done ) - Get Collision detection working with new Person Class 
 * ( done ) - start using main game data manager
 * ( done ) - sprites for customers
-
-  CUSTOMERS:
 * ( done ) - have a data manager for the People class
 * ( done ) - Expand People class with a type property that can be just 'customer' ( for now )
 * ( done ) - Have a subType property for People that can be 'shoper', or 'donator'
 * ( done ) - Have a customer property for each map
 * ( done ) - Use customer map objects for setting sub types and sub type props
 * ( done ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
-* (      ) - Customers should have their own spawn locations that are defined on a map by map basis
+* ( done ) - Customers should have their own spawn locations that are defined on a map by map basis
 
 
   DONATIONS, ITEMS DATABASE, INVENTORY: 
