@@ -27,22 +27,23 @@
 * ( done ) - People Class Path Processing
 * ( done ) - Get Collision detection working with new Person Class 
 * ( done ) - start using main game data manager
+* ( done ) - sprites for customers
 
-* ( done ) - sprites for customers and donators
 
-* (      ) - customer / donator values in map JSON that tell what kind of person shows up, and max number for now.
-* (      ) - customer / donators should have their own spawn locations that are defined on a map by map basic 
+
+* (      ) - customers just magically buy inventory items
+
+
+* (      ) - customer should have their own spawn locations that are defined on a map by map basic 
 
 * (      ) - use the reUse data manager for keys like playerX and so forth
 
 * (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - just household type items ( for now )
-* (      ) - donators come and drop off a single item ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - start an inventory plugin
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
 
-* (      ) - customers just magically buy inventory items
 
 
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer

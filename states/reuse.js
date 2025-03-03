@@ -2,6 +2,9 @@
 
 const MAX_PEOPLE = 20;
 
+
+
+
 class Reuse extends Phaser.Scene {
 
     constructor (config) {
@@ -18,13 +21,6 @@ class Reuse extends Phaser.Scene {
     
     setMapData (mapNum=1) {
        return this.mapData = this.cache.json.get('map' + mapNum + '_data');
-    }
-    
-    getRandomMapPos () {
-        this.map.setLayer(0);
-        const walkable = this.map.filterTiles((tile)=>{ return tile.index === 1 });
-        const tile = walkable[ Math.floor( walkable.length * Math.random() ) ];
-        return { x: tile.x, y: tile.y };
     }
     
     setupMap ( startMap=1, x=undefined, y=undefined ) {
