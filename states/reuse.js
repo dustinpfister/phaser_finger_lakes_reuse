@@ -38,14 +38,22 @@ class Reuse extends Phaser.Scene {
             this.customers.destroy(true, true);
         }
         
+        console.log('setmap');
+        console.log(startMap);
+        console.log(md.customer.subTypeProbs);
+        
         this.customers = new this.PeoplePlugin.People({
             scene: this,
             defaultKey: 'people_16_16',
-            defaultFrame: 'cus_down',
+            //defaultFrame: 'shoper_down',
             maxSize: 20,
             createCallback : (person) => {
                 person.body.setDrag(500, 500);           
             }
+        },{
+            subTypes: md.customer.subTypes,
+            subTypeProbs: md.customer.subTypeProbs
+        
         });
         
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
@@ -210,8 +218,7 @@ class Reuse extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
         this.doorDisable = false;
-        const startMap = 1;
-        this.setupMap(startMap);
+        this.setupMap(4);
         
         this.events.on('postupdate', ()=>{
             const customers = this.customers.getChildren();

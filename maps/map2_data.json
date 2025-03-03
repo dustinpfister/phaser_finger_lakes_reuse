@@ -7,7 +7,7 @@
   "peopleSpawnAt" : [ 0, 1, 2 ],
     "customer" : {
      "subTypes" : ["shoper"],
-     "subTypeProbs ": [ 1.00 ]
+     "subTypeProbs": [ 1.00 ]
   },
   "doors" : [
     {   

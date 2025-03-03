@@ -167,7 +167,9 @@
                     i_subType += 1;
                 }
                 
-                console.log(person.getData('subType'))
+                person.setFrame( person.getData('subType') + '_down');
+                
+                console.log(person.getData('subType'), subTypes.length, subTypeProbs)
             }
             
         }
