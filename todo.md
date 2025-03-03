@@ -1,14 +1,16 @@
 # Phaser Finger Lakes Reuse
 
-## R1 ( ) - Households plugin, coworkers
+## R1 ( ) - Processing plugin, Workers
 
 ```
-* (    ) - expand donations plugin to allow for one or more coworkers to help
-* (    ) - See about using People class for coworkers
-* (    ) - see about having a current player worker for the player object
+* (    ) - expand people.js with a Workers Class
+* (    ) - have 'employee', 'volunteer', 'apprentice', and 'mod' type workers
+* (    ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
+* (    ) - can switch between workers
+* (    ) - new worker sprites, have one for each worker added
 ```
 
-## R0 ( ) - Donations plugin, items database, inventory, customers
+## R0 ( ) - Customers, Donations plugin, items database, inventory 
 
 ```
 * ( done ) - start with R0 of phaser start project
@@ -29,23 +31,25 @@
 * ( done ) - start using main game data manager
 * ( done ) - sprites for customers
 
-
-
+  CUSTOMERS:
+* (      ) - Expand people.js with a Customers Class
+* (      ) - Have donator, buyer, and dual type Cusomers
+* (      ) - have a cash property of the People Class that is the amount of money they have to buy something.
+* (      ) - have an onhand property that is what the customer has in there posission.
+* (      ) - people.json data, generator, or both? Both might be best.
+* (      ) - customer should have their own spawn locations that are defined on a map by map basis
+* (      ) - start an Item Database in the form one JSON file ( for now )
 * (      ) - customers just magically buy inventory items
 
-
-* (      ) - customer should have their own spawn locations that are defined on a map by map basic 
-
-* (      ) - use the reUse data manager for keys like playerX and so forth
-
-* (      ) - start an Item Database in the form one JSON file ( for now )
+  DONATIONS, ITEMS DATABASE, INVENTORY: 
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
-* (      ) - start an inventory plugin
+* (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
+* (      ) - start an inventory plugin
 
-
-
+ MISC:
+* (      ) - use the reUse data manager for keys like playerX and so forth
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - favicon
 ```
