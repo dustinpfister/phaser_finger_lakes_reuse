@@ -3,8 +3,8 @@
 ## R1 ( ) - Processing plugin, Workers
 
 ```
-* (    ) - expand people.js with a Workers Class
-* (    ) - have 'employee', 'volunteer', 'apprentice', and 'mod' type workers
+* (    ) - expand people.js with 
+* (    ) - have 'employee', and 'mod' type workers
 * (    ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (    ) - can switch between workers
 * (    ) - new worker sprites, have one for each worker added
@@ -32,16 +32,17 @@
 * ( done ) - sprites for customers
 
   CUSTOMERS:
-* (      ) - Expand people.js with a Customers Class
-* (      ) - Have donator, buyer, and dual type Cusomers
-* (      ) - have a cash property of the People Class that is the amount of money they have to buy something.
-* (      ) - have an onhand property that is what the customer has in there posission.
+* (      ) - Expand People class with a type property that can be just 'customer' ( for now )
+* (      ) - Have a subType property for People that can be 'shoper', or 'donator'
+* (      ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
 * (      ) - people.json data, generator, or both? Both might be best.
-* (      ) - customer should have their own spawn locations that are defined on a map by map basis
-* (      ) - start an Item Database in the form one JSON file ( for now )
-* (      ) - customers just magically buy inventory items
+* (      ) - Customers should have their own spawn locations that are defined on a map by map basis
+
 
   DONATIONS, ITEMS DATABASE, INVENTORY: 
+* (      ) - customers just magically buy inventory items
+* (      ) - start an Item Database in the form one JSON file ( for now )
+* (      ) - have an onhand property that is what a Person has in there posission.
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
