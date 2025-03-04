@@ -197,7 +197,7 @@
                 
                 //TYPE.Update[type]
             
-                /*
+                
                 const tx = Math.floor(person.x / 16);
                 const ty = Math.floor(person.y / 16);
                 
@@ -208,7 +208,7 @@
                     if(tile.index != 1){
                     }
                 }
-                */
+                
                 person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
                     

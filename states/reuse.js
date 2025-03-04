@@ -16,6 +16,10 @@ class Reuse extends Phaser.Scene {
         this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
+        this.player.setData('type', 'worker');
+        this.player.setData('subType', 'employee');
+        console.log(this.player);
+        
     }
     
     

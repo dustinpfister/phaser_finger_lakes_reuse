@@ -4,7 +4,8 @@
 
 ```
 * (      ) - expand people.js with 
-* (      ) - have 'employee', and 'mod' type workers
+* (      ) - have a worker type of People class
+* (      ) - have 'employee', and 'mod' sub type workers
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
 * (      ) - new worker sprites, have one for each worker
@@ -41,15 +42,16 @@
 * ( done ) - Customers should have their own spawn locations that are defined on a map by map basis
 
 
-  DONATIONS, ITEMS DATABASE, INVENTORY: 
-* (      ) - customers just magically buy inventory items
-* (      ) - start an Item Database in the form one JSON file ( for now )
+  DONATIONS, ITEMS DATABASE, INVENTORY:
+* (      ) - player Person should have a type of 'empl'
+* (      ) - start an inventory class in the donations plugin
+* (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - have an onhand property that is what a Person has in there posission.
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
-* (      ) - start an inventory plugin
+* (      ) - customers just magically buy inventory items
 
  MISC:
 * (      ) - use the reUse data manager for keys like playerX and so forth
