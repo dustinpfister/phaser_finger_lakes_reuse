@@ -111,17 +111,34 @@
     
     const PEOPLE_TYPES = {}
     
-    PEOPLE_TYPES.customer = {
+    PEOPLE_TYPES.customer = {};
+    
+    PEOPLE_TYPES.customer.shoper = {
     
         update: (person) => {
         
-            const type = person.getData('type');
-            const subType = person.getData('subType');
+        },
         
-            //console.log(type, subType);
+        noPath: () => {
+        
+            person.setRandomPath(scene);
+        
         }
     
-    }
+    };
+
+    PEOPLE_TYPES.customer.donator = {
+    
+        update: (people, scene, person) => {
+        
+        },
+        
+        noPath: (people, scene, person) => {
+            
+            person.setRandomPath(scene);
+        }
+    
+    };
 
     class People extends Phaser.Physics.Arcade.Group {
     
@@ -209,11 +226,11 @@
             while(i_people--){
                 const person = people[i_people];
                 
-                const pt = PEOPLE_TYPES[person.getData('type')];
+                const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
                 
                 if(pt){
                 
-                    pt.update.call(this, person);
+                    pt.update(this, scene, person);
                 
                 }
             
@@ -232,7 +249,10 @@
                 person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
                     
-                    person.setRandomPath(scene);
+                    //person.setRandomPath(scene);
+                    
+                    pt.noPath(this, scene, person);
+                    
                 }
             
             }
