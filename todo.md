@@ -40,10 +40,12 @@
 * ( done ) - Use customer map objects for setting sub types and sub type props
 * ( done ) - have a cash property of the People Class that is the amount of money they have to buy something, pay for any kind of fee, ect.
 * ( done ) - Customers should have their own spawn locations that are defined on a map by map basis
+* ( done ) - player Person should have a type of 'employee'
+* ( done ) - start a collection of update methods, and any other needed logic, on a Person Type and supType basis
 
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - player Person should have a type of 'empl'
+* (      ) - custom update logic for paths for donators
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - have an onhand property that is what a Person has in there posission.

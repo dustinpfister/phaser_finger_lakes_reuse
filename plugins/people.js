@@ -108,6 +108,20 @@
         type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ],
         cash: 100
     };
+    
+    const PEOPLE_TYPES = {}
+    
+    PEOPLE_TYPES.customer = {
+    
+        update: (person) => {
+        
+            const type = person.getData('type');
+            const subType = person.getData('subType');
+        
+            //console.log(type, subType);
+        }
+    
+    }
 
     class People extends Phaser.Physics.Arcade.Group {
     
@@ -195,7 +209,13 @@
             while(i_people--){
                 const person = people[i_people];
                 
-                //TYPE.Update[type]
+                const pt = PEOPLE_TYPES[person.getData('type')];
+                
+                if(pt){
+                
+                    pt.update.call(this, person);
+                
+                }
             
                 
                 const tx = Math.floor(person.x / 16);
