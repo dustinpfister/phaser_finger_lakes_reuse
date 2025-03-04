@@ -45,7 +45,9 @@
 
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - custom update logic for paths for donators
+* (      ) - customers should also have one or more exit locations defined in map JSON data
+* (      ) - custom update logic for paths for donators making use of new exit locations
+
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - have an onhand property that is what a Person has in there posission.

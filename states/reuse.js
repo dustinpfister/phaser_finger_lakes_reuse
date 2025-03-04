@@ -181,7 +181,7 @@ class Reuse extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
         this.doorDisable = false;
-        this.setupMap(1);
+        this.setupMap(4);
         
         this.events.on('postupdate', ()=>{
             const customers = this.customers.getChildren();
