@@ -46,7 +46,8 @@
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * ( done ) - customers should also have one or more exit locations defined in map JSON data
-* (      ) - custom update logic for paths for donators making use of new exit locations
+* (      ) - have a map tile for donation tables
+* (      ) - update donator logic to have them go to the donation tables, and then to the exit.
 
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
