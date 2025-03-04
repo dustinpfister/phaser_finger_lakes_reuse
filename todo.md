@@ -45,7 +45,7 @@
 
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - customers should also have one or more exit locations defined in map JSON data
+* ( done ) - customers should also have one or more exit locations defined in map JSON data
 * (      ) - custom update logic for paths for donators making use of new exit locations
 
 * (      ) - start an inventory class in the donations plugin

@@ -1,10 +1,11 @@
 {
   "name": "Back",
-  "spawnAt": { "x": 10, "y": 2 },
+  "spawnAt": { "x": 8, "y": 4 },
   "customer" : {
     "subTypes" : ["donator"],
     "subTypeProbs": [ 1.00 ],
-    "spawnAt" : { "x": 2, "y": 2 }
+    "spawnAt" : { "x": 0, "y": 2 },
+    "exitAt" : { "x": 40, "y": 8 }
   },
   "doors" : [
     {

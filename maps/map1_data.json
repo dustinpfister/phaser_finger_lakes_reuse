@@ -4,7 +4,8 @@
   "customer" : {
      "subTypes" : ["shoper"],
      "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 16, "y": 0 }
+     "spawnAt" : { "x": 16, "y": 0 },
+     "exitAt" : { "x": 14, "y": 1 }
   },
   "doors" : [
     {
