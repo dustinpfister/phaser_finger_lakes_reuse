@@ -46,8 +46,8 @@ class Reuse extends Phaser.Scene {
         
         });
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
-        map.setCollision( [ 0, 2, 10, 13, 14, 20, 21, 22, 23, 24] );
-        //map.setCollisionByExclusion( [2] );
+        //map.setCollision( [ 0, 2, 10, 13, 14, 20, 21, 22, 23, 24] );
+        map.setCollisionByExclusion( [2], true, true, 0 );
         const tiles = map.addTilesetImage('map_16_16');
         // layer 0 will be used for collider cells
         const layer0 =  map.createLayer(0, tiles);

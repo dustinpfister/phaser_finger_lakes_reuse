@@ -44,9 +44,9 @@
 * ( done ) - start a collection of update methods, and any other needed logic, on a Person Type and supType basis
 * ( done ) - customers should also have one or more exit locations defined in map JSON data
 * ( done ) - have a map tile for donation tables
+* ( done ) - have donation tables in map 4
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - have donation tables in map 4
 * (      ) - update donator logic to have them go to the donation tables, and then to the exit.
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
@@ -58,6 +58,7 @@
 * (      ) - customers just magically buy inventory items
 
  MISC:
+* (      ) - see about getting map.setCollisionByExclusion to work without problem, by updating keyboard controls
 * (      ) - use the reUse data manager for keys like playerX and so forth
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - favicon
