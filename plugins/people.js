@@ -133,16 +133,14 @@
         
         },
         
+        
+        
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
             const tiles = scene.map.filterTiles( (tile) => {
                 return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
             });
-            
-
-            
-            //person.setRandomPath(scene);
-            
+           
             const dt = tiles[ Math.floor( tiles.length * Math.random() ) ];
             
             const tiles2 = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
@@ -229,32 +227,36 @@
         }
 
 
+        getCollider(gameObject, scene){
+            const map = this.scene.map;
+            return function( a, b ) {
+                b.setRandomPath(scene);
+                const path = [];
+                const px = scene.playerX;
+                const py = scene.playerY;
+                const tile = map.getTileAt(px, py - 1);
+                if(tile){
+                    if(tile.index === 1){
+                        path[0] = { x: px, y: py - 1 };   
+                    }
+                }
+            }   
+        }
 
         update (scene) {
-        
             const type = this.getData('type');
             const subTypes = this.getData('subTypes');
             const people = this.getChildren();
             let i_people = people.length;
-        
-        
             this.spawnPerson(scene);
-        
             while(i_people--){
                 const person = people[i_people];
-                
                 const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
-                
                 if(pt){
-                
                     pt.update(this, scene, person);
-                
                 }
-            
-                
                 const tx = Math.floor(person.x / 16);
                 const ty = Math.floor(person.y / 16);
-                
                 const tile = scene.map.getTileAt(tx, ty, false, 0);
                 if(!tile){
                 }
@@ -262,18 +264,12 @@
                     if(tile.index != 1){
                     }
                 }
-                
                 person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
-                    
                     //person.setRandomPath(scene);
-                    
-                    pt.noPath(this, scene, person);
-                    
+                    pt.noPath(this, scene, person);   
                 }
-            
             }
-        
         }
         
         

@@ -45,11 +45,11 @@
 * ( done ) - customers should also have one or more exit locations defined in map JSON data
 * ( done ) - have a map tile for donation tables
 * ( done ) - have donation tables in map 4
+* ( done ) - update donator logic to have them go to the donation tables
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - update donator logic to have them go to the donation tables
 * (      ) - fix bug where donators get stuck in walls
-* (      ) - fix bug where donators go off away from the tables when they collide with each other
+* (      ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
 * (      ) - update donator logic to have them go to the exit, after going to the table
 
 * (      ) - start an inventory class in the donations plugin

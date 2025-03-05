@@ -21,6 +21,7 @@ class Reuse extends Phaser.Scene {
     
     setupMap ( startMap=1, x=undefined, y=undefined ) {
         const scene = this;
+        const People = this.PeoplePlugin.People;
         const player = this.player;
         const md = this.setMapData( startMap );
         x = x === undefined ? md.spawnAt.x : x;
@@ -33,7 +34,7 @@ class Reuse extends Phaser.Scene {
         if(this.customers){
             this.customers.destroy(true, true);
         }
-        this.customers = new this.PeoplePlugin.People({
+        this.customers = new People({
             scene: this,
             defaultKey: 'people_16_16',
             maxSize: MAX_PEOPLE,
@@ -58,6 +59,10 @@ class Reuse extends Phaser.Scene {
         this.physics.world.colliders.removeAll();
         this.physics.add.collider( this.player, layer0 );
         this.physics.add.collider( this.customers, layer0 );
+        
+        this.physics.add.collider( this.player, this.customers, People.prototype.getCollider.call(this.player, this.customers, scene ) );
+        
+        /*
         this.physics.add.collider( this.player, this.customers, ( a, b ) => {
             b.setRandomPath(scene);
             const path = [];
@@ -80,6 +85,7 @@ class Reuse extends Phaser.Scene {
             }
             b.setData({hits: hits});
         });
+        */
         // layer1 will be used for tiles that should be renderd above a sprite
         const layer1 = map.createBlankLayer('layer1', tiles);
         layer1.depth = 2;
