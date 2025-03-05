@@ -42,13 +42,12 @@
 * ( done ) - Customers should have their own spawn locations that are defined on a map by map basis
 * ( done ) - player Person should have a type of 'employee'
 * ( done ) - start a collection of update methods, and any other needed logic, on a Person Type and supType basis
-
+* ( done ) - customers should also have one or more exit locations defined in map JSON data
+* ( done ) - have a map tile for donation tables
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* ( done ) - customers should also have one or more exit locations defined in map JSON data
-* (      ) - have a map tile for donation tables
+* (      ) - have donation tables in map 4
 * (      ) - update donator logic to have them go to the donation tables, and then to the exit.
-
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - have an onhand property that is what a Person has in there posission.

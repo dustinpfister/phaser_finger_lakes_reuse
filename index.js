@@ -6,7 +6,7 @@ const config = {
     backgroundColor: '#afafaf',
     scene: Boot,
     zoom: 1,
-    render: { pixelArt: true, antialias: true },
+    render: { pixelArt: true  },
     physics: {
         default: 'arcade',
         arcade: {
