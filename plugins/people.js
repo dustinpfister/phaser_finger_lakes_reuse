@@ -111,11 +111,24 @@
     
     const PEOPLE_TYPES = {}
     
+    PEOPLE_TYPES.worker = {};
+    
+    PEOPLE_TYPES.worker.employee = {
+        collider: (people, gameObject, scene ) => {
+             gameObject.setRandomPath(scene);
+        }
+    };
+    
     PEOPLE_TYPES.customer = {};
     
     PEOPLE_TYPES.customer.shoper = {
     
         update: (person) => {
+        
+        },
+        
+        collider: (people, gameObject, scene ) => {
+        
         
         },
         
@@ -133,7 +146,10 @@
         
         },
         
+        collider: (people, gameObject, scene ) => {
         
+        
+        },
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
@@ -229,17 +245,17 @@
 
         getCollider(gameObject, scene){
             const map = this.scene.map;
+            const people = this;
             return function( a, b ) {
-                b.setRandomPath(scene);
-                const path = [];
-                const px = scene.playerX;
-                const py = scene.playerY;
-                const tile = map.getTileAt(px, py - 1);
-                if(tile){
-                    if(tile.index === 1){
-                        path[0] = { x: px, y: py - 1 };   
-                    }
-                }
+                const type = a.getData('type');
+                const subType = a.getData('subType');
+                
+                
+                const pt = PEOPLE_TYPES[ a.getData('type') ][ a.getData('subType') ];
+                
+                pt.collider(a, b, scene);
+                
+                        
             }   
         }
 
