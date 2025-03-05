@@ -134,8 +134,23 @@
         },
         
         noPath: (people, scene, person) => {
+            scene.map.setLayer(0);
+            const tiles = scene.map.filterTiles( (tile) => {
+                return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
+            });
             
-            person.setRandomPath(scene);
+
+            
+            //person.setRandomPath(scene);
+            
+            const dt = tiles[ Math.floor( tiles.length * Math.random() ) ];
+            
+            const tiles2 = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
+            
+            const t = tiles2[ Math.floor( tiles.length * Math.random() ) ];
+            
+            person.setPath(scene, t.x, t.y);
+            
         }
     
     };

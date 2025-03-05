@@ -1,4 +1,4 @@
-const MAX_PEOPLE = 20;
+const MAX_PEOPLE = 1;
 
 class Reuse extends Phaser.Scene {
 
@@ -36,7 +36,7 @@ class Reuse extends Phaser.Scene {
         this.customers = new this.PeoplePlugin.People({
             scene: this,
             defaultKey: 'people_16_16',
-            maxSize: 20,
+            maxSize: MAX_PEOPLE,
             createCallback : (person) => {
                 person.body.setDrag(500, 500);           
             }
