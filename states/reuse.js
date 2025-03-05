@@ -1,9 +1,4 @@
-
-
 const MAX_PEOPLE = 20;
-
-
-
 
 class Reuse extends Phaser.Scene {
 
@@ -17,11 +12,8 @@ class Reuse extends Phaser.Scene {
         this.text_player = this.add.text(0, 0, 'X').setFontFamily('Monospace').setFontSize(12);
         this.text_player.depth = 1;
         this.player.setData('type', 'worker');
-        this.player.setData('subType', 'employee');
-        console.log(this.player);
-        
+        this.player.setData('subType', 'employee');        
     }
-    
     
     setMapData (mapNum=1) {
        return this.mapData = this.cache.json.get('map' + mapNum + '_data');
@@ -54,7 +46,8 @@ class Reuse extends Phaser.Scene {
         
         });
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
-        map.setCollision( [ 0, 2, 10, 20, 21, 22] );
+        map.setCollision( [ 0, 2, 10, 13, 14, 20, 21, 22, 23, 24] );
+        //map.setCollisionByExclusion( [2] );
         const tiles = map.addTilesetImage('map_16_16');
         // layer 0 will be used for collider cells
         const layer0 =  map.createLayer(0, tiles);
@@ -172,17 +165,14 @@ class Reuse extends Phaser.Scene {
        }
     }
 
-    create () {
-    
+    create () {    
         this.PeoplePlugin = this.plugins.get('PeoplePlugin');
         this.DonationsPlugin = this.plugins.get('DonationsPlugin');
-  
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
         this.doorDisable = false;
         this.setupMap(4);
-        
         this.events.on('postupdate', ()=>{
             const customers = this.customers.getChildren();
             let i_customers = customers.length;
@@ -200,18 +190,14 @@ class Reuse extends Phaser.Scene {
         });      
     }
 
-    update () {
-    
+    update () {  
         const v = 100; 
-    
         if(!this.data.mouseDown){
             this.player.setVelocity(0);
         }
         this.player.pathProcessor(this, v, 8);
-        
         this.customers.update(this);
         // keyboard movement
-        
         if (this.cursors.left.isDown) {
             this.player.setData('idleTime', 0);
             this.player.setVelocityX( v * -1 );
@@ -227,7 +213,6 @@ class Reuse extends Phaser.Scene {
         if (this.cursors.down.isDown) {
             this.player.setData('idleTime', 0);
             this.player.setVelocityY( v );
-            
         }
         this.player.offTileCheck(this.map);       
         this.playerX = Math.floor( this.player.x / 16); 
