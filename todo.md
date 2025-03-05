@@ -47,7 +47,11 @@
 * ( done ) - have donation tables in map 4
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - update donator logic to have them go to the donation tables, and then to the exit.
+* (      ) - update donator logic to have them go to the donation tables
+* (      ) - fix bug where donators get stuck in walls
+* (      ) - fix bug where donators go off away from the tables when they collide with each other
+* (      ) - update donator logic to have them go to the exit, after going to the table
+
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - have an onhand property that is what a Person has in there posission.

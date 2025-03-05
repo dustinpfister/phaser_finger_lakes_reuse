@@ -147,7 +147,9 @@
             
             const tiles2 = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
             
-            const t = tiles2[ Math.floor( tiles.length * Math.random() ) ];
+            const t = tiles2[ Math.floor( tiles2.length * Math.random() ) ];
+            
+            console.log(t.x, t.y)
             
             person.setPath(scene, t.x, t.y);
             
