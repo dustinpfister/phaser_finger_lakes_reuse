@@ -23,7 +23,7 @@ class Reuse extends Phaser.Scene {
         const scene = this;
         const People = this.PeoplePlugin.People;
         const player = this.player;
-        player.setData('path', []);
+        //player.setData('path', []);
         const md = this.setMapData( startMap );
         x = x === undefined ? md.spawnAt.x : x;
         y = y === undefined ? md.spawnAt.y : y;
@@ -186,76 +186,37 @@ class Reuse extends Phaser.Scene {
     }
     
     cursorCheck (dir='left') {
-    
         const path = this.player.getData('path');
-        if(path.length > 0){
+        if(path.length > 0 ){
             return;
         }
-    
-    
         let x = this.playerX, y = this.playerY;
         if(dir === 'left'){  x = this.playerX - 1; }
         if(dir === 'right'){  x = this.playerX + 1; }
         if(dir === 'up'){  y = this.playerY - 1; }
         if(dir === 'down'){  y = this.playerY + 1; }
-    
         if (this.cursors[dir].isDown) {
             this.player.setData('idleTime', 0);
-            
             const tile = this.map.getTileAt(x, y, false, 0);
             if(tile){
                 if(tile.index === 1){
                     this.player.setData('path', [ {x: x, y: y  } ]);
                 }
-            }
-            
+            }   
         }
-    
     }
 
     update () {  
-        const v = 100; 
-        if(!this.data.mouseDown){
-            //this.player.setVelocity(0);
-        }
+        const v = 200;
         this.player.pathProcessor(this, v, 8);
         this.customers.update(this);
-        
+        this.playerX = Math.floor( this.player.x / 16); 
+        this.playerY = Math.floor( this.player.y / 16);
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
         this.cursorCheck('down');
-        
-        /*
-        // keyboard movement
-        if (this.cursors.left.isDown) {
-            this.player.setData('idleTime', 0);
-            //this.player.setVelocityX( v * -1 );
-            
-            const tile = this.map.getTileAt(this.playerX - 1, this.playerY, false, 0);
-            if(tile){
-                if(tile.index === 1){
-                    this.player.setData('path', [ {x: this.playerX - 1, y: this.playerY  } ]);
-                }
-            }
-            
-        }
-        if (this.cursors.right.isDown) {
-            this.player.setData('idleTime', 0);
-            //this.player.setVelocityX( v );
-        }
-        if (this.cursors.up.isDown) {
-            this.player.setData('idleTime', 0);
-            //this.player.setVelocityY( v * -1);
-        }
-        if (this.cursors.down.isDown) {
-            this.player.setData('idleTime', 0);
-            //this.player.setVelocityY( v );
-        }
-        */
-        this.player.offTileCheck(this.map);       
-        this.playerX = Math.floor( this.player.x / 16); 
-        this.playerY = Math.floor( this.player.y / 16);
+        this.player.offTileCheck(this.map);
         this.camera.setZoom(2.0).centerOn(this.player.x, this.player.y);
         this.text_player.x = this.player.body.position.x - 0;
         this.text_player.y = this.player.body.position.y - 16;
