@@ -46,11 +46,12 @@
 * ( done ) - have a map tile for donation tables
 * ( done ) - have donation tables in map 4
 * ( done ) - update donator logic to have them go to the donation tables
+* ( done ) - fix bug where donators get stuck in walls
+* ( done ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - fix bug where donators get stuck in walls
-* (      ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
 * (      ) - update donator logic to have them go to the exit, after going to the table
+* (      ) - getPeopleType helper in people.js
 
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )

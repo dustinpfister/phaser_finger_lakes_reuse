@@ -1,6 +1,6 @@
 {
   "name": "Back",
-  "spawnAt": { "x": 8, "y": 4 },
+  "spawnAt": { "x": 34, "y": 6 },
   "customer" : {
     "subTypes" : ["donator"],
     "subTypeProbs": [ 1.00 ],

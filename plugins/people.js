@@ -103,72 +103,56 @@
         
     }
     
-    
-    const PEOPLE_DEFAULTS = {
-        type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ],
-        cash: 100
-    };
-    
+        
     const PEOPLE_TYPES = {}
     
     PEOPLE_TYPES.worker = {};
     
     PEOPLE_TYPES.worker.employee = {
+        update: (person) => {},
         collider: (people, gameObject, scene ) => {
              gameObject.setRandomPath(scene);
-        }
+        },
+        noPath: (people, scene, person) => {}
     };
     
     PEOPLE_TYPES.customer = {};
     
     PEOPLE_TYPES.customer.shoper = {
     
-        update: (person) => {
+        update: (person) => {},
         
-        },
+        collider: (people, gameObject, scene ) => {},
         
-        collider: (people, gameObject, scene ) => {
-        
-        
-        },
-        
-        noPath: () => {
-        
+        noPath: (people, scene, person) => {
             person.setRandomPath(scene);
-        
         }
-    
+        
     };
 
     PEOPLE_TYPES.customer.donator = {
     
-        update: (people, scene, person) => {
+        update: (people, scene, person) => {},
         
-        },
-        
-        collider: (people, gameObject, scene ) => {
-        
-        
-        },
+        collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
-            const tiles = scene.map.filterTiles( (tile) => {
+            
+            const tiles_di = scene.map.filterTiles( (tile) => {
                 return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
             });
-           
-            const dt = tiles[ Math.floor( tiles.length * Math.random() ) ];
-            
-            const tiles2 = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
-            
-            const t = tiles2[ Math.floor( tiles2.length * Math.random() ) ];
-            
-            console.log(t.x, t.y)
-            
+            const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
+            const tiles_near_di = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
+            const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
             person.setPath(scene, t.x, t.y);
-            
         }
     
+    };
+
+    const PEOPLE_DEFAULTS = {
+        type: 'customer', subTypes: ['shoper', 'donator'], subTypeProbs: [ 1.00, 0.00 ],
+        cash: 100
     };
 
     class People extends Phaser.Physics.Arcade.Group {
