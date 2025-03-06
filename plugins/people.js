@@ -130,6 +130,13 @@
         
     };
 
+
+    const get_di_tiles = (scene) => {
+        return scene.map.filterTiles( (tile) => {
+            return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
+        });
+    };
+
     PEOPLE_TYPES.customer.donator = {
     
         update: (people, scene, person) => {},
@@ -139,9 +146,7 @@
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
             
-            const tiles_di = scene.map.filterTiles( (tile) => {
-                return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
-            });
+            const tiles_di = get_di_tiles(scene);
             const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
             const tiles_near_di = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
             const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
