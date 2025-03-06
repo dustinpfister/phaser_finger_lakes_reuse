@@ -61,7 +61,12 @@ class Reuse extends Phaser.Scene {
         this.physics.add.collider( this.player, layer0 );
         this.physics.add.collider( this.customers, layer0 );
         
-        this.physics.add.collider( this.player, this.customers, People.prototype.getCollider.call(this.player, this.customers, scene ) );
+        
+        //this.physics.add.collider( this.player, this.customers, (a, b)=>{
+           
+        //});
+        
+        //this.physics.add.collider( this.player, this.customers, People.prototype.getCollider.call(this.player, this.customers, scene ) );
         
         /*
         this.physics.add.collider( this.customers, this.customers, ( a, b ) => {
@@ -206,9 +211,9 @@ class Reuse extends Phaser.Scene {
         }
     }
 
-    update () {  
-        const v = 200;
-        this.player.pathProcessor(this, v, 8);
+    update () {
+        this.player.setVelocity(0);
+        this.player.pathProcessor(this, 200, 8);
         this.customers.update(this);
         this.playerX = Math.floor( this.player.x / 16); 
         this.playerY = Math.floor( this.player.y / 16);

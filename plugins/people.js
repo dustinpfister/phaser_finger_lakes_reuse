@@ -149,7 +149,11 @@
     
         update: (people, scene, person) => {},
         
-        collider: (people, gameObject, scene ) => {},
+        collider: (people, gameObject, scene ) => {
+        
+            console.log(gameObject);
+        
+        },
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
@@ -271,7 +275,9 @@
                 
                 const pt = PEOPLE_TYPES[ a.getData('type') ][ a.getData('subType') ];
                 
-                pt.collider(a, b, scene);
+                //pt.collider(a, b, scene);
+                
+                console.log('yes');
                 
                         
             }   
