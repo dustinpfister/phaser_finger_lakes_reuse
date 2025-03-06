@@ -3,6 +3,7 @@
 ## R1 ( ) - Processing plugin, Workers
 
 ```
+* (      ) - revisit collision detection
 * (      ) - expand people.js with 
 * (      ) - have a worker type of People class
 * (      ) - have 'employee', and 'mod' sub type workers
@@ -11,6 +12,10 @@
 * (      ) - new worker sprites, have one for each worker
 * (      ) - people_workers.json for data on each worker
 * (      ) - people_customers.json for data on each customers
+* (      ) - see about getting map.setCollisionByExclusion to work without problem
+* (      ) - use the reUse data manager for keys like playerX and so forth
+* (      ) - getPeopleType helper in people.js
+* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
@@ -52,23 +57,16 @@
 * ( done ) - have an onhand property that is what a Person has in there posission.
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-
 * (      ) - have donators go to the exit defined in the map
-* (      ) - getPeopleType helper in people.js
-
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - raw donated items are placed on the donation table
-
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
-* (      ) - customers just magically buy inventory items
+* (      ) - customers just magically buy inventory items ( for now )
 
  MISC:
-* (      ) - see about getting map.setCollisionByExclusion to work without problem, by updating keyboard controls
-* (      ) - use the reUse data manager for keys like playerX and so forth
-* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - favicon
 ```
