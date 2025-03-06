@@ -48,14 +48,18 @@
 * ( done ) - update donator logic to have them go to the donation tables
 * ( done ) - fix bug where donators get stuck in walls
 * ( done ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
+* ( done ) - update donator logic to have them go to the exit, after going to the table
+* ( done ) - have an onhand property that is what a Person has in there posission.
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - update donator logic to have them go to the exit, after going to the table
+
+* (      ) - have donators go to the exit defined in the map
 * (      ) - getPeopleType helper in people.js
 
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
-* (      ) - have an onhand property that is what a Person has in there posission.
+* (      ) - raw donated items are placed on the donation table
+
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )

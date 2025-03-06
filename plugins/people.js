@@ -11,9 +11,17 @@
             this.setCollideWorldBounds(true);
             this.depth = 2;
             this.setData({ 
-                path: [], hits: 0, idleTime: 0, 
+                path: [], hits: 0, idleTime: 0,
+                onHand: [{}], trigger_pos: {x: -1, y: -1},
                 type: '', subType: ''
             });
+        }
+        
+        getTilePos () {    
+            return {
+                x : Math.floor( this.x / 16 ),
+                y : Math.floor( this.y / 16 )
+            }
         }
         
         setConf (pConfig) {
@@ -111,7 +119,7 @@
     PEOPLE_TYPES.worker.employee = {
         update: (person) => {},
         collider: (people, gameObject, scene ) => {
-             gameObject.setRandomPath(scene);
+             //gameObject.setRandomPath(scene);
         },
         noPath: (people, scene, person) => {}
     };
@@ -136,7 +144,7 @@
             return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
         });
     };
-
+    
     PEOPLE_TYPES.customer.donator = {
     
         update: (people, scene, person) => {},
@@ -146,11 +154,32 @@
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
             
-            const tiles_di = get_di_tiles(scene);
-            const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
-            const tiles_near_di = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
-            const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
-            person.setPath(scene, t.x, t.y);
+            const onHand = person.getData('onHand');
+            const tPos = person.getData('trigger_pos');
+            const cPos = person.getTilePos();
+            
+            if(onHand.length > 0 && tPos.x === -1 && tPos.y === -1){
+                const tiles_di = get_di_tiles(scene);
+                const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
+                const tiles_near_di = scene.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return tile.index === 1; });
+                const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
+                person.setPath(scene, t.x, t.y);
+                person.setData('trigger_pos', {x: t.x, y: t.y});
+            }
+            
+            if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
+                person.setData('onHand', []);
+                person.setData('trigger_pos', {x: 36, y: 8});
+                person.setPath(scene, 36,8);
+            }
+            
+            
+            if(onHand.length === 0  && cPos.x === tPos.x && cPos.y === tPos.y ){
+                person.destroy(true, true);
+            
+            }
+            
+            
         }
     
     };
