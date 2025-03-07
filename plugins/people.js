@@ -175,8 +175,11 @@
             
             if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
                 person.setData('onHand', []);
-                person.setData('trigger_pos', {x: 36, y: 8});
-                person.setPath(scene, 36,8);
+                
+                const pos_exit = scene.mapData.customer.exitAt;
+                
+                person.setData('trigger_pos', pos_exit);
+                person.setPath(scene, pos_exit.x, pos_exit.y);
             }
             
             

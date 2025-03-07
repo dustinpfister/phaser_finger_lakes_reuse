@@ -17,6 +17,8 @@
 * (      ) - getPeopleType helper in people.js
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - new path processing code that allows for smooth, and fast player movement.
+* (      ) - smoother transitions between maps
+* (      ) - many enter and exit locations for donators in map4
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
@@ -56,9 +58,9 @@
 * ( done ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
 * ( done ) - update donator logic to have them go to the exit, after going to the table
 * ( done ) - have an onhand property that is what a Person has in there posission.
+* ( done ) - have donators go to the exit defined in the map
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - have donators go to the exit defined in the map
 * (      ) - start an inventory class in the donations plugin
 * (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - raw donated items are placed on the donation table
