@@ -217,26 +217,6 @@ class Reuse extends Phaser.Scene {
             }   
         }
         
-        /*
-        if(path.length > 1 ){
-            return;
-        }
-        let x = this.playerX, y = this.playerY;
-        if(dir === 'left'){  x = this.playerX - 1; }
-        if(dir === 'right'){  x = this.playerX + 1; }
-        if(dir === 'up'){  y = this.playerY - 1; }
-        if(dir === 'down'){  y = this.playerY + 1; }
-        if (this.cursors[dir].isDown) {
-            this.player.setData('idleTime', 0);
-            const tile = this.map.getTileAt(x, y, false, 0);
-            if(tile){
-                if(tile.index === 1){
-                    path.push( {x: x, y: y  } );
-                    this.player.setData('path', path);
-                }
-            }   
-        }
-        */
     }
 
     update () {

@@ -1,6 +1,8 @@
 (function(){
 
     const root = this;
+    
+    
 
 
     class DonationsPlugin extends Phaser.Plugins.BasePlugin {
