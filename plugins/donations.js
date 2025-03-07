@@ -9,7 +9,13 @@
         constructor (pluginManager) {
             super(pluginManager);
             
+            console.log('this is donations!');
             
+            let n = 1;
+            
+            const json = pluginManager.game.cache.json.get('household_' + n);      
+            
+            console.log(json);
             
         } 
     }

@@ -59,10 +59,10 @@
 * ( done ) - update donator logic to have them go to the exit, after going to the table
 * ( done ) - have an onhand property that is what a Person has in there posission.
 * ( done ) - have donators go to the exit defined in the map
+* ( done ) - start an Item Database in the form of one JSON file ( for now )
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - start an inventory class in the donations plugin
-* (      ) - start an Item Database in the form of one JSON file ( for now )
 * (      ) - raw donated items are placed on the donation table
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
