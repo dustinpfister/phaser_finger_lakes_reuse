@@ -192,7 +192,33 @@ class Reuse extends Phaser.Scene {
     
     cursorCheck (dir='left') {
         const path = this.player.getData('path');
-        if(path.length > 0 ){
+        
+        if(path.length > 1 ){
+            return;
+        }
+        let dx = 0, dy = 0;
+        if(dir === 'left'){  dx = -1; }
+        if(dir === 'right'){  dx = 1; }
+        if(dir === 'up'){  dy = -1; }
+        if(dir === 'down'){  dy = 1; }
+        if (this.cursors[dir].isDown) {
+            this.player.setData('idleTime', 0);
+            
+            let x = path.length === 0 ? this.playerX : path[ path.length - 1].x;
+            let y = path.length === 0 ? this.playerY : path[ path.length - 1].y;
+            
+            const tile = this.map.getTileAt(x + dx, y + dy, false, 0);
+            
+            if(tile){
+                if(tile.index === 1){
+                    path.push( {x: x + dx, y: y + dy  } );
+                    this.player.setData('path', path);
+                }
+            }   
+        }
+        
+        /*
+        if(path.length > 1 ){
             return;
         }
         let x = this.playerX, y = this.playerY;
@@ -205,15 +231,17 @@ class Reuse extends Phaser.Scene {
             const tile = this.map.getTileAt(x, y, false, 0);
             if(tile){
                 if(tile.index === 1){
-                    this.player.setData('path', [ {x: x, y: y  } ]);
+                    path.push( {x: x, y: y  } );
+                    this.player.setData('path', path);
                 }
             }   
         }
+        */
     }
 
     update () {
         this.player.setVelocity(0);
-        this.player.pathProcessor(this, 200, 8);
+        this.player.pathProcessor(this, 150, 6);
         this.customers.update(this);
         this.playerX = Math.floor( this.player.x / 16); 
         this.playerY = Math.floor( this.player.y / 16);
@@ -222,7 +250,8 @@ class Reuse extends Phaser.Scene {
         this.cursorCheck('up');
         this.cursorCheck('down');
         this.player.offTileCheck(this.map);
-        this.camera.setZoom(2.0).centerOn(this.player.x, this.player.y);
+        //this.camera.setZoom(2.0).centerOn(this.player.x, this.player.y);
+        this.camera.setZoom(2.0).pan(this.player.x, this.player.y, 100);
         this.text_player.x = this.player.body.position.x - 0;
         this.text_player.y = this.player.body.position.y - 16;
         this.text_player.text = this.playerX + ', ' + this.playerY;

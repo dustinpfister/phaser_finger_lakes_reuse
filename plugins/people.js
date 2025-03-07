@@ -39,7 +39,7 @@
                 const ty = pos.y * 16 + 8;
                 const at_pos = this.x === tx && this.y === ty;
                 if(at_pos){
-                    this.setData({path: path.slice(1, pos.length) })
+                    this.setData('path', path.slice(1, pos.length));
                 }
                 if(!at_pos){
                     let vx = 0, vy = 0;
@@ -50,11 +50,13 @@
                     this.setVelocityX( vx );
                     this.setVelocityY( vy );
                     const d = Phaser.Math.Distance.Between(tx, ty, this.x, this.y);
+                    
                     if(d <= min_d){
                         this.x = tx;
                         this.y = ty;
                         this.setVelocity(0);
-                    }  
+                    } 
+                    
                 }
             }
         
