@@ -16,6 +16,7 @@
 * (      ) - use the reUse data manager for keys like playerX and so forth
 * (      ) - getPeopleType helper in people.js
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
+* (      ) - new path processing code that allows for smooth, and fast player movement.
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
