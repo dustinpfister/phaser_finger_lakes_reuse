@@ -61,9 +61,12 @@
 * ( done ) - have an onhand property that is what a Person has in there posission.
 * ( done ) - have donators go to the exit defined in the map
 * ( done ) - start an Item Database in the form of one JSON file ( for now )
+* ( done ) - start an item class in the donations plugin
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - start an inventory class in the donations plugin
+
+* (      ) - look into making the Item class an extension of the phaser data manager class.
+
 * (      ) - raw donated items are placed on the donation table
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload

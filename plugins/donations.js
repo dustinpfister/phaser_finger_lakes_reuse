@@ -2,7 +2,17 @@
 
     const root = this;
     
+    class Item {
     
+        constructor (data) {
+            
+            this.desc = data.desc;
+            this.value = data.value;
+            
+        } 
+        
+    
+    }
 
 
     class DonationsPlugin extends Phaser.Plugins.BasePlugin {
@@ -15,7 +25,13 @@
             
             const json = pluginManager.game.cache.json.get('household_' + n);      
             
+            const items = json.map((data)=>{
+                return new Item(data);
+            });
+            
             console.log(json);
+            
+            console.log(items);
             
         } 
     }
