@@ -19,6 +19,7 @@
 * (      ) - new path processing code that allows for smooth, and fast player movement.
 * (      ) - smoother transitions between maps
 * (      ) - many enter and exit locations for donators in map4
+* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 

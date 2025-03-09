@@ -1,4 +1,4 @@
-const MAX_PEOPLE = 5;
+const MAX_PEOPLE = 50;
 
 class Reuse extends Phaser.Scene {
 
