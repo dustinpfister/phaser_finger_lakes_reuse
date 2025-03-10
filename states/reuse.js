@@ -6,11 +6,21 @@ class Item {
             
         this.desc = data.desc;
         this.value = data.value;
+        this.pos = { x: x, y: y };
             
     } 
         
     
 }
+
+const createDonation = (scene, person) => {
+
+
+    const items = scene.registry.get('items');
+
+    return [ new Item(items['hh_mug_1'], 0, 0) ];
+
+};
 
 class Reuse extends Phaser.Scene {
 
@@ -54,7 +64,8 @@ class Reuse extends Phaser.Scene {
             createCallback : (person) => {
                 person.body.setDrag(500, 500);
                 
-                person.setData('onHand', [{}])
+                
+                person.setData('onHand', createDonation(scene, person) );
                 
                 
                        
