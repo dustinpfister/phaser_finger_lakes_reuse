@@ -62,10 +62,11 @@
 * ( done ) - have donators go to the exit defined in the map
 * ( done ) - start an Item Database in the form of one JSON file ( for now )
 * ( done ) - start an item class in the donations plugin
+* ( done ) - might not want or need a donations plug-in at all, for now I am going to just expand reuse.js and the people.js plugin.
+* ( done ) - create main item database in load state create method
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 
-* (      ) - look into making the Item class an extension of the phaser data manager class.
 
 * (      ) - raw donated items are placed on the donation table
 * (      ) - just household type items ( for now )

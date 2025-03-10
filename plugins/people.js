@@ -12,7 +12,7 @@
             this.depth = 2;
             this.setData({ 
                 path: [], hits: 0, idleTime: 0,
-                onHand: [{}], trigger_pos: {x: -1, y: -1},
+                onHand: [], trigger_pos: {x: -1, y: -1},
                 type: '', subType: ''
             });
         }

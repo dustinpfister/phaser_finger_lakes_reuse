@@ -1,4 +1,16 @@
-const MAX_PEOPLE = 50;
+const MAX_PEOPLE = 30;
+
+class Item {
+    
+    constructor (data, x=-1, y=-1) {
+            
+        this.desc = data.desc;
+        this.value = data.value;
+            
+    } 
+        
+    
+}
 
 class Reuse extends Phaser.Scene {
 
@@ -40,7 +52,12 @@ class Reuse extends Phaser.Scene {
             defaultKey: 'people_16_16',
             maxSize: MAX_PEOPLE,
             createCallback : (person) => {
-                person.body.setDrag(500, 500);           
+                person.body.setDrag(500, 500);
+                
+                person.setData('onHand', [{}])
+                
+                
+                       
             }
         },{
             subTypes: md.customer.subTypes,

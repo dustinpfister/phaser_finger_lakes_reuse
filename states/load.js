@@ -11,7 +11,7 @@ class Load extends Phaser.Scene {
                
         this.load.plugin('PathFinderPlugin', 'plugins/pathfinding.js', false);
         this.load.plugin('PeoplePlugin', 'plugins/people.js', false);
-        this.load.plugin('DonationsPlugin', 'plugins/donations.js', false);
+        //this.load.plugin('DonationsPlugin', 'plugins/donations.js', false);
                 
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
@@ -42,6 +42,17 @@ class Load extends Phaser.Scene {
     }
     
     create () {
+    
+        const items = {};
+    
+    
+        Object.assign(items, this.cache.json.get('household_' + 1) );
+    
+        this.registry.set('items', items);
+        
+        
+    
+        console.log( this );
     
         //this.scene.start('World');
         this.scene.start('Reuse');

@@ -25,7 +25,7 @@
             
             const json = pluginManager.game.cache.json.get('household_' + n);      
             
-            const items = json.map((data)=>{
+            const items = json.map( ( data ) => {
                 return new Item(data);
             });
             
