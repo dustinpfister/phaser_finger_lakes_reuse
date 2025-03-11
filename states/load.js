@@ -14,7 +14,9 @@ class Load extends Phaser.Scene {
         //this.load.plugin('DonationsPlugin', 'plugins/donations.js', false);
                 
         this.load.image('map_16_16', 'sheets/map_16_16.png');
+        
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
+        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16_atlas.json');
         
         this.load.json('map1_data', 'maps/map1_data.json');
         this.load.tilemapCSV('map1', 'maps/map1.csv');
