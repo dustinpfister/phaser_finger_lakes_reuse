@@ -1,12 +1,17 @@
-const MAX_PEOPLE = 30;
+const MAX_PEOPLE = 10;
 
-class Item {
+class Item extends Phaser.GameObjects.Sprite {
     
-    constructor (data, x=-1, y=-1) {
+    constructor (scene, data, x=-1, y=-1) {
+            
+        super(scene, x, y, 'donations_16_16', 'bx_close')
             
         this.desc = data.desc;
         this.value = data.value;
-        this.pos = { x: x, y: y };
+        scene.add.existing(this);
+        
+        
+        console.log(scene.children.list.length);
             
     } 
         
@@ -18,7 +23,7 @@ const createDonation = (scene, person) => {
 
     const items = scene.registry.get('items');
 
-    return [ new Item(items['hh_mug_1'], 0, 0) ];
+    return [ new Item(scene, items['hh_mug_1'] ) ];
 
 };
 

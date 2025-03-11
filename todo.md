@@ -65,14 +65,14 @@
 * ( done ) - might not want or need a donations plug-in at all, for now I am going to just expand reuse.js and the people.js plugin.
 * ( done ) - create main item database in load state create method
 * ( done ) - I will want to have a sprite sheet for the various kinds of tiles that will be used for donations
+* ( done ) - I will need an atlas for donation sprites, and load these assets
+* ( done ) - I am going to go with sprites for various objects such as donations
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 
 
-* (      ) - I will need an atlas for donation sprites, and load these assets
-
-* (      ) - I am going to go with sprites for various objects such as donations
-* (      ) - 
+* (      ) - have the donation sprites move with the donators
+* (      ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
 
 
 * (      ) - just household type items ( for now )
