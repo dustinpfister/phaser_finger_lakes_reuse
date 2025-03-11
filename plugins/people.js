@@ -314,6 +314,15 @@
                     //person.setRandomPath(scene);
                     pt.noPath(this, scene, person);   
                 }
+                
+                const onHand = person.getData('onHand');
+                if(onHand){
+                    if(onHand.length > 0){
+                        onHand[0].x = person.x + 8;
+                        onHand[0].y = person.y - 8;
+                    }
+                }
+                
             }
         }
         

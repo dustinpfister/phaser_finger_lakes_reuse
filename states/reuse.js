@@ -8,6 +8,7 @@ class Item extends Phaser.GameObjects.Sprite {
             
         this.desc = data.desc;
         this.value = data.value;
+        this.depth = 3;
         scene.add.existing(this);
         
         
@@ -23,7 +24,7 @@ const createDonation = (scene, person) => {
 
     const items = scene.registry.get('items');
 
-    return [ new Item(scene, items['hh_mug_1'] ) ];
+    return [ new Item(scene, items['hh_mug_1'], person.x, person.y ) ];
 
 };
 

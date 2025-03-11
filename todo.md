@@ -67,11 +67,11 @@
 * ( done ) - I will want to have a sprite sheet for the various kinds of tiles that will be used for donations
 * ( done ) - I will need an atlas for donation sprites, and load these assets
 * ( done ) - I am going to go with sprites for various objects such as donations
+* ( done ) - have the donation sprites move with the donators
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 
 
-* (      ) - have the donation sprites move with the donators
 * (      ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
 
 
