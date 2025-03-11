@@ -68,8 +68,9 @@
   DONATIONS, ITEMS DATABASE, INVENTORY:
 
 
-* (      ) - I am going to go with sprites for various objects such as donations
 * (      ) - I will want to have a sprite sheet for the various kinds of tiles that will be used for donations
+* (      ) - I am going to go with sprites for various objects such as donations
+
 
 
 * (      ) - just household type items ( for now )
