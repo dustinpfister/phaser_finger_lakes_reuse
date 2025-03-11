@@ -68,7 +68,10 @@
   DONATIONS, ITEMS DATABASE, INVENTORY:
 
 
-* (      ) - raw donated items are placed on the donation table
+* (      ) - I am going to go with sprites for various objects such as donations
+* (      ) - I will want to have a sprite sheet for the various kinds of tiles that will be used for donations
+
+
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )

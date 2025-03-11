@@ -73,8 +73,10 @@ class Reuse extends Phaser.Scene {
         },{
             subTypes: md.customer.subTypes,
             subTypeProbs: md.customer.subTypeProbs
-        
         });
+        
+        
+        
         const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
         //map.setCollision( [ 0, 2, 10, 13, 14, 20, 21, 22, 23, 24] );
         map.setCollisionByExclusion( [2], true, true, 0 );
@@ -132,6 +134,10 @@ class Reuse extends Phaser.Scene {
             player.setVelocity(0);  
             scene.data.mouseDown = false;
         });
+        
+        
+        console.log( this.map.getTileAt(0,0, true, 0) );
+        
     }
     
     doorDisabledCheck () {
