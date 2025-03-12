@@ -181,12 +181,11 @@
         create: (people, scene, person) => {
         
             const items = scene.registry.get('items');
-            
-
+            const max_donations = scene.game.registry.get('MAX_DONATIONS');
             
             person.body.setDrag(500, 500);
             
-            if(scene.donations.children.size < 3){
+            if(scene.donations.children.size < max_donations){
             
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
                 scene.add.existing(donation);
@@ -195,7 +194,7 @@
             
             }
             
-            if(scene.donations.children.size > 3){
+            if(scene.donations.children.size > max_donations){
                 //person.destroy();
             }
             
