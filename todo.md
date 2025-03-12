@@ -18,8 +18,7 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - new path processing code that allows for smooth, and fast player movement.
 * (      ) - smoother transitions between maps
-* (      ) - many enter and exit locations for donators in map4
-* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
+* (      ) - failsafe for getting stuck in a wall for people in general, including coworkers
 ```
 
 ## R0 ( ) - Customers, Donations plugin, items database, inventory 
@@ -55,7 +54,6 @@
 * ( done ) - have a map tile for donation tables
 * ( done ) - have donation tables in map 4
 * ( done ) - update donator logic to have them go to the donation tables
-* ( done ) - fix bug where donators get stuck in walls
 * ( done ) - have a People.onCollide(gameObject) method that will also call custom methods for each type and subtype of Person
 * ( done ) - update donator logic to have them go to the exit, after going to the table
 * ( done ) - have an onhand property that is what a Person has in there posission.
@@ -70,17 +68,19 @@
 * ( done ) - have the donation sprites move with the donators
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-
-
 * (      ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
-
-
 * (      ) - just household type items ( for now )
 * (      ) - the player can place the item into a households bin, or gayload
 * (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
 * (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
 * (      ) - customers just magically buy inventory items ( for now )
 
- MISC:
+  ARTWORK:
+* (      ) - have shelfing tiles
+* (      ) - have more tiles for items
+
+  MISC:
+* (      ) - many enter and exit locations for donators in map4
+* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon
 ```
