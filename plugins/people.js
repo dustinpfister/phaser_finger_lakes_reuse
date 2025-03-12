@@ -11,7 +11,12 @@
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
-            scene.add.existing(this);
+            
+            console.log(scene.donations.children.size);
+            
+            //scene.add.existing(this);
+        
+            console.log( scene.donations )
         
         
         } 
@@ -168,14 +173,31 @@
     
     PEOPLE_TYPES.customer.donator = {
     
-        update: (people, scene, person) => {},
+        update: (people, scene, person) => {
+        
+        
+        
+        },
         create: (people, scene, person) => {
         
-            console.log('create!');
             const items = scene.registry.get('items');
-            person.setData('onHand', [new Item(scene, items['hh_mug_1'], person.x, person.y)] );
+            
+
             
             person.body.setDrag(500, 500);
+            
+            if(scene.donations.children.size < 3){
+            
+                const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
+                scene.add.existing(donation);
+                scene.donations.add(donation);
+                person.setData('onHand', [ donation ] );
+            
+            }
+            
+            if(scene.donations.children.size > 3){
+                //person.destroy();
+            }
             
         
         },

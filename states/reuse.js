@@ -183,6 +183,13 @@ class Reuse extends Phaser.Scene {
     create () {    
         this.PeoplePlugin = this.plugins.get('PeoplePlugin');
         this.DonationsPlugin = this.plugins.get('DonationsPlugin');
+        
+        this.donations = this.add.group({
+            scene: this,
+            defaultKey: 'donations_16_16',
+            maxSize: this.game.registry.get('MAX_DONATIONS')
+        });
+        
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
         this.createPlayer();
