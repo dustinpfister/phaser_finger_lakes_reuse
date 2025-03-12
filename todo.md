@@ -1,12 +1,9 @@
 # Phaser Finger Lakes Reuse
 
-## R1 ( ) - Processing plugin, Workers
+## R1 ( ) - Processing plugin
 
 ```
 * (      ) - revisit collision detection
-* (      ) - expand people.js with 
-* (      ) - have a worker type of People class
-* (      ) - have 'employee', and 'mod' sub type workers
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
 * (      ) - new worker sprites, have one for each worker
@@ -21,7 +18,7 @@
 * (      ) - failsafe for getting stuck in a wall for people in general, including coworkers
 ```
 
-## R0 ( ) - Customers, Donations plugin, items database, inventory 
+## R0 ( ) - People, Items Database, Donations 
 
 ```
 * ( done ) - start with R0 of phaser start project
@@ -66,14 +63,22 @@
 * ( done ) - I will need an atlas for donation sprites, and load these assets
 * ( done ) - I am going to go with sprites for various objects such as donations
 * ( done ) - have the donation sprites move with the donators
+* ( done ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
+* ( done ) - just household type items ( for now )
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
-* (      ) - just household type items ( for now )
-* (      ) - the player can place the item into a households bin, or gayload
-* (      ) - donation items magically move into bins and gayloards at a slow rate ( for now )
-* (      ) - donation items magically move from households bins, and gayloads into inventory ( for now )
-* (      ) - customers just magically buy inventory items ( for now )
+* (      ) - the player can pick up the item into there on hand inventory
+
+  WORKERS:
+* (      ) - have a worker type of People class
+* (      ) - have an'employee' subclass for workers
+* (      ) - have at least 4 workers for now
+
+  ONE CUSTOMERS/WORKERS FOR EACH MAP 
+* (      ) -  have a workers and customers people class for each map
+* (      ) -  have it so that customers can move from one map to another 
+* (      ) -  have workers always working even if they are not in the current map
+
 
   ARTWORK:
 * (      ) - have shelfing tiles
