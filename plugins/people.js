@@ -14,8 +14,6 @@
             scene.add.existing(this);
         
         
-            console.log(scene.children.list.length);
-            
         } 
         
     
@@ -176,6 +174,8 @@
             console.log('create!');
             const items = scene.registry.get('items');
             person.setData('onHand', [new Item(scene, items['hh_mug_1'], person.x, person.y)] );
+            
+            person.body.setDrag(500, 500);
             
         
         },

@@ -1,28 +1,5 @@
 const MAX_PEOPLE = 10;
 
-class Item extends Phaser.GameObjects.Sprite {
-    
-    constructor (scene, data, x=-1, y=-1) {
-            
-        super(scene, x, y, 'donations_16_16', 'bx_close')
-            
-        this.desc = data.desc;
-        this.value = data.value;
-        this.depth = 3;
-        scene.add.existing(this);
-        
-        
-        console.log(scene.children.list.length);
-            
-    } 
-        
-    
-}
-
-const createDonation = (scene, person) => {
-    const items = scene.registry.get('items');
-    return [ new Item(scene, items['hh_mug_1'], person.x, person.y ) ];
-};
 
 class Reuse extends Phaser.Scene {
 
@@ -64,7 +41,7 @@ class Reuse extends Phaser.Scene {
             defaultKey: 'people_16_16',
             maxSize: MAX_PEOPLE,
             createCallback : (person) => {
-                person.body.setDrag(500, 500);
+               // person.body.setDrag(500, 500);
                 
                 
                 //console.log(person.getData('type'));
