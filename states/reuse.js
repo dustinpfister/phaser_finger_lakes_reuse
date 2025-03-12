@@ -20,12 +20,8 @@ class Item extends Phaser.GameObjects.Sprite {
 }
 
 const createDonation = (scene, person) => {
-
-
     const items = scene.registry.get('items');
-
     return [ new Item(scene, items['hh_mug_1'], person.x, person.y ) ];
-
 };
 
 class Reuse extends Phaser.Scene {
@@ -71,7 +67,9 @@ class Reuse extends Phaser.Scene {
                 person.body.setDrag(500, 500);
                 
                 
-                person.setData('onHand', createDonation(scene, person) );
+                //console.log(person.getData('type'));
+                
+                //person.setData('onHand', createDonation(scene, person) );
                 
                 
                        

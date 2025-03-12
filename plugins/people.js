@@ -2,6 +2,26 @@
 
     const root = this;
     
+    class Item extends Phaser.GameObjects.Sprite {
+    
+        constructor (scene, data, x=-1, y=-1) {
+            
+            super(scene, x, y, 'donations_16_16', 'bx_close')
+            
+            this.desc = data.desc;
+            this.value = data.value;
+            this.depth = 3;
+            scene.add.existing(this);
+        
+        
+            console.log(scene.children.list.length);
+            
+        } 
+        
+    
+    }
+    
+    
     class Person extends Phaser.Physics.Arcade.Sprite {
     
         constructor (scene, x, y, texture, frame) {
@@ -120,6 +140,7 @@
     
     PEOPLE_TYPES.worker.employee = {
         update: (person) => {},
+        create: (person) => {},
         collider: (people, gameObject, scene ) => {
              //gameObject.setRandomPath(scene);
         },
@@ -131,7 +152,7 @@
     PEOPLE_TYPES.customer.shoper = {
     
         update: (person) => {},
-        
+        create: (person) => {},
         collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
@@ -150,7 +171,14 @@
     PEOPLE_TYPES.customer.donator = {
     
         update: (people, scene, person) => {},
+        create: (people, scene, person) => {
         
+            console.log('create!');
+            const items = scene.registry.get('items');
+            person.setData('onHand', [new Item(scene, items['hh_mug_1'], person.x, person.y)] );
+            
+        
+        },
         collider: (people, gameObject, scene ) => {
         
             console.log(gameObject);
@@ -159,11 +187,9 @@
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
-            
             const onHand = person.getData('onHand');
             const tPos = person.getData('trigger_pos');
             const cPos = person.getTilePos();
-            
             if(onHand.length > 0 && tPos.x === -1 && tPos.y === -1){
                 const tiles_di = get_di_tiles(scene);
                 const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
@@ -172,23 +198,15 @@
                 person.setPath(scene, t.x, t.y);
                 person.setData('trigger_pos', {x: t.x, y: t.y});
             }
-            
             if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
                 person.setData('onHand', []);
-                
-                const pos_exit = scene.mapData.customer.exitAt;
-                
+                const pos_exit = scene.mapData.customer.exitAt;   
                 person.setData('trigger_pos', pos_exit);
                 person.setPath(scene, pos_exit.x, pos_exit.y);
             }
-            
-            
             if(onHand.length === 0  && cPos.x === tPos.x && cPos.y === tPos.y ){
                 person.destroy(true, true);
-            
-            }
-            
-            
+            }         
         }
     
     };
@@ -266,6 +284,11 @@
                 person.setConf({
                     cash: pConfig.cash
                 });
+                
+                const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
+                
+                pt.create(this, scene, person);
+                
             }
         }
 
