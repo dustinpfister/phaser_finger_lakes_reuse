@@ -65,6 +65,7 @@
 * ( done ) - have the donation sprites move with the donators
 * ( done ) - I will need to have a count of total items at the tables, and have donations stop when they are full ( for now ) 
 * ( done ) - just household type items ( for now )
+* ( done ) - fix isshue where I can not have a mixture of subTypes of a person
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - the player can pick up the item into there on hand inventory
@@ -85,6 +86,7 @@
 * (      ) - have more tiles for items
 
   MISC:
+
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon

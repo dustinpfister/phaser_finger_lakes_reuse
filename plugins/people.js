@@ -152,7 +152,7 @@
     
     PEOPLE_TYPES.customer = {};
     
-    PEOPLE_TYPES.customer.shoper = {
+    PEOPLE_TYPES.customer.shopper = {
     
         update: (person) => {},
         create: (person) => {},
@@ -271,12 +271,10 @@
             const subTypeProbs = this.getData('subTypeProbs');
             const now = new Date();
             const lastSpawn = this.getData('lastSpawn');
+            
             if(people.length < this.maxSize && now - lastSpawn >= 1000 ){
+            
                 this.setData('lastSpawn', now);
-                //const sa = scene.mapData.peopleSpawnAt;
-                //const doorIndex = sa[ Math.floor( sa.length * Math.random() ) ];
-                //const d = scene.mapData.doors[doorIndex];
-                //let p = d.position;
                 let p = scene.mapData.customer.spawnAt;
                 if(p instanceof Array){
                     p = p[ Math.floor( p.length * Math.random() ) ];
@@ -288,11 +286,12 @@
                         return;
                     }
                 }
+                
                 const person = this.get(p.x * 16 + 8, p.y * 16 + 8);
-                person.setData('type', this.getData('type') );   
+                person.setData('type', this.getData('type') ); 
                 const roll = Math.random();
-                let a = subTypeProbs[0]
-                let i_subType = 0; //subTypes.length;
+                let a = subTypeProbs[0];
+                let i_subType = 0;
                 while(i_subType < subTypes.length){
                     if(roll < a){
                         person.setData('subType', subTypes[i_subType] );
@@ -305,6 +304,8 @@
                 person.setConf({
                     cash: pConfig.cash
                 });
+                
+                console.log(person.getData('type'), person.getData('subType'));
                 
                 const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
                 
@@ -326,9 +327,6 @@
                 
                 //pt.collider(a, b, scene);
                 
-                console.log('yes');
-                
-                        
             }   
         }
 
