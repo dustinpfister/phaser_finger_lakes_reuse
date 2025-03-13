@@ -175,7 +175,7 @@
             console.log(tx, ty);
             
             if( tx === pos_exit.x && ty === pos_exit.y){
-                person.destroy();
+                person.destroy(true, true);
             }else{
             
                 person.setPath(scene, pos_exit.x, pos_exit.y );
@@ -219,6 +219,7 @@
             const onHand = person.getData('onHand');
             const tPos = person.getData('trigger_pos');
             const cPos = person.getTilePos();
+            const pos_exit = scene.mapData.customer.exitAt; 
             if(onHand.length > 0 && tPos.x === -1 && tPos.y === -1){
                 const tiles_di = get_di_tiles(scene);
                 const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
@@ -229,13 +230,16 @@
             }
             if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
                 person.setData('onHand', []);
-                const pos_exit = scene.mapData.customer.exitAt;   
-                person.setData('trigger_pos', pos_exit);
+                  
+                //person.setData('trigger_pos', pos_exit);
                 person.setPath(scene, pos_exit.x, pos_exit.y);
             }
-            if(onHand.length === 0  && cPos.x === tPos.x && cPos.y === tPos.y ){
+            if(onHand.length === 0  && cPos.x === pos_exit.x && cPos.y === pos_exit.y ){
                 person.destroy(true, true);
-            }         
+            }
+            if(onHand.length === 0  && cPos.x != pos_exit.x && cPos.y != pos_exit.y ){
+                person.setPath(scene, pos_exit.x, pos_exit.y);
+            }        
         }
     
     };
