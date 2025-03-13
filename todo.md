@@ -67,13 +67,19 @@
 * ( done ) - just household type items ( for now )
 * ( done ) - fix isshue where I can not have a mixture of subTypes of a person
 * ( done ) - fix isshue where wrong frame is set when spawning shoppers
+* ( done ) - have items snap to the grid
+
+  Person.drop METHOD:
+* (      ) - have a Person.drop method that will drop what the person has onHand
+* (      ) - In the event that there are tables near by the drop method will place them there
+* (      ) - Have it so that items will only drop into free locations
+* (      ) - if there are no free locations the drop can not happen, have some kind of failsafe for this.
 
   ARTWORK:
 * (      ) - have a tile for an open box with items in it
 * (      ) - have a tile for the white mug item
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - have items snap to the grid
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 * (      ) - have the item show up above the players head

@@ -215,9 +215,18 @@
                 person.setData('trigger_pos', {x: t.x, y: t.y});
             }
             if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
+            
+                let i_item = onHand.length;
+                while(i_item--){
+                    const item = onHand[i_item];
+                    item.x = person.x;
+                    item.y = person.y;
+                }
+            
+                //console.log();
+            
                 person.setData('onHand', []);
                   
-                //person.setData('trigger_pos', pos_exit);
                 person.setPath(scene, pos_exit.x, pos_exit.y);
             }
             if(onHand.length === 0  && cPos.x === pos_exit.x && cPos.y === pos_exit.y ){
