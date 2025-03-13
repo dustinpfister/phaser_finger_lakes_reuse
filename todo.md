@@ -68,9 +68,16 @@
 * ( done ) - fix isshue where I can not have a mixture of subTypes of a person
 * ( done ) - fix isshue where wrong frame is set when spawning shoppers
 
+  ARTWORK:
+* (      ) - have a tile for an open box with items in it
+* (      ) - have a tile for the white mug item
+
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - have items snap to the grid
-* (      ) - the player can pick up the item into the on hand inventory
+* (      ) - the player can click a box the first time to open it
+* (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
+* (      ) - have the item show up above the players head
+* (      ) - the item can then be placed into blue bins by clicking on them
 
   WORKERS:
 * (      ) - have a worker type of People class
@@ -81,10 +88,6 @@
 * (      ) -  have a workers and customers people class for each map
 * (      ) -  have it so that customers can move from one map to another 
 * (      ) -  have workers always working even if they are not in the current map
-
-  ARTWORK:
-* (      ) - have shelfing tiles
-* (      ) - have more tiles for items
 
   MISC:
 * (      ) - many enter and exit locations for donators in map4
