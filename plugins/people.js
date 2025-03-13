@@ -12,11 +12,6 @@
             this.value = data.value;
             this.depth = 3;
             
-            console.log(scene.donations.children.size);
-            
-            //scene.add.existing(this);
-        
-            console.log( scene.donations )
         
         
         } 
@@ -136,14 +131,21 @@
         
     }
     
+      
+      
+    const get_di_tiles = (scene) => {
+        return scene.map.filterTiles( (tile) => {
+            return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
+        });
+    };
         
     const PEOPLE_TYPES = {}
     
     PEOPLE_TYPES.worker = {};
     
     PEOPLE_TYPES.worker.employee = {
-        update: (person) => {},
-        create: (person) => {},
+        update: (people, scene, person) => {},
+        create: (people, scene, person) => {},
         collider: (people, gameObject, scene ) => {
              //gameObject.setRandomPath(scene);
         },
@@ -156,58 +158,60 @@
     
         update: (people, scene, person) => {},
         create: (people, scene, person) => {
-        
             person.body.setDrag(500, 500);
-        
         },
         collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
-            person.setRandomPath(scene);
+        
+            
+            
+            console.log('new path please');
+            
+            const pos_exit = scene.mapData.customer.exitAt;
+            const tx = Math.floor( person.x / 16 );
+            const ty = Math.floor( person.y / 16 );
+            
+            console.log(tx, ty);
+            
+            if( tx === pos_exit.x && ty === pos_exit.y){
+                person.destroy();
+            }else{
+            
+                person.setPath(scene, pos_exit.x, pos_exit.y );
+            
+            }
+            
+            //person.setRandomPath(scene);
+            
+            
+            
         }
         
-    };
-
-
-    const get_di_tiles = (scene) => {
-        return scene.map.filterTiles( (tile) => {
-            return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
-        });
     };
     
     PEOPLE_TYPES.customer.donator = {
     
-        update: (people, scene, person) => {
-        
-        
-        
+        update: (people, scene, person) => {        
         },
+
         create: (people, scene, person) => {
-        
             const items = scene.registry.get('items');
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
-            
             person.body.setDrag(500, 500);
-            
             if(scene.donations.children.size < max_donations){
-            
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
                 scene.add.existing(donation);
                 scene.donations.add(donation);
                 person.setData('onHand', [ donation ] );
-            
             }
-            
             if(scene.donations.children.size > max_donations){
                 //person.destroy();
             }
-            
-        
         },
+
         collider: (people, gameObject, scene ) => {
-        
-            console.log(gameObject);
-        
+            
         },
         
         noPath: (people, scene, person) => {
@@ -244,25 +248,18 @@
     class People extends Phaser.Physics.Arcade.Group {
     
         constructor (config, pConfig) {
-        
             config = config || {};
             pConfig = Object.assign({}, PEOPLE_DEFAULTS, pConfig || {} );
             config.classType = Person;
-            
             const scene = config.scene
             const world = scene.physics.world;
             super(world, scene, config);
-            
             this.data = new Phaser.Data.DataManager(this,  new Phaser.Events.EventEmitter() );
-            
             this.setData('lastSpawn', new Date());
             this.setData('type', pConfig.type);
             this.setData('subTypes', pConfig.subTypes);
             this.setData('subTypeProbs', pConfig.subTypeProbs);
             this.setData('pConfig', pConfig);
-            
-            
-            
         }
         
         setData (key, value){ return this.data.set(key, value); }
@@ -308,8 +305,6 @@
                 person.setConf({
                     cash: pConfig.cash
                 });
-                
-                console.log(person.getData('type'), person.getData('subType'));
                 
                 const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
                 
