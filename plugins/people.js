@@ -154,8 +154,12 @@
     
     PEOPLE_TYPES.customer.shopper = {
     
-        update: (person) => {},
-        create: (person) => {},
+        update: (people, scene, person) => {},
+        create: (people, scene, person) => {
+        
+            person.body.setDrag(500, 500);
+        
+        },
         collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
