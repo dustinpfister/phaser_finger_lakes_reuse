@@ -69,7 +69,8 @@
 * ( done ) - fix isshue where wrong frame is set when spawning shoppers
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - the player can pick up the item into there on hand inventory
+* (      ) - have items snap to the grid
+* (      ) - the player can pick up the item into the on hand inventory
 
   WORKERS:
 * (      ) - have a worker type of People class
@@ -80,7 +81,6 @@
 * (      ) -  have a workers and customers people class for each map
 * (      ) -  have it so that customers can move from one map to another 
 * (      ) -  have workers always working even if they are not in the current map
-
 
   ARTWORK:
 * (      ) - have shelfing tiles

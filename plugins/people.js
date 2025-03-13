@@ -160,32 +160,18 @@
         create: (people, scene, person) => {
             person.body.setDrag(500, 500);
         },
+        
         collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
-        
-            
-            
-            console.log('new path please');
-            
             const pos_exit = scene.mapData.customer.exitAt;
             const tx = Math.floor( person.x / 16 );
             const ty = Math.floor( person.y / 16 );
-            
-            console.log(tx, ty);
-            
             if( tx === pos_exit.x && ty === pos_exit.y){
                 person.destroy(true, true);
             }else{
-            
                 person.setPath(scene, pos_exit.x, pos_exit.y );
-            
             }
-            
-            //person.setRandomPath(scene);
-            
-            
-            
         }
         
     };
@@ -277,7 +263,7 @@
             const now = new Date();
             const lastSpawn = this.getData('lastSpawn');
             
-            if(people.length < this.maxSize && now - lastSpawn >= 1000 ){
+            if( people.length < this.maxSize && now - lastSpawn >= 1000 ){
             
                 this.setData('lastSpawn', now);
                 let p = scene.mapData.customer.spawnAt;

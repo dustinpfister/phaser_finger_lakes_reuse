@@ -214,10 +214,10 @@ class Reuse extends Phaser.Scene {
     
     cursorCheck (dir='left') {
         const path = this.player.getData('path');
-        
         if(path.length > 1 ){
             return;
         }
+        const cPos = this.player.getTilePos();
         let dx = 0, dy = 0;
         if(dir === 'left'){  dx = -1; }
         if(dir === 'right'){  dx = 1; }
@@ -225,20 +225,14 @@ class Reuse extends Phaser.Scene {
         if(dir === 'down'){  dy = 1; }
         if (this.cursors[dir].isDown) {
             this.player.setData('idleTime', 0);
-            
-            let x = path.length === 0 ? this.playerX : path[ path.length - 1].x;
-            let y = path.length === 0 ? this.playerY : path[ path.length - 1].y;
-            
-            const tile = this.map.getTileAt(x + dx, y + dy, false, 0);
-            
+            const tile = this.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
             if(tile){
                 if(tile.index === 1){
-                    path.push( {x: x + dx, y: y + dy  } );
+                    path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
                     this.player.setData('path', path);
                 }
             }   
         }
-        
     }
 
     update () {
