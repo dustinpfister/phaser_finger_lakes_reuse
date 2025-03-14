@@ -98,6 +98,8 @@ class Reuse extends Phaser.Scene {
         layer0.setInteractive();
         player.setData({path: [] });
         layer0.on('pointerdown', (pointer)=>{
+        
+        
             const tx = Math.floor( pointer.worldX / 16 );
             const ty = Math.floor( pointer.worldY / 16 );
             const tile = map.getTileAt(tx, ty, false, 0);
@@ -109,6 +111,7 @@ class Reuse extends Phaser.Scene {
                     player.setPath(this, tx, ty);
                 }
             }
+            
             scene.data.mouseDown = true; 
         });
         layer0.on('pointerup', (pointer)=>{

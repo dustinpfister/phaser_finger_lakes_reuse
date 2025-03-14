@@ -187,6 +187,14 @@
             person.body.setDrag(500, 500);
             if(scene.donations.children.size < max_donations){
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
+                donation.setInteractive();
+                donation.on('pointerdown', function (pointer) {
+
+                    console.log('we good');
+
+                });
+                
+                
                 scene.add.existing(donation);
                 scene.donations.add(donation);
                 person.setData('onHand', [ donation ] );
