@@ -16,6 +16,12 @@
         
         } 
         
+        getTilePos () {    
+            return {
+                x : Math.floor( this.x / 16 ),
+                y : Math.floor( this.y / 16 )
+            }
+        }
     
     }
     
@@ -188,13 +194,20 @@
             if(scene.donations.children.size < max_donations){
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
                 donation.setInteractive();
-                donation.on('pointerdown', function (pointer) {
-
-                    console.log('we good');
-
+                donation.on('pointerdown', function (pointer, b, c) {
+                    const pos_player = scene.player.getTilePos();
+                    const pos_item = this.getTilePos();
+                    const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
+                    
+                    if(d < 2){
+                        console.log('okay lets take a look.');
+                    }
+                    
+                    if(d >= 2){
+                        console.log('player is to far away to open.');
+                    }
+                    
                 });
-                
-                
                 scene.add.existing(donation);
                 scene.donations.add(donation);
                 person.setData('onHand', [ donation ] );
