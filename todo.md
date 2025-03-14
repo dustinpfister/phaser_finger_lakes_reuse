@@ -77,6 +77,7 @@
 * (      ) - have a tile for the white mug item
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
+* (      ) - A box will need to be able to have child items
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 * (      ) - have the item show up above the players head
