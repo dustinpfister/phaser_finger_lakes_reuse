@@ -70,11 +70,8 @@
 * ( done ) - fix isshue where I can not have a mixture of subTypes of a person
 * ( done ) - fix isshue where wrong frame is set when spawning shoppers
 * ( done ) - have items snap to the grid
-
-
-  ARTWORK:
-* (      ) - have a tile for an open box with items in it
-* (      ) - have a tile for the white mug item
+* ( done ) - have a tile for an open box with items in it
+* ( done ) - have a tile for the white mug item
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - A box will need to be able to have child items
