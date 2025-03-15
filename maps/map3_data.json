@@ -5,7 +5,7 @@
      "y": 5
   },
   "customer" : {
-    "subTypes" : ["shoper"],
+    "subTypes" : ["shopper"],
     "subTypeProbs": [ 1.00 ],
     "spawnAt" : { "x": 2, "y": 2 },
     "exitAt" : { "x": 2, "y": 2 }

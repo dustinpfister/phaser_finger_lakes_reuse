@@ -74,6 +74,7 @@
 * ( done ) - have a tile for the white mug item
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
+* (      ) - items will need to percist on a map, by map basis. I might want a group for each map to do this
 * (      ) - A box will need to be able to have child items
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
