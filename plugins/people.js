@@ -192,7 +192,7 @@
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
             
-            const donations = scene.donations;
+            const donations = scene['map_donations' + scene.map_index];
             
             if(donations.children.size < max_donations){
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
@@ -204,6 +204,7 @@
                     
                     if(d < 2){
                         console.log('okay lets take a look.');
+                        console.log(this)
                     }
                     
                     if(d >= 2){
