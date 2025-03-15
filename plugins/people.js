@@ -191,7 +191,10 @@
             const items = scene.registry.get('items');
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
-            if(scene.donations.children.size < max_donations){
+            
+            const donations = scene.donations;
+            
+            if(donations.children.size < max_donations){
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
@@ -209,10 +212,10 @@
                     
                 });
                 scene.add.existing(donation);
-                scene.donations.add(donation);
+                donations.add(donation);
                 person.setData('onHand', [ donation ] );
             }
-            if(scene.donations.children.size > max_donations){
+            if(donations.children.size > max_donations){
                 //person.destroy();
             }
         },

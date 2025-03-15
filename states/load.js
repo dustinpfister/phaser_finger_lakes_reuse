@@ -23,14 +23,14 @@ class Load extends Phaser.Scene {
         
         
         
-        const reg = this.game.registry;
+        //const reg = this.game.registry;
         
         let i_map = 1;
         while(i_map <= 4){
         
-            reg.set('map_items' + i_map, []);
+            //reg.set('map_items' + i_map, []);
         
-            console.log(i_map)
+            //console.log(i_map)
             
             
         
@@ -40,7 +40,7 @@ class Load extends Phaser.Scene {
             i_map += 1;
         }
         
-        console.log(reg.list);
+        //console.log(reg.list);
         
         this.load.json('household_1', 'items/household_1.json');
             

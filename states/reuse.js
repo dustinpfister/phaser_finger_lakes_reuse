@@ -16,16 +16,17 @@ class Reuse extends Phaser.Scene {
         this.player.setData('subType', 'employee');        
     }
     
-    setMapData (mapNum=1) {
-       return this.mapData = this.cache.json.get('map' + mapNum + '_data');
+    setMapData (map_index=1) {
+       this.map_index = map_index;
+       return this.mapData = this.cache.json.get('map' + map_index + '_data');
     }
     
-    setupMap ( startMap=1, x=undefined, y=undefined ) {
+    setupMap ( map_index=1, x=undefined, y=undefined ) {
         const scene = this;
         const People = this.PeoplePlugin.People;
         const player = this.player;
         //player.setData('path', []);
-        const md = this.setMapData( startMap );
+        const md = this.setMapData( map_index );
         x = x === undefined ? md.spawnAt.x : x;
         y = y === undefined ? md.spawnAt.y : y;
         this.player.x = x * 16 + 8;
@@ -58,7 +59,7 @@ class Reuse extends Phaser.Scene {
         
         
         
-        const map = this.map = this.make.tilemap({ key: 'map' + startMap, layers:[], tileWidth: 16, tileHeight: 16 });
+        const map = this.map = this.make.tilemap({ key: 'map' + map_index, layers:[], tileWidth: 16, tileHeight: 16 });
         //map.setCollision( [ 0, 2, 10, 13, 14, 20, 21, 22, 23, 24] );
         map.setCollisionByExclusion( [2], true, true, 0 );
         const tiles = map.addTilesetImage('map_16_16');
@@ -186,6 +187,28 @@ class Reuse extends Phaser.Scene {
     create () {    
         this.PeoplePlugin = this.plugins.get('PeoplePlugin');
         this.DonationsPlugin = this.plugins.get('DonationsPlugin');
+        
+        
+        let i_map = 1;
+        while(i_map <= 4){
+        
+            //reg.set('map_items' + i_map, []);
+        
+            //console.log(i_map)
+            
+            
+            this['map_donations' + i_map] = this.add.group({
+                scene: this,
+                defaultKey: 'donations_16_16',
+                maxSize: this.game.registry.get('MAX_DONATIONS')
+            });
+            
+            
+        
+        
+            i_map += 1;
+        }
+        
         
         this.donations = this.add.group({
             scene: this,
