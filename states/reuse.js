@@ -31,6 +31,18 @@ class Reuse extends Phaser.Scene {
         y = y === undefined ? md.spawnAt.y : y;
         this.player.x = x * 16 + 8;
         this.player.y = y * 16 + 8;
+        
+        
+        let i_map = 1;
+        while(i_map <= 4){
+        
+            const donations = scene['map_donations' + map_index];
+            donations.active = false;
+            console.log(donations)
+        
+            i_map += 1;
+        }
+        
         if(this.map){
            this.map.destroy();
         } 
@@ -209,12 +221,13 @@ class Reuse extends Phaser.Scene {
             i_map += 1;
         }
         
-        
+        /*
         this.donations = this.add.group({
             scene: this,
             defaultKey: 'donations_16_16',
             maxSize: this.game.registry.get('MAX_DONATIONS')
         });
+        */
         
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
