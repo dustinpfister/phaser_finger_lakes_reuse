@@ -7,6 +7,8 @@ class Load extends Phaser.Scene {
 
     preload(){
     
+        console.log('Loading...');
+    
         this.load.setBaseURL('./');
                
         this.load.plugin('PathFinderPlugin', 'plugins/pathfinding.js', false);
@@ -20,10 +22,17 @@ class Load extends Phaser.Scene {
         this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16_atlas.json');
         
         
+        
+        const reg = this.game.registry;
+        
         let i_map = 1;
         while(i_map <= 4){
         
+            reg.set('map_items' + i_map, []);
+        
             console.log(i_map)
+            
+            
         
             this.load.json('map' + i_map + '_data', 'maps/map' + i_map + '_data.json');
             this.load.tilemapCSV('map' + i_map, 'maps/map' + i_map + '.csv');
@@ -31,16 +40,8 @@ class Load extends Phaser.Scene {
             i_map += 1;
         }
         
-        /*
-        this.load.json('map1_data', 'maps/map1_data.json');
-        this.load.tilemapCSV('map1', 'maps/map1.csv');
-        this.load.json('map2_data', 'maps/map2_data.json');
-        this.load.tilemapCSV('map2', 'maps/map2.csv');
-        this.load.json('map3_data', 'maps/map3_data.json');
-        this.load.tilemapCSV('map3', 'maps/map3.csv');
-        this.load.json('map4_data', 'maps/map4_data.json');
-        this.load.tilemapCSV('map4', 'maps/map4.csv');
-        */
+        console.log(reg.list);
+        
         this.load.json('household_1', 'items/household_1.json');
             
         const gr = this.add.graphics();
