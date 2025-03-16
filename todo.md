@@ -74,9 +74,10 @@
 * ( done ) - have a tile for the white mug item
 * ( done ) - see about having a map items map# for each map in the reg in place of the single donations that is used for all maps
 * ( done ) - when a person is destroyed there on hand items should also be destroyed
+* ( done ) - fix bug where items to not get added to donation groups property
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - fix bug where items to not get added to donation groups property
+* (      ) - see about fixing bug where donator on hand items get added to the maps donation group when map is switched
 * (      ) - A box will need to be able to have child items
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
