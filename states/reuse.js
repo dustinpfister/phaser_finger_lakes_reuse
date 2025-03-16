@@ -67,12 +67,7 @@ class Reuse extends Phaser.Scene {
                     item.destroy();
                 
                 } 
-                console.log()
             }
-            
-            console.log();
-        
-        
             this.customers.destroy(true, true);
         }
         this.customers = new People({

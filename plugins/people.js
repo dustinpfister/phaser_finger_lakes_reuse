@@ -213,7 +213,6 @@
                     
                 });
                 scene.add.existing(donation);
-                donations.add(donation);
                 person.setData('onHand', [ donation ] );
             }
             if(donations.children.size > max_donations){
@@ -252,7 +251,7 @@
                     
                     //const item_new = new Item(scene, items['hh_mug_1'], person.x, person.y);
                     
-                    scene['map_donations' + scene.map_index ].add(item, true);
+                    scene['map_donations' + scene.map_index ].add(item, false);
                 }
             
                 //console.log();
