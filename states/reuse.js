@@ -45,6 +45,8 @@ class Reuse extends Phaser.Scene {
             });
             
             
+            console.log(i_map, donations.children.entries.length)
+            
             i_map += 1;
         }
         

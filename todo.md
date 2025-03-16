@@ -76,7 +76,7 @@
 * ( done ) - when a person is destroyed there on hand items should also be destroyed
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - only donations for the current map should be active and visible
+* (      ) - fix bug where items to not get added to donation groups property
 * (      ) - A box will need to be able to have child items
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
