@@ -77,8 +77,11 @@
 * ( done ) - fix bug where items to not get added to donation groups property
 * ( done ) - see about fixing bug where donator on hand items get added to the maps donation group when map is switched
 
+  ARTWORK:
+* (      ) - blue bin tiles
+
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - A box will need to be able to have child items
+* (      ) - A box item can just have a count of items in it, and then the items can be generated when clicked
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 * (      ) - have the item show up above the players head
