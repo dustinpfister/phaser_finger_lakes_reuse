@@ -227,6 +227,7 @@
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
+            const items = scene.registry.get('items');
             const onHand = person.getData('onHand');
             const tPos = person.getData('trigger_pos');
             const cPos = person.getTilePos();
@@ -246,6 +247,12 @@
                     const item = onHand[i_item];
                     item.x = person.x;
                     item.y = person.y;
+                    
+                    //item.destroy();
+                    
+                    //const item_new = new Item(scene, items['hh_mug_1'], person.x, person.y);
+                    
+                    scene['map_donations' + scene.map_index ].add(item, true);
                 }
             
                 //console.log();

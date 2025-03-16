@@ -37,9 +37,14 @@ class Reuse extends Phaser.Scene {
         while(i_map <= 4){
         
             const donations = scene['map_donations' + map_index];
-            donations.active = false;
-            console.log(donations)
-        
+            const bool = i_map === map_index;
+            donations.active = bool;
+            donations.getChildren().forEach( (member) => {
+                member.active = bool;
+                member.visible = bool;
+            });
+            
+            
             i_map += 1;
         }
         
