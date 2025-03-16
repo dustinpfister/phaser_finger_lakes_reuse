@@ -47,6 +47,25 @@ class Reuse extends Phaser.Scene {
            this.map.destroy();
         } 
         if(this.customers){
+            console.log('destroy!');
+            
+            const members = this.customers.getChildren();
+            let i = members.length;
+            while(i--){
+                const member = members[i];
+                const onHand = member.getData('onHand');
+                let i_item = onHand.length;
+                while(i_item--){
+                    const item = onHand[i_item];
+                    item.destroy();
+                
+                } 
+                console.log()
+            }
+            
+            console.log();
+        
+        
             this.customers.destroy(true, true);
         }
         this.customers = new People({

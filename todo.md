@@ -73,9 +73,10 @@
 * ( done ) - have a tile for an open box with items in it
 * ( done ) - have a tile for the white mug item
 * ( done ) - see about having a map items map# for each map in the reg in place of the single donations that is used for all maps
+* ( done ) - when a person is destroyed there on hand items should also be destroyed
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - only the map donation group for the current map should be active and visible
+* (      ) - only donations for the current map should be active and visible
 * (      ) - A box will need to be able to have child items
 * (      ) - the player can click a box the first time to open it
 * (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
