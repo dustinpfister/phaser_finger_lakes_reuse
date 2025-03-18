@@ -191,9 +191,7 @@
             const items = scene.registry.get('items');
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
-            
             const donations = scene['map_donations' + scene.map_index];
-            
             if(donations.children.size < max_donations){
                 const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
                 donation.setInteractive();
@@ -201,16 +199,14 @@
                     const pos_player = scene.player.getTilePos();
                     const pos_item = this.getTilePos();
                     const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                    
                     if(d < 2){
                         console.log('okay lets take a look.');
-                        console.log(this)
+                        donation.setFrame('bx_full');
+                        console.log(this);
                     }
-                    
                     if(d >= 2){
                         console.log('player is to far away to open.');
-                    }
-                    
+                    }          
                 });
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );

@@ -8,7 +8,7 @@
     { "filename": "bluebin_up_full", "frame": { "w": 16, "h": 16, "x": 80, "y": 0 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_up_flash1", "frame": { "w": 16, "h": 16, "x": 96, "y": 0 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_up_flash2", "frame": { "w": 16, "h": 16, "x": 112, "y": 0 }, "anchor": { "x": 0.5, "y": 0.5 } },    
-    { "filename": "hh_mug_white", "frame": { "w": 16, "h": 16, "x": 0, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "hh_mug_1", "frame": { "w": 16, "h": 16, "x": 0, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_side_close", "frame": { "w": 16, "h": 16, "x": 48, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_side_open", "frame": { "w": 16, "h": 16, "x": 64, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_side_full", "frame": { "w": 16, "h": 16, "x": 80, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
