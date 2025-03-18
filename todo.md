@@ -77,11 +77,11 @@
 * ( done ) - fix bug where items to not get added to donation groups property
 * ( done ) - see about fixing bug where donator on hand items get added to the maps donation group when map is switched
 * ( done ) - blue bin tiles
+* ( done ) - the player can click a box the first time to open it
+* ( done ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
-* (      ) - A box item can just have a count of items in it, and then the items can be generated when clicked
-* (      ) - the player can click a box the first time to open it
-* (      ) - the player can then click on it again to remove an item and pull it into there on hand inventory
+* (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
 * (      ) - the item can then be placed into blue bins by clicking on them
 

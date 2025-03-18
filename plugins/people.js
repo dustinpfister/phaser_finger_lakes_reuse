@@ -4,9 +4,9 @@
     
     class Item extends Phaser.GameObjects.Sprite {
     
-        constructor (scene, data, x=-1, y=-1) {
+        constructor (scene, data, x=-1, y=-1, sheet="donations_16_16", frame="bx_close") {
             
-            super(scene, x, y, 'donations_16_16', 'bx_close')
+            super(scene, x, y, sheet, frame)
             
             this.desc = data.desc;
             this.value = data.value;
@@ -193,16 +193,27 @@
             person.body.setDrag(500, 500);
             const donations = scene['map_donations' + scene.map_index];
             if(donations.children.size < max_donations){
-                const donation = new Item(scene, items['hh_mug_1'], person.x, person.y);
+                const donation = new Item(scene, items['box_items_hh'], person.x, person.y, 'donations_16_16', 'bx_close');
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
-                    const pos_player = scene.player.getTilePos();
+                    const player = scene.player;
+                    const pos_player = player.getTilePos();
                     const pos_item = this.getTilePos();
                     const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
                     if(d < 2){
                         console.log('okay lets take a look.');
+                        const onHand = player.getData('onHand');
                         donation.setFrame('bx_full');
-                        console.log(this);
+                        
+                        const data = items['box_items_hh'];
+                        const item = new Item(scene, data, player.x, player.y, 'donations_16_16', 'hh_mug_1' );
+                        
+                        onHand.push( item );
+                        
+                        player.setData('onHand', onHand);
+                        
+                        console.log(player.data);
+                        
                     }
                     if(d >= 2){
                         console.log('player is to far away to open.');

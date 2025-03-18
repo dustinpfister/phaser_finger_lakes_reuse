@@ -1,10 +1,12 @@
 {
+    "box_items_hh" : {
+        "desc": "A box of Household items",
+        "tile" : { "sheet": "", "frame": "" }
+    },
+
+
     "hh_mug_1" : {
         "desc": "Yet Another plain white Mug",
-        "value": { "low": 0.50, "high": 0.75 },
-        "weight": 1.00,
-        "type" : "mug",
-        "img_index" : 1,
-        "frame_index" : 0
+        "tile" : { "sheet": "", "frame": "" }
     }
 }

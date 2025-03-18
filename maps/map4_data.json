@@ -1,9 +1,9 @@
 {
   "name": "Back",
-  "spawnAt": { "x": 4, "y": 6 },
+  "spawnAt": { "x":33, "y": 5 },
   "customer" : {
     "subTypes" : ["donator", "shopper"],
-    "subTypeProbs": [ 0.50, 0.50 ],
+    "subTypeProbs": [ 1.00, 0.00 ],
     "spawnAt" : { "x": 0, "y": 2 },
     "exitAt" : { "x": 40, "y": 8 }
   },
