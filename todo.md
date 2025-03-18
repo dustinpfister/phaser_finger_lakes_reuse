@@ -76,9 +76,9 @@
 * ( done ) - when a person is destroyed there on hand items should also be destroyed
 * ( done ) - fix bug where items to not get added to donation groups property
 * ( done ) - see about fixing bug where donator on hand items get added to the maps donation group when map is switched
+* ( done ) - blue bin tiles
 
   ARTWORK:
-* (      ) - blue bin tiles
 
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - A box item can just have a count of items in it, and then the items can be generated when clicked
