@@ -3,6 +3,17 @@
 ## R1 ( ) - Processing plugin
 
 ```
+  WORKERS:
+* (      ) - have a worker type of People class
+* (      ) - have an'employee' subclass for workers
+* (      ) - have at least 4 workers for now
+
+  ONE CUSTOMERS/WORKERS FOR EACH MAP 
+* (      ) -  have a workers and customers people class for each map
+* (      ) -  have it so that customers can move from one map to another 
+* (      ) -  have workers always working even if they are not in the current map
+
+  MISC:
 * (      ) - revisit collision detection
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
@@ -80,20 +91,23 @@
 * ( done ) - the player can click a box the first time to open it
 * ( done ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 
-  DONATIONS, ITEMS DATABASE, INVENTORY:
+  DONATIONS, ITEMS DATABASE
 * (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
+* (      ) - each map should have an unprocessed items collection, which contains blue bins
+* (      ) - each map should have a fixed number of blue bins
 * (      ) - the item can then be placed into blue bins by clicking on them
+* (      ) - Auto Sort of items in boxes over time
 
-  WORKERS:
-* (      ) - have a worker type of People class
-* (      ) - have an'employee' subclass for workers
-* (      ) - have at least 4 workers for now
+  INVENTORY:
+* (      ) - each map should have an inventory collection.
+* (      ) - Auto Price of Items over time
 
-  ONE CUSTOMERS/WORKERS FOR EACH MAP 
-* (      ) -  have a workers and customers people class for each map
-* (      ) -  have it so that customers can move from one map to another 
-* (      ) -  have workers always working even if they are not in the current map
+  STOCKING:
+* (      ) - auto stocking of items
+
+  SHOPERS:
+* (      ) - auto buying of items
 
   MISC:
 * (      ) - player should not be able to open a donation when it is an on hand item of a donation.
