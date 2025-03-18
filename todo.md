@@ -78,8 +78,6 @@
 * ( done ) - see about fixing bug where donator on hand items get added to the maps donation group when map is switched
 * ( done ) - blue bin tiles
 
-  ARTWORK:
-
   DONATIONS, ITEMS DATABASE, INVENTORY:
 * (      ) - A box item can just have a count of items in it, and then the items can be generated when clicked
 * (      ) - the player can click a box the first time to open it
@@ -98,6 +96,7 @@
 * (      ) -  have workers always working even if they are not in the current map
 
   MISC:
+* (      ) - player should not be able to open a donation when it is an on hand item of a donation.
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon
