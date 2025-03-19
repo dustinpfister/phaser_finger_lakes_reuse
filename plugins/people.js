@@ -6,14 +6,13 @@
     
         constructor (scene, data, x=-1, y=-1, sheet="donations_16_16", frame="bx_close") {
             
-            super(scene, x, y, sheet, frame)
+            super(scene, x, y, data.tile.sheet, data.tile.frame)
             
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
             
-        
         
         } 
         
@@ -199,7 +198,8 @@
             const donations_total = donations_incoming + donations_drop; 
             
             if(donations_total < max_donations){
-                const donation = new Item(scene, items['box_items_hh'], person.x, person.y, 'donations_16_16', 'bx_close');
+                const donation_data = items['box_items_hh'];
+                const donation = new Item(scene, donation_data, person.x, person.y, 'donations_16_16', 'bx_close');
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
                     const player = scene.player;

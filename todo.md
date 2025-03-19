@@ -90,11 +90,13 @@
 * ( done ) - blue bin tiles
 * ( done ) - the player can click a box the first time to open it
 * ( done ) - the player can then click on it again to remove an item and pull it into there on hand inventory
+* ( done ) - use 'tile' key of item data to set the sheet and frame to use
 
   DONATIONS, ITEMS DATABASE
 * (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
 * (      ) - each map should have an unprocessed items collection, which contains blue bins
+* (      ) - blue bins will need to be a nested item type
 * (      ) - each map should have a fixed number of blue bins
 * (      ) - the item can then be placed into blue bins by clicking on them
 * (      ) - Auto Sort of items in boxes over time
