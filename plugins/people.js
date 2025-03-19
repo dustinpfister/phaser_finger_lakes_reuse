@@ -321,7 +321,7 @@
                     item.x = person.x;
                     item.y = person.y;
                     
-                    
+                   
                     scene['map_donations' + scene.map_index ].add(item, false);
                     
                     //const item_new = new Item(scene, items['box_items_hh'], person.x, person.y);

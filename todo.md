@@ -91,9 +91,9 @@
 * ( done ) - the player can click a box the first time to open it
 * ( done ) - the player can then click on it again to remove an item and pull it into there on hand inventory
 * ( done ) - use 'tile' key of item data to set the sheet and frame to use
+* ( done ) - move code that has to do with attaching a pointer down event into the item class
 
   DONATIONS, ITEMS DATABASE
-* (      ) - have an item class method for attaching events and so forth to an item
 * (      ) - use parentContainer prop to keep player from opening a donation when it is an on hand item of a customer.
 * (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
