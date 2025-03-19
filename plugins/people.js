@@ -8,10 +8,55 @@
             
             super(scene, x, y, data.tile.sheet, data.tile.frame)
             
+            const item = this;
+            const items = scene.registry.get('items');
+            
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
+            
+            
+            item.setInteractive();
+            item.on('pointerdown', (pointer, b, c) => {
+                const player = scene.player;
+                const pos_player = player.getTilePos();
+                const pos_item = this.getTilePos();
+                const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
+                if(d < 2){
+                    const onHand = player.getData('onHand');
+                    let drop_count = item.drop_count;
+                    item.setFrame('bx_full');
+                        
+                    console.log('donation has a drop count of : ' + drop_count);
+                    
+                    if(drop_count > 0 ){
+                        console.log('new Item');
+                        const data = items['hh_mug_1'];
+                        const item_new = new Item(scene, data, player.x, player.y );
+                        onHand.push( item_new );
+                        drop_count -= 1;
+                        item.drop_count = drop_count;
+                        player.setData('onHand', onHand);
+                            
+                        console.log(item.parentContainer)
+                    }
+                        
+                    if( drop_count <= 0 ){
+                        console.log('all done');
+                        item.destroy(true, true);
+                        
+                        //person.setData('onHand', []);
+                        //console.log(person.getData('onHand'));
+                    }
+                        
+                        
+                    }
+                if(d >= 2){
+                    console.log('player is to far away to open.');
+                }          
+            });
+            
             
         
         } 
@@ -22,6 +67,8 @@
                 y : Math.floor( this.y / 16 )
             }
         }
+        
+        
     
     }
     
@@ -200,6 +247,7 @@
             if(donations_total < max_donations){
                 const donation_data = items['box_items_hh'];
                 const donation = new Item(scene, donation_data, person.x, person.y);
+                /*
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
                     const player = scene.player;
@@ -237,6 +285,7 @@
                         console.log('player is to far away to open.');
                     }          
                 });
+                */
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );
             }

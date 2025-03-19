@@ -93,7 +93,7 @@
 * ( done ) - use 'tile' key of item data to set the sheet and frame to use
 
   DONATIONS, ITEMS DATABASE
-* (      ) - have an item class method for attaching an donation item\
+* (      ) - have an item class method for attaching events and so forth to an item
 * (      ) - use parentContainer prop to keep player from opening a donation when it is an on hand item of a customer.
 * (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
