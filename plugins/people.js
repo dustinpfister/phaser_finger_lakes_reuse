@@ -4,7 +4,7 @@
     
     class Item extends Phaser.GameObjects.Sprite {
     
-        constructor (scene, data, x=-1, y=-1, sheet="donations_16_16", frame="bx_close") {
+        constructor (scene, data, x=-1, y=-1) {
             
             super(scene, x, y, data.tile.sheet, data.tile.frame)
             
@@ -199,7 +199,7 @@
             
             if(donations_total < max_donations){
                 const donation_data = items['box_items_hh'];
-                const donation = new Item(scene, donation_data, person.x, person.y, 'donations_16_16', 'bx_close');
+                const donation = new Item(scene, donation_data, person.x, person.y);
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
                     const player = scene.player;
@@ -214,17 +214,21 @@
                         console.log('donation has a drop count of : ' + drop_count);
                         if(drop_count > 0){
                             console.log('new Item');
-                            const data = items['box_items_hh'];
-                            const item = new Item(scene, data, player.x, player.y, 'donations_16_16', 'hh_mug_1' );
+                            const data = items['hh_mug_1'];
+                            const item = new Item(scene, data, player.x, player.y );
                             onHand.push( item );
                             drop_count -= 1;
                             donation.drop_count = drop_count;
                             player.setData('onHand', onHand);
+                            
+                            console.log(item)
                         }
                         
-                        if(drop_count <= 0){
+                        if( drop_count <= 0 ){
                             console.log('all done');
-                            donation.destroy();
+                            donation.destroy(true, true);
+                            person.setData('onHand', []);
+                            //console.log(person.getData('onHand'));
                         }
                         
                         
