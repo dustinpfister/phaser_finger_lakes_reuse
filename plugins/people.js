@@ -193,7 +193,12 @@
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
             const donations = scene['map_donations' + scene.map_index];
-            if(donations.children.size < max_donations){
+            
+            const donations_incoming = people.children.entries.filter((person)=>{ return person.getData('onHand').length > 0;  }).length;
+            const donations_drop = donations.children.size; 
+            const donations_total = donations_incoming + donations_drop; 
+            
+            if(donations_total < max_donations){
                 const donation = new Item(scene, items['box_items_hh'], person.x, person.y, 'donations_16_16', 'bx_close');
                 donation.setInteractive();
                 donation.on('pointerdown', function (pointer, b, c) {
