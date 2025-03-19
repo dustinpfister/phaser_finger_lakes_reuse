@@ -1,12 +1,14 @@
 {
     "box_items_hh" : {
         "desc": "A box of Household items",
-        "tile" : { "sheet": "", "frame": "" }
+        "tile" : { "sheet": "", "frame": "" },
+        "drop_count" : 3
     },
 
 
     "hh_mug_1" : {
         "desc": "Yet Another plain white Mug",
-        "tile" : { "sheet": "", "frame": "" }
+        "tile" : { "sheet": "", "frame": "" },
+        "drop_count" : 0
     }
 }

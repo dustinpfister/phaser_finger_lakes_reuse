@@ -11,6 +11,7 @@
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
+            this.drop_count = data.drop_count || 0;
             
         
         
@@ -201,18 +202,26 @@
                     const pos_item = this.getTilePos();
                     const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
                     if(d < 2){
-                        console.log('okay lets take a look.');
                         const onHand = player.getData('onHand');
+                        let drop_count = donation.drop_count;
                         donation.setFrame('bx_full');
                         
-                        const data = items['box_items_hh'];
-                        const item = new Item(scene, data, player.x, player.y, 'donations_16_16', 'hh_mug_1' );
+                        console.log('donation has a drop count of : ' + drop_count);
+                        if(drop_count > 0){
+                            console.log('new Item');
+                            const data = items['box_items_hh'];
+                            const item = new Item(scene, data, player.x, player.y, 'donations_16_16', 'hh_mug_1' );
+                            onHand.push( item );
+                            drop_count -= 1;
+                            donation.drop_count = drop_count;
+                            player.setData('onHand', onHand);
+                        }
                         
-                        onHand.push( item );
+                        if(drop_count <= 0){
+                            console.log('all done');
+                            donation.destroy();
+                        }
                         
-                        player.setData('onHand', onHand);
-                        
-                        console.log(player.data);
                         
                     }
                     if(d >= 2){

@@ -16,7 +16,7 @@ class Boot extends Phaser.Scene {
         const reg = game.registry;
         
         
-        reg.set('MAX_DONATIONS', 10);
+        reg.set('MAX_DONATIONS', 5);
         
         
         game.events.on('step', () => {
