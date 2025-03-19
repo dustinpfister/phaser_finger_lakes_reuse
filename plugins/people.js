@@ -212,7 +212,7 @@
                         donation.setFrame('bx_full');
                         
                         console.log('donation has a drop count of : ' + drop_count);
-                        if(drop_count > 0){
+                        if(drop_count > 0 ){
                             console.log('new Item');
                             const data = items['hh_mug_1'];
                             const item = new Item(scene, data, player.x, player.y );
@@ -221,7 +221,7 @@
                             donation.drop_count = drop_count;
                             player.setData('onHand', onHand);
                             
-                            console.log(item)
+                            console.log(donation.parentContainer)
                         }
                         
                         if( drop_count <= 0 ){
@@ -272,11 +272,13 @@
                     item.x = person.x;
                     item.y = person.y;
                     
-                    //item.destroy();
-                    
-                    //const item_new = new Item(scene, items['hh_mug_1'], person.x, person.y);
                     
                     scene['map_donations' + scene.map_index ].add(item, false);
+                    
+                    //const item_new = new Item(scene, items['box_items_hh'], person.x, person.y);
+                    //scene['map_donations' + scene.map_index ].add(item_new, false);
+                    //console.log(item_new);
+                    //item.destroy(true, true);
                 }
             
                 //console.log();

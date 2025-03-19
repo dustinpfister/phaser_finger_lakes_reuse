@@ -93,6 +93,8 @@
 * ( done ) - use 'tile' key of item data to set the sheet and frame to use
 
   DONATIONS, ITEMS DATABASE
+* (      ) - have an item class method for attaching an donation item\
+* (      ) - use parentContainer prop to keep player from opening a donation when it is an on hand item of a customer.
 * (      ) - have a limit for the number of items the player can hold
 * (      ) - have the item show up above the players head
 * (      ) - each map should have an unprocessed items collection, which contains blue bins
@@ -112,7 +114,6 @@
 * (      ) - auto buying of items
 
   MISC:
-* (      ) - player should not be able to open a donation when it is an on hand item of a donation.
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon
