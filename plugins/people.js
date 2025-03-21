@@ -15,6 +15,7 @@
             this.value = data.value;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
+            this.droped = false;
             
             
             item.setInteractive();
@@ -26,11 +27,12 @@
                 if(d < 2){
                     const onHand = player.getData('onHand');
                     let drop_count = item.drop_count;
-                    item.setFrame('bx_full');
+                    
                         
                     console.log('donation has a drop count of : ' + drop_count);
                     
-                    if(drop_count > 0 ){
+                    if(drop_count > 0 && item.droped){
+                        item.setFrame('bx_full');
                         console.log('new Item');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, data, player.x, player.y );
@@ -39,7 +41,7 @@
                         item.drop_count = drop_count;
                         player.setData('onHand', onHand);
                             
-                        console.log(item.parentContainer)
+                        console.log(item.parentContainer);
                     }
                         
                     if( drop_count <= 0 ){
@@ -247,45 +249,7 @@
             if(donations_total < max_donations){
                 const donation_data = items['box_items_hh'];
                 const donation = new Item(scene, donation_data, person.x, person.y);
-                /*
-                donation.setInteractive();
-                donation.on('pointerdown', function (pointer, b, c) {
-                    const player = scene.player;
-                    const pos_player = player.getTilePos();
-                    const pos_item = this.getTilePos();
-                    const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                    if(d < 2){
-                        const onHand = player.getData('onHand');
-                        let drop_count = donation.drop_count;
-                        donation.setFrame('bx_full');
-                        
-                        console.log('donation has a drop count of : ' + drop_count);
-                        if(drop_count > 0 ){
-                            console.log('new Item');
-                            const data = items['hh_mug_1'];
-                            const item = new Item(scene, data, player.x, player.y );
-                            onHand.push( item );
-                            drop_count -= 1;
-                            donation.drop_count = drop_count;
-                            player.setData('onHand', onHand);
-                            
-                            console.log(donation.parentContainer)
-                        }
-                        
-                        if( drop_count <= 0 ){
-                            console.log('all done');
-                            donation.destroy(true, true);
-                            person.setData('onHand', []);
-                            //console.log(person.getData('onHand'));
-                        }
-                        
-                        
-                    }
-                    if(d >= 2){
-                        console.log('player is to far away to open.');
-                    }          
-                });
-                */
+                
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );
             }
@@ -321,11 +285,16 @@
                     item.x = person.x;
                     item.y = person.y;
                     
-                   
+                    item.droped = true;
                     scene['map_donations' + scene.map_index ].add(item, false);
                     
                     //const item_new = new Item(scene, items['box_items_hh'], person.x, person.y);
-                    //scene['map_donations' + scene.map_index ].add(item_new, false);
+                    //scene['map_donations' + scene.map_index ].add(item_new, true);
+                    
+                    //console.log(item_new)
+                    
+                    //scene.add.existing(item_new);
+                    
                     //console.log(item_new);
                     //item.destroy(true, true);
                 }
