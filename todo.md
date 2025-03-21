@@ -93,10 +93,11 @@
 * ( done ) - use 'tile' key of item data to set the sheet and frame to use
 * ( done ) - move code that has to do with attaching a pointer down event into the item class
 * ( done ) - parent container is not working I will have to go with a droped boolen in the item class
+* ( done ) - have a limit for the number of items the player can hold
+* ( done ) - have the item show up in the scene
 
   DONATIONS, ITEMS DATABASE
-* (      ) - have a limit for the number of items the player can hold
-* (      ) - have the item show up above the players head
+* (      ) - have a common person class update method, and have it update the position of on hand items relative to person.
 * (      ) - each map should have an unprocessed items collection, which contains blue bins
 * (      ) - blue bins will need to be a nested item type
 * (      ) - each map should have a fixed number of blue bins

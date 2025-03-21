@@ -26,22 +26,28 @@
                 const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
                 if(d < 2){
                     const onHand = player.getData('onHand');
+                    const maxOnHand = player.getData('maxOnHand');
                     let drop_count = item.drop_count;
                     
                         
                     console.log('donation has a drop count of : ' + drop_count);
                     
-                    if(drop_count > 0 && item.droped){
+                    if(drop_count > 0 && item.droped && onHand.length < maxOnHand){
                         item.setFrame('bx_full');
                         console.log('new Item');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, data, player.x, player.y );
                         onHand.push( item_new );
+                        scene.add.existing( item_new );
+                        
+                        console.log(scene);
+                        
                         drop_count -= 1;
                         item.drop_count = drop_count;
                         player.setData('onHand', onHand);
+                        
+                        console.log(onHand);
                             
-                        console.log(item.parentContainer);
                     }
                         
                     if( drop_count <= 0 ){
@@ -85,7 +91,8 @@
             this.depth = 2;
             this.setData({ 
                 path: [], hits: 0, idleTime: 0,
-                onHand: [], trigger_pos: {x: -1, y: -1},
+                onHand: [], maxOnHand: 3,
+                trigger_pos: {x: -1, y: -1},
                 type: '', subType: ''
             });
         }

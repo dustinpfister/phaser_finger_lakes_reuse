@@ -75,7 +75,7 @@ class Reuse extends Phaser.Scene {
             defaultKey: 'people_16_16',
             maxSize: MAX_PEOPLE,
             createCallback : (person) => {
-               // person.body.setDrag(500, 500);
+                // person.body.setDrag(500, 500);
                 
                 
                 //console.log(person.getData('type'));
