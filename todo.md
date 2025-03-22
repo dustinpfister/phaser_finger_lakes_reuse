@@ -103,10 +103,11 @@
 * ( done ) - have a common person class update method, and have it update the position of on hand items relative to person.
 
   DONATIONS, ITEMS DATABASE
-* (      ) - each map should have an unprocessed items collection, which contains blue bins
+* (      ) - Start a seperate container class that will also extend sprite in place of using the Item class for everything
+* (      ) - each map should have an stock collection, which contains blue bins, as well as loose items
 * (      ) - blue bins will need to be a nested item type
 * (      ) - each map should have a fixed number of blue bins
-* (      ) - the item can then be placed into blue bins by clicking on them
+* (      ) - on hand items can then be placed into blue bins by clicking on them
 * (      ) - Auto Sort of items in boxes over time
 
   INVENTORY:
@@ -117,7 +118,8 @@
 * (      ) - auto stocking of items
 
   SHOPERS:
-* (      ) - auto buying of items
+* (      ) - auto buying of items over time
+* (      ) - money displayed
 
   MISC:
 * (      ) - many enter and exit locations for donators in map4

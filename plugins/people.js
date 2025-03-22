@@ -11,6 +11,14 @@
             const item = this;
             const items = scene.registry.get('items');
             
+            this.priced = false;
+            
+            
+            //const items = [];
+            //this.contents = new Phaser.GameObjects.Group(scene, items );
+            //console.log(this.contents);
+            
+            
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
