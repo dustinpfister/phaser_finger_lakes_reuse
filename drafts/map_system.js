@@ -42,22 +42,39 @@ class Example extends Phaser.Scene {
         return Math.floor( Math.random() * 4 );
     }
 
-    shiftMap (dx = 1, dy = -1) {
+    shiftMap (dx = 0, dy = 0) {
         const map = this.map;
-        const sx = dx < 0 ? map.width : 1;
+        const sx = dx < 0 ? map.width : 0;
+        let ex = dx < 0 ? 0 : map.width;
         const xStep = dx < 0 ? -1 : 1;
-        const sy = dy < 0 ?  map.height : 1;
+        
+        const sy = dy < 0 ? map.height : 0;
+        let ey = dy < 0 ? 0 : map.height;
+        ey = dy === 0 ? sy : ey;
         const yStep = dy < 0 ? -1 : 1;
-        for (
+        if(dx === 0 && dy === 0){
+            return;
+        }
+        let i = 0;
+        loop: for (
             let y = sy;
-            dy > 0 ? ( y < map.height ) : ( y >= 0 ) ;
+            yStep < 0 ? (y > ey) : (y < ey) ;
             y += yStep
-        ) {    
+        ) {
             for (
                 let x = sx;
-                dx > 0 ? ( x < map.width ) : ( x >= 0) ;
+                dx > 0 ? ( x < map.width ) : ( x >= 0 ) ;
+                //xStep < 0 ? (x < ex) : (x > ex) ;
                 x += xStep
             ) {
+                i += 1;
+                
+                if(i >= 20000){
+                
+                    console.log('stuck');
+                    console.log(sx, ex, x);
+                    break loop;
+                }
                 const tile = map.getTileAt(x, y);
                 const prev = map.getTileAt(x - dx , y - dy);     
                 if(prev === null){
@@ -79,7 +96,7 @@ class Example extends Phaser.Scene {
         const map = this.map;
         if(this.t >= this.speed){
             this.t %= this.speed;
-            this.shiftMap();
+            this.shiftMap(1, 1);
         }
     }
 }
