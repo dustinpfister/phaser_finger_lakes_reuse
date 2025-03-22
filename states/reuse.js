@@ -301,11 +301,13 @@ class Reuse extends Phaser.Scene {
         this.customers.update(this);
         this.playerX = Math.floor( this.player.x / 16); 
         this.playerY = Math.floor( this.player.y / 16);
+        
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
         this.cursorCheck('down');
         this.player.offTileCheck(this.map);
+        this.player.update(this);
         //this.camera.setZoom(2.0).centerOn(this.player.x, this.player.y);
         this.camera.setZoom(2.0).pan(this.player.x, this.player.y, 100);
         this.text_player.x = this.player.body.position.x - 0;

@@ -77,6 +77,7 @@
         }
         
         
+        
     
     }
     
@@ -190,6 +191,22 @@
             pathFinder.calculatePath();
         }
         
+        
+        update (scene) {
+            const person = this;
+            const onHand = person.getData('onHand');
+            if(onHand){
+                const len = onHand.length;
+                if(len > 0){
+                    let i = 0;
+                    while(i < len){
+                        onHand[i].x = person.x + 8;
+                        onHand[i].y = person.y - 8 - i * 2;
+                        i += 1;
+                    }
+                }
+            }
+        }
         
     }
     
@@ -438,6 +455,9 @@
                     pt.noPath(this, scene, person);   
                 }
                 
+                person.update(scene);
+                
+                /*
                 const onHand = person.getData('onHand');
                 if(onHand){
                     if(onHand.length > 0){
@@ -445,6 +465,7 @@
                         onHand[0].y = person.y - 8;
                     }
                 }
+                */
                 
             }
         }
