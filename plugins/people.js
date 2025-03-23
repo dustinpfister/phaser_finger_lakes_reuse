@@ -64,6 +64,8 @@
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
             this.droped = false;
+            this.capacity = 0;
+            this.group = scene.add.group();
             const container = this;
             const items = scene.registry.get('items');
             container.setInteractive();
