@@ -1,0 +1,7 @@
+{
+    "box_items_hh" : {
+        "desc": "A box of Household items",
+        "tile" : { "sheet": "donations_16_16", "frame": "bx_close" },
+        "drop_count" : 3
+    }
+}

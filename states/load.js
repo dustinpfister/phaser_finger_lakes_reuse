@@ -43,6 +43,7 @@ class Load extends Phaser.Scene {
         //console.log(reg.list);
         
         this.load.json('household_1', 'items/household_1.json');
+        this.load.json('containers_1', 'items/containers_1.json');
             
         const gr = this.add.graphics();
         
@@ -61,17 +62,16 @@ class Load extends Phaser.Scene {
     create () {
     
         const items = {};
-    
-    
         Object.assign(items, this.cache.json.get('household_' + 1) );
-    
         this.registry.set('items', items);
         
+        const containers = {};
+        Object.assign(containers, this.cache.json.get('containers_' + 1) );
+        this.registry.set('containers', containers);
         
     
-        console.log( this );
+    console.log(containers);
     
-        //this.scene.start('World');
         this.scene.start('Reuse');
               
     }

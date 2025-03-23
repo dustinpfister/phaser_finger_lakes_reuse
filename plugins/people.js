@@ -276,6 +276,7 @@
 
         create: (people, scene, person) => {
             const items = scene.registry.get('items');
+            const containers = scene.registry.get('containers');
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
             const donations = scene['map_donations' + scene.map_index];
@@ -285,7 +286,8 @@
             const donations_total = donations_incoming + donations_drop; 
             
             if(donations_total < max_donations){
-                const donation_data = items['box_items_hh'];
+                //const donation_data = items['box_items_hh'];
+                const donation_data = containers['box_items_hh'];
                 const donation = new Container(scene, donation_data, person.x, person.y);
                 
                 scene.add.existing(donation);
