@@ -104,10 +104,10 @@
 * ( done ) - Start a BaseItem class that will be used for the Item Class
 * ( done ) - Start a seperate container class that will also extend a BaseItem class
 * ( done ) - use new container class for donation boxes
+* ( done ) - start a blue bin def for containers
 
 
   DONATIONS, ITEMS DATABASE
-* (      ) - start a blue bin def for containers
 * (      ) - make it so that a container can be a collection of items rather than just a way to generate items
 * (      ) - each map should have a stock collection, which contains blue bins, as well as loose items
 * (      ) - blue bins will need to be a nested item type

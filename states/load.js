@@ -68,9 +68,6 @@ class Load extends Phaser.Scene {
         const containers = {};
         Object.assign(containers, this.cache.json.get('containers_' + 1) );
         this.registry.set('containers', containers);
-        
-    
-    console.log(containers);
     
         this.scene.start('Reuse');
               

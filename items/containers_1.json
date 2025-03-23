@@ -2,6 +2,13 @@
     "box_items_hh" : {
         "desc": "A box of Household items",
         "tile" : { "sheet": "donations_16_16", "frame": "bx_close" },
-        "drop_count" : 3
+        "drop_count" : 3,
+        "capacity": 0
+    },
+    "blue_bin" : {
+        "desc": "A blue bin used for storing small house hold items",
+        "tile" : { "sheet": "donations_16_16", "frame": "bluebin_up_close" },
+        "drop_count": 0,
+        "capacity": 10
     }
 }
