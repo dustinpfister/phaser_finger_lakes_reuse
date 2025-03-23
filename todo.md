@@ -103,7 +103,7 @@
 * ( done ) - have a common person class update method, and have it update the position of on hand items relative to person.
 
   DONATIONS, ITEMS DATABASE
-* (      ) - Start a seperate container class that will also extend sprite in place of using the Item class for everything
+* (      ) - Start a seperate container class that will also extend sprite in place of using the Item class
 * (      ) - each map should have an stock collection, which contains blue bins, as well as loose items
 * (      ) - blue bins will need to be a nested item type
 * (      ) - each map should have a fixed number of blue bins

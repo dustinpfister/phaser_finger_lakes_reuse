@@ -32,7 +32,7 @@
                 const pos_player = player.getTilePos();
                 const pos_item = this.getTilePos();
                 const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                if(d < 2){
+                if(d < 2 && item.droped){
                     const onHand = player.getData('onHand');
                     const maxOnHand = player.getData('maxOnHand');
                     let drop_count = item.drop_count;
@@ -42,7 +42,6 @@
                     
                     if(drop_count > 0 && item.droped && onHand.length < maxOnHand){
                         item.setFrame('bx_full');
-                        console.log('new Item');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, data, player.x, player.y );
                         onHand.push( item_new );
@@ -59,11 +58,7 @@
                     }
                         
                     if( drop_count <= 0 ){
-                        console.log('all done');
                         item.destroy(true, true);
-                        
-                        //person.setData('onHand', []);
-                        //console.log(person.getData('onHand'));
                     }
                         
                         
