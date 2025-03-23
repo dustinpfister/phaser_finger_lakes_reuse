@@ -2,7 +2,25 @@
 
     const root = this;
     
-    class Item extends Phaser.GameObjects.Sprite {
+    class BaseItem extends Phaser.GameObjects.Sprite {
+    
+        constructor (scene, x, y, sheet, frame) {
+        
+            super(scene, x, y, sheet, frame)
+        
+        }
+        
+        getTilePos () {    
+            return {
+                x : Math.floor( this.x / 16 ),
+                y : Math.floor( this.y / 16 )
+            }
+        }
+        
+    }
+    
+    
+    class Item extends BaseItem {
     
         constructor (scene, data, x=-1, y=-1) {
             
@@ -14,10 +32,6 @@
             this.priced = false;
             
             
-            //const items = [];
-            //this.contents = new Phaser.GameObjects.Group(scene, items );
-            //console.log(this.contents);
-            
             
             this.desc = data.desc;
             this.value = data.value;
@@ -28,60 +42,57 @@
             
             item.setInteractive();
             item.on('pointerdown', (pointer, b, c) => {
+                //const player = scene.player;
+                //const pos_player = player.getTilePos();
+                //const pos_item = this.getTilePos();
+                //const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
+                
+                console.log('item clicked');
+                
+            });
+        } 
+        
+    }
+    
+    
+    
+    class Container extends BaseItem {
+    
+        constructor (scene, data, x=-1, y=-1) {
+            super(scene, x, y, data.tile.sheet, data.tile.frame)
+            this.desc = data.desc;
+            this.depth = 3;
+            this.drop_count = data.drop_count || 0;
+            this.droped = false;
+            const container = this;
+            const items = scene.registry.get('items');
+            container.setInteractive();
+            container.on('pointerdown', ( pointer, b, c ) => {
                 const player = scene.player;
                 const pos_player = player.getTilePos();
                 const pos_item = this.getTilePos();
                 const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                if(d < 2 && item.droped){
+                if(d < 2 && container.droped){
                     const onHand = player.getData('onHand');
                     const maxOnHand = player.getData('maxOnHand');
-                    let drop_count = item.drop_count;
-                    
-                        
-                    console.log('donation has a drop count of : ' + drop_count);
-                    
-                    if(drop_count > 0 && item.droped && onHand.length < maxOnHand){
-                        item.setFrame('bx_full');
+                    let drop_count = container.drop_count;
+                    if(drop_count > 0 && container.droped && onHand.length < maxOnHand){
+                        container.setFrame('bx_full');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, data, player.x, player.y );
                         onHand.push( item_new );
                         scene.add.existing( item_new );
-                        
-                        console.log(scene);
-                        
                         drop_count -= 1;
-                        item.drop_count = drop_count;
+                        container.drop_count = drop_count;
                         player.setData('onHand', onHand);
-                        
-                        console.log(onHand);
-                            
-                    }
-                        
+                    }   
                     if( drop_count <= 0 ){
-                        item.destroy(true, true);
-                    }
-                        
-                        
-                    }
-                if(d >= 2){
-                    console.log('player is to far away to open.');
-                }          
+                        container.destroy(true, true);
+                    }        
+                }
             });
-            
-            
-        
-        } 
-        
-        getTilePos () {    
-            return {
-                x : Math.floor( this.x / 16 ),
-                y : Math.floor( this.y / 16 )
-            }
         }
         
-        
-        
-    
     }
     
     
@@ -275,7 +286,7 @@
             
             if(donations_total < max_donations){
                 const donation_data = items['box_items_hh'];
-                const donation = new Item(scene, donation_data, person.x, person.y);
+                const donation = new Container(scene, donation_data, person.x, person.y);
                 
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );
@@ -315,18 +326,8 @@
                     item.droped = true;
                     scene['map_donations' + scene.map_index ].add(item, false);
                     
-                    //const item_new = new Item(scene, items['box_items_hh'], person.x, person.y);
-                    //scene['map_donations' + scene.map_index ].add(item_new, true);
-                    
-                    //console.log(item_new)
-                    
-                    //scene.add.existing(item_new);
-                    
-                    //console.log(item_new);
-                    //item.destroy(true, true);
+              
                 }
-            
-                //console.log();
             
                 person.setData('onHand', []);
                   

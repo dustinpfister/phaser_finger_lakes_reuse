@@ -101,13 +101,19 @@
 * ( done ) - have a limit for the number of items the player can hold
 * ( done ) - have the item show up in the scene
 * ( done ) - have a common person class update method, and have it update the position of on hand items relative to person.
+* ( done ) - Start a BaseItem class that will be used for the Item Class
+* ( done ) - Start a seperate container class that will also extend a BaseItem class
+* ( done ) - use new container class for donation boxes
+
 
   DONATIONS, ITEMS DATABASE
-* (      ) - Start a seperate container class that will also extend sprite in place of using the Item class
-* (      ) - each map should have an stock collection, which contains blue bins, as well as loose items
+* (      ) - start a blue bin def for containers
+* (      ) - make it so that a container can be a collection of items rather than just a way to generate items
+* (      ) - each map should have a stock collection, which contains blue bins, as well as loose items
 * (      ) - blue bins will need to be a nested item type
 * (      ) - each map should have a fixed number of blue bins
 * (      ) - on hand items can then be placed into blue bins by clicking on them
+* (      ) - donations should be placed on the table by the donators
 * (      ) - Auto Sort of items in boxes over time
 
   INVENTORY:
