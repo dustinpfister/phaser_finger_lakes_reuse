@@ -6,7 +6,12 @@
     
         constructor (scene, x, y, sheet, frame) {
         
-            super(scene, x, y, sheet, frame)
+            super(scene, x, y, sheet, frame);
+            
+            this.priced = false;
+            this.droped = false;
+            this.desc = '';
+            this.droped = false;
         
         }
         
@@ -29,7 +34,7 @@
             const item = this;
             const items = scene.registry.get('items');
             
-            this.priced = false;
+            
             
             
             
@@ -37,7 +42,7 @@
             this.value = data.value;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
-            this.droped = false;
+            //this.droped = false;
             
             
             item.setInteractive();
@@ -63,7 +68,7 @@
             this.desc = data.desc;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
-            this.droped = false;
+            
             this.capacity = 0;
             this.group = scene.add.group();
             const container = this;
