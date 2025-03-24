@@ -23,6 +23,7 @@ class Reuse extends Phaser.Scene {
     
     setupMap ( map_index=1, x=undefined, y=undefined ) {
         const scene = this;
+        const Container = this.PeoplePlugin.Container;
         const People = this.PeoplePlugin.People;
         const player = this.player;
         //player.setData('path', []);
@@ -32,10 +33,23 @@ class Reuse extends Phaser.Scene {
         this.player.x = x * 16 + 8;
         this.player.y = y * 16 + 8;
         
+        const container_keys = Object.keys(md.objects.containers); 
+        
+        const container_db = this.cache.json.get('containers_' + 1);
+        container_keys.forEach( (key) => {
+            const data_map = md.objects.containers[key];
+            const data_con = container_db[key];
+            
+            data_map.forEach( (data)=> {
+                const container = new Container(scene, data_con, data.x * 16 + 8, data.y * 16 + 8 ); 
+                console.log(container);
+                scene.add.existing(container);
+            
+            });
+        });
         
         let i_map = 1;
         while(i_map <= 4){
-        
             const donations = scene['map_donations' + i_map];
             const bool = i_map === map_index;
             donations.active = bool;
@@ -43,10 +57,6 @@ class Reuse extends Phaser.Scene {
                 member.active = bool;
                 member.visible = bool;
             });
-            
-            
-            console.log(i_map, donations.children.entries.length)
-            
             i_map += 1;
         }
         
@@ -152,10 +162,6 @@ class Reuse extends Phaser.Scene {
             player.setVelocity(0);  
             scene.data.mouseDown = false;
         });
-        
-        
-        console.log( this.map.getTileAt(0,0, true, 0) );
-        
     }
     
     doorDisabledCheck () {

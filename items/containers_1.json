@@ -7,7 +7,7 @@
     },
     "blue_bin" : {
         "desc": "A blue bin used for storing small house hold items",
-        "tile" : { "sheet": "donations_16_16", "frame": "bluebin_up_close" },
+        "tile" : { "sheet": "donations_16_16", "frame": "bluebin_up_open" },
         "drop_count": 0,
         "capacity": 10
     }

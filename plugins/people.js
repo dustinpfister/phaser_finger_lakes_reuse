@@ -8,6 +8,7 @@
         
             super(scene, x, y, sheet, frame);
             
+            this.depth = 1;
             this.priced = false;
             this.droped = false;
             this.desc = '';
@@ -35,7 +36,7 @@
             const items = scene.registry.get('items');
             this.desc = data.desc;
             this.value = data.value;
-            this.depth = 3;
+            
             this.drop_count = data.drop_count || 0;
             item.setInteractive();
             item.on('pointerdown', (pointer, b, c) => {
@@ -58,7 +59,6 @@
         constructor (scene, data, x=-1, y=-1) {
             super(scene, x, y, data.tile.sheet, data.tile.frame)
             this.desc = data.desc;
-            this.depth = 3;
             this.drop_count = data.drop_count || 0;
             
             this.capacity = 0;
@@ -486,6 +486,7 @@
             
             this.People = People;
             this.Person = Person;
+            this.Container = Container;
         } 
     }
 
