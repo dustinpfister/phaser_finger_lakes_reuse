@@ -33,18 +33,10 @@
             
             const item = this;
             const items = scene.registry.get('items');
-            
-            
-            
-            
-            
             this.desc = data.desc;
             this.value = data.value;
             this.depth = 3;
             this.drop_count = data.drop_count || 0;
-            //this.droped = false;
-            
-            
             item.setInteractive();
             item.on('pointerdown', (pointer, b, c) => {
                 //const player = scene.player;
@@ -70,7 +62,7 @@
             this.drop_count = data.drop_count || 0;
             
             this.capacity = 0;
-            this.group = scene.add.group();
+            this.contents = scene.add.group();
             const container = this;
             const items = scene.registry.get('items');
             container.setInteractive();

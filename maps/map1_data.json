@@ -7,6 +7,9 @@
      "spawnAt" : { "x": 16, "y": 0 },
      "exitAt" : { "x": 14, "y": 1 }
   },
+  "objects" : {
+    "containers" : {}
+  },
   "doors" : [
     {
       "desc": "The front east door to trip hallway",

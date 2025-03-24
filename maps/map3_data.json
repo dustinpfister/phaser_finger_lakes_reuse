@@ -10,6 +10,9 @@
     "spawnAt" : { "x": 2, "y": 2 },
     "exitAt" : { "x": 2, "y": 2 }
   },
+  "objects" : {
+    "containers" : {}
+  },
   "doors" : [
     {
       "desc": "The east entertence to Mega R",

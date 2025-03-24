@@ -7,6 +7,13 @@
     "spawnAt" : { "x": 0, "y": 2 },
     "exitAt" : { "x": 40, "y": 8 }
   },
+  "objects" : {
+    "containers" : {
+      "blue_bin": [
+        { "x": 38, "y": 1 }, { "x":39, "y": 1 }
+      ]
+    }
+  },
   "doors" : [
     {
       "desc": "The front west door to Mega T",
