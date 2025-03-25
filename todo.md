@@ -109,6 +109,7 @@
 * ( done ) - make it so that a container can be a collection of items rather than just a way to generate items
 
   DONATIONS, ITEMS DATABASE
+* (      ) - set a container to an empty frame when empty
 * (      ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
 * (      ) - Auto Sort of items in boxes over time
 

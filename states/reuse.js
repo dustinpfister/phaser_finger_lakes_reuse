@@ -41,7 +41,8 @@ class Reuse extends Phaser.Scene {
             const data_con = container_db[key];
             
             data_map.forEach( (data)=> {
-                const container = new Container(scene, data_con, data.x * 16 + 8, data.y * 16 + 8 ); 
+                const container = new Container(scene, data_con, data.x * 16 + 8, data.y * 16 + 8 );
+                container.droped = true;
                 console.log(container);
                 scene.add.existing(container);
             

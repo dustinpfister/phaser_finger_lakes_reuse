@@ -45,6 +45,10 @@
                 //const pos_item = this.getTilePos();
                 //const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
                 
+                scene.registry.get('containers')
+                
+                console.log(  );
+                
                 console.log('item clicked');
                 
             });
@@ -61,7 +65,7 @@
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
             
-            this.capacity = 0;
+            this.capacity = data.capacity;
             this.contents = scene.add.group();
             const container = this;
             const items = scene.registry.get('items');
@@ -71,6 +75,7 @@
                 const pos_player = player.getTilePos();
                 const pos_item = this.getTilePos();
                 const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
+                
                 if(d < 2 && container.droped){
                     const onHand = player.getData('onHand');
                     const maxOnHand = player.getData('maxOnHand');
@@ -85,10 +90,18 @@
                         container.drop_count = drop_count;
                         player.setData('onHand', onHand);
                     }   
-                    if( drop_count <= 0 ){
-                        container.destroy(true, true);
-                    }        
+                           
                 }
+                
+                if( container.drop_count <= 0 && container.contents.children.size === 0 ){
+                
+                    console.log('empty');
+                
+                        //container.destroy(true, true);
+                } 
+                
+                
+                
             });
         }
         
