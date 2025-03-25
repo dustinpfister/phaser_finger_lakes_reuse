@@ -42,16 +42,25 @@
             item.on('pointerdown', (pointer, b, c) => {
                 //const player = scene.player;
                 //const pos_player = player.getTilePos();
-                //const pos_item = this.getTilePos();
+                const pos_item = item.getTilePos();
                 //const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
                 
-                scene.registry.get('containers')
+                //const con = scene.registry.get('containers')
                 
-                console.log(  );
-                
+                //console.log(con);
+                console.log();
                 console.log('item clicked');
+                const bbins = scene.mapData.objects.containers.blue_bin;
+                let i = 0;
+                while(i < bbins.length){
+                    const bb = bbins[i];
+                    console.log(bb);
+                    i += 1;
+                }
                 
             });
+            
+            
         } 
         
     }

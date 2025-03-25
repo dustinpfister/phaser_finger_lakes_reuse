@@ -109,8 +109,12 @@
 * ( done ) - make it so that a container can be a collection of items rather than just a way to generate items
 
   DONATIONS, ITEMS DATABASE
+* (      ) - have a group for all current container class instances in each map
+* (      ) - have a find blue bin Item Class method
+
 * (      ) - set a container to an empty frame when empty
 * (      ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
+* (      ) - player should be able to relocate containers
 * (      ) - Auto Sort of items in boxes over time
 
   INVENTORY:
