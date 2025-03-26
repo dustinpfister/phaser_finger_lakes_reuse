@@ -107,9 +107,11 @@
 * ( done ) - start a blue bin def for containers
 * ( done ) - each map should have an object collection, which will be used to set the default location and state of blue bins
 * ( done ) - make it so that a container can be a collection of items rather than just a way to generate items
+* ( done ) - the key for a container should be a property
 
   DONATIONS, ITEMS DATABASE
-* (      ) - have a group for all current container class instances in each map
+* (      ) - fix bug where blue bins keep getting created each time you enter the map, by only doing so if they are not there to begin with
+* (      ) - make blue bins part of the current donations group for the array
 * (      ) - have a find blue bin Item Class method
 
 * (      ) - set a container to an empty frame when empty

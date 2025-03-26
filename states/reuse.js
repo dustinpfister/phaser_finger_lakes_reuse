@@ -33,20 +33,24 @@ class Reuse extends Phaser.Scene {
         this.player.x = x * 16 + 8;
         this.player.y = y * 16 + 8;
         
-        const container_keys = Object.keys(md.objects.containers); 
+        
         
         const container_db = this.cache.json.get('containers_' + 1);
+        const container_keys = Object.keys(md.objects.containers); 
         container_keys.forEach( (key) => {
             const data_map = md.objects.containers[key];
             const data_con = container_db[key];
             
             data_map.forEach( (data)=> {
-                const container = new Container(scene, data_con, data.x * 16 + 8, data.y * 16 + 8 );
+                const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
                 container.droped = true;
                 console.log(container);
                 scene.add.existing(container);
             
             });
+            
+            console.log(scene.children.list.filter((con)=>{ return con.key === 'blue_bin'  }) );
+            
         });
         
         let i_map = 1;

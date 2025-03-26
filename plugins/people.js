@@ -69,11 +69,11 @@
     
     class Container extends BaseItem {
     
-        constructor (scene, data, x=-1, y=-1) {
+        constructor (scene, key, data, x=-1, y=-1) {
             super(scene, x, y, data.tile.sheet, data.tile.frame)
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
-            
+            this.key = key;
             this.capacity = data.capacity;
             this.contents = scene.add.group();
             const container = this;
@@ -309,7 +309,7 @@
             if(donations_total < max_donations){
                 //const donation_data = items['box_items_hh'];
                 const donation_data = containers['box_items_hh'];
-                const donation = new Container(scene, donation_data, person.x, person.y);
+                const donation = new Container(scene, 'box_items_hh', donation_data, person.x, person.y);
                 
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );
