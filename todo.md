@@ -111,6 +111,7 @@
 
   DONATIONS, ITEMS DATABASE
 * (      ) - fix bug where blue bins keep getting created each time you enter the map, by only doing so if they are not there to begin with
+* (      ) - make key part of the item class
 * (      ) - make blue bins part of the current donations group for the array
 * (      ) - have a find blue bin Item Class method
 
