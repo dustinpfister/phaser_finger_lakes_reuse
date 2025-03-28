@@ -37,39 +37,6 @@ class Reuse extends Phaser.Scene {
         y = y === undefined ? md.spawnAt.y : y;
         this.player.x = x * 16 + 8;
         this.player.y = y * 16 + 8;
-        
-        
-        /*
-        const container_db = this.cache.json.get('containers_' + 1);
-        const container_keys = Object.keys(md.objects.containers); 
-        container_keys.forEach( (key) => {
-            const data_map = md.objects.containers[key];
-            const data_con = container_db[key];
-            
-            const bb_list = scene.getItemsByKey('blue_bin');
-            
-            data_map.forEach( (data, i)=> {
-            
-                const id = scene.mapData.name + String(i);
-            
-                if( bb_list.filter( (obj) => { return obj.name === id; } ).length === 0 ){
-            
-                    const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
-                    container.droped = true;
-                    container.name = id; 
-                    scene.add.existing(container);
-                
-                    console.log( 'new blue bin : ' + container.name );
-                
-                }
-            
-            });
-            
-            console.log();
-            
-        });
-        */
-        
         let i_map = 1;
         while(i_map <= 4){
             const donations = scene['map_donations' + i_map];
@@ -86,8 +53,6 @@ class Reuse extends Phaser.Scene {
            this.map.destroy();
         } 
         if(this.customers){
-            console.log('destroy!');
-            
             const members = this.customers.getChildren();
             let i = members.length;
             while(i--){
@@ -106,17 +71,7 @@ class Reuse extends Phaser.Scene {
             scene: this,
             defaultKey: 'people_16_16',
             maxSize: MAX_PEOPLE,
-            createCallback : (person) => {
-                // person.body.setDrag(500, 500);
-                
-                
-                //console.log(person.getData('type'));
-                
-                //person.setData('onHand', createDonation(scene, person) );
-                
-                
-                       
-            }
+            createCallback : (person) => {}
         },{
             subTypes: md.customer.subTypes,
             subTypeProbs: md.customer.subTypeProbs
@@ -137,35 +92,13 @@ class Reuse extends Phaser.Scene {
         this.physics.world.colliders.removeAll();
         this.physics.add.collider( this.player, layer0 );
         this.physics.add.collider( this.customers, layer0 );
-        
-        
-        //this.physics.add.collider( this.player, this.customers, (a, b)=>{
-           
-        //});
-        
-        //this.physics.add.collider( this.player, this.customers, People.prototype.getCollider.call(this.player, this.customers, scene ) );
-        
-        /*
-        this.physics.add.collider( this.customers, this.customers, ( a, b ) => {
-            let hits = b.getData('hits');
-            hits += 1;
-            if(hits >= 50){
-               hits = 0;
-               a.setRandomPath(scene);
-               b.setRandomPath(scene);
-            }
-            b.setData({hits: hits});
-        });
-        */
         // layer1 will be used for tiles that should be renderd above a sprite
         const layer1 = map.createBlankLayer('layer1', tiles);
         layer1.depth = 2;
         //layer1.putTileAt(20, 10, 32)
         layer0.setInteractive();
         player.setData({path: [] });
-        layer0.on('pointerdown', (pointer)=>{
-        
-        
+        layer0.on('pointerdown', (pointer)=>{  
             const tx = Math.floor( pointer.worldX / 16 );
             const ty = Math.floor( pointer.worldY / 16 );
             const tile = map.getTileAt(tx, ty, false, 0);
@@ -258,10 +191,6 @@ class Reuse extends Phaser.Scene {
         const bb_list = scene.getItemsByKey('blue_bin');
         while(i_map <= 4){
         
-            //reg.set('map_items' + i_map, []);
-        
-            //console.log(i_map)
-            
             
             const donations = this['map_donations' + i_map] = this.add.group({
                 scene: this,
@@ -277,8 +206,6 @@ class Reuse extends Phaser.Scene {
                 const data_map = md.objects.containers[key];
                 const data_con = container_db[key];
             
-                
-            
                 data_map.forEach( (data, i)=> {
             
                     const id = md.name + String(i);
@@ -293,24 +220,11 @@ class Reuse extends Phaser.Scene {
                     }
             
                 });
-            
-                console.log();
-            
+         
             });
-            
-            
-        
-        
             i_map += 1;
         }
         
-        /*
-        this.donations = this.add.group({
-            scene: this,
-            defaultKey: 'donations_16_16',
-            maxSize: this.game.registry.get('MAX_DONATIONS')
-        });
-        */
         
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
