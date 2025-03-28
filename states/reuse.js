@@ -39,7 +39,7 @@ class Reuse extends Phaser.Scene {
         this.player.y = y * 16 + 8;
         
         
-        
+        /*
         const container_db = this.cache.json.get('containers_' + 1);
         const container_keys = Object.keys(md.objects.containers); 
         container_keys.forEach( (key) => {
@@ -68,6 +68,7 @@ class Reuse extends Phaser.Scene {
             console.log();
             
         });
+        */
         
         let i_map = 1;
         while(i_map <= 4){
@@ -244,12 +245,17 @@ class Reuse extends Phaser.Scene {
        }
     }
 
-    create () {    
+    create () {
+        const scene = this;
+        
         this.PeoplePlugin = this.plugins.get('PeoplePlugin');
+        
         this.DonationsPlugin = this.plugins.get('DonationsPlugin');
+        const Container = this.PeoplePlugin.Container;
         
         
         let i_map = 1;
+        const bb_list = scene.getItemsByKey('blue_bin');
         while(i_map <= 4){
         
             //reg.set('map_items' + i_map, []);
@@ -257,10 +263,39 @@ class Reuse extends Phaser.Scene {
             //console.log(i_map)
             
             
-            this['map_donations' + i_map] = this.add.group({
+            const donations = this['map_donations' + i_map] = this.add.group({
                 scene: this,
                 defaultKey: 'donations_16_16',
                 maxSize: this.game.registry.get('MAX_DONATIONS')
+            });
+            
+            const md = scene.cache.json.get('map' + i_map + '_data');
+            const container_db = this.cache.json.get('containers_' + 1);
+            const container_keys = Object.keys(md.objects.containers);
+            
+            container_keys.forEach( (key) => {
+                const data_map = md.objects.containers[key];
+                const data_con = container_db[key];
+            
+                
+            
+                data_map.forEach( (data, i)=> {
+            
+                    const id = md.name + String(i);
+            
+                    if( bb_list.filter( (obj) => { return obj.name === id; } ).length === 0 ){
+            
+                        const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
+                        container.droped = true;
+                        container.name = id; 
+                        donations.add(container, true);
+                
+                    }
+            
+                });
+            
+                console.log();
+            
             });
             
             
