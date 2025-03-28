@@ -7,6 +7,11 @@ class Reuse extends Phaser.Scene {
         super(config);
         this.key = 'Reuse';
     }
+    
+    getItemsByKey (key='blue_bin', collection) {
+        collection = collection || this.children;
+        return collection.list.filter((con) => { return con.key === key  });
+    }
 
     createPlayer () {
         this.player = new this.PeoplePlugin.Person(this, 32, 0, 'people_16_16', 'pl_down');
@@ -41,9 +46,7 @@ class Reuse extends Phaser.Scene {
             const data_map = md.objects.containers[key];
             const data_con = container_db[key];
             
-            const bb_list = scene.children.list.filter((con)=>{ return con.key === 'blue_bin'  });
-            
-            console.log(bb_list)
+            const bb_list = scene.getItemsByKey('blue_bin');
             
             data_map.forEach( (data, i)=> {
             

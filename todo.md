@@ -110,10 +110,12 @@
 * ( done ) - the key for a container should be a property
 * ( done ) - fix bug where blue bins keep getting created each time you enter the map, by only doing so if they are not there to begin with
 * ( done ) - make key part of the base item class
+* ( done ) - have a find item by name method in reuse
 
   MOVE ITEMS BETWEEN CONTAINERS:
+
 * (      ) - blue bins should be added to the donations group for the map in which they are located
-* (      ) - have a find blue bin Item Class method
+
 * (      ) - set a container to an empty frame when empty
 * (      ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
 
