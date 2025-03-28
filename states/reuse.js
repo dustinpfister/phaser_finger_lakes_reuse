@@ -41,15 +41,28 @@ class Reuse extends Phaser.Scene {
             const data_map = md.objects.containers[key];
             const data_con = container_db[key];
             
-            data_map.forEach( (data)=> {
-                const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
-                container.droped = true;
-                console.log(container);
-                scene.add.existing(container);
+            const bb_list = scene.children.list.filter((con)=>{ return con.key === 'blue_bin'  });
+            
+            console.log(bb_list)
+            
+            data_map.forEach( (data, i)=> {
+            
+                const id = scene.mapData.name + String(i);
+            
+                if( bb_list.filter( (obj) => { return obj.name === id; } ).length === 0 ){
+            
+                    const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
+                    container.droped = true;
+                    container.name = id; 
+                    scene.add.existing(container);
+                
+                    console.log( 'new blue bin : ' + container.name );
+                
+                }
             
             });
             
-            console.log(scene.children.list.filter((con)=>{ return con.key === 'blue_bin'  }) );
+            console.log();
             
         });
         
