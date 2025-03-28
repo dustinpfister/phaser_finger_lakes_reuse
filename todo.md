@@ -109,26 +109,28 @@
 * ( done ) - make it so that a container can be a collection of items rather than just a way to generate items
 * ( done ) - the key for a container should be a property
 * ( done ) - fix bug where blue bins keep getting created each time you enter the map, by only doing so if they are not there to begin with
+* ( done ) - make key part of the base item class
 
-  DONATIONS, ITEMS DATABASE
-* (      ) - make key part of the item class
-* (      ) - make blue bins part of the current donations group for the array
+  MOVE ITEMS BETWEEN CONTAINERS:
+* (      ) - blue bins should be added to the donations group for the map in which they are located
 * (      ) - have a find blue bin Item Class method
-
 * (      ) - set a container to an empty frame when empty
 * (      ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
-* (      ) - player should be able to relocate containers
-* (      ) - Auto Sort of items in boxes over time
 
-  INVENTORY:
-* (      ) - each map should have an inventory collection.
-* (      ) - Auto Price of Items over time
+  MOVING CONTAINERS:
+* (      ) - a check will need to be made for all donation groups for the existance of a blue bin before creating it
+* (      ) - have a way to move a blue bin from the map into the onhand of the player, and then back again
+
+  PRICING ITEMS :
+* (      ) - Have an area where the player can price an item
 
   STOCKING:
-* (      ) - auto stocking of items
+* (      ) - The player can place an item in an area where a shopper can see it
 
   SHOPERS:
-* (      ) - auto buying of items over time
+* (      ) - shopers can see find items
+* (      ) - shopers can pull items into there on hand collection
+* (      ) - shopers can buy items
 * (      ) - money displayed
 
   MISC:

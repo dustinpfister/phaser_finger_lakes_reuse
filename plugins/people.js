@@ -4,10 +4,11 @@
     
     class BaseItem extends Phaser.GameObjects.Sprite {
     
-        constructor (scene, x, y, sheet, frame) {
+        constructor (scene, key, x, y, sheet, frame) {
         
             super(scene, x, y, sheet, frame);
             
+            this.key = key;
             this.depth = 1;
             this.priced = false;
             this.droped = false;
@@ -28,9 +29,9 @@
     
     class Item extends BaseItem {
     
-        constructor (scene, data, x=-1, y=-1) {
+        constructor (scene, key, data, x=-1, y=-1) {
             
-            super(scene, x, y, data.tile.sheet, data.tile.frame)
+            super(scene, key, x, y, data.tile.sheet, data.tile.frame)
             
             const item = this;
             const items = scene.registry.get('items');
@@ -70,10 +71,10 @@
     class Container extends BaseItem {
     
         constructor (scene, key, data, x=-1, y=-1) {
-            super(scene, x, y, data.tile.sheet, data.tile.frame)
+            super(scene, key, x, y, data.tile.sheet, data.tile.frame)
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
-            this.key = key;
+            //this.key = key;
             this.capacity = data.capacity;
             this.contents = scene.add.group();
             const container = this;
@@ -92,7 +93,7 @@
                     if(drop_count > 0 && container.droped && onHand.length < maxOnHand){
                         container.setFrame('bx_full');
                         const data = items['hh_mug_1'];
-                        const item_new = new Item(scene, data, player.x, player.y );
+                        const item_new = new Item(scene, 'hh_mug_1', data, player.x, player.y );
                         onHand.push( item_new );
                         scene.add.existing( item_new );
                         drop_count -= 1;
