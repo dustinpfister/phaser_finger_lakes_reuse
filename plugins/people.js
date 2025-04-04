@@ -104,16 +104,19 @@
                 }
                 
                 const ch = container.contents.children;
+                console.log( 'capcity: ' + ch.size + '/' + container.capacity );
                 if( ch.size <  container.capacity ){
-                
                     console.log( 'we have room here!');
-                    console.log( 'capcity: ' + ch.size + '/' + container.capacity );
-                    
                     const oh = player.getData('onHand');
                     if(oh.length > 0){
                         console.log('we have on hand items!');
                         console.log(oh)
-                        
+                       
+                        const item = oh.pop();
+                        item.x = container.x;
+                        item.y = container.y;
+                        item.setActive(false).setVisible(false);
+                        container.contents.add( item );
                     
                     }
                     

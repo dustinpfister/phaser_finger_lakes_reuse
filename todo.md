@@ -112,14 +112,14 @@
 * ( done ) - make key part of the base item class
 * ( done ) - have a find item by name method in reuse
 * ( done ) - blue bins should be added to the donations group for the map in which they are located
+* ( done ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
 
   MOVE ITEMS BETWEEN CONTAINERS:
-
 * (      ) - set a container to an empty frame when empty
-* (      ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
+* (      ) - have empty donation bioxes just destroy when empty ( for now )
+* (      ) - have a way to switch between moving a container into onHand, removing items from, and placing items in.
 
   MOVING CONTAINERS:
-* (      ) - a check will need to be made for all donation groups for the existance of a blue bin before creating it
 * (      ) - have a way to move a blue bin from the map into the onhand of the player, and then back again
 
   PRICING ITEMS :
