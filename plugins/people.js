@@ -99,7 +99,15 @@
                         drop_count -= 1;
                         container.drop_count = drop_count;
                         player.setData('onHand', onHand);
-                    }   
+                        
+                        if(container.drop_count <= 0){
+                            container.setFrame('bx_empty');
+                            container.destroy(true, true);
+                        } 
+                        
+                    }
+                    
+                    
                            
                 }
                 

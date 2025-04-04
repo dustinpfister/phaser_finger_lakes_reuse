@@ -113,10 +113,10 @@
 * ( done ) - have a find item by name method in reuse
 * ( done ) - blue bins should be added to the donations group for the map in which they are located
 * ( done ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
+* ( done ) - set a container to an empty frame when empty
+* ( done ) - have empty donation bioxes just destroy when empty ( for now )
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - set a container to an empty frame when empty
-* (      ) - have empty donation bioxes just destroy when empty ( for now )
 * (      ) - have a way to switch between moving a container into onHand, removing items from, and placing items in.
 
   MOVING CONTAINERS:
@@ -135,6 +135,7 @@
 * (      ) - money displayed
 
   MISC:
+* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - donations should be placed on the table by the donators
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
