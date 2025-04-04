@@ -103,10 +103,20 @@
                            
                 }
                 
-                if( container.drop_count <= 0 && container.contents.children.size === 0 ){
+                const ch = container.contents.children;
+                if( ch.size <  container.capacity ){
                 
-                    console.log('empty');
-                
+                    console.log( 'we have room here!');
+                    console.log( 'capcity: ' + ch.size + '/' + container.capacity );
+                    
+                    const oh = player.getData('onHand');
+                    if(oh.length > 0){
+                        console.log('we have on hand items!');
+                        console.log(oh)
+                        
+                    
+                    }
+                    
                         //container.destroy(true, true);
                 } 
                 
