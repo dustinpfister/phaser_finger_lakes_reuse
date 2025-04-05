@@ -5,7 +5,16 @@
 * () work on map system draft, get it solid.
 ```
 
-## R1 ( ) - Processing plugin
+## R2 ( ) - Items Database
+```
+  ITEMS MIN DATA STORED:
+* (    ) - work out a system where min data is stored in place of sprites for everything \( item_key, set price \)
+* (    ) - use min data in the process of creating the sprite again when needed
+* (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
+```
+
+
+## R1 ( ) - Workers
 
 ```
   WORKERS:
@@ -121,6 +130,8 @@
 
   MOVING CONTAINERS:
 * (      ) - have a way to move a blue bin from the map into the onhand of the player, and then back again
+* (      ) - have it so that the player can move a blue bin to a whole other map
+* (      ) - have a supply of empty blue bins in map1
 
   PRICING ITEMS :
 * (      ) - Have an area where the player can price an item
