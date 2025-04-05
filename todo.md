@@ -126,9 +126,7 @@
 * ( done ) - have empty donation bioxes just destroy when empty ( for now )
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - have a way to switch between moving a container into onHand, removing items from, and placing items in.
-
-  MOVING CONTAINERS:
+* (      ) - Player class Item modes \( 0 item pickup, 1 item drop, 2 container pickup/drop \)
 * (      ) - have a way to move a blue bin from the map into the onhand of the player, and then back again
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1

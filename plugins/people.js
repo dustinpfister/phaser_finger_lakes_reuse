@@ -151,7 +151,8 @@
                 path: [], hits: 0, idleTime: 0,
                 onHand: [], maxOnHand: 3,
                 trigger_pos: {x: -1, y: -1},
-                type: '', subType: ''
+                type: '', subType: '',
+                itemMode: 0   // 0 item pickup, 1 item drop, 2 container pickup/drop
             });
         }
         
