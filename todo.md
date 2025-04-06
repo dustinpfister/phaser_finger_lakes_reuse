@@ -124,10 +124,13 @@
 * ( done ) - on hand items can then be placed into blue bins by clicking on the item while near a blue bin
 * ( done ) - set a container to an empty frame when empty
 * ( done ) - have empty donation bioxes just destroy when empty ( for now )
+* ( done ) - Player class Item modes \( 1 item pickup, 2 item drop, 3 container pickup/drop \)
+* ( done ) - using keyboard numbers to set itemMode for the player
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - Player class Item modes \( 0 item pickup, 1 item drop, 2 container pickup/drop \)
-* (      ) - have a way to move a blue bin from the map into the onhand of the player, and then back again
+* (      ) - get itemMode 0 working
+* (      ) - get itemMode 1 working
+* (      ) - get itemMode 2 working
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 

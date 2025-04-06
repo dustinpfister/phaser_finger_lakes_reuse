@@ -228,6 +228,20 @@ class Reuse extends Phaser.Scene {
         
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
+        
+        
+        this.input.keyboard.on('keydown', event => {
+            const patt = /Digit\d+/;
+            const m = event.code.match(patt);
+            if(m){
+                const d = Number(m[0].replace('Digit', ''));
+                if(d > 0 && d < 4){
+                    console.log('set item mode for player to mode ' + d);
+                    this.player.setData('itemMode', d);
+                }
+            }
+        });
+        
         this.createPlayer();
         this.doorDisable = false;
         this.setupMap(4);

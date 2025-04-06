@@ -152,7 +152,7 @@
                 onHand: [], maxOnHand: 3,
                 trigger_pos: {x: -1, y: -1},
                 type: '', subType: '',
-                itemMode: 0   // 0 item pickup, 1 item drop, 2 container pickup/drop
+                itemMode: 1   // 1 item pickup, 2 item drop, 3 container pickup/drop
             });
         }
         
