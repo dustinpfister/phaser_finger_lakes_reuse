@@ -14,6 +14,23 @@
             this.droped = false;
             this.desc = '';
             this.droped = false;
+            
+            const item = this;
+            item.setInteractive();
+            item.on('pointerdown', (pointer, x, y) => {
+            
+                const player = scene.player;
+                
+                player.onHandAction(scene, item);
+            
+                //console.log(item);
+                //console.log(player);
+                //console.log(pointer);
+                //console.log(x, y);
+            
+            });
+            
+            
         
         }
         
@@ -39,6 +56,7 @@
             this.value = data.value;
             
             this.drop_count = data.drop_count || 0;
+            /*
             item.setInteractive();
             item.on('pointerdown', (pointer, b, c) => {
                 //const player = scene.player;
@@ -60,6 +78,7 @@
                 }
                 
             });
+            */
             
             
         } 
@@ -79,7 +98,11 @@
             this.contents = scene.add.group();
             const container = this;
             const items = scene.registry.get('items');
+            
+            
+            /*
             container.setInteractive();
+            
             container.on('pointerdown', ( pointer, b, c ) => {
                 const player = scene.player;
                 const pos_player = player.getTilePos();
@@ -134,6 +157,9 @@
                 
                 
             });
+            
+            */
+            
         }
         
     }
@@ -249,6 +275,77 @@
             pathFinder.calculatePath();
         }
         
+        // prefrom an onHand action for the given item based on the current mode
+        onHandAction (scene, item) {
+        
+            const person = this;
+            
+            const onHand = person.getData('onHand');
+            const maxOnHand = person.getData('maxOnHand');
+            const im = person.getData('itemMode');
+            const items = scene.registry.get('items');
+            const pos_person = person.getTilePos();
+            const pos_item = item.getTilePos();
+            const d = Phaser.Math.Distance.BetweenPoints( pos_person, pos_item  );
+            
+            
+            
+            console.log(im);
+            console.log(item);
+            
+            if( im === 0 ){
+            
+               console.log('null/info mode');
+               console.log(item)
+            
+            }
+            
+            if( im === 1 ){
+            
+               console.log('item pickup mode!');
+               console.log(d)
+               if(d < 2 && item.droped){
+                   console.log('yes')
+                   
+                    let drop_count = item.drop_count;
+                    if(drop_count > 0 && onHand.length < maxOnHand){
+                        item.setFrame('bx_full');
+                        const data = items['hh_mug_1'];
+                        
+                        const item_new = new Item(scene, 'hh_mug_1', data, person.x, person.y );
+                        
+                        onHand.push( item_new );
+                        scene.add.existing( item_new );
+                        drop_count -= 1;
+                        item.drop_count = drop_count;
+                        person.setData('onHand', onHand);
+                        
+                        if(item.drop_count <= 0){
+                            item.setFrame('bx_empty');
+                            item.destroy(true, true);
+                        } 
+                        
+                    }
+                   
+                   
+               }
+            
+            }
+            
+            if( im === 2 ){
+            
+               console.log('item drop mode!');
+            
+            }
+            
+            if( im === 3 ){
+            
+               console.log('container pickup/drop mode! ');
+            
+            }
+            
+        
+        }
         
         update (scene) {
             const person = this;

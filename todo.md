@@ -126,11 +126,11 @@
 * ( done ) - have empty donation bioxes just destroy when empty ( for now )
 * ( done ) - Player class Item modes \( 1 item pickup, 2 item drop, 3 container pickup/drop \)
 * ( done ) - using keyboard numbers to set itemMode for the player
+* ( done ) - get itemMode 1 working
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - get itemMode 0 working
-* (      ) - get itemMode 1 working
 * (      ) - get itemMode 2 working
+* (      ) - get itemMode 3 working
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 
