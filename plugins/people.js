@@ -285,7 +285,7 @@
             const im = person.getData('itemMode');
             const items = scene.registry.get('items');
             const pos_person = person.getTilePos();
-            const pos_item = item.getTilePos();
+            const pos_item = item? item.getTilePos(): {x:0, y:0};
             const d = Phaser.Math.Distance.BetweenPoints( pos_person, pos_item  );
             
             
@@ -335,6 +335,15 @@
             // drop what you have on hand
             if( im === 2 ){
                console.log('on hand drop mode!');
+               console.log( onHand );
+               
+               let i = onHand.length;
+               while(i--){
+                   const item = onHand.pop();
+                   item.x = tx * 16 + 8;
+                   item.y = ty * 16 + 8;
+               }
+               
             
             }
             

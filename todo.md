@@ -127,10 +127,12 @@
 * ( done ) - Player class Item modes \( 1 item pickup, 2 item drop, 3 container pickup/drop \)
 * ( done ) - using keyboard numbers to set itemMode for the player
 * ( done ) - get itemMode 1 working
+* ( done ) - i might want to call onHandAction method of player in resue.js rather that people.js 
+* ( done ) - get itemMode 2 working
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - i might want to call onHandAction method of player in resue.js rather that people.js 
-* (      ) - get itemMode 2 working
+* (      ) - itemMode 2 should drop items one at a time
+* (      ) - itemMode 2 should add droped items to a container if it is droped at the location of the container
 * (      ) - get itemMode 3 working
 * (      ) - get itemMode 1 working with containers that have contents
 * (      ) - get itemMode 1 working with stand alone items

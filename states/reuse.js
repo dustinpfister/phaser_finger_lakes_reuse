@@ -103,12 +103,28 @@ class Reuse extends Phaser.Scene {
             const ty = Math.floor( pointer.worldY / 16 );
             const tile = map.getTileAt(tx, ty, false, 0);
             if(tile){
+            
+            
+                const itemMode = player.getData('itemMode');
+            
                 if(tile.index != 1){
                     console.log(tile.index);
                 }
-                if(tile.index === 1){    
+                
+                
+                
+                if(tile.index === 1 && itemMode != 2 ){    
                     player.setPath(this, tx, ty);
                 }
+                
+                if(tile.index === 1 && itemMode === 2 ){    
+                    player.onHandAction(scene, null, tx, ty);
+                }
+                
+                
+                
+                
+                
             }
             
             scene.data.mouseDown = true; 
