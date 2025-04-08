@@ -129,6 +129,7 @@
 * ( done ) - get itemMode 1 working
 
   MOVE ITEMS BETWEEN CONTAINERS:
+* (      ) - i might want to call onHandAction method of player in resue.js rather that people.js 
 * (      ) - get itemMode 2 working
 * (      ) - get itemMode 3 working
 * (      ) - get itemMode 1 working with containers that have contents
