@@ -21,7 +21,7 @@
             
                 const player = scene.player;
                 
-                player.onHandAction(scene, item);
+                player.onHandAction(scene, item, scene.playerX, scene.playerY);
             
                 //console.log(item);
                 //console.log(player);
@@ -276,7 +276,7 @@
         }
         
         // prefrom an onHand action for the given item based on the current mode
-        onHandAction (scene, item) {
+        onHandAction (scene, item, tx, ty) {
         
             const person = this;
             
@@ -292,6 +292,7 @@
             
             console.log(im);
             console.log(item);
+            console.log(tx, ty);
             
             if( im === 0 ){
             
@@ -300,12 +301,11 @@
             
             }
             
+            // pick up an item
             if( im === 1 ){
             
-               console.log('item pickup mode!');
-               console.log(d)
                if(d < 2 && item.droped){
-                   console.log('yes')
+                   
                    
                     let drop_count = item.drop_count;
                     if(drop_count > 0 && onHand.length < maxOnHand){
@@ -332,15 +332,16 @@
             
             }
             
+            // drop what you have on hand
             if( im === 2 ){
-            
-               console.log('item drop mode!');
+               console.log('on hand drop mode!');
             
             }
             
+            // pick up a container
             if( im === 3 ){
             
-               console.log('container pickup/drop mode! ');
+               console.log('container pickup mode! ');
             
             }
             

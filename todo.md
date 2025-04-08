@@ -131,6 +131,8 @@
   MOVE ITEMS BETWEEN CONTAINERS:
 * (      ) - get itemMode 2 working
 * (      ) - get itemMode 3 working
+* (      ) - get itemMode 1 working with containers that have contents
+* (      ) - get itemMode 1 working with stand alone items
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 
