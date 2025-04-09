@@ -8,6 +8,7 @@
         
             super(scene, x, y, sheet, frame);
             
+            this.iType = 'BaseItem';
             this.key = key;
             this.depth = 1;
             this.priced = false;
@@ -50,7 +51,9 @@
             
             super(scene, key, x, y, data.tile.sheet, data.tile.frame)
             
+            
             const item = this;
+            this.iType = 'Item';
             const items = scene.registry.get('items');
             this.desc = data.desc;
             this.value = data.value;
@@ -90,7 +93,8 @@
     class Container extends BaseItem {
     
         constructor (scene, key, data, x=-1, y=-1) {
-            super(scene, key, x, y, data.tile.sheet, data.tile.frame)
+            super(scene, key, x, y, data.tile.sheet, data.tile.frame);
+            this.iType = 'Container';
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
             //this.key = key;
@@ -289,11 +293,6 @@
             const d = Phaser.Math.Distance.BetweenPoints( pos_person, pos_item  );
             
             
-            
-            console.log(im);
-            console.log(item);
-            console.log(tx, ty);
-            
             if( im === 0 ){
             
                console.log('null/info mode');
@@ -304,30 +303,29 @@
             // pick up an item
             if( im === 1 ){
             
-               if(d < 2 && item.droped){
-                   
-                   
+               if(d < 2 && item.droped && onHand.length < maxOnHand ){  
                     let drop_count = item.drop_count;
-                    if(drop_count > 0 && onHand.length < maxOnHand){
+                    
+                    if(drop_count > 0){
                         item.setFrame('bx_full');
                         const data = items['hh_mug_1'];
-                        
                         const item_new = new Item(scene, 'hh_mug_1', data, person.x, person.y );
-                        
                         onHand.push( item_new );
                         scene.add.existing( item_new );
                         drop_count -= 1;
                         item.drop_count = drop_count;
                         person.setData('onHand', onHand);
-                        
                         if(item.drop_count <= 0){
                             item.setFrame('bx_empty');
                             item.destroy(true, true);
                         } 
-                        
                     }
-                   
-                   
+                    
+                    if( drop_count === 0 ){
+                        console.log('no drops for the item');
+                        console.log(item.iType)
+                    
+                    }  
                }
             
             }
@@ -342,6 +340,7 @@
                    const item = onHand.pop();
                    item.x = tx * 16 + 8;
                    item.y = ty * 16 + 8;
+                   item.droped = true;
                }
                
             
