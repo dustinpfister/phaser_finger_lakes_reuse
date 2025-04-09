@@ -129,9 +129,9 @@
 * ( done ) - get itemMode 1 working
 * ( done ) - i might want to call onHandAction method of player in resue.js rather that people.js 
 * ( done ) - get itemMode 2 working
+* ( done ) - itemMode 2 should drop items one at a time
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - itemMode 2 should drop items one at a time
 * (      ) - itemMode 2 should add droped items to a container if it is droped at the location of the container
 * (      ) - get itemMode 3 working
 * (      ) - get itemMode 1 working with containers that have contents

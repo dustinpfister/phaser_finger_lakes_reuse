@@ -84,7 +84,8 @@
             */
             
             
-        } 
+        }
+        
         
     }
     
@@ -164,6 +165,20 @@
             
             */
             
+        }
+        
+        
+        addItem (item) {
+        
+            if(this.contents.children.size < this.capacity){
+        
+                console.log('adding item to container...');
+                item.x = this.x;
+                item.y = this.y;
+                this.contents.add(item);
+            
+            }
+        
         }
         
     }
@@ -347,14 +362,23 @@
             // drop what you have on hand
             if( im === 2 ){
                console.log('on hand drop mode!');
-               console.log( onHand );
+               console.log(item);
                
-               let i = onHand.length;
-               while(i--){
-                   const item = onHand.pop();
-                   item.x = tx * 16 + 8;
-                   item.y = ty * 16 + 8;
-                   item.droped = true;
+               if(onHand.length > 0 && item ){
+                   console.log('item should be a container');
+                   if(item.iType = 'Container'){
+                       console.log('item is a container!');
+                       const item2 = onHand.pop();
+                       item.addItem(item2);
+                       
+                   }
+               }
+               
+               if(onHand.length > 0 && !item ){
+                   const item2 = onHand.pop();
+                   item2.x = tx * 16 + 8;
+                   item2.y = ty * 16 + 8;
+                   item2.droped = true;
                }
                
             

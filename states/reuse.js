@@ -117,7 +117,7 @@ class Reuse extends Phaser.Scene {
                     player.setPath(this, tx, ty);
                 }
                 
-                if(tile.index === 1 && itemMode === 2 ){    
+                if(itemMode === 2 ){
                     player.onHandAction(scene, null, tx, ty);
                 }
                 
