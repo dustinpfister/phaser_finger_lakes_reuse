@@ -306,6 +306,16 @@
                if(d < 2 && item.droped && onHand.length < maxOnHand ){
                     let drop_count = item.drop_count;
                     
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size > 0){
+                        console.log('no drops for the Container Item, but it looks like it has contents!');
+                        console.log(item);
+                    }
+                    
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size === 0){
+                        console.log('no drops or contents! Maybe you want to pick up the container, or put something in it?');
+                        console.log(item);
+                    }
+                    
                     if(item.iType === 'Container' && drop_count > 0){
                         console.log(drop_count + ' drops for the Container Item');
                         item.setFrame('bx_full');
@@ -318,15 +328,10 @@
                         person.setData('onHand', onHand);
                         if(item.drop_count <= 0){
                             item.setFrame('bx_empty');
-                            item.destroy(true, true);
+                            //item.destroy(true, true);
                         } 
                     }
-                    
-                    if( item.iType === 'Container' && drop_count === 0 ){
-                        console.log('no drops for the Container Item');
-                        console.log(item.iType)
-                    }
-                    
+                                        
                     if( item.iType === 'Item' ){
                         console.log('ahh yes, an Item');
                     }
