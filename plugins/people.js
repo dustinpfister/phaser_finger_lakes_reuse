@@ -303,10 +303,11 @@
             // pick up an item
             if( im === 1 ){
             
-               if(d < 2 && item.droped && onHand.length < maxOnHand ){  
+               if(d < 2 && item.droped && onHand.length < maxOnHand ){
                     let drop_count = item.drop_count;
                     
-                    if(drop_count > 0){
+                    if(item.iType === 'Container' && drop_count > 0){
+                        console.log(drop_count + ' drops for the Container Item');
                         item.setFrame('bx_full');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, 'hh_mug_1', data, person.x, person.y );
@@ -321,11 +322,19 @@
                         } 
                     }
                     
-                    if( drop_count === 0 ){
-                        console.log('no drops for the item');
+                    if( item.iType === 'Container' && drop_count === 0 ){
+                        console.log('no drops for the Container Item');
                         console.log(item.iType)
+                    }
                     
-                    }  
+                    if( item.iType === 'Item' ){
+                        console.log('ahh yes, an Item');
+                    }
+                    
+               }
+               
+               if(onHand.length >= maxOnHand){
+                   console.log('looks like your hands are full, you need to drop what you have');
                }
             
             }

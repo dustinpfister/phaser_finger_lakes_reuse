@@ -315,7 +315,7 @@ class Reuse extends Phaser.Scene {
         this.player.offTileCheck(this.map);
         this.player.update(this);
         //this.camera.setZoom(2.0).centerOn(this.player.x, this.player.y);
-        this.camera.setZoom(2.0).pan(this.player.x, this.player.y, 100);
+        this.camera.setZoom(3.0).pan(this.player.x, this.player.y, 100);
         this.text_player.x = this.player.body.position.x - 0;
         this.text_player.y = this.player.body.position.y - 16;
         this.text_player.text = this.playerX + ', ' + this.playerY;
