@@ -22,13 +22,10 @@
             
                 const player = scene.player;
                 
+                
                 player.onHandAction(scene, item, scene.playerX, scene.playerY);
             
-                //console.log(item);
-                //console.log(player);
-                //console.log(pointer);
-                //console.log(x, y);
-            
+                
             });
             
             
@@ -172,7 +169,6 @@
         
             if(this.contents.children.size < this.capacity){
         
-                console.log('adding item to container...');
                 item.x = this.x;
                 item.y = this.y;
                 this.contents.add(item);
@@ -310,8 +306,6 @@
             
             if( im === 0 ){
             
-               console.log('null/info mode');
-               console.log(item)
             
             }
             
@@ -322,17 +316,14 @@
                     let drop_count = item.drop_count;
                     
                     if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size > 0){
-                        console.log('no drops for the Container Item, but it looks like it has contents!');
-                        console.log(item);
+                        
                     }
                     
                     if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size === 0){
-                        console.log('no drops or contents! Maybe you want to pick up the container, or put something in it?');
-                        console.log(item);
+                        
                     }
                     
                     if(item.iType === 'Container' && drop_count > 0){
-                        console.log(drop_count + ' drops for the Container Item');
                         item.setFrame('bx_full');
                         const data = items['hh_mug_1'];
                         const item_new = new Item(scene, 'hh_mug_1', data, person.x, person.y );
@@ -348,27 +339,23 @@
                     }
                                         
                     if( item.iType === 'Item' ){
-                        console.log('ahh yes, an Item');
+                        
                     }
                     
                }
                
                if(onHand.length >= maxOnHand){
-                   console.log('looks like your hands are full, you need to drop what you have');
                }
             
             }
             
             // drop what you have on hand
             if( im === 2 ){
-               console.log('on hand drop mode!');
-               console.log(item);
                
                if(onHand.length > 0 && item ){
-                   console.log('item should be a container');
-                   if(item.iType = 'Container'){
-                       console.log('item is a container!');
+                   if(item.iType === 'Container'){
                        const item2 = onHand.pop();
+                       
                        item.addItem(item2);
                        
                    }
@@ -387,7 +374,6 @@
             // pick up a container
             if( im === 3 ){
             
-               console.log('container pickup mode! ');
             
             }
             
