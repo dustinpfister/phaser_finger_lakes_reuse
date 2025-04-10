@@ -130,9 +130,11 @@
 * ( done ) - i might want to call onHandAction method of player in resue.js rather that people.js 
 * ( done ) - get itemMode 2 working
 * ( done ) - itemMode 2 should drop items one at a time
+* ( done ) - itemMode 2 should add droped items to a container if it is droped at the location of the container
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - itemMode 2 should add droped items to a container if it is droped at the location of the container
+* (      ) - change contents from a group to a plain old array, and use it to store plain objects rather than sprites
+* (      ) - the plain objects in container arrays will have just basic info such as the item key that can be used to recreate the sprite when needed
 * (      ) - get itemMode 3 working
 * (      ) - get itemMode 1 working with containers that have contents
 * (      ) - get itemMode 1 working with stand alone items
