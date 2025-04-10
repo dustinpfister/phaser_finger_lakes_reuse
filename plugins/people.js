@@ -5,9 +5,7 @@
     class BaseItem extends Phaser.GameObjects.Sprite {
     
         constructor (scene, key, x, y, sheet, frame) {
-        
             super(scene, x, y, sheet, frame);
-            
             this.iType = 'BaseItem';
             this.key = key;
             this.depth = 1;
@@ -15,21 +13,12 @@
             this.droped = false;
             this.desc = '';
             this.droped = false;
-            
             const item = this;
             item.setInteractive();
             item.on('pointerdown', (pointer, x, y) => {
-            
                 const player = scene.player;
-                
-                
-                player.onHandAction(scene, item, scene.playerX, scene.playerY);
-            
-                
+                player.onHandAction(scene, item, scene.playerX, scene.playerY);                
             });
-            
-            
-        
         }
         
         getTilePos () {    
@@ -41,52 +30,19 @@
         
     }
     
-    
     class Item extends BaseItem {
     
         constructor (scene, key, data, x=-1, y=-1) {
-            
             super(scene, key, x, y, data.tile.sheet, data.tile.frame)
-            
-            
             const item = this;
             this.iType = 'Item';
             const items = scene.registry.get('items');
             this.desc = data.desc;
             this.value = data.value;
-            
             this.drop_count = data.drop_count || 0;
-            /*
-            item.setInteractive();
-            item.on('pointerdown', (pointer, b, c) => {
-                //const player = scene.player;
-                //const pos_player = player.getTilePos();
-                const pos_item = item.getTilePos();
-                //const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                
-                //const con = scene.registry.get('containers')
-                
-                //console.log(con);
-                console.log();
-                console.log('item clicked');
-                const bbins = scene.mapData.objects.containers.blue_bin;
-                let i = 0;
-                while(i < bbins.length){
-                    const bb = bbins[i];
-                    console.log(bb);
-                    i += 1;
-                }
-                
-            });
-            */
-            
-            
         }
-        
-        
+            
     }
-    
-    
     
     class Container extends BaseItem {
     
@@ -95,90 +51,23 @@
             this.iType = 'Container';
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
-            //this.key = key;
             this.capacity = data.capacity;
             this.contents = scene.add.group();
             const container = this;
             const items = scene.registry.get('items');
-            
-            
-            /*
-            container.setInteractive();
-            
-            container.on('pointerdown', ( pointer, b, c ) => {
-                const player = scene.player;
-                const pos_player = player.getTilePos();
-                const pos_item = this.getTilePos();
-                const d = Phaser.Math.Distance.BetweenPoints(pos_player, pos_item  );
-                
-                if(d < 2 && container.droped){
-                    const onHand = player.getData('onHand');
-                    const maxOnHand = player.getData('maxOnHand');
-                    let drop_count = container.drop_count;
-                    if(drop_count > 0 && container.droped && onHand.length < maxOnHand){
-                        container.setFrame('bx_full');
-                        const data = items['hh_mug_1'];
-                        const item_new = new Item(scene, 'hh_mug_1', data, player.x, player.y );
-                        onHand.push( item_new );
-                        scene.add.existing( item_new );
-                        drop_count -= 1;
-                        container.drop_count = drop_count;
-                        player.setData('onHand', onHand);
-                        
-                        if(container.drop_count <= 0){
-                            container.setFrame('bx_empty');
-                            container.destroy(true, true);
-                        } 
-                        
-                    }
-                    
-                    
-                           
-                }
-                
-                const ch = container.contents.children;
-                console.log( 'capcity: ' + ch.size + '/' + container.capacity );
-                if( ch.size <  container.capacity ){
-                    console.log( 'we have room here!');
-                    const oh = player.getData('onHand');
-                    if(oh.length > 0){
-                        console.log('we have on hand items!');
-                        console.log(oh)
-                       
-                        const item = oh.pop();
-                        item.x = container.x;
-                        item.y = container.y;
-                        item.setActive(false).setVisible(false);
-                        container.contents.add( item );
-                    
-                    }
-                    
-                        //container.destroy(true, true);
-                } 
-                
-                
-                
-            });
-            
-            */
-            
         }
         
         
         addItem (item) {
-        
             if(this.contents.children.size < this.capacity){
-        
                 item.x = this.x;
                 item.y = this.y;
                 this.contents.add(item);
             
             }
-        
         }
         
     }
-    
     
     class Person extends Phaser.Physics.Arcade.Sprite {
     
@@ -230,13 +119,11 @@
                     this.setVelocityX( vx );
                     this.setVelocityY( vy );
                     const d = Phaser.Math.Distance.Between(tx, ty, this.x, this.y);
-                    
                     if(d <= min_d){
                         this.x = tx;
                         this.y = ty;
                         this.setVelocity(0);
                     } 
-                    
                 }
             }
         
@@ -266,7 +153,6 @@
         }
         
         setRandomPath (scene) {
-        
             scene.map.setLayer(0);
             const walkable = scene.map.filterTiles((tile)=>{
                 return tile.index === 1
@@ -292,9 +178,7 @@
         
         // prefrom an onHand action for the given item based on the current mode
         onHandAction (scene, item, tx, ty) {
-        
             const person = this;
-            
             const onHand = person.getData('onHand');
             const maxOnHand = person.getData('maxOnHand');
             const im = person.getData('itemMode');
@@ -302,27 +186,13 @@
             const pos_person = person.getTilePos();
             const pos_item = item? item.getTilePos(): {x:0, y:0};
             const d = Phaser.Math.Distance.BetweenPoints( pos_person, pos_item  );
-            
-            
-            if( im === 0 ){
-            
-            
-            }
-            
+            if( im === 0 ){}
             // pick up an item
             if( im === 1 ){
-            
                if(d < 2 && item.droped && onHand.length < maxOnHand ){
                     let drop_count = item.drop_count;
-                    
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size > 0){
-                        
-                    }
-                    
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size === 0){
-                        
-                    }
-                    
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size > 0){}
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size === 0){}
                     if(item.iType === 'Container' && drop_count > 0){
                         item.setFrame('bx_full');
                         const data = items['hh_mug_1'];
@@ -334,50 +204,29 @@
                         person.setData('onHand', onHand);
                         if(item.drop_count <= 0){
                             item.setFrame('bx_empty');
-                            //item.destroy(true, true);
                         } 
                     }
-                                        
-                    if( item.iType === 'Item' ){
-                        
-                    }
-                    
+                    if( item.iType === 'Item' ){}
                }
-               
-               if(onHand.length >= maxOnHand){
-               }
-            
+               if(onHand.length >= maxOnHand){}
             }
-            
             // drop what you have on hand
             if( im === 2 ){
-               
                if(onHand.length > 0 && item ){
                    if(item.iType === 'Container'){
                        const item2 = onHand.pop();
-                       
-                       item.addItem(item2);
-                       
+                       item.addItem(item2);       
                    }
                }
-               
                if(onHand.length > 0 && !item ){
                    const item2 = onHand.pop();
                    item2.x = tx * 16 + 8;
                    item2.y = ty * 16 + 8;
                    item2.droped = true;
                }
-               
-            
             }
-            
             // pick up a container
-            if( im === 3 ){
-            
-            
-            }
-            
-        
+            if( im === 3 ){}
         }
         
         update (scene) {
@@ -398,8 +247,6 @@
         
     }
     
-      
-      
     const get_di_tiles = (scene) => {
         return scene.map.filterTiles( (tile) => {
             return tile.index === 13 || tile.index === 14 || tile.index === 23 || tile.index === 24;
@@ -413,9 +260,7 @@
     PEOPLE_TYPES.worker.employee = {
         update: (people, scene, person) => {},
         create: (people, scene, person) => {},
-        collider: (people, gameObject, scene ) => {
-             //gameObject.setRandomPath(scene);
-        },
+        collider: (people, gameObject, scene ) => {},
         noPath: (people, scene, person) => {}
     };
     
@@ -445,8 +290,7 @@
     
     PEOPLE_TYPES.customer.donator = {
     
-        update: (people, scene, person) => {        
-        },
+        update: (people, scene, person) => {        },
 
         create: (people, scene, person) => {
             const items = scene.registry.get('items');
@@ -454,27 +298,18 @@
             const max_donations = scene.game.registry.get('MAX_DONATIONS');
             person.body.setDrag(500, 500);
             const donations = scene['map_donations' + scene.map_index];
-            
             const donations_incoming = people.children.entries.filter((person)=>{ return person.getData('onHand').length > 0;  }).length;
             const donations_drop = donations.children.size; 
             const donations_total = donations_incoming + donations_drop; 
-            
             if(donations_total < max_donations){
-                //const donation_data = items['box_items_hh'];
                 const donation_data = containers['box_items_hh'];
                 const donation = new Container(scene, 'box_items_hh', donation_data, person.x, person.y);
-                
                 scene.add.existing(donation);
                 person.setData('onHand', [ donation ] );
             }
-            if(donations.children.size > max_donations){
-                //person.destroy();
-            }
         },
 
-        collider: (people, gameObject, scene ) => {
-            
-        },
+        collider: (people, gameObject, scene ) => {},
         
         noPath: (people, scene, person) => {
             scene.map.setLayer(0);
@@ -492,21 +327,15 @@
                 person.setData('trigger_pos', {x: t.x, y: t.y});
             }
             if(onHand.length > 0 && cPos.x === tPos.x && cPos.y === tPos.y){
-            
                 let i_item = onHand.length;
                 while(i_item--){
                     const item = onHand[i_item];
                     item.x = person.x;
                     item.y = person.y;
-                    
                     item.droped = true;
                     scene['map_donations' + scene.map_index ].add(item, false);
-                    
-              
                 }
-            
                 person.setData('onHand', []);
-                  
                 person.setPath(scene, pos_exit.x, pos_exit.y);
             }
             if(onHand.length === 0  && cPos.x === pos_exit.x && cPos.y === pos_exit.y ){
@@ -551,9 +380,7 @@
             const subTypeProbs = this.getData('subTypeProbs');
             const now = new Date();
             const lastSpawn = this.getData('lastSpawn');
-            
             if( people.length < this.maxSize && now - lastSpawn >= 1000 ){
-            
                 this.setData('lastSpawn', now);
                 let p = scene.mapData.customer.spawnAt;
                 if(p instanceof Array){
@@ -565,8 +392,7 @@
                     if( Math.floor( person.x / 16 ) === p.x && Math.floor( person.y / 16 ) === p.y ){
                         return;
                     }
-                }
-                
+                } 
                 const person = this.get(p.x * 16 + 8, p.y * 16 + 8);
                 person.setData('type', this.getData('type') ); 
                 const roll = Math.random();
@@ -584,11 +410,8 @@
                 person.setConf({
                     cash: pConfig.cash
                 });
-                
                 const pt = PEOPLE_TYPES[ person.getData('type') ][ person.getData('subType') ];
-                
                 pt.create(this, scene, person);
-                
             }
         }
 
@@ -597,14 +420,6 @@
             const map = this.scene.map;
             const people = this;
             return function( a, b ) {
-                const type = a.getData('type');
-                const subType = a.getData('subType');
-                
-                
-                const pt = PEOPLE_TYPES[ a.getData('type') ][ a.getData('subType') ];
-                
-                //pt.collider(a, b, scene);
-                
             }   
         }
 
@@ -623,42 +438,19 @@
                 const tx = Math.floor(person.x / 16);
                 const ty = Math.floor(person.y / 16);
                 const tile = scene.map.getTileAt(tx, ty, false, 0);
-                if(!tile){
-                }
-                if(tile){
-                    if(tile.index != 1){
-                    }
-                }
                 person.pathProcessor( scene, 50, 1);
                 if(person.getData('path').length === 0 ){
-                    //person.setRandomPath(scene);
                     pt.noPath(this, scene, person);   
                 }
-                
-                person.update(scene);
-                
-                /*
-                const onHand = person.getData('onHand');
-                if(onHand){
-                    if(onHand.length > 0){
-                        onHand[0].x = person.x + 8;
-                        onHand[0].y = person.y - 8;
-                    }
-                }
-                */
-                
+                person.update(scene);                   
             }
         }
-        
-        
 
     }
 
     class PeoplePlugin extends Phaser.Plugins.BasePlugin {
         constructor (pluginManager) {
-            super(pluginManager);
-            
-            
+            super(pluginManager);     
             this.People = People;
             this.Person = Person;
             this.Container = Container;
