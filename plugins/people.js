@@ -12,7 +12,6 @@
             this.priced = false;
             this.droped = false;
             this.desc = '';
-            this.droped = false;
             const item = this;
             item.setInteractive();
             item.on('pointerdown', (pointer, x, y) => {
@@ -232,7 +231,12 @@
                             person.setData('onHand', onHand);
                         }
                     }
-                    if( item.iType === 'Item' ){}
+                    if( item.iType === 'Item' ){
+                        console.log('ah yes a loose item, I see... hummm....');
+                        item.droped = false;
+                        onHand.push( item );
+                        person.setData('onHand', onHand);        
+                    }
                }
                if(onHand.length >= maxOnHand){}
             }
@@ -241,10 +245,11 @@
                if(onHand.length > 0 && item ){
                    if(item.iType === 'Container'){
                        const item2 = onHand.pop();
+                       item2.droped = true;
                        item.addItem(item2);       
                    }
                }
-               if(onHand.length > 0 && !item ){
+               if(onHand.length > 0 && !item ){ // drop a loose item
                    const item2 = onHand.pop();
                    item2.x = tx * 16 + 8;
                    item2.y = ty * 16 + 8;
