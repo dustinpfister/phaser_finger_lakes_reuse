@@ -76,8 +76,13 @@
             let item_new = null;
             const conLen = this.contents.length;
             let drop_count = this.drop_count;
-            if( drop_count === 0 && conLen > 0){}
-            if( drop_count === 0 && conLen === 0){}
+            if( drop_count === 0 && conLen > 0){
+                console.log('yes this container has some contents!');
+                const itemRec = this.contents.pop();
+                const data = items[itemRec.key];
+                item_new = new Item(scene, itemRec.key, data, 0, 0 );
+                scene.add.existing( item_new );
+            }
             if( drop_count > 0 ){
                 this.setFrame('bx_full');
                 const data = items['hh_mug_1'];
@@ -88,6 +93,9 @@
                 if(this.drop_count <= 0){
                     this.setFrame('bx_empty');
                 } 
+            }
+            if( drop_count === 0 && conLen === 0){
+                console.log('Container is empty!');
             }
             return item_new;
         }

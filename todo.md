@@ -134,14 +134,16 @@
 * ( done ) - change contents from a group to a plain old array, and use it to store plain objects rather than sprites
 * ( done ) - the plain objects in container arrays will have just basic info such as the item key that can be used to recreate the sprite when needed
 * ( done ) - spawnItem Container class method
+* ( done ) - can remove items from a container that has contents rather than drops
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - get itemMode 3 working
-* (      ) - get itemMode 1 working with containers that have contents
 * (      ) - get itemMode 1 working with stand alone items
+* (      ) - get itemMode 3 working
+
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
-* (      ) - have more than one household item, and use the key names when cretaing
+* (      ) - have more than one household item
+* (      ) - have it so that drops will pick one of a few household items each time
 
   PRICING ITEMS :
 * (      ) - Have an area where the player can price an item
