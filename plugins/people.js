@@ -71,6 +71,27 @@
             }
         }
         
+        spawnItem (scene) {
+            const items = scene.registry.get('items');
+            let item_new = null;
+            const conLen = this.contents.length;
+            let drop_count = this.drop_count;
+            if( drop_count === 0 && conLen > 0){}
+            if( drop_count === 0 && conLen === 0){}
+            if( drop_count > 0 ){
+                this.setFrame('bx_full');
+                const data = items['hh_mug_1'];
+                item_new = new Item(scene, 'hh_mug_1', data, 0, 0 );
+                scene.add.existing( item_new );
+                drop_count -= 1;
+                this.drop_count = drop_count;
+                if(this.drop_count <= 0){
+                    this.setFrame('bx_empty');
+                } 
+            }
+            return item_new;
+        }
+        
     }
     
     class Person extends Phaser.Physics.Arcade.Sprite {
@@ -196,21 +217,12 @@
             // pick up an item
             if( im === 1 ){
                if(d < 2 && item.droped && onHand.length < maxOnHand ){
-                    let drop_count = item.drop_count;
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.length > 0){}
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.length === 0){}
-                    if(item.iType === 'Container' && drop_count > 0){
-                        item.setFrame('bx_full');
-                        const data = items['hh_mug_1'];
-                        const item_new = new Item(scene, 'hh_mug_1', data, person.x, person.y );
-                        onHand.push( item_new );
-                        scene.add.existing( item_new );
-                        drop_count -= 1;
-                        item.drop_count = drop_count;
-                        person.setData('onHand', onHand);
-                        if(item.drop_count <= 0){
-                            item.setFrame('bx_empty');
-                        } 
+                    if( item.iType === 'Container'){
+                        const item_new = item.spawnItem(scene);
+                        if(item_new){
+                            onHand.push( item_new );
+                            person.setData('onHand', onHand);
+                        }
                     }
                     if( item.iType === 'Item' ){}
                }
