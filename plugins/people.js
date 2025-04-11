@@ -52,18 +52,22 @@
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
             this.capacity = data.capacity;
-            this.contents = scene.add.group();
+            //this.contents = scene.add.group();
+            this.contents = [];
             const container = this;
             const items = scene.registry.get('items');
         }
         
         
         addItem (item) {
-            if(this.contents.children.size < this.capacity){
+            if(this.contents.length < this.capacity){
                 item.x = this.x;
                 item.y = this.y;
-                this.contents.add(item);
-            
+                const itemRec = {
+                    key: item.key
+                };
+                this.contents.push(itemRec);
+                item.destroy(true, true);
             }
         }
         
@@ -186,13 +190,15 @@
             const pos_person = person.getTilePos();
             const pos_item = item? item.getTilePos(): {x:0, y:0};
             const d = Phaser.Math.Distance.BetweenPoints( pos_person, pos_item  );
-            if( im === 0 ){}
+            if( im === 0 ){
+                console.log(item);
+            }
             // pick up an item
             if( im === 1 ){
                if(d < 2 && item.droped && onHand.length < maxOnHand ){
                     let drop_count = item.drop_count;
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size > 0){}
-                    if( item.iType === 'Container' && drop_count === 0 && item.contents.children.size === 0){}
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.length > 0){}
+                    if( item.iType === 'Container' && drop_count === 0 && item.contents.length === 0){}
                     if(item.iType === 'Container' && drop_count > 0){
                         item.setFrame('bx_full');
                         const data = items['hh_mug_1'];

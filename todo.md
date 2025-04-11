@@ -131,15 +131,17 @@
 * ( done ) - get itemMode 2 working
 * ( done ) - itemMode 2 should drop items one at a time
 * ( done ) - itemMode 2 should add droped items to a container if it is droped at the location of the container
+* ( done ) - change contents from a group to a plain old array, and use it to store plain objects rather than sprites
+* ( done ) - the plain objects in container arrays will have just basic info such as the item key that can be used to recreate the sprite when needed
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - change contents from a group to a plain old array, and use it to store plain objects rather than sprites
-* (      ) - the plain objects in container arrays will have just basic info such as the item key that can be used to recreate the sprite when needed
+* (      ) - spawnItem Container class method
 * (      ) - get itemMode 3 working
 * (      ) - get itemMode 1 working with containers that have contents
 * (      ) - get itemMode 1 working with stand alone items
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
+* (      ) - have more than one household item, and use the key names when cretaing
 
   PRICING ITEMS :
 * (      ) - Have an area where the player can price an item

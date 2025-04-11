@@ -251,7 +251,7 @@ class Reuse extends Phaser.Scene {
             const m = event.code.match(patt);
             if(m){
                 const d = Number(m[0].replace('Digit', ''));
-                if(d > 0 && d < 4){
+                if(d >= 0 && d < 4){
                     console.log('set item mode for player to mode ' + d);
                     this.player.setData('itemMode', d);
                 }
