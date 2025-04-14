@@ -4,6 +4,9 @@
         "tile" : { "sheet": "donations_16_16", "stuff": "bx_full", "frame": "bx_close", "empty": "bx_empty" },
         "drop_count" : 3,
         "capacity": 0,
+        "mType": "carboard",
+        "accepts" : "all",
+        "canChildOnEmpty" : true,
         "autoCull" : false
     },
     "blue_bin" : {
@@ -11,6 +14,9 @@
         "tile" : { "sheet": "donations_16_16", "stuff": "bluebin_up_full",  "frame": "bluebin_up_close", "empty": "bluebin_up_open" },
         "drop_count": 0,
         "capacity": 10,
+        "mType" : "plastic",
+        "accepts" : "all",
+        "canChildOnEmpty" : false,
         "autoCull" : false
     },
     "recycle_bin" : {
@@ -18,6 +24,9 @@
         "tile" : { "sheet": "donations_16_16", "stuff": "recycle_up_open",  "frame": "recycle_up_open", "empty": "recycle_up_open" },
         "drop_count": 0,
         "capacity": 10,
+        "mType" : "plastic",
+        "accepts" : [ "cardboard" ],
+        "canChildOnEmpty" : false,
         "autoCull" : true
     }
 }

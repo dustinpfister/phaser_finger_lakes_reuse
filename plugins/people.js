@@ -11,6 +11,7 @@
             this.depth = 1;
             this.priced = false;
             this.droped = false;
+            this.canChildOnEmpty = true;
             this.desc = '';
             const item = this;
             item.setInteractive();
@@ -35,7 +36,8 @@
             super(scene, key, x, y, data.tile.sheet, data.tile.frame)
             const item = this;
             this.iType = 'Item';
-            const items = scene.registry.get('items');
+            //this.canChildOnEmpty = true;
+            //const items = scene.registry.get('items');
             this.desc = data.desc;
             this.value = data.value;
             this.drop_count = data.drop_count || 0;
@@ -49,6 +51,7 @@
             super(scene, key, x, y, data.tile.sheet, data.tile.frame);
             this.iType = 'Container';
             this.desc = data.desc;
+            this.canChildOnEmpty = data.canChildOnEmpty;
             this.drop_count = data.drop_count || 0;
             this.capacity = data.capacity;
             this.autoCull = data.autoCull || false;
@@ -60,6 +63,15 @@
         
         
         addItem (item) {
+            if(item.iType === 'Container' && !item.canChildOnEmpty){
+                console.log( 'This Container can not be a Child of another' );
+                return false;
+            }
+            if(item.iType === 'Container' && item.canChildOnEmpty && (item.drop_count > 0 || item.contents.length > 0) ){
+                console.log( 'can only child this Container when it is empty' );
+                return false;
+            }
+        
             if(this.autoCull && this.contents.length >= this.capacity){
                 const len = this.contents.length + 1 - this.capacity;
                 this.contents.splice(this.capacity - 1, len);
@@ -80,19 +92,13 @@
         spawnItem (scene) {
             const items = scene.registry.get('items');
             const containers = scene.registry.get('containers');
-            
-            console.log(containers);
-            
             let item_new = null;
             const conLen = this.contents.length;
             let drop_count = this.drop_count;
             if( drop_count === 0 && conLen > 0){
                 console.log('yes this container has some contents!');
                 const itemRec = this.contents.pop();
-                
-                const data = itemRec.iType === 'Item' ? items[itemRec.key]: containers[itemRec.key];
-                
-                
+                const data = itemRec.iType === 'Item' ? items[itemRec.key]: containers[itemRec.key];              
                 if(itemRec.iType === 'Item'){
                     item_new = new Item(scene, itemRec.key, data, 0, 0 );
                 }

@@ -23,9 +23,13 @@
 * (      ) - have at least 4 workers for now
 
   ONE CUSTOMERS/WORKERS FOR EACH MAP 
-* (      ) -  have a workers and customers people class for each map
-* (      ) -  have it so that customers can move from one map to another 
-* (      ) -  have workers always working even if they are not in the current map
+* (      ) - have a workers and customers people class for each map
+* (      ) - have it so that customers can move from one map to another 
+* (      ) - have workers always working even if they are not in the current map
+* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
+* (      ) - can switch between workers
+* (      ) - new worker sprites, have one for each worker
+* (      ) - people_workers.json for data on each worker
 
   PRICING ITEMS :
 * (      ) - Have an area where the player can price an item
@@ -38,28 +42,23 @@
 * (      ) - shopers can pull items into there on hand collection
 * (      ) - shopers can buy items
 * (      ) - money displayed
+* (      ) - people_customers.json for data on each customers
 
   MISC:
-* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
+* (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
+* (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
+* (      ) - make mType a BaseItem class prop
 * (      ) - donations should be placed on the table by the donators
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon
 * (      ) - revisit collision detection
-* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
-* (      ) - can switch between workers
-* (      ) - new worker sprites, have one for each worker
-* (      ) - people_workers.json for data on each worker
-* (      ) - people_customers.json for data on each customers
 * (      ) - see about getting map.setCollisionByExclusion to work without problem
 * (      ) - use the reUse data manager for keys like playerX and so forth
 * (      ) - getPeopleType helper in people.js
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - new path processing code that allows for smooth, and fast player movement.
 * (      ) - smoother transitions between maps
-* (      ) - failsafe for getting stuck in a wall for people in general, including coworkers
-* (      ) - have a Person.drop method that will drop what the person has onHand
-* (      ) - In the event that there are tables near by the drop method will place them there
 ```
 
 ## R0 ( ) - People, Items Database, Donations 
@@ -157,13 +156,13 @@
 * ( done ) - autoCull feature for containers
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
+* ( done ) - can not child prop for containers
 
   MOVE ITEMS BETWEEN CONTAINERS:
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
-* (      ) - have it so that only empty boxes can be placed into recycling bins
-* (      ) - have it so that containers can not be placed into other containers ( with the exceptions such as placing an empty box into a recylcing bin )
-
+* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
+* (      ) - use frameNames in item data for setting the frames of items and containers
 ```
