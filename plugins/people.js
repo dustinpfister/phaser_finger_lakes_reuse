@@ -51,6 +51,7 @@
             this.desc = data.desc;
             this.drop_count = data.drop_count || 0;
             this.capacity = data.capacity;
+            this.autoCull = data.autoCull || false;
             //this.contents = scene.add.group();
             this.contents = [];
             const container = this;
@@ -59,6 +60,10 @@
         
         
         addItem (item) {
+            if(this.autoCull && this.contents.length >= this.capacity){
+                const len = this.contents.length + 1 - this.capacity;
+                this.contents.splice(this.capacity - 1, len);
+            }
             if(this.contents.length < this.capacity){
                 item.x = this.x;
                 item.y = this.y;
@@ -67,7 +72,9 @@
                 };
                 this.contents.push(itemRec);
                 item.destroy(true, true);
+                return true;
             }
+            return false;
         }
         
         spawnItem (scene) {
@@ -228,36 +235,45 @@
                         const item_new = item.spawnItem(scene);
                         if(item_new){
                             onHand.push( item_new );
-                            person.setData('onHand', onHand);
+                            //person.setData('onHand', onHand);
                         }
                     }
                     if( item.iType === 'Item' ){
-                        console.log('ah yes a loose item, I see... hummm....');
                         item.droped = false;
                         onHand.push( item );
-                        person.setData('onHand', onHand);        
+                        //person.setData('onHand', onHand);        
                     }
                }
                if(onHand.length >= maxOnHand){}
             }
             // drop what you have on hand
-            if( im === 2 ){
-               if(onHand.length > 0 && item ){
+            if( im === 2 && onHand.length > 0 ){  
+               if( item ){
                    if(item.iType === 'Container'){
                        const item2 = onHand.pop();
-                       item2.droped = true;
-                       item.addItem(item2);       
+                       if( !item.addItem( item2 ) ){
+                       
+                         onHand.push(item2);
+                       
+                       }       
                    }
                }
-               if(onHand.length > 0 && !item ){ // drop a loose item
+               if( !item ){ // drop a loose item
                    const item2 = onHand.pop();
                    item2.x = tx * 16 + 8;
                    item2.y = ty * 16 + 8;
                    item2.droped = true;
                }
+               
             }
             // pick up a container
-            if( im === 3 ){}
+            if( im === 3 && item ){
+                if(item.iType === 'Container'){
+                    item.droped = false;
+                    onHand.push( item );
+                    //person.setData('onHand', onHand);     
+                } 
+            }
         }
         
         update (scene) {

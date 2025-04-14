@@ -3,12 +3,21 @@
         "desc": "A box of Household items",
         "tile" : { "sheet": "donations_16_16", "stuff": "bx_full", "frame": "bx_close", "empty": "bx_empty" },
         "drop_count" : 3,
-        "capacity": 0
+        "capacity": 0,
+        "autoCull" : false
     },
     "blue_bin" : {
         "desc": "A blue bin used for storing small house hold items",
         "tile" : { "sheet": "donations_16_16", "stuff": "bluebin_up_full",  "frame": "bluebin_up_close", "empty": "bluebin_up_open" },
         "drop_count": 0,
-        "capacity": 10
+        "capacity": 10,
+        "autoCull" : false
+    },
+    "recycle_bin" : {
+        "desc": "Place empty boxes and the like into me!",
+        "tile" : { "sheet": "donations_16_16", "stuff": "recycle_up_full",  "frame": "recycle_up_close", "empty": "recycle_up_open" },
+        "drop_count": 0,
+        "capacity": 10,
+        "autoCull" : true
     }
 }

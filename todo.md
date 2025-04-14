@@ -27,7 +27,24 @@
 * (      ) -  have it so that customers can move from one map to another 
 * (      ) -  have workers always working even if they are not in the current map
 
+  PRICING ITEMS :
+* (      ) - Have an area where the player can price an item
+
+  STOCKING:
+* (      ) - The player can place an item in an area where a shopper can see it
+
+  SHOPERS:
+* (      ) - shopers can see find items
+* (      ) - shopers can pull items into there on hand collection
+* (      ) - shopers can buy items
+* (      ) - money displayed
+
   MISC:
+* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
+* (      ) - donations should be placed on the table by the donators
+* (      ) - many enter and exit locations for donators in map4
+* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
+* (      ) - favicon
 * (      ) - revisit collision detection
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
@@ -135,32 +152,16 @@
 * ( done ) - the plain objects in container arrays will have just basic info such as the item key that can be used to recreate the sprite when needed
 * ( done ) - spawnItem Container class method
 * ( done ) - can remove items from a container that has contents rather than drops
+* ( done ) - get itemMode 1 working with stand alone items
+* ( done ) - get itemMode 3 working
+* ( done ) - autoCull feature for containers
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - get itemMode 1 working with stand alone items
-* (      ) - get itemMode 3 working
-
+* (      ) - have a recycling bin container type, and place one in map4.
+* (      ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
 
-  PRICING ITEMS :
-* (      ) - Have an area where the player can price an item
-
-  STOCKING:
-* (      ) - The player can place an item in an area where a shopper can see it
-
-  SHOPERS:
-* (      ) - shopers can see find items
-* (      ) - shopers can pull items into there on hand collection
-* (      ) - shopers can buy items
-* (      ) - money displayed
-
-  MISC:
-* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
-* (      ) - donations should be placed on the table by the donators
-* (      ) - many enter and exit locations for donators in map4
-* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
-* (      ) - favicon
 ```
