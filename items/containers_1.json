@@ -15,7 +15,7 @@
     },
     "recycle_bin" : {
         "desc": "Place empty boxes and the like into me!",
-        "tile" : { "sheet": "donations_16_16", "stuff": "recycle_up_full",  "frame": "recycle_up_close", "empty": "recycle_up_open" },
+        "tile" : { "sheet": "donations_16_16", "stuff": "recycle_up_open",  "frame": "recycle_up_open", "empty": "recycle_up_open" },
         "drop_count": 0,
         "capacity": 10,
         "autoCull" : true

@@ -13,6 +13,7 @@
     { "filename": "bluebin_side_open", "frame": { "w": 16, "h": 16, "x": 64, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_side_full", "frame": { "w": 16, "h": 16, "x": 80, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "bluebin_side_flash1", "frame": { "w": 16, "h": 16, "x": 96, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
-    { "filename": "bluebin_side_flash2", "frame": { "w": 16, "h": 16, "x": 112, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } }     
+    { "filename": "bluebin_side_flash2", "frame": { "w": 16, "h": 16, "x": 112, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } }, 
+    { "filename": "recycle_up_open", "frame": { "w": 16, "h": 16, "x": 0, "y": 32 }, "anchor": { "x": 0.5, "y": 0.5 } }   
   ]
 }

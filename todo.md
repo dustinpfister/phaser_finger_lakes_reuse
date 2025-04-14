@@ -155,13 +155,15 @@
 * ( done ) - get itemMode 1 working with stand alone items
 * ( done ) - get itemMode 3 working
 * ( done ) - autoCull feature for containers
+* ( done ) - have a recycling bin container type, and place one in map4.
+* ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 
   MOVE ITEMS BETWEEN CONTAINERS:
-* (      ) - have a recycling bin container type, and place one in map4.
-* (      ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a supply of empty blue bins in map1
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
+* (      ) - have it so that only empty boxes can be placed into recycling bins
+* (      ) - have it so that containers can not be placed into other containers ( with the exceptions such as placing an empty box into a recylcing bin )
 
 ```
