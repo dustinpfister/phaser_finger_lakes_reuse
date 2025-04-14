@@ -68,7 +68,7 @@
                 item.x = this.x;
                 item.y = this.y;
                 const itemRec = {
-                    key: item.key
+                    key: item.key, iType : this.iType 
                 };
                 this.contents.push(itemRec);
                 item.destroy(true, true);
@@ -79,14 +79,26 @@
         
         spawnItem (scene) {
             const items = scene.registry.get('items');
+            const containers = scene.registry.get('containers');
+            
+            console.log(containers);
+            
             let item_new = null;
             const conLen = this.contents.length;
             let drop_count = this.drop_count;
             if( drop_count === 0 && conLen > 0){
                 console.log('yes this container has some contents!');
                 const itemRec = this.contents.pop();
-                const data = items[itemRec.key];
-                item_new = new Item(scene, itemRec.key, data, 0, 0 );
+                
+                const data = itemRec.iType === 'Item' ? items[itemRec.key]: containers[itemRec.key];
+                
+                
+                if(itemRec.iType === 'Item'){
+                    item_new = new Item(scene, itemRec.key, data, 0, 0 );
+                }
+                if(itemRec.iType === 'Container'){
+                    item_new = new Container(scene, itemRec.key, data, 0, 0 );
+                }
                 scene.add.existing( item_new );
             }
             if( drop_count > 0 ){
