@@ -6,23 +6,24 @@
 ```
 
 ## R2 ( ) - Items Database
+
 ```
-  ITEMS MIN DATA STORED:
-* (    ) - work out a system where min data is stored in place of sprites for everything \( item_key, set price \)
-* (    ) - use min data in the process of creating the sprite again when needed
+  REP SPRITES :
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
+  JSON ONLY :
+* (    ) - do away with main items and collections arrays in favor of a system that dirrectly works with json data that is all ready cached
 ```
 
 
 ## R1 ( ) - Workers
 
 ```
-  WORKERS:
+  WORKERS :
 * (      ) - have a worker type of People class
 * (      ) - have an'employee' subclass for workers
 * (      ) - have at least 4 workers for now
 
-  ONE CUSTOMERS/WORKERS FOR EACH MAP 
+  ONE CUSTOMERS/WORKERS FOR EACH MAP : 
 * (      ) - have a workers and customers people class for each map
 * (      ) - have it so that customers can move from one map to another 
 * (      ) - have workers always working even if they are not in the current map
@@ -34,17 +35,17 @@
   PRICING ITEMS :
 * (      ) - Have an area where the player can price an item
 
-  STOCKING:
+  STOCKING :
 * (      ) - The player can place an item in an area where a shopper can see it
 
-  SHOPERS:
+  SHOPERS :
 * (      ) - shopers can see find items
 * (      ) - shopers can pull items into there on hand collection
 * (      ) - shopers can buy items
 * (      ) - money displayed
 * (      ) - people_customers.json for data on each customers
 
-  MISC:
+  MISC :
 * (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
 * (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
 * (      ) - make mType a BaseItem class prop
@@ -59,6 +60,7 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 * (      ) - new path processing code that allows for smooth, and fast player movement.
 * (      ) - smoother transitions between maps
+* (      ) - the player should not be able to place items on top of walls
 ```
 
 ## R0 ( ) - People, Items Database, Donations 
@@ -156,13 +158,20 @@
 * ( done ) - autoCull feature for containers
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
-* ( done ) - can not child prop for containers
+* ( done ) - canNotChild property for containers
 
-  MOVE ITEMS BETWEEN CONTAINERS:
+  MOVE ITEMS FROM MAP TO MAP :
+* (      ) - I will want to have a ItemCollection class that will be used to make an instance of a maps donaiton array
+* (      ) - Have a 'Stock' ItemCollection instance for each map 
 * (      ) - have it so that the player can move a blue bin to a whole other map
+* (      ) - when a player drops an item of any kind have it go to the donations array for the current map
 * (      ) - have a supply of empty blue bins in map1
+
+  MORE THAN ONE ITEM :
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
+
+  USE TILE PROPS OF ITEMS :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - use frameNames in item data for setting the frames of items and containers
 ```

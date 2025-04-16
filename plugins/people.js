@@ -270,9 +270,7 @@
                    if(item.iType === 'Container'){
                        const item2 = onHand.pop();
                        if( !item.addItem( item2 ) ){
-                       
-                         onHand.push(item2);
-                       
+                           onHand.push(item2);
                        }       
                    }
                }
@@ -281,6 +279,8 @@
                    item2.x = tx * 16 + 8;
                    item2.y = ty * 16 + 8;
                    item2.droped = true;
+                   console.log('donations array:');
+                   console.log( scene );
                }
                
             }
