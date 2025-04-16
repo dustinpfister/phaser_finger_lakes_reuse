@@ -206,38 +206,27 @@ class Reuse extends Phaser.Scene {
         
         let i_map = 1;
         const bb_list = scene.getItemsByKey('blue_bin');
-        while(i_map <= 4){
-        
-            
+        while(i_map <= 4){ 
             const donations = this['map_donations' + i_map] = this.add.group({
                 scene: this,
                 defaultKey: 'donations_16_16',
                 maxSize: this.game.registry.get('MAX_DONATIONS')
             });
-            
             const md = scene.cache.json.get('map' + i_map + '_data');
             const container_db = this.cache.json.get('containers_' + 1);
             const container_keys = Object.keys(md.objects.containers);
-            
             container_keys.forEach( (key) => {
                 const data_map = md.objects.containers[key];
                 const data_con = container_db[key];
-            
                 data_map.forEach( (data, i)=> {
-            
                     const id = md.name + String(i);
-            
                     if( bb_list.filter( (obj) => { return obj.name === id; } ).length === 0 ){
-            
                         const container = new Container(scene, key, data_con, data.x * 16 + 8, data.y * 16 + 8 );
                         container.droped = true;
                         container.name = id; 
                         donations.add(container, true);
-                
                     }
-            
                 });
-         
             });
             i_map += 1;
         }
@@ -249,7 +238,6 @@ class Reuse extends Phaser.Scene {
         };
         
         mdb.maps[0] = {
-        
             donations: new ItemCollection(scene, { } )
         }
         

@@ -159,12 +159,12 @@
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * ( done ) - canNotChild property for containers
-* ( done ) - I will want to have a ItemCollection class that will be used to make an instance of a maps donaiton array
+
+  MAPDATA CLASS:
+* (      ) - I made a mistake with the ItemData Class what I really need is a MapData class
+* (      ) - an instance of MapData will contain a donations, and stock group.
 
   MOVE ITEMS FROM MAP TO MAP :
-* (      ) - Have a 'Stock' ItemCollection instance for each map
-* (      ) - replace mapData with mapDataArray that will containe data for each map that can be mutated.
-* (      ) - Donation and Stock ItemCollections should be instances of each mapDataArray element 
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - when a player drops an item of any kind have it go to the donations array for the current map
 * (      ) - have a supply of empty blue bins in map1
