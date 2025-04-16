@@ -133,18 +133,11 @@
     /********* **********
     ItemCollection Class
     ********** *********/
-    class ItemCollection extends Phaser.GameObjects.Group {
-    
-        constructor (Scene, Config) {
-            
-            
-            super(Scene, [], Config);
-        
-        }
-        
-        
-    
-    }
+    //class ItemCollection extends Phaser.GameObjects.Group {
+    //    constructor (Scene, Config) {
+    //        super(Scene, [], Config);
+    //    }
+    //}
     
 
     /********* **********
@@ -544,7 +537,7 @@
             this.People = People;
             this.Person = Person;
             this.Container = Container;
-            this.ItemCollection = ItemCollection;
+            //this.ItemCollection = ItemCollection;
         } 
     }
 

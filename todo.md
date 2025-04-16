@@ -160,7 +160,11 @@
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * ( done ) - canNotChild property for containers
 
+* GO WITH LIBS OVER PLUGINS:
+* (      ) - I want to break down the people.js plugin down into people.js and items.js libs
+
   MAPDATA CLASS:
+* (      ) - start a mapdata.js lib
 * (      ) - I made a mistake with the ItemData Class what I really need is a MapData class
 * (      ) - an instance of MapData will contain a donations, and stock group.
 

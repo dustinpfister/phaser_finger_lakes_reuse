@@ -232,17 +232,17 @@ class Reuse extends Phaser.Scene {
         }
         
         //!!! NEW MAP DATABASE
-        const mdb = this.mapDataBase = {
-            index : 0,
-            maps: []
-        };
+        //const mdb = this.mapDataBase = {
+        //    index : 0,
+        //    maps: []
+        //};
         
-        mdb.maps[0] = {
-            donations: new ItemCollection(scene, { } )
-        }
+        //mdb.maps[0] = {
+        //     donations: new ItemCollection(scene, { } )
+        //}
         
-        console.log('Map DataBase');
-        console.log(mdb);
+        //console.log('Map DataBase');
+        //console.log(mdb);
         
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
