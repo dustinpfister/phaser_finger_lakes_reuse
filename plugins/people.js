@@ -2,6 +2,10 @@
 
     const root = this;
     
+    /********* **********
+    ITEMS ( BaseItem, Item, and Container Classes )
+    ********** *********/
+    
     class BaseItem extends Phaser.GameObjects.Sprite {
     
         constructor (scene, key, x, y, sheet, frame) {
@@ -126,6 +130,25 @@
         
     }
     
+    /********* **********
+    ItemCollection Class
+    ********** *********/
+    class ItemCollection extends Phaser.GameObjects.Group {
+    
+        constructor (Scene, Config) {
+            
+            
+            super(Scene, [], Config);
+        
+        }
+    
+    }
+    
+
+    /********* **********
+    PERSON ( Person Class, People Class, People Types )
+    ********** *********/
+
     class Person extends Phaser.Physics.Arcade.Sprite {
     
         constructor (scene, x, y, texture, frame) {
@@ -519,6 +542,7 @@
             this.People = People;
             this.Person = Person;
             this.Container = Container;
+            this.ItemCollection = ItemCollection;
         } 
     }
 
@@ -534,5 +558,6 @@
     }
 
     return PeoplePlugin;
+
 }).call(this);
 

@@ -159,9 +159,9 @@
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * ( done ) - canNotChild property for containers
+* ( done ) - I will want to have a ItemCollection class that will be used to make an instance of a maps donaiton array
 
   MOVE ITEMS FROM MAP TO MAP :
-* (      ) - I will want to have a ItemCollection class that will be used to make an instance of a maps donaiton array
 * (      ) - Have a 'Stock' ItemCollection instance for each map
 * (      ) - replace mapData with mapDataArray that will containe data for each map that can be mutated.
 * (      ) - Donation and Stock ItemCollections should be instances of each mapDataArray element 

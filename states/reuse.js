@@ -198,6 +198,7 @@ class Reuse extends Phaser.Scene {
         const scene = this;
         
         this.PeoplePlugin = this.plugins.get('PeoplePlugin');
+        const ItemCollection = this.PeoplePlugin.ItemCollection;
         
         this.DonationsPlugin = this.plugins.get('DonationsPlugin');
         const Container = this.PeoplePlugin.Container;
@@ -241,6 +242,19 @@ class Reuse extends Phaser.Scene {
             i_map += 1;
         }
         
+        //!!! NEW MAP DATABASE
+        const mdb = this.mapDataBase = {
+            index : 0,
+            maps: []
+        };
+        
+        mdb.maps[0] = {
+        
+            donations: new ItemCollection(scene, { } )
+        }
+        
+        console.log('Map DataBase');
+        console.log(mdb);
         
         const camera = this.camera = this.cameras.main;
         this.cursors = this.input.keyboard.createCursorKeys();
