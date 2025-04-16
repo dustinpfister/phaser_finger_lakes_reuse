@@ -162,7 +162,9 @@
 
   MOVE ITEMS FROM MAP TO MAP :
 * (      ) - I will want to have a ItemCollection class that will be used to make an instance of a maps donaiton array
-* (      ) - Have a 'Stock' ItemCollection instance for each map 
+* (      ) - Have a 'Stock' ItemCollection instance for each map
+* (      ) - replace mapData with mapDataArray that will containe data for each map that can be mutated.
+* (      ) - Donation and Stock ItemCollections should be instances of each mapDataArray element 
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - when a player drops an item of any kind have it go to the donations array for the current map
 * (      ) - have a supply of empty blue bins in map1
