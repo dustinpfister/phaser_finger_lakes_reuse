@@ -2,10 +2,7 @@
 
 ## R4 (    ) - Preloader
 ```
-* (      ) - start a preloader draft
-* (      ) - display progress with loading phaser
-* (      ) - display loading of additional phaser scripts
-* (      ) - start a main phaser script when loading is done
+* () make use of preloader draft in full game
 ```
 
 ## R3 (    ) - New Map System
@@ -167,7 +164,14 @@
 * ( done ) - canNotChild property for containers
 * ( done ) - start a draft for working out a module form of pathfinding.js
 * ( done ) - make the pathfinding demo a phaser project where I can click around on a grid
+* ( done ) - start a preloader draft
+* ( done ) - display progress with loading phaser
+* ( done ) - display loading of additional phaser script
+* ( done ) - start a main phaser script when loading is done
  
+  PRELOADER DRAFT
+* (      ) - see about getting addtional phaser loader to work
+
   GO WITH LIBS OVER PLUGINS:
 * (      ) - I want to break down the people.js plugin down into people.js and items.js libs
 * (      ) - create a demo that makes use of these libs
