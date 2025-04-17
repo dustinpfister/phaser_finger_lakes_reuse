@@ -165,11 +165,13 @@
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * ( done ) - canNotChild property for containers
+* ( done ) - start a draft for working out a module form of pathfinding.js
+* ( done ) - make the pathfinding demo a phaser project where I can click around on a grid
  
   GO WITH LIBS OVER PLUGINS:
-* ( done ) - start a draft for working out a module form of pathfinding.js
-* (      ) - make the pathfinding demo a phaser project where I can click around on a grid
 * (      ) - I want to break down the people.js plugin down into people.js and items.js libs
+* (      ) - create a demo that makes use of these libs
+* (      ) - make changes to reuse state to make use of new libs over plugins
 
   MAPDATA CLASS:
 * (      ) - start a mapdata.js lib

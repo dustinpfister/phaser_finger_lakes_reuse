@@ -1,5 +1,23 @@
 import { PathFinder } from "../../lib/pathfinding.js";
 
+const TS = 32;
+const GRID = [
+    [0,1,0,1,0,1,0,1,0,0,0,1,1,0,0],
+    [0,1,0,0,0,1,0,0,0,1,0,0,1,1,0],
+    [0,1,0,1,0,0,0,1,1,1,1,0,1,0,0],
+    [0,0,0,1,0,1,0,0,0,0,1,0,1,0,1],
+    [1,1,1,1,0,1,1,1,1,0,1,0,0,0,0],
+    [0,1,0,0,0,0,0,0,1,0,1,1,1,1,0],
+    [0,1,1,0,1,1,1,0,1,0,1,0,0,0,0],
+    [0,0,0,0,1,0,1,0,1,0,1,0,1,1,1],
+    [1,1,1,1,1,0,0,0,1,0,1,0,0,0,0],
+    [0,0,0,0,0,0,1,0,0,0,1,1,1,1,0],
+    [0,1,1,1,1,0,1,1,1,1,1,0,0,0,0],
+    [0,0,0,0,1,0,0,0,0,0,1,0,1,1,1],
+    [1,1,1,0,1,0,1,0,1,0,1,0,0,0,0],
+    [0,0,1,0,1,0,1,0,1,0,1,1,1,1,0],
+    [1,0,0,0,1,0,0,0,1,0,0,0,0,0,0]
+];
 
 class Demo extends Phaser.Scene {
 
@@ -20,47 +38,57 @@ class Demo extends Phaser.Scene {
         pf.preparePathCalculation([sx, sy],[ex, ey]);
         pf.calculatePath();
     }
-
-    create () {
-
-
-        const grid = [
-            [0,1,0,0,0],
-            [0,1,0,1,0],
-            [0,0,0,0,0],
-            [1,1,0,1,0],
-            [0,0,0,0,0]
-        ];
-
-        this.texture = this.textures.createCanvas('tiles', 32, 32);
+    
+    createTexture () {
+        this.texture = this.textures.createCanvas('tiles', TS * 2, TS * 2);
         const ctx = this.texture.context;
         ctx.fillStyle = '#8f8f8f';
-        ctx.fillRect( 0, 0, 16, 16 );
+        ctx.fillRect( 0, 0, TS, TS );
         ctx.fillStyle = 'black';
-        ctx.fillRect( 16, 0, 16, 16 );
+        ctx.fillRect( TS, 0, TS, TS );
         ctx.fillStyle = 'lime';
-        ctx.fillRect( 0, 16, 16, 16 );
-        
+        ctx.fillRect( 0, TS, TS, TS );
+        ctx.fillStyle = 'blue';
+        ctx.fillRect( TS, TS, TS, TS );
         this.texture.refresh();
+    }
 
-
-        const map =  this.make.tilemap({ data: grid, tileWidth: 16, tileHeight: 16 });
-        const tileset = map.addTilesetImage('tiles');
-        const layer0 = this.layer0 = map.createLayer(0, tileset, 32, 32);
-        const layer1 = this.layer1 = map.createBlankLayer(1, tileset, 32, 32);
-
-        const pf = this.pf = new PathFinder();
-        pf.setGrid(grid, [0, 2] );
+    create () {
         const scene = this;
+        this.createTexture();
+        const map =  this.make.tilemap({ data: GRID, tileWidth: TS, tileHeight: TS });
+        const tileset = map.addTilesetImage('tiles');
+        const sx = scene.game.config.width / 2 - (GRID[0].length * TS / 2);
+        const sy = scene.game.config.height / 2 - (GRID.length * TS / 2);
+        const layer0 = this.layer0 = map.createLayer(0, tileset, sx, sy);
+        const layer1 = this.layer1 = map.createBlankLayer(1, tileset, sx, sy);
+        const pf = this.pf = new PathFinder();
+        pf.setGrid(GRID, [0, 2] );
         pf.setCallbackFunction ( function(a ) {
             a.forEach((point) => {
                 layer1.putTileAt(2, point.x, point.y)
             });
         });
-        
-        this.setPath(2,0,4,2);
-
-
+        let sp = null;
+        layer1.setInteractive();
+        layer1.on('pointerdown', (pointer, x, y ) => {  
+            const tile = layer0.getTileAtWorldXY(pointer.worldX, pointer.worldY);
+            if(!tile){ return; }
+            if(tile.index === 0){
+                if(!sp){
+                    scene.clear();
+                    sp = { x: tile.x, y: tile.y };
+                    layer1.putTileAt(3, tile.x, tile.y);
+                }else{
+                    scene.setPath( sp.x, sp.y, tile.x, tile.y );
+                    sp = null;
+                }
+            }
+            if(tile.index === 1){
+                scene.clear();
+                sp = null;
+            }
+        });
     }
     
 }
