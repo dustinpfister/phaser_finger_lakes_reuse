@@ -1,12 +1,19 @@
 # Phaser Finger Lakes Reuse
 
-## R2 ( ) - New Map System
+## R4 (    ) - Preloader
+```
+* (      ) - start a preloader draft
+* (      ) - display progress with loading phaser
+* (      ) - display loading of additional phaser scripts
+* (      ) - start a main phaser script when loading is done
+```
+
+## R3 (    ) - New Map System
 ```
 * () work on map system draft, get it solid.
 ```
 
-## R2 ( ) - Items Database
-
+## R2 (    ) - Items Database
 ```
   REP SPRITES :
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
@@ -15,8 +22,7 @@
 ```
 
 
-## R1 ( ) - Workers
-
+## R1 (    ) - Workers
 ```
   WORKERS :
 * (      ) - have a worker type of People class
@@ -159,8 +165,10 @@
 * ( done ) - have a recycling bin container type, and place one in map4.
 * ( done ) - make it so that empty boxes in a recycling bin purge out ( for now )
 * ( done ) - canNotChild property for containers
-
-* GO WITH LIBS OVER PLUGINS:
+ 
+  GO WITH LIBS OVER PLUGINS:
+* ( done ) - start a draft for working out a module form of pathfinding.js
+* (      ) - make the pathfinding demo a phaser project where I can click around on a grid
 * (      ) - I want to break down the people.js plugin down into people.js and items.js libs
 
   MAPDATA CLASS:
