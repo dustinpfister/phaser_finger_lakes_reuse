@@ -169,9 +169,9 @@
 * ( done ) - display loading of additional phaser script
 * ( done ) - start a main phaser script when loading is done
 * ( done ) - see about getting addtional phaser loader to work
+* ( done ) - have lib form of people.js plugin
 
   DRAFTS:
-* (      ) - have lib form of people.js plugin
 * (      ) - strart an item.js lib that makes use of the items code in the people.js plugin.
 * (      ) - start a mapdata.js lib
 * (      ) - an instance of MapData will contain a donations, and stock group.
