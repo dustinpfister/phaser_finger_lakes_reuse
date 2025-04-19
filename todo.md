@@ -168,19 +168,15 @@
 * ( done ) - display progress with loading phaser
 * ( done ) - display loading of additional phaser script
 * ( done ) - start a main phaser script when loading is done
- 
-  PRELOADER DRAFT
-* (      ) - see about getting addtional phaser loader to work
+* ( done ) - see about getting addtional phaser loader to work
 
-  GO WITH LIBS OVER PLUGINS:
-* (      ) - I want to break down the people.js plugin down into people.js and items.js libs
-* (      ) - create a demo that makes use of these libs
-* (      ) - make changes to reuse state to make use of new libs over plugins
-
-  MAPDATA CLASS:
+  DRAFTS:
+* (      ) - have lib form of people.js plugin
+* (      ) - strart an item.js lib that makes use of the items code in the people.js plugin.
 * (      ) - start a mapdata.js lib
-* (      ) - I made a mistake with the ItemData Class what I really need is a MapData class
 * (      ) - an instance of MapData will contain a donations, and stock group.
+* (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
+
 
   MOVE ITEMS FROM MAP TO MAP :
 * (      ) - have it so that the player can move a blue bin to a whole other map
