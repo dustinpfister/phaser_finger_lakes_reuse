@@ -171,10 +171,11 @@
 * ( done ) - see about getting addtional phaser loader to work
 * ( done ) - have lib form of people.js plugin
 * ( done ) - strart an item.js lib that makes use of the items code in the people.js plugin.
+* ( done ) - start an items draft
+* ( done ) - come up with a way to access item data in scene.cache.json over that of the items and containers reg keys
 
   DRAFTS:
-* ( done ) - start an items draft
-* (      ) - come up with a way to acesse item data in scene.cache.json over that of the items and containers reg keys
+* (      ) - display items in items demo
 * (      ) - start a mapdata.js lib
 * (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.

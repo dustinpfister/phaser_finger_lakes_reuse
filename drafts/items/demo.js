@@ -12,7 +12,9 @@ class Example extends Phaser.Scene {
     }
     create () {
     
-        const item = new Item(this);
+        const item = new Item(this, 'hh_mug_1');
+        
+        console.log(item);
     }
     update (time, delta) {
     }
