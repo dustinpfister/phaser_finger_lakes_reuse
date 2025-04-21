@@ -177,9 +177,10 @@
 * ( done ) - start a people draft
 * ( done ) - update people lib code to work with people draft
 * ( done ) - just have a basic hard coded map that will work well enough to make sure path processing works
+* ( done ) - get path processing to work with this new person lib
 
   PEOPLE DRAFT:
-* ( done ) - get path processing to work with this new person lib
+* (      ) - see about improving path processing so that the player does not jump
 
   MAPDATA DRAFT:
 * (      ) - start a mapdata.js lib
