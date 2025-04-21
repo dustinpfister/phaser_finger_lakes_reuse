@@ -174,10 +174,13 @@
 * ( done ) - start an items draft
 * ( done ) - come up with a way to access item data in scene.cache.json over that of the items and containers reg keys
 * ( done ) - display items in items demo
+* ( done ) - start a people draft
+* ( done ) - update people lib code to work with people draft
 
-  DRAFTS:
-* (      ) - start a people draft
-* (      ) - update people lib code to work with people draft
+  PEOPLE DRAFT:
+* (      ) - just have a basic hard coded map that will work well enough to make sure path processing works
+
+  MAPDATA DRAFT:
 * (      ) - start a mapdata.js lib
 * (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.
