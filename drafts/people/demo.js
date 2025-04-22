@@ -66,7 +66,6 @@ class Example extends Phaser.Scene {
                 }
                 if(tile.index === 1 && itemMode != 2 ){    
                     person.setPath(this, map, tx, ty);
-                    console.log(person.getData('path'));
                 }
                 if(itemMode === 2 ){
                     //player.onHandAction(scene, null, tx, ty);
@@ -80,7 +79,7 @@ class Example extends Phaser.Scene {
     
         const person = this.registry.get('person');
         const map = this.registry.get('map');
-        person.pathProcessor1(this, map);
+        person.pathProcessorCurve(this);
         //person.offTileCheck(map);
     
     }

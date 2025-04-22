@@ -178,15 +178,13 @@
 * ( done ) - update people lib code to work with people draft
 * ( done ) - just have a basic hard coded map that will work well enough to make sure path processing works
 * ( done ) - get path processing to work with this new person lib
-
-  PEOPLE DRAFT:
-* (      ) - see about improving path processing so that the player does not jump
+* ( done ) - see about improving path processing so that the player does not get stuck in walls
+* ( done ) - start a pathProcessorCurve function
 
   MAPDATA DRAFT:
 * (      ) - start a mapdata.js lib
 * (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.
-
 
   MOVE ITEMS FROM MAP TO MAP :
 * (      ) - have it so that the player can move a blue bin to a whole other map
@@ -200,4 +198,7 @@
   USE TILE PROPS OF ITEMS :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - use frameNames in item data for setting the frames of items and containers
+
+  PATH PROCESSOR PHYSICS DRAFT:
+* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 ```
