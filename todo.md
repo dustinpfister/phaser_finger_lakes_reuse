@@ -66,7 +66,7 @@
 * (      ) - the player should not be able to place items on top of walls
 ```
 
-## R0 ( ) - People, Items Database, Donations 
+## R0 ( ) - People, Items, Donations 
 
 ```
 * ( done ) - start with R0 of phaser start project
@@ -180,9 +180,9 @@
 * ( done ) - get path processing to work with this new person lib
 * ( done ) - see about improving path processing so that the player does not get stuck in walls
 * ( done ) - start a pathProcessorCurve function
+* ( done ) - start a mapdata.js lib
 
   DRAFTS:
-* (      ) - start a mapdata.js lib
 * (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
 * (      ) - have a MapData class that will be used to create all mapData for each map
 * (      ) - have a Donations, Stock Class that extend the group class in mapdata.js
