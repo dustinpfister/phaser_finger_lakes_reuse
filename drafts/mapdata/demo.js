@@ -9,6 +9,9 @@ class Example extends Phaser.Scene {
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
         
+        let i_map = 1;
+        this.load.json('map' + i_map + '_data', 'drafts/mapdata/map' + i_map + '_data.json');
+        this.load.tilemapCSV('map' + i_map, '/drafts/mapdata/map' + i_map + '.csv');
         
         
     
