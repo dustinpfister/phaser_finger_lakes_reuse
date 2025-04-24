@@ -28,14 +28,30 @@ class Example extends Phaser.Scene {
         //const md = mdc.getMapDataByIndex(1); 
         //console.log(md);
                 
-        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
+        
 
         
     }
     update (time, delta) {
     
         const player = this.registry.get('player');
-        player.pathProcessorCurve(this);
+        const mdc = this.registry.get('mdc');
+        const scene = this;
+        player.pathProcessorCurve(this, (scene, person)=>{
+            const md = mdc.getActive();
+            const pos = person.getTilePos();
+            
+            const door = md.doorCheck(pos.x, pos.y);
+            if(door){
+                console.log('oh look a door!');
+                console.log(door)
+                mdc.setActiveMapByIndex(scene, door.to.mapNum);
+            }
+            
+            
+        });
+        
+        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
             
     }
     

@@ -185,9 +185,11 @@
 * ( done ) - have a MapData class that will be used to create all mapData for each map
 * ( done ) - have a MapDataCollection class
 * ( done ) - make more than one map for the mapdata demo
+* ( done ) - get going threw doors working for the mapdata demo
 
   DRAFTS:
-* (      ) - get going threw doors working for the mapdata demo
+* (      ) - have a doors disabled feature
+* (      ) - when doing threw a door, have the player spawn at the door location
 * (      ) - have a Donations, Stock Class that extend the group class in mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.
 * (      ) - have it so that the player can move donations from one map to another
