@@ -18,45 +18,33 @@ class Example extends Phaser.Scene {
     }
     create () {
     
-        const map0 = [
-            [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-            [2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-            [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-            
-        ]
-    
-        const map = this.make.tilemap({ data: map0, layers:[], tileWidth: 16, tileHeight: 16 });
+        //const mapDataRaw = this.cache.tilemap.get('map1').data;
+        //const mapData = mapDataRaw.trim().replace(/\n/g, ':').split(':').map((el)=>{ return el.split(',')});
+        //const map = this.make.tilemap({ data: mapData, layers:[], tileWidth: 16, tileHeight: 16 });      
+
+        //const map = this.make.tilemap({ key: 'map1', layers:[], tileWidth: 16, tileHeight: 16 });
+
+        const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
+        this.registry.set('player', player);
+
+
+        const mapData = new MapData(this, 1, {})
+        const map = mapData.map;
+        const layer0 = mapData.layer0;
+        
         this.registry.set('map', map);
         map.setCollisionByExclusion( [ 2 ], true, true, 0 );
-        const tiles = map.addTilesetImage('map_16_16');
-        const layer0 =  map.createLayer(0, tiles);
+        //const tiles = map.addTilesetImage('map_16_16');
+        //const layer0 =  map.createLayer(0, tiles);
         
         
-        const person = new Person( this, 40, 40, 'people_16_16', 0 );
-        this.registry.set('person', person);
+
         
         this.physics.world.setBounds(0,0, map.widthInPixels, map.heightInPixels);
-        this.physics.add.collider( person, layer0 );
+        this.physics.add.collider( player, layer0 );
     
         
-        this.cameras.main.setZoom( 2.0 ).centerOn( person.x, person.y );
+        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
         
         layer0.setInteractive();
         layer0.on('pointerdown', (pointer)=>{  
@@ -64,12 +52,12 @@ class Example extends Phaser.Scene {
             const ty = Math.floor( pointer.worldY / 16 );
             const tile = map.getTileAt(tx, ty, false, 0);
             if(tile){
-                const itemMode = person.getData('itemMode');
+                const itemMode = player.getData('itemMode');
                 if(tile.index != 1){
                     console.log(tile.index);
                 }
                 if(tile.index === 1 && itemMode != 2 ){    
-                    person.setPath(this, map, tx, ty);
+                    player.setPath(this, map, tx, ty);
                 }
                 if(itemMode === 2 ){
                     //player.onHandAction(scene, null, tx, ty);
@@ -81,10 +69,10 @@ class Example extends Phaser.Scene {
     }
     update (time, delta) {
     
-        const person = this.registry.get('person');
+        const player = this.registry.get('player');
         const map = this.registry.get('map');
-        person.pathProcessorCurve(this);
-        //person.offTileCheck(map);
+        player.pathProcessorCurve(this);
+        //player.offTileCheck(map);
     
     }
     

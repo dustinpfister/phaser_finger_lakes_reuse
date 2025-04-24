@@ -181,10 +181,10 @@
 * ( done ) - see about improving path processing so that the player does not get stuck in walls
 * ( done ) - start a pathProcessorCurve function
 * ( done ) - start a mapdata.js lib
+* ( done ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
+* ( done ) - have a MapData class that will be used to create all mapData for each map
 
   DRAFTS:
-* (      ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
-* (      ) - have a MapData class that will be used to create all mapData for each map
 * (      ) - have a Donations, Stock Class that extend the group class in mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.
 
