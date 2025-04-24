@@ -27,16 +27,51 @@ class Example extends Phaser.Scene {
         
         //const md = mdc.getMapDataByIndex(1); 
         //console.log(md);
-                
+        this.cursors = this.input.keyboard.createCursorKeys();
         
 
         
     }
+    
+    cursorCheck (dir='left') {
+        const mdc = this.registry.get('mdc');
+        const player = this.registry.get('player');
+        const path = this.player.getData('path');
+        if(path.length > 1 ){
+            return;
+        }
+        const cPos = this.player.getTilePos();
+        let dx = 0, dy = 0;
+        if(dir === 'left'){  dx = -1; }
+        if(dir === 'right'){  dx = 1; }
+        if(dir === 'up'){  dy = -1; }
+        if(dir === 'down'){  dy = 1; }
+        if (this.cursors[dir].isDown) {
+            //this.player.setData('idleTime', 0);
+            const md = mdc.getActive();
+            const tile = md.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
+            if(tile){
+                if(tile.index === 1){
+                    //path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
+                    //this.player.setData('path', path);
+                    player.setPath(this, md.map, cPos.x + dx, cPos.y + dy)
+                }
+            }   
+        }
+    }
+    
     update (time, delta) {
     
         const player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
         const scene = this;
+        
+        
+        this.cursorCheck('left');
+        this.cursorCheck('right');
+        this.cursorCheck('up');
+        this.cursorCheck('down');
+        
         player.pathProcessorCurve(this, (scene, person)=>{
             const md = mdc.getActive();
             const pos = person.getTilePos();
@@ -52,6 +87,9 @@ class Example extends Phaser.Scene {
                 player.y = pos.y * 16 + 8;
                 
             }
+            
+            person.setData('path', []);
+            person.nCurve = 0;
             
             
         });
