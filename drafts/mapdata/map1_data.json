@@ -1,20 +1,20 @@
 {
   "name": "map1",
-  "spawnAt": { "x": 13, "y": 4 },
+  "spawnAt": { "x": 2, "y": 2 },
   "customer" : {
      "subTypes" : ["shopper"],
      "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 16, "y": 0 },
-     "exitAt" : { "x": 14, "y": 1 }
+     "spawnAt" : { "x": 20, "y": 2 },
+     "exitAt" : { "x": 1, "y": 0 }
   },
   "objects" : {
     "containers" : {}
   },
   "doors" : [
     {
-      "desc": "The front east door to trip hallway",
-      "position":{ "x": 16, "y": 0 },
-      "to": { "mapNum": 2, "doorIndex": 0 }
+      "desc": "to map0",
+      "position":{ "x": 1, "y": 0 },
+      "to": { "mapNum": 0, "doorIndex": 0 }
     }
   ]
 }

@@ -12,7 +12,7 @@ class Example extends Phaser.Scene {
         MapLoader({
           scene: this,
           urlBase: 'drafts/mapdata/',
-          mapIndicesStart: 1, mapIndicesStop: 2
+          mapIndicesStart: 0, mapIndicesStop: 2
         });
     
     }
@@ -22,10 +22,11 @@ class Example extends Phaser.Scene {
         this.registry.set('player', player);
 
         const mdc = new MapDataCollection(this, { player: player });
+        //mdc.setActiveMapByIndex(this, 0);
         this.registry.set('mdc', mdc);
         
-        //const map = mdc.mapData['map1'].map;
-        //const layer0 = mdc.mapData['map1'].layer0;
+        //const md = mdc.getMapDataByIndex(1); 
+        //console.log(md);
                 
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
 
