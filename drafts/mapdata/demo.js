@@ -1,4 +1,4 @@
-import { MapData, MapLoader } from '../../lib/mapdata.js';
+import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata.js';
 import { Person, People } from '../../lib/people.js';
 
 class Example extends Phaser.Scene {
@@ -30,23 +30,27 @@ class Example extends Phaser.Scene {
         this.registry.set('player', player);
 
 
-        const mapData = new MapData(this, 1, {})
-        const map = mapData.map;
-        const layer0 = mapData.layer0;
+        const mdc = new MapDataCollection(this, {});
+
+
+        //const mapData = new MapData(this, 1, {})
+        const map = mdc.mapData['map1'].map;
+        const layer0 = mdc.mapData['map1'].layer0;
         
         this.registry.set('map', map);
         map.setCollisionByExclusion( [ 2 ], true, true, 0 );
-        //const tiles = map.addTilesetImage('map_16_16');
+        const tiles = map.addTilesetImage('map_16_16');
         //const layer0 =  map.createLayer(0, tiles);
         
         
 
         
-        this.physics.world.setBounds(0,0, map.widthInPixels, map.heightInPixels);
-        this.physics.add.collider( player, layer0 );
+        //this.physics.world.setBounds(0,0, map.widthInPixels, map.heightInPixels);
+        //this.physics.add.collider( player, layer0 );
     
         
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
+        
         
         layer0.setInteractive();
         layer0.on('pointerdown', (pointer)=>{  

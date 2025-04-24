@@ -183,10 +183,10 @@
 * ( done ) - start a mapdata.js lib
 * ( done ) - start a new draft where the focus is on the use of people.js, items.js, and mapdata.js
 * ( done ) - have a MapData class that will be used to create all mapData for each map
+* ( done ) - have a MapDataCollection class
 
   DRAFTS:
 * (      ) - make more than one map for the mapdata demo
-* (      ) - have a MapDataCollection class
 * (      ) - get going threw doors working for the mapdata demo
 * (      ) - have a Donations, Stock Class that extend the group class in mapdata.js
 * (      ) - an instance of MapData will contain a donations, and stock group.
