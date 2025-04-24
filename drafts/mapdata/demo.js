@@ -44,8 +44,13 @@ class Example extends Phaser.Scene {
             const door = md.doorCheck(pos.x, pos.y);
             if(door){
                 console.log('oh look a door!');
-                console.log(door)
+                console.log(door);
+                const nmd = mdc.getMapDataByIndex(door.to.mapNum);
                 mdc.setActiveMapByIndex(scene, door.to.mapNum);
+                const pos = nmd.hardMapData.doors[0].position;
+                player.x = pos.x * 16 + 8;
+                player.y = pos.y * 16 + 8;
+                
             }
             
             
