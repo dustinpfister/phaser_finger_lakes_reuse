@@ -1,4 +1,4 @@
-import { MapData } from '../../lib/mapdata.js';
+import { MapData, MapLoader } from '../../lib/mapdata.js';
 import { Person, People } from '../../lib/people.js';
 
 class Example extends Phaser.Scene {
@@ -9,14 +9,16 @@ class Example extends Phaser.Scene {
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
         
-        let i_map = 1;
-        this.load.json('map' + i_map + '_data', 'drafts/mapdata/map' + i_map + '_data.json');
-        this.load.tilemapCSV('map' + i_map, '/drafts/mapdata/map' + i_map + '.csv');
-        
-        
+        MapLoader({
+          scene: this,
+          urlBase: 'drafts/mapdata/',
+          mapIndicesStart: 1, mapIndicesStop: 2
+        });
     
     }
     create () {
+    
+        console.log(this.cache);
     
         //const mapDataRaw = this.cache.tilemap.get('map1').data;
         //const mapData = mapDataRaw.trim().replace(/\n/g, ':').split(':').map((el)=>{ return el.split(',')});
