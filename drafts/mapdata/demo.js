@@ -22,10 +22,10 @@ class Example extends Phaser.Scene {
         this.registry.set('player', player);
 
         const mdc = new MapDataCollection(this, { player: player });
-
-        //const mapData = new MapData(this, 1, {})
-        const map = mdc.mapData['map1'].map;
-        const layer0 = mdc.mapData['map1'].layer0;
+        this.registry.set('mdc', mdc);
+        
+        //const map = mdc.mapData['map1'].map;
+        //const layer0 = mdc.mapData['map1'].layer0;
                 
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
 
@@ -34,10 +34,8 @@ class Example extends Phaser.Scene {
     update (time, delta) {
     
         const player = this.registry.get('player');
-        //const map = this.registry.get('map');
         player.pathProcessorCurve(this);
-        //player.offTileCheck(map);
-    
+            
     }
     
 }
