@@ -189,8 +189,10 @@
 * ( done ) - when doing threw a door, have the player spawn at the door location
 
   DRAFTS:
-* (      ) - have a Donations, Stock Class that extend the group class in mapdata.js
-* (      ) - an instance of MapData will contain a donations, and stock group.
+* (      ) - have an ItemCollection Class in item.js lib
+* (      ) - in MapData have it so each map has a donations property that is an Instance of ItemCollection.
+* (      ) - add items to map1 for mapdata draft
+* (      ) - have a map2, and make it so that donators show up in this map
 * (      ) - have it so that the player can move donations from one map to another
 
   MOVE ITEMS FROM MAP TO MAP :
