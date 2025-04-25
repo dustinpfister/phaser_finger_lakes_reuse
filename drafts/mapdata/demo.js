@@ -29,7 +29,6 @@ class Example extends Phaser.Scene {
         //console.log(md);
         this.cursors = this.input.keyboard.createCursorKeys();
         
-
         
     }
     
