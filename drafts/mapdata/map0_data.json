@@ -8,7 +8,11 @@
      "exitAt" : { "x": 1, "y": 19 }
   },
   "objects" : {
-    "containers" : {}
+    "containers" : {
+      "blue_bin": [
+        { "x": 5, "y": 16 }, { "x":6, "y": 16 }
+      ]
+    }
   },
   "doors" : [
     {
