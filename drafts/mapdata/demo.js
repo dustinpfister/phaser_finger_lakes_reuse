@@ -33,6 +33,18 @@ class Example extends Phaser.Scene {
         //console.log(md);
         this.cursors = this.input.keyboard.createCursorKeys();
         
+        this.input.keyboard.on('keydown', event => {
+            const patt = /Digit\d+/;
+            const m = event.code.match(patt);
+            if(m){
+                const d = Number(m[0].replace('Digit', ''));
+                if(d >= 0 && d < 4){
+                    console.log('set item mode for player to mode ' + d);
+                    this.player.setData('itemMode', d);
+                }
+            }
+        });
+        
         
     }
     
@@ -57,48 +69,35 @@ class Example extends Phaser.Scene {
                 if(tile.index === 1){
                     //path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
                     //this.player.setData('path', path);
-                    player.setPath(this, md.map, cPos.x + dx, cPos.y + dy)
+                    player.setPath(this, md.map, cPos.x + dx, cPos.y + dy);
                 }
             }   
         }
     }
     
     update (time, delta) {
-    
         const player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
         const scene = this;
-        
-        
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
         this.cursorCheck('down');
-        
         player.pathProcessorCurve(this, (scene, person)=>{
             const md = mdc.getActive();
             const pos = person.getTilePos();
-            
             const door = md.doorCheck(pos.x, pos.y);
             if(door){
-                console.log('oh look a door!');
-                console.log(door);
                 const nmd = mdc.getMapDataByIndex(door.to.mapNum);
                 mdc.setActiveMapByIndex(scene, door.to.mapNum);
                 const pos = nmd.hardMapData.doors[0].position;
                 player.x = pos.x * 16 + 8;
                 player.y = pos.y * 16 + 8;
-                
             }
-            
             person.setData('path', []);
             person.nCurve = 0;
-            
-            
         });
-        
-        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );
-            
+        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
     }
     
 }

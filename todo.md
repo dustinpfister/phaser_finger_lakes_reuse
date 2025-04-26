@@ -192,7 +192,8 @@
 * ( done ) - add items to map0, and map1 for mapdata draft
 
   MAPDATA DRAFT:
-* (      ) - get on hand actions working with
+* (      ) - see about fixing weird bug where one blue bin can not be clicked.
+* (      ) - get on hand actions working with new libs rather than  plugins
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a map2, and make it so that donators show up in this map
 
