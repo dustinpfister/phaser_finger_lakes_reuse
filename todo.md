@@ -187,18 +187,17 @@
 * ( done ) - make more than one map for the mapdata demo
 * ( done ) - get going threw doors working for the mapdata demo
 * ( done ) - when doing threw a door, have the player spawn at the door location
+* ( done ) - have an ItemCollection Class in item.js lib
+* ( done ) - in MapData have it so each map has a donations property that is an Instance of ItemCollection.
+* ( done ) - add items to map0, and map1 for mapdata draft
 
-  DRAFTS:
-* (      ) - have an ItemCollection Class in item.js lib
-* (      ) - in MapData have it so each map has a donations property that is an Instance of ItemCollection.
-* (      ) - add items to map1 for mapdata draft
-* (      ) - have a map2, and make it so that donators show up in this map
-* (      ) - have it so that the player can move donations from one map to another
-
-  MOVE ITEMS FROM MAP TO MAP :
+  MAPDATA DRAFT:
+* (      ) - get on hand actions working with
 * (      ) - have it so that the player can move a blue bin to a whole other map
-* (      ) - when a player drops an item of any kind have it go to the donations array for the current map
-* (      ) - have a supply of empty blue bins in map1
+* (      ) - have a map2, and make it so that donators show up in this map
+
+  PATH PROCESSOR PHYSICS DRAFT:
+* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 
   MORE THAN ONE ITEM :
 * (      ) - have more than one household item
@@ -208,6 +207,4 @@
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - use frameNames in item data for setting the frames of items and containers
 
-  PATH PROCESSOR PHYSICS DRAFT:
-* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 ```
