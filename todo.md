@@ -190,9 +190,9 @@
 * ( done ) - have an ItemCollection Class in item.js lib
 * ( done ) - in MapData have it so each map has a donations property that is an Instance of ItemCollection.
 * ( done ) - add items to map0, and map1 for mapdata draft
+* ( done ) - see about fixing weird bug where one blue bin can not be clicked ( it was becuase of depth ).
 
   MAPDATA DRAFT:
-* (      ) - see about fixing weird bug where one blue bin can not be clicked.
 * (      ) - get on hand actions working with new libs rather than  plugins
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a map2, and make it so that donators show up in this map
