@@ -1,23 +1,20 @@
 # Phaser Finger Lakes Reuse
 
-## R4 (    ) - Preloader
+## R4 (    ) - Message System
 ```
-* () make use of preloader draft in full game
-```
-
-## R3 (    ) - New Map System
-```
-* () work on map system draft, get it solid.
+* (    ) - work out a message system for telling the player things they should know
 ```
 
-## R2 (    ) - Items Database
+## R3 (    ) - Preloader
+```
+* (    ) - make use of preloader draft in full game
+```
+
+## R2 (    ) - Repersenative Sprrites
 ```
   REP SPRITES :
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
-  JSON ONLY :
-* (    ) - do away with main items and collections arrays in favor of a system that dirrectly works with json data that is all ready cached
 ```
-
 
 ## R1 (    ) - Workers
 ```
@@ -194,9 +191,10 @@
 * ( done ) - get on hand actions working with new libs rather than  plugins
 * ( done ) - have items in players on hand inventory show up.
 * ( done ) - have it so that the player can move a blue bin to a whole other map
+* ( done ) - get picking up of loose items working again
 
   MAPDATA DRAFT:
-* (      ) - get picking up of loose items working again
+* (      ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 * (      ) - have a map2 for mapdata draft, and make it so that donators show up in this map
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
