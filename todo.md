@@ -194,6 +194,7 @@
 * ( done ) - get picking up of loose items working again
 
   MAPDATA DRAFT:
+* (      ) - use new add to active method
 * (      ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 * (      ) - have a map2 for mapdata draft, and make it so that donators show up in this map
 * (      ) - have more than one household item
