@@ -97,6 +97,9 @@ class Example extends Phaser.Scene {
             person.setData('path', []);
             person.nCurve = 0;
         });
+        
+        player.update(this);
+        
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
     }
     

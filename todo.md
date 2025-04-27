@@ -192,18 +192,18 @@
 * ( done ) - add items to map0, and map1 for mapdata draft
 * ( done ) - see about fixing weird bug where one blue bin can not be clicked ( it was becuase of depth ).
 * ( done ) - get on hand actions working with new libs rather than  plugins
+* ( done ) - have items in players on hand inventory show up.
 
   MAPDATA DRAFT:
-* (      ) - have items in players on hand inventory show up.
 * (      ) - have it so that the player can move a blue bin to a whole other map
 * (      ) - have a map2, and make it so that donators show up in this map
+* (      ) - have more than one household item
+* (      ) - have it so that drops will pick one of a few household items each time
 
   PATH PROCESSOR PHYSICS DRAFT:
 * (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 
   MORE THAN ONE ITEM :
-* (      ) - have more than one household item
-* (      ) - have it so that drops will pick one of a few household items each time
 
   USE TILE PROPS OF ITEMS :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
