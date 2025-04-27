@@ -193,10 +193,11 @@
 * ( done ) - see about fixing weird bug where one blue bin can not be clicked ( it was becuase of depth ).
 * ( done ) - get on hand actions working with new libs rather than  plugins
 * ( done ) - have items in players on hand inventory show up.
+* ( done ) - have it so that the player can move a blue bin to a whole other map
 
   MAPDATA DRAFT:
-* (      ) - have it so that the player can move a blue bin to a whole other map
-* (      ) - have a map2, and make it so that donators show up in this map
+* (      ) - get picking up of loose items working again
+* (      ) - have a map2 for mapdata draft, and make it so that donators show up in this map
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
 
