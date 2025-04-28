@@ -192,11 +192,12 @@
 * ( done ) - have items in players on hand inventory show up.
 * ( done ) - have it so that the player can move a blue bin to a whole other map
 * ( done ) - get picking up of loose items working again
+* ( done ) - use new add to active MapData method
+* ( done ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 
   MAPDATA DRAFT:
-* (      ) - use new add to active method
-* (      ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 * (      ) - have a map2 for mapdata draft, and make it so that donators show up in this map
+* (      ) - update people type code in people.js to make use of new map data methods when droping items
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
 
