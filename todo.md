@@ -197,17 +197,20 @@
 
   MAPDATA DRAFT:
 * (      ) - have a map2 for mapdata draft, and make it so that donators show up in this map
+
+  people.js :
 * (      ) - update people type code in people.js to make use of new map data methods when droping items
+
+  items.js :
+* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
+* (      ) - use frameNames in item data for setting the frames of items and containers
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
+
+  mapdata.js -
 
   PATH PROCESSOR PHYSICS DRAFT:
 * (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 
-  MORE THAN ONE ITEM :
-
-  USE TILE PROPS OF ITEMS :
-* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
-* (      ) - use frameNames in item data for setting the frames of items and containers
 
 ```
