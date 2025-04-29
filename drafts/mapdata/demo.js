@@ -84,25 +84,31 @@ class Example extends Phaser.Scene {
         this.cursorCheck('up');
         this.cursorCheck('down');
         player.pathProcessorCurve(this, (scene, person)=>{
+        
+            mdc.doorCheck(scene, person);
+        
+        /*
             const md = mdc.getActive();
             const pos = person.getTilePos();
             const door = md.doorCheck(pos.x, pos.y);
             if(door){
-            
-            console.log('yes we have a door');
-            
+                console.log('yes this is a door...');
                 const nmd = mdc.getMapDataByIndex(door.to.mapNum);
                 mdc.setActiveMapByIndex(scene, door.to.mapNum);
-                const pos = nmd.hardMapData.doors[0].position;
+                const pos = nmd.hardMapData.doors[door.to.doorIndex].position;
                 player.x = pos.x * 16 + 8;
                 player.y = pos.y * 16 + 8;
+                if(pos instanceof Array){
+                    player.x = pos[0].x * 16 + 8;
+                    player.y = pos[0].y * 16 + 8;
+                }
             }
+            */
             person.setData('path', []);
             person.nCurve = 0;
         });
         
         player.update(this);
-        
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
     }
     
