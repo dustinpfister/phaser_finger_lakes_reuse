@@ -1,6 +1,6 @@
 {
   "name": "map1",
-  "spawnAt": { "x": 2, "y": 2 },
+  "spawnAt": { "x": 2, "y": 17 },
   "customer" : {
      "subTypes" : ["shopper"],
      "subTypeProbs": [ 1.00 ],

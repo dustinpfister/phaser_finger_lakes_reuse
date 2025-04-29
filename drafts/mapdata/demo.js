@@ -25,7 +25,7 @@ class Example extends Phaser.Scene {
         const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player });
+        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
         //mdc.setActiveMapByIndex(this, 0);
         this.registry.set('mdc', mdc);
         
