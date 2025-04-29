@@ -201,13 +201,16 @@
   people.js :
 * (      ) - update people type code in people.js to make use of new map data methods when droping items
 
+  mapdata.js :
+* () - have it so that the tile sheets, and indices used are defined in the map data
+* () - have it so that the walkabule tiles are defined in the map data
+* () - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
+
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - use frameNames in item data for setting the frames of items and containers
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
-
-  mapdata.js -
 
   PATH PROCESSOR PHYSICS DRAFT:
 * (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project

@@ -16,7 +16,7 @@ class Example extends Phaser.Scene {
         MapLoader({
           scene: this,
           urlBase: 'drafts/mapdata/',
-          mapIndicesStart: 0, mapIndicesStop: 2
+          mapIndicesStart: 0, mapIndicesStop: 3
         });
     
     }
@@ -88,6 +88,9 @@ class Example extends Phaser.Scene {
             const pos = person.getTilePos();
             const door = md.doorCheck(pos.x, pos.y);
             if(door){
+            
+            console.log('yes we have a door');
+            
                 const nmd = mdc.getMapDataByIndex(door.to.mapNum);
                 mdc.setActiveMapByIndex(scene, door.to.mapNum);
                 const pos = nmd.hardMapData.doors[0].position;

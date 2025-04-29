@@ -1,5 +1,5 @@
 {
-  "name": "map1",
+  "name": "map2",
   "spawnAt": { "x": 2, "y": 2 },
   "customer" : {
      "subTypes" : ["shopper"],
@@ -12,14 +12,9 @@
   },
   "doors" : [
     {
-      "desc": "to map0",
-      "position":{ "x": 1, "y": 0 },
-      "to": { "mapNum": 0, "doorIndex": 0 }
-    },
-    {
-      "desc": "to map2",
-      "position": [{ "x": 4, "y": 19 },{ "x": 5, "y": 19 }],
-      "to": { "mapNum": 2, "doorIndex": 0 }
+      "desc": "to map1",
+      "position": [ { "x": 4, "y": 0 }, { "x": 5, "y": 0 } ],
+      "to": { "mapNum": 1, "doorIndex": 1 }
     }
   ]
 }
