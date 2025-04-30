@@ -194,11 +194,11 @@
 * ( done ) - get picking up of loose items working again
 * ( done ) - use new add to active MapData method
 * ( done ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
+* ( done ) - have a map2 for mapdata draft
 
   MAPDATA DRAFT:
-* ( done ) - have a map2 for mapdata draft
-* (      ) - make it so that donators show up in map2
-* (      ) - make it so that shoppers show up in map1
+* (      ) - make it so that donators show up in map2 of mapdata draft
+* (      ) - make it so that shoppers show up in map1 of mapdata draft
 
   people.js :
 * (      ) - update people type code in people.js to make use of new map data methods when droping items
