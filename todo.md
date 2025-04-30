@@ -196,9 +196,9 @@
 * ( done ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 * ( done ) - have a map2 for mapdata draft
 * ( done ) - make it so that donators show up in map2 of mapdata draft
+* ( done ) - get donators working without isshue in map2 of mapdata draft
 
   MAPDATA DRAFT:
-* (      ) - get donators working without isshue in map2 of mapdata draft
 * (      ) - add tables to map2 in mapdata draft
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 
