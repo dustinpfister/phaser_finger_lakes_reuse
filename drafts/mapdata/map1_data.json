@@ -2,10 +2,10 @@
   "name": "map1",
   "spawnAt": { "x": 2, "y": 17 },
   "customer" : {
-     "subTypes" : ["shopper"],
-     "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 20, "y": 2 },
-     "exitAt" : { "x": 1, "y": 0 }
+     "subTypes" : [],
+     "subTypeProbs": [],
+     "spawnAt" : { "x": 1, "y": 0 },
+     "exitAt" : { "x": 4, "y": 19 }
   },
   "objects" : {
     "containers" : {}

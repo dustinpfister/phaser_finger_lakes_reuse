@@ -2,10 +2,10 @@
   "name": "map2",
   "spawnAt": { "x": 2, "y": 2 },
   "customer" : {
-     "subTypes" : ["shopper"],
+     "subTypes" : ["donator"],
      "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 20, "y": 2 },
-     "exitAt" : { "x": 1, "y": 0 }
+     "spawnAt" : { "x": 0, "y": 9 },
+     "exitAt" : { "x": 19, "y": 9 }
   },
   "objects" : {
     "containers" : {}

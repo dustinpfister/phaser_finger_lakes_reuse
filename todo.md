@@ -196,7 +196,7 @@
 * ( done ) - make sure that items droped in one map from another move to the itemCollection of the current map where it is droped.
 
   MAPDATA DRAFT:
-* (      ) - have a map2 for mapdata draft
+* ( done ) - have a map2 for mapdata draft
 * (      ) - make it so that donators show up in map2
 * (      ) - make it so that shoppers show up in map1
 
