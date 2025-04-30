@@ -25,7 +25,7 @@ class Example extends Phaser.Scene {
         const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 2 });
         //mdc.setActiveMapByIndex(this, 0);
         this.registry.set('mdc', mdc);
         
@@ -78,6 +78,7 @@ class Example extends Phaser.Scene {
     update (time, delta) {
         const player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
+        const map = mdc.getActive();
         const scene = this;
         this.cursorCheck('left');
         this.cursorCheck('right');
@@ -110,6 +111,8 @@ class Example extends Phaser.Scene {
         
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
+        
+        map.customers.update(this);
     }
     
 }
