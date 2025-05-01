@@ -209,8 +209,10 @@
 * ( done ) - add tables to map2 in mapdata draft
 * ( done ) - have a MapData.canWalk method
 * ( done ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
+* ( done ) - make it so that only the customer group for the current active map will show up
 
   MAPDATA DRAFT:
+* (      ) - onhand items for donators in map2 should not show up in new map1
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 
   items.js :
