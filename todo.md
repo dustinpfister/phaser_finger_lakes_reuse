@@ -210,9 +210,11 @@
 * ( done ) - have a MapData.canWalk method
 * ( done ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
 * ( done ) - make it so that only the customer group for the current active map will show up
+* ( done ) - the player should be able to click the donations
 
   MAPDATA DRAFT:
 * (      ) - onhand items for donators in map2 should not show up in new map1
+* (      ) - update Person.setRandomPath
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 
   items.js :

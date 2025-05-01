@@ -25,12 +25,9 @@ class Example extends Phaser.Scene {
         const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
-        //mdc.setActiveMapByIndex(this, 0);
+        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 2 });
         this.registry.set('mdc', mdc);
         
-        //const md = mdc.getMapDataByIndex(1); 
-        //console.log(md);
         this.cursors = this.input.keyboard.createCursorKeys();
         
         this.input.keyboard.on('keydown', event => {
@@ -63,13 +60,10 @@ class Example extends Phaser.Scene {
         if(dir === 'up'){  dy = -1; }
         if(dir === 'down'){  dy = 1; }
         if (this.cursors[dir].isDown) {
-            //this.player.setData('idleTime', 0);
             const md = mdc.getActive();
             const tile = md.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
             if(tile){
                 if(md.canWalk(tile)){
-                    //path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
-                    //this.player.setData('path', path);
                     player.setPath(this, md, cPos.x + dx, cPos.y + dy);
                 }
             }   
@@ -89,23 +83,7 @@ class Example extends Phaser.Scene {
         
             mdc.doorCheck(scene, person);
         
-        /*
-            const md = mdc.getActive();
-            const pos = person.getTilePos();
-            const door = md.doorCheck(pos.x, pos.y);
-            if(door){
-                console.log('yes this is a door...');
-                const nmd = mdc.getMapDataByIndex(door.to.mapNum);
-                mdc.setActiveMapByIndex(scene, door.to.mapNum);
-                const pos = nmd.hardMapData.doors[door.to.doorIndex].position;
-                player.x = pos.x * 16 + 8;
-                player.y = pos.y * 16 + 8;
-                if(pos instanceof Array){
-                    player.x = pos[0].x * 16 + 8;
-                    player.y = pos[0].y * 16 + 8;
-                }
-            }
-            */
+    
             person.setData('path', []);
             person.nCurve = 0;
         });
