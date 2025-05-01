@@ -15,6 +15,7 @@
       }
   },
   "customer" : {
+     "disabled" : false,
      "subTypes" : ["donator"],
      "subTypeProbs": [ 1.00 ],
      "spawnAt" : { "x": 0, "y": 9 },

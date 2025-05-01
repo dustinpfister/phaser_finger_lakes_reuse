@@ -25,7 +25,7 @@ class Example extends Phaser.Scene {
         const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 2 });
+        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
         //mdc.setActiveMapByIndex(this, 0);
         this.registry.set('mdc', mdc);
         
@@ -50,6 +50,7 @@ class Example extends Phaser.Scene {
     
     cursorCheck (dir='left') {
         const mdc = this.registry.get('mdc');
+        const md = mdc.getActive();
         const player = this.registry.get('player');
         const path = this.player.getData('path');
         if(path.length > 1 ){
@@ -66,7 +67,7 @@ class Example extends Phaser.Scene {
             const md = mdc.getActive();
             const tile = md.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
             if(tile){
-                if(tile.index === 1){
+                if(md.canWalk(tile)){
                     //path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
                     //this.player.setData('path', path);
                     player.setPath(this, md, cPos.x + dx, cPos.y + dy);
@@ -112,7 +113,7 @@ class Example extends Phaser.Scene {
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
         
-        map.customers.update(this);
+        mdc.getActive().customers.update(this);
     }
     
 }

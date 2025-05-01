@@ -207,10 +207,10 @@
 * ( done ) - have it so that the tile sheets, and indices used are defined in the map data
 * ( done ) - have it so that the walkabule tiles are defined in the map data
 * ( done ) - add tables to map2 in mapdata draft
+* ( done ) - have a MapData.canWalk method
+* ( done ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
 
   MAPDATA DRAFT:
-* (      ) - have a MapData.canWalk method
-* (      ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 
   items.js :

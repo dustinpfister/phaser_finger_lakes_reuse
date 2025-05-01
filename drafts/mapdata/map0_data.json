@@ -15,6 +15,7 @@
       }
   },
   "customer" : {
+     "disabled" : true,
      "subTypes" : [],
      "subTypeProbs": [],
      "spawnAt" : { "x": 1, "y": 16 },
