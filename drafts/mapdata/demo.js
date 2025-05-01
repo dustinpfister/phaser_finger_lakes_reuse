@@ -69,7 +69,7 @@ class Example extends Phaser.Scene {
                 if(tile.index === 1){
                     //path.push( {x: cPos.x + dx, y: cPos.y + dy  } );
                     //this.player.setData('path', path);
-                    player.setPath(this, md.map, cPos.x + dx, cPos.y + dy);
+                    player.setPath(this, md, cPos.x + dx, cPos.y + dy);
                 }
             }   
         }

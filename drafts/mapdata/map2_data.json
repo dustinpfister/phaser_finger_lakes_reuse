@@ -1,6 +1,19 @@
 {
   "name": "map2",
-  "spawnAt": { "x": 2, "y": 2 },
+  "spawnAt": { "x": 9, "y": 7 },
+  "tilePalette" : {
+      "sheets" : ["map_16_16"],
+      "walkable" : [ 1, 3 ],
+      "indices" : {
+          "0" : [0, 0],
+          "1" : [0, 1],
+          "2" : [0, 2],
+          "3" : [0, 13],
+          "4" : [0, 14],
+          "5" : [0, 23],
+          "6" : [0, 24]   
+      }
+  },
   "customer" : {
      "subTypes" : ["donator"],
      "subTypeProbs": [ 1.00 ],

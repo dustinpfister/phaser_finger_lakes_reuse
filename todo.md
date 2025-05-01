@@ -204,13 +204,14 @@
 * ( done ) - make it so that donators show up in map2 of mapdata draft
 * ( done ) - get donators working without isshue in map2 of mapdata draft
 * ( done ) - customers need to purge out when they reach an exit in the map
+* ( done ) - have it so that the tile sheets, and indices used are defined in the map data
+* ( done ) - have it so that the walkabule tiles are defined in the map data
+* ( done ) - add tables to map2 in mapdata draft
 
   MAPDATA DRAFT:
-* (      ) - add tables to map2 in mapdata draft
-* (      ) - make it so that shoppers show up in map1 of mapdata draft
-* (      ) - have it so that the tile sheets, and indices used are defined in the map data
-* (      ) - have it so that the walkabule tiles are defined in the map data
+* (      ) - have a MapData.canWalk method
 * (      ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
+* (      ) - make it so that shoppers show up in map1 of mapdata draft
 
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
