@@ -1,19 +1,25 @@
 # Phaser Finger Lakes Reuse
 
-## R4 (    ) - Message System
+## RX (    ) - Message System
 ```
 * (    ) - work out a message system for telling the player things they should know
 ```
 
-## R3 (    ) - Preloader
+## RX (    ) - Preloader
 ```
 * (    ) - make use of preloader draft in full game
 ```
 
-## R2 (    ) - Repersenative Sprrites
+## RX (    ) - Repersenative Sprites
 ```
   REP SPRITES :
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
+```
+
+## RX (    ) - Physics Draft
+```
+  PATH PROCESSOR PHYSICS DRAFT:
+* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 ```
 
 ## R1 (    ) - Workers
@@ -197,15 +203,11 @@
 * ( done ) - have a map2 for mapdata draft
 * ( done ) - make it so that donators show up in map2 of mapdata draft
 * ( done ) - get donators working without isshue in map2 of mapdata draft
+* ( done ) - customers need to purge out when they reach an exit in the map
 
   MAPDATA DRAFT:
 * (      ) - add tables to map2 in mapdata draft
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
-
-  people.js :
-* (      ) - update people type code in people.js to make use of new map data methods when droping items
-
-  mapdata.js :
 * (      ) - have it so that the tile sheets, and indices used are defined in the map data
 * (      ) - have it so that the walkabule tiles are defined in the map data
 * (      ) - update all code that checks for say tile index 1 to new system with tile index arrays in json map data
@@ -215,9 +217,5 @@
 * (      ) - use frameNames in item data for setting the frames of items and containers
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
-
-  PATH PROCESSOR PHYSICS DRAFT:
-* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
-
 
 ```
