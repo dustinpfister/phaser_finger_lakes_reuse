@@ -1,5 +1,12 @@
 # Phaser Finger Lakes Reuse
 
+
+## RX (    ) - Physics Draft
+```
+  PATH PROCESSOR PHYSICS DRAFT:
+* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
+```
+
 ## RX (    ) - Message System
 ```
 * (    ) - work out a message system for telling the player things they should know
@@ -16,11 +23,21 @@
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
 ```
 
-## RX (    ) - Physics Draft
+## RX (    ) - Improved Donators Spawn Rate
 ```
-  PATH PROCESSOR PHYSICS DRAFT:
-* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
+* (      ) - each new game day starts with an array of objects that are donator events
+* (      ) - each donator event object will contain the game day time, and number of donators that will show up
+* (      ) - a simular system should also be used for shoppers
 ```
+
+## RX (    ) - Game Day Time
+```
+* (      ) - Start a system for the amount of real time a game day is.
+* (      ) - have a single game day be 30 minutes ( for now )
+* (      ) - have days of the week as part of the time system
+* (      ) - have di disabled on Thursdays
+```
+
 
 ## R1 (    ) - Workers
 ```
