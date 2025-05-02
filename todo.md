@@ -217,6 +217,9 @@
 * (      ) - update Person.setRandomPath
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 
+  people.js:
+* (      ) - make it so that max donations is not hard coded for donators
+
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
 * (      ) - use frameNames in item data for setting the frames of items and containers
