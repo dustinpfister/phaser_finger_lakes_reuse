@@ -21,6 +21,8 @@ class Example extends Phaser.Scene {
     
     }
     create () {
+
+        this.registry.set('MAX_MAP_DONATIONS', 50);
     
         //const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
