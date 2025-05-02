@@ -22,7 +22,8 @@ class Example extends Phaser.Scene {
     }
     create () {
     
-        const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
+        //const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
+        const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
         this.registry.set('player', player);
 
         const mdc = new MapDataCollection(this, { player: player, startMapIndex: 2 });
