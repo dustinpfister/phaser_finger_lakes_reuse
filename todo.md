@@ -1,5 +1,6 @@
 # Phaser Finger Lakes Reuse
 
+## RX (    ) - Rollup, dev dependencies
 
 ## RX (    ) - Physics Draft
 ```
@@ -30,6 +31,11 @@
 * (      ) - a simular system should also be used for shoppers
 ```
 
+## RX (    ) - Inactive map updates
+````
+* (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
+```
+
 ## RX (    ) - Game Day Time
 ```
 * (      ) - Start a system for the amount of real time a game day is.
@@ -37,7 +43,6 @@
 * (      ) - have days of the week as part of the time system
 * (      ) - have di disabled on Thursdays
 ```
-
 
 ## R1 (    ) - Workers
 ```
@@ -231,10 +236,12 @@
 * ( done ) - use MAX MAP DONATIONS COST in registry if there
 
   MAPDATA DRAFT:
-* (      ) - onhand items for donators in map2 should not show up in new map1
+* (      ) - have an ItemCollection for customer onhand items
+* (      ) - have it so that on hand items will not show up if not in the current active map
 * (      ) - update Person.setRandomPath
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
-
+* (      ) - make the current state of the mapData draft the current main game
+* (      ) - have states for the new main game based on map draft
 
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
