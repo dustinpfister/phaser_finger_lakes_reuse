@@ -234,10 +234,10 @@
 * ( done ) - make it so that only the customer group for the current active map will show up
 * ( done ) - the player should be able to click the donations
 * ( done ) - use MAX MAP DONATIONS COST in registry if there
+* ( done ) - have an ItemCollection for customer onhand items
+* ( done ) - have it so that on hand items will not show up if not in the current active map
 
   MAPDATA DRAFT:
-* (      ) - have an ItemCollection for customer onhand items
-* (      ) - have it so that on hand items will not show up if not in the current active map
 * (      ) - update Person.setRandomPath
 * (      ) - make it so that shoppers show up in map1 of mapdata draft
 * (      ) - make the current state of the mapData draft the current main game
