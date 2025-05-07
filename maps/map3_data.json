@@ -4,6 +4,19 @@
      "x": 3,
      "y": 5
   },
+  "tilePalette" : {
+      "sheets" : ["map_16_16"],
+      "walkable" : [ 1 ],
+      "indices" : {
+          "0" : [0, 0],
+          "1" : [0, 1],
+          "2" : [0, 2],
+          "3" : [0, 13],
+          "4" : [0, 14],
+          "5" : [0, 23],
+          "6" : [0, 24]   
+      }
+  },
   "customer" : {
     "subTypes" : ["shopper"],
     "subTypeProbs": [ 1.00 ],

@@ -238,10 +238,11 @@
 * ( done ) - have it so that on hand items will not show up if not in the current active map
 * ( done ) - new MapData.getRandomWalkTo method
 * ( done ) - make it so that shoppers show up in map1 of mapdata draft
+* ( done ) - make the current state of the mapData draft the current main game
+* ( done ) - changes made to boot and load states
 
-  MAPDATA DRAFT:
-* (      ) - make the current state of the mapData draft the current main game
-* (      ) - have states for the new main game based on map draft
+
+* (      ) - see about fixing problems with not being able to move wright in main game maps
 
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull

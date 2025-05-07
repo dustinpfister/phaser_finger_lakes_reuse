@@ -1,5 +1,6 @@
 import { Load } from './load.js'
-import { Reuse } from './reuse.js'
+//import { Reuse } from './reuse.js'
+import { Mapview } from './mapview.js'
 class Boot extends Phaser.Scene {
 
     constructor (config) {
@@ -43,7 +44,8 @@ class Boot extends Phaser.Scene {
     
     
         
-        this.scene.add('Reuse', Reuse, false);
+        //this.scene.add('Reuse', Reuse, false);
+        this.scene.add('Mapview', Mapview, false);
         this.scene.add('Load', Load, false);
     
         this.scene.start('Load');
