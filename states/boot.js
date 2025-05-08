@@ -27,7 +27,6 @@ class Boot extends Phaser.Scene {
             const scene = scenes[0];
             
             
-            
             if(scene){
             
                 // can work with current scene and main game object here

@@ -240,9 +240,7 @@
 * ( done ) - make it so that shoppers show up in map1 of mapdata draft
 * ( done ) - make the current state of the mapData draft the current main game
 * ( done ) - changes made to boot and load states
-
-
-* (      ) - see about fixing problems with not being able to move wright in main game maps
+* ( done ) - see about fixing problems with not being able to move wright in main game maps
 
   items.js :
 * (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
