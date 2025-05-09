@@ -241,10 +241,10 @@
 * ( done ) - make the current state of the mapData draft the current main game
 * ( done ) - changes made to boot and load states
 * ( done ) - see about fixing problems with not being able to move wright in main game maps
+* ( done ) - use a frame prefix in the item data
 
   items.js :
-* (      ) - fix frame names for containers to frameEmpty, frameStuff, frameFull
-* (      ) - use frameNames in item data for setting the frames of items and containers
+* (      ) - get open, and stuff frames working with containers
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
 
