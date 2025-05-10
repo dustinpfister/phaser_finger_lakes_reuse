@@ -14,11 +14,12 @@ class Mapview extends Phaser.Scene {
 
 
         const mdc = new MapDataCollection(this, { startMapIndex: 1 });
+        const md = mdc.getActive();
    
         const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
         this.registry.set('player', player);
         
-        const md = mdc.getActive();
+        
         const sp = md.hardMapData.spawnAt;
         player.x = sp.x * 16 + 8;
         player.y = sp.y * 16 + 8;     
