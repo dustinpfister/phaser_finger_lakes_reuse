@@ -36,62 +36,58 @@
 * (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
 ```
 
-## RX (    ) - Game Day Time
+## RX (    ) - People Data
+```
+* (      ) - people\_customers.json for hard coded data on each customer that can show up
+* (      ) - people\_workers.json, and people\_donators.js
+```
+
+
+## RX (    ) - Game Day Time, Color Tag System
 ```
 * (      ) - Start a system for the amount of real time a game day is.
 * (      ) - have a single game day be 30 minutes ( for now )
 * (      ) - have days of the week as part of the time system
 * (      ) - have di disabled on Thursdays
-```
-
-## R1 (    ) - Workers
-```
-  WORKERS :
-* (      ) - have a worker type of People class
-* (      ) - have an'employee' subclass for workers
-* (      ) - have at least 4 workers for now
-
-  ONE CUSTOMERS/WORKERS FOR EACH MAP : 
-* (      ) - have a workers and customers people class for each map
-* (      ) - have it so that customers can move from one map to another 
-* (      ) - have workers always working even if they are not in the current map
-* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
-* (      ) - can switch between workers
-* (      ) - new worker sprites, have one for each worker
-* (      ) - people_workers.json for data on each worker
-
-  PRICING ITEMS :
-* (      ) - Have an area where the player can price an item
-
-  STOCKING :
-* (      ) - The player can place an item in an area where a shopper can see it
-
-  SHOPERS :
-* (      ) - shopers can see find items
-* (      ) - shopers can pull items into there on hand collection
-* (      ) - shopers can buy items
-* (      ) - money displayed
-* (      ) - people_customers.json for data on each customers
-
+* (      ) - color tag system
   MISC :
 * (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
 * (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
 * (      ) - make mType a BaseItem class prop
-* (      ) - donations should be placed on the table by the donators
 * (      ) - many enter and exit locations for donators in map4
-* (      ) - somehow donators are getting stuck in walls, have a way to detect this and adress it by destroying or relocating
 * (      ) - favicon
-* (      ) - revisit collision detection
-* (      ) - see about getting map.setCollisionByExclusion to work without problem
-* (      ) - use the reUse data manager for keys like playerX and so forth
-* (      ) - getPeopleType helper in people.js
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
-* (      ) - new path processing code that allows for smooth, and fast player movement.
-* (      ) - smoother transitions between maps
+```
+
+## R1 (    ) - Workers
+```
+  /lib/items.js :
+* (      ) - have more than one household item
+* (      ) - have it so that drops will pick one of a few household items each time
+
+  /lib/mapdata.js :
+* (      ) - have a People Class instance for each map for new workers people type
+* (      ) - have it so that customers and workers can move from one map to another 
+* (      ) - have workers always working even if they are not in the current map
+* (      ) - have donator and shoper people types also continue to do what they do outside of active map
+* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
+* (      ) - can switch between workers
+* (      ) - new worker sprites, have one for each worker
+* (      ) - have hard coded data for each worker ( for now )
+
+  /lib/people.js :
+* (      ) - have a worker type of People class
+* (      ) - have an'employee' subclass for workers
+* (      ) - have at least 4 workers for now
+* (      ) - shopers can find items
+* (      ) - shopers can pull items into there on hand collection
+* (      ) - shopers can buy items
+* (      ) - money displayed
+* (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 ```
 
-## R0 ( ) - People, Items, Donations 
+## R0 ( done 05/10/2025 ) - People, Items, Donations 
 
 ```
 * ( done ) - start with R0 of phaser start project
@@ -243,9 +239,4 @@
 * ( done ) - see about fixing problems with not being able to move wright in main game maps
 * ( done ) - use a frame prefix in the item data
 * ( done ) - get open, and stuff frames working with containers
-
-  items.js :
-* (      ) - have more than one household item
-* (      ) - have it so that drops will pick one of a few household items each time
-
 ```

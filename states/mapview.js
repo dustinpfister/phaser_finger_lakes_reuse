@@ -15,7 +15,7 @@ class Mapview extends Phaser.Scene {
         const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
         this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 4 });
+        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
         this.registry.set('mdc', mdc);
         
         this.cursors = this.input.keyboard.createCursorKeys();
