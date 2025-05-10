@@ -66,7 +66,7 @@
 * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
-* (      ) - have a People Class instance for each map for new workers people type
+* ( done ) - have a People Class instance for each map for new workers people type
 * (      ) - have it so that customers and workers can move from one map to another 
 * (      ) - have workers always working even if they are not in the current map
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
