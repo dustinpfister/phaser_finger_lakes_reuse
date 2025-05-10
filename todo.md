@@ -67,13 +67,13 @@
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
-* (      ) - have it so that customers and workers can move from one map to another 
-* (      ) - have workers always working even if they are not in the current map
-* (      ) - have donator and shoper people types also continue to do what they do outside of active map
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
 * (      ) - new worker sprites, have one for each worker
 * (      ) - have hard coded data for each worker ( for now )
+* (      ) - have it so that customers and workers can move from one map to another 
+* (      ) - have workers always working even if they are not in the current map
+* (      ) - have donator and shoper people types also continue to do what they do outside of active map
 
   /lib/people.js :
 * (      ) - have a worker type of People class
