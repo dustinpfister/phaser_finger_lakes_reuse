@@ -40,23 +40,26 @@
 ```
 * (      ) - people\_customers.json for hard coded data on each customer that can show up
 * (      ) - people\_workers.json, and people\_donators.js
-```
-
-
-## RX (    ) - Game Day Time, Color Tag System
-```
-* (      ) - Start a system for the amount of real time a game day is.
-* (      ) - have a single game day be 30 minutes ( for now )
-* (      ) - have days of the week as part of the time system
-* (      ) - have di disabled on Thursdays
-* (      ) - color tag system
   MISC :
 * (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
 * (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
 * (      ) - make mType a BaseItem class prop
-* (      ) - many enter and exit locations for donators in map4
-* (      ) - favicon
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
+```
+
+
+## R2 (    ) - Game Day Time, Color Tag System
+``` 
+ /lib/people.js :
+* (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
+
+ /lib/schedule.js :
+* (      ) - Start a lib that provides a system for the amount of real time a game day is.
+* (      ) - have a single game day be 30 minutes ( for now )
+* (      ) - have days of the week as part of the time system
+* (      ) - have di disabled on Thursdays
+* (      ) - color tag system built into schedule.js
+* (      ) - schedule system for workers built into schedule.js
 ```
 
 ## R1 (    ) - Workers
@@ -77,6 +80,7 @@
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
 
   /lib/people.js :
+* ( done ) - Person.setRandomSubType method
 * (      ) - have a worker type of People class
 * (      ) - have an'employee' subclass for workers
 * (      ) - have at least 4 workers for now
@@ -86,6 +90,11 @@
 * (      ) - money displayed
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
+* (      ) - many enter and exit locations for donators in map4
+
+  MISC:
+* (      ) - favicon
+* (      ) - splash screen with logo
 ```
 
 ## R0 ( done 05/10/2025 ) - People, Items, Donations 
