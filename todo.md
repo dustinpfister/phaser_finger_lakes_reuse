@@ -64,6 +64,9 @@
 
 ## R1 (    ) - Workers
 ```
+  /states/mapview.js
+* (      ) - remove code that has to do with cretaing a player object in favor of letting the MapDataCollection method create it
+
   /lib/items.js :
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
@@ -83,9 +86,6 @@
 * ( done ) - Person.setRandomSubType method
 * ( done ) - Person.setMapSpawnLocation method
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
-* (      ) - have a worker type of People class
-* (      ) - have an'employee' subclass for workers
-* (      ) - have at least 4 workers for now
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into there on hand collection
 * (      ) - shopers can buy items
