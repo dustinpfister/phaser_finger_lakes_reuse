@@ -74,7 +74,7 @@
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
 * (      ) - new worker sprites, have one for each worker
-* (      ) - have hard coded data for each worker ( for now )
+* (      ) - have hard coded data for each worker \( for now \)
 * (      ) - have it so that customers and workers can move from one map to another 
 * (      ) - have workers always working even if they are not in the current map
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
@@ -82,6 +82,7 @@
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
 * ( done ) - Person.setMapSpawnLocation method
+* ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * (      ) - have a worker type of People class
 * (      ) - have an'employee' subclass for workers
 * (      ) - have at least 4 workers for now
