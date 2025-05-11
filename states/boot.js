@@ -15,7 +15,8 @@ class Boot extends Phaser.Scene {
               
         reg.set('R', 1);
         
-        reg.set('MAX_DONATIONS', 10);
+        //reg.set('MAX_DONATIONS', 10);
+        reg.set('MAX_MAP_DONATIONS', 50);
         
         console.log('Boooting Finger Lakes Reuse R' + reg.get('R'));
         

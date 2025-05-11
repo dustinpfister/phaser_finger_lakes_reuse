@@ -8,11 +8,7 @@ class Mapview extends Phaser.Scene {
     
     }
     create () {
-
-        this.registry.set('MAX_MAP_DONATIONS', 50);
     
-
-
         const mdc = new MapDataCollection(this, { startMapIndex: 1 });
         const md = mdc.getActive();
    
