@@ -81,6 +81,7 @@
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
+* ( done ) - Person.setMapSpawnLocation method
 * (      ) - have a worker type of People class
 * (      ) - have an'employee' subclass for workers
 * (      ) - have at least 4 workers for now
