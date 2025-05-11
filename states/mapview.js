@@ -12,6 +12,7 @@ class Mapview extends Phaser.Scene {
         const mdc = new MapDataCollection(this, { startMapIndex: 1 });
         const md = mdc.getActive();
    
+   /*
         const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
         this.registry.set('player', player);
         
@@ -19,7 +20,7 @@ class Mapview extends Phaser.Scene {
         const sp = md.hardMapData.spawnAt;
         player.x = sp.x * 16 + 8;
         player.y = sp.y * 16 + 8;     
-        
+     */   
         this.registry.set('mdc', mdc);
         
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -43,11 +44,13 @@ class Mapview extends Phaser.Scene {
         const mdc = this.registry.get('mdc');
         const md = mdc.getActive();
         const player = this.registry.get('player');
-        const path = this.player.getData('path');
+        
+        
+        const path = player.getData('path');
         if(path.length > 1 ){
             return;
         }
-        const cPos = this.player.getTilePos();
+        const cPos = player.getTilePos();
         let dx = 0, dy = 0;
         if(dir === 'left'){  dx = -1; }
         if(dir === 'right'){  dx = 1; }
