@@ -47,6 +47,12 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 ```
 
+## RX (    ) - People Classes move Between maps, and inactive map activity
+```
+* (      ) - have it so that customers and workers can move from one map to another 
+* (      ) - have workers always working even if they are not in the current map
+* (      ) - have donator and shoper people types also continue to do what they do outside of active map
+```
 
 ## R2 (    ) - Game Day Time, Color Tag System
 ``` 
@@ -65,7 +71,7 @@
 ## R1 (    ) - Workers
 ```
   /states/mapview.js
-* (      ) - remove code that has to do with cretaing a player object in favor of letting the MapDataCollection method create it
+* ( done ) - remove code that has to do with cretaing a player object in favor of letting the MapDataCollection method create it
 
   /lib/items.js :
 * (      ) - have more than one household item
@@ -76,13 +82,10 @@
 * ( done ) - use the People.spawnPerson method to create the first worker object that will be the player
 * ( done ) - fixed problem with speed by passing pConfig object when calling Person Class
 * ( done ) - have an employee down frame
-* (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
-* (      ) - can switch between workers
-* (      ) - new worker sprites, have one for each worker
-* (      ) - have hard coded data for each worker \( for now \)
-* (      ) - have it so that customers and workers can move from one map to another 
-* (      ) - have workers always working even if they are not in the current map
-* (      ) - have donator and shoper people types also continue to do what they do outside of active map
+* (      ) - see about having a currentWorker propery for the reg that is the current worker that the player is controlling
+* (      ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
+* (      ) - player can switch between workers
+* (      ) - have 1 new sprite for workers
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
