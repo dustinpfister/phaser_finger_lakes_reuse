@@ -76,10 +76,11 @@
 ```
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
-* (      ) - have boot start start menu state rather than just jumping into mapview
+* ( done ) - have boot.js create the Menu State
 
   /states/load.js :
 * ( done ) - load new menu1 sheet
+* ( done ) - have load start menu rather than just jumping into mapview
 
   /states/mapview.js :
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
