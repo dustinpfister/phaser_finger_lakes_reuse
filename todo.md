@@ -91,7 +91,7 @@
 * ( done ) - any key press or mouse click will result in mapview state starting.
 
 * /states/reuse.js :
-* (      ) - delete old reuse state in favor of newer mapview.js that replaces it
+* ( done ) - delete old reuse state in favor of newer mapview.js that replaces it
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
@@ -119,7 +119,7 @@
 * ( done ) - menu_1.png sheet started with FLR logo
 
   / :
-* (      ) - favicon.ico
+* ( done ) - favicon.ico
 
 ```
 
