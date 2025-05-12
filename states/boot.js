@@ -1,6 +1,7 @@
-import { Load } from './load.js'
-//import { Reuse } from './reuse.js'
-import { Mapview } from './mapview.js'
+import { Load } from './load.js';
+import { Mapview } from './mapview.js';
+import { Menu } from './menu.js';
+
 class Boot extends Phaser.Scene {
 
     constructor (config) {
@@ -9,50 +10,30 @@ class Boot extends Phaser.Scene {
     }
 
     create () {
-        
         const game = this.game;
         const reg = game.registry;
-              
         reg.set('R', 1);
-        
-        //reg.set('MAX_DONATIONS', 10);
         reg.set('MAX_MAP_DONATIONS', 50);
-        
         console.log('Boooting Finger Lakes Reuse R' + reg.get('R'));
-        
-        
         game.events.on('step', () => {
-        
             const scenes = game.scene.getScenes(true, false) || [] ;
-            
             const scene = scenes[0];
-            
-            
             if(scene){
-            
                 // can work with current scene and main game object here
                 // That is that if there is any data that you want to update
                 // on each game tick, regardless of what the current scene
                 // object is
-                
                 // reg.set('foo', 'bar')
                 // reg.get('foo')
             }
-        
         }, game);
-    
-    
-    
-        
-        //this.scene.add('Reuse', Reuse, false);
+        this.scene.add('Menu', Menu, false);
         this.scene.add('Mapview', Mapview, false);
         this.scene.add('Load', Load, false);
-    
         this.scene.start('Load');
     }
         
 }
 
-export {
-    Boot
-}
+export { Boot }
+

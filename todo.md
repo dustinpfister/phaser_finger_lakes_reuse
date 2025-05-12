@@ -76,6 +76,7 @@
 ```
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
+* (      ) - have boot start start menu state rather than just jumping into mapview
 
   /states/load.js :
 * ( done ) - load new menu1 sheet
