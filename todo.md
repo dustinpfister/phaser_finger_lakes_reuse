@@ -98,7 +98,7 @@
 * ( done ) - use the People.spawnPerson method to create the first worker object that will be the player
 * ( done ) - fixed problem with speed by passing pConfig object when calling Person Class
 * ( done ) - have an employee down frame
-* ( done ) - fix problem when a player controled worker goes threw a door
+* ( done ) - fixed problem when a player controled worker goes threw a door
 * (      ) - make sure that when a worker goes threw a door that it will change to being a part of the worker collection of the new map
 * (      ) - see about having a currentWorker propery for the reg that is the current worker that the player is controlling
 * (      ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
