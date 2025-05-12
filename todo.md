@@ -74,15 +74,22 @@
 
 ## R1 (    ) - Workers, Menu state started
 ```
+  /states/boot.js :
+* ( done ) - remove code that uses old reuse state
 
   /states/load.js :
-* (      ) - load new menu1 sheet
+* ( done ) - load new menu1 sheet
 
   /states/mapview.js :
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
 
   /states/menu.js :
-* (      ) - start a menu state
+* ( done ) - start a menu state
+* (      ) - have menu state show logo
+* (      ) - any key press or mouse click will result in mapview state starting.
+
+* /states/reuse.js :
+* (      ) - delete old reuse state in favor of newer mapview.js that replaces it
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
