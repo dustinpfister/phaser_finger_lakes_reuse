@@ -3,7 +3,7 @@ const config = {
     type: Phaser.WEBGL,
     width: 640,
     height: 480,
-    backgroundColor: '#afafaf',
+    backgroundColor: '#000000',
     scene: Boot,
     zoom: 1,
     render: { pixelArt: true  },

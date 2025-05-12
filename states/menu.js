@@ -10,7 +10,11 @@ class Menu extends Phaser.Scene {
     }
     
     create () {
-        this.scene.start('Mapview');
+    
+        const logo = this.add.sprite(320, 240, 'menu_1');
+    
+    
+        //this.scene.start('Mapview');
     }
 
 }
