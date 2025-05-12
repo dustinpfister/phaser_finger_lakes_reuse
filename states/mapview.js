@@ -63,7 +63,8 @@ class Mapview extends Phaser.Scene {
         });
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );       
-        mdc.getActive().customers.update(this);
+        mdc.getActive().customer.update(this);
+        mdc.getActive().worker.update(this);
     }
     
 }
