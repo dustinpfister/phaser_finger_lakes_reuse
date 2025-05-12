@@ -75,7 +75,7 @@
 * ( done ) - have a People Class instance for each map for new workers people type
 * ( done ) - use the People.spawnPerson method to create the first worker object that will be the player
 * ( done ) - fixed problem with speed by passing pConfig object when calling Person Class
-* (      ) - have an employee_down frame
+* ( done ) - have an employee down frame
 * (      ) - see about having a currentWorker propery for the player object that is the current worker that the player is playing as
 * (      ) - can switch between workers
 * (      ) - new worker sprites, have one for each worker
