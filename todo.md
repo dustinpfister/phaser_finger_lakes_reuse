@@ -88,7 +88,7 @@
   /states/menu.js :
 * ( done ) - start a menu state
 * ( done ) - have menu state show logo
-* (      ) - any key press or mouse click will result in mapview state starting.
+* ( done ) - any key press or mouse click will result in mapview state starting.
 
 * /states/reuse.js :
 * (      ) - delete old reuse state in favor of newer mapview.js that replaces it

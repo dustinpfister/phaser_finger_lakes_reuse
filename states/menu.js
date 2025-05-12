@@ -4,17 +4,22 @@ class Menu extends Phaser.Scene {
         super(config);
         this.key = 'Menu';
     }
-
-    preload(){
-        
+    
+    startMapView () {
+        console.log('starting mapview...');
+        this.scene.start('Mapview');
     }
     
     create () {
-    
+        const scene = this;
         const logo = this.add.sprite(320, 240, 'menu_1');
-    
-    
-        //this.scene.start('Mapview');
+        logo.setInteractive();
+        logo.on('pointerdown', (pointer, px, py)=>{        
+            scene.startMapView();
+        });
+        scene.input.keyboard.on('keydown', (event) => {
+            scene.startMapView();
+        });
     }
 
 }
