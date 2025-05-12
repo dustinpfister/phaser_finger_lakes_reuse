@@ -10,11 +10,10 @@ class Load extends Phaser.Scene {
     preload(){
         console.log('Loading...');
         this.load.setBaseURL('./');               
-        
         this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
-        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16_atlas.json');
-        
+        this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
+        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
         MapLoader({
           scene: this,
           urlBase: 'maps/', //'drafts/mapdata/',

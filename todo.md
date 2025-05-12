@@ -75,7 +75,7 @@
 ## R1 (    ) - Workers, Menu state started
 ```
 
-  /states/loader.js :
+  /states/load.js :
 * (      ) - load new menu1 sheet
 
   /states/mapview.js :
