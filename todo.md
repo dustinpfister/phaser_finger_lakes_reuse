@@ -56,6 +56,10 @@
 
 ## R2 (    ) - Game Day Time, Color Tag System
 ``` 
+  /lib/items.js :
+* (      ) - have more than one household item
+* (      ) - have it so that drops will pick one of a few household items each time
+
  /lib/people.js :
 * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
 
@@ -68,14 +72,17 @@
 * (      ) - schedule system for workers built into schedule.js
 ```
 
-## R1 (    ) - Workers
+## R1 (    ) - Workers, Menu state started
 ```
-  /states/mapview.js
-* ( done ) - remove code that has to do with cretaing a player object in favor of letting the MapDataCollection method create it
 
-  /lib/items.js :
-* (      ) - have more than one household item
-* (      ) - have it so that drops will pick one of a few household items each time
+  /states/loader.js :
+* (      ) - load new menu1 sheet
+
+  /states/mapview.js :
+* ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
+
+  /states/menu.js :
+* (      ) - start a menu state
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
@@ -99,9 +106,12 @@
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - many enter and exit locations for donators in map4
 
-  MISC:
-* (      ) - favicon
-* (      ) - splash screen with logo
+  /sheets
+* ( done ) - menu_1.png sheet started with FLR logo
+
+  / :
+* (      ) - favicon.ico
+
 ```
 
 ## R0 ( done 05/10/2025 ) - People, Items, Donations 
