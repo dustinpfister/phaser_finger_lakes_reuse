@@ -72,7 +72,7 @@
 * (      ) - schedule system for workers built into schedule.js
 ```
 
-## R1 (    ) - Workers, Menu state started
+## R1 (    ) - Workers, Shopers buy items, Menu state started
 ```
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
@@ -101,7 +101,6 @@
 * ( done ) - fixed problem when a player controled worker goes threw a door
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
 * ( done ) - fixed bug when changing item mode
-* (      ) - see about having a currentWorker propery for the reg that is the current worker that the player is controlling
 * (      ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
 * (      ) - player can switch between workers
 * (      ) - have 1 new sprite for workers
@@ -113,7 +112,7 @@
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
 * (      ) - shopers can find items
-* (      ) - shopers can pull items into there on hand collection
+* (      ) - shopers can pull items into their on hand collection
 * (      ) - shopers can buy items
 * (      ) - money displayed
 * (      ) - donations should be placed on the table by the donators
