@@ -109,6 +109,8 @@
 * ( done ) - Person.setRandomSubType method
 * ( done ) - Person.setMapSpawnLocation method
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
+* ( done ) - get sub person type helper method
+* (      ) - spawn conditions for base people types
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into there on hand collection
 * (      ) - shopers can buy items
