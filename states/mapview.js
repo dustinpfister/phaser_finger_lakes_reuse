@@ -53,15 +53,18 @@ class Mapview extends Phaser.Scene {
     update (time, delta) {
         let player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
-        const md = mdc.getActive();
+        //const md = mdc.getActive();
         const scene = this;
-        
+        /*
         const worker = md.worker.spawnPerson(scene);
         if(!player){
            player = worker;            
            scene.registry.set('player', player);
            player.setToTilePos(md.hardMapData.spawnAt);       
         }
+        */
+        
+        mdc.update(scene);
         
         if(player){
             this.cursorCheck('left');
