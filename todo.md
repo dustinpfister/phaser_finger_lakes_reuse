@@ -24,6 +24,13 @@
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
 ```
 
+## RX (    ) - Material Types
+```
+* (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
+* (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
+* (      ) - make mType a BaseItem class prop
+```
+
 ## RX (    ) - Improved Donators Spawn Rate
 ```
 * (      ) - each new game day starts with an array of objects that are donator events
@@ -34,27 +41,20 @@
 ## RX (    ) - Inactive map updates
 ````
 * (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
-```
-
-## RX (    ) - People Data
-```
-* (      ) - people\_customers.json for hard coded data on each customer that can show up
-* (      ) - people\_workers.json, and people\_donators.js
-  MISC :
-* (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
-* (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
-* (      ) - make mType a BaseItem class prop
-* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
-```
-
-## RX (    ) - People Classes move Between maps, and inactive map activity
-```
-* (      ) - have it so that customers and workers can move from one map to another 
 * (      ) - have workers always working even if they are not in the current map
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
 ```
 
-## R2 (    ) - Game Day Time, Color Tag System
+## R3 (    ) - People Data, Customers move Between maps
+```
+* (      ) - people\_customers.json for hard coded data on each customer that can show up
+* (      ) - people\_workers.json, and people\_donators.js
+  MISC :
+* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
+* (      ) - have it so that customers and workers can move from one map to another 
+```
+
+## R2 (    ) - Game Day Time, Schedule system Color Tag System
 ``` 
   /lib/items.js :
 * (      ) - have more than one household item
@@ -69,7 +69,7 @@
 * (      ) - have days of the week as part of the time system
 * (      ) - have di disabled on Thursdays
 * (      ) - color tag system built into schedule.js
-* (      ) - schedule system for workers built into schedule.js
+* (      ) - schedule system for People class built into schedule.js
 ```
 
 ## R1 (    ) - Workers, Shopers buy items, Menu state started

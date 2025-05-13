@@ -6,9 +6,11 @@ class Mapview extends Phaser.Scene {
     create () {
     
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        this.registry.set('mdc', mdc);
+        mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         const md = mdc.getActive();
         const player = this.registry.get('player'); 
-        this.registry.set('mdc', mdc);
+        
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
             const patt = /Digit\d+/;
@@ -53,6 +55,7 @@ class Mapview extends Phaser.Scene {
         const mdc = this.registry.get('mdc');
         const map = mdc.getActive();
         const scene = this;
+        if(player){
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
@@ -66,6 +69,7 @@ class Mapview extends Phaser.Scene {
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );       
         mdc.getActive().customer.update(this);
         mdc.getActive().worker.update(this);
+        }
     }
     
 }
