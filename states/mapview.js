@@ -9,7 +9,7 @@ class Mapview extends Phaser.Scene {
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         const md = mdc.getActive();
-        const player = this.registry.get('player'); 
+        
         
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
@@ -17,8 +17,12 @@ class Mapview extends Phaser.Scene {
             const m = event.code.match(patt);
             if(m){
                 const d = Number(m[0].replace('Digit', ''));
+                const player = this.registry.get('player'); 
                 if(d >= 0 && d < 4){
                     console.log('set item mode for player to mode ' + d);
+                    
+                    console.log(this.registry);
+                    
                     player.setData('itemMode', d);
                 }
             }
@@ -71,8 +75,11 @@ class Mapview extends Phaser.Scene {
             this.cursorCheck('right');
             this.cursorCheck('up');
             this.cursorCheck('down');
-            player.pathProcessorCurve(this, (scene, person)=>{
-                mdc.doorCheck(scene, person);
+            player.pathProcessorCurve(this, (scene, person) => {
+            
+                console.log('player path done, checking door...');
+            
+                mdc.doorCheck(scene, player);
                 person.setData('path', []);
                 person.nCurve = 0;
             });
