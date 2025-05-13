@@ -51,24 +51,32 @@ class Mapview extends Phaser.Scene {
     }
     
     update (time, delta) {
-        const player = this.registry.get('player');
+        let player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
-        const map = mdc.getActive();
+        const md = mdc.getActive();
         const scene = this;
+        
+        const worker = md.worker.spawnPerson(scene);
+        if(!player){
+           player = worker;            
+           scene.registry.set('player', player);
+           player.setToTilePos(md.hardMapData.spawnAt);       
+        }
+        
         if(player){
-        this.cursorCheck('left');
-        this.cursorCheck('right');
-        this.cursorCheck('up');
-        this.cursorCheck('down');
-        player.pathProcessorCurve(this, (scene, person)=>{
-            mdc.doorCheck(scene, person);
-            person.setData('path', []);
-            person.nCurve = 0;
-        });
-        player.update(this);
-        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );       
-        mdc.getActive().customer.update(this);
-        mdc.getActive().worker.update(this);
+            this.cursorCheck('left');
+            this.cursorCheck('right');
+            this.cursorCheck('up');
+            this.cursorCheck('down');
+            player.pathProcessorCurve(this, (scene, person)=>{
+                mdc.doorCheck(scene, person);
+                person.setData('path', []);
+                person.nCurve = 0;
+            });
+            player.update(this);
+            this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );       
+            mdc.getActive().customer.update(this);
+            mdc.getActive().worker.update(this);
         }
     }
     
