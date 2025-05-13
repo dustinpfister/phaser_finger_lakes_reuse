@@ -5,8 +5,9 @@ class Mapview extends Phaser.Scene {
 
     create () {
     
-        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
-        const md = mdc.getActive(); 
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        const md = mdc.getActive();
+        const player = this.registry.get('player'); 
         this.registry.set('mdc', mdc);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
@@ -16,7 +17,7 @@ class Mapview extends Phaser.Scene {
                 const d = Number(m[0].replace('Digit', ''));
                 if(d >= 0 && d < 4){
                     console.log('set item mode for player to mode ' + d);
-                    this.player.setData('itemMode', d);
+                    player.setData('itemMode', d);
                 }
             }
         });

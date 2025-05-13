@@ -100,7 +100,7 @@
 * ( done ) - have an employee down frame
 * ( done ) - fixed problem when a player controled worker goes threw a door
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
-* (      ) - fix bug when changing item mode
+* ( done ) - fixed bug when changing item mode
 * (      ) - see about having a currentWorker propery for the reg that is the current worker that the player is controlling
 * (      ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
 * (      ) - player can switch between workers
