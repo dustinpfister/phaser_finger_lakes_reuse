@@ -9,13 +9,20 @@ class Mapview extends Phaser.Scene {
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
-            const patt = /Digit\d+/;
-            const m = event.code.match(patt);
-            if(m){
-                const d = Number(m[0].replace('Digit', ''));
+            const mDigit = event.code.match(/Digit\d+/);
+            if(mDigit){
+                const d = Number(mDigit[0].replace('Digit', ''));
                 const player = this.registry.get('player'); 
                 if(d >= 0 && d < 4){
                     player.setData('itemMode', d);
+                }
+            }
+            const mKey = event.code.match(/Key[a-zA-Z]+/);
+            if(mKey){
+                const k = mKey[0].replace('Key', '');
+                if(k === 'W'){
+                    console.log('cycle workers!');
+                
                 }
             }
         });
