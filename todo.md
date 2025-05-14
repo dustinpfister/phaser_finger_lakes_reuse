@@ -72,11 +72,12 @@
 * (      ) - schedule system for People class built into schedule.js
 ```
 
-## R1 (    ) - Workers, Shopers buy items, Menu state started
+## R1 (    ) - Workers, Menu state started
 ```
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
 * ( done ) - have boot.js create the Menu State
+* ( done ) - setting a default value for 'gameSave'
 
   /states/load.js :
 * ( done ) - load new menu1 sheet
@@ -85,6 +86,7 @@
   /states/mapview.js :
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
 * ( done ) - player can cycle workers
+* (      ) - display money value on screen
 
   /states/menu.js :
 * ( done ) - start a menu state
@@ -111,7 +113,6 @@
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
-* (      ) - workers have positions to move to
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into their on hand collection
 * (      ) - shopers can buy items

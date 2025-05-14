@@ -14,6 +14,9 @@ class Boot extends Phaser.Scene {
         const reg = game.registry;
         reg.set('R', 1);
         reg.set('MAX_MAP_DONATIONS', 50);
+        reg.set('gameSave', {
+            money: 0
+        });
         console.log('Boooting Finger Lakes Reuse R' + reg.get('R'));
         game.events.on('step', () => {
             const scenes = game.scene.getScenes(true, false) || [] ;
