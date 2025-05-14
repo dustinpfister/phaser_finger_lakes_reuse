@@ -84,7 +84,7 @@
 
   /states/mapview.js :
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
-* (      ) - player can switch between workers
+* (      ) - player can cycle workers
 
   /states/menu.js :
 * ( done ) - start a menu state

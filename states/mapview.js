@@ -21,8 +21,7 @@ class Mapview extends Phaser.Scene {
             if(mKey){
                 const k = mKey[0].replace('Key', '');
                 if(k === 'W'){
-                    console.log('cycle workers!');
-                
+                    this.nextWorker();
                 }
             }
         });
@@ -34,6 +33,34 @@ class Mapview extends Phaser.Scene {
                worker.setToTilePos(md.hardMapData.spawnAt);       
            }
        });
+    }
+    
+    nextWorker () {
+        const mdc = this.registry.get('mdc');
+        let player = this.registry.get('player');
+        const smi = mdc.activeIndex;
+        let mi = smi;
+        console.log('cycle workers!');
+        console.log('current player object: ', player);
+        console.log('current active map index: ' + mdc.activeIndex);
+        console.log(mdc.i_start, mdc.i_stop);
+        
+        do{
+        
+            const md = mdc.getMapDataByIndex(mi);
+            let pi = 0;
+            console.log(md)
+            
+        
+            mi += 1;
+            if(mi >= mdc.i_stop){
+                mi = mdc.i_start;
+            }
+        
+        }while(mi != smi);
+        
+        
+    
     }
     
     cursorCheck (dir='left') {
