@@ -45,13 +45,33 @@ class Mapview extends Phaser.Scene {
         console.log('current active map index: ' + mdc.activeIndex);
         console.log(mdc.i_start, mdc.i_stop);
         
-        do{
+        let isPlayer = false;
+        findNext: do{
         
             const md = mdc.getMapDataByIndex(mi);
+            const len = md.worker.children.size;
+            console.log( md.worker )
             let pi = 0;
-            console.log(md)
+            while(pi < len){
+                const worker = md.worker.children.entries[pi];
+                if(isPlayer){
+                    console.log('setting new player');
+                    this.registry.set('player', worker);
+                    worker.setData('path', []);
+                    const p = worker.getTilePos();
+                    worker.setToTilePos(p);
+                    mdc.setActiveMapByIndex(this, mi);
+                    break findNext;
+                }
+                if(!isPlayer){
+                    isPlayer = worker === player;
+                }
+                console.log('person index ' + pi + ' at map index ' + mi + ' is player? ' + isPlayer );
+                
+                pi += 1;
+            }
             
-        
+            
             mi += 1;
             if(mi >= mdc.i_stop){
                 mi = mdc.i_start;
