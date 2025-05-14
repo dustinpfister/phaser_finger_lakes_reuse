@@ -4,13 +4,9 @@ import { Person, People } from '../lib/people.js';
 class Mapview extends Phaser.Scene {
 
     create () {
-    
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
-        const md = mdc.getActive();
-        
-        
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
             const patt = /Digit\d+/;
@@ -19,14 +15,18 @@ class Mapview extends Phaser.Scene {
                 const d = Number(m[0].replace('Digit', ''));
                 const player = this.registry.get('player'); 
                 if(d >= 0 && d < 4){
-                    console.log('set item mode for player to mode ' + d);
-                    
-                    console.log(this.registry);
-                    
                     player.setData('itemMode', d);
                 }
             }
         });
+        // set up workers   
+        mdc.forAllMaps(this, function(scene, md, map_index){
+           const worker = md.worker.spawnPerson(scene);
+           if(mdc.activeIndex === map_index){            
+               scene.registry.set('player', worker);
+               worker.setToTilePos(md.hardMapData.spawnAt);       
+           }
+       });
     }
     
     cursorCheck (dir='left') {
@@ -57,28 +57,14 @@ class Mapview extends Phaser.Scene {
     update (time, delta) {
         let player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
-        //const md = mdc.getActive();
         const scene = this;
-        /*
-        const worker = md.worker.spawnPerson(scene);
-        if(!player){
-           player = worker;            
-           scene.registry.set('player', player);
-           player.setToTilePos(md.hardMapData.spawnAt);       
-        }
-        */
-        
         mdc.update(scene);
-        
         if(player){
             this.cursorCheck('left');
             this.cursorCheck('right');
             this.cursorCheck('up');
             this.cursorCheck('down');
             player.pathProcessorCurve(this, (scene, person) => {
-            
-                console.log('player path done, checking door...');
-            
                 mdc.doorCheck(scene, player);
                 person.setData('path', []);
                 person.nCurve = 0;

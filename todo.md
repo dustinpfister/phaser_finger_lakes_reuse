@@ -84,6 +84,7 @@
 
   /states/mapview.js :
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
+* (      ) - player can switch between workers
 
   /states/menu.js :
 * ( done ) - start a menu state
@@ -102,7 +103,6 @@
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
-* (      ) - player can switch between workers
 * (      ) - have 5 new sprites for workers
 
   /lib/people.js :
