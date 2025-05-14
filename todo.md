@@ -96,6 +96,10 @@
 * /states/reuse.js :
 * ( done ) - delete old reuse state in favor of newer mapview.js that replaces it
 
+  /lib/items.js :
+* (      ) - items should have a color code when priced
+* (      ) - all items can be 'white tag' for the color code for now
+
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
 * ( done ) - use the People.spawnPerson method to create the first worker object that will be the player
@@ -115,11 +119,14 @@
 * ( done ) - spawn conditions for base people types
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into their on hand collection
-* (      ) - shopers can buy items
-* (      ) - money displayed
+* (      ) - shopers can buy items adding money to main money figure of gameSave
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
+* (      ) - the player should only be able to pick up items that are in range
+* (      ) - the player should only be able to drop items in range
 * (      ) - many enter and exit locations for donators in map4
+* (      ) - have at least one worker automate work at di
+* (      )
 
   /sheets
 * ( done ) - menu_1.png sheet started with FLR logo
