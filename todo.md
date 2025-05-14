@@ -103,7 +103,7 @@
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
 * (      ) - player can switch between workers
-* (      ) - have 1 new sprite for workers
+* (      ) - have 5 new sprites for workers
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
