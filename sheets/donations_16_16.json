@@ -9,6 +9,14 @@
     { "filename": "recycle_empty", "frame": { "w": 16, "h": 16, "x": 0, "y": 32 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "recycle_close", "frame": { "w": 16, "h": 16, "x": 0, "y": 32 }, "anchor": { "x": 0.5, "y": 0.5 } },
     { "filename": "recycle_stuff", "frame": { "w": 16, "h": 16, "x": 0, "y": 32 }, "anchor": { "x": 0.5, "y": 0.5 } },
-    { "filename": "hh_mug_1", "frame": { "w": 16, "h": 16, "x": 0, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } }
+    { "filename": "hh_mug_1", "frame": { "w": 16, "h": 16, "x": 0, "y": 16 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_r_empty", "frame": { "w": 16, "h": 16, "x": 0, "y": 48 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_r_stuff", "frame": { "w": 16, "h": 16, "x": 0, "y": 64 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_l_empty", "frame": { "w": 16, "h": 16, "x": 16, "y": 48 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_l_stuff", "frame": { "w": 16, "h": 16, "x": 16, "y": 64 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_d_empty", "frame": { "w": 16, "h": 16, "x": 32, "y": 48 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_d_stuff", "frame": { "w": 16, "h": 16, "x": 32, "y": 64 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_u_empty", "frame": { "w": 16, "h": 16, "x": 48, "y": 48 }, "anchor": { "x": 0.5, "y": 0.5 } },
+    { "filename": "shelf_u_stuff", "frame": { "w": 16, "h": 16, "x": 48, "y": 64 }, "anchor": { "x": 0.5, "y": 0.5 } }
   ]
 }

@@ -74,6 +74,10 @@
 
 ## R1 (    ) - Workers, Menu state started
 ```
+  /sheets
+* ( done ) - new sprites for shelfing
+* (      ) - new sprites for workers
+
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
 * ( done ) - have boot.js create the Menu State
@@ -109,7 +113,6 @@
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
-* (      ) - have 5 new sprites for workers
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
@@ -126,7 +129,6 @@
 * (      ) - the player should only be able to drop items in range
 * (      ) - many enter and exit locations for donators in map4
 * (      ) - have at least one worker automate work at di
-* (      )
 
   /sheets
 * ( done ) - menu_1.png sheet started with FLR logo
