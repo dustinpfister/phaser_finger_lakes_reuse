@@ -92,8 +92,8 @@
 * ( done ) - player can cycle workers
 * ( done ) - display money value text on screen and have it fixed to the camera
 * ( done ) - have money text value set to the current value of gameSave
+* ( done ) - text position adjusted with 2x zoom
 * (      ) - have a transparent background for the text display
-* (      ) - have text position adjust with zoom
 
   /states/menu.js :
 * ( done ) - start a menu state

@@ -32,7 +32,7 @@ class Mapview extends Phaser.Scene {
                worker.setToTilePos(md.hardMapData.spawnAt);       
            }
        });
-       const disp1 = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left' });
+       const disp1 = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left', fontSize: '10px' });
        disp1.scrollFactorX = 0;
        disp1.scrollFactorY = 0;
        disp1.depth = 5;
@@ -116,7 +116,9 @@ class Mapview extends Phaser.Scene {
                 person.nCurve = 0;
             });
             player.update(this);
-            this.cameras.main.setZoom( 1.0 ).centerOn( player.x, player.y );       
+            this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
+            disp1.x = 165;
+            disp1.y = 125;
             mdc.getActive().customer.update(this);
             mdc.getActive().worker.update(this);
         }
