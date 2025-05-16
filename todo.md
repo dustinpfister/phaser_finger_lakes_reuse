@@ -131,7 +131,8 @@
 * (      ) - the player should only be able to pick up items that are in range
 * (      ) - the player should only be able to drop items in range
 * (      ) - many enter and exit locations for donators in map4
-* (      ) - have at least one worker automate work at di
+* (      ) - have at one worker automate work at di
+* (      ) - have one worker automate pricing and stocking
 
   /sheets
 * ( done ) - menu_1.png sheet started with FLR logo
