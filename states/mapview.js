@@ -25,7 +25,6 @@ class Mapview extends Phaser.Scene {
                 }
             }
         });
-        // set up workers   
         mdc.forAllMaps(this, function(scene, md, map_index){
            const worker = md.worker.spawnPerson(scene);
            if(mdc.activeIndex === map_index){            
@@ -33,6 +32,11 @@ class Mapview extends Phaser.Scene {
                worker.setToTilePos(md.hardMapData.spawnAt);       
            }
        });
+       const text = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left' });
+       text.scrollFactorX = 0;
+       text.scrollFactorY = 0;
+       text.depth = 50;
+       console.log(text)
     }
     
     nextWorker () {
@@ -124,7 +128,7 @@ class Mapview extends Phaser.Scene {
                 person.nCurve = 0;
             });
             player.update(this);
-            this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y );       
+            this.cameras.main.setZoom( 1.0 ).centerOn( player.x, player.y );       
             mdc.getActive().customer.update(this);
             mdc.getActive().worker.update(this);
         }
