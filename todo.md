@@ -91,7 +91,7 @@
 * ( done ) - removed code that has to do with cretaing a player object in favor of letting the MapDataCollection Class create it
 * ( done ) - player can cycle workers
 * ( done ) - display money value text on screen and have it fixed to the camera
-* (      ) - have money text value set to the current value of gameSave
+* ( done ) - have money text value set to the current value of gameSave
 * (      ) - have a transparent background for the text display
 * (      ) - have text position adjust with zoom
 

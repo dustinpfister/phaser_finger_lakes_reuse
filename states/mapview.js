@@ -32,11 +32,11 @@ class Mapview extends Phaser.Scene {
                worker.setToTilePos(md.hardMapData.spawnAt);       
            }
        });
-       const text = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left' });
-       text.scrollFactorX = 0;
-       text.scrollFactorY = 0;
-       text.depth = 50;
-       console.log(text)
+       const disp1 = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left' });
+       disp1.scrollFactorX = 0;
+       disp1.scrollFactorY = 0;
+       disp1.depth = 5;
+       this.registry.set('disp1', disp1);
     }
     
     nextWorker () {
@@ -44,14 +44,8 @@ class Mapview extends Phaser.Scene {
         let player = this.registry.get('player');
         const smi = mdc.activeIndex;
         let mi = smi;
-        console.log('cycle workers!');
-        console.log('current player object: ', player);
-        console.log('current active map index: ' + mdc.activeIndex);
-        console.log(mdc.i_start, mdc.i_stop);
-        
         let isPlayer = false;
         findNext: do{
-        
             const md = mdc.getMapDataByIndex(mi);
             const len = md.worker.children.size;
             console.log( md.worker )
@@ -70,21 +64,13 @@ class Mapview extends Phaser.Scene {
                 if(!isPlayer){
                     isPlayer = worker === player;
                 }
-                console.log('person index ' + pi + ' at map index ' + mi + ' is player? ' + isPlayer );
-                
                 pi += 1;
             }
-            
-            
             mi += 1;
             if(mi >= mdc.i_stop){
                 mi = mdc.i_start;
             }
-        
         }while(mi != smi);
-        
-        
-    
     }
     
     cursorCheck (dir='left') {
@@ -113,7 +99,9 @@ class Mapview extends Phaser.Scene {
     }
     
     update (time, delta) {
-        let player = this.registry.get('player');
+        const player = this.registry.get('player');
+        const disp1 = this.registry.get('disp1');
+        const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
         const scene = this;
         mdc.update(scene);
@@ -132,6 +120,7 @@ class Mapview extends Phaser.Scene {
             mdc.getActive().customer.update(this);
             mdc.getActive().worker.update(this);
         }
+        disp1.text = 'Money: ' + gs.money;      
     }
     
 }
