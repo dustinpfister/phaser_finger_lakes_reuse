@@ -1,6 +1,12 @@
 # Phaser Finger Lakes Reuse
 
 ## RX (    ) - Rollup, dev dependencies
+```
+* (    ) use roll up to create builds of the game
+* (    ) automate linting and formating
+```
+
+## RX (    ) - Casher workers
 
 ## RX (    ) - Physics Draft
 ```
@@ -116,6 +122,7 @@
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
 * ( done ) - parse any starting items as well as containers for the map
+* ( done ) - set starting prices for the start items in the map
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
@@ -125,8 +132,8 @@
 * ( done ) - spawn conditions for base people types
 
 * (      ) - shopers can find items
-* (      ) - shopers can pull items into their on hand collection
-* (      ) - shopers can buy items adding money to main money figure of gameSave
+* (      ) - shopers can buy items by just adding the price to gameState.money for now
+* (      ) - an item will destroy after being bought for now
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
