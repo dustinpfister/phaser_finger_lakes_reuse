@@ -4,7 +4,7 @@ import { Person, People } from '../lib/people.js';
 class Mapview extends Phaser.Scene {
 
     create () {
-        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -130,7 +130,7 @@ class Mapview extends Phaser.Scene {
             md.worker.update(this);
         }
         disp1.text = 'Money: ' + gs.money;
-        disp2.text = 'Map onHand Size: ' + md.onHand.children.size + '; Map Donations Size: ' + md.donations.children.size;     
+        //disp2.text = 'Map onHand Size: ' + md.onHand.children.size + '; Map Donations Size: ' + md.donations.children.size;     
     }
     
 }

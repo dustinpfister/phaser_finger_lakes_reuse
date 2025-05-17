@@ -115,6 +115,7 @@
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
+* (      ) - parse any starting items as well as containers for the map
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method
@@ -122,8 +123,7 @@
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
-* (      ) - make use of onHand map collection
-* (      ) - update total donations to make use of onHand and donations item collection sizes
+
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into their on hand collection
 * (      ) - shopers can buy items adding money to main money figure of gameSave
