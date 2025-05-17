@@ -115,7 +115,7 @@
 * ( done ) - when a worker goes threw a door it will change to being a part of the worker collection of the new map
 * ( done ) - fixed bug when changing item mode
 * ( done ) - have 6 workers, 3 in mega t, 2 in mega r, and 1 in back
-* (      ) - parse any starting items as well as containers for the map
+* ( done ) - parse any starting items as well as containers for the map
 
   /lib/people.js :
 * ( done ) - Person.setRandomSubType method

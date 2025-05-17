@@ -1,6 +1,6 @@
 {
   "name": "mega_t",
-  "spawnAt": { "x": 13, "y": 4 },
+  "spawnAt": { "x": 10, "y": 13 },
   "customer" : {
      "subTypes" : ["shopper"],
      "subTypeProbs": [ 1.00 ],
@@ -33,7 +33,12 @@
       ]
     },
     "items" : {
-      "hh_mug_1": [ { "x" : 3, "y": 8 } ]
+      "hh_mug_1": [
+          { "x" : 13, "y": 10 },
+          { "x" : 13, "y": 11 },
+          { "x" : 13, "y": 12 },
+          { "x" : 13, "y": 13 }
+       ]
     }
   },
   "doors" : [
