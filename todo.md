@@ -122,6 +122,8 @@
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
+* (      ) - make use of onHand map collection
+* (      ) - update total donations to make use of onHand and donations item collection sizes
 * (      ) - shopers can find items
 * (      ) - shopers can pull items into their on hand collection
 * (      ) - shopers can buy items adding money to main money figure of gameSave

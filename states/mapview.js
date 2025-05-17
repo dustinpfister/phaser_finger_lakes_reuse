@@ -32,11 +32,14 @@ class Mapview extends Phaser.Scene {
                worker.setToTilePos(md.hardMapData.spawnAt);       
            }
        });
-       const disp1 = this.add.text(10, 10, 'Money: 0', { color: '#00ff00', align: 'left', fontSize: '10px' });
-       disp1.scrollFactorX = 0;
-       disp1.scrollFactorY = 0;
+       const disp1 = this.add.text(10, 10, '', { color: '#cfcfcf', align: 'left', fontSize: '10px' });
+       disp1.setScrollFactor(0,0);
        disp1.depth = 5;
        this.registry.set('disp1', disp1);
+       const disp2 = this.add.text(10, 20, '', { color: '#cfcfcf', align: 'left', fontSize: '8px' });
+       disp2.setScrollFactor(0,0);
+       disp2.depth = 5;
+       this.registry.set('disp2', disp2);
     }
     
     nextWorker () {
@@ -101,8 +104,10 @@ class Mapview extends Phaser.Scene {
     update (time, delta) {
         const player = this.registry.get('player');
         const disp1 = this.registry.get('disp1');
+        const disp2 = this.registry.get('disp2');
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
+        const md = mdc.getActive();
         const scene = this;
         mdc.update(scene);
         if(player){
@@ -119,10 +124,13 @@ class Mapview extends Phaser.Scene {
             this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
             disp1.x = 165;
             disp1.y = 125;
-            mdc.getActive().customer.update(this);
-            mdc.getActive().worker.update(this);
+            disp2.x = 165;
+            disp2.y = 135;
+            md.customer.update(this);
+            md.worker.update(this);
         }
-        disp1.text = 'Money: ' + gs.money;      
+        disp1.text = 'Money: ' + gs.money;
+        disp2.text = 'Map onHand Size: ' + md.onHand.children.size + '; Map Donations Size: ' + md.donations.children.size;     
     }
     
 }
