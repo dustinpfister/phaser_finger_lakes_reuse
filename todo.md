@@ -38,20 +38,19 @@
 * (      ) - a simular system should also be used for shoppers
 ```
 
-## RX (    ) - Inactive map updates
+## R3 (    ) - Inactive map updates
 ````
 * (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
 * (      ) - have workers always working even if they are not in the current map
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
 ```
 
-## R3 (    ) - People Data, Customers move Between maps
+## R3 (    ) - People Data
 ```
 * (      ) - people\_customers.json for hard coded data on each customer that can show up
-* (      ) - people\_workers.json, and people\_donators.js
+* (      ) - people\_workers.json for all the workers that can show up
   MISC :
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
-* (      ) - have it so that customers and workers can move from one map to another 
 ```
 
 ## R2 (    ) - Game Day Time, Schedule system Color Tag System
@@ -104,7 +103,7 @@
 * ( done ) - delete old reuse state in favor of newer mapview.js that replaces it
 
   /lib/items.js :
-* (      ) - items should have a color code when priced
+* ( done ) - have a BaseItem.setPrice method
 * (      ) - all items can be 'white tag' for the color code for now
 
   /lib/mapdata.js :
