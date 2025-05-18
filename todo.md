@@ -110,7 +110,7 @@
 
   /lib/items.js :
 * ( done ) - have a BaseItem.setPrice method
-* (      ) - all items can be 'white tag' for the color code for now
+* ( done ) - all priced items can be color code 0 'white tag' for now
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
@@ -130,10 +130,9 @@
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
-
 * (      ) - shopers can find items
-* (      ) - shopers can buy items by just adding the price to gameState.money for now
-* (      ) - an item will destroy after being bought for now
+* (      ) - shopers can buy items, doing so just adds the shelf price to gameState.money for now
+* (      ) - an item will destroy after being bought
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
