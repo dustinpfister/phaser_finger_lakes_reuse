@@ -130,6 +130,7 @@
 * ( done ) - have setSubType methods for each Person Type \( customer, worker \)
 * ( done ) - get sub person type helper method
 * ( done ) - spawn conditions for base people types
+* ( done ) - have a new path count total for people types
 * (      ) - shopers can find items
 * (      ) - shopers can buy items, doing so just adds the shelf price to gameState.money for now
 * (      ) - an item will destroy after being bought
