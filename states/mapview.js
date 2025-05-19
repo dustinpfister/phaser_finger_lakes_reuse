@@ -26,10 +26,16 @@ class Mapview extends Phaser.Scene {
             }
         });
         mdc.forAllMaps(this, function(scene, md, map_index){
-           const worker = md.worker.spawnPerson(scene);
-           if(mdc.activeIndex === map_index){            
-               scene.registry.set('player', worker);
-               worker.setToTilePos(md.hardMapData.spawnAt);       
+           
+           let wi = 0;
+           const len = md.worker.maxSize;
+           while(wi < len){
+               const worker = md.worker.spawnPerson(scene );
+               if(mdc.activeIndex === map_index && wi === 0 ){            
+                   scene.registry.set('player', worker);
+                   worker.setToTilePos(md.hardMapData.spawnAt);       
+               }
+               wi += 1;
            }
        });
        const disp1 = this.add.text(10, 10, '', { color: '#cfcfcf', align: 'left', fontSize: '10px' });
