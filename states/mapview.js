@@ -123,6 +123,9 @@ class Mapview extends Phaser.Scene {
             this.cursorCheck('down');
             player.pathProcessorCurve(this, (scene, person) => {
                 mdc.doorCheck(scene, player);
+                
+                console.log('yes no problem here');
+                
                 person.setData('path', []);
                 person.nCurve = 0;
             });
