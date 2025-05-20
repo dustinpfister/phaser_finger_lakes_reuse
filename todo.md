@@ -133,9 +133,9 @@
 * ( done ) - have a new path count total for people types
 * ( done ) - fix bug that has to do with spawning workers
 * ( done ) - have a person number of a People collection
-* (      ) - shopers can find items
-* (      ) - shopers can buy items, doing so just adds the shelf price to gameState.money for now
-* (      ) - an item will destroy after being bought
+* ( done ) - shopers can find items
+* ( done ) - shopers can buy items, doing so just adds the shelf price to gameState.money for now
+* ( done ) - an item will destroy after being bought
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
