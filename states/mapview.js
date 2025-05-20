@@ -121,11 +121,10 @@ class Mapview extends Phaser.Scene {
             this.cursorCheck('right');
             this.cursorCheck('up');
             this.cursorCheck('down');
-                        md.customer.update(this);
+            md.customer.update(this);
             md.worker.update(this);
             player.pathProcessorCurve(this, (scene, person) => {
                 mdc.doorCheck(scene, player);
-                
                 person.setData('path', []);
                 person.nCurve = 0;
             });

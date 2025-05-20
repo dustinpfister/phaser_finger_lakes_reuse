@@ -136,7 +136,8 @@
 * ( done ) - shopers can find items
 * ( done ) - shopers can buy items, doing so just adds the shelf price to gameState.money for now
 * ( done ) - an item will destroy after being bought
-* ( done ) - fix bug that happens when a player enters a door
+* ( done ) - fixed door bug by updating worker and customer People class instances before path callback
+* (      ) - fix bug where a item is being bought more than once
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
