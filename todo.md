@@ -24,12 +24,6 @@
 * (    ) - make use of preloader draft in full game
 ```
 
-## RX (    ) - Repersenative Sprites
-```
-  REP SPRITES :
-* (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
-```
-
 ## RX (    ) - Material Types
 ```
 * (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
@@ -37,14 +31,13 @@
 * (      ) - make mType a BaseItem class prop
 ```
 
-## RX (    ) - Improved Donators Spawn Rate
+## RX (    ) - Repersenative Sprites
 ```
-* (      ) - each new game day starts with an array of objects that are donator events
-* (      ) - each donator event object will contain the game day time, and number of donators that will show up
-* (      ) - a simular system should also be used for shoppers
+  REP SPRITES :
+* (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
 ```
 
-## R3 (    ) - Inactive map updates
+## R4 (    ) - Inactive map updates
 ````
 * (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
 * (      ) - have workers always working even if they are not in the current map
@@ -59,14 +52,25 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 ```
 
-## R2 (    ) - Game Day Time, Schedule system Color Tag System
+## R2 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
+  /sheets :
+* (      ) - new sprites for workers
+
   /lib/items.js :
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
 
  /lib/people.js :
 * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
+* (      ) - donations should be placed on the table by the donators
+* (      ) - the player should not be able to place items on top of walls
+* (      ) - the player should only be able to pick up items that are in range
+* (      ) - the player should only be able to drop items in range
+* (      ) - many enter and exit locations for donators in map4
+* (      ) - each donator event object will contain the game day time, and number of donators that will show up
+* (      ) - a simular system should also be used for shoppers
+
 
  /lib/schedule.js :
 * (      ) - Start a lib that provides a system for the amount of real time a game day is.
@@ -75,13 +79,13 @@
 * (      ) - have di disabled on Thursdays
 * (      ) - color tag system built into schedule.js
 * (      ) - schedule system for People class built into schedule.js
+* (      ) - each new game day starts with an array of objects that are donator events
 ```
 
 ## R1 (    ) - Workers, Menu state started
 ```
   /sheets
 * ( done ) - new sprites for shelfing
-* (      ) - new sprites for workers
 
   /states/boot.js :
 * ( done ) - remove code that uses old reuse state
@@ -138,12 +142,7 @@
 * ( done ) - an item will destroy after being bought
 * ( done ) - fixed door bug by updating worker and customer People class instances before path callback
 * ( done ) - fixed bug where a item is being bought more than once
-* (      ) - workers just autoset prices of items for now.
-* (      ) - donations should be placed on the table by the donators
-* (      ) - the player should not be able to place items on top of walls
-* (      ) - the player should only be able to pick up items that are in range
-* (      ) - the player should only be able to drop items in range
-* (      ) - many enter and exit locations for donators in map4
+* ( done ) - workers just autoset prices of items for now.
 * (      ) - have at one worker automate work at di
 * (      ) - have one worker automate pricing and stocking
 
