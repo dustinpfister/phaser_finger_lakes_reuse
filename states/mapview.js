@@ -4,7 +4,7 @@ import { Person, People } from '../lib/people.js';
 class Mapview extends Phaser.Scene {
 
     create () {
-        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -31,6 +31,17 @@ class Mapview extends Phaser.Scene {
            const len = md.worker.maxSize;
            while(wi < len){
                const worker = md.worker.spawnPerson(scene );
+               
+               if(!worker){
+                   break;
+               }
+               
+               console.log(map_index, worker.action)
+               
+               if( map_index === 4 ){
+                   worker.action = 'di';
+               }
+               
                if(mdc.activeIndex === map_index && wi === 0 ){            
                    scene.registry.set('player', worker);
                    worker.setToTilePos(md.hardMapData.spawnAt);       
