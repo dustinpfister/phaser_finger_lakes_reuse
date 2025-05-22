@@ -151,7 +151,7 @@
 
   / :
 * ( done ) - favicon.ico
-* (      ) - delete unused plugins folder
+* ( done ) - delete unused plugins folder
 ```
 
 ## R0 ( done 05/10/2025 ) - People, Items, Donations 
