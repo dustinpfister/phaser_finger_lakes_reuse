@@ -36,7 +36,6 @@ class Mapview extends Phaser.Scene {
                    break;
                }
                
-               console.log(map_index, worker.action)
                
                if( map_index === 4 ){
                    worker.action = 'di';
@@ -130,16 +129,25 @@ class Mapview extends Phaser.Scene {
         const disp2 = this.registry.get('disp2');
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
-        const md = mdc.getActive();
+        //const md = mdc.getActive();
         const scene = this;
-        mdc.update(scene);
+        //mdc.update(scene);
+        
+        
+        mdc.forAllMaps(this, (scene, md, map_index)=>{
+            console.log(map_index)
+            md.customer.update(this, md);
+            md.worker.update(this, md);
+        });
+        //md.customer.update(this);
+        //md.worker.update(this);
+        
         if(player){
             this.cursorCheck('left');
             this.cursorCheck('right');
             this.cursorCheck('up');
             this.cursorCheck('down');
-            md.customer.update(this);
-            md.worker.update(this);
+
             player.pathProcessorCurve(this, (scene, person) => {
                 mdc.doorCheck(scene, player);
                 person.setData('path', []);

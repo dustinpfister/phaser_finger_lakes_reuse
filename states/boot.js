@@ -12,7 +12,7 @@ class Boot extends Phaser.Scene {
     create () {
         const game = this.game;
         const reg = game.registry;
-        reg.set('R', 1);
+        reg.set('R', 2);
         reg.set('MAX_MAP_DONATIONS', 20);
         reg.set('gameSave', {
             money: 0
@@ -28,6 +28,8 @@ class Boot extends Phaser.Scene {
                 // object is
                 // reg.set('foo', 'bar')
                 // reg.get('foo')
+                
+                
             }
         }, game);
         this.scene.add('Menu', Menu, false);

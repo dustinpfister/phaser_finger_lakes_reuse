@@ -82,9 +82,9 @@
 
 ## R2 (    ) - Inactive map updates
 ````
-* (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
-* (      ) - have workers always working even if they are not in the current map
-* (      ) - have donator and shoper people types also continue to do what they do outside of active map
+  /states/mapview.js :
+* ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
+    
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
