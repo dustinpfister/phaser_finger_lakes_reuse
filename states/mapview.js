@@ -30,7 +30,7 @@ class Mapview extends Phaser.Scene {
            let wi = 0;
            const len = md.worker.maxSize;
            while(wi < len){
-               const worker = md.worker.spawnPerson(scene );
+               const worker = md.worker.spawnPerson(mdc, md, scene );
                
                if(!worker){
                    break;
@@ -135,7 +135,6 @@ class Mapview extends Phaser.Scene {
         
         
         mdc.forAllMaps(this, (scene, md, map_index)=>{
-            console.log(map_index)
             md.customer.update(this, md);
             md.worker.update(this, md);
         });
@@ -153,6 +152,7 @@ class Mapview extends Phaser.Scene {
                 person.setData('path', []);
                 person.nCurve = 0;
             });
+            
             player.update(this);
             this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
             //disp1.x = 165;

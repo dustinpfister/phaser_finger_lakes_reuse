@@ -84,7 +84,9 @@
 ````
   /states/mapview.js :
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
-    
+
+  /lib/people.js :
+* ( done ) - make updates to people types so that they will work on the current map  
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
