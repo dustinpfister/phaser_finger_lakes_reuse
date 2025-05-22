@@ -6,6 +6,11 @@
 * (    ) automate linting and formating
 ```
 
+## RX (    ) - Custom Text Font
+```
+* (    ) - use a custom text font
+```
+
 ## RX (    ) - Casher workers
 
 ## RX (    ) - Physics Draft
@@ -82,7 +87,7 @@
 * (      ) - have donator and shoper people types also continue to do what they do outside of active map
 ```
 
-## R1 (    ) - Workers, Menu state started
+## R1 ( done 05/22/2025 ) - Workers, Menu state started
 ```
   /sheets
 * ( done ) - new sprites for shelfing
@@ -102,13 +107,13 @@
 * ( done ) - display money value text on screen and have it fixed to the camera
 * ( done ) - have money text value set to the current value of gameSave
 * ( done ) - text position adjusted with 2x zoom
-* (      ) - have a transparent background for the text display
+* ( done ) - have a transparent background for the text display
 
   /states/menu.js :
 * ( done ) - start a menu state
 * ( done ) - have menu state show logo
 * ( done ) - any key press or mouse click will result in mapview state starting.
-* (      ) - display rev number
+* ( done ) - display rev number
 
 * /states/reuse.js :
 * ( done ) - delete old reuse state in favor of newer mapview.js that replaces it

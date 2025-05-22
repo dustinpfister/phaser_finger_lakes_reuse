@@ -52,7 +52,7 @@ class Mapview extends Phaser.Scene {
        const gr = this.add.graphics();
        gr.setScrollFactor(0,0);
        gr.depth = 5;
-       gr.fillStyle(0x00ff00, 0.5);
+       gr.fillStyle(0x000000, 0.5);
        gr.fillRect(160,120, 640, 40);
        gr.fill();
        const disp1 = this.add.text(165, 125, '', { color: '#ffffff', align: 'left', fontSize: '15px' });
