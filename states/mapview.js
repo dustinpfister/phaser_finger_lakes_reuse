@@ -49,13 +49,19 @@ class Mapview extends Phaser.Scene {
                wi += 1;
            }
        });
-       const disp1 = this.add.text(10, 10, '', { color: '#cfcfcf', align: 'left', fontSize: '10px' });
+       const gr = this.add.graphics();
+       gr.setScrollFactor(0,0);
+       gr.depth = 5;
+       gr.fillStyle(0x00ff00, 0.5);
+       gr.fillRect(160,120, 640, 40);
+       gr.fill();
+       const disp1 = this.add.text(165, 125, '', { color: '#ffffff', align: 'left', fontSize: '15px' });
        disp1.setScrollFactor(0,0);
-       disp1.depth = 5;
+       disp1.depth = 6;
        this.registry.set('disp1', disp1);
-       const disp2 = this.add.text(10, 20, '', { color: '#cfcfcf', align: 'left', fontSize: '8px' });
+       const disp2 = this.add.text(165, 142, '', { color: '#ffffff', align: 'left', fontSize: '12px' });
        disp2.setScrollFactor(0,0);
-       disp2.depth = 5;
+       disp2.depth = 6;
        this.registry.set('disp2', disp2);
     }
     
@@ -141,14 +147,14 @@ class Mapview extends Phaser.Scene {
             });
             player.update(this);
             this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
-            disp1.x = 165;
-            disp1.y = 125;
-            disp2.x = 165;
-            disp2.y = 135;
+            //disp1.x = 165;
+            //disp1.y = 125;
+            //disp2.x = 165;
+            //disp2.y = 135;
 
         }
         disp1.text = 'Money: ' + gs.money;
-        //disp2.text = 'Map onHand Size: ' + md.onHand.children.size + '; Map Donations Size: ' + md.donations.children.size;     
+        //disp2.text = 'Map Donations Size: ' + md.donations.children.size;     
     }
     
 }
