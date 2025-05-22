@@ -115,6 +115,7 @@
   /lib/items.js :
 * ( done ) - have a BaseItem.setPrice method
 * ( done ) - all priced items can be color code 0 'white tag' for now
+* ( done ) - have an ItemCollection.getDrops method
 
   /lib/mapdata.js :
 * ( done ) - have a People Class instance for each map for new workers people type
@@ -151,7 +152,7 @@
 
   / :
 * ( done ) - favicon.ico
-
+* (      ) - delete unused plugins folder
 ```
 
 ## R0 ( done 05/10/2025 ) - People, Items, Donations 
