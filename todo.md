@@ -37,14 +37,7 @@
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
 ```
 
-## R4 (    ) - Inactive map updates
-````
-* (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
-* (      ) - have workers always working even if they are not in the current map
-* (      ) - have donator and shoper people types also continue to do what they do outside of active map
-```
-
-## R3 (    ) - People Data
+## R4 (    ) - People Data
 ```
 * (      ) - people\_customers.json for hard coded data on each customer that can show up
 * (      ) - people\_workers.json for all the workers that can show up
@@ -52,7 +45,7 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 ```
 
-## R2 (    ) - Game Day Time, Schedule system, Color Tag System
+## R3 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
   /sheets :
 * (      ) - new sprites for workers
@@ -80,6 +73,13 @@
 * (      ) - color tag system built into schedule.js
 * (      ) - schedule system for People class built into schedule.js
 * (      ) - each new game day starts with an array of objects that are donator events
+```
+
+## R2 (    ) - Inactive map updates
+````
+* (      ) - have a system for updating things like the number of donations and so forth for maps that are not active 
+* (      ) - have workers always working even if they are not in the current map
+* (      ) - have donator and shoper people types also continue to do what they do outside of active map
 ```
 
 ## R1 (    ) - Workers, Menu state started
@@ -144,8 +144,7 @@
 * ( done ) - fixed door bug by updating worker and customer People class instances before path callback
 * ( done ) - fixed bug where a item is being bought more than once
 * ( done ) - workers just autoset prices of items for now.
-* (      ) - have at one worker automate work at di
-* (      ) - have one worker automate pricing and stocking
+* ( done ) - have one worker automate the process of getting donation drop items
 
   /sheets
 * ( done ) - menu_1.png sheet started with FLR logo
