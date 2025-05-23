@@ -84,9 +84,13 @@
 ````
   /states/mapview.js :
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
+* ( done ) - set active and visible values of people class instances in the main update loop.
 
   /lib/people.js :
-* ( done ) - make updates to people types so that they will work on the current map  
+* ( done ) - make updates to people types so that they will work on the current map
+* (      ) - use main onHand item collection of People class instances.
+* (      ) - have an main onHand array that is a collection of index values for items in the main People.onHand collection
+* (      ) - make sure that index values for onHand items are updated in the Children of People class instances
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
