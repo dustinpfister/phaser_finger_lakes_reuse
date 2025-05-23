@@ -89,7 +89,7 @@
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map
 * (      ) - use main onHand item collection of People class instances.
-* (      ) - have an main onHand array that is a collection of index values for items in the main People.onHand collection
+* (      ) - keep each People.onHand collection as an additional collection of references to items
 * (      ) - make sure that index values for onHand items are updated in the Children of People class instances
 ```
 

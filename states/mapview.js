@@ -129,11 +129,7 @@ class Mapview extends Phaser.Scene {
         const disp2 = this.registry.get('disp2');
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
-        //const md = mdc.getActive();
         const scene = this;
-        //mdc.update(scene);
-        
-        
         mdc.forAllMaps(this, (scene, md, map_index)=>{
         
         
@@ -162,11 +158,6 @@ class Mapview extends Phaser.Scene {
         
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-        
-        
-        //md.customer.update(this);
-        //md.worker.update(this);
-        
         if(player){
             this.cursorCheck('left');
             this.cursorCheck('right');
@@ -181,14 +172,10 @@ class Mapview extends Phaser.Scene {
             
             player.update(this);
             this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
-            //disp1.x = 165;
-            //disp1.y = 125;
-            //disp2.x = 165;
-            //disp2.y = 135;
 
         }
         disp1.text = 'Money: ' + gs.money;
-        //disp2.text = 'Map Donations Size: ' + md.donations.children.size;     
+        disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;     
     }
     
 }
