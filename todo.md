@@ -90,10 +90,8 @@
 * ( done ) - make updates to people types so that they will work on the current map.
 * ( done ) - make Person.onHandAction part of the People class
 * ( done ) - use onHand add and remove methods in People.onHandAction method just like with donators
-* (      ) - see about using onHandAction method in donator people types
-* (      ) - use main onHand item collection of People class instances for workers.
-* (      ) - keep each People.onHand collection as an additional collection of references to items
-* (      ) - make sure that index values for onHand items are updated in the Children of People class instances
+* ( done ) - see about using onHandAction method in donator people types
+* (      ) - make on hand items of worker appear when going from one map to another
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
