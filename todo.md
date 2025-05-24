@@ -89,7 +89,7 @@
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
 * ( done ) - make Person.onHandAction part of the People class
-* (      ) - use onHand add and remove methods in People.onHandAction method just like with donators
+* ( done ) - use onHand add and remove methods in People.onHandAction method just like with donators
 * (      ) - see about using onHandAction method in donator people types
 * (      ) - use main onHand item collection of People class instances for workers.
 * (      ) - keep each People.onHand collection as an additional collection of references to items
