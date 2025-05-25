@@ -92,7 +92,7 @@
 * ( done ) - use onHand add and remove methods in People.onHandAction method just like with donators
 * ( done ) - see about using onHandAction method in donator people types
 * ( done ) - fixed bug where donations can not be opened
-* (      ) - make on hand items of worker appear when going from one map to another
+* ( done ) - have a people.transToNewMap method
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
