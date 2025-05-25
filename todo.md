@@ -93,6 +93,7 @@
 * ( done ) - see about using onHandAction method in donator people types
 * ( done ) - fixed bug where donations can not be opened
 * ( done ) - have a people.transToNewMap method
+* (      ) - see about having a coworker move from map4 to map1 and drop off items
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
