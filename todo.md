@@ -86,6 +86,10 @@
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
 * ( done ) - set active and visible values of people class instances in the main update loop.
 
+  /lib/mapdata.js
+* ( done ) - made a change to mdc.doorCheck to allow for setting a map other than the active map
+* ( done ) - mdc.doorCheck will now return a door object or null
+
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
 * ( done ) - make Person.onHandAction part of the People class
