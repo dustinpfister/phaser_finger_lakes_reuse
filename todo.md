@@ -89,7 +89,9 @@
   /lib/mapdata.js
 * ( done ) - made a change to mdc.doorCheck to allow for setting a map other than the active map
 * ( done ) - mdc.doorCheck will now return a door object or null
-* ( done ) - have a md.findDoorFrom
+* ( done ) - have a md.findDoorFrom method
+* ( done ) - fix bug that happens when a worker does threw a door
+* (      ) - find out why a workers on hand items do not go with them
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
@@ -100,6 +102,7 @@
 * ( done ) - have a people.transToNewMap method
 * (      ) - use the md.findDoorFrom method to get a door position
 * (      ) - see about having a coworker move from map4 to map1 and drop off items
+* (      ) - improve how the worker goes to a donation box
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
