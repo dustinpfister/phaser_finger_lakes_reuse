@@ -154,6 +154,8 @@ class Mapview extends Phaser.Scene {
             md.worker.onHand.setActive(bool);
             md.worker.onHand.setVisible(bool);
             
+            
+            
         });
         
         const md = mdc.getActive();

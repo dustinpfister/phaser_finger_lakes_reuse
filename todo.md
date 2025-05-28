@@ -91,7 +91,7 @@
 * ( done ) - mdc.doorCheck will now return a door object or null
 * ( done ) - have a md.findDoorFrom method
 * ( done ) - fix bug that happens when a worker does threw a door
-* (      ) - find out why a workers on hand items do not go with them
+* ( done ) - find out why a workers on hand items do not go with them
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
@@ -100,8 +100,10 @@
 * ( done ) - see about using onHandAction method in donator people types
 * ( done ) - fixed bug where donations can not be opened
 * ( done ) - have a people.transToNewMap method
-* (      ) - use the md.findDoorFrom method to get a door position
-* (      ) - see about having a coworker move from map4 to map1 and drop off items
+* ( done ) - use the md.findDoorFrom method to get a door position
+* ( done ) - see about having a coworker move from map4 to map1
+* (      ) - Have di worker drop off on hand items when in map1
+* (      ) - Have di worker move back to map 4 when they have no on hand items
 * (      ) - improve how the worker goes to a donation box
 ```
 
