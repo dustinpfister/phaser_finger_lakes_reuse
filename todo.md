@@ -102,7 +102,7 @@
 * ( done ) - have a people.transToNewMap method
 * ( done ) - use the md.findDoorFrom method to get a door position
 * ( done ) - see about having a coworker move from map4 to map1
-* (      ) - Have di worker drop off on hand items when in map1
+* ( done ) - Have di worker drop off on hand items when in map1
 * (      ) - Have di worker move back to map 4 when they have no on hand items
 * (      ) - improve how the worker goes to a donation box
 ```
