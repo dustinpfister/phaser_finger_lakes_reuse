@@ -92,6 +92,7 @@
 * ( done ) - have a md.findDoorFrom method
 * ( done ) - fix bug that happens when a worker does threw a door
 * ( done ) - find out why a workers on hand items do not go with them
+* (      ) - have a md.findEmptyDropSpot method
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
