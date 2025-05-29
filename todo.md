@@ -104,6 +104,7 @@
 * ( done ) - see about having a coworker move from map4 to map1
 * ( done ) - Have di worker drop off on hand items when in map1
 * (      ) - Have di worker move back to map 4 when they have no on hand items
+* (      ) - fix 'can only child this Container when it is empty' with donators
 * (      ) - improve how the worker goes to a donation box
 ```
 
