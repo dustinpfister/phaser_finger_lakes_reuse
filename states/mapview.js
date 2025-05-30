@@ -39,6 +39,7 @@ class Mapview extends Phaser.Scene {
                
                if( map_index === 4 ){
                    worker.action = 'di';
+                   console.log( md.findEmptyDropSpot({ x:36, y: 4 } )
                }
                
                if(mdc.activeIndex === map_index && wi === 0 ){            
