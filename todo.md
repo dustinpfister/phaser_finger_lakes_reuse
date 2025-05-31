@@ -94,7 +94,7 @@
 * ( done ) - find out why a workers on hand items do not go with them
 * ( done ) - have a md.getItemsAtPX method
 * ( done ) - use md.getItemsAtMethod in pointer down event
-* (      ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
+* ( done ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
