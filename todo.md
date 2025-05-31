@@ -93,7 +93,7 @@
 * ( done ) - fix bug that happens when a worker does threw a door
 * ( done ) - find out why a workers on hand items do not go with them
 * ( done ) - have a md.getItemsAtPX method
-* (      ) - use md.getItemsAtMethod in pointer down event
+* ( done ) - use md.getItemsAtMethod in pointer down event
 * (      ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
 
   /lib/people.js :
