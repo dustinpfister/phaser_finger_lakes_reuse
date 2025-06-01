@@ -107,8 +107,10 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - fix bug that happens when a worker does threw a door
 * ( done ) - find out why a workers on hand items do not go with them
 * ( done ) - have a md.getItemsAtPX method
-* ( done ) - use md.getItemsAtMethod in pointer down event
+* ( done ) - use md.getItemsAtPX in pointer down event
 * ( done ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
+* ( done ) - have a md.getItemsAtTile method and use that for the findEmptyDropSpot method
+* (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
@@ -122,6 +124,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - Have di worker drop off on hand items when in map1
 * ( done ) - donators use md.findEmptyDropSpot method
 * ( done ) - fixed 'can only child this Container when it is empty' with donators by not using onHandAction method
+* (      ) - have a way for a donator to handle a situation in which they can not find a spot
+* (      ) - fix isshue where donators are still placing items on top of each other
 * (      ) - Have di worker move back to map 4 when they have no on hand items
 * (      ) - improve how the worker goes to a donation box
 ```
