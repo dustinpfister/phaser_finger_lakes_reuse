@@ -1,5 +1,7 @@
 # Phaser Finger Lakes Reuse
 
+## RX (    ) - PIC Situations
+
 ## RX (    ) - Rollup, dev dependencies
 ```
 * (    ) use roll up to create builds of the game
@@ -42,12 +44,24 @@
 * (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
 ```
 
-## R4 (    ) - People Data
+## RX (    ) - People Data
 ```
 * (      ) - people\_customers.json for hard coded data on each customer that can show up
 * (      ) - people\_workers.json for all the workers that can show up
   MISC :
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
+```
+
+## R4 (    ) - Tasks and actions
+```
+The general idea is that each person that is a worker can be set to a given 'Task' such as a 'DI' task. 
+Each task will then involve one or more actions such as 'findDonation', 'pickUpDonation', 'sortDonation', 
+'pickUpSortedContainer', 'moveGayload', ect.
+
+  /lib/people.js :
+* (      ) - start work on Task and Actions
+* (      ) - update People Type Code to make use of Tasks and Actions
+* (      ) - have an updateTask method that can be used to change what a person is doing
 ```
 
 ## R3 (    ) - Game Day Time, Schedule system, Color Tag System
