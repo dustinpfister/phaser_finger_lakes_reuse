@@ -39,9 +39,9 @@ class Mapview extends Phaser.Scene {
                
                if( map_index === 4 ){
                    worker.action = 'di';
-                   console.log( 'find empty drop spot test: ' );
-                   console.log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
-                   // exspected output [39, 3], [ 39, 4 ]
+                   //console.log( 'find empty drop spot test: ' );
+                   //console.log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
+                   // exspected output [39, 3], [ 39, 4 ], ...
                }
                
                if(mdc.activeIndex === map_index && wi === 0 ){            
