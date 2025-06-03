@@ -124,12 +124,11 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - Have di worker drop off on hand items when in map1
 * ( done ) - donators use md.findEmptyDropSpot method
 * ( done ) - fixed 'can only child this Container when it is empty' with donators by not using onHandAction method
-* (      ) - have a people.dropItem method
+* ( done ) - have a people.dropItem method
 * (      ) - use people.dropItem method for donators
 * (      ) - use people.dropItem method for workers
 * (      ) - use people.dropItem method for player controled worker
 * (      ) - remove drop item code from people.onHandAction
-* (      ) - have a people.dropContainer method
 * (      ) - have a people.pickUpItem method
 * (      ) - have a way for a donator to handle a situation in which they can not find a spot
 * (      ) - fix isshue where donators are still placing items on top of each other
