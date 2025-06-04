@@ -112,7 +112,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - use console logger for console output
 
   /lib/mapdata.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
     * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
     * (      ) - use new message system to display debug info
