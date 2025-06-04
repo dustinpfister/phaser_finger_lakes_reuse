@@ -1,4 +1,9 @@
 import { MapLoader } from '../lib/mapdata.js';
+import { Message } from '../lib/message.js';
+const log = Message.consoleLogger({
+    id: 'Load',
+    appendId: true
+});
 
 class Load extends Phaser.Scene {
 
@@ -8,7 +13,6 @@ class Load extends Phaser.Scene {
     }
 
     preload(){
-        console.log('Loading...');
         this.load.setBaseURL('./');               
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
@@ -25,12 +29,14 @@ class Load extends Phaser.Scene {
         const gr = this.add.graphics();
         gr.fillStyle(0x000000);
         gr.fillRect(0,0,640,480);           
-        this.load.on(Phaser.Loader.Events.PROGRESS, (progress) => {   
+        this.load.on(Phaser.Loader.Events.PROGRESS, (progress) => {
+            log( (progress * 100).toFixed(2) + '%' ); 
             gr.lineStyle(20, 0xffffff, 1);
             gr.beginPath();
             gr.arc(320, 240, 100, Phaser.Math.DegToRad(270), Phaser.Math.DegToRad(270 + 360 * progress), false);
             gr.strokePath();
         });
+        log('preload of load state started...');
     }
     
     create () {

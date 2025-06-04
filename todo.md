@@ -100,7 +100,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - use console logger for console output
 
   /state/load.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
  
   /state/mapview.js :
     * (      ) - use console logger for console output
