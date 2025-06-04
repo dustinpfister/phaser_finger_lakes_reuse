@@ -59,6 +59,11 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * (      ) - have an updateTask method that can be used to change what a person is doing
 ```
 
+## RX (    ) - Buttons
+```
+ UI buttons for things like setting itemMode of player, switching worker, ect
+```
+
 ## RX (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
   /sheets :
@@ -91,6 +96,9 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
 ## R3 (    ) - Message System
 ```
+  /lib/mapdata.js
+    * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
   /lib/message.js
     * (      ) - start a new message.js lib that will be used to tell the player/debugger things they should know
   /lib/people.js :
@@ -105,7 +113,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * (      ) - improve how the worker goes to a donation box
 ```
 
-## R2 (    ) - Inactive map updates
+## R2 ( done 06/04/2025   ) - Inactive map updates
 ````
   /states/mapview.js :
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
@@ -123,7 +131,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
 * ( done ) - have a md.getItemsAtTile method and use that for the findEmptyDropSpot method
 * ( done ) - update code in layer0 pointer event to get info on tile and items
-* (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
+* ( done ) - have a layer pointer event method outside of MapData constructor
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
