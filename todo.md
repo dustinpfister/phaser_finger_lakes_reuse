@@ -21,11 +21,6 @@
 * (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
 ```
 
-## RX (    ) - Message System
-```
-* (    ) - work out a message system for telling the player things they should know
-```
-
 ## RX (    ) - Preloader
 ```
 * (    ) - make use of preloader draft in full game
@@ -52,7 +47,7 @@
 * (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
 ```
 
-## R4 (    ) - Tasks and actions
+## RX (    ) - Tasks and actions
 ```
 The general idea is that each person that is a worker can be set to a given 'Task' such as a 'DI' task. 
 Each task will then involve one or more actions such as 'findDonation', 'pickUpDonation', 'sortDonation', 
@@ -64,7 +59,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * (      ) - have an updateTask method that can be used to change what a person is doing
 ```
 
-## R3 (    ) - Game Day Time, Schedule system, Color Tag System
+## RX (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
   /sheets :
 * (      ) - new sprites for workers
@@ -94,6 +89,22 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
+## R3 (    ) - Message System
+```
+  /lib/message.js
+    * (      ) - start a new message.js lib that will be used to tell the player/debugger things they should know
+  /lib/people.js :
+    * (      ) - use people.dropItem method for donators
+    * (      ) - use people.dropItem method for workers
+    * (      ) - use people.dropItem method for player controled worker
+    * (      ) - remove drop item code from people.onHandAction
+    * (      ) - have a people.pickUpItem method
+    * (      ) - have a way for a donator to handle a situation in which they can not find a spot
+    * (      ) - fix isshue where donators are still placing items on top of each other
+    * (      ) - Have di worker move back to map 4 when they have no on hand items
+    * (      ) - improve how the worker goes to a donation box
+```
+
 ## R2 (    ) - Inactive map updates
 ````
   /states/mapview.js :
@@ -112,6 +123,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
 * ( done ) - have a md.getItemsAtTile method and use that for the findEmptyDropSpot method
 * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
+* (      ) - update code in layer0 pointer event to get info
+
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
@@ -126,15 +139,6 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - donators use md.findEmptyDropSpot method
 * ( done ) - fixed 'can only child this Container when it is empty' with donators by not using onHandAction method
 * ( done ) - have a people.dropItem method
-* (      ) - use people.dropItem method for donators
-* (      ) - use people.dropItem method for workers
-* (      ) - use people.dropItem method for player controled worker
-* (      ) - remove drop item code from people.onHandAction
-* (      ) - have a people.pickUpItem method
-* (      ) - have a way for a donator to handle a situation in which they can not find a spot
-* (      ) - fix isshue where donators are still placing items on top of each other
-* (      ) - Have di worker move back to map 4 when they have no on hand items
-* (      ) - improve how the worker goes to a donation box
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
