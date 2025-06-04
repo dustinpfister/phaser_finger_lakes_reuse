@@ -1,5 +1,10 @@
 import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people.js';
+import { Message } from '../lib/message.js';
+const log = Message.consoleLogger({
+    id: 'Mapview',
+    appendId: true
+});
 
 class Mapview extends Phaser.Scene {
 
@@ -39,8 +44,8 @@ class Mapview extends Phaser.Scene {
                
                if( map_index === 4 ){
                    worker.action = 'di';
-                   //console.log( 'find empty drop spot test: ' );
-                   //console.log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
+                   //log( 'find empty drop spot test: ' );
+                   //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
                    // exspected output [39, 3], [ 39, 4 ], ...
                }
                
@@ -76,12 +81,12 @@ class Mapview extends Phaser.Scene {
         findNext: do{
             const md = mdc.getMapDataByIndex(mi);
             const len = md.worker.children.size;
-            console.log( md.worker )
+            log( md.worker );
             let pi = 0;
             while(pi < len){
                 const worker = md.worker.children.entries[pi];
                 if(isPlayer){
-                    console.log('setting new player');
+                    log('setting new player');
                     this.registry.set('player', worker);
                     worker.setData('path', []);
                     const p = worker.getTilePos();
