@@ -109,7 +109,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - use console logger for console output
 
   /lib/items.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
 
   /lib/mapdata.js :
     * (      ) - use console logger for console output
