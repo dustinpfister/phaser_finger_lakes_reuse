@@ -1,5 +1,6 @@
 import { Message } from '../lib/message.js';
 const log = Message.consoleLogger({
+    cat: 'State',
     id: 'Menu',
     appendId: true
 });

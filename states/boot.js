@@ -3,6 +3,7 @@ import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
 import { Message } from '../lib/message.js';
 const log = Message.consoleLogger({
+    cat: 'State',
     id: 'Boot',
     appendId: true
 });

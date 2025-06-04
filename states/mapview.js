@@ -2,6 +2,7 @@ import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people.js';
 import { Message } from '../lib/message.js';
 const log = Message.consoleLogger({
+    cat: 'State',
     id: 'Mapview',
     appendId: true
 });
