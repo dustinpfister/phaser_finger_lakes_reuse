@@ -128,7 +128,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * (      ) - use console logger for console output
 
   /lib/people.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
     * (      ) - use say messages in new message system for things people say
     * (      ) - use people.dropItem method for donators
     * (      ) - use people.dropItem method for workers
