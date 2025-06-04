@@ -122,9 +122,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * ( done ) - use md.getItemsAtPX in pointer down event
 * ( done ) - have a md.findEmptyDropSpot method using the md.getItemsAtPX method
 * ( done ) - have a md.getItemsAtTile method and use that for the findEmptyDropSpot method
+* ( done ) - update code in layer0 pointer event to get info on tile and items
 * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
-* (      ) - update code in layer0 pointer event to get info
-
 
   /lib/people.js :
 * ( done ) - make updates to people types so that they will work on the current map.
