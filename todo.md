@@ -106,7 +106,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * (      ) - use console logger for console output
         
   /state/menu.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
 
   /lib/mapdata.js :
     * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode

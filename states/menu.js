@@ -1,3 +1,8 @@
+import { Message } from '../lib/message.js';
+const log = Message.consoleLogger({
+    id: 'Menu',
+    appendId: true
+});
 class Menu extends Phaser.Scene {
 
     constructor (config) {
@@ -6,7 +11,7 @@ class Menu extends Phaser.Scene {
     }
     
     startMapView () {
-        console.log('starting mapview...');
+        log('starting mapview...');
         this.scene.start('Mapview');
     }
     
@@ -14,10 +19,12 @@ class Menu extends Phaser.Scene {
         const scene = this;
         const logo = this.add.sprite(320, 240, 'menu_1');
         logo.setInteractive();
-        logo.on('pointerdown', (pointer, px, py)=>{        
+        logo.on('pointerdown', (pointer, px, py)=>{
+            log('pointer event used to start mapview');     
             scene.startMapView();
         });
         scene.input.keyboard.on('keydown', (event) => {
+           log('keyboard event used to start mapview');
            scene.startMapView();
         });
         const disp1 = this.add.text(320, 400, '', { color: '#ffffff', fontSize: '30px' });
