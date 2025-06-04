@@ -99,6 +99,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
   /states/mapview.js :
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
 * ( done ) - set active and visible values of people class instances in the main update loop.
+* ( done ) - use text2 to debug things with aspects of the player object and map tiles
 
   /lib/mapdata.js
 * ( done ) - made a change to mdc.doorCheck to allow for setting a map other than the active map

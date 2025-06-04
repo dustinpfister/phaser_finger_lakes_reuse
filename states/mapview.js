@@ -61,7 +61,7 @@ class Mapview extends Phaser.Scene {
        disp1.setScrollFactor(0,0);
        disp1.depth = 6;
        this.registry.set('disp1', disp1);
-       const disp2 = this.add.text(165, 142, '', { color: '#ffffff', align: 'left', fontSize: '12px' });
+       const disp2 = this.add.text(165, 142, '', { color: '#ffffff', align: 'left', fontSize: '8px' });
        disp2.setScrollFactor(0,0);
        disp2.depth = 6;
        this.registry.set('disp2', disp2);
@@ -163,7 +163,7 @@ class Mapview extends Phaser.Scene {
         
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-        if(player){
+        //if(player){
             this.cursorCheck('left');
             this.cursorCheck('right');
             this.cursorCheck('up');
@@ -178,9 +178,10 @@ class Mapview extends Phaser.Scene {
             player.update(this);
             this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
 
-        }
+        //}
         disp1.text = 'Money: ' + gs.money;
-        disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;     
+        //disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;
+        disp2.text = 'player itemMode: ' + player.getData('itemMode');
     }
     
 }
