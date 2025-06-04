@@ -98,10 +98,15 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 ```
   /lib/mapdata.js
     * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode
-    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
+    * (      ) - use new message system to display debug info
+
   /lib/message.js
     * (      ) - start a new message.js lib that will be used to tell the player/debugger things they should know
+    * (      ) - have differing kinds of messages such as 'say', 'debug'
+
   /lib/people.js :
+    * (      ) - use say messages in new message system for things people say
     * (      ) - use people.dropItem method for donators
     * (      ) - use people.dropItem method for workers
     * (      ) - use people.dropItem method for player controled worker

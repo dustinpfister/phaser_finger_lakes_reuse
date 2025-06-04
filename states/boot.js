@@ -12,7 +12,7 @@ class Boot extends Phaser.Scene {
     create () {
         const game = this.game;
         const reg = game.registry;
-        reg.set('R', 2);
+        reg.set('R', 3);
         reg.set('MAX_MAP_DONATIONS', 100);
         reg.set('gameSave', {
             money: 0
