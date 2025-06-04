@@ -96,12 +96,24 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
 ## R3 (    ) - Message System
 ```
-  /lib/mapdata.js
+  /state/boot.js :
+    * ( done ) - use console logger for console output
+
+  /state/load.js :
+    * (      ) - use console logger for console output
+ 
+  /state/mapview.js :
+    * (      ) - use console logger for console output
+        
+  /state/menu.js :
+    * (      ) - use console logger for console output
+
+  /lib/mapdata.js :
     * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
     * (      ) - use new message system to display debug info
 
-  /lib/message.js
+  /lib/message.js :
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
     * (      ) - Message.consoleLogger method that can be used to return a function that will log to the console
     * (      ) - Message.Console Class that will return a class Instance that that can be used to display text messages to the screen

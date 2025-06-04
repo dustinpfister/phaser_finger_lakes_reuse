@@ -1,6 +1,11 @@
 import { Load } from './load.js';
 import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
+import { Message } from '../lib/message.js';
+const log = Message.consoleLogger({
+    id: 'boot',
+    appendId: true
+});
 
 class Boot extends Phaser.Scene {
 
@@ -17,7 +22,7 @@ class Boot extends Phaser.Scene {
         reg.set('gameSave', {
             money: 0
         });
-        console.log('Boooting Finger Lakes Reuse R' + reg.get('R'));
+        log( 'Boooting Finger Lakes Reuse R' + reg.get('R') );
         game.events.on('step', () => {
             const scenes = game.scene.getScenes(true, false) || [] ;
             const scene = scenes[0];
