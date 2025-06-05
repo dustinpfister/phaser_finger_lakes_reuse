@@ -119,8 +119,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /lib/message.js :
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
-    * (      ) - use console logger for console output
-    * (      ) - Message.consoleLogger method that can be used to return a function that will log to the console
+    * ( done ) - new ConsoleLogger Class
+    * ( done ) - use ConsoleLogger for console output in message.js
     * (      ) - Message.Console Class that will return a class Instance that that can be used to display text messages to the screen
     * (      ) - have differing kinds of messages such as 'say', 'debug'
 
