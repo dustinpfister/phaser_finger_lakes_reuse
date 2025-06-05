@@ -121,8 +121,11 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
     * ( done ) - new ConsoleLogger Class
     * ( done ) - use ConsoleLogger for console output in message.js
-    * (      ) - Message.Console Class that will return a class Instance that that can be used to display text messages to the screen
-    * (      ) - have differing kinds of messages such as 'say', 'debug'
+    * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
+    * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
+    * (      ) - messages will go up as new ones are pushed in
+    * (      ) - messages with higher index values in the array of messages will fade
+    * (      ) - all messages will fade over time as no new ones come in
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output
