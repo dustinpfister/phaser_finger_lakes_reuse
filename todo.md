@@ -96,6 +96,14 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
 ## R3 (    ) - Message System
 ```
+  /drafts :
+    * ( done ) - start a new mess puesh draft
+    * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
+    * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
+    * (      ) - messages will go up as new ones are pushed in
+    * (      ) - messages with higher index values in the array of messages will fade
+    * (      ) - all messages will fade over time as no new ones come in
+
   /state/boot.js :
     * ( done ) - use console logger for console output
 
@@ -121,11 +129,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
     * ( done ) - new ConsoleLogger Class
     * ( done ) - use ConsoleLogger for console output in message.js
-    * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
-    * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
-    * (      ) - messages will go up as new ones are pushed in
-    * (      ) - messages with higher index values in the array of messages will fade
-    * (      ) - all messages will fade over time as no new ones come in
+    * (      ) - start new MessPusher class based on the mess push draft
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output

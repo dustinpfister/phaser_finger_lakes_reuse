@@ -22,10 +22,11 @@ class Loader extends Phaser.Scene {
 
     preload(){
     
-        this.load.setBaseURL('../../');    
+        //this.load.setBaseURL('../../');
+        this.load.setBaseURL('/');    
         this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
-        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16_atlas.json');
+        //this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
+        //this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16_atlas.json');
         
         const gr = this.add.graphics();
         gr.fillStyle(0x000000);
