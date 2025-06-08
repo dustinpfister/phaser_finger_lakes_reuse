@@ -2,8 +2,8 @@ import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people.js';
 import { ConsoleLogger } from '../lib/message.js';
 const log = new ConsoleLogger({
-    cat: 'State',
-    id: 'Mapview',
+    cat: 'state',
+    id: 'mapview',
     appendId: true
 });
 

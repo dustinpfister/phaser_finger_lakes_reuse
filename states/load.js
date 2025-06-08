@@ -1,8 +1,8 @@
 import { MapLoader } from '../lib/mapdata.js';
 import { ConsoleLogger } from '../lib/message.js';
 const log = new ConsoleLogger({
-    cat: 'State',
-    id: 'Load',
+    cat: 'state',
+    id: 'load',
     appendId: true
 });
 

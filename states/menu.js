@@ -1,7 +1,7 @@
 import { ConsoleLogger } from '../lib/message.js';
 const log = new ConsoleLogger({
-    cat: 'State',
-    id: 'Menu',
+    cat: 'state',
+    id: 'menu',
     appendId: true
 });
 class Menu extends Phaser.Scene {

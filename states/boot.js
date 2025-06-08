@@ -3,8 +3,8 @@ import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
 import { ConsoleLogger } from '../lib/message.js';
 const log = new ConsoleLogger({
-    cat: 'State',
-    id: 'Boot',
+    cat: 'state',
+    id: 'boot',
     appendId: true
 });
 

@@ -129,6 +129,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
     * ( done ) - new ConsoleLogger Class
     * ( done ) - use ConsoleLogger for console output in message.js
+    * ( done ) - have a ConsoleLogger.getLineNumber method that will get the lineNumber of where the log happened
     * (      ) - start new MessPusher class based on the mess push draft
 
   /lib/pathfinder.js :
@@ -136,6 +137,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /lib/people.js :
     * ( done ) - use console logger for console output
+    * (      ) - Have di worker move back to map 4 when they have no on hand items
     * (      ) - use say messages in new message system for things people say
     * (      ) - use people.dropItem method for donators
     * (      ) - use people.dropItem method for workers
@@ -144,7 +146,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * (      ) - have a people.pickUpItem method
     * (      ) - have a way for a donator to handle a situation in which they can not find a spot
     * (      ) - fix isshue where donators are still placing items on top of each other
-    * (      ) - Have di worker move back to map 4 when they have no on hand items
+
     * (      ) - improve how the worker goes to a donation box
 ```
 
