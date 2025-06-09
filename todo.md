@@ -105,9 +105,9 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /fonts :
     * ( done ) - start png and xml for 'min' font
-    * (      ) - finish upercase letters for 'min' font
+    * ( done ) - finish upercase letters for 'min' font
     * (      ) - finish numbers for 'min' font
-    * (      ) - finish must have symbols such as !$%\(\)\\\/\"\'\.:;\? and space
+    * (      ) - finish must have symbols (!#$%()'";:.?/\-_+=)
 
   /state/boot.js :
     * ( done ) - use console logger for console output
