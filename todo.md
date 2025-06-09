@@ -139,11 +139,10 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - have once and reset methods for ConsoleLogger
     * ( done ) - new conditional method of ConsoleLogger
     * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
-    * (      ) - I will want a new 'min' font to use with MessPusher
+    * ( done ) - messages will go up as new ones are pushed in
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
-    * (      ) - messages will go up as new ones are pushed in
-    * (      ) - messages with higher index values in the array of messages will fade
-    * (      ) - all messages will fade over time as no new ones come in
+
+    * (      ) - all messages will fade over time
 
 
   /lib/pathfinder.js :
@@ -160,7 +159,6 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * (      ) - have a people.pickUpItem method
     * (      ) - have a way for a donator to handle a situation in which they can not find a spot
     * (      ) - fix isshue where donators are still placing items on top of each other
-
     * (      ) - improve how the worker goes to a donation box
 ```
 

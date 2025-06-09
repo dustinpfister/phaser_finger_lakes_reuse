@@ -17,13 +17,37 @@ class Example extends Phaser.Scene {
         this.mp = new MessPusher({
             key: 'min',
             scene: this,
-            text: '0123456789\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n !#$%&*\(\)-_;:\'\",.?\/\\\<\>\[\]'
+            maxLines : 10
+            //text: '0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ  !#$%&*\(\)-_;:\'\",.?\/\\\<\>\[\]'
         });
+    
+        this.mess = [
+            'I want to buy a Mug!',
+            'This is a nice Rug!',
+            'Where are all the Spoons?',
+            'I love this place!',
+            'I want to get out of here',
+            'Hello how are you.',
+            'Oh no I am out of money! Hahaha!'
+        ];
         
+        this.t = 0;
+        this.nextT = 250;
+               
     }
+    
+    
+    
     update (time, delta) {
         log.once('this should only happen once');    
-        log.condition( function(){  return time % 3000 > 2950 }, 'tick')
+        log.condition( function(){  return time % 3000 > 2950 }, 'tick');    
+        if(this.t >= this.nextT){  
+            const text = this.mess[ Math.floor( this.mess.length * Math.random() ) ];
+            this.mp.pushLine(text);
+            this.t = 0;
+            this.nextT = 250 + Math.round( 1750 * Math.random() );
+        }    
+        this.t += delta;    
     }
     
 }
