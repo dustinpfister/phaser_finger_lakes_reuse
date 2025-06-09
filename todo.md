@@ -140,10 +140,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new conditional method of ConsoleLogger
     * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * ( done ) - messages will go up as new ones are pushed in
+    * ( done ) - all messages will fade over time
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
-
-    * (      ) - all messages will fade over time
-
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output
