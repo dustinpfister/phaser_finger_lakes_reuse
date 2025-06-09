@@ -1,3 +1,10 @@
+import { ConsoleLogger } from '../../lib/message.js';
+
+const log = new ConsoleLogger({
+    cat: 'demo',
+    id: 'demo',
+    appendId: true
+});
 
 class Example extends Phaser.Scene {
 
@@ -6,16 +13,19 @@ class Example extends Phaser.Scene {
     }
     create () {
     
+        log('Using ConsoleLogger for this demo.');
+    
     }
     update (time, delta) {
+    
     }
     
 }
 
 const config = {
     type: Phaser.AUTO,
-    width: 320,
-    height: 240,
+    width: 640,
+    height: 480,
     parent: 'phaser-example',
     scene: Example
 };
