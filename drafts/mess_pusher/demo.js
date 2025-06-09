@@ -9,11 +9,15 @@ const log = new ConsoleLogger({
 class Example extends Phaser.Scene {
 
     preload () {
+        this.load.bitmapFont('min', '../../fonts/min.png', '../../fonts/min.xml');
     }
     create () {
         log('Using ConsoleLogger for this demo.');
         
-        this.mp = new MessPusher();
+        this.mp = new MessPusher({
+            key: 'min',
+            scene: this
+        });
         
     }
     update (time, delta) {

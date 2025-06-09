@@ -103,12 +103,18 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - use mess pusher to test out the conditional method of ConsoleLogger
     * (      ) - use mess pusher to test out the MessPusher feature of message.js
 
+  /fonts :
+    * ( done ) - start png and xml for 'min' font
+    * (      ) - finish upercase letters for 'min' font
+    * (      ) - finish numbers for 'min' font
+    * (      ) - finish must have symbols such as !$%\(\)\\\/\"\'\.:;\? and space
+
   /state/boot.js :
     * ( done ) - use console logger for console output
 
   /state/load.js :
     * ( done ) - use console logger for console output
-    * (      ) - load new 'min' font
+    * ( done ) - load new 'min' font
  
   /state/mapview.js :
     * ( done ) - use console logger for console output
