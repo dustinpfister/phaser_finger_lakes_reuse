@@ -99,7 +99,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
   /drafts :
     * ( done ) - start a new mess push draft
     * ( done ) - use mess pusher to test out the ConsoleLogger feature of message.js
-    * (      ) - use mess pusher to test out the once and reset methods of ConsoleLogger
+    * ( done ) - use mess pusher to test out the once and reset methods of ConsoleLogger
+    * ( done ) - use mess pusher to test out the conditional method of ConsoleLogger
     * (      ) - use mess pusher to test out the MessPusher feature of message.js
 
   /state/boot.js :
@@ -128,7 +129,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new ConsoleLogger Class
     * ( done ) - use ConsoleLogger for console output in message.js
     * ( done ) - have a ConsoleLogger.getLineNumber method that will get the lineNumber of where the log happened
-    * (      ) - have once and reset methods for ConsoleLogger
+    * ( done ) - have once and reset methods for ConsoleLogger
+    * ( done ) - new conditional method of ConsoleLogger
     * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
     * (      ) - messages will go up as new ones are pushed in

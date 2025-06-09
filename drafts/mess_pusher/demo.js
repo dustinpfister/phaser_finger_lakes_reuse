@@ -9,17 +9,13 @@ const log = new ConsoleLogger({
 class Example extends Phaser.Scene {
 
     preload () {
-    
     }
     create () {
-    
         log('Using ConsoleLogger for this demo.');
-    
     }
     update (time, delta) {
-    
-        log.once('this should only happen once');
-    
+        log.once('this should only happen once');    
+        log.condition( function(){  return time % 3000 > 2950 }, 'tick')
     }
     
 }
