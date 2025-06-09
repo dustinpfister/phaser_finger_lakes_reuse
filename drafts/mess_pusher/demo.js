@@ -17,7 +17,7 @@ class Example extends Phaser.Scene {
         this.mp = new MessPusher({
             key: 'min',
             scene: this,
-            text: '0123456789\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n !#$%&*\(\)-_;:\'\",.?/\/'
+            text: '0123456789\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n !#$%&*\(\)-_;:\'\",.?\/\\\<\>\[\]'
         });
         
     }
