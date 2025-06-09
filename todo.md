@@ -108,6 +108,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /state/load.js :
     * ( done ) - use console logger for console output
+    * (      ) - load new 'min' font
  
   /state/mapview.js :
     * ( done ) - use console logger for console output
@@ -131,7 +132,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - have a ConsoleLogger.getLineNumber method that will get the lineNumber of where the log happened
     * ( done ) - have once and reset methods for ConsoleLogger
     * ( done ) - new conditional method of ConsoleLogger
-    * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
+    * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
+    * (      ) - I will want a new 'min' font to use with MessPusher
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
     * (      ) - messages will go up as new ones are pushed in
     * (      ) - messages with higher index values in the array of messages will fade

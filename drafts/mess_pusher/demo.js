@@ -1,4 +1,4 @@
-import { ConsoleLogger } from '../../lib/message.js';
+import { ConsoleLogger, MessPusher } from '../../lib/message.js';
 
 const log = new ConsoleLogger({
     cat: 'demo',
@@ -12,6 +12,9 @@ class Example extends Phaser.Scene {
     }
     create () {
         log('Using ConsoleLogger for this demo.');
+        
+        this.mp = new MessPusher();
+        
     }
     update (time, delta) {
         log.once('this should only happen once');    
