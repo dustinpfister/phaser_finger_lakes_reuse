@@ -128,12 +128,13 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new ConsoleLogger Class
     * ( done ) - use ConsoleLogger for console output in message.js
     * ( done ) - have a ConsoleLogger.getLineNumber method that will get the lineNumber of where the log happened
+    * (      ) - have once and reset methods for ConsoleLogger
     * (      ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
     * (      ) - messages will go up as new ones are pushed in
     * (      ) - messages with higher index values in the array of messages will fade
     * (      ) - all messages will fade over time as no new ones come in
-    * (      ) - have once and reset methods for ConsoleLogger
+
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output

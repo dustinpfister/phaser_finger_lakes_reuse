@@ -18,6 +18,8 @@ class Example extends Phaser.Scene {
     }
     update (time, delta) {
     
+        log.once('this should only happen once');
+    
     }
     
 }
