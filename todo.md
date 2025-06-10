@@ -64,29 +64,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
  UI buttons for things like setting itemMode of player, switching worker, ect
 ```
 
-## R5 (    ) - Improved People AI
-```
- /lib/people.js :
-* (      ) - donations should be placed on the table by the donators
-* (      ) - the player should not be able to place items on top of walls
-* (      ) - the player should only be able to pick up items that are in range
-* (      ) - the player should only be able to drop items in range
-* (      ) - many enter and exit locations for donators in map4
-* (      ) - each donator event object will contain the game day time, and number of donators that will show up
-* (      ) - a simular system should also be used for shoppers
-* (      ) - Have di worker move back to map 4 when they have no on hand items
-* (      ) - use people.dropItem method for donators
-* (      ) - use people.dropItem method for workers
-* (      ) - use people.dropItem method for player controled worker
-* (      ) - remove drop item code from people.onHandAction
-* (      ) - have a people.pickUpItem method
-* (      ) - have a way for a donator to handle a situation in which they can not find a spot
-* (      ) - fix isshue where donators are still placing items on top of each other
-* (      ) - improve how the worker goes to a donation box
 
-```
-
-## R4 (    ) - Game Day Time, Schedule system, Color Tag System
+## R5 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
   /sheets :
 * (      ) - new sprites for workers
@@ -112,7 +91,28 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
-## R3 (    ) - Message System
+## R4 (    ) - Improved People AI
+```
+ /lib/people.js :
+* (      ) - donations should be placed on the table by the donators
+* (      ) - the player should not be able to place items on top of walls
+* (      ) - the player should only be able to pick up items that are in range
+* (      ) - the player should only be able to drop items in range
+* (      ) - many enter and exit locations for donators in map4
+* (      ) - each donator event object will contain the game day time, and number of donators that will show up
+* (      ) - a simular system should also be used for shoppers
+* (      ) - Have di worker move back to map 4 when they have no on hand items
+* (      ) - use people.dropItem method for donators
+* (      ) - use people.dropItem method for workers
+* (      ) - use people.dropItem method for player controled worker
+* (      ) - remove drop item code from people.onHandAction
+* (      ) - have a people.pickUpItem method
+* (      ) - have a way for a donator to handle a situation in which they can not find a spot
+* (      ) - fix isshue where donators are still placing items on top of each other
+* (      ) - improve how the worker goes to a donation box
+```
+
+## R3 ( done 06/10/2025 ) - Message System
 ```
   /drafts :
     * ( done ) - start a new mess push draft
