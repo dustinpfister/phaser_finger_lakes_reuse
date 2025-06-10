@@ -1,8 +1,6 @@
 # Phaser Finger Lakes Reuse
 
-## RX (    ) - PIC Situations
-
-## RX (    ) - Text Colors for Message System
+## RX (    ) - People AI PIC Situations
 
 ## RX (    ) - Rollup, dev dependencies
 ```
@@ -162,6 +160,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - all messages will fade over time
     * ( done ) - MessPusher.push method can take a sting or array of strings as content to push
     * ( done ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
+    * ( done ) - tint color based on message type
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output
