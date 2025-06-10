@@ -2,6 +2,8 @@
 
 ## RX (    ) - PIC Situations
 
+## RX (    ) - Text Colors for Message System
+
 ## RX (    ) - Rollup, dev dependencies
 ```
 * (    ) use roll up to create builds of the game
@@ -142,8 +144,8 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * ( done ) - messages will go up as new ones are pushed in
     * ( done ) - all messages will fade over time
-    * (      ) - Mess.Pusher.push method can take a sting or array of strings as content to push
-    * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
+    * ( done ) - Mess.Pusher.push method can take a sting or array of strings as content to push
+    * ( done ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
 
   /lib/pathfinder.js :
     * (      ) - use console logger for console output

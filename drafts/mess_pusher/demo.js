@@ -20,8 +20,8 @@ class Example extends Phaser.Scene {
             lineHeight: 6,
             capsOnly: true,
             scene: this,
-            maxLines : 70,
-            maxT: 20000
+            maxLines : 12,
+            maxT: 10000
             //text: '0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ  !#$%&*\(\)-_;:\'\",.?\/\\\<\>\[\]'
         });
     
@@ -59,19 +59,10 @@ class Example extends Phaser.Scene {
         log.once('this should only happen once');    
         log.condition( function(){  return time % 3000 > 2950 }, 'tick');    
         if(this.t >= this.nextT){  
-            const text = this.mess[ Math.floor( this.mess.length * Math.random() ) ];
-            if( typeof text === 'string' ){
-                this.mp.push(text);
-            }
-            if( typeof text === 'object' ){
-                let i = 0, len = text.length;
-                while(i < len){
-                    this.mp.push( i + '> ' + text[i]);
-                    i += 1;
-                }
-            }
+            const text = this.mess[ Math.floor( this.mess.length * Math.random() ) ];         
+            this.mp.push(text, 'say');
             this.t = 0;
-            this.nextT = 50 + Math.round( 250 * Math.random() );
+            this.nextT = 50 + Math.round( 1450 * Math.random() );
         }    
         this.t += delta;    
         this.mp.update(delta);
