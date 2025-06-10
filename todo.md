@@ -66,7 +66,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
  UI buttons for things like setting itemMode of player, switching worker, ect
 ```
 
-## RX (    ) - Game Day Time, Schedule system, Color Tag System
+## R4 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
   /sheets :
 * (      ) - new sprites for workers
@@ -74,6 +74,10 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
   /lib/items.js :
 * (      ) - have more than one household item
 * (      ) - have it so that drops will pick one of a few household items each time
+
+ /lib/mapview.js :
+* (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
+* (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
  /lib/people.js :
 * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
@@ -103,7 +107,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - use mess pusher to test out the ConsoleLogger feature of message.js
     * ( done ) - use mess pusher to test out the once and reset methods of ConsoleLogger
     * ( done ) - use mess pusher to test out the conditional method of ConsoleLogger
-    * (      ) - use mess pusher to test out the MessPusher feature of message.js
+    * ( done ) - use mess pusher to test out the MessPusher feature of message.js
 
   /fonts :
     * ( done ) - start png and xml for 'min' font
@@ -121,6 +125,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
  
   /state/mapview.js :
     * ( done ) - use console logger for console output
+    * ( done ) - create a MessPusher instance here in mapview state
         
   /state/menu.js :
     * ( done ) - use console logger for console output
@@ -130,9 +135,6 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /lib/mapdata.js :
     * ( done ) - use console logger for console output
-    * (      ) - have an array of functions to call for layer-pointer-event method for the current itemMode
-    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
-    * (      ) - use new message system to display debug info
 
   /lib/message.js :
     * ( done ) - start a new message.js lib that will be used to tell the player/debugger things they should know
@@ -144,7 +146,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * ( done ) - messages will go up as new ones are pushed in
     * ( done ) - all messages will fade over time
-    * ( done ) - Mess.Pusher.push method can take a sting or array of strings as content to push
+    * ( done ) - MessPusher.push method can take a sting or array of strings as content to push
     * ( done ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
 
   /lib/pathfinder.js :
@@ -152,8 +154,9 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
 
   /lib/people.js :
     * ( done ) - use console logger for console output
-    * (      ) - Have di worker move back to map 4 when they have no on hand items
     * (      ) - use say messages in new message system for things people say
+    * (      ) - Have di worker move back to map 4 when they have no on hand items
+
     * (      ) - use people.dropItem method for donators
     * (      ) - use people.dropItem method for workers
     * (      ) - use people.dropItem method for player controled worker

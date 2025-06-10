@@ -14,18 +14,23 @@ class Load extends Phaser.Scene {
     }
 
     preload(){
-        this.load.setBaseURL('./');               
+        this.load.setBaseURL('./');
+        // SHEETS               
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
         this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
+        // FONTS
         this.load.bitmapFont('min', 'fonts/min.png', 'fonts/min.xml');
+        this.load.bitmapFont('min_3px_5px', 'fonts/min_3px_5px.png', 'fonts/min_3px_5px.xml');
+        // MAP DATA
         MapLoader({
           scene: this,
           urlBase: 'maps/', //'drafts/mapdata/',
           mapIndicesStart: 1, mapIndicesStop: 5
         });
-        this.load.json('items_index', '../../items/items_index.json');
+        // ITEM DATA
+        this.load.json('items_index', 'items/items_index.json');
         this.load.json('household_1', 'items/household_1.json');
         this.load.json('containers_1', 'items/containers_1.json');
         const gr = this.add.graphics();

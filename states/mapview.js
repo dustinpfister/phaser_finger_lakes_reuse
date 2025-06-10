@@ -1,25 +1,43 @@
 import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people.js';
-import { ConsoleLogger } from '../lib/message.js';
+import { ConsoleLogger, MessPusher } from '../lib/message.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'mapview',
     appendId: true
 });
 
+const IMDESC = ['tile info', 'item pickup', 'item drop', 'container pickup\/drop' ]
+
 class Mapview extends Phaser.Scene {
 
     create () {
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        const mv = this;
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
-        this.input.keyboard.on('keydown', event => {
+        
+        this.mp = new MessPusher({
+            key: 'min_3px_5px',
+            //sx: 31 * 16, sy: 7 * 16,
+            //sx: 8, sy: 400,
+            sx: 165, sy: 350,
+            lineHeight: 6,
+            capsOnly: true,
+            scene: this,
+            maxLines : 12,
+            maxT: 10000
+        });
+        
+        
+        this.input.keyboard.on('keydown', (event) => {
             const mDigit = event.code.match(/Digit\d+/);
             if(mDigit){
                 const d = Number(mDigit[0].replace('Digit', ''));
                 const player = this.registry.get('player'); 
                 if(d >= 0 && d < 4){
+                    mv.mp.push('Switched to item mode ' + d + '\( ' + IMDESC[d] + ' \)','INFO');
                     player.setData('itemMode', d);
                 }
             }
@@ -27,29 +45,25 @@ class Mapview extends Phaser.Scene {
             if(mKey){
                 const k = mKey[0].replace('Key', '');
                 if(k === 'W'){
+                    mv.mp.push('Switched to next worker','INFO');
                     this.nextWorker();
                 }
             }
         });
-        mdc.forAllMaps(this, function(scene, md, map_index){
-           
+        mdc.forAllMaps(this, function(scene, md, map_index){         
            let wi = 0;
            const len = md.worker.maxSize;
            while(wi < len){
-               const worker = md.worker.spawnPerson(mdc, md, scene );
-               
+               const worker = md.worker.spawnPerson(mdc, md, scene );  
                if(!worker){
                    break;
                }
-               
-               
                if( map_index === 4 ){
                    worker.action = 'di';
                    //log( 'find empty drop spot test: ' );
                    //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
                    // exspected output [39, 3], [ 39, 4 ], ...
-               }
-               
+               } 
                if(mdc.activeIndex === map_index && wi === 0 ){            
                    scene.registry.set('player', worker);
                    worker.setToTilePos(md.hardMapData.spawnAt);       
@@ -188,6 +202,11 @@ class Mapview extends Phaser.Scene {
         disp1.text = 'Money: ' + gs.money;
         //disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;
         disp2.text = 'player itemMode: ' + player.getData('itemMode');
+        
+        
+        
+        this.mp.update(delta);
+        
     }
     
 }
