@@ -163,7 +163,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - tint color based on message type
 
   /lib/pathfinder.js :
-    * (      ) - use console logger for console output
+    * ( done ) - use console logger for console output
 
   /lib/people.js :
     * ( done ) - use console logger for console output
