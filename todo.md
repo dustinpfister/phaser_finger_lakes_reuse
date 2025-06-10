@@ -108,6 +108,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - finish upercase letters for 'min' font
     * ( done ) - finish numbers for 'min' font
     * ( done ) - finish must have symbols for 'min' font
+    * ( done ) - have a min-3px-5-px font
 
   /state/boot.js :
     * ( done ) - use console logger for console output
@@ -141,6 +142,7 @@ Each task will then involve one or more actions such as 'findDonation', 'pickUpD
     * ( done ) - new MessPusher class that will be used to push messages to the screen rather than the javaScript console
     * ( done ) - messages will go up as new ones are pushed in
     * ( done ) - all messages will fade over time
+    * (      ) - Mess.Pusher.push method can take a sting or array of strings as content to push
     * (      ) - have differing kinds of messages for MessPusher such as 'say', 'debug'
 
   /lib/pathfinder.js :
