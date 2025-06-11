@@ -29,7 +29,7 @@
     * Yes this will take forever unless I figure out what the MVP is for this.
 ```
 
-## RX (    ) - Casher State
+## R11 (    ) - Casher State
 ```
 The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
 and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
@@ -37,50 +37,36 @@ will look just like the shopify app in one part of the screen. Another part of t
 that a customer would like to buy.
 ```
 
-## RX (    ) - Casher Task workers
+## R10 (    ) - Casher Task workers
 ```
 There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
 maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
 will likley not be able to work this kind of task for the moment.
 ```
+## R9 (    ) - Furniture Processing, PickUp, and Delivery
+```
+A worker other than the player should now also be able to work 'furniture'.
+```
 
-## RX (    ) - Furniture Processing, PickUp, and Delivery
-
-## RX (    ) - Furniture
+## R8 (    ) - Furniture
 ```
 Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
 move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
 like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
 ```
 
-## RX (    ) - Trash, Dumpster, more items
+## R7 (    ) - Trash, Dumpster, more items
 ```
 Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
 ```
 
-## R7 (    ) - Processing Household task workers, cart containers.
+## R6 (    ) - Processing Household task workers, cart containers.
 ```
 At any moment there should be zero or more workers processing items thus the main focus with this revision is
 to add a 'processingHousehold' task for workers. This kind of task will involve having a worker pick up items in
 the household processing area, price it, and then place it into a cart type container. Speaking of which at this time
 I think I should also add cart type containers.
 ```
-
-
-## R6 (    ) - Tasks and actions
-```
-The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
-such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
-'pickUpDonation', 'sortDonation', 'pickUpSortedContainer', 'moveGayload', ect. Shopper Type People 
-can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
-pice of furnature that they bought before hand. However that might be a matter for a future revision
-
-  /lib/people.js :
-* (      ) - start work on Task and Actions
-* (      ) - update People Type Code to make use of Tasks and Actions
-* (      ) - have an updateTask method that can be used to change what a person is doing
-```
-
 
 ## R5 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
@@ -108,9 +94,21 @@ pice of furnature that they bought before hand. However that might be a matter f
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
-## R4 (    ) - Improved People AI
+## R4 (    ) - Tasks and actions
 ```
+The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
+such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
+'pickUpDonation', 'sortDonation', 'pickUpSortedContainer', 'moveGayload', ect. Shopper Type People 
+can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
+pice of furnature that they bought before hand. However that might be a matter for a future revision
+
+``````
  /lib/people.js :
+* ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
+* ( done ) - each action should have an init method that will be called once when a person enters this action from another one
+* ( done ) - each action should also have noPath, and update methods
+* ( done ) - update People Type Code to make use of Tasks and Actions
+* (      ) - have an updateTask method that can be used to change what a person is doing
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range

@@ -59,7 +59,7 @@ class Mapview extends Phaser.Scene {
                    break;
                }
                if( map_index === 4 ){
-                   worker.action = 'di';
+                   //worker.action = 'di';
                    //log( 'find empty drop spot test: ' );
                    //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
                    // exspected output [39, 3], [ 39, 4 ], ...
