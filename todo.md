@@ -1,67 +1,84 @@
 # Phaser Finger Lakes Reuse
 
-## RX (    ) - People AI PIC Situations
-
-## RX (    ) - Rollup, dev dependencies
+## RX (    ) - So Many More!
 ```
-* (    ) use roll up to create builds of the game
-* (    ) automate linting and formating
-```
-
-## RX (    ) - Custom Text Font
-```
-* (    ) - use a custom text font
-```
-
-## RX (    ) - Casher workers
-
-## RX (    ) - Physics Draft
-```
-  PATH PROCESSOR PHYSICS DRAFT:
-* (      ) - remove all the old pathProcessor functions from main people lib in favor of working on them as a draft project
-```
-
-## RX (    ) - Preloader
-```
-* (    ) - make use of preloader draft in full game
-```
-
-## RX (    ) - Material Types
-```
-* (      ) - have a mType for containers that is the kind of material that container is made of ('cardboard', 'wood', 'bb', ect)
-* (      ) - have an 'accepts' prop for containers that is the kind of material that it will except
-* (      ) - make mType a BaseItem class prop
+    * 'eCenter' Processing task
+    * 'electronics' Processing task
+    * 'buildingMaterials' Processing Task
+    * 'framnedArt' Processing tasks
+    * Processing Sub Tasks!? such as Processing Household Rugs
+    * The Comunity Space
+    * Bathrooms, cleaning them
+    * Speaking of Cleaning yes cleaning, the store and so forth.
+    * MOD task
+    * Person In Charge Situations (PIC)
+    * Person Physics
+    * Material Types ( carboard, wood, Metal, ect )
+    * Metel Scrap
+    * Recycling Dumpster
+    * use Preloader Draft for main game
+    * Rollup, crteaing builds
+    * Dev dependencies ( automate, linting, formating, ect )
+    * Unit Testing
+    * Repersenative Sprites
+    * UI Buttons
+    * People Data for setting values for Workers, Customers, ect
+    * Accounting
+    * Payrole
+    * Grants
+    * Yes this will take forever unless I figure out what the MVP is for this.
 ```
 
-## RX (    ) - Repersenative Sprites
+## RX (    ) - Casher State
 ```
-  REP SPRITES :
-* (    ) - work out a system where we have repersentaive sprites for collections of objects on shelfs.
-```
-
-## RX (    ) - People Data
-```
-* (      ) - people\_customers.json for hard coded data on each customer that can show up
-* (      ) - people\_workers.json for all the workers that can show up
-  MISC :
-* (      ) - see about using 16 x 32 sprites for some tiles, else go with the idea of using another layer
+The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
+and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
+will look just like the shopify app in one part of the screen. Another part of the screen will show a current item
+that a customer would like to buy.
 ```
 
-## RX (    ) - Tasks and actions
+## RX (    ) - Casher Task workers
 ```
-The general idea is that each person that is a worker can be set to a given 'Task' such as a 'DI' task. 
-Each task will then involve one or more actions such as 'findDonation', 'pickUpDonation', 'sortDonation', 
-'pickUpSortedContainer', 'moveGayload', ect.
+There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
+maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
+will likley not be able to work this kind of task for the moment.
+```
+
+## RX (    ) - Furniture Processing, PickUp, and Delivery
+
+## RX (    ) - Furniture
+```
+Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
+move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
+like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
+```
+
+## RX (    ) - Trash, Dumpster, more items
+```
+Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
+```
+
+## R7 (    ) - Processing Household task workers, cart containers.
+```
+At any moment there should be zero or more workers processing items thus the main focus with this revision is
+to add a 'processingHousehold' task for workers. This kind of task will involve having a worker pick up items in
+the household processing area, price it, and then place it into a cart type container. Speaking of which at this time
+I think I should also add cart type containers.
+```
+
+
+## R6 (    ) - Tasks and actions
+```
+The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
+such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
+'pickUpDonation', 'sortDonation', 'pickUpSortedContainer', 'moveGayload', ect. Shopper Type People 
+can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
+pice of furnature that they bought before hand. However that might be a matter for a future revision
 
   /lib/people.js :
 * (      ) - start work on Task and Actions
 * (      ) - update People Type Code to make use of Tasks and Actions
 * (      ) - have an updateTask method that can be used to change what a person is doing
-```
-
-## RX (    ) - Buttons
-```
- UI buttons for things like setting itemMode of player, switching worker, ect
 ```
 
 
