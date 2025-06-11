@@ -107,15 +107,30 @@ pice of furnature that they bought before hand. However that might be a matter f
 * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
 * ( done ) - each action should have an init method that will be called once when a person enters this action from another one
 * ( done ) - each action should also have noPath, and update methods
+* ( done ) - have a people.setTask and people.setAction methods
 * ( done ) - update People Type Code to make use of Tasks and Actions
-* (      ) - have an updateTask method that can be used to change what a person is doing
+
+* (      ) - have a donation_find_droplocation action
+* (      ) - have a donation_goto_droplocation action
+* (      ) - have a donation_drop_onhand action
+* (      ) - have a donation_leave action
+
+* (      ) - have a worker_idle action that will be a main action that a worker will do when idle
+* (      ) - have a worker_idle_donation action that will be an idle process for a worker that is working donations
+* (      ) - have a worker_find_donation action that will cause a woker to find a donation and go to it when one is found
+* (      ) - have a worker_pickup_donation action that will case a woker to pickup a donation item
+
+* (      ) - have a shopping_idle action that will be what a person does when they are shoping, but have not found anything
+* (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
+* (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
+* (      ) - have a shopping_leave action that will cause a shopper to leave the map
+
+ MISC:
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
 * (      ) - the player should only be able to drop items in range
 * (      ) - many enter and exit locations for donators in map4
-* (      ) - each donator event object will contain the game day time, and number of donators that will show up
-* (      ) - a simular system should also be used for shoppers
 * (      ) - Have di worker move back to map 4 when they have no on hand items
 * (      ) - use people.dropItem method for donators
 * (      ) - use people.dropItem method for workers
@@ -124,7 +139,6 @@ pice of furnature that they bought before hand. However that might be a matter f
 * (      ) - have a people.pickUpItem method
 * (      ) - have a way for a donator to handle a situation in which they can not find a spot
 * (      ) - fix isshue where donators are still placing items on top of each other
-* (      ) - improve how the worker goes to a donation box
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
