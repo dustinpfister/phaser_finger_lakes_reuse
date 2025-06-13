@@ -29,7 +29,7 @@
     * Yes this will take forever unless I figure out what the MVP is for this.
 ```
 
-## R11 (    ) - Casher State
+## R12 (    ) - Casher State
 ```
 The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
 and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
@@ -37,30 +37,30 @@ will look just like the shopify app in one part of the screen. Another part of t
 that a customer would like to buy.
 ```
 
-## R10 (    ) - Casher Task workers
+## R11 (    ) - Casher Task workers
 ```
 There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
 maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
 will likley not be able to work this kind of task for the moment.
 ```
-## R9 (    ) - Furniture Processing, PickUp, and Delivery
+## R10 (    ) - Furniture Processing, PickUp, and Delivery
 ```
 A worker other than the player should now also be able to work 'furniture'.
 ```
 
-## R8 (    ) - Furniture
+## R9 (    ) - Furniture
 ```
 Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
 move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
 like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
 ```
 
-## R7 (    ) - Trash, Dumpster, more items
+## R8 (    ) - Trash, Dumpster, more items
 ```
 Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
 ```
 
-## R6 (    ) - Processing Household task workers, cart containers.
+## R7 (    ) - Processing Household task workers, cart containers.
 ```
 At any moment there should be zero or more workers processing items thus the main focus with this revision is
 to add a 'processingHousehold' task for workers. This kind of task will involve having a worker pick up items in
@@ -68,8 +68,13 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## R5 (    ) - Game Day Time, Schedule system, Color Tag System
+## R6 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
+I would like to have a system for game time. That means having a certian amount of game time that will result in the span
+of a single game day. I would like for this to be something that can be adjusted in a way in which a game day can be as 
+long as say one half hour of real time, or actually a full 24 hours if the aim is to make this more like an actual 
+simulation.
+
   /sheets :
 * (      ) - new sprites for workers
 
@@ -94,15 +99,12 @@ I think I should also add cart type containers.
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
-## R4 (    ) - Tasks and actions
+## R5 (    ) - Spawn and exit areas
 ```
-The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
-such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
-'pickUpDonation', 'sortDonation', 'pickUpSortedContainer', 'moveGayload', ect. Shopper Type People 
-can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
-pice of furnature that they bought before hand. However that might be a matter for a future revision
+I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
+arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
+So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
 
-``````
 
  /maps :
 * (      ) - update maps 1-4 to have objects for both customer, and worker, people types
@@ -114,6 +116,29 @@ pice of furnature that they bought before hand. However that might be a matter f
  /lib/mapdata.js :
 * (      ) - use new spawnAreas arrays over that of a single spawnAt object
 * (      ) - use new exitAreas arrays 
+
+ MISC:
+* (      ) - donations should be placed on the table by the donators
+* (      ) - the player should not be able to place items on top of walls
+* (      ) - the player should only be able to pick up items that are in range
+* (      ) - the player should only be able to drop items in range
+* (      ) - Have di worker move back to map 4 when they have no on hand items
+* (      ) - use people.dropItem method for donators
+* (      ) - use people.dropItem method for workers
+* (      ) - use people.dropItem method for player controled worker
+* (      ) - remove drop item code from people.onHandAction
+* (      ) - have a people.pickUpItem method
+* (      ) - have a way for a donator to handle a situation in which they can not find a spot
+* (      ) - fix isshue where donators are still placing items on top of each other
+```
+
+## R4 (    ) - Tasks and actions
+```
+The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
+such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
+'pickUpDonation', 'sortDonation', 'pickUpSortedContainer', 'moveGayload', ect. Shopper Type People 
+can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
+pice of furniture that they bought before hand. However that might be a matter for a future revision
 
  /lib/people.js :
 * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
@@ -136,24 +161,14 @@ pice of furnature that they bought before hand. However that might be a matter f
 * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
 * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
 * (      ) - have a shopping_leave action that will cause a shopper to leave the map
-
- MISC:
-* (      ) - donations should be placed on the table by the donators
-* (      ) - the player should not be able to place items on top of walls
-* (      ) - the player should only be able to pick up items that are in range
-* (      ) - the player should only be able to drop items in range
-* (      ) - Have di worker move back to map 4 when they have no on hand items
-* (      ) - use people.dropItem method for donators
-* (      ) - use people.dropItem method for workers
-* (      ) - use people.dropItem method for player controled worker
-* (      ) - remove drop item code from people.onHandAction
-* (      ) - have a people.pickUpItem method
-* (      ) - have a way for a donator to handle a situation in which they can not find a spot
-* (      ) - fix isshue where donators are still placing items on top of each other
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
 ```
+The goal here is to at least start, but maybe not yet finish a 'Message System'. This will include a custom way to log to the
+console for the sake of debugging, but also provide other on screen ways of displaying info to help with debugging. In addition
+to this the system can also be used for the sake of just having a way to display messages to the player.
+
   /drafts :
     * ( done ) - start a new mess push draft
     * ( done ) - use mess pusher to test out the ConsoleLogger feature of message.js
@@ -213,6 +228,13 @@ pice of furnature that they bought before hand. However that might be a matter f
 
 ## R2 ( done 06/04/2025   ) - Inactive map updates
 ````
+In previous revisions only the current 'active' map was being updated. I have found that in one way or another what 
+goes on in other maps will also need to be updated. At some point this might prove to be expensive in terms of
+processing overhead. However as long as it is not a problem there is just updating all maps rather than just the
+current map that is displayed to the player. If performance becomes a problem there is looking into ways to update 
+things in a way in which not every little detail is updated on each main frame tick, but that is a matter for a future 
+revision that is way into the future at this point.
+
   /states/mapview.js :
 * ( done ) - using mdc.ForAllMaps method to update all mapData objects rather than just the active one
 * ( done ) - set active and visible values of people class instances in the main update loop.
@@ -247,7 +269,13 @@ pice of furnature that they bought before hand. However that might be a matter f
 ```
 
 ## R1 ( done 05/22/2025 ) - Workers, Menu state started
+
 ```
+I will also want to have 'Worker' types of People and not just 'Customers'. This means that the main player object is actually just 
+an instance of a 'worker' type of Person Class instance. The player can take direct control of any worker by just cycling threw them.
+The general idea then is to allow any worker that is not under player control to switch to AI control. However getting into that
+is something that will need to be refined in future revisions.
+
   /sheets
 * ( done ) - new sprites for shelfing
 
@@ -322,6 +350,9 @@ pice of furnature that they bought before hand. However that might be a matter f
 ## R0 ( done 05/10/2025 ) - People, Items, Donations 
 
 ```
+This is the very first state of the game that took way to long to finish. Much of what I want and need is in place, but very buggy.
+Of course that is just what is to be expected this early in development.
+
 * ( done ) - start with R0 of phaser start project
 * ( done ) - extended the Group class in World to create new People class
 * ( done ) - start a Donations plugin that will be used for when the player starts working donations

@@ -23,6 +23,14 @@
     "spawnAt" : { "x": 2, "y": 2 },
     "exitAt" : { "x": 2, "y": 2 }
   },
+  "worker" : {
+    "subTypes" : ["employee" ],
+    "subTypeProbs": [ 1.00 ],
+    "spawnAreas" : [
+        { "x": 3, "y": 5, "w":1, "h": 1 }
+    ],
+    "exitAreas" : []
+  },
   "objects" : {
     "containers" : {}
   },
