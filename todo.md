@@ -103,6 +103,18 @@ can also have tasks beyond just that of, well... shop. For example one other tas
 pice of furnature that they bought before hand. However that might be a matter for a future revision
 
 ``````
+
+ /maps :
+* (      ) - update maps 1-4 to have objects for both customer, and worker, people types
+* (      ) - update maps 1-4 to have spawnAreas object arrays
+* (      ) - update maps 1-4 to have exitAreas object arrays
+* (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
+ 
+ 
+ /lib/mapdata.js :
+* (      ) - use new spawnAreas arrays over that of a single spawnAt object
+* (      ) - use new exitAreas arrays 
+
  /lib/people.js :
 * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
 * ( done ) - each action should have an init method that will be called once when a person enters this action from another one
@@ -130,7 +142,6 @@ pice of furnature that they bought before hand. However that might be a matter f
 * (      ) - the player should not be able to place items on top of walls
 * (      ) - the player should only be able to pick up items that are in range
 * (      ) - the player should only be able to drop items in range
-* (      ) - many enter and exit locations for donators in map4
 * (      ) - Have di worker move back to map 4 when they have no on hand items
 * (      ) - use people.dropItem method for donators
 * (      ) - use people.dropItem method for workers
