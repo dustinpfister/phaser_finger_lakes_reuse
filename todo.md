@@ -147,10 +147,11 @@ pice of furniture that they bought before hand. However that might be a matter f
 * ( done ) - have a people.setTask and people.setAction methods
 * ( done ) - update People Type Code to make use of Tasks and Actions
 * ( done ) - have a People.setSpawnRate method
+* ( done ) - have a Person.say method
 
 * (      ) - have a donation_goto_droplocation action
 * (      ) - have a donation_drop_onhand action
-* (      ) - have a donation_leave action
+* (      ) - have a customer_exit_goto action
 
 * (      ) - have a worker_idle action that will be a main action that a worker will do when idle
 * (      ) - have a worker_idle_donation action that will be an idle process for a worker that is working donations
@@ -161,6 +162,7 @@ pice of furniture that they bought before hand. However that might be a matter f
 * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
 * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
 * (      ) - have a shopping_leave action that will cause a shopper to leave the map
+* (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
