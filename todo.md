@@ -148,10 +148,9 @@ pice of furniture that they bought before hand. However that might be a matter f
 * ( done ) - update People Type Code to make use of Tasks and Actions
 * ( done ) - have a People.setSpawnRate method
 * ( done ) - have a Person.say method
-
-* (      ) - have a donation_goto_droplocation action
-* (      ) - have a donation_drop_onhand action
-* (      ) - have a customer_exit_goto action
+* ( done ) - have a donation_goto_droplocation action
+* ( done ) - have a donation_drop action
+* ( done ) - have a customer_goto_exit action
 
 * (      ) - have a worker_idle action that will be a main action that a worker will do when idle
 * (      ) - have a worker_idle_donation action that will be an idle process for a worker that is working donations
