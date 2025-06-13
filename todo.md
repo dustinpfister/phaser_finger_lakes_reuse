@@ -146,8 +146,8 @@ pice of furniture that they bought before hand. However that might be a matter f
 * ( done ) - each action should also have noPath, and update methods
 * ( done ) - have a people.setTask and people.setAction methods
 * ( done ) - update People Type Code to make use of Tasks and Actions
+* ( done ) - have a People.setSpawnRate method
 
-* (      ) - have a donation_find_droplocation action
 * (      ) - have a donation_goto_droplocation action
 * (      ) - have a donation_drop_onhand action
 * (      ) - have a donation_leave action
