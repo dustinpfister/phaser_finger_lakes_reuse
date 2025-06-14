@@ -144,6 +144,9 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - fix bug with worker switching is not working at all
     * ( done ) - work out new system for worker switching where we end up cycling threw all workers
 
+  /lib/mapdata.js :
+    * ( done )  use mdc instance as a place to store numbers that will be used for people class names
+
   /lib/people.js :
     * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
     * ( done ) - each action should have an init method that will be called once when a person enters this action from another one
