@@ -12,16 +12,10 @@ const IMDESC = ['tile info', 'item pickup', 'item drop', 'container pickup\/drop
 class Mapview extends Phaser.Scene {
 
     create () {
-        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
-        const mv = this;
-        this.registry.set('mdc', mdc);
-        mdc.setActiveMapByIndex(this, mdc.activeIndex);  
-        this.cursors = this.input.keyboard.createCursorKeys();
-        
+    
+    
         const mp = this.mp = new MessPusher({
             key: 'min_3px_5px',
-            //sx: 31 * 16, sy: 7 * 16,
-            //sx: 8, sy: 400,
             sx: 165, sy: 350,
             lineHeight: 6,
             capsOnly: true,
@@ -29,6 +23,14 @@ class Mapview extends Phaser.Scene {
             maxLines : 12,
             maxT: 10000
         });
+    
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        
+        const mv = this;
+        this.registry.set('mdc', mdc);
+        mdc.setActiveMapByIndex(this, mdc.activeIndex);  
+        this.cursors = this.input.keyboard.createCursorKeys();
+        
         
         
         this.input.keyboard.on('keydown', (event) => {
@@ -65,7 +67,7 @@ class Mapview extends Phaser.Scene {
                } 
                if(mdc.activeIndex === map_index && wi === 0 ){   
                
-                   scene.registry.set('player', worker);
+                   //scene.registry.set('player', worker);
                    //worker.setToTilePos( md.hardMapData.spawnAt );       
                }
                wi += 1;
