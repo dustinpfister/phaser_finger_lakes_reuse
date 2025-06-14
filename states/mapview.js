@@ -87,19 +87,17 @@ class Mapview extends Phaser.Scene {
        this.registry.set('disp2', disp2);
     }
     
-    nextWorker () {
-    
+    nextWorker () {    
         const mdc = this.registry.get('mdc');
         let player = this.registry.get('player');
         const mv = this;
         const smi = mdc.activeIndex;
-        //let md = mdc.getMapDataByIndex( smi );
-        
         const worker_control_state = {};
         let wc_indices = [-1, -1];
-        
+        let total_workers = 0;
         mdc.forAllMaps(mv, (scene, md, mi) => {
             const find_player = md.worker.getChildren().map(( person, pi ) => {
+                total_workers += 1;
                 const is_player = person === player;
                 if(is_player){
                    wc_indices = [ mi, pi ];
@@ -112,66 +110,38 @@ class Mapview extends Phaser.Scene {
             });
             worker_control_state[mi] = find_player;
         });
-        
-        
         // cycle to next
-        let nextWorker = worker_control_state[ wc_indices[0] ][ wc_indices[1] + 1 ];
-        if(!nextWorker){
-            let mi = wc_indices[0] + 1;
-            if(mi === 5){
-                mi = 1;
+        let mi = wc_indices[0];
+        let pi = wc_indices[1];
+        let ct = 0;
+        while( ct < total_workers ){
+            log('ct=' + ct + ', mi=' + mi + ', pi=' + pi);      
+            const nextWorker = worker_control_state[ mi ][ pi ];
+            if( !nextWorker ){
+                pi = 0;
+                mi += 1;
+                mi = mi === 5 ? mi = 1 : mi;
             }
-            nextWorker = worker_control_state[ mi ][ 0 ];     
+            if( nextWorker ){
+                if( nextWorker.person === player ){
+                    pi += 1;  
+                }
+                if( nextWorker.person != player ){
+                    this.setPlayerPerson( nextWorker.person, nextWorker.mi );      
+                }
+                ct += 1;
+            }
         }
         
-        
-        const worker = nextWorker.person;
+    }
+    
+    setPlayerPerson ( worker, mi ) {
         this.registry.set('player', worker);
         worker.setData('path', []);
         const p = worker.getTilePos();
         worker.setToTilePos(p);
-        mdc.setActiveMapByIndex(this, nextWorker.mi );
-        mv.mp.push('Switched to worker ' + worker.name, 'INFO');
-        
-        /*
-        log(worker_control_state);
-        log(wc_indices)
-        log(nextWorker)
-        */
-        
-        
-        
-    
-    /*
-        const mdc = this.registry.get('mdc');
-        let player = this.registry.get('player');
-        const mv = this;
-        const smi = mdc.activeIndex;
-        let mi = smi;
-        findNext: do {
-            const md = mdc.getMapDataByIndex( mi );
-            const len = md.worker.children.size;
-            let pi = 0;
-            while(pi < len){
-                const worker = md.worker.children.entries[pi];
-                if( !( worker === player ) ){
-                    log('setting new player');
-                    mv.mp.push('Switched to worker ' + worker.name,'INFO');
-                    this.registry.set('player', worker);
-                    worker.setData('path', []);
-                    const p = worker.getTilePos();
-                    worker.setToTilePos(p);
-                    mdc.setActiveMapByIndex(this, mi);
-                    break findNext;
-                }
-                pi += 1;
-            }
-            mi += 1;
-            if(mi >= mdc.i_stop){
-                mi = mdc.i_start;
-            }
-        }while(mi != smi);
-        */
+        this.registry.get('mdc').setActiveMapByIndex(this, mi );
+        this.mp.push('Switched to worker ' + worker.name, 'INFO');    
     }
     
     cursorCheck (dir='left') {

@@ -27,6 +27,7 @@
     * Payrole
     * Grants
     * Yes this will take forever unless I figure out what the MVP is for this.
+    * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
 ```
 
 ## R12 (    ) - Casher State
