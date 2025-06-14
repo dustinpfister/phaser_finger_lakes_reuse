@@ -18,7 +18,7 @@ class Mapview extends Phaser.Scene {
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
         
-        this.mp = new MessPusher({
+        const mp = this.mp = new MessPusher({
             key: 'min_3px_5px',
             //sx: 31 * 16, sy: 7 * 16,
             //sx: 8, sy: 400,
@@ -45,8 +45,7 @@ class Mapview extends Phaser.Scene {
             if(mKey){
                 const k = mKey[0].replace('Key', '');
                 if(k === 'W'){
-                    mv.mp.push('Switched to next worker','INFO');
-                    this.nextWorker();
+                    mv.nextWorker();
                 }
             }
         });
@@ -64,9 +63,10 @@ class Mapview extends Phaser.Scene {
                    //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
                    // exspected output [39, 3], [ 39, 4 ], ...
                } 
-               if(mdc.activeIndex === map_index && wi === 0 ){            
+               if(mdc.activeIndex === map_index && wi === 0 ){   
+               
                    scene.registry.set('player', worker);
-                   worker.setToTilePos(md.hardMapData.spawnAt);       
+                   //worker.setToTilePos( md.hardMapData.spawnAt );       
                }
                wi += 1;
            }
@@ -90,27 +90,24 @@ class Mapview extends Phaser.Scene {
     nextWorker () {
         const mdc = this.registry.get('mdc');
         let player = this.registry.get('player');
+        const mv = this;
         const smi = mdc.activeIndex;
         let mi = smi;
-        let isPlayer = false;
-        findNext: do{
-            const md = mdc.getMapDataByIndex(mi);
+        findNext: do {
+            const md = mdc.getMapDataByIndex( mi );
             const len = md.worker.children.size;
-            log( md.worker );
             let pi = 0;
             while(pi < len){
                 const worker = md.worker.children.entries[pi];
-                if(isPlayer){
+                if( !( worker === player ) ){
                     log('setting new player');
+                    mv.mp.push('Switched to worker ' + worker.name,'INFO');
                     this.registry.set('player', worker);
                     worker.setData('path', []);
                     const p = worker.getTilePos();
                     worker.setToTilePos(p);
                     mdc.setActiveMapByIndex(this, mi);
                     break findNext;
-                }
-                if(!isPlayer){
-                    isPlayer = worker === player;
                 }
                 pi += 1;
             }

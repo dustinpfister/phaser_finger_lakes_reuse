@@ -140,28 +140,31 @@ such as a 'DI' task. Each task will then involve one or more actions such as 'fi
 can also have tasks beyond just that of, well... shop. For example one other task might be to 'pickUp' a
 pice of furniture that they bought before hand. However that might be a matter for a future revision
 
- /lib/people.js :
-* ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
-* ( done ) - each action should have an init method that will be called once when a person enters this action from another one
-* ( done ) - each action should also have noPath, and update methods
-* ( done ) - have a people.setTask and people.setAction methods
-* ( done ) - update People Type Code to make use of Tasks and Actions
-* ( done ) - have a People.setSpawnRate method
-* ( done ) - have a Person.say method
-* ( done ) - have a donation_goto_droplocation action
-* ( done ) - have a donation_drop action
-* ( done ) - have a customer_goto_exit action
+  /state/mapview.js :
+    * ( done ) - fix bug with worker switching is not working at all
 
-* (      ) - have a worker_idle action that will be a main action that a worker will do when idle
-* (      ) - have a worker_idle_donation action that will be an idle process for a worker that is working donations
-* (      ) - have a worker_find_donation action that will cause a woker to find a donation and go to it when one is found
-* (      ) - have a worker_pickup_donation action that will case a woker to pickup a donation item
+  /lib/people.js :
+    * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
+    * ( done ) - each action should have an init method that will be called once when a person enters this action from another one
+    * ( done ) - each action should also have noPath, and update methods
+    * ( done ) - have a people.setTask and people.setAction methods
+    * ( done ) - update People Type Code to make use of Tasks and Actions
+    * ( done ) - have a People.setSpawnRate method
+    * ( done ) - have a Person.say method
+    * ( done ) - have a donation_goto_droplocation action
+    * ( done ) - have a donation_drop action
+    * ( done ) - have a customer_goto_exit action
 
-* (      ) - have a shopping_idle action that will be what a person does when they are shoping, but have not found anything
-* (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
-* (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
-* (      ) - have a shopping_leave action that will cause a shopper to leave the map
-* (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
+    * (      ) - have a worker_di_return action that will cause the worker to return to di if they are at a map other than 4
+    * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
+    * (      ) - have a worker_di_items_drop that will result ina worker droping on hand items in the store
+
+
+    * (      ) - have a shopping_idle action that will be what a person does when they are shoping, but have not found anything
+    * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
+    * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
+    * (      ) - have a shopping_leave action that will cause a shopper to leave the map
+    * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
