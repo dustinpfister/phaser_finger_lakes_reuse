@@ -88,6 +88,61 @@ class Mapview extends Phaser.Scene {
     }
     
     nextWorker () {
+    
+        const mdc = this.registry.get('mdc');
+        let player = this.registry.get('player');
+        const mv = this;
+        const smi = mdc.activeIndex;
+        //let md = mdc.getMapDataByIndex( smi );
+        
+        const worker_control_state = {};
+        let wc_indices = [-1, -1];
+        
+        mdc.forAllMaps(mv, (scene, md, mi) => {
+            const find_player = md.worker.getChildren().map(( person, pi ) => {
+                const is_player = person === player;
+                if(is_player){
+                   wc_indices = [ mi, pi ];
+                }
+                return {
+                    is_player: is_player,
+                    person : person,
+                    pi: pi, mi: mi
+                };
+            });
+            worker_control_state[mi] = find_player;
+        });
+        
+        
+        // cycle to next
+        let nextWorker = worker_control_state[ wc_indices[0] ][ wc_indices[1] + 1 ];
+        if(!nextWorker){
+            let mi = wc_indices[0] + 1;
+            if(mi === 5){
+                mi = 1;
+            }
+            nextWorker = worker_control_state[ mi ][ 0 ];     
+        }
+        
+        
+        const worker = nextWorker.person;
+        this.registry.set('player', worker);
+        worker.setData('path', []);
+        const p = worker.getTilePos();
+        worker.setToTilePos(p);
+        mdc.setActiveMapByIndex(this, nextWorker.mi );
+        mv.mp.push('Switched to worker ' + worker.name, 'INFO');
+        
+        /*
+        log(worker_control_state);
+        log(wc_indices)
+        log(nextWorker)
+        */
+        
+        
+        
+    
+    /*
         const mdc = this.registry.get('mdc');
         let player = this.registry.get('player');
         const mv = this;
@@ -116,6 +171,7 @@ class Mapview extends Phaser.Scene {
                 mi = mdc.i_start;
             }
         }while(mi != smi);
+        */
     }
     
     cursorCheck (dir='left') {

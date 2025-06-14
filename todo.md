@@ -142,6 +142,7 @@ pice of furniture that they bought before hand. However that might be a matter f
 
   /state/mapview.js :
     * ( done ) - fix bug with worker switching is not working at all
+    * ( done ) - work out new system for worker switching where we end up cycling threw all workers
 
   /lib/people.js :
     * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
