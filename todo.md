@@ -160,7 +160,8 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a donation_goto_droplocation action
     * ( done ) - have a donation_drop action
     * ( done ) - have a customer_goto_exit action
-
+    * ( done ) - have a worker_di_idle action
+    
     * (      ) - have a worker_di_return action that will cause the worker to return to di if they are at a map other than 4
     * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
     * (      ) - have a worker_di_items_drop that will result ina worker droping on hand items in the store
