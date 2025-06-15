@@ -139,9 +139,10 @@ It would be nice to have some keyboard shortcuts for 'pickup item, pickup contai
 to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
 item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
 is on top of.
+
 ```
 
-## R4 (    ) - Tasks and actions
+## R4 (    ) - Tasks and actions started
 ```
 The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
 such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
@@ -170,7 +171,11 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a customer_goto_exit action
     * ( done ) - have a worker_di_idle action
     
-    * (      ) - have a worker_di_return action that will cause the worker to return to di if they are at a map other than 4
+    * ( done ) - have a worker_di_return action that will cause the worker to return to di if they are at a map other than 4
+    * (      ) - get worker_di_return to work from any map index
+    * (      ) - start a general goto_door action
+
+    
     * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
     * (      ) - have a worker_di_items_drop that will result ina worker droping on hand items in the store
 
