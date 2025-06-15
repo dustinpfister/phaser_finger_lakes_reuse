@@ -30,7 +30,7 @@
     * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
 ```
 
-## R12 (    ) - Casher State
+## R13 (    ) - Casher State
 ```
 The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
 and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
@@ -38,30 +38,30 @@ will look just like the shopify app in one part of the screen. Another part of t
 that a customer would like to buy.
 ```
 
-## R11 (    ) - Casher Task workers
+## R12 (    ) - Casher Task workers
 ```
 There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
 maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
 will likley not be able to work this kind of task for the moment.
 ```
-## R10 (    ) - Furniture Processing, PickUp, and Delivery
+## R11 (    ) - Furniture Processing, PickUp, and Delivery
 ```
 A worker other than the player should now also be able to work 'furniture'.
 ```
 
-## R9 (    ) - Furniture
+## R10 (    ) - Furniture
 ```
 Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
 move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
 like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
 ```
 
-## R8 (    ) - Trash, Dumpster, more items
+## R9 (    ) - Trash, Dumpster, more items
 ```
 Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
 ```
 
-## R7 (    ) - Processing Household task workers, cart containers.
+## R8 (    ) - Processing Household task workers, cart containers.
 ```
 At any moment there should be zero or more workers processing items thus the main focus with this revision is
 to add a 'processingHousehold' task for workers. This kind of task will involve having a worker pick up items in
@@ -69,7 +69,7 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## R6 (    ) - Game Day Time, Schedule system, Color Tag System
+## R7 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
 I would like to have a system for game time. That means having a certian amount of game time that will result in the span
 of a single game day. I would like for this to be something that can be adjusted in a way in which a game day can be as 
@@ -100,7 +100,7 @@ simulation.
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
-## R5 (    ) - Spawn and exit areas
+## R6 (    ) - Spawn and exit areas
 ```
 I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
 arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
@@ -131,6 +131,14 @@ So then this will mean updates to the hard coded data of each map, as well as ne
 * (      ) - have a people.pickUpItem method
 * (      ) - have a way for a donator to handle a situation in which they can not find a spot
 * (      ) - fix isshue where donators are still placing items on top of each other
+```
+
+## R5 (    ) - On hand action quick keyboard shortcuts
+```
+It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
+to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
+item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
+is on top of.
 ```
 
 ## R4 (    ) - Tasks and actions
