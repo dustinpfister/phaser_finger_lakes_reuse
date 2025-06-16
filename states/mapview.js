@@ -184,8 +184,8 @@ class Mapview extends Phaser.Scene {
             scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
            
         
-            md.customer.update(this, md);
-            md.worker.update(this, md);
+            md.customer.update(this, md, delta);
+            md.worker.update(this, md, delta);
             
             const bool = map_index === mdc.activeIndex;
            
