@@ -173,17 +173,24 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a worker_di_return action that will cause the worker to return to di
     * ( done ) - get worker_di_return to work from any map index
     
+    * (      ) - have well defined options for actions
+    * (      ) - start a general goto_map action
+    * (      ) - start a general drop action
+    * (      ) - start a general pickup action
+    
+    * (      ) - have a worker_item_price action
     * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
-    * (      ) - have a worker_di_items_drop that will result ina worker droping on hand items in the store
-
-
-    * (      ) - start a general goto_door action
+    * (      ) - have a worker_di_items_drop that will result in a worker droping on hand items in the store
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
     * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
     * (      ) - have a shopping_leave action that will cause a shopper to leave the map
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
+    
+
+    
+    
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
