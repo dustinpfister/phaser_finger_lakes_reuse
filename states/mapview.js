@@ -216,6 +216,7 @@ class Mapview extends Phaser.Scene {
 
             player.pathProcessorCurve(this, (scene, person) => {
                 mdc.doorCheck(scene, player);
+                
                 person.setData('path', []);
                 person.nCurve = 0;
             });
