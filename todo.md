@@ -172,9 +172,12 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a worker_di_idle action  
     * ( done ) - have a worker_di_return action that will cause the worker to return to di
     * ( done ) - get worker_di_return to work from any map index
+    * ( done ) - start an Action Class
     
-    * (      ) - have well defined options for actions
     * (      ) - start a general goto_map action
+    * (      ) - start having well defined options for actions
+    * (      ) - use new action options feature to make worker_di_return an abstraction using goto_map action
+
     * (      ) - start a general drop action
     * (      ) - start a general pickup action
     
