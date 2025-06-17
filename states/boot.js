@@ -36,9 +36,7 @@ class Boot extends Phaser.Scene {
                 // on each game tick, regardless of what the current scene
                 // object is
                 // reg.set('foo', 'bar')
-                // reg.get('foo')
-                
-                
+                // reg.get('foo')       
             }
         }, game);
         this.scene.add('Menu', Menu, false);

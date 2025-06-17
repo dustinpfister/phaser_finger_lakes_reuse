@@ -140,6 +140,9 @@ to work much faster than using the mouse. So then I think it would be good to do
 item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
 is on top of.
 
+  /lib/people.js
+      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
+
 ```
 
 ## R4 (    ) - Tasks and actions started
@@ -176,17 +179,15 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - start a general goto_map action
     * ( done ) - start having well defined options for actions
     * ( done ) - use new action options feature to make worker_di_return an abstraction using goto_map action
-
     * ( done ) - start a general drop action
     * ( done ) - general drop action can be used to drop all items on hand
-    * (      ) - general drop can be used to drop a specfic item, or array of items on hand
+    * ( done ) - start a general pickup action
     
-    * (      ) - start a general pickup action
     * (      ) - general pickup action can be used to pick up an item or container
-    
     * (      ) - have a worker_item_price action
-    * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
-    * (      ) - have a worker_di_items_drop that will result in a worker droping on hand items in the store
+    * (      ) - use pickup action to have di workers pickup donation items
+    * (      ) - see about having di workers pick up empty boxes and place them in recylcing
+    
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
