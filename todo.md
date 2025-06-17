@@ -175,11 +175,14 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - start an Action Class
     * ( done ) - start a general goto_map action
     * ( done ) - start having well defined options for actions
-    
-    * (      ) - use new action options feature to make worker_di_return an abstraction using goto_map action
+    * ( done ) - use new action options feature to make worker_di_return an abstraction using goto_map action
 
-    * (      ) - start a general drop action
+    * ( done ) - start a general drop action
+    * ( done ) - general drop action can be used to drop all items on hand
+    * (      ) - general drop can be used to drop a specfic item, or array of items on hand
+    
     * (      ) - start a general pickup action
+    * (      ) - general pickup action can be used to pick up an item or container
     
     * (      ) - have a worker_item_price action
     * (      ) - have a worker_di_items_pickup that will pick up an item from a donation container
