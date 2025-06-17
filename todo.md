@@ -183,9 +183,12 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - general drop action can be used to drop all items on hand
     * ( done ) - start a general pickup action
     
-    * (      ) - general pickup action can be used to pick up an item or container
-    * (      ) - have a worker_item_price action
     * (      ) - use pickup action to have di workers pickup donation items
+    * (      ) - have a worker_item_price action
+    
+    * (      ) - general pickup action can be used to pick up an item or container
+    
+
     * (      ) - see about having di workers pick up empty boxes and place them in recylcing
     
 
