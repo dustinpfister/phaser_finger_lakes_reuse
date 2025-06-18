@@ -182,22 +182,19 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - start a general drop action
     * ( done ) - general drop action can be used to drop all items on hand
     * ( done ) - start a general pickup action
+    * ( done ) - use pickup action to have di workers pickup donation items
+    * ( done ) - general pickup action can be used to pick up an item or container
     
-    * (      ) - use pickup action to have di workers pickup donation items
     * (      ) - have a worker_item_price action
-    
-    * (      ) - general pickup action can be used to pick up an item or container
-    
-
     * (      ) - see about having di workers pick up empty boxes and place them in recylcing
-    
-
+    * (      ) - use the done property of an action object in place of people.getData('action_done')
+    * (      ) - have a setDone method for the Action class
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
     * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
     * (      ) - have a shopping_leave action that will cause a shopper to leave the map
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
-    
+
 
     
     
