@@ -184,8 +184,11 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - start a general pickup action
     * ( done ) - use pickup action to have di workers pickup donation items
     * ( done ) - general pickup action can be used to pick up an item or container
+    * ( done ) - have a worker_item_price action
     
-    * (      ) - have a worker_item_price action
+    * (      ) - get pickup, price, drop, return cycle work with di task
+    
+    
     * (      ) - see about having di workers pick up empty boxes and place them in recylcing
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - have a setDone method for the Action class
