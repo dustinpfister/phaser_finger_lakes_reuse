@@ -194,8 +194,9 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a worker_item_price action
     * ( done ) - get pickup, price, drop, return cycle work with di task
     * ( done ) - have a worker_di_recyle_empty action
-
-
+    * ( done ) - have di workers place empty boxes in the recylcing bin
+    
+    * (      ) - fix bug where boxes get placed on top of recycling bin
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
