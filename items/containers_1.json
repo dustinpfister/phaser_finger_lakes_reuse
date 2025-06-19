@@ -3,6 +3,7 @@
         "desc": "A box of Household items",
         "canGet": true,
         "canSell": false,
+        "canRecyle": true,
         "tile" : { 
           "sheet": "donations_16_16", 
           "prefix": "box"
@@ -18,6 +19,7 @@
         "desc": "A blue bin used for storing small house hold items",
         "canGet": true,
         "canSell": false,
+        "canRecyle": false,
         "tile" : {
           "sheet": "donations_16_16",
           "prefix": "bluebin"
@@ -33,6 +35,7 @@
         "desc": "Place empty boxes and the like into me!",
         "canGet": false,
         "canSell": false,
+        "canRecyle": false,
         "tile" : { 
           "sheet": "donations_16_16",
           "prefix": "recycle"

@@ -193,8 +193,9 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - general pickup action can be used to pick up an item or container
     * ( done ) - have a worker_item_price action
     * ( done ) - get pickup, price, drop, return cycle work with di task
+    * ( done ) - have a worker_di_recyle_empty action
 
-    * (      ) - see about having di workers pick up empty boxes and place them in recylcing
+
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
