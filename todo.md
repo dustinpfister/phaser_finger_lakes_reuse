@@ -157,6 +157,9 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - fix bug with worker switching is not working at all
     * ( done ) - work out new system for worker switching where we end up cycling threw all workers
 
+  /lib/items.js :
+    * ( done ) - have a ItemCollection.getEmpites method
+
   /lib/mapdata.js :
     * ( done ) - use mdc instance as a place to store numbers that will be used for people class names
     * ( done ) - try out setting up the player in the MapDataCollection constructor
@@ -189,18 +192,23 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - general pickup action can be used to pick up an item or container
     * ( done ) - have a worker_item_price action
     * ( done ) - get pickup, price, drop, return cycle work with di task
-    
-    * (      ) - fix bug where workers are getting stuck in double doors
-    * (      ) - get di task workers to wonder when wating for items at di
-    * (      ) - fix bug where di workers are placing items on top of walls
-    
+
     * (      ) - see about having di workers pick up empty boxes and place them in recylcing
-    * (      ) - use the done property of an action object in place of people.getData('action_done')
-    * (      ) - have a setDone method for the Action class
+
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
     * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
     * (      ) - have a shopping_leave action that will cause a shopper to leave the map
+
+    
+    * (      ) - fix bug where workers are getting stuck in double doors
+    * (      ) - get di task workers to wonder when wating for items at di
+    * (      ) - fix bug where di workers are placing items on top of walls
+    * (      ) - fix bug where workers are placing loose mugs at map 4
+
+    
+    * (      ) - use the done property of an action object in place of people.getData('action_done')
+    * (      ) - have a setDone method for the Action class
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
 
 
