@@ -160,6 +160,7 @@ pice of furniture that they bought before hand. However that might be a matter f
   /lib/mapdata.js :
     * ( done ) - use mdc instance as a place to store numbers that will be used for people class names
     * ( done ) - try out setting up the player in the MapDataCollection constructor
+    * ( done ) - have a md.findItemAtSpot method
 
   /lib/people.js :
     * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
