@@ -1,6 +1,8 @@
 {
     "box_items_hh" : {
         "desc": "A box of Household items",
+        "canGet": true,
+        "canSell": false,
         "tile" : { 
           "sheet": "donations_16_16", 
           "prefix": "box"
@@ -14,6 +16,8 @@
     },
     "blue_bin" : {
         "desc": "A blue bin used for storing small house hold items",
+        "canGet": true,
+        "canSell": false,
         "tile" : {
           "sheet": "donations_16_16",
           "prefix": "bluebin"
@@ -27,6 +31,8 @@
     },
     "recycle_bin" : {
         "desc": "Place empty boxes and the like into me!",
+        "canGet": false,
+        "canSell": false,
         "tile" : { 
           "sheet": "donations_16_16",
           "prefix": "recycle"

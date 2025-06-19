@@ -159,6 +159,7 @@ pice of furniture that they bought before hand. However that might be a matter f
 
   /lib/items.js :
     * ( done ) - have a ItemCollection.getEmpites method
+    * ( done ) - canGet and canSell prop for containers
 
   /lib/mapdata.js :
     * ( done ) - use mdc instance as a place to store numbers that will be used for people class names
