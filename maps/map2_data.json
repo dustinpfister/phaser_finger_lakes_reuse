@@ -18,6 +18,7 @@
       }
   },
   "customer" : {
+    "disabled" : true,
     "subTypes" : ["shopper"],
     "subTypeProbs": [ 1.00 ],
     "spawnAt" : { "x": 1, "y": 8 },

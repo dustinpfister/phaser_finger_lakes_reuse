@@ -203,10 +203,11 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - fix bug where donators stop comming
     * ( done ) - get shoppers working in map 1 again
 
-    * (      ) - have a shopping_idle action 
-    * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
-    * (      ) - have a shopping_buy_itemofinterest action that will cause a person to buy an item of interest that they have
-    * (      ) - have a shopping_leave action that will cause a shopper to leave the map
+    * ( done ) - start a shopping task
+    * (      ) - have a shopper_idle action 
+    * (      ) - have a shopper_find_itemofinterest action that will cause a person to find an item they would like to buy
+    * (      ) - have a shopper_buy_itemofinterest action that will cause a person to buy an item of interest that they have
+    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
 
     
     * (      ) - fix bug where workers are getting stuck in double doors
