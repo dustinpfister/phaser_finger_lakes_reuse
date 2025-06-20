@@ -2,6 +2,7 @@ import { Load } from './load.js';
 import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
 import { ConsoleLogger } from '../lib/message.js';
+
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'boot',
@@ -19,10 +20,9 @@ class Boot extends Phaser.Scene {
         const game = this.game;
         const reg = game.registry;
         reg.set('R', 4);
-        reg.set('MAX_MAP_DONATIONS', 40);
-        reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 5);
-        reg.set('CUSTOMER_SPAWN_RATE', { min: 5000, delta: 20000 });
-        
+        reg.set('MAX_MAP_DONATIONS', 10);
+        reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
+        reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1500 });    
         reg.set('gameSave', {
             money: 0
         });

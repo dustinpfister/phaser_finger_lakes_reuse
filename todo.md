@@ -167,6 +167,10 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a md.findItemAtSpot method
     * ( done ) - have a general md.findSpot method
     * ( done ) - have a md.findWalkToNear method
+    
+  /lib/message.js :
+    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
+    * (      ) - have a class that will be used for the game display ( for money, ect )
 
   /lib/people.js :
     * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
@@ -196,6 +200,7 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a worker_di_recyle_empty action
     * ( done ) - have di workers place empty boxes in the recylcing bin
     * ( done ) - fix bug where boxes get placed on top of recycling bin
+    * ( done ) - fix bug where donators stop comming
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy

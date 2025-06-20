@@ -226,14 +226,17 @@ class Mapview extends Phaser.Scene {
 
         //}
         disp1.text = 'Money: ' + gs.money;
+
         //disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;
+
         //disp2.text = 'player itemMode: ' + player.getData('itemMode');
-        const bin = md.getRecycling();
-        if(bin){
-            disp2.text = 'bin contents: ' + bin.contents.length;
-        }
+
+        //const bin = md.getRecycling();
+        //if(bin){
+        //    disp2.text = 'bin contents: ' + bin.contents.length;
+        //}
         
-        
+        disp2.text = 'customers: ' + md.customer.getChildren().length;
         
         this.mp.update(delta);
         
