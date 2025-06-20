@@ -201,8 +201,7 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have di workers place empty boxes in the recylcing bin
     * ( done ) - fix bug where boxes get placed on top of recycling bin
     * ( done ) - fix bug where donators stop comming
-
-    * (      ) - get shoppers working in map 1 again
+    * ( done ) - get shoppers working in map 1 again
 
     * (      ) - have a shopping_idle action 
     * (      ) - have a shopping_find_itemofinterest action that will cause a person to find an item they would like to buy
