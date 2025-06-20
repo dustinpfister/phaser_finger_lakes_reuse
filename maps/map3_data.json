@@ -21,7 +21,13 @@
     "subTypes" : ["shopper"],
     "subTypeProbs": [ 1.00 ],
     "spawnAt" : { "x": 2, "y": 2 },
-    "exitAt" : { "x": 2, "y": 2 }
+    "exitAt" : { "x": 2, "y": 2 },
+    "spawnAreas" : [
+        { "x": 2, "y": 2, "w":1, "h": 1 }
+    ],
+    "exitAreas" : [
+        { "x": 2, "y": 2, "w":1, "h": 1 }
+    ]
   },
   "worker" : {
     "subTypes" : ["employee" ],

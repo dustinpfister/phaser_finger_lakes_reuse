@@ -2,10 +2,17 @@
   "name": "mega_t",
   "spawnAt": { "x": 10, "y": 13 },
   "customer" : {
-     "subTypes" : ["shopper"],
-     "subTypeProbs": [ 1.00 ],
-     "spawnAt" : { "x": 16, "y": 0 },
-     "exitAt" : { "x": 14, "y": 1 }
+    "disabled" : false,
+    "subTypes" : ["shopper"],
+    "subTypeProbs": [ 1.00 ],
+    "spawnAt" : { "x": 16, "y": 0 },
+    "exitAt" : { "x": 14, "y": 1 },
+    "spawnAreas" : [
+        { "x": 16, "y": 0, "w":1, "h": 1 }
+    ],
+    "exitAreas" : [
+        { "x": 16, "y": 0, "w":1, "h": 1 }
+    ]
   },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
