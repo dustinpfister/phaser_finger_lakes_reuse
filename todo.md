@@ -207,6 +207,8 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a shopper_idle action 
     * ( done ) - have a shopper_find_itemofinterest action that will cause a person to find an item they would like to buy
     * ( done ) - have a shopper_buy_itemofinterest action that will cause a person to buy an item of interest that they have
+    
+    * (      ) - have shoppers buy items
     * (      ) - have a shopper_leave action that will cause a shopper to leave the map
 
     
