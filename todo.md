@@ -118,6 +118,9 @@ So then this will mean updates to the hard coded data of each map, as well as ne
 * (      ) - use new spawnAreas arrays over that of a single spawnAt object
 * (      ) - use new exitAreas arrays 
 
+ /lib/people.js :
+* (      ) - door checks should happen for all people types
+
  MISC:
 * (      ) - donations should be placed on the table by the donators
 * (      ) - the player should not be able to place items on top of walls
@@ -210,6 +213,8 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - get shoppers to buy items
     * ( done ) - fix bug where shoppers are getting stuck becuase of no action when a 'no_ioi_to_buy' result happens
     * ( done ) - fix bug where di workers are placing items on top of walls
+
+    * ( done ) - door check for workers only at this time
 
     * (      ) - fix bug where workers, and customers are getting stuck in double doors    
     * (      ) - have a shopper_leave action that will cause a shopper to leave the map
