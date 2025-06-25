@@ -167,6 +167,7 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a md.findItemAtSpot method
     * ( done ) - have a general md.findSpot method
     * ( done ) - have a md.findWalkToNear method
+    * ( done ) - can give an empty array of indices when using findEmptyDropSpot method
     
   /lib/message.js :
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
@@ -210,12 +211,15 @@ pice of furniture that they bought before hand. However that might be a matter f
     
     * ( done ) - get shoppers to buy items
     * ( done ) - fix bug where shoppers are getting stuck becuase of no action when a 'no_ioi_to_buy' result happens
+    
+    
+    * (      ) - fix bug where di workers are placing items on top of walls
+    * (      ) - fix bug where workers, and customers are getting stuck in double doors
+    
     * (      ) - have a shopper_leave action that will cause a shopper to leave the map
 
     
-    * (      ) - fix bug where workers are getting stuck in double doors
     * (      ) - get di task workers to wonder when wating for items at di
-    * (      ) - fix bug where di workers are placing items on top of walls
     * (      ) - fix bug where workers are placing loose mugs at map 4
 
     
