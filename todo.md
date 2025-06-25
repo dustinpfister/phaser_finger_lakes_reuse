@@ -30,7 +30,20 @@
     * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
 ```
 
-## R13 (    ) - Casher State
+## R13 (    ) - On hand action quick keyboard shortcuts
+```
+It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
+to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
+item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
+is on top of.
+
+  /lib/people.js
+      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
+
+```
+
+
+## R12 (    ) - Casher State
 ```
 The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
 and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
@@ -38,30 +51,30 @@ will look just like the shopify app in one part of the screen. Another part of t
 that a customer would like to buy.
 ```
 
-## R12 (    ) - Casher Task workers
+## R11 (    ) - Casher Task workers
 ```
 There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
 maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
 will likley not be able to work this kind of task for the moment.
 ```
-## R11 (    ) - Furniture Processing, PickUp, and Delivery
+## R10 (    ) - Furniture Processing, PickUp, and Delivery
 ```
 A worker other than the player should now also be able to work 'furniture'.
 ```
 
-## R10 (    ) - Furniture
+## R9 (    ) - Furniture
 ```
 Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
 move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
 like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
 ```
 
-## R9 (    ) - Trash, Dumpster, more items
+## R8 (    ) - Trash, Dumpster, more items
 ```
 Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
 ```
 
-## R8 (    ) - Processing Household task workers, cart containers.
+## R7 (    ) - Processing Household task workers, cart containers.
 ```
 At any moment there should be zero or more workers processing items thus the main focus with this revision is
 to add a 'processingHousehold' task for workers. This kind of task will involve having a worker pick up items in
@@ -69,7 +82,43 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## R7 (    ) - Game Day Time, Schedule system, Color Tag System
+
+## R6 (    ) - Spawn and exit areas
+```
+I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
+arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
+So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
+
+  /maps :
+    * (      ) - update maps 1-4 to have objects for both customer, and worker, people types
+    * (      ) - update maps 1-4 to have spawnAreas object arrays
+    * (      ) - update maps 1-4 to have exitAreas object arrays
+    * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
+  
+ /lib/mapdata.js :
+    * (      ) - use new spawnAreas arrays over that of a single spawnAt object
+    * (      ) - use new exitAreas arrays 
+
+  /lib/message.js :
+    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
+    * (      ) - have a class that will be used for the game display ( for money, ect )
+
+  /lib/people.js :
+    * (      ) - have a setDone method for the Action class
+    * (      ) - door checks should happen for all people types
+    * (      ) - fix bug where workers, and customers are getting stuck in double doors    
+    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
+    * (      ) - get di task workers to wonder when wating for items at di
+    * (      ) - fix bug where workers are placing loose mugs at map 4
+    * (      ) - use the done property of an action object in place of people.getData('action_done')
+    * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
+    * (      ) - a person should not be able to place items on top of walls
+    * (      ) - a person should only be able to pick up items that are in range
+    * (      ) - a person should only be able to drop items in range
+    * (      ) - break down onHandAction method into more than one method
+```
+
+## R5 (    ) - Game Day Time, Schedule system, Color Tag System
 ``` 
 I would like to have a system for game time. That means having a certian amount of game time that will result in the span
 of a single game day. I would like for this to be something that can be adjusted in a way in which a game day can be as 
@@ -100,55 +149,8 @@ simulation.
 * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
-## R6 (    ) - Spawn and exit areas
-```
-I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
-arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
-So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
 
-
- /maps :
-* (      ) - update maps 1-4 to have objects for both customer, and worker, people types
-* (      ) - update maps 1-4 to have spawnAreas object arrays
-* (      ) - update maps 1-4 to have exitAreas object arrays
-* (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
- 
- 
- /lib/mapdata.js :
-* (      ) - use new spawnAreas arrays over that of a single spawnAt object
-* (      ) - use new exitAreas arrays 
-
- /lib/people.js :
-* (      ) - door checks should happen for all people types
-
- MISC:
-* (      ) - donations should be placed on the table by the donators
-* (      ) - the player should not be able to place items on top of walls
-* (      ) - the player should only be able to pick up items that are in range
-* (      ) - the player should only be able to drop items in range
-* (      ) - Have di worker move back to map 4 when they have no on hand items
-* (      ) - use people.dropItem method for donators
-* (      ) - use people.dropItem method for workers
-* (      ) - use people.dropItem method for player controled worker
-* (      ) - remove drop item code from people.onHandAction
-* (      ) - have a people.pickUpItem method
-* (      ) - have a way for a donator to handle a situation in which they can not find a spot
-* (      ) - fix isshue where donators are still placing items on top of each other
-```
-
-## R5 (    ) - On hand action quick keyboard shortcuts
-```
-It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
-to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
-item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
-is on top of.
-
-  /lib/people.js
-      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
-
-```
-
-## R4 (    ) - Tasks and actions started
+## R4 ( done 06/25/2025 ) - Tasks and actions started
 ```
 The general idea is that each person that is a worker, or any type really, can be set to a given 'Task' 
 such as a 'DI' task. Each task will then involve one or more actions such as 'findDonation',
@@ -172,10 +174,6 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a md.findWalkToNear method
     * ( done ) - can give an empty array of indices when using findEmptyDropSpot method
     
-  /lib/message.js :
-    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
-    * (      ) - have a class that will be used for the game display ( for money, ect )
-
   /lib/people.js :
     * ( done ) - start work on Tasks and Actions By creating a collection of actions to use to create tasks
     * ( done ) - each action should have an init method that will be called once when a person enters this action from another one
@@ -213,16 +211,7 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - get shoppers to buy items
     * ( done ) - fix bug where shoppers are getting stuck becuase of no action when a 'no_ioi_to_buy' result happens
     * ( done ) - fix bug where di workers are placing items on top of walls
-
     * ( done ) - door check for workers only at this time
-
-    * (      ) - fix bug where workers, and customers are getting stuck in double doors    
-    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
-    * (      ) - get di task workers to wonder when wating for items at di
-    * (      ) - fix bug where workers are placing loose mugs at map 4
-    * (      ) - use the done property of an action object in place of people.getData('action_done')
-    * (      ) - have a setDone method for the Action class
-    * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
