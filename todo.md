@@ -203,33 +203,21 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - fix bug where boxes get placed on top of recycling bin
     * ( done ) - fix bug where donators stop comming
     * ( done ) - get shoppers working in map 1 again
-
     * ( done ) - start a shopping task
     * ( done ) - have a shopper_idle action 
     * ( done ) - have a shopper_find_itemofinterest action that will cause a person to find an item they would like to buy
     * ( done ) - have a shopper_buy_itemofinterest action that will cause a person to buy an item of interest that they have
-    
     * ( done ) - get shoppers to buy items
     * ( done ) - fix bug where shoppers are getting stuck becuase of no action when a 'no_ioi_to_buy' result happens
-    
-    
-    * (      ) - fix bug where di workers are placing items on top of walls
-    * (      ) - fix bug where workers, and customers are getting stuck in double doors
-    
-    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
+    * ( done ) - fix bug where di workers are placing items on top of walls
 
-    
+    * (      ) - fix bug where workers, and customers are getting stuck in double doors    
+    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
     * (      ) - get di task workers to wonder when wating for items at di
     * (      ) - fix bug where workers are placing loose mugs at map 4
-
-    
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - have a setDone method for the Action class
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
-
-
-    
-    
 ```
 
 ## R3 ( done 06/10/2025 ) - Message System
