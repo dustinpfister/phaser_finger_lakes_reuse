@@ -94,6 +94,9 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - update maps 1-4 to have spawnAreas object arrays
     * (      ) - update maps 1-4 to have exitAreas object arrays
     * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
+
+  /sheets :
+* (      ) - new sprites for workers
   
  /lib/mapdata.js :
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
@@ -125,28 +128,28 @@ of a single game day. I would like for this to be something that can be adjusted
 long as say one half hour of real time, or actually a full 24 hours if the aim is to make this more like an actual 
 simulation.
 
-  /sheets :
-* (      ) - new sprites for workers
+  /drafts :
+    * (      ) - start a new draft to test out the new game time system
 
   /lib/items.js :
-* (      ) - have more than one household item
-* (      ) - have it so that drops will pick one of a few household items each time
+    * (      ) - have more than one household item
+    * (      ) - have it so that drops will pick one of a few household items each time
 
- /lib/mapview.js :
-* (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
-* (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
+  /lib/mapview.js :
+    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
- /lib/people.js :
-* (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
+  /lib/people.js :
+    * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
 
- /lib/schedule.js :
-* (      ) - Start a lib that provides a system for the amount of real time a game day is.
-* (      ) - have a single game day be 30 minutes ( for now )
-* (      ) - have days of the week as part of the time system
-* (      ) - have di disabled on Thursdays
-* (      ) - color tag system built into schedule.js
-* (      ) - schedule system for People class built into schedule.js
-* (      ) - each new game day starts with an array of objects that are donator events
+  /lib/schedule.js :
+    * (      ) - Start a lib that provides a system for the amount of real time a game day is.
+    * (      ) - have a single game day be 30 minutes ( for now )
+    * (      ) - have days of the week as part of the time system
+    * (      ) - have di disabled on Thursdays
+    * (      ) - color tag system built into schedule.js
+    * (      ) - schedule system for People class built into schedule.js
+    * (      ) - each new game day starts with an array of objects that are donator events
 ```
 
 
