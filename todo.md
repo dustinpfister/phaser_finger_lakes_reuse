@@ -209,7 +209,7 @@ pice of furniture that they bought before hand. However that might be a matter f
     * ( done ) - have a shopper_buy_itemofinterest action that will cause a person to buy an item of interest that they have
     
     * ( done ) - get shoppers to buy items
-    * (      ) - fix bug where shoppers are getting stuck
+    * ( done ) - fix bug where shoppers are getting stuck becuase of no action when a 'no_ioi_to_buy' result happens
     * (      ) - have a shopper_leave action that will cause a shopper to leave the map
 
     
