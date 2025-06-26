@@ -132,16 +132,19 @@ simulation.
     * (      ) - start a new draft to test out the new game time system
 
   /lib/items.js :
-    * (      ) - fix bug where I get a new drops when removing an empty box from the recyling bin
+    * ( done ) - can give an options object when Calling Container or Item Class
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
 
-  /lib/mapview.js :
+  /lib/mapdata.js :
+    * ( done ) - update Container/Item Class call with options object
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
   /lib/people.js :
+    * ( done ) - update Container/Item Class call with options object
     * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
+    * (      ) - fix bug where di workers try to recycle loose items
 
   /lib/schedule.js :
     * (      ) - Start a lib that provides a system for the amount of real time a game day is.
@@ -151,6 +154,7 @@ simulation.
     * (      ) - color tag system built into schedule.js
     * (      ) - schedule system for People class built into schedule.js
     * (      ) - each new game day starts with an array of objects that are donator events
+    
 ```
 
 
