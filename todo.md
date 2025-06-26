@@ -132,6 +132,7 @@ simulation.
     * (      ) - start a new draft to test out the new game time system
 
   /lib/items.js :
+    * (      ) - fix bug where I get a new drops when removing an empty box from the recyling bin
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
 
