@@ -129,6 +129,9 @@ long as say one half hour of real time, or actually a full 24 hours if the aim i
 simulation.
 
   /drafts :
+    * ( done ) - have an index.html for color system draft
+    * ( done ) - color table demo for color system draft
+    * (      ) - display table for color system, draft
     * (      ) - start a new draft to test out the new game time system
 
   /lib/items.js :

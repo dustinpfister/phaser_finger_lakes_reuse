@@ -13,7 +13,6 @@ class Mapview extends Phaser.Scene {
 
     create () {
     
-    
         const mp = this.mp = new MessPusher({
             key: 'min_3px_5px',
             sx: 165, sy: 350,
@@ -24,7 +23,7 @@ class Mapview extends Phaser.Scene {
             maxT: 10000
         });
     
-        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
         const mv = this;
         this.registry.set('mdc', mdc);
