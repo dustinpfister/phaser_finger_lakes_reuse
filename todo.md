@@ -131,8 +131,9 @@ simulation.
   /drafts :
     * ( done ) - have an index.html for color system draft
     * ( done ) - color table demo for color system draft
-    * (      ) - display table for color system, draft
-    * (      ) - start a new draft to test out the new game time system
+    * ( done ) - display table for color system, draft
+    * ( done ) - make color system draft a demo of COLOR in new schedule.js
+    * (      ) - start a new draft to test out the new game time system in schedule.js
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -150,7 +151,7 @@ simulation.
     * (      ) - fix bug where di workers try to recycle loose items
 
   /lib/schedule.js :
-    * (      ) - Start a lib that provides a system for the amount of real time a game day is.
+    * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
     * (      ) - have a single game day be 30 minutes ( for now )
     * (      ) - have days of the week as part of the time system
     * (      ) - have di disabled on Thursdays
