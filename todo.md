@@ -152,6 +152,7 @@ simulation.
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
+    * ( done ) - start GameTime class
     * (      ) - have a single game day be 30 minutes ( for now )
     * (      ) - have days of the week as part of the time system
     * (      ) - have di disabled on Thursdays

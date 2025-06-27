@@ -1,8 +1,15 @@
-import { COLOR } from '../../lib/schedule.js';
+import { COLOR, GameTime } from '../../lib/schedule.js';
 
 class Example extends Phaser.Scene {
 
-    create () { 
+    create () {
+    
+        const gt = new GameTime();
+        
+        console.log( gt.jsDate.getTime() )
+    
+    
+    /*
         const CELL_WIDTH = 120;
         const CELL_HEIGHT = 70;
         this.texture = this.textures.createCanvas('color_table', CELL_WIDTH * 5, CELL_HEIGHT * 6);
@@ -24,6 +31,8 @@ class Example extends Phaser.Scene {
         });
         this.texture.refresh();
         this.add.image(CELL_WIDTH * 5 / 2 + 20, CELL_HEIGHT * 6 / 2 + 20, 'color_table');
+        */
+        
     }
     
 }
