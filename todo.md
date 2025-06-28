@@ -133,7 +133,10 @@ simulation.
     * ( done ) - color table demo for color system draft
     * ( done ) - display table for color system, draft
     * ( done ) - make color system draft a demo of COLOR in new schedule.js
-    * (      ) - start a new draft to test out the new game time system in schedule.js
+    * ( done ) - start a new draft to test out the new game time system in schedule.js
+    * (      ) - the schedule draft should demo TimedEvents
+    * (      ) - the schedule draft should demo TimeBar
+
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -153,8 +156,12 @@ simulation.
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
     * ( done ) - start a GameTime class
+    * ( done ) - have a GameTime.multi prop that is the number of times to multiply the rate of real world time
+    * ( done ) - have a GameTime.set method that can be used as a way to set the current game time
+    * (      ) - have a GameTime.step method that can be used to step the current game time by a given update delta
     
-    * (      ) - start a Timed Event Class
+    
+    * ( done ) - start a Timed Event Class
     * (      ) - a Timed event object contains a start time, duration time, and callbacks
     * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
     

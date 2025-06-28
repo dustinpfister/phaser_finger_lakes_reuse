@@ -4,34 +4,13 @@ class Example extends Phaser.Scene {
 
     create () {
     
-        const gt = new GameTime();
-        
-        console.log( gt.jsDate.getTime() )
-    
-    
-    /*
-        const CELL_WIDTH = 120;
-        const CELL_HEIGHT = 70;
-        this.texture = this.textures.createCanvas('color_table', CELL_WIDTH * 5, CELL_HEIGHT * 6);
-        const ctx = this.texture.context;
-        ctx.textBaseline = 'top';
-        ctx.font = '20px arial';
-        COLOR.data.forEach((cd, i_cd)=>{
-            const cc = COLOR.get_current_colors(cd.desc);
-            Object.keys(cc).forEach((key, i_cc)=>{
-                const obj = cc[key];
-                ctx.fillStyle = obj.web;
-                const x = CELL_WIDTH * i_cc;
-                const y = CELL_HEIGHT * i_cd;
-                ctx.fillRect(x, y, CELL_WIDTH, CELL_HEIGHT);
-                ctx.fillStyle = 'black';
-                ctx.fillText(obj.desc, x + 5, y + 5);
-                ctx.fillText('( ' + key + ' )', x + 5, y + 25);
-            });
+        const gt = new GameTime({
+            year: 2024,
+            month: 4, day: 6, hour: 10, minute: 5, second: 30, ms: 500
         });
-        this.texture.refresh();
-        this.add.image(CELL_WIDTH * 5 / 2 + 20, CELL_HEIGHT * 6 / 2 + 20, 'color_table');
-        */
+        
+        console.log( gt)
+    
         
     }
     
