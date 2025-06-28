@@ -152,7 +152,17 @@ simulation.
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
-    * ( done ) - start GameTime class
+    * ( done ) - start a GameTime class
+    
+    * (      ) - start a Timed Event Class
+    * (      ) - a Timed event object contains a start time, duration time, and callbacks
+    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
+    
+    * (      ) - a game day starts with a stack of TimedEvent Objects
+    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
+    
+    * (      ) - start an TimeBar class that can be used to create a GameObject that displays the current state of GameTime, and its Timed Events
+    
     * (      ) - have a single game day be 30 minutes ( for now )
     * (      ) - have days of the week as part of the time system
     * (      ) - have di disabled on Thursdays
