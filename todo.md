@@ -158,7 +158,7 @@ simulation.
     * ( done ) - start a GameTime class
     * ( done ) - have a GameTime.multi prop that is the number of times to multiply the rate of real world time
     * ( done ) - have a GameTime.set method that can be used as a way to set the current game time
-    * (      ) - have a GameTime.step method that can be used to step the current game time by a given update delta
+    * ( done ) - have a GameTime.step method that can be used to step the current game time by a given update delta
     
     
     * ( done ) - start a Timed Event Class
