@@ -168,7 +168,7 @@ simulation.
     * (      ) - a game day starts with a stack of TimedEvent Objects
     * (      ) - as a game day progresses, TimedEvent objects will start at the set time
     
-    * (      ) - start an TimeBar class that can be used to create a GameObject that displays the current state of GameTime, and its Timed Events
+    * ( done ) - start an TimeBar class that can be used to display the current state of GameTime, and its Timed Events
     
     * (      ) - have a single game day be 30 minutes ( for now )
     * (      ) - have days of the week as part of the time system
