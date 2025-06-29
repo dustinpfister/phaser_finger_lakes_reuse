@@ -159,25 +159,20 @@ simulation.
     * ( done ) - have a GameTime.multi prop that is the number of times to multiply the rate of real world time
     * ( done ) - have a GameTime.set method that can be used as a way to set the current game time
     * ( done ) - have a GameTime.step method that can be used to step the current game time by a given update delta
-    
-    
-    * ( done ) - start a Timed Event Class
-    * (      ) - a Timed event object contains a start time, duration time, and callbacks
-    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
-    
-    * (      ) - a game day starts with a stack of TimedEvent Objects
-    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
-    
     * ( done ) - start an TimeBar class that can be used to display the current state of GameTime, and its Timed Events
     * ( done ) - TimeBar used to display Time and Date.
     * ( done ) - use TimeBar to display current state for Color Tags
+    * ( done ) - color tag system built into schedule.js    
+    * ( done ) - start a Timed Event Class
     
-    * (      ) - have a single game day be 30 minutes ( for now )
-    * (      ) - have days of the week as part of the time system
-    * (      ) - have di disabled on Thursdays
-    * (      ) - color tag system built into schedule.js
-    * (      ) - schedule system for People class built into schedule.js
-    * (      ) - each new game day starts with an array of objects that are donator events
+    * (      ) - have a realTime mode where the time just the current system time
+    
+    
+    * (      ) - a Timed event object contains a start time, duration time, and callbacks
+    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
+    * (      ) - a game day starts with a stack of TimedEvent Objects
+    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
+    * (      ) - have a way to declare that DI is closed on Thursdays
     
 ```
 

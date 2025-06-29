@@ -6,10 +6,10 @@ class Example extends Phaser.Scene {
     
         
         const gt = new GameTime({
-            //time: 1680789930501,
-            year: 2025, month: 6, day: 3,
-            hour: 9, minute: 30, second: 0, ms:0,
-            multi: 25000 //2800 //768 //384 //192 //96 //48
+            time: Date.now(), //1680789930501,
+            //year: 2025, month: 6, day: 3,
+            //hour: 9, minute: 30, second: 0, ms:0,
+            multi: 1 //25000 //2800 //768 //384 //192 //96 //48
         });
         
         const tb = new TimeBar({
