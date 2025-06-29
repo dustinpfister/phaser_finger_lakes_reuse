@@ -167,6 +167,9 @@ simulation.
     
     * (      ) - have a realTime mode where the time just the current system time
     
+    * (      ) - see about using the same font as in the message system
+    * (      ) - use the message log system as with all other libs
+    
     
     * (      ) - a Timed event object contains a start time, duration time, and callbacks
     * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
