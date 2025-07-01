@@ -134,9 +134,8 @@ simulation.
     * ( done ) - display table for color system, draft
     * ( done ) - make color system draft a demo of COLOR in new schedule.js
     * ( done ) - start a new draft to test out the new game time system in schedule.js
+    * ( done ) - the schedule draft should demo TimeBar
     * (      ) - the schedule draft should demo TimedEvents
-    * (      ) - the schedule draft should demo TimeBar
-
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -164,11 +163,12 @@ simulation.
     * ( done ) - use TimeBar to display current state for Color Tags
     * ( done ) - color tag system built into schedule.js    
     * ( done ) - start a Timed Event Class
+    * ( done ) - use the message log system as with all other libs
     
     * (      ) - have a realTime mode where the time just the current system time
     
     * (      ) - see about using the same font as in the message system
-    * (      ) - use the message log system as with all other libs
+    
     
     
     * (      ) - a Timed event object contains a start time, duration time, and callbacks
