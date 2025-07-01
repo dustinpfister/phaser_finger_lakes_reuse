@@ -9,7 +9,7 @@ class Example extends Phaser.Scene {
             //time: Date.now(), //1680789930501,
             year: 2025, month: 6, day: 3,
             hour: 9, minute: 0, second: 0, ms:0,
-            multi: 3384 //25000 //2800 //768 //384 //192 //96 //48
+            multi: 768 //25000 //2800 //768 //384 //192 //96 //48
         });
         
         const te = gt.addTimedEvent();

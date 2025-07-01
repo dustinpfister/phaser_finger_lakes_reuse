@@ -167,9 +167,9 @@ simulation.
     * ( done ) - use the message log system as with all other libs
     * ( done ) - a Timed event object contains a start time, and duration time
     * ( done ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
-    
-    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
+    * ( done ) - as a game day progresses, TimedEvent objects will start at the set time
     * (      ) - have a realTime mode where the time just the current system time
+    
     * (      ) - see about using the same font as in the message system
     
     
