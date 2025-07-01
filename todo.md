@@ -166,8 +166,8 @@ simulation.
     * ( done ) - start a Timed Event Class
     * ( done ) - use the message log system as with all other libs
     * ( done ) - a Timed event object contains a start time, and duration time
+    * ( done ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
     
-    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
     * (      ) - a game day starts with a stack of TimedEvent Objects
     * (      ) - as a game day progresses, TimedEvent objects will start at the set time
     
