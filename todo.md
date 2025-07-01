@@ -168,12 +168,8 @@ simulation.
     * ( done ) - a Timed event object contains a start time, and duration time
     * ( done ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
     
-    * (      ) - a game day starts with a stack of TimedEvent Objects
     * (      ) - as a game day progresses, TimedEvent objects will start at the set time
-    
-    
     * (      ) - have a realTime mode where the time just the current system time
-    
     * (      ) - see about using the same font as in the message system
     
     

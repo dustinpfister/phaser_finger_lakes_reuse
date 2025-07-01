@@ -6,10 +6,24 @@ class Example extends Phaser.Scene {
     
         
         const gt = new GameTime({
-            time: Date.now(), //1680789930501,
-            //year: 2025, month: 6, day: 3,
-            //hour: 9, minute: 30, second: 0, ms:0,
-            multi: 1 //25000 //2800 //768 //384 //192 //96 //48
+            //time: Date.now(), //1680789930501,
+            year: 2025, month: 6, day: 3,
+            hour: 9, minute: 0, second: 0, ms:0,
+            multi: 3384 //25000 //2800 //768 //384 //192 //96 //48
+        });
+        
+        const te = gt.addTimedEvent();
+
+        te.addEvent('start', function(){
+            console.log('event started');
+        });
+        
+        te.addEvent('update', function(){
+            console.log('event update');
+        });
+
+        te.addEvent('end', function(){
+            console.log('event ended');
         });
         
         const tb = new TimeBar({
