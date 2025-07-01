@@ -136,6 +136,7 @@ simulation.
     * ( done ) - start a new draft to test out the new game time system in schedule.js
     * ( done ) - the schedule draft should demo TimeBar
     * (      ) - the schedule draft should demo TimedEvents
+    * (      ) - have a message that says that DI is closed on Thursdays
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -164,18 +165,18 @@ simulation.
     * ( done ) - color tag system built into schedule.js    
     * ( done ) - start a Timed Event Class
     * ( done ) - use the message log system as with all other libs
+    * ( done ) - a Timed event object contains a start time, and duration time
+    
+    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
+    * (      ) - a game day starts with a stack of TimedEvent Objects
+    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
+    
     
     * (      ) - have a realTime mode where the time just the current system time
     
     * (      ) - see about using the same font as in the message system
     
     
-    
-    * (      ) - a Timed event object contains a start time, duration time, and callbacks
-    * (      ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
-    * (      ) - a game day starts with a stack of TimedEvent Objects
-    * (      ) - as a game day progresses, TimedEvent objects will start at the set time
-    * (      ) - have a way to declare that DI is closed on Thursdays
     
 ```
 
