@@ -169,11 +169,11 @@ simulation.
     * ( done ) - as a game day progresses, TimedEvent objects will start at the set time
     * ( done ) - options for addTimedEvent method
     * ( done ) - old events should be purged out of the GameTime instnace
+    * ( done ) - have a realTime mode where the time is just the current system time
 
     * (      ) - timeBar using the same font as in the message system
     * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% off
 
-    * (      ) - have a realTime mode where the time is just the current system time
 
     
     

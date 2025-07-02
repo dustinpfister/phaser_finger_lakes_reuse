@@ -4,13 +4,19 @@ class Example extends Phaser.Scene {
 
     create () {
     
+        let gt = null;
+        //gt = new GameTime({
+        //    year: 2025, month: 6, day: 3,
+        //    hour: 9, minute: 0, second: 0, ms:0,
+        //    multi: 768, real: false
+        //});
         
-        const gt = new GameTime({
-            //time: Date.now(), //1680789930501,
-            year: 2025, month: 6, day: 3,
-            hour: 9, minute: 0, second: 0, ms:0,
-            multi: 768 //25000 //2800 //768 //384 //192 //96 //48
+        gt = new GameTime({
+            time: new Date(2025, 6, 1),
+            multi: 1, real: false
         });
+        
+        //gt = new GameTime({ real: true });
         
         const te = gt.addTimedEvent();
 
