@@ -2,6 +2,10 @@ import { COLOR, GameTime, TimeBar } from '../../lib/schedule.js';
 
 class Example extends Phaser.Scene {
 
+    preload () {
+        this.load.bitmapFont('min_3px_5px', '../../fonts/min_3px_5px.png', '../../fonts/min_3px_5px.xml');
+    }
+
     create () {
         const tb = new TimeBar({
             scene: this,
