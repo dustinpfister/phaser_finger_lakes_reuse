@@ -135,7 +135,8 @@ simulation.
     * ( done ) - make color system draft a demo of COLOR in new schedule.js
     * ( done ) - start a new draft to test out the new game time system in schedule.js
     * ( done ) - the schedule draft should demo TimeBar
-    * (      ) - the schedule draft should demo TimedEvents
+    * ( done ) - have three scheudle demos for game time, real time, and color tag system
+    * (      ) - the schedule game time and real events draft should demo TimedEvents
     * (      ) - have a message that says that DI is closed on Thursdays
 
   /lib/items.js :
