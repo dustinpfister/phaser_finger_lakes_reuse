@@ -151,7 +151,6 @@ simulation.
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
     * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
-    * (      ) - fix bug where di workers try to recycle loose items
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
@@ -168,9 +167,13 @@ simulation.
     * ( done ) - a Timed event object contains a start time, and duration time
     * ( done ) - have a onStart, onUpdate, and onEnd callback function for each timed event object
     * ( done ) - as a game day progresses, TimedEvent objects will start at the set time
-    * (      ) - have a realTime mode where the time just the current system time
-    
-    * (      ) - see about using the same font as in the message system
+    * ( done ) - options for addTimedEvent method
+
+    * (      ) - timeBar using the same font as in the message system
+    * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% off
+
+    * (      ) - have a realTime mode where the time is just the current system time
+
     
     
     
