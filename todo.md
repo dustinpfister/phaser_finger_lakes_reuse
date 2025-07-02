@@ -171,6 +171,7 @@ simulation.
     * ( done ) - old events should be purged out of the GameTime instnace
     * ( done ) - have a realTime mode where the time is just the current system time
 
+    * ( done ) - can add callbacks by way of options object when using addTimedEvent method of GameTime class
     * (      ) - timeBar using the same font as in the message system
     * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% of
 
