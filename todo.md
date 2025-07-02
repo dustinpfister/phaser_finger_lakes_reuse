@@ -172,12 +172,8 @@ simulation.
     * ( done ) - have a realTime mode where the time is just the current system time
 
     * (      ) - timeBar using the same font as in the message system
-    * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% off
+    * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% of
 
-
-    
-    
-    
 ```
 
 

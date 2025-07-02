@@ -5,16 +5,16 @@ class Example extends Phaser.Scene {
     create () {
     
         let gt = null;
-        //gt = new GameTime({
-        //    year: 2025, month: 6, day: 3,
-        //    hour: 9, minute: 0, second: 0, ms:0,
-        //    multi: 768, real: false
-        //});
-        
         gt = new GameTime({
-            time: new Date(2025, 6, 1),
-            multi: 1, real: false
+            year: 2025, month: 6, day: 3,
+            hour: 9, minute: 0, second: 0, ms:0,
+            multi: 768, real: false
         });
+        
+        //gt = new GameTime({
+        //    time: 1751457722253,
+        //    multi: 1, real: false
+        //});
         
         //gt = new GameTime({ real: true });
         
