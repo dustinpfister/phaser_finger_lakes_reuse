@@ -172,6 +172,7 @@ simulation.
     * ( done ) - have a realTime mode where the time is just the current system time
     * ( done ) - can add callbacks by way of options object when using addTimedEvent method of GameTime class
     * ( done ) - timeBar using the same font as in the message system
+    
     * (      ) - have a larger min text option
     
     * (      ) - timeBar shows the current state for printing, cull, 25%, 50%, and 75% of
