@@ -137,7 +137,10 @@ simulation.
     * ( done ) - the schedule draft should demo TimeBar
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
     * (      ) - the schedule game time and real events draft should demo TimedEvents
-    * (      ) - have a message that says that DI is closed on Thursdays
+    * (      ) - have a message that says that DI is closed on Thursdays for real and game time drafts
+    * (      ) - update mapdata draft
+    * (      ) - update people draft
+    * (      ) - rename mess_pusher to message_messpusher
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
