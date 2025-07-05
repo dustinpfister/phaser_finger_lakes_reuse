@@ -1,15 +1,19 @@
 # Phaser Finger Lakes Reuse
 
-This is a game where I am simulating how to work a job at [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). The goal here is to make a game that is fun to play, but also practical in the sense that it can be used as a way to help train new [employees](https://ithacareuse.org/staff/), [volunteers](https://ithacareuse.org/volunteer/), and people returning to work via the [reset apprentice program](https://ithacareuse.org/reset/). At the time of this writing the game is still very much in a kind of [alpha state](https://en.wikipedia.org/wiki/Software_release_life_cycle), however I do intend to keep working on this until I have something that is worthy of being published.
+This is a game where I am simulating how to work a job at [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). This project is still very much in development, so for now much of my focus is on the AI, Game Time System, and many other supporting libs. I am not writing all of the code from the ground up though mind you as this project works on top of [Phaser](https://phaser.io/) 
 
-## People Types, Tasks, and Actions \( R4 \)
+## Number of Players
 
-As of R4 there are two general people types, workers can customers. All of these types have sub types such as shopper, and donator.
+In time I would like to make this at least a one player game, if not multiplayer. However for now it is very much a zero player game. At the time of this writing the game is still very much in a kind of [alpha state](https://en.wikipedia.org/wiki/Software_release_life_cycle), so I do not have a clear idea as to when I will get make the game at least one player.
 
-### Workers
+### Zero Player Game - R0+
 
-The player takes control of a Worker and can use to prefrom tasks such sorting items in Donation Intake \( DI for short \). It is also possible to switch between workers so the player can switch from controling a woker in DI to another worker prefroming some other Task such.
+As of R5 I am just focusing on taking this project in a zero player game direction, like that of [progress quest](https://en.wikipedia.org/wiki/Progress_Quest). A game like this is also often known as a [True Idle game](https://www.reddit.com/r/incremental_games/comments/2kfozg/where_are_the_true_idle_games/). So in other words a kind of game where there is no human input at all, and thus all progression happens by way of logic that updates the state of AI controlled players.
 
-### Customers
+### One Player Game – R?+
 
-There are two major types of Customers, shopers, and donators. The names shouls speak for themselfs, but yes donators will drop of items that are to be sorted and priced. Shopers will buy an item that has been priced.
+Although the direction is going in that of a zero player game I would also like to, at some point, make something that is fun to play but also practical in the sense that it can be used as a way to train new [employees](https://ithacareuse.org/staff/), [volunteers](https://ithacareuse.org/volunteer/), and people returning to work via the [reset program](https://ithacareuse.org/reset/). 
+
+### Multiplayer – R?+
+
+If I ever get there, and of course that is a very big if, I might work on some sever side code, and with that client system changes that will allow for multiplayer. As of this writing that is a total pipe dream as it is just me working on this thing.
