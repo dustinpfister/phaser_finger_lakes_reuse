@@ -2,6 +2,7 @@
 
 ## RX (    ) - So Many More!
 ```
+    * Pricing Programing Language ( Vishual, langage, somehting gear to setting priceses)
     * 'eCenter' Processing task
     * 'electronics' Processing task
     * 'buildingMaterials' Processing Task
@@ -28,6 +29,7 @@
     * Grants
     * Yes this will take forever unless I figure out what the MVP is for this.
     * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
+
 ```
 
 ## RX (    ) - On hand action quick keyboard shortcuts
@@ -120,16 +122,8 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - break down onHandAction method into more than one method
 ```
 
-## RX (    ) - Pricing Programing Language
-```
-The crude idea here is to come up with some kind of programing language that is designed with the pricing of second hand items in mind. This means that the main focus of the language is to write expressions that are used to set the price of an item uisng a wide range of langauge built in keywords. One general idea that comes to mind is a 'decay' keyword that stores a value between (and including) 1 and 0, where 1 means that the item just came in from donations and 0 means that the item has been in the store for a set max amount of time.
-
-price = decay
-
-``` 
-
 ## R5 (    ) - Game Day Time, Schedule system, Color Tag System
-``` 
+```
 I would like to have a system for game time. That means having a certian amount of game time that will result in the span
 of a single game day. I would like for this to be something that can be adjusted in a way in which a game day can be as 
 long as say one half hour of real time, or actually a full 24 hours if the aim is to make this more like an actual 
@@ -183,9 +177,10 @@ simulation.
     * ( done ) - have a realTime mode where the time is just the current system time
     * ( done ) - can add callbacks by way of options object when using addTimedEvent method of GameTime class
     * ( done ) - timeBar using the same font as in the message system
+    * ( done ) - Make TimeBar a stand alone class that does not extend anything
+    * ( done ) - Have the all Canvas, Image, BitmapText, ect objects as properties of TimeBar
  
     * (      ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off
-    * (      ) - Have the canvas Image and Bitmap Text objects as children of TimeBar that extends group
     * (      ) - have TimedEvent extend Sprite class
     * (      ) - have display objects such as sprites for each event
     
