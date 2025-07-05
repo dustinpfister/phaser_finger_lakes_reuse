@@ -11,20 +11,18 @@ class Example extends Phaser.Scene {
             scene: this,
             gt: new GameTime({real: true })
         });
-        
         const te = tb.gt.addTimedEvent({
             start: [9, 0], end: [18, 0],
             on_start: (te, gt, delta) => {
                 console.log('the store is open now!');
             },
             on_update: (te, gt, delta) => {
-                console.log(gt.per);
+                //console.log(gt.per);
             },
             on_end: (te, gt, delta) => {
                 console.log('end : ' + gt.time);
             }
         });
-        
         this.registry.set('tb', tb);
     }
     

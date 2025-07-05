@@ -182,9 +182,9 @@ simulation.
     * ( done ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off using the background canvas
     
     * (      ) - TimeBar should have a group of sprites that are each used to display events that are comming up
+    * (      ) - use a sprite sheet for color tags in TimeBar
     * (      ) - have a larger min text option
-    
-
+    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 
 ```
 
