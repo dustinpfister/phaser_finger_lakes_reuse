@@ -120,6 +120,11 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - a person should only be able to pick up items that are in range
     * (      ) - a person should only be able to drop items in range
     * (      ) - break down onHandAction method into more than one method
+    
+  /lib/s
+    * (      ) - use a sprite sheet for color tags in TimeBar
+    * (      ) - have a larger min text option
+    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 ```
 
 ## R5 (    ) - Game Day Time, Schedule system, Color Tag System
@@ -182,10 +187,7 @@ simulation.
     * ( done ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off using the background canvas
     
     * (      ) - TimeBar should have a group of sprites that are each used to display events that are comming up
-    * (      ) - use a sprite sheet for color tags in TimeBar
-    * (      ) - have a larger min text option
-    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
-
+    
 ```
 
 
