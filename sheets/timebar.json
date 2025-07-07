@@ -4,6 +4,11 @@
       "filename": "timebar_bg",
       "frame": { "w": 640, "h": 50, "x": 0, "y": 0 },
       "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "event_bg",
+      "frame": { "w": 100, "h": 25, "x": 0, "y": 50 },
+      "anchor": { "x": 0.5, "y": 0.5 }
     }
   ]
 }

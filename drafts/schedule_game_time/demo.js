@@ -18,7 +18,7 @@ class Example extends Phaser.Scene {
         });
         
         const te = tb.gt.addTimedEvent({
-            start: [9, 30], end: [10, 0],
+            start: [11, 0], end: [14, 0],
             on_start: (te, gt, delta) => {
                 //console.log('we be good mun: ' + te.time_start);
             },
