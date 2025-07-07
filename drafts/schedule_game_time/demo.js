@@ -12,20 +12,20 @@ class Example extends Phaser.Scene {
             gt: new GameTime({
                 year: 2025, month: 6, day: 3,
                 hour: 9, minute: 0, second: 0, ms:0,
-                multi: 768, real: false
+                multi: 700, real: false
             })
         });
         
         const te = tb.gt.addTimedEvent({
             start: [9, 30], end: [10, 0],
             on_start: (te, gt, delta) => {
-                console.log('we be good mun: ' + te.time_start);
+                //console.log('we be good mun: ' + te.time_start);
             },
             on_update: (te, gt, delta) => {
-                console.log('update: ' + delta);
+                //console.log('update: ' + delta);
             },
             on_end: (te, gt, delta) => {
-                console.log('end : ' + gt.time);
+                //console.log('end : ' + gt.time);
             }
         });
         

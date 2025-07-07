@@ -186,7 +186,7 @@ simulation.
     * ( done ) - Have the all Canvas, Image, BitmapText, ect objects as properties of TimeBar
     * ( done ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off using the background canvas
     
-    * (      ) - TimeBar should have a group of sprites that are each used to display events that are comming up
+    * ( done ) - TimeBar should have a group of sprites that are each used to display events that are comming up
     
 ```
 
