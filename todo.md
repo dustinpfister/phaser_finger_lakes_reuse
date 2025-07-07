@@ -97,7 +97,7 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
 
   /sheets :
-* (      ) - new sprites for workers
+    * (      ) - new sprites for workers
   
  /lib/mapdata.js :
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
@@ -121,8 +121,7 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - a person should only be able to drop items in range
     * (      ) - break down onHandAction method into more than one method
     
-  /lib/s
-    * (      ) - use a sprite sheet for color tags in TimeBar
+  /lib/schedule.js :
     * (      ) - have a larger min text option
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 ```
@@ -147,6 +146,9 @@ simulation.
     * (      ) - update mapdata draft
     * (      ) - update people draft
     * (      ) - rename mess_pusher to message_messpusher
+    
+  /sheets :
+    * ( done ) - have a sprite sheet for the timebar
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -184,10 +186,11 @@ simulation.
     * ( done ) - timeBar using the same font as in the message system
     * ( done ) - Make TimeBar a stand alone class that does not extend anything
     * ( done ) - Have the all Canvas, Image, BitmapText, ect objects as properties of TimeBar
-    * ( done ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off using the background canvas
-    
+    * ( done ) - TimeBar shows the current state for printing, cull, 25%, 50%, and 75% off using the background canvas   
     * ( done ) - TimeBar should have a group of sprites that are each used to display events that are comming up
-    
+    * (      ) - use the timebar sprite sheet for timed event sprite backgrounds
+    * (      ) - use the timebar sprite sheet for color tag backgrounds
+    * (      ) - use the timebar sprite sheet for main background    
 ```
 
 
