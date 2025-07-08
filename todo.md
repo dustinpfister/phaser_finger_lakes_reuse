@@ -141,8 +141,7 @@ simulation.
     * ( done ) - start a new draft to test out the new game time system in schedule.js
     * ( done ) - the schedule draft should demo TimeBar
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
-    * (      ) - the schedule game time and real events draft should demo TimedEvents
-    * (      ) - have a message that says that DI is closed on Thursdays for real and game time drafts
+    * ( done ) - the schedule game time and real events draft should demo TimedEvents
     * (      ) - update mapdata draft
     * (      ) - update people draft
     * (      ) - rename mess_pusher to message_messpusher
@@ -151,7 +150,6 @@ simulation.
     * ( done ) - have a sprite sheet for the timebar
     * ( done ) - info for color tag frames in timebar sheet
     * ( done ) - update timebar sheet atlas to have color tag frames
-
     * (      ) - color text for color tag frames in timebar sheet
 
   /lib/items.js :
@@ -194,7 +192,7 @@ simulation.
     * ( done ) - TimeBar should have a group of sprites that are each used to display events that are comming up
     * ( done ) - use the timebar sprite sheet for main background    
     * ( done ) - use the timebar sprite sheet for timed event sprite backgrounds
-    * (      ) - use the timebar sprite sheet for color tag backgrounds
+    * ( done ) - use the timebar sprite sheet for color tag backgrounds
     * (      ) - position bitmap text for timed events
 ```
 
