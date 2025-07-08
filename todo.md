@@ -149,6 +149,9 @@ simulation.
     
   /sheets :
     * ( done ) - have a sprite sheet for the timebar
+    * ( done ) - info for color tag frames in timebar sheet
+    * (      ) - color text for color tag frames in timebar sheet
+    * (      ) - update timebar sheet atlas to have color tag frames
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
