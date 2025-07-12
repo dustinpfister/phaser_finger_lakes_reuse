@@ -25,9 +25,9 @@ class Example extends Phaser.Scene {
             //on_end: (te, gt, delta) => {}
         });
         
-        tb.gt.addTimedEvent({ start: [ 9, 45], end: [18, 0] });
-        tb.gt.addTimedEvent({ start: [10,  0], end: [18, 0] });
-        tb.gt.addTimedEvent({ start: [12,  0], end: [18, 0] });
+        tb.gt.addTimedEvent({ start: [ 9, 45], end: [10, 0] });
+        tb.gt.addTimedEvent({ start: [10,  0], end: [10, 15] });
+        tb.gt.addTimedEvent({ start: [12,  0], end: [12, 15] });
         
         this.registry.set('tb', tb);
     }
