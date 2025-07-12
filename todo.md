@@ -193,10 +193,10 @@ simulation.
     * ( done ) - use the timebar sprite sheet for main background    
     * ( done ) - use the timebar sprite sheet for timed event sprite backgrounds
     * ( done ) - use the timebar sprite sheet for color tag backgrounds
-    
     * ( done ) - have a TimedEvent.createGameObjects method
-    * (      ) - the TimedEvent.createGameObjects method should also create the canvas and other objects use for an info overlay
-    * (      ) - position bitmap text for timed events using TimedEvent.canvas
+    * ( done ) - the TimedEvent.createGameObjects method should also create the canvas and other objects use for an info overlay
+    * ( done ) - position text for timed events using TimedEvent.img
+    * (      ) - use bitmap text for te info
 
     * (      ) - use a larger font for basic time info
 

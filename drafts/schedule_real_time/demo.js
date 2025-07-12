@@ -13,7 +13,7 @@ class Example extends Phaser.Scene {
             gt: new GameTime({real: true, scene: this })
         });
         const te = tb.gt.addTimedEvent({
-            start: [9, 0], end: [18, 0],
+            start: [9, 30], end: [18, 0],
             on_start: (te, gt, delta) => {
                 console.log('the store is open now!');
             },
