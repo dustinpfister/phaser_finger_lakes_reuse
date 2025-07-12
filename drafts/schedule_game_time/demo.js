@@ -11,24 +11,23 @@ class Example extends Phaser.Scene {
         const tb = new TimeBar({
             scene: this,
             gt: new GameTime({
+                scene: this,
                 year: 2025, month: 6, day: 3,
                 hour: 9, minute: 0, second: 0, ms:0,
                 multi: 700, real: false
             })
         });
         
-        const te = tb.gt.addTimedEvent({
-            start: [11, 0], end: [14, 0],
-            on_start: (te, gt, delta) => {
-                //console.log('we be good mun: ' + te.time_start);
-            },
-            on_update: (te, gt, delta) => {
-                //console.log('update: ' + delta);
-            },
-            on_end: (te, gt, delta) => {
-                //console.log('end : ' + gt.time);
-            }
+        tb.gt.addTimedEvent({
+            start: [9, 30], end: [14, 0],
+            //on_start: (te, gt, delta) => {},
+            //on_update: (te, gt, delta) => {},
+            //on_end: (te, gt, delta) => {}
         });
+        
+        tb.gt.addTimedEvent({ start: [ 9, 45], end: [18, 0] });
+        tb.gt.addTimedEvent({ start: [10,  0], end: [18, 0] });
+        tb.gt.addTimedEvent({ start: [12,  0], end: [18, 0] });
         
         this.registry.set('tb', tb);
     }

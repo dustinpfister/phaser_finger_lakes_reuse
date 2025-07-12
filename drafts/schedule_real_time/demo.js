@@ -10,7 +10,7 @@ class Example extends Phaser.Scene {
     create () {
         const tb = new TimeBar({
             scene: this,
-            gt: new GameTime({real: true })
+            gt: new GameTime({real: true, scene: this })
         });
         const te = tb.gt.addTimedEvent({
             start: [9, 0], end: [18, 0],
