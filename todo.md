@@ -122,8 +122,9 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - break down onHandAction method into more than one method
     
   /lib/schedule.js :
-    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects
-    * (      ) - have a larger min text option
+    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
+    * (      ) - use bitmap text for te info
+    * (      ) - use a larger font for basic time info
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 ```
 
@@ -165,7 +166,9 @@ simulation.
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
-    * (      ) - have a Person.setScheduledSubType method that will set the subtype of a person based on a timed schdedule
+    * (      ) - make use of schedule.js to spawn in donators
+    * (      ) - make use of schedule.js to spawn in shoppers
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
@@ -199,10 +202,6 @@ simulation.
     * ( done ) - position text for timed events using TimedEvent.img
     * ( done ) - fixed bug where sprite is not set to visible   
     * ( done ) - have a TimedEvent.killDisplayObjects method.
-    
-    * (      ) - use bitmap text for te info
-    * (      ) - use a larger font for basic time info
-
 ```
 
 
