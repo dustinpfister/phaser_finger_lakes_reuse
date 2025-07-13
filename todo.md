@@ -196,8 +196,7 @@ simulation.
     * ( done ) - have a TimedEvent.createGameObjects method
     * ( done ) - the TimedEvent.createGameObjects method should also create the canvas and other objects use for an info overlay
     * ( done ) - position text for timed events using TimedEvent.img
-
-    * (      ) - make createGameObjects a method fo TimeBar rather than TimedEvents    
+    * ( done ) - fixed bug where sprite is not set to visible
     * (      ) - use bitmap text for te info rather than a canvas element
     * (      ) - use a larger font for basic time info
 
