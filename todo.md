@@ -130,10 +130,11 @@ So then this will mean updates to the hard coded data of each map, as well as ne
 
 ## R5 (    ) - Game Day Time, Schedule system, Color Tag System
 ```
-I would like to have a system for game time. That means having a certian amount of game time that will result in the span
-of a single game day. I would like for this to be something that can be adjusted in a way in which a game day can be as 
-long as say one half hour of real time, or actually a full 24 hours if the aim is to make this more like an actual 
-simulation.
+I would like to have a system for game time and how it related to real world time. That means having a certian amount 
+of game time that will result in the span of a single game day. I would like for this to be something that can be 
+adjusted in a way in which game time can go at the same rate as real world time, or much faster. Also I would at least 
+like to start some drafts that will be further refined for future revisions. One example of this kind of draft would
+be on a pricing system.
 
   /drafts :
     * ( done ) - have an index.html for color system draft
@@ -144,9 +145,14 @@ simulation.
     * ( done ) - the schedule draft should demo TimeBar
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
+
+    * ( done ) - start a pricing draft
+    * (      ) - the pricing systemk should be able to make use of javaScript functions that are using for pricing
+    
     * (      ) - update mapdata draft
     * (      ) - update people draft
     * (      ) - rename mess_pusher to message_messpusher
+
     
   /sheets :
     * ( done ) - have a sprite sheet for the timebar
