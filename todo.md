@@ -122,6 +122,7 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - break down onHandAction method into more than one method
     
   /lib/schedule.js :
+    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects
     * (      ) - have a larger min text option
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 ```
@@ -196,10 +197,9 @@ simulation.
     * ( done ) - have a TimedEvent.createGameObjects method
     * ( done ) - the TimedEvent.createGameObjects method should also create the canvas and other objects use for an info overlay
     * ( done ) - position text for timed events using TimedEvent.img
-    * ( done ) - fixed bug where sprite is not set to visible
+    * ( done ) - fixed bug where sprite is not set to visible   
+    * ( done ) - have a TimedEvent.killDisplayObjects method.
     
-    * (      ) - old canvas textures need to be purged out, or reused
-    * (      ) - purge out or hide canvas overlay images
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
 
