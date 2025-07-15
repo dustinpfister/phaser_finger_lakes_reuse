@@ -1,4 +1,22 @@
 
+class PricingMethod {
+
+    constructor ( opt= {} ) {
+        opt = Object.assign({}, {
+            desc: 'half_retail',
+            getPrice : function(pm, item, item_data){
+                return item_data.retail / 2 * item.condition;
+        
+            }
+        }, opt);
+        this.desc = opt.desc;
+        this.getPrice = opt.getPrice;
+        
+    }
+    
+    
+};
+
 
 class Example extends Phaser.Scene {
 
@@ -7,7 +25,6 @@ class Example extends Phaser.Scene {
         this.key = 'Example';
     }
     
-
     create () {
     
     }
