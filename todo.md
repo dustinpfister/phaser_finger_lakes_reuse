@@ -84,11 +84,14 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## RX (    ) - Spawn and exit areas
+## R6 (    ) - Spawn and exit areas
 ```
 I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
 arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
 So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
+
+  /drafts :
+    * (      ) - message_messpusher draft: change position of mess game object
 
   /maps :
     * (      ) - update maps 1-4 to have objects for both customer, and worker, people types
@@ -99,7 +102,7 @@ So then this will mean updates to the hard coded data of each map, as well as ne
   /sheets :
     * (      ) - new sprites for workers
   
- /lib/mapdata.js :
+  /lib/mapdata.js :
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
     * (      ) - use new exitAreas arrays 
 
@@ -145,13 +148,16 @@ be on a pricing system.
     * ( done ) - the schedule draft should demo TimeBar
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
-
     * ( done ) - start a pricing draft
-    * (      ) - Just have a basic demo system with the pricing draft for now
-    
     * ( done ) - update mapdata draft to fix errors
-    * (      ) - update people draft
-    * (      ) - rename mess_pusher to message_messpusher
+    * ( done ) - rename mess_pusher to message_messpusher
+
+    * (      ) - update people draft to just fix the errors
+    
+    * (      ) - Show something at least for the pricing draft
+    
+    
+
 
     
   /sheets :
