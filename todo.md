@@ -164,7 +164,7 @@ be on a pricing system.
     * ( done ) - have a sprite sheet for the timebar
     * ( done ) - info for color tag frames in timebar sheet
     * ( done ) - update timebar sheet atlas to have color tag frames
-    * (      ) - color text for color tag frames in timebar sheet
+    * ( done ) - color text for color tag frames in timebar sheet
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
