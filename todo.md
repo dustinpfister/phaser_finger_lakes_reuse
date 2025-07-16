@@ -165,6 +165,12 @@ be on a pricing system.
     * ( done ) - info for color tag frames in timebar sheet
     * ( done ) - update timebar sheet atlas to have color tag frames
     * ( done ) - color text for color tag frames in timebar sheet
+    
+  /states/mapview.js
+    * (      ) - make updates to mapview to create and display the timebar
+    * (      ) - make use of schedule.js to spawn in donators
+    * (      ) - make use of schedule.js to spawn in shoppers
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -174,9 +180,6 @@ be on a pricing system.
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
-    * (      ) - make use of schedule.js to spawn in donators
-    * (      ) - make use of schedule.js to spawn in shoppers
-    * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
