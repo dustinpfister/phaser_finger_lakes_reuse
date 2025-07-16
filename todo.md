@@ -147,9 +147,9 @@ be on a pricing system.
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
 
     * ( done ) - start a pricing draft
-    * (      ) - the pricing systemk should be able to make use of javaScript functions that are using for pricing
+    * (      ) - Just have a basic demo system with the pricing draft for now
     
-    * (      ) - update mapdata draft
+    * ( done ) - update mapdata draft to fix errors
     * (      ) - update people draft
     * (      ) - rename mess_pusher to message_messpusher
 

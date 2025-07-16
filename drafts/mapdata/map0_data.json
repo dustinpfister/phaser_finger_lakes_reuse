@@ -15,11 +15,17 @@
       }
   },
   "customer" : {
-     "disabled" : true,
-     "subTypes" : [],
-     "subTypeProbs": [],
-     "spawnAt" : { "x": 1, "y": 16 },
-     "exitAt" : { "x": 1, "y": 19 }
+    "disabled" : true,
+    "subTypes" : ["shopper"],
+    "subTypeProbs": [ 1.00 ],
+    "spawnAt" : { "x": 16, "y": 0 },
+    "exitAt" : { "x": 14, "y": 1 },
+    "spawnAreas" : [
+        { "x": 16, "y": 0, "w":1, "h": 1 }
+    ],
+    "exitAreas" : [
+        { "x": 16, "y": 0, "w":1, "h": 1 }
+    ]
   },
   "objects" : {
     "containers" : {

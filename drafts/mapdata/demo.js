@@ -7,8 +7,8 @@ class Example extends Phaser.Scene {
     
         this.load.setBaseURL('../../'); 
         this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16_atlas.json');
-        this.load.atlas('donations_16_16', '../../sheets/donations_16_16.png', '../../sheets/donations_16_16_atlas.json');
+        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
         this.load.json('items_index', '../../items/items_index.json');
         this.load.json('household_1', 'items/household_1.json');
         this.load.json('containers_1', 'items/containers_1.json');
@@ -23,6 +23,7 @@ class Example extends Phaser.Scene {
     create () {
 
         this.registry.set('MAX_MAP_DONATIONS', 50);
+        this.registry.set('CUSTOMER_SPAWN_RATE', 3000);
     
         //const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
         const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
@@ -94,7 +95,28 @@ class Example extends Phaser.Scene {
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
         
-        mdc.getActive().customers.update(this);
+        //mdc.getActive().customers.update(this);
+        
+        mdc.forAllMaps(this, (scene, md, map_index)=>{
+            md.customer.update(this, md, delta);
+            md.worker.update(this, md, delta);
+            
+            const bool = map_index === mdc.activeIndex;
+           
+            md.layer0.active = bool;
+            md.layer0.visible = bool;
+            md.donations.setVisible(bool);
+            md.customer.setActive(bool);
+            md.customer.setVisible(bool);
+           
+            md.customer.onHand.setActive(bool);
+            md.customer.onHand.setVisible(bool);
+            md.worker.setActive(bool);
+            md.worker.setVisible(bool);
+            md.worker.onHand.setActive(bool);
+            md.worker.onHand.setVisible(bool);
+        });
+        
     }
     
 }
