@@ -101,10 +101,16 @@ So then this will mean updates to the hard coded data of each map, as well as ne
 
   /sheets :
     * (      ) - new sprites for workers
-  
+
+  /lib/items.js :
+    * (      ) - have more than one household item
+    * (      ) - have it so that drops will pick one of a few household items each time
+
   /lib/mapdata.js :
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
     * (      ) - use new exitAreas arrays 
+    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
   /lib/message.js :
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
@@ -150,15 +156,9 @@ be on a pricing system.
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
     * ( done ) - start a pricing draft
     * ( done ) - update mapdata draft to fix errors
-    * ( done ) - rename mess_pusher to message_messpusher
-
+    * ( done ) - rename mess_pusher to message_messpusher    
     * (      ) - update people draft to just fix the errors
-    
     * (      ) - Show something at least for the pricing draft
-    
-    
-
-
     
   /sheets :
     * ( done ) - have a sprite sheet for the timebar
@@ -168,13 +168,9 @@ be on a pricing system.
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
-    * (      ) - have more than one household item
-    * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
     * ( done ) - update Container/Item Class call with options object
-    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
-    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
