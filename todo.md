@@ -175,7 +175,7 @@ be on a pricing system.
     * ( done ) - color text for color tag frames in timebar sheet
     
   /states/mapview.js
-    * (      ) - use MapDataCollection.update method
+    * ( done ) - use MapDataCollection.update method
     * (      ) - make updates to mapview to create and display the timebar
     * (      ) - make use of schedule.js to spawn in donators
     * (      ) - make use of schedule.js to spawn in shoppers
@@ -187,7 +187,7 @@ be on a pricing system.
   /lib/mapdata.js :
     * ( done ) - update Container/Item Class call with options object
     * ( done ) - containers will default to empty object in MapData.setupDonations method
-    * (      ) - have a MapDataCollection.update method
+    * ( done ) - have a MapDataCollection.update method
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object

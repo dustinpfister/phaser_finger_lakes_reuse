@@ -177,33 +177,8 @@ class Mapview extends Phaser.Scene {
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
         const scene = this;
-        mdc.forAllMaps(this, (scene, md, map_index)=>{
         
-        
-            //scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-           
-        
-            md.customer.update(this, md, delta);
-            md.worker.update(this, md, delta);
-            
-            const bool = map_index === mdc.activeIndex;
-           
-            md.layer0.active = bool;
-            md.layer0.visible = bool;
-            md.donations.setVisible(bool);
-            md.customer.setActive(bool);
-            md.customer.setVisible(bool);
-           
-            md.customer.onHand.setActive(bool);
-            md.customer.onHand.setVisible(bool);
-            md.worker.setActive(bool);
-            md.worker.setVisible(bool);
-            md.worker.onHand.setActive(bool);
-            md.worker.onHand.setVisible(bool);
-            
-            
-            
-        });
+        mdc.update(time, delta);
         
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);

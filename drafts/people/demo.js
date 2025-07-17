@@ -22,7 +22,6 @@ class Example extends Phaser.Scene {
         this.registry.set('mdc', mdc);
     }
     update (time, delta) {
-    
         const mdc = this.registry.get('mdc');
            mdc.forAllMaps(this, (scene, md, map_index)=>{     
             md.customer.update(this, md, delta);
