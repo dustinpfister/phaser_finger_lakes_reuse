@@ -92,6 +92,8 @@ So then this will mean updates to the hard coded data of each map, as well as ne
 
   /drafts :
     * (      ) - message_messpusher draft: change position of mess game object
+    * (      ) - pricing draft: update readme to write about current state of pricing system
+    * (      ) - pricing draft: Show results with simple half retail method
 
   /maps :
     * (      ) - update maps 1-4 to have objects for both customer, and worker, people types
@@ -155,18 +157,13 @@ be on a pricing system.
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
     * ( done ) - rename mess_pusher to message_messpusher
-    
     * ( done ) - people draft: update to make use of a map data files
     * ( done ) - people draft: start README file 
     * ( done ) - people draft: update map data    
     * ( done ) - people draft: use MapDataCollection.update method
-    
     * ( done ) - mapdata draft: update draft to fix errors
-    * (      ) - mapdata draft: use MapDataCollection.update method
-
+    * ( done ) - mapdata draft: use MapDataCollection.update method
     * ( done ) - pricing draft: start draft project    
-    * (      ) - pricing draft: update readme to write about current state of pricing system
-    * (      ) - pricing draft: Show results with simple half retail method
     
   /sheets :
     * ( done ) - have a sprite sheet for the timebar

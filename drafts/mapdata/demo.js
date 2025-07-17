@@ -95,27 +95,8 @@ class Example extends Phaser.Scene {
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
         
-        //mdc.getActive().customers.update(this);
+        mdc.update(time, delta);
         
-        mdc.forAllMaps(this, (scene, md, map_index)=>{
-            md.customer.update(this, md, delta);
-            md.worker.update(this, md, delta);
-            
-            const bool = map_index === mdc.activeIndex;
-           
-            md.layer0.active = bool;
-            md.layer0.visible = bool;
-            md.donations.setVisible(bool);
-            md.customer.setActive(bool);
-            md.customer.setVisible(bool);
-           
-            md.customer.onHand.setActive(bool);
-            md.customer.onHand.setVisible(bool);
-            md.worker.setActive(bool);
-            md.worker.setVisible(bool);
-            md.worker.onHand.setActive(bool);
-            md.worker.onHand.setVisible(bool);
-        });
         
     }
     
