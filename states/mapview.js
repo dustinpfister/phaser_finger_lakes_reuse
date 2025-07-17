@@ -25,6 +25,7 @@ class Mapview extends Phaser.Scene {
         });
         
         const tb = new TimeBar({
+            x:600, y: 150,
             scene: this,
             gt: new GameTime({real: true, scene: this })
         });
@@ -209,7 +210,7 @@ class Mapview extends Phaser.Scene {
             });
             
             player.update(this);
-            this.cameras.main.setZoom( 2 ).centerOn( player.x, player.y );
+            this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
 
         //}
         disp1.text = 'Money: ' + gs.money;
