@@ -25,7 +25,7 @@ class Mapview extends Phaser.Scene {
         });
         
         const tb = new TimeBar({
-            x:600, y: 150,
+            x:320, y: 25,
             scene: this,
             gt: new GameTime({real: true, scene: this })
         });
