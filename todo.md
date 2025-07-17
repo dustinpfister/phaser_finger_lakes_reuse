@@ -157,10 +157,14 @@ be on a pricing system.
     * ( done ) - start a pricing draft
     * ( done ) - update mapdata draft to fix errors
     * ( done ) - rename mess_pusher to message_messpusher
+    * ( done ) - people draft: update to make use of a map data files
+    * ( done ) - people draft: start README file
     
-    * (      ) - people draft: update to make use of a map data files
     
-    * (      ) - Show something at least for the pricing draft
+    * (      ) - people draft: update map data
+    
+    * (      ) - pricing draft: update readme to write about current state of pricing system
+    * (      ) - pricing draft: Show results with simple half retail method
     
   /sheets :
     * ( done ) - have a sprite sheet for the timebar
