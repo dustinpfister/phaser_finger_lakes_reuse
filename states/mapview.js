@@ -1,5 +1,6 @@
 import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people.js';
+import { COLOR, GameTime, TimeBar } from '../lib/schedule.js';
 import { ConsoleLogger, MessPusher } from '../lib/message.js';
 const log = new ConsoleLogger({
     cat: 'state',
@@ -22,6 +23,13 @@ class Mapview extends Phaser.Scene {
             maxLines : 12,
             maxT: 10000
         });
+        
+        const tb = new TimeBar({
+            scene: this,
+            gt: new GameTime({real: true, scene: this })
+        });
+        this.registry.set('tb', tb);
+        
     
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
@@ -178,7 +186,12 @@ class Mapview extends Phaser.Scene {
         const mdc = this.registry.get('mdc');
         const scene = this;
         
+        const tb = this.registry.get('tb');
+        tb.update( delta );
+        
         mdc.update(time, delta);
+        
+        
         
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);

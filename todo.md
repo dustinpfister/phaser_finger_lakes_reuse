@@ -91,6 +91,7 @@ arrays of objects, for each map, and each object defines an x and y position alo
 So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
 
   /drafts :
+    * (      ) - readme files for all drafts
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
@@ -170,6 +171,9 @@ be on a pricing system.
     * ( done ) - info for color tag frames in timebar sheet
     * ( done ) - update timebar sheet atlas to have color tag frames
     * ( done ) - color text for color tag frames in timebar sheet
+    
+  /states/load.js
+    * ( done ) - load timebar sheet 
     
   /states/mapview.js
     * ( done ) - use MapDataCollection.update method

@@ -20,6 +20,7 @@ class Load extends Phaser.Scene {
         this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
         this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
+        this.load.atlas('timebar', 'sheets/timebar.png', 'sheets/timebar.json');
         // FONTS
         this.load.bitmapFont('min', 'fonts/min.png', 'fonts/min.xml');
         this.load.bitmapFont('min_3px_5px', 'fonts/min_3px_5px.png', 'fonts/min_3px_5px.xml');
