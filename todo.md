@@ -156,8 +156,10 @@ be on a pricing system.
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
     * ( done ) - start a pricing draft
     * ( done ) - update mapdata draft to fix errors
-    * ( done ) - rename mess_pusher to message_messpusher    
-    * (      ) - update people draft to just fix the errors
+    * ( done ) - rename mess_pusher to message_messpusher
+    
+    * (      ) - people draft: update to make use of a map data files
+    
     * (      ) - Show something at least for the pricing draft
     
   /sheets :
@@ -177,6 +179,7 @@ be on a pricing system.
 
   /lib/mapdata.js :
     * ( done ) - update Container/Item Class call with options object
+    * ( done ) - containers will default to empty object in MapData.setupDonations method
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object

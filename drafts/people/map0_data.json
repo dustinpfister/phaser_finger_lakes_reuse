@@ -1,0 +1,38 @@
+{
+  "name": "people_draft",
+  "spawnAt": { "x": 1, "y": 1 },
+  "tilePalette" : {
+      "sheets" : ["map_16_16"],
+      "walkable" : [ 1 ],
+      "indices" : {
+          "0" : [0, 0],
+          "1" : [0, 1],
+          "2" : [0, 2],
+          "3" : [0, 13],
+          "4" : [0, 14],
+          "5" : [0, 23],
+          "6" : [0, 24],
+          "7" : [0, 10],
+          "8" : [0, 11],
+          "9" : [0, 12],
+          "10" : [0, 20],
+          "11" : [0, 21],
+          "12" : [0, 22]   
+      }
+  },
+  "customer" : {
+    "disabled" : false,
+    "subTypes" : ["shopper"],
+    "subTypeProbs": [ 1.00 ],
+    "spawnAt" : { "x": 1, "y": 1 },
+    "exitAt" : { "x": 1, "y": 1 },
+    "spawnAreas" : [
+        { "x": 1, "y": 1, "w":1, "h": 1 }
+    ],
+    "exitAreas" : [
+        { "x": 1, "y": 1, "w":1, "h": 1 }
+    ]
+  },
+  "objects" : {},
+  "doors" : []
+}
