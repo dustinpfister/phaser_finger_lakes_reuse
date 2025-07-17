@@ -18,27 +18,13 @@ class Example extends Phaser.Scene {
     
     }
     create () {
-        const mdc = new MapDataCollection(this, { startMapIndex: 0 });
-        this.registry.set('mdc', mdc);
+        const scene = this;
+        const mdc = new MapDataCollection(scene, { startMapIndex: 0 });
+        scene.registry.set('mdc', mdc);
     }
     update (time, delta) {
         const mdc = this.registry.get('mdc');
-           mdc.forAllMaps(this, (scene, md, map_index)=>{     
-            md.customer.update(this, md, delta);
-            md.worker.update(this, md, delta);
-            const bool = map_index === mdc.activeIndex;
-            md.layer0.active = bool;
-            md.layer0.visible = bool;
-            md.donations.setVisible(bool);
-            md.customer.setActive(bool);
-            md.customer.setVisible(bool);
-            md.customer.onHand.setActive(bool);
-            md.customer.onHand.setVisible(bool);
-            md.worker.setActive(bool);
-            md.worker.setVisible(bool);
-            md.worker.onHand.setActive(bool);
-            md.worker.onHand.setVisible(bool);
-        });
+        mdc.update(time, delta);
     }
     
 }

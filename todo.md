@@ -159,7 +159,7 @@ be on a pricing system.
     * ( done ) - people draft: update to make use of a map data files
     * ( done ) - people draft: start README file 
     * ( done ) - people draft: update map data    
-    * (      ) - people draft: use MapDataCollection.update method
+    * ( done ) - people draft: use MapDataCollection.update method
     
     * ( done ) - mapdata draft: update draft to fix errors
     * (      ) - mapdata draft: use MapDataCollection.update method
