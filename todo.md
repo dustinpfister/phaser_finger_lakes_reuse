@@ -184,6 +184,7 @@ be on a pricing system.
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
     * ( done ) - default CUSTOMER_SPAWN_RATE in init of customer people type
+    * ( done ) - data object for map 0 in worker people type 
 
   /lib/schedule.js :
     * ( done ) - Start a lib that provides a system for the amount of real time a game day is.
