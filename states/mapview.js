@@ -180,7 +180,7 @@ class Mapview extends Phaser.Scene {
         mdc.forAllMaps(this, (scene, md, map_index)=>{
         
         
-            scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
+            //scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
            
         
             md.customer.update(this, md, delta);

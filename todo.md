@@ -154,15 +154,17 @@ be on a pricing system.
     * ( done ) - the schedule draft should demo TimeBar
     * ( done ) - have three scheudle demos for game time, real time, and color tag system
     * ( done ) - the schedule game time and real events draft should demo TimedEvents
-    * ( done ) - start a pricing draft
-    * ( done ) - update mapdata draft to fix errors
     * ( done ) - rename mess_pusher to message_messpusher
+    
     * ( done ) - people draft: update to make use of a map data files
-    * ( done ) - people draft: start README file
+    * ( done ) - people draft: start README file 
+    * ( done ) - people draft: update map data    
+    * (      ) - people draft: use MapDataCollection.update method
     
-    
-    * (      ) - people draft: update map data
-    
+    * ( done ) - mapdata draft: update draft to fix errors
+    * (      ) - mapdata draft: use MapDataCollection.update method
+
+    * ( done ) - pricing draft: start draft project    
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
     
@@ -173,6 +175,7 @@ be on a pricing system.
     * ( done ) - color text for color tag frames in timebar sheet
     
   /states/mapview.js
+    * (      ) - use MapDataCollection.update method
     * (      ) - make updates to mapview to create and display the timebar
     * (      ) - make use of schedule.js to spawn in donators
     * (      ) - make use of schedule.js to spawn in shoppers
@@ -184,6 +187,7 @@ be on a pricing system.
   /lib/mapdata.js :
     * ( done ) - update Container/Item Class call with options object
     * ( done ) - containers will default to empty object in MapData.setupDonations method
+    * (      ) - have a MapDataCollection.update method
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
