@@ -179,6 +179,7 @@ be on a pricing system.
     * ( done ) - use MapDataCollection.update method
     * ( done ) - make updates to mapview to create and display the timebar
     * ( done ) - line up display of money with the timebar
+    * ( done ) - display the current time
     * (      ) - make use of schedule.js to spawn in donators
     * (      ) - make use of schedule.js to spawn in shoppers
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
