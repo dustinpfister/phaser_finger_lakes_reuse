@@ -1,6 +1,6 @@
 # Phaser Finger Lakes Reuse
 
-This is a game where I am simulating how to work a job at [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). This project is still very much in development, so for now much of my focus is on the AI, Game Time System, and many other supporting libs. I am not writing all of the code from the ground up though mind you as this project works on top of [Phaser](https://phaser.io/) 
+This is a game where I am simulating how to work a job at [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). This project is still very much in development, so for now much of my focus is on the AI, Game Time System, and many other supporting libs that provide the core game logic. I am not writing all of the code from the ground up though mind you as this project works on top of [Phaser](https://phaser.io/) 
 
 ## Number of Players
 
