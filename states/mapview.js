@@ -83,17 +83,17 @@ class Mapview extends Phaser.Scene {
        });
        const gr = this.add.graphics();
        gr.setScrollFactor(0,0);
-       gr.depth = 5;
-       gr.fillStyle(0x000000, 0.5);
-       gr.fillRect(160,120, 640, 40);
+       gr.depth = 12;
+       gr.fillStyle(0xff0000, 0.0);
+       gr.fillRect(0,0, 640, 40);
        gr.fill();
-       const disp1 = this.add.text(165, 125, '', { color: '#ffffff', align: 'left', fontSize: '15px' });
+       const disp1 = this.add.text(10, 10, '', { color: '#ffffff', align: 'left', fontSize: '10px' });
        disp1.setScrollFactor(0,0);
-       disp1.depth = 6;
+       disp1.depth = 12;
        this.registry.set('disp1', disp1);
-       const disp2 = this.add.text(165, 142, '', { color: '#ffffff', align: 'left', fontSize: '8px' });
+       const disp2 = this.add.text(10, 30, '', { color: '#ffffff', align: 'left', fontSize: '8px' });
        disp2.setScrollFactor(0,0);
-       disp2.depth = 6;
+       disp2.depth = 12;
        this.registry.set('disp2', disp2);
     }
     
@@ -196,34 +196,24 @@ class Mapview extends Phaser.Scene {
         
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-        //if(player){
-            this.cursorCheck('left');
-            this.cursorCheck('right');
-            this.cursorCheck('up');
-            this.cursorCheck('down');
 
-            player.pathProcessorCurve(this, (scene, person) => {
-                mdc.doorCheck(scene, player);
+        this.cursorCheck('left');
+        this.cursorCheck('right');
+        this.cursorCheck('up');
+        this.cursorCheck('down');
+
+        player.pathProcessorCurve(this, (scene, person) => {
+            mdc.doorCheck(scene, player);
                 
-                person.setData('path', []);
-                person.nCurve = 0;
-            });
+            person.setData('path', []);
+            person.nCurve = 0;
+        });
             
-            player.update(this);
-            this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
+        player.update(this);
+        this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
 
-        //}
         disp1.text = 'Money: ' + gs.money;
 
-        //disp2.text = 'Map index: ' + md.index + ' map worker onHand ' + md.worker.onHand.children.size;
-
-        //disp2.text = 'player itemMode: ' + player.getData('itemMode');
-
-        //const bin = md.getRecycling();
-        //if(bin){
-        //    disp2.text = 'bin contents: ' + bin.contents.length;
-        //}
-        
         disp2.text = 'customers: ' + md.customer.getChildren().length;
         
         this.mp.update(delta);
