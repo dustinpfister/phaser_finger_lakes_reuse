@@ -50,16 +50,12 @@ class Mapview extends Phaser.Scene {
             }
         });
         
-        
-    
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
         const mv = this;
         this.registry.set('mdc', mdc);
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
-        
-        
         
         this.input.keyboard.on('keydown', (event) => {
             const mDigit = event.code.match(/Digit\d+/);
@@ -211,9 +207,7 @@ class Mapview extends Phaser.Scene {
         tb.update( delta );
         
         mdc.update(time, delta);
-        
-        
-        
+    
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
 

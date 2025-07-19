@@ -120,6 +120,8 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - have a class that will be used for the game display ( for money, ect )
 
   /lib/people.js :
+    * (      ) - make use of schedule.js to spawn in shoppers
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
     * (      ) - have a setDone method for the Action class
     * (      ) - door checks should happen for all people types
     * (      ) - fix bug where workers, and customers are getting stuck in double doors    
@@ -180,9 +182,6 @@ be on a pricing system.
     * ( done ) - make updates to mapview to create and display the timebar
     * ( done ) - line up display of money with the timebar
     * ( done ) - display the current time
-    * (      ) - make use of schedule.js to spawn in donators
-    * (      ) - make use of schedule.js to spawn in shoppers
-    * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /lib/items.js :
     * ( done ) - can give an options object when Calling Container or Item Class
@@ -191,6 +190,9 @@ be on a pricing system.
     * ( done ) - update Container/Item Class call with options object
     * ( done ) - containers will default to empty object in MapData.setupDonations method
     * ( done ) - have a MapDataCollection.update method
+    * (      ) - have a People.data.spawnStack array of objects
+    * (      ) - have a People.pushSpawnStack method
+    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
