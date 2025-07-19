@@ -38,13 +38,13 @@ class Load extends Phaser.Scene {
         gr.fillStyle(0x000000);
         gr.fillRect(0,0,640,480);           
         this.load.on(Phaser.Loader.Events.PROGRESS, (progress) => {
-            log( (progress * 100).toFixed(2) + '%' ); 
+            //log( (progress * 100).toFixed(2) + '%' ); 
             gr.lineStyle(20, 0xffffff, 1);
             gr.beginPath();
             gr.arc(320, 240, 100, Phaser.Math.DegToRad(270), Phaser.Math.DegToRad(270 + 360 * progress), false);
             gr.strokePath();
         });
-        log('preload of load state started...');
+        //log('preload of load state started...');
     }
     
     create () {

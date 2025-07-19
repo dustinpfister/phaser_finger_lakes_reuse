@@ -27,9 +27,29 @@ class Mapview extends Phaser.Scene {
         const tb = new TimeBar({
             x:320, y: 25,
             scene: this,
-            gt: new GameTime({real: true, scene: this })
+            gt: new GameTime({
+                scene: this,
+                real: false,                           // set to true if you want real time mode
+                year: 2025, month: 7, day: 19,         // date values     ( if not using real mode )
+                hour: 9, minute: 0, second: 0, ms:0,   // time values     ( if not using real mode )
+                multi: 700                             // time multiplier ( if not using real mode )
+            })
         });
         this.registry.set('tb', tb);
+        
+        tb.gt.addTimedEvent({
+            start: [10, 0], end: [12, 0],
+            on_start: (te, gt, delta) => {
+                log('lets get busy!');
+            },
+            on_update: (te, gt, delta) => {
+               
+            },
+            on_end: (te, gt, delta) => {
+                log('well that was cool.');
+            }
+        });
+        
         
     
         const mdc = new MapDataCollection(this, { startMapIndex: 4 });
