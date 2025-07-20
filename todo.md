@@ -84,11 +84,20 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## R6 (    ) - Spawn and exit areas
+## R7 (    ) - Menus and UI 
 ```
-I would like to have an array of areas for each map to define areas where a person can spawn or exit. This means having
+  /README.md :
+    * (      ) - update readme to reflect R7 changes, and commit R7 when does with this Revision
+```
+
+## R6 (    ) - Spawn and exit areas, General Improvement's 
+```
+I would like to have an array of areas for each map to define where a person can spawn or exit. This means having
 arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
-So then this will mean updates to the hard coded data of each map, as well as new logic for the map data lib as well.
+So then this will mean updates to the hard coded data of each map, as well as to logic mainly in the map data lib.
+
+Sense the main focus of this revision will be fairly easy to compleate, I will also want to take time to make many 
+various general improvments to the over all project as a whole. 
 
   /drafts :
     * (      ) - readme files for all drafts
@@ -110,6 +119,7 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
+  
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
     * (      ) - use new exitAreas arrays 
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
@@ -120,6 +130,9 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - have a class that will be used for the game display ( for money, ect )
 
   /lib/people.js :
+    * (      ) - have a People.data.spawnStack array of objects
+    * (      ) - have a People.pushSpawnStack method
+    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
     * (      ) - make use of schedule.js to spawn in shoppers
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
     * (      ) - have a setDone method for the Action class
@@ -140,9 +153,12 @@ So then this will mean updates to the hard coded data of each map, as well as ne
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
+
+  /README.md :
+    * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision
 ```
 
-## R5 (    ) - Game Day Time, Schedule system, Color Tag System
+## R5 ( done 07/20/2025 ) - Game Day Time, Schedule system, Color Tag System
 ```
 I would like to have a system for game time and how it related to real world time. That means having a certian amount 
 of game time that will result in the span of a single game day. I would like for this to be something that can be 
@@ -190,9 +206,6 @@ be on a pricing system.
     * ( done ) - update Container/Item Class call with options object
     * ( done ) - containers will default to empty object in MapData.setupDonations method
     * ( done ) - have a MapDataCollection.update method
-    * (      ) - have a People.data.spawnStack array of objects
-    * (      ) - have a People.pushSpawnStack method
-    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
 
   /lib/people.js :
     * ( done ) - update Container/Item Class call with options object
@@ -231,6 +244,11 @@ be on a pricing system.
     * ( done ) - position text for timed events using TimedEvent.img
     * ( done ) - fixed bug where sprite is not set to visible   
     * ( done ) - have a TimedEvent.killDisplayObjects method.
+    
+  /README.md :
+    * ( done ) - start an install section
+    * ( done ) - write a section that outlines the progress of the game thus far
+    * ( done ) - update readme to reflect R5 changes, and commit R5
 ```
 
 
