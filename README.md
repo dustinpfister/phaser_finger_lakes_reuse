@@ -6,10 +6,42 @@ This is a game where I am simulating how to work a job at [finger lakes reuse me
 
 As of R5 there is still no electron version, and nothing is published anywhere in terms of builds for specific OS platforms. So for now the way to get this working is to clone down the source code at a given point and then use a web sever ( such as [http-server](https://www.npmjs.com/package/http-server) which is what I use ) to host the root folder locally and then go to the address that it is being hosted in a web browser ( typically something like http://localhost:8080 )
 
+So just clone down a copy of the source code and all assets
+
 ```
-$ git clone --depth 1 
+$ git clone --depth 1 https://github.com/dustinpfister/phaser_finger_lakes_reuse
+```
+
+Then use http-server, or do whatever you prefer to host the root folder of the project as a website on your local network.
+
+```
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm
 $ sudo npm install -g http-server
+$ cd phaser_finger_lakes_reuse
+$ http-server
+Starting up http-server, serving ./
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: 3600 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8080
+  http://10.155.36.38:8080
+Hit CTRL-C to stop the server
 ```
+
+Then just go to the url in your web browser. In this case I can go to http://127.0.0.1:8080.
+
 
 ## Progress thus far
 
