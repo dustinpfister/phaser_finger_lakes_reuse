@@ -106,9 +106,7 @@ various general improvments to the over all project as a whole.
     * (      ) - pricing draft: Show results with simple half retail method
 
   /maps :
-    * (      ) - update maps 1-4 to have objects for both customer, and worker, people types
-    * (      ) - update maps 1-4 to have spawnAreas object arrays
-    * (      ) - update maps 1-4 to have exitAreas object arrays
+    * (      ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
 
   /sheets :
@@ -119,8 +117,8 @@ various general improvments to the over all project as a whole.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
-    * (      ) - use new spawnAreas arrays over that of a single spawnAt object
-    * (      ) - use new exitAreas arrays 
+    * (      ) - use new people spawnAreas arrays over that of a single spawnAt object
+    * (      ) - use new people spawnAreas to functions as exit areas as well
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 

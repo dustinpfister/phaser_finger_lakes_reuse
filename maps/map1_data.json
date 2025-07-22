@@ -20,6 +20,11 @@
           "12" : [0, 22]   
       }
   },
+  "people" : {
+    "spawnAreas" : [
+        { "x": 16, "y": 0, "w":1, "h": 1 }
+    ]
+  },
   "customer" : {
     "disabled" : false,
     "subTypes" : ["shopper"],
