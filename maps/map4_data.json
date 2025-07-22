@@ -1,6 +1,11 @@
 {
   "name": "back",
   "spawnAt": { "x":38, "y": 5 },
+  "people" : {
+    "spawnAreas" : [
+        { "x": 38, "y": 5, "w":1, "h": 1 }
+    ]
+  },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
       "walkable" : [ 1 ],

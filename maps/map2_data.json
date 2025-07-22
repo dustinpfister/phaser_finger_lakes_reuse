@@ -4,6 +4,11 @@
      "x": 37,
      "y": 7
   },
+  "people" : {
+    "spawnAreas" : [
+        { "x": 37, "y": 7, "w":1, "h": 1 }
+    ]
+  },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
       "walkable" : [ 1 ],

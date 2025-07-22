@@ -1,6 +1,11 @@
 {
   "name": "mega_t",
   "spawnAt": { "x": 10, "y": 13 },
+  "people" : {
+    "spawnAreas" : [
+        { "x": 10, "y": 13, "w":1, "h": 1 }
+    ]
+  },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
       "walkable" : [ 1 ],
@@ -19,11 +24,6 @@
           "11" : [0, 21],
           "12" : [0, 22]   
       }
-  },
-  "people" : {
-    "spawnAreas" : [
-        { "x": 16, "y": 0, "w":1, "h": 1 }
-    ]
   },
   "customer" : {
     "disabled" : false,

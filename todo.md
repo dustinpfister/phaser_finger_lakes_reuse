@@ -106,7 +106,7 @@ various general improvments to the over all project as a whole.
     * (      ) - pricing draft: Show results with simple half retail method
 
   /maps :
-    * (      ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
+    * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
 
   /sheets :
