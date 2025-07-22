@@ -117,8 +117,7 @@ various general improvments to the over all project as a whole.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
-    * (      ) - use new people spawnAreas arrays over that of a single spawnAt object
-    * (      ) - use new people spawnAreas to functions as exit areas as well
+
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
@@ -127,6 +126,9 @@ various general improvments to the over all project as a whole.
     * (      ) - have a class that will be used for the game display ( for money, ect )
 
   /lib/people.js :
+    * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
+    * ( done ) - use new people spawnAreas to functions as exit areas as well
+    
     * (      ) - have a People.data.spawnStack array of objects
     * (      ) - have a People.pushSpawnStack method
     * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
