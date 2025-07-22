@@ -100,7 +100,7 @@ Sense the main focus of this revision will be fairly easy to compleate, I will a
 various general improvments to the over all project as a whole. 
 
   /drafts :
-    * (      ) - readme files for all drafts
+    * (      ) - readme files at least started for all drafts
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
