@@ -100,7 +100,7 @@ Sense the main focus of this revision will be fairly easy to compleate, I will a
 various general improvments to the over all project as a whole. 
 
   /drafts :
-    * (      ) - readme files at least started for all drafts
+    * ( done ) - readme files at least started for all drafts
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
@@ -119,7 +119,6 @@ various general improvments to the over all project as a whole.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
-  
     * (      ) - use new spawnAreas arrays over that of a single spawnAt object
     * (      ) - use new exitAreas arrays 
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
