@@ -157,6 +157,11 @@ various general improvments to the over all project as a whole.
     * (      ) - use a larger font for basic time info
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 
+  / :
+    * ( done ) - del old index-extended html file
+    * (      ) - move phaser.min.js to a lib folder
+    * (      ) - start a css folder with a readme and move style.css there
+
   /README.md :
     * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision
 ```
