@@ -2,9 +2,17 @@
   "name": "back",
   "spawnAt": { "x":38, "y": 5 },
   "people" : {
+  
+  
     "spawnAreas" : [
-        { "x": 38, "y": 5, "w":1, "h": 1 }
-    ]
+        { "x": 0, "y": 1, "w":1, "h": 8 },
+        { "x": 0, "y": 8, "w":8, "h": 1 }
+    ],
+  
+    "spawnAreas2" : {
+      "x": 0, "y": 1, "w":1, "h": 8
+    }
+  
   },
   "tilePalette" : {
       "sheets" : ["map_16_16"],

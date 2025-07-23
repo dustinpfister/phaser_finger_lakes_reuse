@@ -128,6 +128,8 @@ various general improvments to the over all project as a whole.
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
+    * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
+    
     
     * (      ) - have a People.data.spawnStack array of objects
     * (      ) - have a People.pushSpawnStack method
@@ -139,7 +141,6 @@ various general improvments to the over all project as a whole.
     * (      ) - fix bug where workers, and customers are getting stuck in double doors    
     * (      ) - have a shopper_leave action that will cause a shopper to leave the map
     * (      ) - get di task workers to wonder when wating for items at di
-    * (      ) - fix bug where workers are placing loose mugs at map 4
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - a person should not be able to place items on top of walls
