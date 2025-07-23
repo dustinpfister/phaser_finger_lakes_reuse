@@ -101,6 +101,7 @@ various general improvments to the over all project as a whole.
 
   /drafts :
     * ( done ) - readme files at least started for all drafts
+    * (      ) - fix mapdata draft with new spawn areas
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method

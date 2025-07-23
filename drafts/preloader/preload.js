@@ -48,7 +48,7 @@ const progress = (index, src, type, fp) => {
     ctx.fillRect(0, canvas.height / 2 - 20, canvas.width * tp, 40)    
 }
 
-const src = ["../../phaser.min.js", './demo.js'];
+const src = ["../../lib/phaser/phaser.min.js", './demo.js'];
 loadScript(src, 0, 'text/javaScript', progress)
 .then( () => {
     canvas.style.display = 'none';
