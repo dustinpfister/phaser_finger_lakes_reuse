@@ -130,7 +130,7 @@ various general improvments to the over all project as a whole.
     * ( done ) - use new people spawnAreas to functions as exit areas as well
     * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
     * ( done ) - have a getMapSpawnLocation as well as setMapSpawnLocation method for the Person class  
-    * (      ) - have customers use the new People. 
+    * ( done ) - have customers use the new People.getMapSpawnLocation method to find and exit area 
     
     
     * (      ) - have a People.data.spawnStack array of objects
