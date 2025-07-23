@@ -159,7 +159,7 @@ various general improvments to the over all project as a whole.
 
   / :
     * ( done ) - del old index-extended html file
-    * (      ) - move phaser.min.js to a lib folder
+    * ( done ) - move phaser.min.js to a lib folder
     * (      ) - start a css folder with a readme and move style.css there
 
   /README.md :
