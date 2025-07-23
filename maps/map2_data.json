@@ -6,7 +6,7 @@
   },
   "people" : {
     "spawnAreas" : [
-        { "x": 37, "y": 7, "w":1, "h": 1 }
+        { "x": 1, "y": 8, "w":2, "h": 1, "type": "all" }
     ]
   },
   "tilePalette" : {
@@ -25,9 +25,7 @@
   "customer" : {
     "disabled" : true,
     "subTypes" : ["shopper"],
-    "subTypeProbs": [ 1.00 ],
-    "spawnAt" : { "x": 1, "y": 8 },
-    "exitAt" : { "x": 2, "y": 2 }
+    "subTypeProbs": [ 1.00 ]
   },
   "objects" : {
     "containers" : {}

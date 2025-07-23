@@ -50,7 +50,7 @@ class Mapview extends Phaser.Scene {
             }
         });
         
-        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
         const mv = this;
         this.registry.set('mdc', mdc);

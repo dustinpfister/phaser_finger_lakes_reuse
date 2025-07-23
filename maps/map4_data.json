@@ -5,8 +5,12 @@
   
   
     "spawnAreas" : [
-        { "x": 0, "y": 1, "w":1, "h": 8 },
-        { "x": 0, "y": 8, "w":8, "h": 1 }
+        { "x": 0, "y": 1, "w":1, "h": 8, "type": "customer" },
+        { "x": 0, "y": 8, "w":8, "h": 1, "type": "customer" },
+        { "x": 80, "y": 1, "w":1, "h": 8, "type": "customer" },
+        { "x": 73, "y": 8, "w":8, "h": 1, "type": "customer" },
+        { "x": 29, "y": 8, "w":8, "h": 1, "type": "customer" },
+        { "x": 38, "y": 4, "w":4, "h": 4, "type": "worker" }
     ],
   
     "spawnAreas2" : {

@@ -107,7 +107,7 @@ various general improvments to the over all project as a whole.
 
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
-    * (      ) - remove old main spawnAt, and exitAt objects for maps 1-4
+    * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
 
   /sheets :
     * (      ) - new sprites for workers
