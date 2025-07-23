@@ -131,7 +131,7 @@ various general improvments to the over all project as a whole.
     * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
     * ( done ) - have a getMapSpawnLocation as well as setMapSpawnLocation method for the Person class  
     * ( done ) - have customers use the new People.getMapSpawnLocation method to find and exit area 
-    
+    * ( done ) - when People.getMapSpawnLocation is called filter by type flags
     
     * (      ) - have a People.data.spawnStack array of objects
     * (      ) - have a People.pushSpawnStack method

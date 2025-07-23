@@ -3,7 +3,10 @@
   "spawnAt": { "x": 10, "y": 13 },
   "people" : {
     "spawnAreas" : [
-        { "x": 10, "y": 13, "w":1, "h": 1 }
+        { "x": 16, "y": 0, "w":1, "h": 1, "type": "all" },
+        { "x": 33, "y": 0, "w":1, "h": 1, "type": "all" },
+        { "x": 22, "y": 54, "w":2, "h": 1, "type": "worker" },
+        { "x": 34, "y": 54, "w":2, "h": 1, "type": "worker" }
     ]
   },
   "tilePalette" : {
@@ -28,15 +31,7 @@
   "customer" : {
     "disabled" : false,
     "subTypes" : ["shopper"],
-    "subTypeProbs": [ 1.00 ],
-    "spawnAt" : { "x": 16, "y": 0 },
-    "exitAt" : { "x": 14, "y": 1 },
-    "spawnAreas" : [
-        { "x": 16, "y": 0, "w":1, "h": 1 }
-    ],
-    "exitAreas" : [
-        { "x": 16, "y": 0, "w":1, "h": 1 }
-    ]
+    "subTypeProbs": [ 1.00 ]
   },
   "objects" : {
     "containers" : {

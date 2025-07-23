@@ -30,26 +30,11 @@
   "customer" : {
     "disabled" : false,
     "subTypes" : ["donator", "shopper"],
-    "subTypeProbs": [ 1.00, 0.00 ],
-    "spawnAt" : { "x": 0, "y": 2 },
-    "exitAt" : { "x": 40, "y": 8 },
-    "spawnAreas" : [
-        { "x": 0, "y": 1, "w":1, "h": 8 },
-        { "x": 80, "y": 1, "w":1, "h": 8 }
-    ],
-    "exitAreas" : [
-        { "x": 28, "y": 8, "w":15, "h": 1 }
-    ]
+    "subTypeProbs": [ 1.00, 0.00 ]
   },
   "worker" : {
     "subTypes" : ["employee" ],
-    "subTypeProbs": [ 1.00 ],
-    "spawnAreas" : [
-        { "x": 38, "y": 4, "w":4, "h": 4 }
-    ],
-    "exitAreas" : [
-        { "x": 49, "y": 8, "w":15, "h": 1 }
-    ]
+    "subTypeProbs": [ 1.00 ]
   },
   "objects" : {
     "containers" : {
