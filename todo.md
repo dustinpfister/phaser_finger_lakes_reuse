@@ -105,6 +105,7 @@ various general improvments to the over all project as a whole.
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
+    * (      ) - fix css links for all drafts
 
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
@@ -161,7 +162,7 @@ various general improvments to the over all project as a whole.
   / :
     * ( done ) - del old index-extended html file
     * ( done ) - move phaser.min.js to a lib folder
-    * (      ) - start a css folder with a readme and move style.css there
+    * ( done ) - start a css folder with a readme and move style.css there
 
   /README.md :
     * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision
