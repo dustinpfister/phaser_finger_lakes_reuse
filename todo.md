@@ -129,6 +129,8 @@ various general improvments to the over all project as a whole.
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
     * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
+    * ( done ) - have a getMapSpawnLocation as well as setMapSpawnLocation method for the Person class  
+    * (      ) - have customers use the new People. 
     
     
     * (      ) - have a People.data.spawnStack array of objects
@@ -136,16 +138,17 @@ various general improvments to the over all project as a whole.
     * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
     * (      ) - make use of schedule.js to spawn in shoppers
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
-    * (      ) - have a setDone method for the Action class
+
     * (      ) - door checks should happen for all people types
-    * (      ) - fix bug where workers, and customers are getting stuck in double doors    
-    * (      ) - have a shopper_leave action that will cause a shopper to leave the map
-    * (      ) - get di task workers to wonder when wating for items at di
+    * (      ) - fix bug where workers, and customers are getting stuck in double doors
+    * (      ) - fix bug where workers are dropping loose items in map4
+    * (      ) - fix bug where a person can place items on top of walls
+    * (      ) - fix bug where a person can drop items that are out of range
+ 
+    * (      ) - have a setDone method for the Action class
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
-    * (      ) - a person should not be able to place items on top of walls
-    * (      ) - a person should only be able to pick up items that are in range
-    * (      ) - a person should only be able to drop items in range
+
     * (      ) - break down onHandAction method into more than one method
     
   /lib/schedule.js :
