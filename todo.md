@@ -99,6 +99,9 @@ So then this will mean updates to the hard coded data of each map, as well as to
 Sense the main focus of this revision will be fairly easy to compleate, I will also want to take time to make many 
 various general improvments to the over all project as a whole. 
 
+  /css :
+    * ( done ) - update css so that it takes up the whole page
+
   /drafts :
     * ( done ) - readme files at least started for all drafts
     * (      ) - fix mapdata draft with new spawn areas
@@ -106,13 +109,6 @@ various general improvments to the over all project as a whole.
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
     * (      ) - fix css links for all drafts
-
-  /maps :
-    * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
-    * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
-
-  /sheets :
-    * (      ) - new sprites for workers
 
   /lib/items.js :
     * (      ) - have more than one household item
@@ -159,10 +155,19 @@ various general improvments to the over all project as a whole.
     * (      ) - use a larger font for basic time info
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 
+  /maps :
+    * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
+    * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
+
+  /sheets :
+    * (      ) - new sprites for workers
+
   / :
     * ( done ) - del old index-extended html file
     * ( done ) - move phaser.min.js to a lib folder
     * ( done ) - start a css folder with a readme and move style.css there
+    * ( done ) - add a hard coded canvas element to be used with the main game in the index.html
+    * ( done ) - update Phaser GameConfig in index.js to make use of hard coded canvas
 
   /README.md :
     * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision

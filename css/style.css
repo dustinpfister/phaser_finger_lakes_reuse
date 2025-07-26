@@ -2,3 +2,9 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
+#canvas_flr {
+    background: gray;
+    width: 100%;
+    height: 100%;
+}
