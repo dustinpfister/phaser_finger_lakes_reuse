@@ -81,6 +81,9 @@ I think I should also add cart type containers.
 
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls 
 ```
+  /css : 
+    * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
+
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
 ```
@@ -96,7 +99,7 @@ various general improvements to the over all project as a whole.
 
   /css :
     * ( done ) - update css so that it takes up the whole page
-    * (      ) - see about using css so that the canvas will scale, but keep native ratio
+    * ( done ) - see about using css so that the canvas will scale, but keep native ratio
 
   /drafts :
     * ( done ) - readme files at least started for all drafts
