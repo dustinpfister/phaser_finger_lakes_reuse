@@ -120,7 +120,6 @@ various general improvements to the over all project as a whole.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/mapdata.js :
-
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
@@ -136,9 +135,9 @@ various general improvements to the over all project as a whole.
     * ( done ) - have customers use the new People.getMapSpawnLocation method to find and exit area 
     * ( done ) - when People.getMapSpawnLocation is called filter by type flags
 
-    * (      ) - have a People.data.spawnStack array of objects
-    * (      ) - have a People.pushSpawnStack method
-    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
+    * ( done ) - have a People.data.spawnStack array of objects
+    * ( done ) - have a People.pushSpawnStack method
+    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack 
     * (      ) - make use of schedule.js to spawn in shoppers
 
     * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
