@@ -101,6 +101,7 @@ various general improvments to the over all project as a whole.
 
   /css :
     * ( done ) - update css so that it takes up the whole page
+    * (      ) - see about using css so that the canvas will scale, but keep native ratio
 
   /drafts :
     * ( done ) - readme files at least started for all drafts
@@ -168,6 +169,7 @@ various general improvments to the over all project as a whole.
     * ( done ) - start a css folder with a readme and move style.css there
     * ( done ) - add a hard coded canvas element to be used with the main game in the index.html
     * ( done ) - update Phaser GameConfig in index.js to make use of hard coded canvas
+    * ( done ) - add a container div in index.html
 
   /README.md :
     * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision

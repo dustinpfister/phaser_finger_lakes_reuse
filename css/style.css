@@ -3,6 +3,9 @@ body {
     margin: 0px;
 }
 
+#container_flr {
+}
+
 #canvas_flr {
     background: gray;
     width: 100%;
