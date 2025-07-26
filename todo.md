@@ -2,6 +2,8 @@
 
 ## RX (    ) - So Many More!
 ```
+    * yes this will take forever unless I figure out what the MVP is for this.
+    * mini game states such as 'cashier', 'stack_books', ect
     * Pricing Programing Language ( Vishual, langage, somehting gear to setting priceses)
     * 'eCenter' Processing task
     * 'electronics' Processing task
@@ -18,18 +20,13 @@
     * Metel Scrap
     * Recycling Dumpster
     * use Preloader Draft for main game
-    * Rollup, crteaing builds
+    * Rollup, creating builds
     * Dev dependencies ( automate, linting, formating, ect )
     * Unit Testing
     * Repersenative Sprites
-    * UI Buttons
     * People Data for setting values for Workers, Customers, ect
-    * Accounting
-    * Payrole
-    * Grants
-    * Yes this will take forever unless I figure out what the MVP is for this.
+    * Accounting / payroal / grants
     * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
-
 ```
 
 ## RX (    ) - On hand action quick keyboard shortcuts
@@ -45,19 +42,17 @@ is on top of.
 ```
 
 
-## RX (    ) - Casher State
+## RX (    ) - Mini Game States, 'Cashier' and 'box_stack'
 ```
 The idea here is that when the player works as a cashier, they can enter a 'Casher' state by going up to the reg
 and preform some kind of action to enter the casher state, rather than mapView. This will then bring up a view that
 will look just like the shopify app in one part of the screen. Another part of the screen will show a current item
 that a customer would like to buy.
-```
 
-## RX (    ) - Casher Task workers
-```
-There should always be at least 1 or more workers that are engaged in the task of working as a casher at bolth the T and R
+There should always be at least 1 or more workers that are engaged in the task of working as a cashier at bolt the T and R
 maps of the game. The basic idea with this revision at least is to just get started with this kind of task. Thus the player
-will likley not be able to work this kind of task for the moment.
+will likly not be able to work this kind of task for the moment.
+
 ```
 ## RX (    ) - Furniture Processing, PickUp, and Delivery
 ```
@@ -66,14 +61,14 @@ A worker other than the player should now also be able to work 'furniture'.
 
 ## RX (    ) - Furniture
 ```
-Start working on having Furnature type objects showing up in donations. For now the player can pick up furnature and
+Start working on having Furniture type objects showing up in donations. For now the player can pick up furniture and
 move it to the sales floor. Shopers can also buy them, but in a way that does not make sense as they will just do so 
-like any other item such as a coffe mug. So it goes without saying that much more will need to be adressed in future revisions.
+like any other item such as a coffee mug. So it goes without saying that much more will need to be addressed in future revisions.
 ```
 
 ## RX (    ) - Trash, Dumpster
 ```
-Sadly much of the donations that we recive at reuse can not be resold. As a result of this they must be thrown out.
+Sadly much of the donations that we receive at reuse can not be resold. As a result of this they must be thrown out.
 ```
 
 ## RX (    ) - Processing Household workers, cart containers.
@@ -84,20 +79,20 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
-## R7 (    ) - Menus and UI 
+## R7 (    ) - Menus, UI Buttons, better keyboard controls 
 ```
   /README.md :
-    * (      ) - update readme to reflect R7 changes, and commit R7 when does with this Revision
+    * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
 ```
 
-## R6 (    ) - Spawn and exit areas, General Improvement's 
+## R6 (    ) - Spawn and exit areas, General Improvement's
 ```
 I would like to have an array of areas for each map to define where a person can spawn or exit. This means having
 arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
 So then this will mean updates to the hard coded data of each map, as well as to logic mainly in the map data lib.
 
-Sense the main focus of this revision will be fairly easy to compleate, I will also want to take time to make many 
-various general improvments to the over all project as a whole. 
+Sense the main focus of this revision will be fairly easy to complete, I will also want to take time to make many 
+various general improvements to the over all project as a whole. 
 
   /css :
     * ( done ) - update css so that it takes up the whole page
@@ -172,7 +167,7 @@ various general improvments to the over all project as a whole.
     * ( done ) - add a container div in index.html
 
   /README.md :
-    * (      ) - update readme to reflect R6 changes, and commit R6 when does with this Revision
+    * (      ) - update readme to reflect R6 changes, and commit R6 when done with this Revision
 ```
 
 ## R5 ( done 07/20/2025 ) - Game Day Time, Schedule system, Color Tag System
