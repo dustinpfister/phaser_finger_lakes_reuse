@@ -79,6 +79,12 @@ the household processing area, price it, and then place it into a cart type cont
 I think I should also add cart type containers.
 ```
 
+## RX (    ) - Donation Peaks
+```
+I would like to have a system where the number of donation events over the course of day, and the distrabution of 
+them per hour will wax and wain from one game day to the next.
+```
+
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls 
 ```
   /css : 
@@ -129,11 +135,16 @@ various general improvements to the over all project as a whole.
     * ( done ) - have a getMapSpawnLocation as well as setMapSpawnLocation method for the Person class  
     * ( done ) - have customers use the new People.getMapSpawnLocation method to find and exit area 
     * ( done ) - when People.getMapSpawnLocation is called filter by type flags
-    
+
     * (      ) - have a People.data.spawnStack array of objects
     * (      ) - have a People.pushSpawnStack method
     * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of timeEvent set people values
     * (      ) - make use of schedule.js to spawn in shoppers
+
+    * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
+    
+
+    
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
     * (      ) - door checks should happen for all people types
@@ -157,6 +168,9 @@ various general improvements to the over all project as a whole.
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
+
+  /states/mapview.js :
+    * (      ) - create events for each game day that will be bursts of donators
 
   /sheets :
     * (      ) - new sprites for workers
