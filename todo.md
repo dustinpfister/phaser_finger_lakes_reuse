@@ -111,7 +111,8 @@ states such as mapview.
 
   /drafts :
     * ( done ) - readme files at least started for all drafts
-    * (      ) - fix mapdata draft with new spawn areas
+    * ( done ) - fix mapdata draft with new spawn areas
+    * (      ) - get keyboard controls working with mapdata draft
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
@@ -170,7 +171,8 @@ states such as mapview.
     * (      ) - remove 'CUSTOMER_SPAWN_RATE' if it is no longer in use
     
   /states/mapview.js :
-    * (      ) - start an addTimedEvents method that will be called in the update method 
+    * ( done ) - start an addTimedEvents method that will be called in the update method
+    * (      ) - day should be used
 
   /sheets :
     * (      ) - new sprites for workers

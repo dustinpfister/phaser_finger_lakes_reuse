@@ -26,14 +26,14 @@ class Example extends Phaser.Scene {
         this.registry.set('CUSTOMER_SPAWN_RATE', 3000);
     
         //const player = this.player = new Person( this, 40, 40, 'people_16_16', 0 );
-        const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
-        this.registry.set('player', player);
+        //const player = this.player = new Person( this, {curveSpeed: 0.9, x: 40, y:40, texture: 'people_16_16', frame: 0} );
+        //this.registry.set('player', player);
 
-        const mdc = new MapDataCollection(this, { player: player, startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 0 });
         this.registry.set('mdc', mdc);
         
-        this.cursors = this.input.keyboard.createCursorKeys();
-        
+        //this.cursors = this.input.keyboard.createCursorKeys();
+        /*
         this.input.keyboard.on('keydown', event => {
             const patt = /Digit\d+/;
             const m = event.code.match(patt);
@@ -45,7 +45,7 @@ class Example extends Phaser.Scene {
                 }
             }
         });
-        
+        */
         
     }
     
@@ -75,14 +75,15 @@ class Example extends Phaser.Scene {
     }
     
     update (time, delta) {
-        const player = this.registry.get('player');
         const mdc = this.registry.get('mdc');
         const map = mdc.getActive();
         const scene = this;
+        /*
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
         this.cursorCheck('down');
+        
         player.pathProcessorCurve(this, (scene, person)=>{
         
             mdc.doorCheck(scene, person);
@@ -94,7 +95,7 @@ class Example extends Phaser.Scene {
         
         player.update(this);
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
-        
+        */
         mdc.update(time, delta);
         
         
@@ -103,10 +104,11 @@ class Example extends Phaser.Scene {
 }
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: 640,
     height: 480,
-    parent: 'phaser-example',
+    parent: 'container_flr',
+    canvas: document.querySelector('#canvas_flr'),
     scene: Example,
     render: { pixelArt: true  },
     physics: {
