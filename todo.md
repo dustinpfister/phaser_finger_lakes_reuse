@@ -113,10 +113,13 @@ states such as mapview.
     * ( done ) - readme files at least started for all drafts
     * ( done ) - fix mapdata draft with new spawn areas
     * ( done ) - get keyboard controls working with mapdata draft
+    * ( done ) - fix css links for all drafts
+    * (      ) - update html and config for all drafts so that they use hard coded canvas
+    
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
-    * ( done ) - fix css links for all drafts
+    
 
   /lib/items.js :
     * (      ) - have more than one household item
