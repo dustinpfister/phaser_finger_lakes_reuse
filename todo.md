@@ -116,7 +116,7 @@ states such as mapview.
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
-    * (      ) - fix css links for all drafts
+    * ( done ) - fix css links for all drafts
 
   /lib/items.js :
     * (      ) - have more than one household item
