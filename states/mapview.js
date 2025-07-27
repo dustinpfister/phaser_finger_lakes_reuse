@@ -276,7 +276,7 @@ class Mapview extends Phaser.Scene {
             person.nCurve = 0;
         });
             
-        player.update(this);
+        //player.update(this);
         this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
 
         disp1.text = 'Money: ' + gs.money;

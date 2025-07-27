@@ -112,7 +112,7 @@ states such as mapview.
   /drafts :
     * ( done ) - readme files at least started for all drafts
     * ( done ) - fix mapdata draft with new spawn areas
-    * (      ) - get keyboard controls working with mapdata draft
+    * ( done ) - get keyboard controls working with mapdata draft
     * (      ) - message_messpusher draft: change position of mess game object
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
