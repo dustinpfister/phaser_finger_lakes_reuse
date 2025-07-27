@@ -137,12 +137,14 @@ various general improvements to the over all project as a whole.
 
     * ( done ) - have a People.data.spawnStack array of objects
     * ( done ) - have a People.pushSpawnStack method
-    * (      ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack 
-    * (      ) - make use of schedule.js to spawn in shoppers
+    * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack 
+    * (      ) - remove old code for CUSTOMER_SPAWN_RATE
+
+
 
     * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
     
-
+    * (      ) - make use of schedule.js to spawn in shoppers
     
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 

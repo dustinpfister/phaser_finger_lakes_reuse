@@ -24,6 +24,8 @@ class Mapview extends Phaser.Scene {
             maxT: 10000
         });
         
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        
         const tb = new TimeBar({
             x:320, y: 25,
             scene: this,
@@ -38,9 +40,18 @@ class Mapview extends Phaser.Scene {
         this.registry.set('tb', tb);
         
         tb.gt.addTimedEvent({
-            start: [10, 0], end: [12, 0],
+            start: [10, 0], end: [10, 1],
             on_start: (te, gt, delta) => {
-                log('lets get busy!');
+                log('pushing a stack of detonators');
+                const people = mdc.getMapDataByIndex(4).customer;
+                people.pushSpawnStack({
+                    subTypes: [
+                        ['donator', 1.00]
+                    ],
+                    ms_min: 1000,
+                    ms_max: 5000,
+                    count: 3
+                });
             },
             on_update: (te, gt, delta) => {
                
@@ -50,7 +61,6 @@ class Mapview extends Phaser.Scene {
             }
         });
         
-        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
         const mv = this;
         this.registry.set('mdc', mdc);
