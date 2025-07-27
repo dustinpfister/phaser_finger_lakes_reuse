@@ -101,7 +101,9 @@ arrays of objects, for each map, and each object defines an x and y position alo
 So then this will mean updates to the hard coded data of each map, as well as to logic mainly in the map data lib.
 
 Sense the main focus of this revision will be fairly easy to complete, I will also want to take time to make many 
-various general improvements to the over all project as a whole. 
+various general improvements to the over all project as a whole. Much still needs to be done with Schedule system 
+that I put in place in R5, both with the lib itself and also how it is used with other libs such as people.js, and 
+states such as mapview.
 
   /css :
     * ( done ) - update css so that it takes up the whole page
@@ -134,30 +136,21 @@ various general improvements to the over all project as a whole.
     * ( done ) - have a getMapSpawnLocation as well as setMapSpawnLocation method for the Person class  
     * ( done ) - have customers use the new People.getMapSpawnLocation method to find and exit area 
     * ( done ) - when People.getMapSpawnLocation is called filter by type flags
-
     * ( done ) - have a People.data.spawnStack array of objects
     * ( done ) - have a People.pushSpawnStack method
     * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack 
-    * (      ) - remove old code for CUSTOMER_SPAWN_RATE
-
-
-
-    * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
-    
+    * (      ) - make use of min and max spawn rate values to set the spawn rate of people
     * (      ) - make use of schedule.js to spawn in shoppers
-    
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
-
+    * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
     * (      ) - door checks should happen for all people types
     * (      ) - fix bug where workers, and customers are getting stuck in double doors
     * (      ) - fix bug where workers are dropping loose items in map4
     * (      ) - fix bug where a person can place items on top of walls
     * (      ) - fix bug where a person can drop items that are out of range
- 
     * (      ) - have a setDone method for the Action class
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
-
     * (      ) - break down onHandAction method into more than one method
     
   /lib/schedule.js :
@@ -170,6 +163,10 @@ various general improvements to the over all project as a whole.
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
 
+  /states/boot.js :
+    * ( done ) - have a PEOPLE_SPAWN_RATE const to replace 'CUSTOMER_SPAWN_RATE', and also work for people in general
+    * (      ) - remove 'CUSTOMER_SPAWN_RATE' if it is no longer in use
+    
   /states/mapview.js :
     * (      ) - create events for each game day that will be bursts of donators
 
