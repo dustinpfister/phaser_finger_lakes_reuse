@@ -115,10 +115,10 @@ states such as mapview.
     * ( done ) - get keyboard controls working with mapdata draft
     * ( done ) - fix css links for all drafts
     * ( done ) - message_messpusher draft: change position of mess game object
-    
     * (      ) - update html and config for all drafts so that they use hard coded canvas
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
+    * (      ) - message_messpusher : demo new alpha effects
     
 
   /lib/items.js :
@@ -130,6 +130,8 @@ states such as mapview.
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
   /lib/message.js :
+    * (      ) - message_messpusher : have an alpha effect that is also based on distance
+    * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
     * (      ) - have a class that will be used for the game display ( for money, ect )
 
