@@ -17,11 +17,12 @@ class Example extends Phaser.Scene {
         
         this.mp = new MessPusher({
             key: 'min_3px_5px',
+            sx: 32, sy:480 - 12 * 3,
             lineHeight: 6,
             capsOnly: true,
             scene: this,
-            maxLines : 12,
-            maxT: 10000
+            maxLines : 70,
+            maxT: 40000
             //text: '0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ  !#$%&*\(\)-_;:\'\",.?\/\\\<\>\[\]'
         });
     
@@ -71,10 +72,11 @@ class Example extends Phaser.Scene {
 }
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: 640,
     height: 480,
-    parent: 'phaser-example',
+    parent: 'container_flr',
+    canvas: document.querySelector('#canvas_flr'),
     scene: Example
 };
 
