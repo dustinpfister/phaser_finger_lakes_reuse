@@ -38,7 +38,8 @@ class Mapview extends Phaser.Scene {
             })
         });
         this.registry.set('tb', tb);
-        
+ 
+ /*
         tb.gt.addTimedEvent({
             start: [10, 0], end: [10, 1],
             on_start: (te, gt, delta) => {
@@ -60,6 +61,7 @@ class Mapview extends Phaser.Scene {
                 log('well that was cool.');
             }
         });
+*/
         
         
         const mv = this;
@@ -205,6 +207,43 @@ class Mapview extends Phaser.Scene {
         }
     }
     
+    addTimedEvents () {
+        const mdc = this.registry.get('mdc'); 
+        const tb = this.registry.get('tb');
+        const gt = tb.gt;
+        const te_count = tb.gt.timedEvents.length
+        
+        if(te_count === 0){
+            //log(gt.hour, gt.minute)
+            //log(gt.getByDelta(60 * 8))
+            
+            let time = gt.getByDelta(60 + Math.floor( Math.random() * 30 ))
+            
+            tb.gt.addTimedEvent({
+                start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                on_start: (te, gt, delta) => {
+                    log('pushing a stack of detonators');
+                    const people = mdc.getMapDataByIndex(4).customer;
+                    people.pushSpawnStack({
+                        subTypes: [
+                            ['donator', 1.00]
+                        ],
+                        ms_min: 1000,
+                        ms_max: 5000,
+                        count: 1 + Math.floor( Math.random() * 9 )
+                    });
+                },
+                on_update: (te, gt, delta) => {
+               
+                },
+                on_end: (te, gt, delta) => {
+                    log('well that was cool.');
+                }
+            });
+            
+        }
+    }
+    
     update (time, delta) {
         const player = this.registry.get('player');
         const disp1 = this.registry.get('disp1');
@@ -214,6 +253,10 @@ class Mapview extends Phaser.Scene {
         const scene = this;
         
         const tb = this.registry.get('tb');
+        
+        this.addTimedEvents();
+        
+        
         tb.update( delta );
         
         mdc.update(time, delta);

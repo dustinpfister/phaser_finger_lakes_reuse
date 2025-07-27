@@ -148,12 +148,14 @@ states such as mapview.
     * (      ) - fix bug where workers are dropping loose items in map4
     * (      ) - fix bug where a person can place items on top of walls
     * (      ) - fix bug where a person can drop items that are out of range
+    * (      ) - fix bug where donators stand around doing nothing
     * (      ) - have a setDone method for the Action class
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - break down onHandAction method into more than one method
     
   /lib/schedule.js :
+    * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
@@ -168,7 +170,7 @@ states such as mapview.
     * (      ) - remove 'CUSTOMER_SPAWN_RATE' if it is no longer in use
     
   /states/mapview.js :
-    * (      ) - create events for each game day that will be bursts of donators
+    * (      ) - start an addTimedEvents method that will be called in the update method 
 
   /sheets :
     * (      ) - new sprites for workers
