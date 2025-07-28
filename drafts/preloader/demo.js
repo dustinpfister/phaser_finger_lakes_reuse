@@ -58,8 +58,9 @@ class Loader extends Phaser.Scene {
 
 
 const config = {
-    canvas: document.getElementById('page_canvas'),
     type: Phaser.WEBGL,
+    parent: 'container_flr',
+    canvas: document.querySelector('#canvas_flr'),
     width: 640,
     height: 480,
     backgroundColor: '#afafaf',

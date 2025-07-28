@@ -115,7 +115,10 @@ states such as mapview.
     * ( done ) - get keyboard controls working with mapdata draft
     * ( done ) - fix css links for all drafts
     * ( done ) - message_messpusher draft: change position of mess game object
-    * (      ) - update html and config for all drafts so that they use hard coded canvas
+    * ( done ) - update html and config for all drafts so that they use hard coded canvas
+    
+    * (      ) - people draft : update to work with spawn areas.s
+    
     * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
     * (      ) - message_messpusher : demo new alpha effects

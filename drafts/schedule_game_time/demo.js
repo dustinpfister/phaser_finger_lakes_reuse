@@ -40,10 +40,11 @@ class Example extends Phaser.Scene {
 }
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
+    parent: 'container_flr',
+    canvas: document.querySelector('#canvas_flr'),
     width: 640,
     height: 480,
-    parent: 'phaser-example',
     scene: Example
 };
 

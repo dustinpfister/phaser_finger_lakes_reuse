@@ -96,6 +96,8 @@ class Demo extends Phaser.Scene {
 
 const config = {
     type: Phaser.WEBGL,
+    parent: 'container_flr',
+    canvas: document.querySelector('#canvas_flr'),
     width: 640,
     height: 480,
     backgroundColor: '#afafaf',
