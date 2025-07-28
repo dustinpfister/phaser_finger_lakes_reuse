@@ -1,6 +1,11 @@
 {
   "name": "people_draft",
   "spawnAt": { "x": 1, "y": 1 },
+  "people" : {
+    "spawnAreas" : [
+        { "x": 1, "y": 1, "w":1, "h": 1, "type": "all" }
+    ]
+  },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
       "walkable" : [ 1 ],
