@@ -127,12 +127,10 @@ states such as mapview.
     * ( done ) - message_messpusher draft: change position of mess game object
     * ( done ) - update html and config for all drafts so that they use hard coded canvas
     * ( done ) - people draft : update to work with spawn areas
-    
-    * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - pricing draft: Show results with simple half retail method
+    * (      ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - message_messpusher : demo new alpha effects
     
-
   /lib/items.js :
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
