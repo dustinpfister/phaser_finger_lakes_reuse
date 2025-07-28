@@ -83,12 +83,22 @@ I think I should also add cart type containers.
 ```
 I would like to have a system where the number of donation events over the course of day, and the distrabution of 
 them per hour will wax and wain from one game day to the next.
+
+  /drafts : 
+    * (      ) - people draft : start to turn the main people draft into a mini shop of sorts
+    * (      ) - new people_donators draft : The focus for this draft will be on donators only
+    * (      ) - people_donators draft : display an hour by hour bar chart
 ```
 
-## R7 (    ) - Menus, UI Buttons, better keyboard controls 
+## R7 (    ) - Menus, UI Buttons, better keyboard controls
 ```
   /css : 
     * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
+    
+  /drafts :
+    * (      ) - people draft : have both types of people show up ( workers, and customers )
+    * (      ) - people draft : make sure the idle states of both types work okay
+    
 
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
