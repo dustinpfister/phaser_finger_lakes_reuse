@@ -92,13 +92,35 @@ them per hour will wax and wain from one game day to the next.
 
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls
 ```
+As the name sugessts I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
+create menus and UI actions.
+
   /css : 
     * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
     
   /drafts :
+    * (      ) - ui draft : have a drfat to make use of new ui lib
     * (      ) - people draft : have both types of people show up ( workers, and customers )
     * (      ) - people draft : make sure the idle states of both types work okay
-    
+    * (      ) - message_messpusher : demo new alpha effects    
+
+  /lib/items.js :
+    * (      ) - have more than one household item
+    * (      ) - have it so that drops will pick one of a few household items each time
+
+  /lib/mapdata.js :
+    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
+
+  /lib/message.js :
+    * (      ) - message_messpusher : have an alpha effect that is also based on distance
+    * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
+    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
+    * (      ) - have a class that will be used for the game display ( for money, ect )
+
+  /lib/ui/ui.js
+    * (      ) - start a ui lib that will be used to create buttons
+    * (      ) - have a method that can be used to add keyboard events
 
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
@@ -129,21 +151,6 @@ states such as mapview.
     * ( done ) - people draft : update to work with spawn areas
     * ( done ) - pricing draft: Show results with simple half retail method
     * ( done ) - pricing draft: update readme to write about current state of pricing system
-    * (      ) - message_messpusher : demo new alpha effects
-    
-  /lib/items.js :
-    * (      ) - have more than one household item
-    * (      ) - have it so that drops will pick one of a few household items each time
-
-  /lib/mapdata.js :
-    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
-    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
-
-  /lib/message.js :
-    * (      ) - message_messpusher : have an alpha effect that is also based on distance
-    * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
-    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
-    * (      ) - have a class that will be used for the game display ( for money, ect )
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
@@ -171,7 +178,7 @@ states such as mapview.
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - break down onHandAction method into more than one method
 
-    * (      ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
+
 
   /lib/schedule.js :
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
@@ -190,7 +197,7 @@ states such as mapview.
     
   /states/mapview.js :
     * ( done ) - start an addTimedEvents method that will be called in the update method
-    * (      ) - day should be used
+    * (      ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
 
   /sheets :
     * (      ) - new sprites for workers
