@@ -128,8 +128,7 @@ states such as mapview.
     * ( done ) - update html and config for all drafts so that they use hard coded canvas
     * ( done ) - people draft : update to work with spawn areas
     * ( done ) - pricing draft: Show results with simple half retail method
-    
-    * (      ) - pricing draft: update readme to write about current state of pricing system
+    * ( done ) - pricing draft: update readme to write about current state of pricing system
     * (      ) - message_messpusher : demo new alpha effects
     
   /lib/items.js :
@@ -155,7 +154,8 @@ states such as mapview.
     * ( done ) - when People.getMapSpawnLocation is called filter by type flags
     * ( done ) - have a People.data.spawnStack array of objects
     * ( done ) - have a People.pushSpawnStack method
-    * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack 
+    * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack
+
     * (      ) - make use of min and max spawn rate values to set the spawn rate of people
     * (      ) - make use of schedule.js to spawn in shoppers
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
@@ -170,7 +170,9 @@ states such as mapview.
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - break down onHandAction method into more than one method
-    
+
+    * (      ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
+
   /lib/schedule.js :
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    

@@ -30,6 +30,104 @@ RCA   14-S-7071G – 1957 -  $1,350.00
 
 A number of Ideas come to mind for working out solutions for a Pricing system. One idea is to actually Develop my own Programming language to aid in the process of authoring pricing methodologies. That might prove to be to hard for many co-works to use though, so then yet another idea is to work out some kind of visual programming solution. In any case I think that I will need a main, common, Pricing class that will work with whatever system is used to generate a final produce that is the pricing method.
 
+With that said I have started out with something like this:
+
+```js
+const pricing_systems = {};
+
+/********* **********
+HARD CODED PRICING
+********** *********/
+pricing_systems.hard_coded = {};
+
+pricing_systems.hard_coded.get_method = function( pricing ){
+    return pricing_systems.hard_coded[ pricing.key_method ];
+};
+
+pricing_systems.hard_coded.half_retail = ( pricing, item, item_rec, unit_rec ) => {
+    return item_rec.retail * 0.50;
+};
+    
+pricing_systems.hard_coded.unit_check = ( pricing, item, item_rec, unit_rec ) => {
+    if( unit_rec ){
+        return unit_rec.price * item.unit_price.count;
+    }
+    return pricing_systems.hard_coded.half_retail( pricing, item, item_rec, unit_rec );
+};
+
+/********* **********
+ PRICING CLASS
+********** *********/
+
+class Pricing {
+
+    constructor ( opt= {} ) {
+        this.system = opt.system || 'hard_coded';        // The pricing system to use
+        this.key_method = opt.key_method || 'half_retail';   // The method to use in the current system
+        this.db_item = opt.db_item || null;
+        this.db_unit_price = opt.db_unit_price || null;
+    }
+    
+    round (price) {
+        const options = [
+            0.10, 0.25, 0.50, 0.75,
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            12, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
+            100, 125, 150, 175,
+            200, 225, 250, 275,
+            300, 325, 350, 375,
+            400, 425, 450, 500
+        ];
+        let i = 0;
+        const len = options.length;
+        let num = options[ len - 1 ];
+        while(i < len){
+            const opt = options[i]
+            if(price <= opt){
+                num = opt;
+                break;
+            }
+            i += 1;
+        }
+        return num;
+    }
+    
+    priceItem (item = {}) {
+        const method = pricing_systems[ this.system ].get_method( this );
+        const price = {
+            item: item,
+            item_rec: null,
+            unit_rec: null,
+            raw :   0,                 // raw price
+            final : 0,                 // actual final price
+            disp : '$0.00',            // display price
+            color: null,               // a color tag color?
+            valueOf : function(){
+                return parseFloat(this.final);
+            },
+            toString : function(){
+                return this.disp;
+            }
+        };    
+        if(!this.db_item){
+            console.warn('No item data base!');
+            return price;
+        }
+        if(this.db_item){
+            price.item_rec = this.db_item[ item.key ]
+        }
+        if( item.unit_price && this.db_unit_price && this.db_item ){
+            price.unit_rec = this.db_unit_price[ item.unit_price.key  ];
+        }
+        price.raw = method(this, item, price.item_rec, price.unit_rec);
+        price.final = this.round( price.raw );
+        price.disp = '$' + price.final.toFixed(2);
+        return price
+    }
+};
+```
+
+I think I am on the right track at least, however maybe a better way is to just have a collection of pricing functions. For starters there can just be hard coded pricing functions, built into the actually logic of the game. However the additional pricing systems would be just to allow for users to generate there own pricing functions. So regardless if the system is lexical, or visual, the final product should be a pricing function.
 
 
 
