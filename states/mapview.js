@@ -226,6 +226,8 @@ class Mapview extends Phaser.Scene {
         
         tb.update( delta );
         
+        
+        
         mdc.update(time, delta);
     
         const md = mdc.getActive();
@@ -251,6 +253,7 @@ class Mapview extends Phaser.Scene {
         disp2.text = 'customers: ' + md.customer.getChildren().length;
         
         this.mp.update(delta);
+        player.update();
         
     }
     
