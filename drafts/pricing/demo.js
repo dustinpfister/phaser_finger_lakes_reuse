@@ -19,7 +19,7 @@ pricing_systems.hard_coded.unit_check = ( pricing, item, item_rec, unit_rec ) =>
     if( unit_rec ){
         return unit_rec.price * item.unit_price.count;
     }
-    return PricingSystems.hard_coded( item, itemRec, unitRec );
+    return pricing_systems.hard_coded.half_retail( pricing, item, item_rec, unit_rec );
 };
 
 /********* **********
@@ -29,32 +29,53 @@ pricing_systems.hard_coded.unit_check = ( pricing, item, item_rec, unit_rec ) =>
 class Pricing {
 
     constructor ( opt= {} ) {
-        this.system = 'hard_coded';        // The pricing system to use
-        this.key_method = 'half_retail';   // The method to use in the current system
+        this.system = opt.system || 'hard_coded';        // The pricing system to use
+        this.key_method = opt.key_method || 'half_retail';   // The method to use in the current system
         this.db_item = opt.db_item || null;
         this.db_unit_price = opt.db_unit_price || null;
     }
     
     round (price) {
-    
-    
-    
-    
-        return parseFloat( price ).toFixed( 2 );
+        const options = [
+            0.10, 0.25, 0.50, 0.75,
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            12, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
+            100, 125, 150, 175,
+            200, 225, 250, 275,
+            300, 325, 350, 375,
+            400, 425, 450, 500
+        ];
+        let i = 0;
+        const len = options.length;
+        let num = options[ len - 1 ];
+        while(i < len){
+            const opt = options[i]
+            if(price <= opt){
+                num = opt;
+                break;
+            }
+            i += 1;
+        }
+        return num;
     }
     
     priceItem (item = {}) {
         const method = pricing_systems[ this.system ].get_method( this );
-        
         const price = {
             item: item,
             item_rec: null,
             unit_rec: null,
-            raw :   0,                // raw price
-            final : 0,                // actual final price
-            color: null               // a color tag color?
-        };
-        
+            raw :   0,                 // raw price
+            final : 0,                 // actual final price
+            disp : '$0.00',            // display price
+            color: null,               // a color tag color?
+            valueOf : function(){
+                return parseFloat(this.final);
+            },
+            toString : function(){
+                return this.disp;
+            }
+        };    
         if(!this.db_item){
             console.warn('No item data base!');
             return price;
@@ -67,11 +88,9 @@ class Pricing {
         }
         price.raw = method(this, item, price.item_rec, price.unit_rec);
         price.final = this.round( price.raw );
+        price.disp = '$' + price.final.toFixed(2);
         return price
-    
     }
-    
-    
 };
 
 /********* **********
@@ -95,7 +114,7 @@ const db_item = {
     mug_white : {
         key: 'mug_white',
         retail : 3.95, year: 2025,
-        unit_price: { key: 'mug', count: 1, set: false }
+        unit_price: { key: 'mug', count: 1 }
     },
     // https://www.target.com/p/20pc-flatware-set-silver-room-essentials-8482/-/A-82304741
     // 20pc Flatware Set Silver - Room Essentials™: Stainless Steel Silverware Set, Service for 4, Includes Forks, Spoons, Knives
@@ -103,45 +122,88 @@ const db_item = {
     flatware_set_room_essentials : {
         key: 'flatware_set_room_essentials',
         retail : 15, year: 2025,
-        unit_price: { key: 'cutlery', count: 20, set: true }
+        unit_price: { key: 'cutlery', count: 20 }
     },
     fork_plain : {
         key: 'fork_plain',
         retail : 0.75, year: 2025,
-        unit_price: { key: 'cutlery', count: 1, set: false }
-    }
+        unit_price: { key: 'cutlery', count: 1 }
+    },
+    tv_crt_rca13y1950 : {
+        key: 'tv_crt_rca13y1950',
+        retail : 300.00, year: 1950,
+        unit_price: null
+    },
 };
 
+/********* **********
+GEN ITEM
+********** *********/
+
 const gen_item = () => {
-    const item_rec = db_item.mug_white;
-    const item = Object.assign({  }, item_rec);
+    //const item_rec = db_item.mug_white;
     
+    const options = Object.keys(db_item);
+    const item_rec = db_item[ options[ Math.floor( options.length  * Math.random() ) ] ]
+    
+    const item = Object.assign({  }, item_rec);
     return item;
 };
 
+/********* **********
+EXAMPLE
+********** *********/
+
 class Example extends Phaser.Scene {
 
+    item = null
+    t = 0
+    
     constructor (config) {
         super(config);
         this.key = 'Example';
     }
     
     create () {
-    
-        const pricing = new Pricing({
+        const pricing_unit = new Pricing({
+            system: 'hard_coded',
+            key_method : 'unit_check', //'half_retail', 
             db_item : db_item,
             db_unit_price : db_unit_price
         });
-        this.registry.set('pricing', pricing);
+        const pricing_half = new Pricing({
+            system: 'hard_coded',
+            key_method : 'half_retail', 
+            db_item : db_item,
+            db_unit_price : db_unit_price
+        });
+        this.registry.set('pricing1', pricing_unit);
+        this.registry.set('pricing2', pricing_half);
+
+        this.item = gen_item();
         
-        const item = gen_item()
-        
-        console.log( pricing.priceItem( item ) ) 
+        this.item_disp1 = this.add.text(10, 50, '');
+        this.item_disp2 = this.add.text(10, 150, '');
+    }
+    
+    getInfo (item, key_pricing='pricing1') {
+        const pricing = this.registry.get(key_pricing);
+        const price = pricing.priceItem( item );
+        return 'item key: ' + item.key + '\n' + 
+        'price: ' + price.toString() + '\n' + 
+        '( by ' + pricing.key_method + ' method of the ' + pricing.system + ' pricing system )'; 
     
     }
     
-    update () {
-    
+    update (time, delta) {
+        this.t += delta;
+        if(this.t >= 300){
+            this.t %= 300;
+            this.item = gen_item();
+        }
+        this.item_disp1.text = this.getInfo(this.item, 'pricing1');
+        this.item_disp2.text = this.getInfo(this.item, 'pricing2');
+
     }
     
 }
