@@ -1,50 +1,30 @@
 {
+    "box" : {
+        "desc": "Just a plain old box",
+        "canGet": true, "canSell": false, "canRecyle": true, "canChildOnEmpty" : true, "autoCull" : false,
+        "tile" : {  "sheet": "donations_16_16",  "prefix": "box" },
+        "drop_count" : 0, "capacity": 10,
+        "mType": "carboard", "accepts" : "all"
+    },
     "box_items_hh" : {
         "desc": "A box of Household items",
-        "canGet": true,
-        "canSell": false,
-        "canRecyle": true,
-        "tile" : { 
-          "sheet": "donations_16_16", 
-          "prefix": "box"
-        },
-        "drop_count" : 3,
-        "capacity": 0,
-        "mType": "carboard",
-        "accepts" : "all",
-        "canChildOnEmpty" : true,
-        "autoCull" : false
+        "canGet": true, "canSell": false, "canRecyle": true, "canChildOnEmpty" : true, "autoCull" : false,
+        "tile" : {  "sheet": "donations_16_16",  "prefix": "box" },
+        "drop_count" : 3, "capacity": 0,
+        "mType": "carboard", "accepts" : "all"
     },
     "blue_bin" : {
         "desc": "A blue bin used for storing small house hold items",
-        "canGet": true,
-        "canSell": false,
-        "canRecyle": false,
-        "tile" : {
-          "sheet": "donations_16_16",
-          "prefix": "bluebin"
-        },
-        "drop_count": 0,
-        "capacity": 10,
-        "mType" : "plastic",
-        "accepts" : "all",
-        "canChildOnEmpty" : false,
-        "autoCull" : false
+        "canGet": true, "canSell": false, "canRecyle": false, "canChildOnEmpty" : false, "autoCull" : false,
+        "tile" : { "sheet": "donations_16_16", "prefix": "bluebin" },
+        "drop_count": 0, "capacity": 10,
+        "mType" : "plastic", "accepts" : "all"
     },
     "recycle_bin" : {
         "desc": "Place empty boxes and the like into me!",
-        "canGet": false,
-        "canSell": false,
-        "canRecyle": false,
-        "tile" : { 
-          "sheet": "donations_16_16",
-          "prefix": "recycle"
-        },
-        "drop_count": 0,
-        "capacity": 10,
-        "mType" : "plastic",
-        "accepts" : [ "cardboard" ],
-        "canChildOnEmpty" : false,
-        "autoCull" : true
+        "canGet": false, "canSell": false, "canRecyle": false, "canChildOnEmpty" : false, "autoCull" : true,
+        "tile" : {  "sheet": "donations_16_16", "prefix": "recycle" },
+        "drop_count": 0, "capacity": 10,
+        "mType" : "plastic", "accepts" : [ "cardboard" ]
     }
 }

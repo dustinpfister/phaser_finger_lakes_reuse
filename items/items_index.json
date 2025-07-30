@@ -2,10 +2,10 @@
 
     "files": {
         "0": "containers_1",
-        "1": "household_1"
-        
+        "1": "household_1"    
     },
     "items": {
+      "box": 0,
       "hh_mug_1": 1,
       "box_items_hh": 0,
       "blue_bin": 0,

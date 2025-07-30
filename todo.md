@@ -153,7 +153,7 @@ states such as mapview.
     * ( done ) - pricing draft: update readme to write about current state of pricing system
 
   /items :
-    * (     ) - add an empty box container
+    * ( done ) - add an plain box container
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
