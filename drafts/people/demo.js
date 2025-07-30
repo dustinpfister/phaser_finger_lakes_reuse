@@ -1,4 +1,4 @@
-import { Person, People } from '../../lib/people.js';
+import { Person, People } from '../../lib/people/people.js';
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata.js';
 
 class Example extends Phaser.Scene {

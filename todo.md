@@ -165,20 +165,16 @@ states such as mapview.
     * ( done ) - have a People.data.spawnStack array of objects
     * ( done ) - have a People.pushSpawnStack method
     * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack
-
-    * (      ) - make use of min and max spawn rate values to set the spawn rate of people
-    * (      ) - make use of schedule.js to spawn in shoppers
-    * (      ) - make use of schedule.js to spawn in ( and out ) workers
-    * (      ) - move people.js to /lib/people/people.js and start a README.md for the lib
-    * (      ) - door checks should happen for all people types
+    * ( done ) - move people.js to /lib/people/people.js and start a README.md for the lib
+        
     * (      ) - fix bug where workers, and customers are getting stuck in double doors
     * (      ) - fix bug where workers are dropping loose items in map4
     * (      ) - fix bug where a person can place items on top of walls
     * (      ) - fix bug where a person can drop items that are out of range
-
     * (      ) - fix bug where donators stand around doing nothing
-
     * (      ) - fix bug where workers get stuck when trying to recyle empty boxes
+
+    * (      ) - door checks should happen for all people types
 
     * (      ) - have a setDone method for the Action class
     * (      ) - use the done property of an action object in place of people.getData('action_done')
@@ -206,6 +202,7 @@ states such as mapview.
     * ( done ) - start an addTimedEvents method that will be called in the update method
     * ( done ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
     * ( done ) - timed events spawn shoppers at map_t also
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /sheets :
     * (      ) - new sprites for workers

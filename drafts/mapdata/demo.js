@@ -1,5 +1,5 @@
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata.js';
-import { Person, People } from '../../lib/people.js';
+import { Person, People } from '../../lib/people/people.js';
 
 class Example extends Phaser.Scene {
     preload () {
@@ -76,6 +76,7 @@ class Example extends Phaser.Scene {
         });
         this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
         mdc.update(time, delta);
+        player.update();
     }
     
 }
