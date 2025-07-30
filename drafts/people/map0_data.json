@@ -38,6 +38,12 @@
         { "x": 1, "y": 1, "w":1, "h": 1 }
     ]
   },
-  "objects" : {},
+  "objects" : {
+    "containers" : {
+      "blue_bin": [
+        { "x": 5, "y": 5 }
+      ]
+    }
+  },
   "doors" : []
 }

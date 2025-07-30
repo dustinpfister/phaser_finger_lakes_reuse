@@ -6,8 +6,18 @@ class Example extends Phaser.Scene {
     preload () {
     
         this.load.setBaseURL('../../');
+        
+        
+        
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
+        
+        // ITEM DATA
+        this.load.json('items_index', 'items/items_index.json');
+        this.load.json('household_1', 'items/household_1.json');
+        this.load.json('containers_1', 'items/containers_1.json');
+        
         
         MapLoader({
           scene: this,

@@ -135,7 +135,7 @@ So then this will mean updates to the hard coded data of each map, as well as to
 Sense the main focus of this revision will be fairly easy to complete, I will also want to take time to make many 
 various general improvements to the over all project as a whole. Much still needs to be done with Schedule system 
 that I put in place in R5, both with the lib itself and also how it is used with other libs such as people.js, and 
-states such as mapview.
+states such as mapview. Speaking of people.js there are a lot of bugs to fix with that one as well.
 
   /css :
     * ( done ) - update css so that it takes up the whole page
@@ -148,12 +148,14 @@ states such as mapview.
     * ( done ) - fix css links for all drafts
     * ( done ) - message_messpusher draft: change position of mess game object
     * ( done ) - update html and config for all drafts so that they use hard coded canvas
-    * ( done ) - people draft : update to work with spawn areas
     * ( done ) - pricing draft: Show results with simple half retail method
     * ( done ) - pricing draft: update readme to write about current state of pricing system
+    * ( done ) - people draft : update to work with spawn areas
 
   /items :
     * ( done ) - add an plain box container
+
+  /lib/people.js :
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
@@ -181,8 +183,6 @@ states such as mapview.
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - break down onHandAction method into more than one method
 
-
-
   /lib/schedule.js :
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
@@ -193,6 +193,7 @@ states such as mapview.
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
+    * ( done ) - have plain box instances in map4 for the sake of testing out worker AI
 
   /states/boot.js :
     * ( done ) - have a PEOPLE_SPAWN_RATE const to replace 'CUSTOMER_SPAWN_RATE', and also work for people in general
