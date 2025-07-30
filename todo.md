@@ -152,6 +152,9 @@ states such as mapview.
     * ( done ) - pricing draft: Show results with simple half retail method
     * ( done ) - pricing draft: update readme to write about current state of pricing system
 
+  /items :
+    * (     ) - add an empty box container
+
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
@@ -172,7 +175,11 @@ states such as mapview.
     * (      ) - fix bug where workers are dropping loose items in map4
     * (      ) - fix bug where a person can place items on top of walls
     * (      ) - fix bug where a person can drop items that are out of range
+
     * (      ) - fix bug where donators stand around doing nothing
+
+    * (      ) - fix bug where workers get stuck when trying to recyle empty boxes
+
     * (      ) - have a setDone method for the Action class
     * (      ) - use the done property of an action object in place of people.getData('action_done')
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
