@@ -198,6 +198,7 @@ states such as mapview.
   /states/mapview.js :
     * ( done ) - start an addTimedEvents method that will be called in the update method
     * ( done ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
+    * ( done ) - timed events spawn shoppers at map_t also
 
   /sheets :
     * (      ) - new sprites for workers

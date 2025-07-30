@@ -186,27 +186,40 @@ class Mapview extends Phaser.Scene {
         const tb = this.registry.get('tb');
         const gt = tb.gt;
         const te_count = tb.gt.timedEvents.length
-        
         if(te_count === 0){
-            
-            let time = gt.getByDelta(60 + Math.floor( Math.random() * 30 ))
+            let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
             
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                 on_start: (te, gt, delta) => {
-                    const people = mdc.getMapDataByIndex(4).customer;
-                    people.pushSpawnStack({
-                        subTypes: [
+                    const md_donations = mdc.getMapDataByIndex(4);
+                    const md_t = mdc.getMapDataByIndex(1);
+                    const cust_t_count = md_t.customer.children.entries.length;
+                    if(cust_t_count == 0){
+                        const people = md_t.customer;
+                        people.pushSpawnStack({
+                            subTypes: [
+                                ['shopper', 1.00]
+                            ],
+                            ms_min: 1000,
+                            ms_max: 5000,
+                            count: 3
+                        });                    
+                    }
+                    if(cust_t_count > 0){
+                        const people = md_donations.customer;
+                        people.pushSpawnStack({
+                            subTypes: [
                             ['donator', 1.00]
-                        ],
-                        ms_min: 1000,
-                        ms_max: 5000,
-                        count: 1 + Math.floor( Math.random() * 9 )
-                    });
-                },
-                on_update: (te, gt, delta) => {},
-                on_end: (te, gt, delta) => {}
+                            ],
+                            ms_min: 1000,
+                            ms_max: 5000,
+                            count: 3
+                        });
+                    }
+                }
             });
+            
             
         }
     }
@@ -218,43 +231,26 @@ class Mapview extends Phaser.Scene {
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
         const scene = this;
-        
         const tb = this.registry.get('tb');
-        
         this.addTimedEvents();
-        
-        
         tb.update( delta );
-        
-        
-        
         mdc.update(time, delta);
-    
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-
         this.cursorCheck('left');
         this.cursorCheck('right');
         this.cursorCheck('up');
         this.cursorCheck('down');
-
         player.pathProcessorCurve(this, (scene, person) => {
-            mdc.doorCheck(scene, player);
-                
+            mdc.doorCheck(scene, player);     
             person.setData('path', []);
             person.nCurve = 0;
         });
-            
-        //player.update(this);
         this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
-
         disp1.text = 'Money: ' + gs.money;
-
         disp2.text = 'customers: ' + md.customer.getChildren().length;
-        
         this.mp.update(delta);
         player.update();
-        
     }
     
 }
