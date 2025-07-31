@@ -12,9 +12,10 @@ class Example extends Phaser.Scene {
             scene: this,
             gt: new GameTime({
                 scene: this,
+                real: false,
                 year: 2025, month: 6, day: 3,
                 hour: 9, minute: 0, second: 0, ms:0,
-                multi: 700, real: false
+                multi: 700
             })
         });
         

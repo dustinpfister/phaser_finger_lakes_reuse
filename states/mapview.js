@@ -32,7 +32,7 @@ class Mapview extends Phaser.Scene {
             gt: new GameTime({
                 scene: this,
                 real: false,                           // set to true if you want real time mode
-                year: 2025, month: 7, day: 19,         // date values     ( if not using real mode )
+                year: 2025, month: 7, day: 29,         // date values     ( if not using real mode )
                 hour: 9, minute: 0, second: 0, ms:0,   // time values     ( if not using real mode )
                 multi: 700                             // time multiplier ( if not using real mode )
             })

@@ -156,8 +156,6 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
     * ( done ) - add an plain box container
 
   /lib/people.js :
-
-  /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
     * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
@@ -184,6 +182,7 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
     * (      ) - break down onHandAction method into more than one method
 
   /lib/schedule.js :
+    * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
     * (      ) - use bitmap text for te info
