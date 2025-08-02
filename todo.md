@@ -154,6 +154,7 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
 
   /items :
     * ( done ) - add an plain box container
+    * ( done ) - ItemCollection.getEmpties should also check if an item is a Container
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
@@ -167,26 +168,14 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
     * ( done ) - update PEOPLE_TYPES.customer.canSpawn to make use of People.data.spawnStack
     * ( done ) - move people.js to /lib/people/people.js and start a README.md for the lib
     * ( done ) - have a setDone method for the Action class
-    
     * ( done ) - use the done property of an action object in place of people.getData('action_done')
     
+    
+    
     * (      ) - make actions class an exteral lib in the people lib folder
-    
-    * (      ) - update worker ai to process items again
-    * (      ) - update donator ai so that they leave
-    
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
     * (      ) - break down onHandAction method into more than one method
-
     * (      ) - door checks should happen for all people types
-
-
-    * (      ) - fix bug where donators stand around doing nothing
-    * (      ) - fix bug where workers get stuck when trying to recyle empty boxes
-    * (      ) - fix bug where workers, and customers are getting stuck in double doors
-    * (      ) - fix bug where workers are dropping loose items in map4
-    * (      ) - fix bug where a person can place items on top of walls
-    * (      ) - fix bug where a person can drop items that are out of range
 
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
