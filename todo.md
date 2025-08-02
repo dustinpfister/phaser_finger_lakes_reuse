@@ -169,8 +169,11 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
     * ( done ) - move people.js to /lib/people/people.js and start a README.md for the lib
     * ( done ) - have a setDone method for the Action class
     * ( done ) - use the done property of an action object in place of people.getData('action_done')
+    * ( done ) - update TASKS.di to get workers to bring items to map 1 again
     
-    
+    * (      ) - update TASKS.donate to get donators to leave when they are done
+    * (      ) - update TASKS.shopping to get shopers to buy items again
+    * (      ) - update ACTIONS.pickup to get action to end in update depeding con conditions rather than in no path method
     
     * (      ) - make actions class an exteral lib in the people lib folder
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
