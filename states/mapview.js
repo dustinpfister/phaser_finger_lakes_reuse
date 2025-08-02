@@ -24,7 +24,7 @@ class Mapview extends Phaser.Scene {
             maxT: 10000
         });
         
-        const mdc = new MapDataCollection(this, { startMapIndex: 1 });
+        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
         
         const tb = new TimeBar({
             x:320, y: 25,

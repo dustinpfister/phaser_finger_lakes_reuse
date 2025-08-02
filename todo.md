@@ -135,7 +135,8 @@ So then this will mean updates to the hard coded data of each map, as well as to
 Sense the main focus of this revision will be fairly easy to complete, I will also want to take time to make many 
 various general improvements to the over all project as a whole. Much still needs to be done with Schedule system 
 that I put in place in R5, both with the lib itself and also how it is used with other libs such as people.js, and 
-states such as mapview. Speaking of people.js there are a lot of bugs to fix with that one as well.
+states such as mapview. Speaking of people.js there are a lot of bugs to fix with that one as well, mainly with the 
+AI, and the way I define tasks and actions.
 
   /css :
     * ( done ) - update css so that it takes up the whole page
@@ -171,8 +172,8 @@ states such as mapview. Speaking of people.js there are a lot of bugs to fix wit
     * ( done ) - use the done property of an action object in place of people.getData('action_done')
     * ( done ) - update TASKS.di to get workers to bring items to map 1 again
     * ( done ) - update TASKS.shopping to get shopers to buy items again
+    * ( done ) - update TASKS.donate to get donators to leave when they are done
     
-    * (      ) - update TASKS.donate to get donators to leave when they are done
     * (      ) - update ACTIONS.pickup to get action to end in update depeding con conditions rather than in no path method
     
     * (      ) - make actions class an exteral lib in the people lib folder
