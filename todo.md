@@ -157,6 +157,9 @@ AI, and the way I define tasks and actions.
     * ( done ) - add an plain box container
     * ( done ) - ItemCollection.getEmpties should also check if an item is a Container
 
+  /lib/message :
+    * (      ) - add a debug screen Class
+
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
