@@ -175,9 +175,10 @@ AI, and the way I define tasks and actions.
     * ( done ) - use the done property of an action object in place of people.getData('action_done')
     * ( done ) - update TASKS.di to get workers to bring items to map 1 again
     * ( done ) - update TASKS.shopping to get shopers to buy items again
-    * ( done ) - update TASKS.donate to get donators to leave when they are done
+    * ( done ) - update TASKS.donate to get donators to leave when they are done    
+    * ( done ) - always set a path for the customer_goto_exit action when the no path method is called
     
-    * (      ) - update ACTIONS.pickup to get action to end in update depeding con conditions rather than in no path method
+    * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
     
     * (      ) - make actions class an exteral lib in the people lib folder
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
