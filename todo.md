@@ -211,6 +211,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - start an addTimedEvents method that will be called in the update method
     * ( done ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
     * ( done ) - timed events spawn shoppers at map_t also
+    * ( done ) - use new debug screen message lib feature
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /sheets :

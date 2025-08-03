@@ -41,6 +41,7 @@ class Mapview extends Phaser.Scene {
         
         const dbs =  new DebugScreen({
             scene: this,
+            alpha: 0.60, fontSize: 12,
             desc: 'debug screen for Mapview state',
             lines: ['foo', 'bar', 'baz']
         });
@@ -66,6 +67,9 @@ class Mapview extends Phaser.Scene {
                 const k = mKey[0].replace('Key', '');
                 if(k === 'W'){
                     mv.nextWorker();
+                }
+                if(k === 'D'){
+                    dbs.toggleActive();
                 }
             }
         });
