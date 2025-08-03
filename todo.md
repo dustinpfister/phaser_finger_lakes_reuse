@@ -177,6 +177,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - update TASKS.shopping to get shopers to buy items again
     * ( done ) - update TASKS.donate to get donators to leave when they are done    
     * ( done ) - always set a path for the customer_goto_exit action when the no path method is called
+    * ( done ) - using Person.getData('act') in People.update method
     
     * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
     
