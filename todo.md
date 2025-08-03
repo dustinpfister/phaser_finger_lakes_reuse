@@ -104,21 +104,25 @@ create menus and UI actions.
     * (      ) - people draft : make sure the idle states of both types work okay
     * (      ) - message_messpusher : demo new alpha effects    
 
-  /lib/items.js :
+  /lib/items  :
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
 
-  /lib/mapdata.js :
+  /lib/people :
+    * (      ) - break down onHandAction method into more than one method
+    * (      ) - door checks should happen for all people types
+
+  /lib/mapdata  :
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 
-  /lib/message.js :
+  /lib/message  :
     * (      ) - message_messpusher : have an alpha effect that is also based on distance
     * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
     * (      ) - have a class that will be used for the game display ( for money, ect )
 
-  /lib/ui/ui.js
+  /lib/ui
     * (      ) - start a ui lib that will be used to create buttons
     * (      ) - have a method that can be used to add keyboard events
 
@@ -158,7 +162,8 @@ AI, and the way I define tasks and actions.
     * ( done ) - ItemCollection.getEmpties should also check if an item is a Container
 
   /lib/message :
-    * (      ) - add a debug screen Class
+    * ( done ) - add a debug screen Class
+    * (      ) - create a message folder, add message.js to it, and start a README.md file for message
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
@@ -183,8 +188,6 @@ AI, and the way I define tasks and actions.
     
     * (      ) - make actions class an exteral lib in the people lib folder
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
-    * (      ) - break down onHandAction method into more than one method
-    * (      ) - door checks should happen for all people types
 
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false

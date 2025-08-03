@@ -1,7 +1,7 @@
 import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
 import { Person, People } from '../lib/people/people.js';
 import { COLOR, GameTime, TimeBar } from '../lib/schedule.js';
-import { ConsoleLogger, MessPusher } from '../lib/message.js';
+import { ConsoleLogger, MessPusher, DebugScreen } from '../lib/message.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'mapview',
@@ -38,6 +38,13 @@ class Mapview extends Phaser.Scene {
             })
         });
         this.registry.set('tb', tb);
+        
+        const dbs =  new DebugScreen({
+            scene: this,
+            desc: 'debug screen for Mapview state',
+            lines: ['foo', 'bar', 'baz']
+        });
+        this.registry.set('dbs', dbs);
         
         const mv = this;
         this.registry.set('mdc', mdc);
@@ -251,6 +258,10 @@ class Mapview extends Phaser.Scene {
         disp2.text = 'customers: ' + md.customer.getChildren().length;
         this.mp.update(delta);
         player.update();
+        
+        const dbs = this.registry.get('dbs');
+        dbs.lines = ['x=' + player.x ];
+        dbs.draw();
     }
     
 }
