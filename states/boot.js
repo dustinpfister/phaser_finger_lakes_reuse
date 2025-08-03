@@ -1,7 +1,7 @@
 import { Load } from './load.js';
 import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
-import { ConsoleLogger } from '../lib/message.js';
+import { ConsoleLogger } from '../lib/message/message.js';
 
 const log = new ConsoleLogger({
     cat: 'state',

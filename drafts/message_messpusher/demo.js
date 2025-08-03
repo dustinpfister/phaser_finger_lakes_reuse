@@ -1,4 +1,4 @@
-import { ConsoleLogger, MessPusher } from '../../lib/message.js';
+import { ConsoleLogger, MessPusher } from '../../lib/message/message.js';
 
 const log = new ConsoleLogger({
     cat: 'demo',

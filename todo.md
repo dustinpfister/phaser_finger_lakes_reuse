@@ -163,7 +163,8 @@ AI, and the way I define tasks and actions.
 
   /lib/message :
     * ( done ) - add a debug screen Class
-    * (      ) - create a message folder, add message.js to it, and start a README.md file for message
+    * ( done ) - create a message folder, add message.js to it, and start a README.md file for message
+    * ( done ) - update links to message.js for main game, as well as all drafts.
 
   /lib/people.js :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object

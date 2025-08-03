@@ -1,4 +1,4 @@
-import { ConsoleLogger } from '../lib/message.js';
+import { ConsoleLogger } from '../lib/message/message.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'menu',
