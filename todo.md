@@ -189,6 +189,13 @@ AI, and the way I define tasks and actions.
     * ( done ) - Make the pickup action, part of the core set of actions, built into action.js 
     * ( done ) - Make the goto_map action, part of the core set of actions, built into action.js 
     * ( done ) - have a worker_player_control action
+    * ( done ) - updated di task to handle 'have_items' result of 'worker_di_idle' action better
+    
+    * ( done ) - have a action_worker_di.js file that will contain worker di actions only
+    * (      ) - have a action_customer.js file that will contain all customer actions
+    * (      ) - have a action_core.js that will contain all current common actions
+    
+    * (      ) - see why player controled worker is not set to player control task and action on start of game
     
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
