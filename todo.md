@@ -186,9 +186,10 @@ AI, and the way I define tasks and actions.
     * ( done ) - using Person.getData('act') in People.update method
     * ( done ) - make actions class an exteral lib in the people lib folder    
     
-    * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
+    * ( done ) - Make the drop action, part of the core set of actions, built into action.js 
+    * (      ) - Make the pickup action, part of the core set of actions, built into action.js 
     
-    * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
+    * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
 
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
