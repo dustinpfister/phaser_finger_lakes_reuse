@@ -187,7 +187,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - make actions class an exteral lib in the people lib folder    
     * ( done ) - Make the drop action, part of the core set of actions, built into action.js 
     * ( done ) - Make the pickup action, part of the core set of actions, built into action.js 
-    * (      ) - Make the goto_map action, part of the core set of actions, built into action.js 
+    * ( done ) - Make the goto_map action, part of the core set of actions, built into action.js 
     
     * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
 
