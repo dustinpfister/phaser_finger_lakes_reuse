@@ -166,7 +166,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - create a message folder, add message.js to it, and start a README.md file for message
     * ( done ) - update links to message.js for main game, as well as all drafts.
 
-  /lib/people.js :
+  /lib/people :
     * ( done ) - use new people spawnAreas arrays over that of a single spawnAt object
     * ( done ) - use new people spawnAreas to functions as exit areas as well
     * ( done ) - the People.setMapSpawnLocation method should make use of height and width values
@@ -188,9 +188,8 @@ AI, and the way I define tasks and actions.
     * ( done ) - Make the drop action, part of the core set of actions, built into action.js 
     * ( done ) - Make the pickup action, part of the core set of actions, built into action.js 
     * ( done ) - Make the goto_map action, part of the core set of actions, built into action.js 
+    * ( done ) - have a worker_player_control action
     
-    * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
-
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future

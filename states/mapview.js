@@ -146,25 +146,27 @@ class Mapview extends Phaser.Scene {
                 mi = mi === 5 ? mi = 1 : mi;
             }
             if( nextWorker ){
+                const md = mdc.getMapDataByIndex(nextWorker.mi);
                 if( nextWorker.person === player ){
+                    md.worker.setTask(this, mdc, md, nextWorker.person, 'di');
                     pi += 1;  
                 }
                 if( nextWorker.person != player ){
-                    this.setPlayerPerson( nextWorker.person, nextWorker.mi );      
+                    this.setPlayerPerson( nextWorker.person, nextWorker.mi, md );      
                 }
                 ct += 1;
             }
-        }
-        
+        }     
     }
     
-    setPlayerPerson ( worker, mi ) {
+    setPlayerPerson ( worker, mi, md ) {
         this.registry.set('player', worker);
         worker.setData('path', []);
         const p = worker.getTilePos();
         worker.setToTilePos(p);
         this.registry.get('mdc').setActiveMapByIndex(this, mi );
-        this.mp.push('Switched to worker ' + worker.name, 'INFO');    
+        this.mp.push('Switched to worker ' + worker.name, 'INFO');
+        md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
     }
     
     cursorCheck (dir='left') {
@@ -270,6 +272,7 @@ class Mapview extends Phaser.Scene {
             dbs.lines.push(
                 'name: ' + worker.name,
                 'key: ' + action.key,
+                'path len: ' + worker.getData('path').length,
                 ''
             );
         });
