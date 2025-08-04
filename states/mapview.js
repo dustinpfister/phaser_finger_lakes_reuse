@@ -264,8 +264,17 @@ class Mapview extends Phaser.Scene {
         player.update();
         
         const dbs = this.registry.get('dbs');
-        dbs.lines = ['x=' + player.x ];
+        dbs.lines = [];
+        md.worker.getChildren().forEach((worker)=>{
+            const action = worker.getData('act')
+            dbs.lines.push(
+                'name: ' + worker.name,
+                'key: ' + action.key,
+                ''
+            );
+        });
         dbs.draw();
+        
     }
     
 }

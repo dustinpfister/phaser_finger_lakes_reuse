@@ -184,10 +184,10 @@ AI, and the way I define tasks and actions.
     * ( done ) - update TASKS.donate to get donators to leave when they are done    
     * ( done ) - always set a path for the customer_goto_exit action when the no path method is called
     * ( done ) - using Person.getData('act') in People.update method
+    * ( done ) - make actions class an exteral lib in the people lib folder    
     
     * (      ) - update ACTIONS.pickup to end in update depeding on conditions rather than in the no path method
     
-    * (      ) - make actions class an exteral lib in the people lib folder
     * (      ) - if the scene object is a property of a Person Object then I do not need to pass it as an argument
 
   /lib/schedule.js :
@@ -216,6 +216,7 @@ AI, and the way I define tasks and actions.
 
   /sheets :
     * (      ) - new sprites for workers
+    * (      ) - new tiles for outside
 
   / :
     * ( done ) - del old index-extended html file
