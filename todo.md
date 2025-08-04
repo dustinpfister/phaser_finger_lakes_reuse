@@ -194,9 +194,7 @@ AI, and the way I define tasks and actions.
     
     * (      ) - have a action_customer.js file that will contain all customer actions
     * (      ) - have a action_core.js that will contain all current common actions
-    
     * (      ) - expand more on people/README.md
-    
     * (      ) - see why player controled worker is not set to player control task and action on start of game
     
   /lib/schedule.js :
@@ -211,6 +209,8 @@ AI, and the way I define tasks and actions.
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
     * ( done ) - have plain box instances in map4 for the sake of testing out worker AI
+    * ( done ) - make map 4 larger from 9 to 16 lines
+    * (      ) - add grass tiles to map 4
 
   /states/boot.js :
     * ( done ) - have a PEOPLE_SPAWN_RATE const to replace 'CUSTOMER_SPAWN_RATE', and also work for people in general

@@ -3,7 +3,8 @@
   "spawnAt": { "x":38, "y": 5 },
   "people" : {
     "spawnAreas" : [
-        { "x": 30, "y": 8, "w":8, "h": 1, "type": "customer" },
+        { "x": 40, "y": 14, "w":20, "h": 1, "type": "customer" },
+        { "x": 0, "y": 1, "w":1, "h": 10, "type": "customer" },
         { "x": 38, "y": 4, "w":4, "h": 4, "type": "worker" }
     ],
     "spawnAreas2" : {
