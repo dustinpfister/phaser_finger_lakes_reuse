@@ -194,10 +194,10 @@ AI, and the way I define tasks and actions.
     * ( done ) - have a worker_player_control action
     * ( done ) - updated di task to handle 'have_items' result of 'worker_di_idle' action better 
     * ( done ) - have a action_worker_di.js file that will contain worker di actions only
-    
     * ( done ) - have a action_customer.js file that will contain all customer actions
     * ( done ) - make get_di_tiles method a part of map data lib
-    * (      ) - have a action_core.js that will contain all current common actions
+    * ( done ) - have a action_core.js that will contain all current common actions
+    
     * (      ) - expand more on people/README.md
     * (      ) - see why player controled worker is not set to player control task and action on start of game
     
