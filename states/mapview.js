@@ -24,7 +24,13 @@ class Mapview extends Phaser.Scene {
             maxT: 10000
         });
         
-        const mdc = new MapDataCollection(this, { startMapIndex: 4 });
+        const start_map_index = 4;
+        const mdc = new MapDataCollection(this, { startMapIndex: start_map_index });
+        this.registry.set('mdc', mdc);
+        
+        this.setPlayerPerson( this.registry.get('player'), start_map_index);
+        
+        console.log( this.registry.get('player') );
         
         const tb = new TimeBar({
             x:320, y: 25,
@@ -48,7 +54,8 @@ class Mapview extends Phaser.Scene {
         this.registry.set('dbs', dbs);
         
         const mv = this;
-        this.registry.set('mdc', mdc);
+        
+        
         mdc.setActiveMapByIndex(this, mdc.activeIndex);  
         this.cursors = this.input.keyboard.createCursorKeys();
         
@@ -152,14 +159,16 @@ class Mapview extends Phaser.Scene {
                     pi += 1;  
                 }
                 if( nextWorker.person != player ){
-                    this.setPlayerPerson( nextWorker.person, nextWorker.mi, md );      
+                    this.setPlayerPerson( nextWorker.person, nextWorker.mi);      
                 }
                 ct += 1;
             }
         }     
     }
     
-    setPlayerPerson ( worker, mi, md ) {
+    setPlayerPerson ( worker, mi ) {
+        const mdc = this.registry.get('mdc');
+        const md = mdc.getMapDataByIndex(mi);
         this.registry.set('player', worker);
         worker.setData('path', []);
         const p = worker.getTilePos();

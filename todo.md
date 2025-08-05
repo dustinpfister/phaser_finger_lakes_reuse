@@ -198,8 +198,9 @@ AI, and the way I define tasks and actions.
     * ( done ) - make get_di_tiles method a part of map data lib
     * ( done ) - have a action_core.js that will contain all current common actions
     
+     
     * (      ) - expand more on people/README.md
-    * (      ) - see why player controled worker is not set to player control task and action on start of game
+
     
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
@@ -225,6 +226,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - display of on hand items stoped working for the player controled worker, see if that can be fixed
     * ( done ) - timed events spawn shoppers at map_t also
     * ( done ) - use new debug screen message lib feature
+    * ( done ) - make sure that the starting player worker starts on player control task
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /sheets :
