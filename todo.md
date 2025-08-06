@@ -197,9 +197,9 @@ AI, and the way I define tasks and actions.
     * ( done ) - have a action_customer.js file that will contain all customer actions
     * ( done ) - make get_di_tiles method a part of map data lib
     * ( done ) - have a action_core.js that will contain all current common actions
-    * ( done ) - made ACTIONS_WORKER_DI.worker_di_return a custom action of its own
-    
-    * (      ) - have a whole new di task that is a clear start from what was in place before
+    * ( done ) - made ACTIONS_WORKER_DI.worker_di_return a custom action of its own   
+    * ( done ) - start a whole new di task that is a clear start from what was in place before
+    * (      ) - get workers to pick up empty boxes with new ai task
      
     * (      ) - expand more on people/README.md
 
