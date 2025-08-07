@@ -201,10 +201,8 @@ AI, and the way I define tasks and actions.
     * ( done ) - made ACTIONS_WORKER_DI.worker_di_return a custom action of its own   
     * ( done ) - start a whole new di task that is a clear start from what was in place before
     * ( done ) - get workers to recycle empty boxes when at di with new di task code
-     
-    * (      ) - expand more on people/README.md
+    * ( done ) - expand more on people/README.md
 
-    
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future

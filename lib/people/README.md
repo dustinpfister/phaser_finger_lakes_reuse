@@ -4,11 +4,16 @@ The name should say it all for this one, but just in case it is not clear. Yes t
 
 ## Person and People
 
-The main people.js libray in Finger Lakes Reuse Contains classes for a single Person Class instance, as well as the People Class that is an extension of the [Group Class in Phaser](https://docs.phaser.io/api-documentation/class/gameobjects-group) for everything related to Groups of Person Class instances. 
+The main people.js library in Finger Lakes Reuse Contains classes for a single Person Class instance, as well as the People Class that is a collection of these Person Class Objects.
 
 ### The Person Class
 
+The Person class extends from the Phaser Sprite class and contains the current state of a single Person. A Person has a 'type' such as 'customer', and a subType such as 'shopper'. With that said there is a whole lot of other logic that will apply to a certain Person based mainly on this type and sub type. However Much of this will depend on the collection to which the Person is a member of, as well as the current task that the person is set to.
+
 ### The People Class
+
+On top of having a single Person class I also have a Collection of Person Class instances which is the People Class. This People Class extends from the [Group Class in Phaser](https://docs.phaser.io/api-documentation/class/gameobjects-group)
+
 
 ## Tasks and Actions
 
@@ -16,9 +21,11 @@ In addition to the Classes that there are to work with, the People lib needs to 
 
 ### The Action Class
 
-the action.js file
+I have a main action.js file that contains the Action class which provides useful methods like the setDone method. 
 
-### Worker Actions
+### Core, Customer, and Worker Actions
 
-the action\_worker\_di.js file
+At the time of this writing I also have additional files in which I break down actions into files based on how they apply to groups of people. For example I have a core actions class where I place common actions such as drop, pickup, and wonder. I then also have collections of actions such as the action\_worker\_di.js file where I have all the actions that will come into play for workers that are set to the di task.
+
+
 
