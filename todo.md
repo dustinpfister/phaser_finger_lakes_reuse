@@ -109,6 +109,7 @@ create menus and UI actions.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/people :
+    * (      ) - have a tasks.js file that will contain a new Task Class
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
 
@@ -121,10 +122,26 @@ create menus and UI actions.
     * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
     * (      ) - have a class that will be used for the game display ( for money, ect )
+    
+  /lib/schedule.js :    
+    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
+    * (      ) - use bitmap text for te info
+    * (      ) - use a larger font for basic time info
+    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 
   /lib/ui
     * (      ) - start a ui lib that will be used to create buttons
     * (      ) - have a method that can be used to add keyboard events
+
+  /maps :
+    * (      ) - add grass tiles to map 4
+
+  /states/mapview.js :
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
+
+  /sheets :
+    * (      ) - new sprites for workers
+    * (      ) - new tiles for outside such as grass, trees
 
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
@@ -206,17 +223,12 @@ AI, and the way I define tasks and actions.
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
-    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
-    * (      ) - use bitmap text for te info
-    * (      ) - use a larger font for basic time info
-    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
-
+    
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays
     * ( done ) - remove old main spawnAt, and exitAt objects for maps 1-4
     * ( done ) - have plain box instances in map4 for the sake of testing out worker AI
     * ( done ) - make map 4 larger from 9 to 16 lines
-    * (      ) - add grass tiles to map 4
 
   /states/boot.js :
     * ( done ) - have a PEOPLE_SPAWN_RATE const to replace 'CUSTOMER_SPAWN_RATE', and also work for people in general
@@ -228,11 +240,6 @@ AI, and the way I define tasks and actions.
     * ( done ) - timed events spawn shoppers at map_t also
     * ( done ) - use new debug screen message lib feature
     * ( done ) - make sure that the starting player worker starts on player control task
-    * (      ) - make use of schedule.js to spawn in ( and out ) workers
-
-  /sheets :
-    * (      ) - new sprites for workers
-    * (      ) - new tiles for outside
 
   / :
     * ( done ) - del old index-extended html file
