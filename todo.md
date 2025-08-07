@@ -160,6 +160,7 @@ AI, and the way I define tasks and actions.
   /items :
     * ( done ) - add an plain box container
     * ( done ) - ItemCollection.getEmpties should also check if an item is a Container
+    * (      ) - have a BaseItem.isEmpty method
 
   /lib/mapdata :
     * ( done ) - have a get_di_tiles method for the mapData class 
