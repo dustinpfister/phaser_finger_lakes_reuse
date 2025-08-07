@@ -160,7 +160,7 @@ AI, and the way I define tasks and actions.
   /items :
     * ( done ) - add an plain box container
     * ( done ) - ItemCollection.getEmpties should also check if an item is a Container
-    * (      ) - have a BaseItem.isEmpty method
+    * ( done ) - have a BaseItem.isEmpty method
 
   /lib/mapdata :
     * ( done ) - have a get_di_tiles method for the mapData class 
@@ -200,7 +200,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - have a action_core.js that will contain all current common actions
     * ( done ) - made ACTIONS_WORKER_DI.worker_di_return a custom action of its own   
     * ( done ) - start a whole new di task that is a clear start from what was in place before
-    * (      ) - get workers to pick up empty boxes with new ai task
+    * ( done ) - get workers to recycle empty boxes when at di with new di task code
      
     * (      ) - expand more on people/README.md
 
