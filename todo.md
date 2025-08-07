@@ -219,6 +219,11 @@ AI, and the way I define tasks and actions.
     * ( done ) - start a whole new di task that is a clear start from what was in place before
     * ( done ) - get workers to recycle empty boxes when at di with new di task code
     * ( done ) - expand more on people/README.md
+    * (      ) - rename pickup_drop action to worker_di_pickup_drop
+    * (      ) - rename pickup_empty action to worker_di_pickup_empty
+    * (      ) - have a common pickup helper function for action_worker_di.js
+    * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
+    * (      ) - have custom code for di_worker_pickup_empty rather than calling common pickup action
 
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
@@ -232,7 +237,6 @@ AI, and the way I define tasks and actions.
 
   /states/boot.js :
     * ( done ) - have a PEOPLE_SPAWN_RATE const to replace 'CUSTOMER_SPAWN_RATE', and also work for people in general
-    * (      ) - remove 'CUSTOMER_SPAWN_RATE' if it is no longer in use
     
   /states/mapview.js :
     * ( done ) - start an addTimedEvents method that will be called in the update method
