@@ -233,6 +233,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
     * ( done ) - have a disp_top and disp_bottom prop for timed events
+    * ( done ) - have a new on_tick event that will fire on each update regardless if the timed event is in effect or not
     
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays

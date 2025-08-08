@@ -209,9 +209,15 @@ class Mapview extends Phaser.Scene {
         if(te_count === 0){
             let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
             
+            const count = 3;
+            
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                 
+                on_tick : (te, gt, delta) => {
+                    te.disp_top = 'foo';
+                    te.disp_bottom = count;
+                },
                 
                 on_start: (te, gt, delta) => {
                     const md_donations = mdc.getMapDataByIndex(4);
@@ -220,23 +226,19 @@ class Mapview extends Phaser.Scene {
                     if(cust_t_count == 0){
                         const people = md_t.customer;
                         people.pushSpawnStack({
-                            subTypes: [
-                                ['shopper', 1.00]
-                            ],
+                            subTypes: [ ['shopper', 1.00] ],
                             ms_min: 1000,
                             ms_max: 5000,
-                            count: 3
+                            count: count
                         });                    
                     }
-                    if(cust_t_count > 0){
+                    {
                         const people = md_donations.customer;
                         people.pushSpawnStack({
-                            subTypes: [
-                            ['donator', 1.00]
-                            ],
+                            subTypes: [ ['donator', 1.00] ],
                             ms_min: 1000,
                             ms_max: 5000,
-                            count: 3
+                            count: count
                         });
                     }
                 }
