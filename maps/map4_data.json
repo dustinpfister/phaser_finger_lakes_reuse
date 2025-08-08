@@ -5,7 +5,7 @@
     "spawnAreas" : [
         { "x": 40, "y": 14, "w":20, "h": 1, "type": "customer" },
         { "x": 0, "y": 1, "w":1, "h": 10, "type": "customer" },
-        { "x": 38, "y": 4, "w":4, "h": 4, "type": "worker" }
+        { "x": 39, "y": 6, "w":6, "h": 6, "type": "worker" }
     ],
     "spawnAreas2" : {
       "x": 0, "y": 1, "w":1, "h": 8

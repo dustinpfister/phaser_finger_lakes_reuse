@@ -95,6 +95,9 @@ them per hour will wax and wain from one game day to the next.
 As the name sugessts I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
 create menus and UI actions.
 
+  ? :
+    * (      ) - investagate a glitch where items will move around on a map without the person holding it.
+
   /css : 
     * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
     
@@ -112,6 +115,11 @@ create menus and UI actions.
     * (      ) - have a tasks.js file that will contain a new Task Class
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
+    * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
+    * (      ) - rename pickup_drop action to worker_di_pickup_drop
+    * (      ) - rename pickup_empty action to worker_di_pickup_empty
+    * (      ) - have a compleate do over with main donator task
+    * (      ) - have a compleate do over with main shopper task
 
   /lib/mapdata  :
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
@@ -220,13 +228,11 @@ AI, and the way I define tasks and actions.
     * ( done ) - get workers to recycle empty boxes when at di with new di task code
     * ( done ) - expand more on people/README.md
     * ( done ) - have custom code for di_worker_pickup_empty rather than calling common pickup action
-    * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
-    * (      ) - rename pickup_drop action to worker_di_pickup_drop
-    * (      ) - rename pickup_empty action to worker_di_pickup_empty
     
   /lib/schedule.js :
     * ( done ) - fix bug where system is not working when real moad is set to false
     * ( done ) - have a getByDelta method that will give hour, and minute values that are a given delta into the future
+    * ( done ) - have a disp_top and disp_bottom prop for timed events
     
   /maps :
     * ( done ) - update maps 1-4 to have common people objects, that also have spawnArea arrays

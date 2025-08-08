@@ -30,8 +30,6 @@ class Mapview extends Phaser.Scene {
         
         this.setPlayerPerson( this.registry.get('player'), start_map_index);
         
-        console.log( this.registry.get('player') );
-        
         const tb = new TimeBar({
             x:320, y: 25,
             scene: this,
@@ -213,6 +211,8 @@ class Mapview extends Phaser.Scene {
             
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                
+                
                 on_start: (te, gt, delta) => {
                     const md_donations = mdc.getMapDataByIndex(4);
                     const md_t = mdc.getMapDataByIndex(1);
@@ -240,6 +240,7 @@ class Mapview extends Phaser.Scene {
                         });
                     }
                 }
+                
             });
             
             
