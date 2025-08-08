@@ -209,7 +209,7 @@ class Mapview extends Phaser.Scene {
         if(te_count === 0){
             let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
             
-            const count = 3;
+            const count = 5;
             
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
@@ -288,6 +288,10 @@ class Mapview extends Phaser.Scene {
                 ''
             );
         });
+        dbs.lines2 = [
+            'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
+            'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
+        ];
         dbs.draw();
         
     }
