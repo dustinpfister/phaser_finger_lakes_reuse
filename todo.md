@@ -95,14 +95,11 @@ them per hour will wax and wain from one game day to the next.
 As the name sugessts I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
 create menus and UI actions.
 
-  ? :
-    * (      ) - investagate a glitch where items will move around on a map without the person holding it.
-
   /css : 
     * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
     
   /drafts :
-    * (      ) - ui draft : have a drfat to make use of new ui lib
+    * ( done ) - ui draft : have a draft to make use of new ui lib
     * (      ) - people draft : have both types of people show up ( workers, and customers )
     * (      ) - people draft : make sure the idle states of both types work okay
     * (      ) - message_messpusher : demo new alpha effects    
@@ -138,7 +135,7 @@ create menus and UI actions.
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
 
   /lib/ui
-    * (      ) - start a ui lib that will be used to create buttons
+    * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * (      ) - have a method that can be used to add keyboard events
 
   /maps :
@@ -153,6 +150,10 @@ create menus and UI actions.
 
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
+
+  ? :
+    * (      ) - investagate a glitch where items will move around on a map without the person holding it.
+
 ```
 
 ## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
