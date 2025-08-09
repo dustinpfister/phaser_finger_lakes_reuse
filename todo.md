@@ -155,7 +155,7 @@ create menus and UI actions.
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
 ```
 
-## R6 (    ) - Spawn and exit areas, General Improvement's
+## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
 ```
 I would like to have an array of areas for each map to define where a person can spawn or exit. This means having
 arrays of objects, for each map, and each object defines an x and y position along with a width and height. 
@@ -262,7 +262,7 @@ AI, and the way I define tasks and actions.
     * ( done ) - add a container div in index.html
 
   /README.md :
-    * (      ) - update readme to reflect R6 changes, and commit R6 when done with this Revision
+    * ( done ) - update readme to reflect R6 changes, and commit R6 when done with this Revision
 ```
 
 ## R5 ( done 07/20/2025 ) - Game Day Time, Schedule system, Color Tag System

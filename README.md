@@ -42,14 +42,37 @@ Hit CTRL-C to stop the server
 
 Then just go to the url in your web browser. In this case I can go to http://127.0.0.1:8080.
 
-
 ## Progress thus far
 
-Progress on the development of this game has been very slow because of...well...the usual. However I am very much determined to eee this one threw so I will have a section here for whats new with this.
+Progress on the development of this game has been very slow because of, well, the usual. Mainly my real job at, you guessed it, Finger Lakes Reuse of course. However I do also very much have a life outside of all of this as well that I also need to balance with this. However I am very much determined to see this one threw so I will have a section here for whats new with this.
+
+## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
+
+The major new change with R6 was adding a new way to define spawn locations in maps by way have having an array of area objects rather than just a position object. In other words one or more objects with x, y, width, and height values rather than just a single object defining a single tile in a map that is a spawn point. Sense this was a very minor addition this time around, much of the time I was improving other features of the game that are all ready in place, many of which still need a fair amount of refinement. This included some minor improvements with the Schedule system that was introduced in R5, but the bulk of it I would say was with the AI which will likely need a great deal more work done in just about each additional revision moving forward for at least the foreseeable future.
 
 ## R5 ( done 07/20/2025 ) - Game Day Time, Schedule system, Color Tag System
 
 I would like to have a system for game time and how it relates to real world time. That means having a certain amount of game time that will result in the span of a single game day. I would like for this to be something that can be adjusted in a way in which game time can go at the same rate as real world time, or much faster. Also I would at least like to start a draft on a pricing system that might take some time to get solid.
+
+## R4 ( done 06/25/2025 ) - Tasks and actions started
+
+With R4 the goal was to at least start to make things a little better organized with the AI as this might very well be the most complex part of the over all game. One way that I have found that might help a great deal would be to break down Person Class instance behavior into 'Tasks', and 'Actions'. To help make better sense of this, a Task would be something like donation intake, and an Action would be something like selecting and picking up an empty box. So a Task would be a way to start a Specific action, and then start yet another action depending on the outcome of the result of the previous action. However maybe a better way of expressing this is that a Task is a way of working with Actions?
+
+## R3 ( done 06/10/2025 ) - Message System
+
+The main feature added in R3 is a nice new message system that provides a way to displaying messages to the player in a command line type fashion. The intention is for this message library to also function as a set of debug tools, and other related features.
+
+## R2 ( done 06/04/2025 ) - Inactive map updates
+
+Before R2 only one map would be updated at any given time which was the current active map that is being rendered. This however will not work out so well because there will be a great number of things that will need to be updated at other maps even though they are not the current so called 'active map'. So with that said in this revision I worked out the changes that needed to be made so that all maps are updated over time. This of course will give rise to performance concerns in time, however I am all ready thinking about ways of addressing that, and also I need to get to that bridge first in other to care about it to begin with. So as long as this does not result in extreme performance drawbacks I do not see a problem.
+
+## R1 ( done 05/22/2025 ) - Workers, Menu state started
+
+Added a 'worker' type of Person class instance that allows for more than one 'player' object. This also allows for the player to select which worker they would like to take under direct control.
+
+## R0 ( done 05/10/2025 ) - People, Items, Donations 
+
+The very first Revision of course took a real long time to work out. The main reason why was because when I was first starting with this project I had so many competing ideas of how to go about even just getting started with this. For example I was trying to work out how to go about using the Phaser Physics Engine as a way to update the position stats of the Person Class instances. While doing so I started to run into all kinds of problems with collision detection and a lot of other general headaches. I still think that it is a good idea, and would help to make the game a lot more fun, however I decided to shelf the idea in favor of just simple path movement.
 
 ## Number of Players
 
