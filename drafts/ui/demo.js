@@ -1,13 +1,32 @@
 import { Button } from '../../lib/ui/ui.js';
 
 const DATA = {
+    x: 320, y: 200,
     bgColor: 'lime',
-    frameWidth: 32, frameHeight: 16,
+    frameWidth: 256, frameHeight: 32,
+    menu_spacing: 5,
     members: [
-        { bgColor: '#ff0000', desc: 'foo' },
-        { bgColor: '#00ff00', desc: 'bar' },
-        { bgColor: '#0000ff', desc: 'baz' },
-        { bgColor: '#ff00ff', desc: '42' }
+        { 
+            desc: 'foo',
+            bgColor: '#ff0000', 
+            press : function () {
+                console.log('this is the foo button!');
+            }
+        },
+        { 
+            desc: 'bar',
+            bgColor: '#00ff00', 
+            press : function () {
+                console.log('this is the bar button!');
+            }
+        },
+        { 
+            desc: 'baz',
+            bgColor: '#0000ff', 
+            press : function () {
+                console.log('this is the baz button!');
+            }
+        }
     ]
 };
 
@@ -44,12 +63,18 @@ class Example extends Phaser.Scene {
         
         this.textures.addSpriteSheet('sheet_buttons', texture_buttons, DATA);
         
-        const button = new Button(this, {
-            x: 320, y: 150,
-            texture: 'texture_buttons', frame: 1
-        });
         
-        this.add.existing(button);
+        const scene = this;
+        
+        DATA.members.forEach( (data_button, bi) => {
+            const button = new Button(this, {
+                x: DATA.x, 
+                y: DATA.y + DATA.frameHeight * bi + DATA.menu_spacing * bi,
+                texture: 'texture_buttons', frame: bi,
+                press : data_button.press
+            });
+            scene.add.existing(button);
+        });
     }
     
 }
