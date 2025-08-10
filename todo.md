@@ -142,8 +142,7 @@ create menus and UI actions.
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * ( done ) - have a Menu class
     * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
-    * ( done ) - have a Menu.createCanvas static method for Menu
-    
+    * ( done ) - have a Menu.createCanvas static method for Menu    
     * ( done ) - Menu.createConf has a default main draw method
     
     
