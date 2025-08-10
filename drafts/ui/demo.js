@@ -12,9 +12,21 @@ class Example extends Phaser.Scene {
             bgColor: '#00af4a',
             members: [
                 {
-                    desc: 'foo', 
+                    desc: 'Foo', 
                     press: function(){
                         console.log('foo!');
+                    }
+                },
+                {
+                    desc: 'Bar', 
+                    press: function(){
+                        console.log('bar!');
+                    }
+                },
+                {
+                    desc: 'Baz', 
+                    press: function(){
+                        console.log('baz!');
                     }
                 }
             ]

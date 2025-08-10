@@ -141,8 +141,11 @@ create menus and UI actions.
   /lib/ui
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * ( done ) - have a Menu class
-    * ( done ) - have a createConf static methiod for Menu to help in the process of making a conf object
-    * ( done ) - have a createCanvas static method for Menu
+    * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
+    * ( done ) - have a Menu.createCanvas static method for Menu
+    
+    * ( done ) - Menu.createConf has a default main draw method
+    
     
     * (      ) - a Menu should have a Select Feature that sets a current 'selected' button index
     * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index
