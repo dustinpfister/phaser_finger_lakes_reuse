@@ -102,7 +102,7 @@ create menus and UI actions.
     * ( done ) - ui draft : have a draft to make use of new ui lib
     * ( done ) - ui draft : work out a canvas solution for buttons
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
-    * (      ) - ui draft : have a select current button feature by hovering a mouse cursor, or using keyboard buttons
+    * (      ) - ui draft : make use of the Menu class of ui.js
     
     * (      ) - people draft : have both types of people show up ( workers, and customers )
     * (      ) - people draft : make sure the idle states of both types work okay
@@ -140,6 +140,7 @@ create menus and UI actions.
 
   /lib/ui
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
+    * ( done ) - have a Menu class 
     * (      ) - have a method that can be used to add keyboard events
 
   /maps :

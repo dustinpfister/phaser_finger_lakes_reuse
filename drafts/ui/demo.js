@@ -1,8 +1,9 @@
-import { Button } from '../../lib/ui/ui.js';
+import { Button, Menu } from '../../lib/ui/ui.js';
 
-const DATA = {
+const confMenu = {
     x: 320, y: 200,
     bgColor: 'lime',
+    textureKey: 'texture_buttons',
     frameWidth: 256, frameHeight: 32,
     menu_spacing: 5,
     members: [
@@ -30,16 +31,16 @@ const DATA = {
     ]
 };
 
-const create_canvas = ( scene, data = DATA ) => {
+const create_canvas = ( scene, confMenu ) => {
 
-    const fw = data.frameWidth, fh = data.frameHeight;
-    const w = fw, h = fh * data.members.length;
-    const texture_buttons = scene.textures.createCanvas('texture_buttons', w, h);
+    const fw = confMenu.frameWidth, fh = confMenu.frameHeight;
+    const w = fw, h = fh * confMenu.members.length;
+    const texture_buttons = scene.textures.createCanvas(confMenu.textureKey, w, h);
     const canvas = texture_buttons.canvas;
     const ctx = texture_buttons.context;
     
-    data.members.forEach( ( data_button, i ) => {
-        ctx.fillStyle = data_button.bgColor || data.bgColor || '#2a2a2a';
+    confMenu.members.forEach( ( data_button, i ) => {
+        ctx.fillStyle = data_button.bgColor || confMenu.bgColor || '#2a2a2a';
         ctx.fillRect( 0, fh * i, fw, fh);
     });
     
@@ -57,24 +58,23 @@ class Example extends Phaser.Scene {
     
     
 
-        const texture_buttons = create_canvas(this, DATA);
+        const texture_buttons = create_canvas(this, confMenu);
+        this.textures.addSpriteSheet('sheet_buttons', texture_buttons, confMenu);
         
-
+        const menu = new Menu(this, confMenu);
         
-        this.textures.addSpriteSheet('sheet_buttons', texture_buttons, DATA);
-        
-        
+        /*
         const scene = this;
-        
-        DATA.members.forEach( (data_button, bi) => {
+        confMenu.members.forEach( (data_button, bi) => {
             const button = new Button(this, {
-                x: DATA.x, 
-                y: DATA.y + DATA.frameHeight * bi + DATA.menu_spacing * bi,
-                texture: 'texture_buttons', frame: bi,
+                x: confMenu.x, 
+                y: confMenu.y + confMenu.frameHeight * bi + confMenu.menu_spacing * bi,
+                texture: confMenu.textureKey, frame: bi,
                 press : data_button.press
             });
             scene.add.existing(button);
         });
+        */
     }
     
 }
