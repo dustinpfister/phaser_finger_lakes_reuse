@@ -102,10 +102,9 @@ create menus and UI actions.
     * ( done ) - ui draft : have a draft to make use of new ui lib
     * ( done ) - ui draft : work out a canvas solution for buttons
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
-    * (      ) - ui draft : make use of the Menu class of ui.js
+    * ( done ) - ui draft : make use of the Menu class of ui.js
     
-    * (      ) - people draft : have both types of people show up ( workers, and customers )
-    * (      ) - people draft : make sure the idle states of both types work okay
+    * (      ) - people draft : start a custom AI Script for the worker people type
     * (      ) - message_messpusher : demo new alpha effects    
 
   /lib/items  :
@@ -113,7 +112,9 @@ create menus and UI actions.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/people :
+    * (      ) - have a way to define what actions are used when cretaing a People class instance
     * (      ) - have a tasks.js file that will contain a new Task Class
+    * (      ) - have a way to define what tasks are used when cretaing a people class instance
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
     * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
@@ -123,6 +124,8 @@ create menus and UI actions.
     * (      ) - have a compleate do over with main shopper task
 
   /lib/mapdata  :
+    * (      ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
+    * (      ) - declare what tasks and actions to use when creating People class instances.
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
 

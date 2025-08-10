@@ -1,6 +1,6 @@
 # ui draft
 
-A main draft making use of the UI lib as I was developing it for the first time.
+A main draft making use of the UI lib as I was developing it for the first time. With that said the first and foremost feature that I would like to make sure is working good would be the Menu Class.
 
 ## Canvas Textures, The Phaser Texture Manager, and the addSpriteSheet method
 
