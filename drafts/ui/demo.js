@@ -1,5 +1,6 @@
 import { Button, Menu } from '../../lib/ui/ui.js';
 
+/*
 const confMenu = {
     x: 320, y: 200,
     bgColor: 'lime',
@@ -30,23 +31,32 @@ const confMenu = {
         }
     ]
 };
+*/
+
+const confMenu = Menu.createConf({
+    bgColor: '#00af4a',
+    members: [
+        {
+            desc: 'foo', 
+            press: function(){
+                console.log('foo!');
+            }
+        }
+    ]
+});
 
 const create_canvas = ( scene, confMenu ) => {
-
     const fw = confMenu.frameWidth, fh = confMenu.frameHeight;
     const w = fw, h = fh * confMenu.members.length;
     const texture_buttons = scene.textures.createCanvas(confMenu.textureKey, w, h);
     const canvas = texture_buttons.canvas;
     const ctx = texture_buttons.context;
-    
     confMenu.members.forEach( ( data_button, i ) => {
         ctx.fillStyle = data_button.bgColor || confMenu.bgColor || '#2a2a2a';
         ctx.fillRect( 0, fh * i, fw, fh);
     });
-    
     texture_buttons.refresh();
     return texture_buttons;
-    
 };
 
 class Example extends Phaser.Scene {

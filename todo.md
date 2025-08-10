@@ -140,7 +140,10 @@ create menus and UI actions.
 
   /lib/ui
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
-    * ( done ) - have a Menu class 
+    * ( done ) - have a Menu class
+    * ( done ) - have a createConf static methiod for Menu to help in the process of making a conf object
+    
+    * (      ) - have a createCanvas static method for Menu
     * (      ) - have a method that can be used to add keyboard events
 
   /maps :
