@@ -100,6 +100,10 @@ create menus and UI actions.
     
   /drafts :
     * ( done ) - ui draft : have a draft to make use of new ui lib
+    * ( done ) - ui draft : work out a canvas solution for buttons
+    * (      ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
+    * (      ) - ui draft : have a select current button feature by hovering a mouse cursor, or using keyboard buttons
+    
     * (      ) - people draft : have both types of people show up ( workers, and customers )
     * (      ) - people draft : make sure the idle states of both types work okay
     * (      ) - message_messpusher : demo new alpha effects    
