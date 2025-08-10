@@ -142,9 +142,15 @@ create menus and UI actions.
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * ( done ) - have a Menu class
     * ( done ) - have a createConf static methiod for Menu to help in the process of making a conf object
+    * ( done ) - have a createCanvas static method for Menu
     
-    * (      ) - have a createCanvas static method for Menu
-    * (      ) - have a method that can be used to add keyboard events
+    * (      ) - a Menu should have a Select Feature that sets a current 'selected' button index
+    * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index
+    * (      ) - a click or touch down event with a button will 'select' AND 'press' that button
+    
+    * (      ) - I would like to use ui.js as a way to define main global keyboard controls
+    * (      ) - have keyboard controls for changing the selected buttons in a menu
+    * (      ) - have the enter button also be a way to 'press' a current 'selected' button.
 
   /maps :
     * (      ) - add grass tiles to map 4
