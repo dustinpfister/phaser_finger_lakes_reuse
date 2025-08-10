@@ -1,6 +1,11 @@
 {
   "name": "map2",
   "spawnAt": { "x": 9, "y": 7 },
+    "people" : {
+    "spawnAreas" : [
+        { "x": 9, "y": 7, "w":1, "h": 1, "type": "all" }
+    ]
+  },
   "tilePalette" : {
       "sheets" : ["map_16_16"],
       "walkable" : [ 1 ],

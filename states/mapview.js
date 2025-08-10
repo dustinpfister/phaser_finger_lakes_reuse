@@ -1,4 +1,4 @@
-import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata.js';
+import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata/mapdata.js';
 import { Person, People } from '../lib/people/people.js';
 import { COLOR, GameTime, TimeBar } from '../lib/schedule.js';
 import { ConsoleLogger, MessPusher, DebugScreen } from '../lib/message/message.js';

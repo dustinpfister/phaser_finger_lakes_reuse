@@ -124,7 +124,7 @@ create menus and UI actions.
     * (      ) - have a compleate do over with main shopper task
 
   /lib/mapdata  :
-    * (      ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
+    * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * (      ) - declare what tasks and actions to use when creating People class instances.
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 

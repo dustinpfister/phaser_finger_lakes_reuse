@@ -1,4 +1,4 @@
-import { MapLoader } from '../lib/mapdata.js';
+import { MapLoader } from '../lib/mapdata/mapdata.js';
 import { ConsoleLogger } from '../lib/message/message.js';
 const log = new ConsoleLogger({
     cat: 'state',
