@@ -1,7 +1,12 @@
-import { Boot } from './states/boot.js'
+import { Boot } from './states/boot.js';
+
+const canvas = document.querySelector('#canvas_flr');
+canvas.width = 640;
+canvas.height = 480;
+
 const config = {
     parent: 'container_flr',
-    canvas: document.querySelector('#canvas_flr'),
+    canvas: canvas,
     type: Phaser.WEBGL,
     width: 640,
     height: 480,

@@ -90,13 +90,19 @@ them per hour will wax and wain from one game day to the next.
     * (      ) - people_donators draft : display an hour by hour bar chart
 ```
 
+## R8 (    ) -
+```
+  /css : 
+    * ( ) - revisit setting canvas size with css, try out an approche with screen size rather than just orientation
+```
+
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls
 ```
-As the name sugessts I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
+I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
 create menus and UI actions.
 
   /css : 
-    * (      ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
+    * ( done ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
     
   /drafts :
     * ( done ) - ui draft : have a draft to make use of new ui lib
@@ -112,7 +118,7 @@ create menus and UI actions.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/people :
-    * (      ) - have a way to define what actions are used when cretaing a People class instance
+    * (      ) - have a way to define what actions are used when creating a People class instance
     * (      ) - have a tasks.js file that will contain a new Task Class
     * (      ) - have a way to define what tasks are used when cretaing a people class instance
     * (      ) - break down onHandAction method into more than one method
