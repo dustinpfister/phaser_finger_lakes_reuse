@@ -2,6 +2,7 @@ import { Load } from './load.js';
 import { Mapview } from './mapview.js';
 import { Menu } from './menu.js';
 import { ConsoleLogger } from '../lib/message/message.js';
+import { ACTIONS_DEFAULT } from "../lib/people/action.js";
 
 const log = new ConsoleLogger({
     cat: 'state',
@@ -23,7 +24,20 @@ class Boot extends Phaser.Scene {
         reg.set('MAX_MAP_DONATIONS', 20);
         reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
         reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
-        reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwises
+        reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
+        
+        reg.set('ACTIONS', ACTIONS_DEFAULT);
+        /*
+        reg.set('ACTIONS', {
+            wonder : {},
+            worker_di_idle: {},
+            player_control: {},
+            shopper_idle: {},
+            donation_goto_droplocation : {},
+            customer_goto_exit: {}
+        });
+        */
+        
         reg.set('gameSave', {
             money: 0
         });

@@ -109,7 +109,6 @@ create menus and UI actions.
     * ( done ) - ui draft : work out a canvas solution for buttons
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
     * ( done ) - ui draft : make use of the Menu class of ui.js
-    
     * (      ) - people draft : start a custom AI Script for the worker people type
     * (      ) - message_messpusher : demo new alpha effects    
 
@@ -118,9 +117,9 @@ create menus and UI actions.
     * (      ) - have it so that drops will pick one of a few household items each time
 
   /lib/people :
-    * (      ) - have a way to define what actions are used when creating a People class instance
+    * ( done ) - have a way to define what actions are used when creating a People class instance
     * (      ) - have a tasks.js file that will contain a new Task Class
-    * (      ) - have a way to define what tasks are used when cretaing a people class instance
+    * (      ) - have a way to define what tasks are used when creating a people class instance
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
     * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
@@ -166,6 +165,9 @@ create menus and UI actions.
   /maps :
     * (      ) - add grass tiles to map 4
 
+  /states/boot.js :
+    * ( done ) - setting what the default ACTIONS should be for a Person 
+    
   /states/mapview.js :
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
