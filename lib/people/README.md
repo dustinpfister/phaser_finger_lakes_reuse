@@ -19,13 +19,17 @@ On top of having a single Person class I also have a Collection of Person Class 
 
 In addition to the Classes that there are to work with, the People lib needs to also work with logic that composes the AI for the People Class instances. This is broken down into a 'tasks' and 'actions' where an action is something like 'picking up an empty box', and a task is a way to work with many actions and the more than one possible outcome of a given action. At first this was all baked into the main people.js lib, but as things started to get real with this I thought it would be a good idea to make things a little more fine grain. So now there is a action.js that will contain the main Action class, and then several files that contain various collections of actions.
 
-### The Action Class
+### The Action Class ( actions.js )
 
 I have a main action.js file that contains the Action class which provides useful methods like the setDone method. 
 
 ### Core, Customer, and Worker Actions
 
 At the time of this writing I also have additional files in which I break down actions into files based on how they apply to groups of people. For example I have a core actions class where I place common actions such as drop, pickup, and wonder. I then also have collections of actions such as the action\_worker\_di.js file where I have all the actions that will come into play for workers that are set to the di task.
+
+### Tasks ( tasks.js )
+
+Sense I started an actions.js file it is also called for to do the same for tasks as well, and thus I also started a tasks.js file to do so. At the time of this writing I have just started working on this, so for now I do not have much to write here other than just saying that this is a step in the right direciton when it comes to making people.js more reuseable.
 
 
 

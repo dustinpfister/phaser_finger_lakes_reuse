@@ -106,7 +106,7 @@ create menus and UI actions.
     * ( done ) - ui draft : work out a canvas solution for buttons
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
     * ( done ) - ui draft : make use of the Menu class of ui.js
-    * (      ) - people draft : start a custom AI Script for the worker people type
+    * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
     * (      ) - message_messpusher : demo new alpha effects    
 
   /lib/items  :
@@ -115,7 +115,7 @@ create menus and UI actions.
 
   /lib/people :
     * ( done ) - have a way to define what actions are used when creating a People class instance
-    * (      ) - have a tasks.js file that will contain a new Task Class
+    * ( done ) - have a tasks.js file that will contain a new Task Class
     * (      ) - have a way to define what tasks are used when creating a people class instance
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
@@ -149,12 +149,9 @@ create menus and UI actions.
     * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
     * ( done ) - have a Menu.createCanvas static method for Menu    
     * ( done ) - Menu.createConf has a default main draw method
-    
-    
     * (      ) - a Menu should have a Select Feature that sets a current 'selected' button index
     * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index
     * (      ) - a click or touch down event with a button will 'select' AND 'press' that button
-    
     * (      ) - I would like to use ui.js as a way to define main global keyboard controls
     * (      ) - have keyboard controls for changing the selected buttons in a menu
     * (      ) - have the enter button also be a way to 'press' a current 'selected' button.

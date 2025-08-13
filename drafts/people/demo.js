@@ -2,6 +2,37 @@ import { ACTIONS_DEFAULT } from "../../lib/people/action.js";
 import { Person, People } from '../../lib/people/people.js';
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata/mapdata.js';
 
+
+const ACTIONS_PEOPLE_DRAFT = {};
+
+ACTIONS_PEOPLE_DRAFT.wonder = {
+    opt: {
+        next_spot: false, pause : 1200, t: 0,
+        getOut : function(mdc, md, people, scene, person, opt){
+            return false
+        }
+    },
+    update: function (mdc, md, people, scene, person, opt, delta) {
+        const action = person.getData('act');
+        opt.t -= delta;
+        opt.t = opt.t < 0 ? 0 : opt.t;
+        if( opt.getOut(mdc, md, people, scene, person, opt) ){
+            action.setDone('get_func_true');
+        } 
+    },
+    noPath: function (mdc, md, people, scene, person, opt) {
+        if(!opt.next_spot){
+           opt.t = opt.pause;
+           opt.next_spot = true;
+        }
+        if(opt.next_spot && opt.t === 0){
+            const tile = md.getRandomWalkTo();
+            person.setPath(scene, md, tile.x, tile.y);
+            opt.next_spot = false
+        }
+    }
+};
+
 class Example extends Phaser.Scene {
 
     preload () {
@@ -26,7 +57,7 @@ class Example extends Phaser.Scene {
     }
     create () {
         const scene = this;
-        this.registry.set('ACTIONS', ACTIONS_DEFAULT);
+        this.registry.set('ACTIONS', ACTIONS_PEOPLE_DRAFT);
         
         const mdc = new MapDataCollection( scene, { startMapIndex: 0 } );
         scene.registry.set('mdc', mdc);
