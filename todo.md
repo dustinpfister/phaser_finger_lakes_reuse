@@ -29,18 +29,6 @@
     * update controls for switching workers, allowing to switch to workers by map, or set a home worker, ect
 ```
 
-## RX (    ) - On hand action quick keyboard shortcuts
-```
-It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
-to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
-item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
-is on top of.
-
-  /lib/people.js
-      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
-
-```
-
 
 ## RX (    ) - Mini Game States, 'Cashier' and 'box_stack'
 ```
@@ -90,10 +78,19 @@ them per hour will wax and wain from one game day to the next.
     * (      ) - people_donators draft : display an hour by hour bar chart
 ```
 
-## R8 (    ) -
+
+## R8 (    ) - On hand action quick keyboard shortcuts
 ```
+It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
+to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
+item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
+is on top of.
+
   /css : 
     * ( ) - revisit setting canvas size with css, try out an approche with screen size rather than just orientation
+
+  /lib/people.js
+      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
 ```
 
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls
