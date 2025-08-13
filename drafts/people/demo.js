@@ -1,3 +1,4 @@
+import { ACTIONS_DEFAULT } from "../../lib/people/action.js";
 import { Person, People } from '../../lib/people/people.js';
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata/mapdata.js';
 
@@ -7,8 +8,6 @@ class Example extends Phaser.Scene {
     
         this.load.setBaseURL('../../');
         
-        
-        
         this.load.image('map_16_16', 'sheets/map_16_16.png');
         this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
         this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
@@ -16,20 +15,20 @@ class Example extends Phaser.Scene {
         // ITEM DATA
         this.load.json('items_index', 'items/items_index.json');
         this.load.json('household_1', 'items/household_1.json');
-        this.load.json('containers_1', 'items/containers_1.json');
-        
+        this.load.json('containers_1', 'items/containers_1.json');     
         
         MapLoader({
           scene: this,
           urlBase: 'drafts/people/',
           mapIndicesStart: 0, mapIndicesStop: 1
-        });
-        
+        });  
     
     }
     create () {
         const scene = this;
-        const mdc = new MapDataCollection(scene, { startMapIndex: 0 });
+        this.registry.set('ACTIONS', ACTIONS_DEFAULT);
+        
+        const mdc = new MapDataCollection( scene, { startMapIndex: 0 } );
         scene.registry.set('mdc', mdc);
     }
     update (time, delta) {
