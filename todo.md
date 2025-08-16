@@ -127,6 +127,7 @@ create menus and UI actions.
 
   /lib/mapdata  :
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
+    * ( done ) - start a README.md file for mapdata lib
     * (      ) - declare what tasks and actions to use when creating People class instances.
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
