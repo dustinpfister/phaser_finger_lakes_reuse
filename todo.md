@@ -110,6 +110,7 @@ create menus and UI actions.
     * (      ) - message_messpusher : demo new alpha effects    
 
   /lib/items  :
+    * (      ) - have items.js in a new items folder compleate with a readme file
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
 
@@ -137,8 +138,12 @@ create menus and UI actions.
     * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
     * (      ) - have a class that will be used for the game display ( for money, ect )
+  
+  /lib/pathfinding :
+    * (      ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
     
-  /lib/schedule.js :    
+  /lib/schedule :
+    * ( done ) - have schedule.js in a new schedule folder compleate with a readme file  
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info

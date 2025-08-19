@@ -1,4 +1,4 @@
-import { COLOR, GameTime, TimeBar } from '../../lib/schedule.js';
+import { COLOR, GameTime, TimeBar } from '../../lib/schedule/schedule.js';
 
 class Example extends Phaser.Scene {
 
