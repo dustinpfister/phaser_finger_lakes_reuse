@@ -106,6 +106,7 @@ create menus and UI actions.
     * ( done ) - ui draft : work out a canvas solution for buttons
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
     * ( done ) - ui draft : make use of the Menu class of ui.js
+    * (      ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
     * (      ) - message_messpusher : demo new alpha effects    
 
