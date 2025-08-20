@@ -18,8 +18,6 @@ class Example extends Phaser.Scene {
         const y = CELL_HEIGHT * 6 / 2 + POS.y;
         this.img_ct = this.add.image(x, y, 'color_table');
         this.draw_ct();
-        
-        console.log(this.gt);
     }
     
     draw_ct () {

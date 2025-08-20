@@ -146,7 +146,7 @@ create menus and UI actions.
     
   /lib/schedule :
     * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
-    * (      ) - start a README file
+    * ( done ) - start a README file for schedule
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
