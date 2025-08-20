@@ -7,6 +7,8 @@ const PADDING = 5;
 const POS = { x: 225, y: 50 };
 const FONT_SIZE = 12;
 
+window.COLOR = COLOR;
+
 class Example extends Phaser.Scene {
 
     create () { 
