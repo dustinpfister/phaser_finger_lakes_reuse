@@ -107,7 +107,7 @@ create menus and UI actions.
     * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
     * ( done ) - ui draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
-    * (      ) - schedule_todays_colors : the current set of tags should be highligheded, and animated
+    * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
     * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
     * (      ) - message_messpusher : demo new alpha effects    
 
@@ -145,7 +145,8 @@ create menus and UI actions.
     * (      ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
     
   /lib/schedule :
-    * ( done ) - have schedule.js in a new schedule folder compleate with a readme file  
+    * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
+    * (      ) - start a README file
     * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
