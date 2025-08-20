@@ -174,6 +174,9 @@ create menus and UI actions.
   /states/mapview.js :
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
+  /states/menu.js :
+    * ( done ) - make use of new ui lib in menu state
+    
   /sheets :
     * (      ) - new sprites for workers
     * (      ) - new tiles for outside such as grass, trees
