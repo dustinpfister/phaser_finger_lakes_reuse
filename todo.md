@@ -98,8 +98,15 @@ is on top of.
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
 
-  /lib/people
+  /lib/people :
       * (      ) - general drop can be used to drop a specfic item, or array of items on hand
+      
+  /lib/phaser :
+      * (      ) - try upgrading from 3.87.0 to v3.90.0, if you run into problems fall back until the latest the works is found.
+      
+  /sheets :
+    * (      ) - new sprites for workers
+    * (      ) - new tiles for outside such as grass, trees
 ```
 
 ## R7 (    ) - Menus, UI Buttons, better keyboard controls
@@ -181,16 +188,9 @@ create menus and UI actions.
 
   /states/menu.js :
     * ( done ) - make use of new ui lib in menu state
-    
-  /sheets :
-    * (      ) - new sprites for workers
-    * (      ) - new tiles for outside such as grass, trees
 
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
-
-  ? :
-    * (      ) - investagate a glitch where items will move around on a map without the person holding it.
 
 ```
 
