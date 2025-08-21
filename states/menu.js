@@ -19,21 +19,9 @@ class MainMenu extends Phaser.Scene {
     
     create () {
         const scene = this;
-        const logo = this.add.sprite(320, 240, 'menu_1');
-        /*
-        logo.setInteractive();
-        logo.on('pointerdown', (pointer, px, py)=>{
-              
-            //scene.startMapView();
-        });
-        scene.input.keyboard.on('keydown', (event) => {
-           
-           //scene.startMapView();
-        });
-        */
-        
-        
+        const logo = this.add.sprite(320, 130, 'menu_1');
         const confMenu = Menu.createConf({
+            x: 320, y: 280,
             bgColor: '#00af4a',
             draw: ( ctx, texture_buttons, confMenu, scene ) => {
                 const fw = confMenu.frameWidth, fh = confMenu.frameHeight;
