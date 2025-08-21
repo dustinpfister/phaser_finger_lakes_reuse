@@ -131,6 +131,8 @@ create menus and UI actions.
   /lib/people :
     * ( done ) - have a way to define what actions are used when creating a People class instance
     * ( done ) - have a tasks.js file that will contain a new Task Class
+    * ( done ) - Have a GlobalControl object is ui that will be used to update the main UI Controls
+    
     * (      ) - have a way to define what tasks are used when creating a people class instance
     * (      ) - break down onHandAction method into more than one method
     * (      ) - door checks should happen for all people types
@@ -170,6 +172,7 @@ create menus and UI actions.
     * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
     * ( done ) - have a Menu.createCanvas static method for Menu    
     * ( done ) - Menu.createConf has a default main draw method
+
     * (      ) - a Menu should have a Select Feature that sets a current 'selected' button index
     * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index
     * (      ) - a click or touch down event with a button will 'select' AND 'press' that button
@@ -184,6 +187,7 @@ create menus and UI actions.
     * ( done ) - setting what the default ACTIONS should be for a Person 
     
   /states/mapview.js :
+    * ( done ) - make use of new UI Global Controls
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
 
   /states/menu.js :

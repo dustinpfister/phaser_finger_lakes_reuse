@@ -1,7 +1,9 @@
-import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata/mapdata.js';
-import { Person, People } from '../lib/people/people.js';
 import { COLOR, GameTime, TimeBar } from '../lib/schedule/schedule.js';
 import { ConsoleLogger, MessPusher, DebugScreen } from '../lib/message/message.js';
+import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata/mapdata.js';
+import { Person, People } from '../lib/people/people.js';
+import { GlobalControl } from '../lib/ui/ui.js';
+
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'mapview',
@@ -54,30 +56,10 @@ class Mapview extends Phaser.Scene {
         const mv = this;
         
         
-        mdc.setActiveMapByIndex(this, mdc.activeIndex);  
-        this.cursors = this.input.keyboard.createCursorKeys();
+        mdc.setActiveMapByIndex(this, mdc.activeIndex);
         
-        this.input.keyboard.on('keydown', (event) => {
-            const mDigit = event.code.match(/Digit\d+/);
-            if(mDigit){
-                const d = Number(mDigit[0].replace('Digit', ''));
-                const player = this.registry.get('player'); 
-                if(d >= 0 && d < 4){
-                    mv.mp.push('Switched to item mode ' + d + '\( ' + IMDESC[d] + ' \)','INFO');
-                    player.setData('itemMode', d);
-                }
-            }
-            const mKey = event.code.match(/Key[a-zA-Z]+/);
-            if(mKey){
-                const k = mKey[0].replace('Key', '');
-                if(k === 'W'){
-                    mv.nextWorker();
-                }
-                if(k === 'D'){
-                    dbs.toggleActive();
-                }
-            }
-        });
+        GlobalControl.setUp( this );
+        
         mdc.forAllMaps(this, function(scene, md, map_index){         
            let wi = 0;
            const len = md.worker.maxSize;
@@ -176,31 +158,6 @@ class Mapview extends Phaser.Scene {
         md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
     }
     
-    cursorCheck (dir='left') {
-        const mdc = this.registry.get('mdc');
-        const md = mdc.getActive();
-        const player = this.registry.get('player');
-        const path = player.getData('path');
-        if(path.length > 1 ){
-            return;
-        }
-        const cPos = player.getTilePos();
-        let dx = 0, dy = 0;
-        if(dir === 'left'){  dx = -1; }
-        if(dir === 'right'){  dx = 1; }
-        if(dir === 'up'){  dy = -1; }
-        if(dir === 'down'){  dy = 1; }
-        if (this.cursors[dir].isDown) {
-            const md = mdc.getActive();
-            const tile = md.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
-            if(tile){
-                if(md.canWalk(tile)){
-                    player.setPath(this, md, cPos.x + dx, cPos.y + dy);
-                }
-            }   
-        }
-    }
-    
     addTimedEvents () {
         const mdc = this.registry.get('mdc'); 
         const tb = this.registry.get('tb');
@@ -262,10 +219,9 @@ class Mapview extends Phaser.Scene {
         mdc.update(time, delta);
         const md = mdc.getActive();
         scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-        this.cursorCheck('left');
-        this.cursorCheck('right');
-        this.cursorCheck('up');
-        this.cursorCheck('down');
+
+        GlobalControl.update( this, time, delta );
+        
         player.pathProcessorCurve(this, (scene, person) => {
             mdc.doorCheck(scene, player);     
             person.setData('path', []);
