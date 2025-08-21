@@ -1,13 +1,11 @@
-import { Button, Menu } from '../../lib/ui/ui.js';
-
-
+import { Button, GlobalControl, Menu } from '../../lib/ui/ui.js';
 
 class Example extends Phaser.Scene {
 
-    preload () {
-    
-    }
     create () {
+    
+        GlobalControl.setUp(this);
+    
         const confMenu = Menu.createConf({
             bgColor: '#00af4a',
             draw: ( ctx, texture_buttons, confMenu, scene ) => {
@@ -48,6 +46,7 @@ class Example extends Phaser.Scene {
         });
         Menu.createCanvas(this, confMenu);
         const menu = new Menu(this, confMenu);
+        this.registry.set('menu', menu);
     }
     
 }
