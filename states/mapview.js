@@ -10,7 +10,7 @@ const log = new ConsoleLogger({
     appendId: true
 });
 
-const IMDESC = ['tile info', 'item pickup', 'item drop', 'container pickup\/drop' ]
+//const IMDESC = ['tile info', 'item pickup', 'item drop', 'container pickup\/drop' ];
 
 class Mapview extends Phaser.Scene {
 
@@ -53,7 +53,7 @@ class Mapview extends Phaser.Scene {
         });
         this.registry.set('dbs', dbs);
         
-        const mv = this;
+        //const mv = this;
         
         
         mdc.setActiveMapByIndex(this, mdc.activeIndex);
