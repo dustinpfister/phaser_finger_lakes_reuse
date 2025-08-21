@@ -172,6 +172,7 @@ create menus and UI actions.
     * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
     * ( done ) - have a Menu.createCanvas static method for Menu    
     * ( done ) - Menu.createConf has a default main draw method
+    * ( done ) - The creation of the canvas used for a menu, should be part of the normal setup process
 
     * (      ) - a Menu should have a Select Feature that sets a current 'selected' button index
     * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index

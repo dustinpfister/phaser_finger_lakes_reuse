@@ -7,7 +7,9 @@ class Example extends Phaser.Scene {
         GlobalControl.setUp(this);
     
         const confMenu = Menu.createConf({
-            bgColor: '#00af4a',
+            //bgColor: '#00af00', fgColor: '#000000',
+            colors: ['#00af00', '#000000', '#ffffff'],
+            /*
             draw: ( ctx, texture_buttons, confMenu, scene ) => {
                 const fw = confMenu.frameWidth, fh = confMenu.frameHeight;
                 confMenu.members.forEach( ( data_button, i ) => {
@@ -23,6 +25,7 @@ class Example extends Phaser.Scene {
                     ctx.fillText(data_button.desc, x, y);
                 });
             },
+            */
             members: [
                 {
                     desc: 'Foo', 
@@ -44,8 +47,11 @@ class Example extends Phaser.Scene {
                 }
             ]
         });
-        Menu.createCanvas(this, confMenu);
+        //Menu.createCanvas(this, confMenu);
         const menu = new Menu(this, confMenu);
+        
+        menu.draw();
+        
         this.registry.set('menu', menu);
     }
     
