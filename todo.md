@@ -86,10 +86,19 @@ to work much faster than using the mouse. So then I think it would be good to do
 item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
 is on top of.
 
+  /drafts :
+    * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
+    * (      ) - message_messpusher : demo new alpha effects    
+
   /css : 
     * ( ) - revisit setting canvas size with css, try out an approche with screen size rather than just orientation
 
-  /lib/people.js
+
+  /lib/items :
+    * (      ) - have more than one household item
+    * (      ) - have it so that drops will pick one of a few household items each time
+
+  /lib/people
       * (      ) - general drop can be used to drop a specfic item, or array of items on hand
 ```
 
@@ -102,19 +111,15 @@ create menus and UI actions.
     * ( done ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
     
   /drafts :
-    * ( done ) - ui draft : have a draft to make use of new ui lib
-    * ( done ) - ui draft : work out a canvas solution for buttons
-    * ( done ) - ui draft : have a collection of menu buttons that prefrom various actions when clicked
-    * ( done ) - ui draft : make use of the Menu class of ui.js
+    * ( done ) - ui_menu draft : have a draft to make use of new ui lib
+    * ( done ) - ui_menu draft : work out a canvas solution for buttons
+    * ( done ) - ui_menu draft : have a collection of menu buttons that prefrom various actions when clicked
+    * ( done ) - ui_menu draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
-    * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
-    * (      ) - message_messpusher : demo new alpha effects    
 
-  /lib/items  :
-    * (      ) - have items.js in a new items folder compleate with a readme file
-    * (      ) - have more than one household item
-    * (      ) - have it so that drops will pick one of a few household items each time
+  /lib/items :
+    * ( done ) - have items.js in a new items folder compleate with a readme file
 
   /lib/people :
     * ( done ) - have a way to define what actions are used when creating a People class instance

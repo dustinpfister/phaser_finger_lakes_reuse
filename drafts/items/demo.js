@@ -1,4 +1,4 @@
-import { BaseItem, Item, Container } from '../../lib/items.js';
+import { BaseItem, Item, Container } from '../../lib/items/items.js';
 
 class Example extends Phaser.Scene {
 
