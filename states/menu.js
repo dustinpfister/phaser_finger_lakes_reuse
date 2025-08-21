@@ -1,5 +1,5 @@
 import { ConsoleLogger } from '../lib/message/message.js';
-import { Button, Menu } from '../../lib/ui/ui.js';
+import { Button, GlobalControl, Menu } from '../../lib/ui/ui.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'menu',
@@ -20,6 +20,9 @@ class MainMenu extends Phaser.Scene {
     create () {
         const scene = this;
         const logo = this.add.sprite(320, 130, 'menu_1');
+        
+        GlobalControl.setUp(this);
+        
         const confMenu = Menu.createConf({
             x: 320, y: 280,
             members: [
@@ -33,12 +36,17 @@ class MainMenu extends Phaser.Scene {
             ]
         });
         const menu = new Menu(this, confMenu);
-        menu.draw();
+        this.registry.set('menu', menu);
         const disp1 = this.add.text(320, 400, '', { color: '#ffffff', fontSize: '30px' });
         disp1.setScrollFactor(0,0);
         disp1.depth = 6;
         disp1.text = 'R' + this.registry.get('R');
         disp1.x = 320 - disp1.width / 2;
+    }
+    
+    update () {
+        const menu = this.registry.get('menu');
+        menu.draw();
     }
 
 }

@@ -50,9 +50,14 @@ class Example extends Phaser.Scene {
         //Menu.createCanvas(this, confMenu);
         const menu = new Menu(this, confMenu);
         
-        menu.draw();
+
         
         this.registry.set('menu', menu);
+    }
+    
+    update () {
+        const menu = this.registry.get('menu');
+        menu.draw();
     }
     
 }
