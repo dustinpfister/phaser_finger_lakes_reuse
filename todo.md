@@ -178,7 +178,7 @@ create menus and UI actions.
     * ( done ) - have keyboard controls for changing the selected buttons in a menu
     * ( done ) - have the enter button also be a way to 'press' a current 'selected' button.
     * ( done ) - new draw_button method to be called for each button in a menu 
-    * (      ) - can define what the draw_button method is when creating the menu
+    * ( done ) - can define what the draw_button method is when creating the menu
     
     * (      ) - hovering over a button with a mouse cursor will 'select' that buttons index
     * (      ) - a click or touch down event with a button will 'select' AND 'press' that button
