@@ -47,6 +47,7 @@ class Mapview extends Phaser.Scene {
         
         const dbs =  new DebugScreen({
             scene: this,
+            active: false,
             alpha: 0.60, fontSize: 12,
             desc: 'debug screen for Mapview state',
             lines: ['foo', 'bar', 'baz']
