@@ -128,7 +128,7 @@ create menus and UI actions.
     * ( done ) - have a way to define what actions are used when creating a People class instance
     * ( done ) - have a tasks.js file that will contain a new Task Class
     * ( done ) - Have a GlobalControl object is ui that will be used to update the main UI Controls
-    * (      ) - have a Task class just like that if the Action class
+    * ( done ) - have a Task class just like that if the Action class
     * (      ) - create an instance of Task as person user data just as with Action
     * (      ) - have a way to define what tasks are used when creating a people class instance just like with Action
   /lib/mapdata  :
