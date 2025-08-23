@@ -79,31 +79,30 @@ them per hour will wax and wain from one game day to the next.
 ```
 
 
-## R8 (    ) - On hand action quick keyboard shortcuts
+## R8 (    ) - one key on hand action automation
 ```
-It would be nice to have some keyboard shortcuts for 'pickup item, pickup container, drop, and info'. I would want for these
-to work much faster than using the mouse. So then I think it would be good to do something like press 'p' to set the proper
-item mode for pickup, and then I can press arrow keys to set a dirction, or 'p' once more to pickup somehting that the worker
-is on top of.
+I have keyboard shortcuts for setting what the item mode should be for the current worker, however it would also be nice 
+to have a single key that is pressed to prefrom an "on hand action sugestion" the process of which is automated by code. 
+The general idea is that a current tile location that is near the worker will be highligthed, and the sugested action 
+displayed. A single key such as the 'a' key can then be pressed to set the item mode of the worker, and prefrom the action 
+at the tile. If from some reason the player does not like the sugested action, the 's' key can then be used to 
+prefrom a new sugestion. The end result is then a real easy way to play in which I can just move to a location, press a single key,
+then move to another location, and press another.
 
   /drafts :
     * (      ) - people draft : start a custom AI Script for the worker people type with ACTIONS and TASKS
     * (      ) - message_messpusher : demo new alpha effects    
-
   /css : 
     * ( ) - revisit setting canvas size with css, try out an approche with screen size rather than just orientation
-
-
   /lib/items :
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
-
   /lib/people :
-      * (      ) - general drop can be used to drop a specfic item, or array of items on hand
-      
+    * (      ) - general drop can be used to drop a specfic item, or array of items on hand  
   /lib/phaser :
-      * (      ) - try upgrading from 3.87.0 to v3.90.0, if you run into problems fall back until the latest the works is found.
-      
+    * (      ) - try upgrading from 3.87.0 to v3.90.0, if you run into problems fall back until the latest the works is found.
+  /states/mapview :
+    * (      ) - make use of schedule.js to spawn in ( and out ) workers
   /sheets :
     * (      ) - new sprites for workers
     * (      ) - new tiles for outside such as grass, trees
@@ -116,7 +115,6 @@ create menus and UI actions.
 
   /css : 
     * ( done ) - find a way to have bars on the top/bottom or sides depending on ratio of window/screen
-    
   /drafts :
     * ( done ) - ui_menu draft : have a draft to make use of new ui lib
     * ( done ) - ui_menu draft : work out a canvas solution for buttons
@@ -124,40 +122,28 @@ create menus and UI actions.
     * ( done ) - ui_menu draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
-
   /lib/items :
     * ( done ) - have items.js in a new items folder compleate with a readme file
-
   /lib/people :
     * ( done ) - have a way to define what actions are used when creating a People class instance
     * ( done ) - have a tasks.js file that will contain a new Task Class
     * ( done ) - Have a GlobalControl object is ui that will be used to update the main UI Controls
-    
-    * (      ) - have a way to define what tasks are used when creating a people class instance
-    * (      ) - break down onHandAction method into more than one method
-    * (      ) - door checks should happen for all people types
-    * (      ) - have custom code for worker_di_pickup_drop rather than calling common pickup action
-    * (      ) - rename pickup_drop action to worker_di_pickup_drop
-    * (      ) - rename pickup_empty action to worker_di_pickup_empty
-    * (      ) - have a compleate do over with main donator task
-    * (      ) - have a compleate do over with main shopper task
-
+    * (      ) - have a Task class just like that if the Action class
+    * (      ) - create an instance of Task as person user data just as with Action
+    * (      ) - have a way to define what tasks are used when creating a people class instance just like with Action
   /lib/mapdata  :
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib
     * (      ) - declare what tasks and actions to use when creating People class instances.
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
-
   /lib/message  :
     * (      ) - message_messpusher : have an alpha effect that is also based on distance
     * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
     * (      ) - I would like another tool to help with debugging where I can display a current set of variables
     * (      ) - have a class that will be used for the game display ( for money, ect )
-  
   /lib/pathfinding :
     * (      ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
-    
   /lib/schedule :
     * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
     * ( done ) - start a README file for schedule
@@ -165,7 +151,6 @@ create menus and UI actions.
     * (      ) - use bitmap text for te info
     * (      ) - use a larger font for basic time info
     * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
-
   /lib/ui
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * ( done ) - have a Menu class
@@ -180,23 +165,20 @@ create menus and UI actions.
     * ( done ) - new draw_button method to be called for each button in a menu 
     * ( done ) - can define what the draw_button method is when creating the menu
     * ( done ) - hovering over a button with a mouse cursor will 'select' that buttons index
-
   /maps :
     * (      ) - add grass tiles to map 4
-
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
-    
   /states/mapview.js :
     * ( done ) - make use of new UI Global Controls
-    * (      ) - make use of schedule.js to spawn in ( and out ) workers
-
+    * (      ) - have a menu class instance in mapview
+    * (      ) - have buttons to set the item mode of the current worker
+    * (      ) - have a button to return to the main menu
+    * (      ) - have a button to prefrom the current action
   /states/menu.js :
     * ( done ) - make use of new ui lib in menu state
-
   /README.md :
     * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
-
 ```
 
 ## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's

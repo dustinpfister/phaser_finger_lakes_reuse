@@ -29,7 +29,7 @@ At the time of this writing I also have additional files in which I break down a
 
 ### Tasks ( tasks.js )
 
-Sense I started an actions.js file it is also called for to do the same for tasks as well, and thus I also started a tasks.js file to do so. At the time of this writing I have just started working on this, so for now I do not have much to write here other than just saying that this is a step in the right direciton when it comes to making people.js more reuseable.
+Sense I started an actions.js file it is also called for to do the same for tasks as well, and thus I also started a tasks.js file to do so. At the time of this writing I have just started working on this, so for now I do not have much to write here other than just saying that this is a step in the right direction when it comes to making people.js more reusable.
 
 
 
