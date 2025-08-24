@@ -28,11 +28,17 @@ class Boot extends Phaser.Scene {
         
         /*
         reg.set('TASKS', {
-            
+            player_control : {},
+            default : {
+                init: function (mdc, md, people, scene, person) {},
+                update: function(mdc, md, people, scene, person) {}
+            }
         });
         reg.set('ACTIONS', {
+            default : {}
         });
         */
+        
         
         
         reg.set('gameSave', {
