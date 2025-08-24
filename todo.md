@@ -122,6 +122,7 @@ create menus and UI actions.
     * ( done ) - ui_menu draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
+    * (      ) - people draft : set custom TASKS and Actions for the draft project
   /lib/items :
     * ( done ) - have items.js in a new items folder compleate with a readme file
   /lib/people :
@@ -133,7 +134,6 @@ create menus and UI actions.
     * ( done ) - have a way to define what tasks are used when creating a people class instance just like with Action
     * ( done ) - a TASKS object should have a 'default' task, and the same should be true of ACTIONS objects
     * ( done ) - bug fix so that a custom set of TASK and ACTIONS objects set in boot.js will work
-    
   /lib/mapdata  :
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib

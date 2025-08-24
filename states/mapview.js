@@ -218,8 +218,9 @@ class Mapview extends Phaser.Scene {
         this.addTimedEvents();
         tb.update( delta );
         mdc.update(time, delta);
-        const md = mdc.getActive();
-        scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
+        
+        //const md = mdc.getActive();
+        //scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
 
         GlobalControl.update( this, time, delta );
         
@@ -230,21 +231,33 @@ class Mapview extends Phaser.Scene {
         });
         this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
         disp1.text = 'Money: ' + gs.money;
-        disp2.text = 'customers: ' + md.customer.getChildren().length;
+        //disp2.text = 'customers: ' + md.customer.getChildren().length;
         this.mp.update(delta);
         player.update();
         
         const dbs = this.registry.get('dbs');
+        
+        //const md = mdc.getMapDataByIndex(index_map);
         dbs.lines = [];
-        md.worker.getChildren().forEach((worker)=>{
-            const action = worker.getData('act')
-            dbs.lines.push(
-                'name: ' + worker.name,
-                'key: ' + action.key,
-                'path len: ' + worker.getData('path').length,
-                ''
-            );
+        
+        mdc.forAllMaps(scene, (scene, md, index_map ) => {
+        
+            md.worker.getChildren().forEach((worker)=>{
+                const action = worker.getData('act');
+                dbs.lines.push(
+                    index_map + ') ' + worker.name + ' : ' + action.key
+                );
+            });
+            
+            md.customer.getChildren().forEach((customer)=>{
+                const action = customer.getData('act');
+                dbs.lines.push(
+                    index_map + ') ' + customer.name + ' : ' + action.key
+                );
+            });
+        
         });
+        
         dbs.lines2 = [
             'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
             'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
