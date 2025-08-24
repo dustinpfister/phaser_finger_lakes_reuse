@@ -31,14 +31,9 @@ class Boot extends Phaser.Scene {
             
         });
         reg.set('ACTIONS', {
-            wonder : {},
-            worker_di_idle: {},
-            player_control: {},
-            shopper_idle: {},
-            donation_goto_droplocation : {},
-            customer_goto_exit: {}
         });
         */
+        
         
         reg.set('gameSave', {
             money: 0

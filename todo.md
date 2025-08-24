@@ -131,7 +131,7 @@ create menus and UI actions.
     * ( done ) - have a Task class just like that if the Action class
     * ( done ) - create an instance of Task as person user data just as with Action
     * ( done ) - have a way to define what tasks are used when creating a people class instance just like with Action
-    * (      ) - a TASKS object should have a 'default' task, and the same should be true of ACTIONS objects
+    * ( done ) - a TASKS object should have a 'default' task, and the same should be true of ACTIONS objects
   /lib/mapdata  :
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib
