@@ -136,7 +136,7 @@ class Mapview extends Phaser.Scene {
             if( nextWorker ){
                 const md = mdc.getMapDataByIndex(nextWorker.mi);
                 if( nextWorker.person === player ){
-                    md.worker.setTask(this, mdc, md, nextWorker.person, 'di');
+                    md.worker.setTask(this, mdc, md, nextWorker.person, 'default');
                     pi += 1;  
                 }
                 if( nextWorker.person != player ){
