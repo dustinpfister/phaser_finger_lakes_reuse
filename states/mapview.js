@@ -147,9 +147,6 @@ class Mapview extends Phaser.Scene {
             });
             worker_control_state[mi] = find_player;
         });
-        
-        console.log(worker_control_state);
-        
         // cycle to next
         let mi = wc_indices[0];
         let pi = wc_indices[1];

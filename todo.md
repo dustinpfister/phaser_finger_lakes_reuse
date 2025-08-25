@@ -177,7 +177,7 @@ create menus and UI actions.
     * ( done ) - hovering over a button with a mouse cursor will 'select' that buttons index
     * ( done ) - zero player mode can be switched by pressing z
     * ( done ) - can move the camera when in zero player mode
-    * (      ) - can switch the active map when in zero player mode
+    * ( done ) - can switch the active map when in zero player mode
   /maps :
     * (      ) - add grass tiles to map 4
   /states/boot.js :
