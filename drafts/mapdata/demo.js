@@ -20,7 +20,7 @@ class Example extends Phaser.Scene {
         this.registry.set('MAX_MAP_DONATIONS', 50);
         this.registry.set('CUSTOMER_SPAWN_RATE', 3000);
         const mdc = new MapDataCollection(this, { startMapIndex: 0 });
-        const player = this.registry.get('player', mdc); 
+        //const player = this.registry.get('player', mdc); 
         this.registry.set('mdc', mdc);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown', event => {
@@ -35,48 +35,12 @@ class Example extends Phaser.Scene {
         });    
     }
     
-    cursorCheck (dir='left') {
-        const mdc = this.registry.get('mdc');
-        const md = mdc.getActive();
-        const player = this.registry.get('player');
-        const path = player.getData('path');
-        if(path.length > 1 ){
-            return;
-        }
-        const cPos = player.getTilePos();
-        let dx = 0, dy = 0;
-        if(dir === 'left'){  dx = -1; }
-        if(dir === 'right'){  dx = 1; }
-        if(dir === 'up'){  dy = -1; }
-        if(dir === 'down'){  dy = 1; }
-        if (this.cursors[dir].isDown) {
-            const md = mdc.getActive();
-            const tile = md.map.getTileAt(cPos.x + dx, cPos.y + dy, false, 0);
-            if(tile){
-                if(md.canWalk(tile)){
-                    player.setPath(this, md, cPos.x + dx, cPos.y + dy);
-                }
-            }   
-        }
-    }
     
     update (time, delta) {
         const mdc = this.registry.get('mdc');
-        const player = this.registry.get('player');
         const map = mdc.getActive();
         const scene = this;
-        this.cursorCheck('left');
-        this.cursorCheck('right');
-        this.cursorCheck('up');
-        this.cursorCheck('down');
-        player.pathProcessorCurve(this, (scene, person)=>{
-            mdc.doorCheck(scene, person);
-            person.setData('path', []);
-            person.nCurve = 0;
-        });
-        this.cameras.main.setZoom( 2.0 ).centerOn( player.x, player.y ); 
         mdc.update(time, delta);
-        player.update();
     }
     
 }

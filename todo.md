@@ -154,7 +154,7 @@ create menus and UI actions.
     * ( done ) - start a README.md file for mapdata lib
     * ( done ) - have a zero player mode
   /lib/pathfinding :
-    * (      ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
+    * ( done ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
   /lib/schedule :
     * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
     * ( done ) - start a README file for schedule

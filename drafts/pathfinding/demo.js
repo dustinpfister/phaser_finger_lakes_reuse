@@ -1,4 +1,4 @@
-import { PathFinder } from "../../lib/pathfinding.js";
+import { PathFinder } from "../../lib/pathfinding/pathfinding.js";
 
 const TS = 32;
 const GRID = [
