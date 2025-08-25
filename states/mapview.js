@@ -276,7 +276,6 @@ class Mapview extends Phaser.Scene {
         }
         
         if(mdc.zeroPlayerMode){
-
             this.cameras.main.setZoom( cam_state.z ).centerOn( cam_state.x, cam_state.y );
         }
         

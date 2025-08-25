@@ -101,6 +101,12 @@ then move to another location, and press another.
     * (      ) - general drop can be used to drop a specfic item, or array of items on hand  
   /lib/phaser :
     * (      ) - try upgrading from 3.87.0 to v3.90.0, if you run into problems fall back until the latest the works is found.
+  /lib/ui :
+    * (      ) - can change from a 'free' and 'follow' camera mode
+    * (      ) - in 'free' camera mode the arrow keys can be used to move the camera
+    * (      ) - in 'free' camera mode the number keys can be used to change active map
+    * (      ) - in 'follow' mode the camera will follow a given person
+    * (      ) - in 'follow' mode 'w' can be used to cycle following workers and 'c' can be used to cycle customers
   /states/mapview :
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
   /sheets :
@@ -170,6 +176,8 @@ create menus and UI actions.
     * ( done ) - can define what the draw_button method is when creating the menu
     * ( done ) - hovering over a button with a mouse cursor will 'select' that buttons index
     * ( done ) - zero player mode can be switched by pressing z
+    * ( done ) - can move the camera when in zero player mode
+    * (      ) - can switch the active map when in zero player mode
   /maps :
     * (      ) - add grass tiles to map 4
   /states/boot.js :
