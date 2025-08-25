@@ -84,9 +84,7 @@ class Mapview extends Phaser.Scene {
            }
        });
        
-       if(!mdc.zeroPlayerMode){
-           this.nextWorker();
-       }
+
        
        
        const gr = this.add.graphics();
@@ -255,6 +253,11 @@ class Mapview extends Phaser.Scene {
         const mdc = this.registry.get('mdc');
         const scene = this;
         const tb = this.registry.get('tb');
+        
+        if(!mdc.zeroPlayerMode && !player){
+           this.nextWorker();
+        }
+        
         this.addTimedEvents();
         tb.update( delta );
         mdc.update(time, delta);

@@ -169,6 +169,7 @@ create menus and UI actions.
     * ( done ) - new draw_button method to be called for each button in a menu 
     * ( done ) - can define what the draw_button method is when creating the menu
     * ( done ) - hovering over a button with a mouse cursor will 'select' that buttons index
+    * ( done ) - zero player mode can be switched by pressing z
   /maps :
     * (      ) - add grass tiles to map 4
   /states/boot.js :
