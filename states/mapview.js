@@ -27,10 +27,10 @@ class Mapview extends Phaser.Scene {
         });
         
         const start_map_index = 4;
-        const mdc = new MapDataCollection(this, { startMapIndex: start_map_index });
+        const mdc = new MapDataCollection(this, { startMapIndex: start_map_index, zeroPlayerMode: false });
         this.registry.set('mdc', mdc);
         
-        this.setPlayerPerson( this.registry.get('player'), start_map_index);
+        //this.setPlayerPerson( this.registry.get('player'), start_map_index);
         
         const tb = new TimeBar({
             x:320, y: 25,
@@ -83,6 +83,12 @@ class Mapview extends Phaser.Scene {
                wi += 1;
            }
        });
+       
+       if(!mdc.zeroPlayerMode){
+           this.nextWorker();
+       }
+       
+       
        const gr = this.add.graphics();
        gr.setScrollFactor(0,0);
        gr.depth = 12;
@@ -102,12 +108,33 @@ class Mapview extends Phaser.Scene {
     nextWorker () {    
         const mdc = this.registry.get('mdc');
         let player = this.registry.get('player');
-        const mv = this;
+        const scene = this;
         const smi = mdc.activeIndex;
         const worker_control_state = {};
         let wc_indices = [-1, -1];
         let total_workers = 0;
-        mdc.forAllMaps(mv, (scene, md, mi) => {
+        
+        // no player!? then set one
+        if(!player){
+           let mi = mdc.startMapIndex, len = Object.keys(mdc.mapData).length;
+           while(mi <= len){
+               const md = mdc.getMapDataByIndex(mi);
+               const options = md.worker.getChildren();
+               if(options.length > 0){
+                   player = options[0];
+                   this.registry.set('player', player);
+                   mdc.setActiveMapByIndex(scene, mi)
+                   break;
+               }
+               mi += 1;
+           }
+           if(!player){
+               log('no worker at any map!');
+               return;
+           }
+        }
+        
+        mdc.forAllMaps(scene, (scene, md, mi) => {
             const find_player = md.worker.getChildren().map(( person, pi ) => {
                 total_workers += 1;
                 const is_player = person === player;
@@ -122,11 +149,14 @@ class Mapview extends Phaser.Scene {
             });
             worker_control_state[mi] = find_player;
         });
+        
+        console.log(worker_control_state);
+        
         // cycle to next
         let mi = wc_indices[0];
         let pi = wc_indices[1];
         let ct = 0;
-        while( ct < total_workers ){     
+        while( ct < total_workers ){
             const nextWorker = worker_control_state[ mi ][ pi ];
             if( !nextWorker ){
                 pi = 0;
@@ -150,6 +180,16 @@ class Mapview extends Phaser.Scene {
     setPlayerPerson ( worker, mi ) {
         const mdc = this.registry.get('mdc');
         const md = mdc.getMapDataByIndex(mi);
+        
+        if(mdc.zeroPlayerMode){
+            log('can not set a player object as MDC is set to zero player mode ');
+        }
+        
+        if(!worker){
+            log('no worker object given to set to player');
+            return;
+        }
+        
         this.registry.set('player', worker);
         worker.setData('path', []);
         const p = worker.getTilePos();
@@ -219,21 +259,28 @@ class Mapview extends Phaser.Scene {
         tb.update( delta );
         mdc.update(time, delta);
         
-        //const md = mdc.getActive();
-        //scene.physics.world.setBounds(0,0, md.map.width * 16, md.map.height * 16);
-
         GlobalControl.update( this, time, delta );
         
-        player.pathProcessorCurve(this, (scene, person) => {
-            mdc.doorCheck(scene, player);     
-            person.setData('path', []);
-            person.nCurve = 0;
-        });
-        this.cameras.main.setZoom( 1 ).centerOn( player.x, player.y );
+        const cam_state = scene.registry.get('cam_state') || { x:0, y: 0, z: 1} ; 
+        if(!mdc.zeroPlayerMode && player){
+            player.pathProcessorCurve(this, (scene, person) => {
+                mdc.doorCheck(scene, player);     
+                person.setData('path', []);
+                person.nCurve = 0;
+            });
+            player.update();
+            this.cameras.main.setZoom( cam_state.z ).centerOn( player.x, player.y );
+        }
+        
+        if(mdc.zeroPlayerMode){
+
+            this.cameras.main.setZoom( cam_state.z ).centerOn( cam_state.x, cam_state.y );
+        }
+        
         disp1.text = 'Money: ' + gs.money;
         //disp2.text = 'customers: ' + md.customer.getChildren().length;
         this.mp.update(delta);
-        player.update();
+        
         
         const dbs = this.registry.get('dbs');
         

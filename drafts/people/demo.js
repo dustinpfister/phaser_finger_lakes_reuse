@@ -3,9 +3,11 @@ import { Person, People } from '../../lib/people/people.js';
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata/mapdata.js';
 
 const TASKS_PEOPLE_DRAFT = {
-    player_control : {},
+    //player_control : {},
     default : {
         init: function (mdc, md, people, scene, person) {
+        
+
             people.setAction(scene, mdc, md, person, 'wonder' );
         },
         update: function(mdc, md, people, scene, person) {
@@ -26,15 +28,12 @@ ACTIONS_PEOPLE_DRAFT.wonder = {
         }
     },
     init: function (mdc, md, people, scene, person, opt, delta) {
-    
+        console.log('yes this fires once at least');
     },
     update: function (mdc, md, people, scene, person, opt, delta) {
         const action = person.getData('act');
         opt.t -= delta;
         opt.t = opt.t < 0 ? 0 : opt.t;
-        
-        console.log('tick');
-        
         if( opt.getOut(mdc, md, people, scene, person, opt) ){
             action.setDone('get_func_true');
         } 
@@ -82,15 +81,18 @@ class Example extends Phaser.Scene {
         this.registry.set('TASKS', TASKS_PEOPLE_DRAFT);
         this.registry.set('ACTIONS', ACTIONS_PEOPLE_DRAFT );
         
-        const mdc = new MapDataCollection( scene, { startMapIndex: 0 } );
+        const mdc = new MapDataCollection( scene, {
+            startMapIndex: 0
+        } );
         scene.registry.set('mdc', mdc);
     }
     update (time, delta) {
         const mdc = this.registry.get('mdc');
         mdc.update(time, delta);
         
-        //!! so update here is being called, but not for current task or action
-        //console.log('yes??');
+        // action is set to wonder, and done is false
+        //console.log( mdc.getMapDataByIndex(0).worker.getChildren()[0].getData('act').done );
+        
         
     }
     

@@ -122,7 +122,7 @@ create menus and UI actions.
     * ( done ) - ui_menu draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
-    * (      ) - people draft : set custom TASKS and Actions for the draft project
+    * ( done ) - people draft : set custom TASKS and Actions for the draft project
   /lib/items :
     * ( done ) - have items.js in a new items folder compleate with a readme file
   /lib/people :
@@ -137,6 +137,7 @@ create menus and UI actions.
   /lib/mapdata  :
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib
+    * ( done ) - have a zero player mode
     * (      ) - declare what tasks and actions to use when creating People class instances.
     * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
     * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
@@ -174,6 +175,7 @@ create menus and UI actions.
     * ( done ) - setting what the default ACTIONS should be for a Person 
   /states/mapview.js :
     * ( done ) - make use of new UI Global Controls
+    * (      ) - make sure to set zero player mode to false by default
     * (      ) - have a menu class instance in mapview
     * (      ) - have buttons to set the item mode of the current worker
     * (      ) - have a button to return to the main menu
