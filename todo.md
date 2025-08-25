@@ -97,6 +97,13 @@ then move to another location, and press another.
   /lib/items :
     * (      ) - have more than one household item
     * (      ) - have it so that drops will pick one of a few household items each time
+  /lib/mapdata :
+    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile
+  /lib/message  :
+    * (      ) - message_messpusher : have an alpha effect that is also based on distance
+    * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
+    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
+    * (      ) - have a class that will be used for the game display ( for money, ect )
   /lib/people :
     * (      ) - general drop can be used to drop a specfic item, or array of items on hand  
   /lib/phaser :
@@ -107,6 +114,8 @@ then move to another location, and press another.
     * (      ) - in 'free' camera mode the number keys can be used to change active map
     * (      ) - in 'follow' mode the camera will follow a given person
     * (      ) - in 'follow' mode 'w' can be used to cycle following workers and 'c' can be used to cycle customers
+  /maps :
+    * (      ) - add grass tiles to map 4
   /states/mapview :
     * (      ) - make use of schedule.js to spawn in ( and out ) workers
   /sheets :
@@ -144,23 +153,11 @@ create menus and UI actions.
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib
     * ( done ) - have a zero player mode
-    * (      ) - declare what tasks and actions to use when creating People class instances.
-    * (      ) - have an array of functions to call for layer-pointer-event method for each itemMode
-    * (      ) - make it so that findEmptyDropSpot method will not return a position that is a wall tile 
-  /lib/message  :
-    * (      ) - message_messpusher : have an alpha effect that is also based on distance
-    * (      ) - message_messpusher : have an alpha effect that is effected by time and distance
-    * (      ) - I would like another tool to help with debugging where I can display a current set of variables
-    * (      ) - have a class that will be used for the game display ( for money, ect )
   /lib/pathfinding :
     * (      ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
   /lib/schedule :
     * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
     * ( done ) - start a README file for schedule
-    * (      ) - Have a pool of objects, each of which have a sprite, canvas, and two bitmap text objects    
-    * (      ) - use bitmap text for te info
-    * (      ) - use a larger font for basic time info
-    * (      ) - I would like to have a repeat mode for events ( or a way to keep pushing them back in each day )
   /lib/ui
     * ( done ) - start a lib folder for ui compleate with README and ui.js file
     * ( done ) - have a Menu class
@@ -178,13 +175,11 @@ create menus and UI actions.
     * ( done ) - zero player mode can be switched by pressing z
     * ( done ) - can move the camera when in zero player mode
     * ( done ) - can switch the active map when in zero player mode
-  /maps :
-    * (      ) - add grass tiles to map 4
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
   /states/mapview.js :
     * ( done ) - make use of new UI Global Controls
-    * (      ) - make sure to set zero player mode to false by default
+    * ( done ) - make sure to set zero player mode to false by default
     * (      ) - have a menu class instance in mapview
     * (      ) - have buttons to set the item mode of the current worker
     * (      ) - have a button to return to the main menu
