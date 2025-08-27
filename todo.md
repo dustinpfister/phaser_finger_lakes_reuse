@@ -21,7 +21,7 @@ create menus and UI actions.
   /drafts :
     * ( done ) - ui_menu draft : have a draft to make use of new ui lib
     * ( done ) - ui_menu draft : work out a canvas solution for buttons
-    * ( done ) - ui_menu draft : have a collection of menu buttons that prefrom various actions when clicked
+    * ( done ) - ui_menu draft : have a collection of menu buttons that preform various actions when clicked
     * ( done ) - ui_menu draft : make use of the Menu class of ui.js
     * ( done ) - schedule_todays_colors : start a new draft where the focus is just on todays colors.
     * ( done ) - schedule_todays_colors : the current set of tags should be highligheded
@@ -41,13 +41,15 @@ create menus and UI actions.
     * ( done ) - make it so that mapdata has its own folder, and readme file, update links for main game and drafts.
     * ( done ) - start a README.md file for mapdata lib
     * ( done ) - have a zero player mode
+    * ( done ) - if in zero player mode do not use itemMode code in layer_pointer_event
+    * (      ) - new layer_pointer_event event code to use when in zero player mode
   /lib/pathfinding :
-    * ( done ) - have pathfinding.js in a new pathfinding folder compleate with a readme file
+    * ( done ) - have pathfinding.js in a new pathfinding folder complete with a readme file
   /lib/schedule :
-    * ( done ) - have schedule.js in a new schedule folder compleate with a readme file
+    * ( done ) - have schedule.js in a new schedule folder complete with a readme file
     * ( done ) - start a README file for schedule
   /lib/ui
-    * ( done ) - start a lib folder for ui compleate with README and ui.js file
+    * ( done ) - start a lib folder for ui complete with README and ui.js file
     * ( done ) - have a Menu class
     * ( done ) - have a Menu.createConf static methiod for Menu to help in the process of making a conf object
     * ( done ) - have a Menu.createCanvas static method for Menu    
@@ -67,11 +69,8 @@ create menus and UI actions.
     * ( done ) - setting what the default ACTIONS should be for a Person 
   /states/mapview.js :
     * ( done ) - make use of new UI Global Controls
-    * ( done ) - make sure to set zero player mode to false by default
+    * ( done ) - make sure to set zero player mode to true by default
     * (      ) - have a menu class instance in mapview
-    * (      ) - have buttons to set the item mode of the current worker
-    * (      ) - have a button to return to the main menu
-    * (      ) - have a button to prefrom the current action
   /states/menu.js :
     * ( done ) - make use of new ui lib in menu state
   /README.md :

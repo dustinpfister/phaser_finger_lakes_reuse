@@ -27,7 +27,7 @@ class Mapview extends Phaser.Scene {
         });
         
         const start_map_index = 4;
-        const mdc = new MapDataCollection(this, { startMapIndex: start_map_index, zeroPlayerMode: false });
+        const mdc = new MapDataCollection(this, { startMapIndex: start_map_index, zeroPlayerMode: true });
         this.registry.set('mdc', mdc);
         
         //this.setPlayerPerson( this.registry.get('player'), start_map_index);
