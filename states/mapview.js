@@ -61,6 +61,10 @@ class Mapview extends Phaser.Scene {
         
         GlobalControl.setUp( this );
         
+        
+        GlobalControl.centerCamToMap(this, mdc.getActive() );
+        
+        
         mdc.forAllMaps(this, function(scene, md, map_index){         
            let wi = 0;
            const len = md.worker.maxSize;
