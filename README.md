@@ -42,9 +42,25 @@ Hit CTRL-C to stop the server
 
 Then just go to the url in your web browser. In this case I can go to http://127.0.0.1:8080.
 
+## Number of Players
+
+Although I have code in place to allow a player to take direct control of a worker in the game, I am thinking that this main game will be a zero player game. I do have lots of ideas of taking this project in other directions, some of which might make more sense when it comes to making something that would work well for training new workers. As of now though maybe many of those ideas would pan out better in the form of whole other future projects based on what I have worked out here.
+
+### Zero Player Game - R0+
+
+As of R5 I am just focusing on taking this project in a zero player game direction, like that of [progress quest](https://en.wikipedia.org/wiki/Progress_Quest). A game like this is also often known as a [True Idle game](https://www.reddit.com/r/incremental_games/comments/2kfozg/where_are_the_true_idle_games/). So in other words a kind of game where there is no human input at all, and thus all progression happens by way of logic that updates the state of AI controlled players.
+
+### One Player Game – R?+
+
+Although the direction is going in that of a zero player game I would also like to, at some point, make something that is fun to play but also practical in the sense that it can be used as a way to train new [employees](https://ithacareuse.org/staff/), [volunteers](https://ithacareuse.org/volunteer/), and people returning to work via the [reset program](https://ithacareuse.org/reset/). 
+
+### Multiplayer – R?+
+
+If I ever get there, and of course that is a very big if, I might work on some sever side code, and with that client system changes that will allow for multiplayer. As of this writing that is a total pipe dream as it is just me working on this thing.
+
 ## Progress thus far
 
-Progress on the development of this game has been very slow because of, well, the usual. Mainly my real job at, you guessed it, Finger Lakes Reuse of course. However I do also very much have a life outside of all of this as well that I also need to balance with this. However I am very much determined to see this one threw so I will have a section here for whats new with this.
+Progress on the development of this game has been very slow because of various factors including my real life job at Finger Lakes reuse. I am very much determined to see this one threw, so it would make sense to write a bit about the current status and direction of this game. As of R7 much of the core code that I want is very much in place at least. There is still a lot more to do in terms of working out bugs, and making the game playable for most people.
 
 ## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
 
@@ -74,18 +90,4 @@ Added a 'worker' type of Person class instance that allows for more than one 'pl
 
 The very first Revision of course took a real long time to work out. The main reason why was because when I was first starting with this project I had so many competing ideas of how to go about even just getting started with this. For example I was trying to work out how to go about using the Phaser Physics Engine as a way to update the position stats of the Person Class instances. While doing so I started to run into all kinds of problems with collision detection and a lot of other general headaches. I still think that it is a good idea, and would help to make the game a lot more fun, however I decided to shelf the idea in favor of just simple path movement.
 
-## Number of Players
 
-In time I would like to make this at least a one player game, if not multiplayer. However for now it is very much a zero player game. At the time of this writing the game is still very much in a kind of [alpha state](https://en.wikipedia.org/wiki/Software_release_life_cycle), so I do not have a clear idea as to when I will get make the game at least one player.
-
-### Zero Player Game - R0+
-
-As of R5 I am just focusing on taking this project in a zero player game direction, like that of [progress quest](https://en.wikipedia.org/wiki/Progress_Quest). A game like this is also often known as a [True Idle game](https://www.reddit.com/r/incremental_games/comments/2kfozg/where_are_the_true_idle_games/). So in other words a kind of game where there is no human input at all, and thus all progression happens by way of logic that updates the state of AI controlled players.
-
-### One Player Game – R?+
-
-Although the direction is going in that of a zero player game I would also like to, at some point, make something that is fun to play but also practical in the sense that it can be used as a way to train new [employees](https://ithacareuse.org/staff/), [volunteers](https://ithacareuse.org/volunteer/), and people returning to work via the [reset program](https://ithacareuse.org/reset/). 
-
-### Multiplayer – R?+
-
-If I ever get there, and of course that is a very big if, I might work on some sever side code, and with that client system changes that will allow for multiplayer. As of this writing that is a total pipe dream as it is just me working on this thing.
