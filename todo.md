@@ -42,7 +42,7 @@ create menus and UI actions.
     * ( done ) - start a README.md file for mapdata lib
     * ( done ) - have a zero player mode
     * ( done ) - if in zero player mode do not use itemMode code in layer_pointer_event
-    * (      ) - new layer_pointer_event event code to use when in zero player mode
+    * ( done ) - new layer_pointer_event event code to use when in zero player mode that centers the camera for now
   /lib/pathfinding :
     * ( done ) - have pathfinding.js in a new pathfinding folder complete with a readme file
   /lib/schedule :
