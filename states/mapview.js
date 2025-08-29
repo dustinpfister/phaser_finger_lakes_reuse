@@ -2,7 +2,7 @@ import { COLOR, GameTime, TimeBar } from '../lib/schedule/schedule.js';
 import { ConsoleLogger, MessPusher, DebugScreen } from '../lib/message/message.js';
 import { MapData, MapDataCollection, MapLoader } from '../lib/mapdata/mapdata.js';
 import { Person, People } from '../lib/people/people.js';
-import { GlobalControl } from '../lib/ui/ui.js';
+import { GlobalControl, Menu } from '../lib/ui/ui.js';
 
 const log = new ConsoleLogger({
     cat: 'state',
@@ -54,14 +54,25 @@ class Mapview extends Phaser.Scene {
         });
         this.registry.set('dbs', dbs);
         
-        //const mv = this;
+        
+        const confMenu = Menu.createConf({
+            x: 320, y: 280,
+            members: [
+                {
+                    desc: '', 
+                    press: function(){
+                        console.log('start!');
+                        scene.startMapView();
+                    }
+                }
+            ]
+        });
+        //const menu = new Menu(this, confMenu);
         
         
         mdc.setActiveMapByIndex(this, mdc.activeIndex);
         
         GlobalControl.setUp( this );
-        
-        
         GlobalControl.centerCamToMap(this, mdc.getActive() );
         
         
