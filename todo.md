@@ -69,11 +69,8 @@ create menus and UI actions.
     * ( done ) - use setScrollFactor with menu buttons 
     * ( done ) - set depth of menu buttons to 10
     * ( done ) - a record for the menu in the registry should be made in ui.js using the new menu key value
-    
     * ( done ) - I will want a moveCam method
-    
-    * (      ) - have a way to adjust the position of buttons relative to the main menu position
-    
+    * ( done ) - have a way to adjust the position of buttons relative to the main menu position
     
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
