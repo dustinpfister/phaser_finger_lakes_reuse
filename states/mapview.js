@@ -56,7 +56,8 @@ class Mapview extends Phaser.Scene {
         
         
         const confMenu = Menu.createConf({
-            x: 320, y: 280,
+            x: 300, y: 0,
+            textureKey: 'texture_menu_mapview',
             members: [
                 {
                     desc: '', 
@@ -68,6 +69,8 @@ class Mapview extends Phaser.Scene {
             ]
         });
         const menu = new Menu(this, confMenu);
+        this.registry.set('menu_key', 'menu_mapview');
+        this.registry.set('menu_mapview', menu);
         
         
         mdc.setActiveMapByIndex(this, mdc.activeIndex);
@@ -265,6 +268,9 @@ class Mapview extends Phaser.Scene {
         const mdc = this.registry.get('mdc');
         const scene = this;
         const tb = this.registry.get('tb');
+        
+        const menu = this.registry.get('menu_mapview');
+        menu.draw();
         
         if(!mdc.zeroPlayerMode && !player){
            this.nextWorker();

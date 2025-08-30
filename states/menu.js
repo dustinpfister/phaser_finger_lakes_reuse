@@ -25,6 +25,7 @@ class MainMenu extends Phaser.Scene {
         
         const confMenu = Menu.createConf({
             x: 320, y: 280,
+            textureKey: 'texture_menu_main',
             members: [
                 {
                     desc: 'Start', 
