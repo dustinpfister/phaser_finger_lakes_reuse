@@ -62,6 +62,10 @@ If I ever get there, and of course that is a very big if, I might work on some s
 
 Progress on the development of this game has been very slow because of various factors including my real life job at Finger Lakes reuse. I am very much determined to see this one threw, so it would make sense to write a bit about the current status and direction of this game. As of R7 much of the core code that I want is very much in place at least. There is still a lot more to do in terms of working out bugs, and making the game playable for most people.
 
+## R7 ( done 08/30/2025 ) - Menus
+
+In R7 I added Menus, and with that a new ui.js library to help with the process of creating menus and adding them into the game. During this time I also made a lot of other improvements with people.js and other supporting files that are used along with that library in a effort to make people.js more reusable.
+
 ## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
 
 The major new change with R6 was adding a new way to define spawn locations in maps by way have having an array of area objects rather than just a position object. In other words one or more objects with x, y, width, and height values rather than just a single object defining a single tile in a map that is a spawn point. Sense this was a very minor addition this time around, much of the time I was improving other features of the game that are all ready in place, many of which still need a fair amount of refinement. This included some minor improvements with the Schedule system that was introduced in R5, but the bulk of it I would say was with the AI which will likely need a great deal more work done in just about each additional revision moving forward for at least the foreseeable future.

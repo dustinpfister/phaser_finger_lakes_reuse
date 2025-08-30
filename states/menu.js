@@ -31,15 +31,12 @@ class MainMenu extends Phaser.Scene {
                 {
                     desc: 'Start', 
                     press: function(){
-                        console.log('start!');
                         scene.startMapView();
                     }
                 }
             ]
         });
         const menu = new Menu(this, confMenu);
-        //this.registry.set('menu_key', 'menu_main');
-        //this.registry.set('menu_main', menu);
         
         const disp1 = this.add.text(320, 400, '', { color: '#ffffff', fontSize: '30px' });
         disp1.setScrollFactor(0,0);

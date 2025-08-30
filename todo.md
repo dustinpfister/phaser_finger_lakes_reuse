@@ -11,7 +11,7 @@ I am going to want to be able to supply data that will contain all kinds of info
 
 ```
 
-## R7 (    ) - Menus, UI Buttons, better keyboard controls
+## R7 ( done 08/30/2025 ) - Menus, UI Buttons, better keyboard controls
 ```
 I would like to start a lib that will be used to create UI elements, manily buttons, that can be used to
 create menus and UI actions.
@@ -71,8 +71,7 @@ create menus and UI actions.
     * ( done ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     * ( done ) - I will want a moveCam method
     * ( done ) - have a way to adjust the position of buttons relative to the main menu position
-    * ( done ) - have a GlobalControl.setMap method
-    
+    * ( done ) - have a GlobalControl.setMap method   
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
   /states/mapview.js :
@@ -84,7 +83,7 @@ create menus and UI actions.
   /states/menu.js :
     * ( done ) - make use of new ui lib in menu state
   /README.md :
-    * (      ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
+    * ( done ) - update readme to reflect R7 changes, and commit R7 when done with this Revision
 ```
 
 ## R6 ( done 08/09/2025 ) - Spawn and exit areas, General Improvement's
