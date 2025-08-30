@@ -36,16 +36,19 @@ class MainMenu extends Phaser.Scene {
             ]
         });
         const menu = new Menu(this, confMenu);
-        this.registry.set('menu', menu);
+        this.registry.set('menu_key', 'menu_main');
+        this.registry.set('menu_main', menu);
+        
         const disp1 = this.add.text(320, 400, '', { color: '#ffffff', fontSize: '30px' });
         disp1.setScrollFactor(0,0);
         disp1.depth = 6;
         disp1.text = 'R' + this.registry.get('R');
         disp1.x = 320 - disp1.width / 2;
+        
     }
     
     update () {
-        const menu = this.registry.get('menu');
+        const menu = this.registry.get('menu_main');
         menu.draw();
     }
 

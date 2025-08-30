@@ -67,7 +67,7 @@ class Mapview extends Phaser.Scene {
                 }
             ]
         });
-        //const menu = new Menu(this, confMenu);
+        const menu = new Menu(this, confMenu);
         
         
         mdc.setActiveMapByIndex(this, mdc.activeIndex);
