@@ -68,7 +68,7 @@ create menus and UI actions.
     * ( done ) - I will want to be able to set a menu key when cretaing a menu
     * ( done ) - use setScrollFactor with menu buttons
     
-    * (      ) - set depth of menu buttons to 10
+    * ( done ) - set depth of menu buttons to 10
     
     * (      ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     * (      ) - update code in ui.js to make use of new menu key rather than just 'menu'
