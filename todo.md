@@ -70,8 +70,11 @@ create menus and UI actions.
     * ( done ) - set depth of menu buttons to 10
     * ( done ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     
-    * (      ) - update code in ui.js to make use of new menu key rather than just 'menu'
+    * ( done ) - I will want a moveCam method
+    
     * (      ) - have a way to adjust the position of buttons relative to the main menu position
+    
+    
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
   /states/mapview.js :

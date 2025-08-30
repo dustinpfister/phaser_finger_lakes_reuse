@@ -16,6 +16,8 @@ class Mapview extends Phaser.Scene {
 
     create () {
     
+        const scene = this;
+    
         const mp = this.mp = new MessPusher({
             key: 'min_3px_5px',
             sx: 165, sy: 350,
@@ -61,10 +63,12 @@ class Mapview extends Phaser.Scene {
             menu_key : 'menu_mapview',
             members: [
                 {
-                    desc: '', 
+                    desc: '<', 
                     press: function(){
-                        console.log('start!');
-                        scene.startMapView();
+                    
+                        console.log('this is left, left, left, this is your left, that\'s you left');
+                        //console.log(GlobalControl);
+                        GlobalControl.moveCam(scene, -8, 0)
                     }
                 }
             ]
