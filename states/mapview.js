@@ -56,7 +56,7 @@ class Mapview extends Phaser.Scene {
         
         
         const confMenu = Menu.createConf({
-            x: 300, y: 0,
+            x: 320, y: 280,
             textureKey: 'texture_menu_mapview',
             members: [
                 {
