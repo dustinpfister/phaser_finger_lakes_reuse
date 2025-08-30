@@ -66,11 +66,10 @@ create menus and UI actions.
     * ( done ) - can move the camera when in zero player mode
     * ( done ) - can switch the active map when in zero player mode
     * ( done ) - I will want to be able to set a menu key when cretaing a menu
-    * ( done ) - use setScrollFactor with menu buttons
-    
+    * ( done ) - use setScrollFactor with menu buttons 
     * ( done ) - set depth of menu buttons to 10
+    * ( done ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     
-    * (      ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     * (      ) - update code in ui.js to make use of new menu key rather than just 'menu'
     * (      ) - have a way to adjust the position of buttons relative to the main menu position
   /states/boot.js :

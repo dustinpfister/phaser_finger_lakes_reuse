@@ -26,6 +26,7 @@ class MainMenu extends Phaser.Scene {
         const confMenu = Menu.createConf({
             x: 320, y: 280,
             textureKey: 'texture_menu_main',
+            menu_key: 'menu_main',
             members: [
                 {
                     desc: 'Start', 
@@ -37,8 +38,8 @@ class MainMenu extends Phaser.Scene {
             ]
         });
         const menu = new Menu(this, confMenu);
-        this.registry.set('menu_key', 'menu_main');
-        this.registry.set('menu_main', menu);
+        //this.registry.set('menu_key', 'menu_main');
+        //this.registry.set('menu_main', menu);
         
         const disp1 = this.add.text(320, 400, '', { color: '#ffffff', fontSize: '30px' });
         disp1.setScrollFactor(0,0);
