@@ -84,9 +84,10 @@ class Mapview extends Phaser.Scene {
                 { desc: 'up', x: 580 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
                 { desc: 'down', x: 580 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
                 
-                { desc: 'map1', x: 280 + 0, y: 420 + 0, press: function(){ 
-                    log( 'map1' );
-                } }
+                { desc: 'map1', x: 200 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
+                { desc: 'map2', x: 200 + 50, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
+                { desc: 'map3', x: 200 + 100, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
+                { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } }
                 
             ]
         });

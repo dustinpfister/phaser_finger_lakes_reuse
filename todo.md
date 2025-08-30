@@ -78,9 +78,9 @@ create menus and UI actions.
   /states/mapview.js :
     * ( done ) - make use of new UI Global Controls
     * ( done ) - make sure to set zero player mode to true by default
-    * (      ) - have a menu class instance in mapview
-    * (      ) - have buttons for controling camera position
-    * (      ) - have buttons for switching active map
+    * ( done ) - have a menu class instance in mapview
+    * ( done ) - have buttons for controling camera position
+    * ( done ) - have buttons for switching active map
   /states/menu.js :
     * ( done ) - make use of new ui lib in menu state
   /README.md :
