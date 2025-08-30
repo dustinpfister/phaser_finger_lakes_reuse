@@ -58,7 +58,8 @@ class Mapview extends Phaser.Scene {
         
         
         const confMenu = Menu.createConf({
-            x: 580, y: 420,
+            //x: 580, y: 420,
+            x:0, y: 0,
             frameWidth: 32, frameHeight: 32,
             textureKey: 'texture_menu_mapview',
             menu_key : 'menu_mapview',
@@ -78,22 +79,15 @@ class Mapview extends Phaser.Scene {
                 ctx.fillText( button.getData('desc'), fw / 2, fh * i + fh * 0.60);
             },
             members: [
-                {
-                    desc: 'left', x: -32, y:0,
-                    press: function(){ GlobalControl.moveCam(scene, -8, 0); }
-                },
-                {
-                    desc: 'right', x: 32, y:0,
-                    press: function(){ GlobalControl.moveCam(scene, 8, 0); }
-                },
-                {
-                    desc: 'up', x: 0, y:-32,
-                    press: function(){ GlobalControl.moveCam(scene, 0, -8); }
-                },
-                {
-                    desc: 'down', x: 0, y:32,
-                    press: function(){ GlobalControl.moveCam(scene, 0, 8); }
-                }
+                { desc: 'left', x: 580 + -32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, -8, 0); } },
+                { desc: 'right', x: 580 + 32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, 8, 0); } },
+                { desc: 'up', x: 580 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
+                { desc: 'down', x: 580 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
+                
+                { desc: 'map1', x: 280 + 0, y: 420 + 0, press: function(){ 
+                    log( 'map1' );
+                } }
+                
             ]
         });
         const menu = new Menu(this, confMenu);

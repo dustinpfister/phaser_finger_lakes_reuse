@@ -71,6 +71,7 @@ create menus and UI actions.
     * ( done ) - a record for the menu in the registry should be made in ui.js using the new menu key value
     * ( done ) - I will want a moveCam method
     * ( done ) - have a way to adjust the position of buttons relative to the main menu position
+    * ( done ) - have a GlobalControl.setMap method
     
   /states/boot.js :
     * ( done ) - setting what the default ACTIONS should be for a Person 
