@@ -17,6 +17,8 @@ class Load extends Phaser.Scene {
     }
 
     preload(){
+        const scene =  this;
+    
         this.load.setBaseURL('./');
         // SHEETS               
         this.load.image('map_16_16', 'sheets/map_16_16.png');
@@ -36,10 +38,14 @@ class Load extends Phaser.Scene {
         // PEOPLE
         this.load.json('people_core', 'json/people/people_core.json');
         // ITEM DATA
-        this.load.json('items_index', 'json/items/items_index.json');
+        //this.load.json('items_index', 'json/items/items_index.json');
         
-        this.load.json('household_1', 'json/items/household_1.json');
-        this.load.json('containers_1', 'json/items/containers_1.json');
+        ITEM_FILES.forEach( (fn) => {
+            scene.load.json(fn, 'json/items/' + fn + '.json');
+        });
+        
+        //this.load.json('household_1', 'json/items/household_1.json');
+        //this.load.json('containers_1', 'json/items/containers_1.json');
         
         const gr = this.add.graphics();
         gr.fillStyle(0x000000);

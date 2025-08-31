@@ -23,7 +23,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) a person data object should contain name, speed, and sheetKey, and frameset values.
   /lib/items :
     * (done) - start an ItemTools object starting with ItemTools.genIndex method
-    * () - update getItemData helper to make use of an itemIndex in the registry that was created using ItemTools.genIndex
+    * (done) - update getItemData helper to make use of an itemIndex in the registry that was created using ItemTools.genIndex
     * () - an items file should allow for header data
   /lib/people :
     * () - make use of people data when creating people objects
@@ -33,7 +33,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * () - new people_core sheet compleate with png and json
   /states/load.js :
     * (done) - load people_core.json
-    * (    ) - call ItemTools.genIndex in create method
+    * (done) - call ItemTools.genIndex in create method
   /
     * (      ) - use rollup.js to create a final R8 build when ready to finish revision
     * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision
