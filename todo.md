@@ -14,16 +14,19 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) start a json folder
     * (done) move /items to json/items
     * (done) move /maps to json/maps
+    * () move /sheets to /json/sheets
     * (done) start a /json/people folder
   /json/items :
     * () I will want more items beyond just a plain white mug now
   /json/people :
-    * (done) start a people_core.json file that will be a first 'core' set of people in the game
+    * (done) start a people_core.json file that will be a first 'core' set of people in the game.
     * (done) a person data object should contain name, speed, and sheetKey, and frameset values.
   /lib/people :
     * () - make use of people data when creating people objects
     * () - see about updating worker AI so that they do not get stuck.
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
+  /json/sheets
+    * () - new people_core sheet compleate with png and json
   /states/boot.js :
     * () - load people_core.json
 ```
