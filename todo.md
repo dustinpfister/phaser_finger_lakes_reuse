@@ -27,8 +27,11 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /json/sheets
     * () - new people_core sheet compleate with png and json
-  /states/boot.js :
-    * () - load people_core.json
+  /states/load.js :
+    * (done) - load people_core.json
+  /
+    * (      ) - use rollup.js to create a final R8 build when ready to finish revision
+    * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision
 ```
 
 ## R7 ( done 08/30/2025 ) - Menus, UI Buttons, better keyboard controls

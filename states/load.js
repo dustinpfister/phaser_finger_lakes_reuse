@@ -30,6 +30,8 @@ class Load extends Phaser.Scene {
           urlBase: 'json/maps/', //'drafts/mapdata/',
           mapIndicesStart: 1, mapIndicesStop: 5
         });
+        // PEOPLE
+        this.load.json('people_core', 'json/people/people_core.json');
         // ITEM DATA
         this.load.json('items_index', 'json/items/items_index.json');
         this.load.json('household_1', 'json/items/household_1.json');
@@ -44,10 +46,12 @@ class Load extends Phaser.Scene {
             gr.arc(320, 240, 100, Phaser.Math.DegToRad(270), Phaser.Math.DegToRad(270 + 360 * progress), false);
             gr.strokePath();
         });
-        //log('preload of load state started...');
     }
     
     create () {
+    
+        log(this)
+    
         this.scene.start('MainMenu');
     }
 
