@@ -42,6 +42,14 @@ Hit CTRL-C to stop the server
 
 Then just go to the url in your web browser. In this case I can go to http://127.0.0.1:8080.
 
+## Create a Build using rollup
+
+I am using [rollup](https://rollupjs.org/introduction/) as a way to create a final build file using the main index.js file as a start point for the over all app.
+
+```
+$ rollup ./index.js --file ./build.js --format iife
+```
+
 ## Number of Players
 
 Although I have code in place to allow a player to take direct control of a worker in the game, I am thinking that this main game will be a zero player game. I do have lots of ideas of taking this project in other directions, some of which might make more sense when it comes to making something that would work well for training new workers. As of now though maybe many of those ideas would pan out better in the form of whole other future projects based on what I have worked out here.

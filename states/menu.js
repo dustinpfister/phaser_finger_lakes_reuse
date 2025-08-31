@@ -1,5 +1,5 @@
 import { ConsoleLogger } from '../lib/message/message.js';
-import { GlobalControl, Menu } from '../../lib/ui/ui.js';
+import { GlobalControl, Menu } from '../lib/ui/ui.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'menu',
