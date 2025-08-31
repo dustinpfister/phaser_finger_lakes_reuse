@@ -97,6 +97,14 @@ These are general tasks I would like to complete when it comes to various side f
     * Accounting / payroal / grants
 ```
 
+## RX (    ) - General Data Folder
+```
+As of this writing I was working on R8 and I moved a bunch of root folders into a single new root json folder. Although I think that 
+was a good move when it comes to making things more organized, it might be even better to have a single general data rolder at root. 
+I will then want to move everything that is just data, rather than code, into this new main data folder.
+```
+
+
 ## RX (    ) - Options Menu
 
 ```

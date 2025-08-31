@@ -1,0 +1,12 @@
+{
+    "frameset": [
+        { "name": "people_core", "frameSize" : 16  }
+    ],
+    "people": [
+        
+        {  "name": ["DustMysTer", "Flash"],    "speed" : 0.70, "frameset" : [ 0, 0 ]  },
+        {  "name": ["JaSighAma", "The Third"], "speed" : 1.00, "frameset" : [ 0, 1 ]  },
+        {  "name": ["McClayTee", "Viddy"],     "speed" : 1.00, "frameset" : [ 0, 2 ]  }
+    
+    ]
+}
