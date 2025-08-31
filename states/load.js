@@ -1,10 +1,13 @@
 import { MapLoader } from '../lib/mapdata/mapdata.js';
 import { ConsoleLogger } from '../lib/message/message.js';
+import { ItemTools } from '../lib/items/items.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'load',
     appendId: true
 });
+
+const ITEM_FILES = ['containers_1', 'household_1'];
 
 class Load extends Phaser.Scene {
 
@@ -34,8 +37,10 @@ class Load extends Phaser.Scene {
         this.load.json('people_core', 'json/people/people_core.json');
         // ITEM DATA
         this.load.json('items_index', 'json/items/items_index.json');
+        
         this.load.json('household_1', 'json/items/household_1.json');
         this.load.json('containers_1', 'json/items/containers_1.json');
+        
         const gr = this.add.graphics();
         gr.fillStyle(0x000000);
         gr.fillRect(0,0,640,480);           
@@ -50,7 +55,8 @@ class Load extends Phaser.Scene {
     
     create () {
     
-        log(this)
+    
+        ItemTools.genIndex(this, ['containers_1', 'household_1']);
     
         this.scene.start('MainMenu');
     }

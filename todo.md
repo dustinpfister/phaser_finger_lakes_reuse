@@ -21,6 +21,10 @@ Sense the focus is on people, I would like to take a moment to work a little mor
   /json/people :
     * (done) start a people_core.json file that will be a first 'core' set of people in the game.
     * (done) a person data object should contain name, speed, and sheetKey, and frameset values.
+  /lib/items :
+    * (done) - start an ItemTools object starting with ItemTools.genIndex method
+    * () - update getItemData helper to make use of an itemIndex in the registry that was created using ItemTools.genIndex
+    * () - an items file should allow for header data
   /lib/people :
     * () - make use of people data when creating people objects
     * () - see about updating worker AI so that they do not get stuck.
@@ -29,6 +33,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * () - new people_core sheet compleate with png and json
   /states/load.js :
     * (done) - load people_core.json
+    * (    ) - call ItemTools.genIndex in create method
   /
     * (      ) - use rollup.js to create a final R8 build when ready to finish revision
     * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision
