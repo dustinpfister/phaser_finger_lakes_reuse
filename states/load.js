@@ -27,7 +27,7 @@ class Load extends Phaser.Scene {
         // MAP DATA
         MapLoader({
           scene: this,
-          urlBase: 'maps/', //'drafts/mapdata/',
+          urlBase: 'json/maps/', //'drafts/mapdata/',
           mapIndicesStart: 1, mapIndicesStop: 5
         });
         // ITEM DATA

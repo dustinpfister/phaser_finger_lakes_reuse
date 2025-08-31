@@ -13,7 +13,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
   /json :
     * (done) start a json folder
     * (done) move /items to json/items
-    * () move /maps to json/maps
+    * (done) move /maps to json/maps
     * () start a /json/people folder
   /json/items :
     * () I will want more items beyond just a plain white mug now
