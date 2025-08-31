@@ -20,7 +20,7 @@ class Boot extends Phaser.Scene {
     create () {
         const game = this.game;
         const reg = game.registry;
-        reg.set('R', 7);
+        reg.set('R', 8);
         reg.set('MAX_MAP_DONATIONS', 20);
         reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
         reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);

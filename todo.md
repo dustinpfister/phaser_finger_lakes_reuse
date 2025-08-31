@@ -8,7 +8,24 @@ This is what the current plan is when it comes to future work to get done on FLR
 ```
 I am going to want to be able to supply data that will contain all kinds of information about people in general. This will contain info such as a persons name, and other details that will effect for example the speed at which they walk. Info about a person will be relevant to the possibility of them being a worker, or customer. For example the starting wage that they might want would be a key detail if they are deployed as a worker in the game, however the kinds of items that they like to buy would of course be relevant to how they will behave when deployed into the game as a customer.
 
+Sense the focus is on people, I would like to take a moment to work a little more on the AI while I am at it. I am noticing some weird isshues where people just stop and do nothing for a while, they even get stuck, so there are some bugs to work out with that for sure.
 
+  /json :
+    * (done) start a json folder
+    * (done) move /items to json/items
+    * () move /maps to json/maps
+    * () start a /json/people folder
+  /json/items :
+    * () I will want more items beyond just a plain white mug now
+  /json/people :
+    * () start a people_core.json file that will be a first 'core' set of people in the game
+    * () a person data object should contain name, speed, and sheetKey, and cellIndex values.
+  /lib/people :
+    * () - make use of people data when creating people objects
+    * () - see about updating worker AI so that they do not get stuck.
+    * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
+  /states/boot.js :
+    * () - load people_core.json
 ```
 
 ## R7 ( done 08/30/2025 ) - Menus, UI Buttons, better keyboard controls

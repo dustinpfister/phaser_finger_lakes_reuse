@@ -12,7 +12,6 @@ const TASKS_PEOPLE_DRAFT = {
         },
         update: function(mdc, md, people, scene, person) {
         
-            console.log('task update');
         
         }
     }
@@ -62,9 +61,9 @@ class Example extends Phaser.Scene {
         this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
         
         // ITEM DATA
-        this.load.json('items_index', 'items/items_index.json');
-        this.load.json('household_1', 'items/household_1.json');
-        this.load.json('containers_1', 'items/containers_1.json');     
+        this.load.json('items_index', 'json/items/items_index.json');
+        this.load.json('household_1', 'json/items/household_1.json');
+        this.load.json('containers_1', 'json/items/containers_1.json');     
         
         MapLoader({
           scene: this,
@@ -76,7 +75,6 @@ class Example extends Phaser.Scene {
     }
     create () {
         const scene = this;
-        //this.registry.set('ACTIONS', ACTIONS_PEOPLE_DRAFT);
         
         this.registry.set('TASKS', TASKS_PEOPLE_DRAFT);
         this.registry.set('ACTIONS', ACTIONS_PEOPLE_DRAFT );
@@ -89,11 +87,6 @@ class Example extends Phaser.Scene {
     update (time, delta) {
         const mdc = this.registry.get('mdc');
         mdc.update(time, delta);
-        
-        // action is set to wonder, and done is false
-        //console.log( mdc.getMapDataByIndex(0).worker.getChildren()[0].getData('act').done );
-        
-        
     }
     
 }

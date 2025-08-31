@@ -31,9 +31,9 @@ class Load extends Phaser.Scene {
           mapIndicesStart: 1, mapIndicesStop: 5
         });
         // ITEM DATA
-        this.load.json('items_index', 'items/items_index.json');
-        this.load.json('household_1', 'items/household_1.json');
-        this.load.json('containers_1', 'items/containers_1.json');
+        this.load.json('items_index', 'json/items/items_index.json');
+        this.load.json('household_1', 'json/items/household_1.json');
+        this.load.json('containers_1', 'json/items/containers_1.json');
         const gr = this.add.graphics();
         gr.fillStyle(0x000000);
         gr.fillRect(0,0,640,480);           
