@@ -2,7 +2,6 @@
 
 This is what the current plan is when it comes to future work to get done on FLR. For additional ideas on what to do net be sure to check the ideas.md file. If any additional ideas come to mind be sure to park them there for starters, and only update this todo list when needed.
 
-
 ## R8 (    ) - People Database
 
 ```
@@ -24,6 +23,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
   /lib/items :
     * (done) - start an ItemTools object starting with ItemTools.genIndex method
     * (done) - update getItemData helper to make use of an itemIndex in the registry that was created using ItemTools.genIndex
+    * (done) - an items file should contain the actual items data in an object called items, rather than the root object
     * () - an items file should allow for header data
   /lib/people :
     * () - make use of people data when creating people objects

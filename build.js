@@ -243,20 +243,15 @@
    const ItemTools = {};
 
    ItemTools.genIndex = (scene, file_names=[] ) => {
-
        const index = { files: [], items: {} };
        file_names.forEach( (fn, file_index) => {
-           const items = scene.cache.json.get(fn);
+           const items = scene.cache.json.get(fn).items;
            index.files[file_index] = fn;
-           
            Object.keys(items).forEach( ( item_key ) => {
                index.items[item_key] = file_index;
            });
-           
        });
-       
        scene.registry.set('items_index', index);
-       console.log( scene.registry.get('items_index') );
    };
 
 
@@ -265,13 +260,11 @@
    ********** *********/
 
    const getItemData = (scene, key='hh_mug_1', indexKey='items_index', opt={}) => {
-       //const itemsIndex = scene.cache.json.get(indexKey);
-       
        const itemsIndex = scene.registry.get('items_index');
-       
        const fi = itemsIndex.items[key];
        const fn = itemsIndex.files[fi];
-       return Object.assign({}, scene.cache.json.get(fn)[key], opt);
+       const data = scene.cache.json.get(fn); 
+       return Object.assign({}, data.items[key], opt);
    };
        
    class BaseItem extends Phaser.GameObjects.Sprite {
