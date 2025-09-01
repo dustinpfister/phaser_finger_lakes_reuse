@@ -4,6 +4,8 @@ import { MainMenu } from './menu.js';
 import { ConsoleLogger } from '../lib/message/message.js';
 import { ACTIONS_DEFAULT } from "../lib/people/action.js";
 
+import { TASKS_WORKER, ACTIONS_WORKER } from "../lib/people/worker/ai_worker.js";
+
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'boot',
@@ -25,6 +27,10 @@ class Boot extends Phaser.Scene {
         reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
         reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
         reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
+        
+        
+        reg.set('TASKS_WORKER', TASKS_WORKER);
+        reg.set('ACTIONS_WORKER', {});
         
         
         //reg.set('TASKS', {

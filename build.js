@@ -1480,18 +1480,14 @@
            psType = person.getData('subType');
            if(pType === 'worker'){
                people.setTask(scene, mdc, md, person, 'di' );
-           }
-           
+           }     
            if(pType === 'customer' && psType === 'donator'){
                people.setTask(scene, mdc, md, person, 'donate' );
            }
-           
            if(pType === 'customer' && psType === 'shopper'){
                //log( person.name, psType );
                people.setTask(scene, mdc, md, person, 'shopping' );
            }
-           
-           
        },
        update: (mdc, md, people, scene, person) => {
        
@@ -1508,8 +1504,6 @@
            people.setAction(scene, mdc, md, person, 'worker_di_idle' );    
        },
        update: (mdc, md, people, scene, person, opt, delta) => {
-       
-       
            person.getData('action_done');
            const oh = person.getData('onHand');
            person.getData('maxOnHand');
@@ -1910,7 +1904,6 @@
 
        create: (mdc, md, people, scene, person) => {
            people.setMapSpawnLocation(md, person);
-           people.setTask(scene, mdc, md, person, 'default');
        }
        
    };
@@ -1963,8 +1956,6 @@
        
        create: (mdc, md, people, scene, person) => {
            people.setMapSpawnLocation(md, person);
-           //people.setTask(scene, mdc, md, person, 'shopping');
-           people.setTask(scene, mdc, md, person, 'default');
        },
        
        noPath: (mdc, md, people, scene, person) => {}
@@ -1989,8 +1980,6 @@
                people.onHand.add(donation);
            }
            person.setData('itemMode', 2);
-           //people.setTask(scene, mdc, md, person, 'donate');
-           people.setTask(scene, mdc, md, person, 'default');
        },
        
        noPath: (mdc, md, people, scene, person) => {}
@@ -2395,8 +2384,8 @@
                createCallback : (person) => {}
            },{
                type: 'customer',
-               TASKS: scene.registry.get('TASKS'),
-               ACTIONS: scene.registry.get('ACTIONS'),
+               TASKS: scene.registry.get('TASKS_CUSTOMER'),
+               ACTIONS: scene.registry.get('ACTIONS_CUSTOMER'),
                md: md,
                spawnRate: 0,
                curveSpeed: 0.95,
@@ -2410,8 +2399,8 @@
                createCallback : (person) => {}
            },{
                type: 'worker',
-               TASKS: scene.registry.get('TASKS'),
-               ACTIONS: scene.registry.get('ACTIONS'),
+               TASKS: scene.registry.get('TASKS_WORKER'),
+               ACTIONS: scene.registry.get('ACTIONS_WORKER'),
                md: md,
                spawnRate: 0,
                curveSpeed: 0.95,
@@ -4028,6 +4017,19 @@
 
    }
 
+   const TASKS_WORKER = {};
+
+   TASKS_WORKER.default = {
+       init: function (mdc, md, people, scene, person) {
+       
+           console.log(person.name + 'I have no brain! (yet) ');
+       
+       },
+       update: (mdc, md, people, scene, person) => {
+       
+       }
+   };
+
    const log = new ConsoleLogger({
        cat: 'state',
        id: 'boot',
@@ -4049,6 +4051,10 @@
            reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
            reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
            reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
+           
+           
+           reg.set('TASKS_WORKER', TASKS_WORKER);
+           reg.set('ACTIONS_WORKER', {});
            
            
            //reg.set('TASKS', {

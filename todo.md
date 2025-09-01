@@ -27,11 +27,14 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - an items file should allow for header data, and a sheets array in the header should be used in place of strings for each item
     * (done) - no need for item index when calling getItemData any more.
   /lib/people :
+    * () - start a worker folder, and with that a task_worker.js file
     * () - make use of people data when creating people objects
     * () - see about updating worker AI so that they do not get stuck.
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /json/sheets
     * () - new people_core sheet compleate with png and json
+  /states/boot.js
+    * (done) - have it so that TASKS_WORKER object is used in place of the MAIN task object for workers
   /states/load.js :
     * (done) - load people_core.json
     * (done) - call ItemTools.genIndex in create method
