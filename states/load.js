@@ -21,11 +21,11 @@ class Load extends Phaser.Scene {
     
         this.load.setBaseURL('./');
         // SHEETS               
-        this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
-        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
-        this.load.atlas('timebar', 'sheets/timebar.png', 'sheets/timebar.json');
+        this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+        this.load.atlas('menu_1', 'json/sheets/menu_1.png', 'json/sheets/menu_1.json');
+        this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
+        this.load.atlas('timebar', 'json/sheets/timebar.png', 'json/sheets/timebar.json');
         // FONTS
         this.load.bitmapFont('min', 'fonts/min.png', 'fonts/min.xml');
         this.load.bitmapFont('min_3px_5px', 'fonts/min_3px_5px.png', 'fonts/min_3px_5px.xml');

@@ -239,12 +239,36 @@
        id: 'items',
        appendId: true
    });
+
+   const ItemTools = {};
+
+   ItemTools.genIndex = (scene, file_names=[] ) => {
+
+       const index = { files: [], items: {} };
+       file_names.forEach( (fn, file_index) => {
+           const items = scene.cache.json.get(fn);
+           index.files[file_index] = fn;
+           
+           Object.keys(items).forEach( ( item_key ) => {
+               index.items[item_key] = file_index;
+           });
+           
+       });
+       
+       scene.registry.set('items_index', index);
+       console.log( scene.registry.get('items_index') );
+   };
+
+
    /********* **********
    ITEMS ( BaseItem, Item, and Container Classes )
    ********** *********/
 
    const getItemData = (scene, key='hh_mug_1', indexKey='items_index', opt={}) => {
-       const itemsIndex = scene.cache.json.get(indexKey);
+       //const itemsIndex = scene.cache.json.get(indexKey);
+       
+       const itemsIndex = scene.registry.get('items_index');
+       
        const fi = itemsIndex.items[key];
        const fn = itemsIndex.files[fi];
        return Object.assign({}, scene.cache.json.get(fn)[key], opt);
@@ -361,7 +385,6 @@
            if( drop_count === 0 && conLen > 0){
                const itemRec = this.contents.pop();
                this.setFrame(this.prefix + '_stuff');
-               //const data_hard = getItemData(scene, itemRec.key );
                     
                if(itemRec.iType === 'Item'){
                    item_new = new Item(scene, itemRec.key, {}, 0, 0 );
@@ -2784,6 +2807,8 @@
        appendId: true
    });
 
+   const ITEM_FILES = ['containers_1', 'household_1'];
+
    class Load extends Phaser.Scene {
 
        constructor (config) {
@@ -2792,13 +2817,15 @@
        }
 
        preload(){
+           const scene =  this;
+       
            this.load.setBaseURL('./');
            // SHEETS               
-           this.load.image('map_16_16', 'sheets/map_16_16.png');
-           this.load.atlas('menu_1', 'sheets/menu_1.png', 'sheets/menu_1.json');
-           this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
-           this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
-           this.load.atlas('timebar', 'sheets/timebar.png', 'sheets/timebar.json');
+           this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+           this.load.atlas('menu_1', 'json/sheets/menu_1.png', 'json/sheets/menu_1.json');
+           this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
+           this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
+           this.load.atlas('timebar', 'json/sheets/timebar.png', 'json/sheets/timebar.json');
            // FONTS
            this.load.bitmapFont('min', 'fonts/min.png', 'fonts/min.xml');
            this.load.bitmapFont('min_3px_5px', 'fonts/min_3px_5px.png', 'fonts/min_3px_5px.xml');
@@ -2808,10 +2835,18 @@
              urlBase: 'json/maps/', //'drafts/mapdata/',
              mapIndicesStart: 1, mapIndicesStop: 5
            });
+           // PEOPLE
+           this.load.json('people_core', 'json/people/people_core.json');
            // ITEM DATA
-           this.load.json('items_index', 'json/items/items_index.json');
-           this.load.json('household_1', 'json/items/household_1.json');
-           this.load.json('containers_1', 'json/items/containers_1.json');
+           //this.load.json('items_index', 'json/items/items_index.json');
+           
+           ITEM_FILES.forEach( (fn) => {
+               scene.load.json(fn, 'json/items/' + fn + '.json');
+           });
+           
+           //this.load.json('household_1', 'json/items/household_1.json');
+           //this.load.json('containers_1', 'json/items/containers_1.json');
+           
            const gr = this.add.graphics();
            gr.fillStyle(0x000000);
            gr.fillRect(0,0,640,480);           
@@ -2822,10 +2857,13 @@
                gr.arc(320, 240, 100, Phaser.Math.DegToRad(270), Phaser.Math.DegToRad(270 + 360 * progress), false);
                gr.strokePath();
            });
-           //log('preload of load state started...');
        }
        
        create () {
+       
+       
+           ItemTools.genIndex(this, ['containers_1', 'household_1']);
+       
            this.scene.start('MainMenu');
        }
 

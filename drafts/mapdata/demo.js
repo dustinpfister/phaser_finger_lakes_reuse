@@ -1,13 +1,14 @@
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata/mapdata.js';
 import { Person, People } from '../../lib/people/people.js';
+import { ItemTools } from '../../lib/items/items.js';
 
 class Example extends Phaser.Scene {
     preload () {
         this.load.setBaseURL('../../'); 
-        this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
-        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
-        this.load.json('items_index', '../../json/items/items_index.json');
+        this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+        this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
+        //this.load.json('items_index', '../../json/items/items_index.json');
         this.load.json('household_1', 'json/items/household_1.json');
         this.load.json('containers_1', 'json/items/containers_1.json');
         MapLoader({
@@ -19,6 +20,9 @@ class Example extends Phaser.Scene {
     create () {
         this.registry.set('MAX_MAP_DONATIONS', 50);
         this.registry.set('CUSTOMER_SPAWN_RATE', 3000);
+        
+        ItemTools.genIndex(this, ['containers_1', 'household_1']);
+        
         const mdc = new MapDataCollection(this, { startMapIndex: 0 });
         //const player = this.registry.get('player', mdc); 
         this.registry.set('mdc', mdc);

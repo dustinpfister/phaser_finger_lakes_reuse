@@ -1,6 +1,7 @@
 import { ACTIONS_DEFAULT } from "../../lib/people/action.js";
 import { Person, People } from '../../lib/people/people.js';
 import { MapData, MapDataCollection, MapLoader } from '../../lib/mapdata/mapdata.js';
+import { ItemTools } from '../../lib/items/items.js';
 
 const TASKS_PEOPLE_DRAFT = {
     //player_control : {},
@@ -56,12 +57,11 @@ class Example extends Phaser.Scene {
     
         this.load.setBaseURL('../../');
         
-        this.load.image('map_16_16', 'sheets/map_16_16.png');
-        this.load.atlas('people_16_16', 'sheets/people_16_16.png', 'sheets/people_16_16.json');
-        this.load.atlas('donations_16_16', 'sheets/donations_16_16.png', 'sheets/donations_16_16.json');
+        this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+        this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
+        this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
         
         // ITEM DATA
-        this.load.json('items_index', 'json/items/items_index.json');
         this.load.json('household_1', 'json/items/household_1.json');
         this.load.json('containers_1', 'json/items/containers_1.json');     
         
@@ -75,6 +75,8 @@ class Example extends Phaser.Scene {
     }
     create () {
         const scene = this;
+        
+        ItemTools.genIndex(scene, ['containers_1', 'household_1']);
         
         this.registry.set('TASKS', TASKS_PEOPLE_DRAFT);
         this.registry.set('ACTIONS', ACTIONS_PEOPLE_DRAFT );

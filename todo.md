@@ -14,7 +14,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) start a json folder
     * (done) move /items to json/items
     * (done) move /maps to json/maps
-    * () move /sheets to /json/sheets
+    * (done) move /sheets to /json/sheets
     * (done) start a /json/people folder
   /json/items :
     * () I will want more items beyond just a plain white mug now
