@@ -1,8 +1,12 @@
 {
+  "header":{
+     "desc": "This is the first core households items collection",
+     "sheets": [ "donations_16_16" ]
+  },
   "items" : {
     "hh_mug_1" : {
       "desc": "Yet Another plain white Mug",
-      "tile" : { "sheet": "donations_16_16", "frame": "hh_mug_1" },
+      "tile" : { "sheet": 0, "frame": "hh_mug_1" },
       "drop_count" : 0
     }
   }
