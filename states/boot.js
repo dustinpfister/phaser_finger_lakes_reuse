@@ -30,7 +30,7 @@ class Boot extends Phaser.Scene {
         
         
         reg.set('TASKS_WORKER', TASKS_WORKER);
-        reg.set('ACTIONS_WORKER', {});
+        reg.set('ACTIONS_WORKER', ACTIONS_WORKER);
         
         
         //reg.set('TASKS', {

@@ -97,6 +97,13 @@ These are general tasks I would like to complete when it comes to various side f
     * Accounting / payroal / grants
 ```
 
+## RX () - Inventory, and Store ItemCollections
+
+```
+I only have a single ItemCollection Object for each map that is called donations. It might make a lot more sense to have a seperate Inventory 
+Item colleciton for priced items, and a store item collection for things like blue bins.
+```
+
 ## RX (    ) - General Data Folder
 ```
 As of this writing I was working on R8 and I moved a bunch of root folders into a single new root json folder. Although I think that 
