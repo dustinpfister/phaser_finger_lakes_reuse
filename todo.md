@@ -25,7 +25,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - update getItemData helper to make use of an itemIndex in the registry that was created using ItemTools.genIndex
     * (done) - an items file should contain the actual items data in an object called items, rather than the root object
     * (done) - an items file should allow for header data, and a sheets array in the header should be used in place of strings for each item
-    * () - no need for item index when calling getItemData any more.
+    * (done) - no need for item index when calling getItemData any more.
   /lib/people :
     * () - make use of people data when creating people objects
     * () - see about updating worker AI so that they do not get stuck.

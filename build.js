@@ -259,12 +259,16 @@
    ITEMS ( BaseItem, Item, and Container Classes )
    ********** *********/
 
-   const getItemData = (scene, key='hh_mug_1', indexKey='items_index', opt={}) => {
+   const getItemData = (scene, key='hh_mug_1') => {
        const itemsIndex = scene.registry.get('items_index');
        const fi = itemsIndex.items[key];
        const fn = itemsIndex.files[fi];
-       const data = scene.cache.json.get(fn); 
-       return Object.assign({}, data.items[key], opt);
+       const data = scene.cache.json.get(fn);
+       const item_data = data.items[key];
+       if(typeof item_data.tile.sheet === 'number'){
+           item_data.tile.sheet = data.header.sheets[ item_data.tile.sheet  ];
+       }
+       return Object.assign({}, item_data);
    };
        
    class BaseItem extends Phaser.GameObjects.Sprite {
@@ -314,7 +318,7 @@
    class Item extends BaseItem {
        
        constructor (scene, key, opt={}, x=0, y=0) {
-           const data = getItemData(scene, key, 'items_index', opt );
+           const data = getItemData(scene, key );
            super(scene, key, x, y, data.tile.sheet, data.tile.frame);
            this.iType = 'Item';
            this.desc = data.desc;
@@ -327,7 +331,7 @@
    class Container extends BaseItem {
        
        constructor (scene, key="blue_bin", opt={}, x=-1, y=-1) {
-           const data = getItemData(scene, key, 'items_index', opt );
+           const data = getItemData(scene, key );
            super(scene, key, x, y, data.tile.sheet, data.tile.frame);
            this.iType = 'Container';
            this.desc = data.desc;
