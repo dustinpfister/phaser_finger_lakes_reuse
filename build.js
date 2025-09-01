@@ -234,7 +234,7 @@
        
    }
 
-   const log$7 = new ConsoleLogger({
+   const log$8 = new ConsoleLogger({
        cat: 'lib',
        id: 'items',
        appendId: true
@@ -349,11 +349,11 @@
            
        addItem (item) {
            if(item.iType === 'Container' && !item.canChildOnEmpty){
-               log$7( 'This Container can not be a Child of another' );
+               log$8( 'This Container can not be a Child of another' );
                return false;
            }
            if(item.iType === 'Container' && item.canChildOnEmpty && (item.drop_count > 0 || item.contents.length > 0) ){
-               log$7( 'can only child this Container when it is empty' );
+               log$8( 'can only child this Container when it is empty' );
                return false;
            }
            if(this.autoCull && this.contents.length >= this.capacity){
@@ -432,83 +432,8 @@
        }
    }
 
-   const ACTIONS_CORE = {};
-   ACTIONS_CORE.default = {
-       init: function (mdc, md, people, scene, person) {},
-       noPath: function (mdc, md, people, scene, person, opt) {}
-   };
-   ACTIONS_CORE.drop = {
-       opt : {
-           max_tiles: 8,
-           count: 1,
-           at: null,
-           empty: [1]
-       },
-       init: function (mdc, md, people, scene, person, opt) {
-           const onHand = person.getData('onHand');
-           person.setData('itemMode', 2);
-           if( onHand.length > 0 ){
-               let i_item = onHand.length;
-               let dc = 0;
-               while(i_item-- && dc != opt.count ){
-                   const item = onHand[i_item];    
-                   let pos_drop = md.findEmptyDropSpot( person.getTilePos(), opt.max_tiles, opt.empty );
-                   if(opt.at){
-                       pos_drop = opt.at;
-                   }         
-                   if(pos_drop === null){
-                       person.say('I can not find a space to drop items!');
-                       this.setDone('no_space');
-                   }
-                   if(pos_drop != null){
-                       if(pos_drop.iType === 'Container' && opt.at){
-                           const pos = pos_drop.getTilePos();
-                           people.onHandAction(scene, person, pos_drop, md, pos.x, pos.y);
-                       }else {
-                           item.x = pos_drop.x * 16 + 8;
-                           item.y = pos_drop.y * 16 + 8;
-                           item.droped = true;
-                           mdc.addItemTo(item, md, 'donations');
-                           people.onHand.remove(item);
-                           person.setData('onHand', []);
-                       }
-                   }
-               }
-               this.setDone('items_droped');
-           }
-       }
-   };
-   ACTIONS_CORE.goto_map = {
-       opt: {
-           index: 1,
-           pos: null
-       },
-       update: function (mdc, md, people, scene, person, opt) {
-           const action = person.getData('act');
-           person.getTilePos();
-           if(md.index === opt.index){
-               if(opt.pos){
-                   person.setPath(scene, md, pos.x, pos.y);
-               }
-               action.setDone('at_map');
-           }
-       },
-       noPath: function (mdc, md, people, scene, person, opt) {
-           const pos1 = person.getTilePos();
-           let door = md.getDoorAt(pos1.x, pos1.y);
-           if(!door || (door && md.index != opt.index)){   
-               const options = md.hardMapData.doors.map((door)=>{  return door.to.mapNum });
-               const min = Math.min.apply(null, options);  
-               const door_to_map = options.some(( mapNum )=>{ return mapNum === opt.index  });
-               const to_map = door_to_map ? opt.index : min;
-               let pos2 = md.findDoorFrom(pos1.x, pos1.y, to_map, false);
-               if(pos2){
-                   person.setPath(scene, md, pos2.x, pos2.y);
-               }
-           }
-       }
-   };
-   ACTIONS_CORE.pickup = {
+   const ACTIONS$3 = {};
+   ACTIONS$3.pickup = {
        opt : {
            container: false,
            canRecyle: false,
@@ -580,10 +505,92 @@
            }
        }
    };
-   ACTIONS_CORE.player_control = {
+
+   const ACTIONS$2 = {};
+   ACTIONS$2.drop = {
+       opt : {
+           max_tiles: 8,
+           count: 1,
+           at: null,
+           empty: [1]
+       },
+       init: function (mdc, md, people, scene, person, opt) {
+           const onHand = person.getData('onHand');
+           person.setData('itemMode', 2);
+           if( onHand.length > 0 ){
+               let i_item = onHand.length;
+               let dc = 0;
+               while(i_item-- && dc != opt.count ){
+                   const item = onHand[i_item];    
+                   let pos_drop = md.findEmptyDropSpot( person.getTilePos(), opt.max_tiles, opt.empty );
+                   if(opt.at){
+                       pos_drop = opt.at;
+                   }         
+                   if(pos_drop === null){
+                       person.say('I can not find a space to drop items!');
+                       this.setDone('no_space');
+                   }
+                   if(pos_drop != null){
+                       if(pos_drop.iType === 'Container' && opt.at){
+                           const pos = pos_drop.getTilePos();
+                           people.onHandAction(scene, person, pos_drop, md, pos.x, pos.y);
+                       }else {
+                           item.x = pos_drop.x * 16 + 8;
+                           item.y = pos_drop.y * 16 + 8;
+                           item.droped = true;
+                           mdc.addItemTo(item, md, 'donations');
+                           people.onHand.remove(item);
+                           person.setData('onHand', []);
+                       }
+                   }
+               }
+               this.setDone('items_droped');
+           }
+       }
+   };
+
+   const ACTIONS$1 = {};
+   ACTIONS$1.goto_map = {
+       opt: {
+           index: 1,
+           pos: null
+       },
+       update: function (mdc, md, people, scene, person, opt) {
+           const action = person.getData('act');
+           person.getTilePos();
+           if(md.index === opt.index){
+               if(opt.pos){
+                   person.setPath(scene, md, pos.x, pos.y);
+               }
+               action.setDone('at_map');
+           }
+       },
+       noPath: function (mdc, md, people, scene, person, opt) {
+           const pos1 = person.getTilePos();
+           let door = md.getDoorAt(pos1.x, pos1.y);
+           if(!door || (door && md.index != opt.index)){   
+               const options = md.hardMapData.doors.map((door)=>{  return door.to.mapNum });
+               const min = Math.min.apply(null, options);  
+               const door_to_map = options.some(( mapNum )=>{ return mapNum === opt.index  });
+               const to_map = door_to_map ? opt.index : min;
+               let pos2 = md.findDoorFrom(pos1.x, pos1.y, to_map, false);
+               if(pos2){
+                   person.setPath(scene, md, pos2.x, pos2.y);
+               }
+           }
+       }
+   };
+
+   const ACTIONS = Object.assign({}, ACTIONS$3, ACTIONS$2, ACTIONS$1 );
+   ACTIONS.default = {
+       init: function (mdc, md, people, scene, person) {
+       },
+       noPath: function (mdc, md, people, scene, person, opt) {}
+   };
+   ACTIONS.player_control = {
        init: function (mdc, md, people, scene, person) {}
    };
-   ACTIONS_CORE.wonder = {
+   ACTIONS.wonder = {
        opt: {
            next_spot: false,
            pause : 1200,
@@ -937,7 +944,7 @@
        }
    };
 
-   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS_CORE, ACTIONS_WORKER_DI, ACTIONS_CUSTOMER  );
+   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS, ACTIONS_WORKER_DI, ACTIONS_CUSTOMER  );
    class Action {
        constructor (scene, people, person, key='wonder', opt={}) {
        
@@ -980,7 +987,7 @@
    // In addition I am using my own message.js for logging
    // ~ Dustin ( https://github.com/dustinpfister )
 
-   const log$6 = new ConsoleLogger ({
+   const log$7 = new ConsoleLogger ({
        cat: 'lib',
        id: 'pathfinding',
        appendId: true
@@ -1211,9 +1218,9 @@
            if (startX < 0 || startY < 0 || endX < 0 || endY < 0 || 
            startX > collisionGrid[0].length-1 || startY > collisionGrid.length-1 || 
            endX > collisionGrid[0].length-1 || endY > collisionGrid.length-1) {        
-               log$6('start or end point is out of bounds.');
-               log$6(startX, startY, endX, endY);
-               log$6(collisionGrid[0].length-1, collisionGrid.length-1);
+               log$7('start or end point is out of bounds.');
+               log$7(startX, startY, endX, endY);
+               log$7(collisionGrid[0].length-1, collisionGrid.length-1);
                throw "Your start or end point is outside the scope of your grid.";
            }
            //Start and end are the same tile.
@@ -1469,7 +1476,7 @@
 
    }
 
-   const log$5 = new ConsoleLogger({
+   const log$6 = new ConsoleLogger({
        cat: 'lib',
        id: 'task'
    });
@@ -1576,8 +1583,8 @@
            if( action.done && action.key === 'pickup_drop'){
                // possible results > 'no_empty_items'
                if(action.result === 'no_empty_items'){
-                   log$5('di worker has a result of no_empty_items when set to pickup_drop action!');
-                   log$5('set to worker_di_idle then?...\n\n');
+                   log$6('di worker has a result of no_empty_items when set to pickup_drop action!');
+                   log$6('set to worker_di_idle then?...\n\n');
                    people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
                }
            }
@@ -1587,7 +1594,7 @@
                    people.setAction(scene, mdc, md, person, 'worker_di_recycle_empty', { } );
                }
                if(action.result != 'have_empty'){
-                   log$5('pickup_empty action ended in a result other than have_empty result is :' + action.result);
+                   log$6('pickup_empty action ended in a result other than have_empty result is :' + action.result);
                } 
            }
            if( action.done && action.key === 'worker_di_recycle_empty'){
@@ -1606,8 +1613,8 @@
                    people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
                }
                if(action.result === 'no_space'){
-                   log$5('di worker can not complete a drop action, as there is no space!?');
-                   log$5('set to worker_di_idle then?...\n\n');
+                   log$6('di worker can not complete a drop action, as there is no space!?');
+                   log$6('set to worker_di_idle then?...\n\n');
                    people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
                }
            }
@@ -1715,7 +1722,7 @@
        }
    }
 
-   const log$4 = new ConsoleLogger({
+   const log$5 = new ConsoleLogger({
        cat: 'lib',
        id: 'people',
        appendId: true
@@ -1744,8 +1751,7 @@
            this.setData({
                task : { },
                act : { foo: 'bar' },
-               //action_done: false,
-               //action_result: '',
+               main_task : 'default',
                itemOfInterest: null,
                path: [], pathCT: 0,
                hits: 0, idleTime: 0,
@@ -1872,11 +1878,11 @@
    PEOPLE_TYPES.worker = {
 
        data : {
-           0 :  { count: 1, spawn: 0 },
-           1 :  { count: 1, spawn: 0 },
-           2 :  { count: 1, spawn: 0 },
-           3 :  { count: 1, spawn: 0 },
-           4  : { count: 2, spawn: 0 }
+           0 :  { count: 0, spawn: 0 },
+           1 :  { count: 0, spawn: 0 },
+           2 :  { count: 0, spawn: 0 },
+           3 :  { count: 0, spawn: 0 },
+           4  : { count: 1, spawn: 0 }
        },
 
        init: function(mdc, md, people, scene){},
@@ -2024,12 +2030,10 @@
            const people = this;
            const task = new Task(scene, this, person, { key: taskKey, TASKS: person.TASKS });
            person.setData('task', task);
-           
            task.init(mdc, md, people, scene, person);
        }
        
        setAction (scene, mdc, md, person, actionKey = 'default', opt ) {
-           //person.action = actionKey;
            const opt_action = Object.assign({}, { ACTIONS: person.ACTIONS }, opt);
            person.setData('act', new Action( scene, this, person, actionKey, opt_action  ) );
            person.getData('act').init(md);
@@ -2167,7 +2171,7 @@
            }   
            const pos_drop = md.findEmptyDropSpot( cPos, 8 );       
            if(pos_drop === null){
-               log$4('can not find a space for the drop!', 'SAY');
+               log$5('can not find a space for the drop!', 'SAY');
            }       
            if(pos_drop != null){
                person.setData('itemMode', 2);
@@ -2286,7 +2290,7 @@
        
    }
 
-   const log$3 = new ConsoleLogger ({
+   const log$4 = new ConsoleLogger ({
        cat: 'lib',
        id: 'mapdata',
        appendId: true
@@ -2310,10 +2314,10 @@
            items = md.getItemsAtPX(px, py),
            item = items[0];
            if(mdc.zeroPlayerMode){
-               log$3('zero player mode');
-               log$3(tx + ', ' + ty);
-               log$3(items);
-               log$3('');
+               log$4('zero player mode');
+               log$4(tx + ', ' + ty);
+               log$4(items);
+               log$4('');
            }
            if(!mdc.zeroPlayerMode && player){
                const itemMode = player.getData('itemMode'),
@@ -2323,7 +2327,7 @@
                }
                if(tile && !item){
                    if(!md.canWalk(tile) ){
-                       log$3(tile.index);
+                       log$4(tile.index);
                    }
                    if(md.canWalk(tile) && itemMode != 2 && itemMode != 0 ){    
                        player.setPath(scene, scene.registry.get('mdc').getActive(), tx, ty);
@@ -2334,18 +2338,18 @@
                }    
                if(itemMode === 0){
                    if(tile){
-                       log$3('********** **********');
-                       log$3('tile info: ');
-                       log$3('pos: ' + tile.x + ',' + tile.y);
-                       log$3(tile);
-                       log$3('********** **********');
+                       log$4('********** **********');
+                       log$4('tile info: ');
+                       log$4('pos: ' + tile.x + ',' + tile.y);
+                       log$4(tile);
+                       log$4('********** **********');
                    }
                    if(items){
-                       log$3('********** **********');
-                       log$3('items info: ');
-                       log$3('num of items: ' + items.length);
-                       log$3(items);
-                       log$3('********** **********');
+                       log$4('********** **********');
+                       log$4('items info: ');
+                       log$4('num of items: ' + items.length);
+                       log$4(items);
+                       log$4('********** **********');
                    }
                }
            }
@@ -3620,7 +3624,7 @@
        
    }
 
-   const log$2 = new ConsoleLogger({
+   const log$3 = new ConsoleLogger({
        cat: 'state',
        id: 'mapview',
        appendId: true
@@ -3774,7 +3778,7 @@
                   mi += 1;
               }
               if(!player){
-                  log$2('no worker at any map!');
+                  log$3('no worker at any map!');
                   return;
               }
            }
@@ -3824,11 +3828,11 @@
            const md = mdc.getMapDataByIndex(mi);
            
            if(mdc.zeroPlayerMode){
-               log$2('can not set a player object as MDC is set to zero player mode ');
+               log$3('can not set a player object as MDC is set to zero player mode ');
            }
            
            if(!worker){
-               log$2('no worker object given to set to player');
+               log$3('no worker object given to set to player');
                return;
            }
            
@@ -3964,7 +3968,7 @@
        
    }
 
-   const log$1 = new ConsoleLogger({
+   const log$2 = new ConsoleLogger({
        cat: 'state',
        id: 'menu',
        appendId: true
@@ -3977,7 +3981,7 @@
        }
        
        startMapView () {
-           log$1('starting mapview...');
+           log$2('starting mapview...');
            this.scene.start('Mapview');
        }
        
@@ -4017,16 +4021,146 @@
 
    }
 
+   const ACTIONS_WORKER = Object.assign(ACTIONS, ACTIONS_WORKER_DI);
+
    const TASKS_WORKER = {};
 
+   const log$1 = console.log;
+
    TASKS_WORKER.default = {
-       init: function (mdc, md, people, scene, person) {
-       
-           console.log(person.name + 'I have no brain! (yet) ');
-       
+       init: function (mdc, md, people, scene, person) { 
+           const main_task = person.getData('main_task');
+           log$1('**********DEFAULT WORKER TASK **********');
+           log$1('name : ' + person.name);
+           log$1('main task : ' + main_task);
+           if(!main_task || main_task === 'default'){
+               log$1('sense I do not have a main task, I should get one.');
+               person.setData('main_task', 'di');
+           }        
+           log$1('****************************************');
        },
        update: (mdc, md, people, scene, person) => {
-       
+           people.setTask(scene, mdc, md, person, person.getData('main_task') );
+       }
+   };
+
+   TASKS_WORKER.di = {
+       init: (mdc, md, people, scene, person, opt) => {
+           people.setAction(scene, mdc, md, person, 'worker_di_idle' );    
+       },
+       update: (mdc, md, people, scene, person, opt, delta) => {
+           person.getData('action_done');
+           const oh = person.getData('onHand');
+           person.getData('maxOnHand');
+           const action = person.getData('act');
+           const item = oh[0];
+           // for one reason or another a worker finds themselves to be idle
+           // while working di. There are a few outcomes here that involve where
+           // they are, and what they have on hand at the moment
+           if(action.done && action.key == 'worker_di_idle'){
+               if(action.result === 'empty_handed'){
+                   people.setAction(scene, mdc, md, person, 'worker_di_return' );
+               }
+               if(action.result === 'have_items'){
+                    if(md.index != 4){
+                        people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
+                    }
+                    if(md.index === 4){
+                        people.setAction(scene, mdc, md, person, 'goto_map', { index: 1 } );
+                    }
+               }
+               if( action.result === 'idle_without_items' ){
+                   if(md.index === 4){
+                       const count_empty = md.donations.getEmpties().length;
+                       const count_drops = md.donations.getDrops().length;
+                       if(count_empty > 0){
+                           people.setAction(scene, mdc, md, person, 'pickup_empty', { } );
+                           return;
+                       }
+                       if(count_drops > 0){
+                           people.setAction(scene, mdc, md, person, 'pickup_drop', { } );
+                           return;
+                       }
+                       people.setAction(scene, mdc, md, person, 'wonder', { 
+                           getOut : function(mdc, md, people, scene, person, opt){
+                               return count_empty > 0 || count_drops > 0;
+                           }
+                       });
+                   }
+                   if(md.index != 4){
+                       people.setAction(scene, mdc, md, person, 'worker_di_return' );
+                   }
+               }
+               if( action.result === 'idle_with_items' ){
+                   if(md.index === 4){
+                       if(item.iType === 'Item'){
+                           people.setAction(scene, mdc, md, person, 'goto_map', { index: 1 } );
+                       }
+                       if(item.iType === 'Container' && item.isEmpty() ){ 
+                           people.setAction(scene, mdc, md, person, 'worker_di_recycle_empty', { } );
+                       }
+                       if(item.iType === 'Container' && !item.isEmpty() );
+                   }
+                   if(md.index != 4){
+                       people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
+                   }
+               }
+           }
+           if( action.done && action.key == 'goto_map' ){
+               // (only one result 'at_map' )
+               if(md.index != 4){
+                   people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
+               }
+               if(md.index === 4){
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+               }
+           }
+           if( action.done && action.key === 'pickup'){
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+           }
+           if( action.done && action.key === 'pickup_drop'){
+               // possible results > 'no_empty_items'
+               if(action.result === 'no_empty_items'){
+                   log$1('di worker has a result of no_empty_items when set to pickup_drop action!');
+                   log$1('set to worker_di_idle then?...\n\n');
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+               }
+           }
+           if( action.done && action.key === 'pickup_empty'){
+               // possible results > 'have_empty'
+               if(action.result == 'have_empty'){
+                   people.setAction(scene, mdc, md, person, 'worker_di_recycle_empty', { } );
+               }
+               if(action.result != 'have_empty'){
+                   log$1('pickup_empty action ended in a result other than have_empty result is :' + action.result);
+               } 
+           }
+           if( action.done && action.key === 'worker_di_recycle_empty'){
+               // possible results > 'nothing_on_hand', 'no_spot', 'no_bin', 'at_bin'
+               if(action.result === 'at_bin'){
+                   const ioi = person.getData('itemOfInterest');
+                   people.setAction(scene, mdc, md, person, 'drop', { at: ioi, count: 1 });
+               }
+               if(action.result === 'nothing_on_hand' || action.result === 'no_spot' || action.result === 'no_bin' ){
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+               }
+           }
+           if( action.done && action.key === 'drop' ){
+               // possible results > 'no_space', 'items_droped'
+               if(action.result === 'items_droped'){
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+               }
+               if(action.result === 'no_space'){
+                   log$1('di worker can not complete a drop action, as there is no space!?');
+                   log$1('set to worker_di_idle then?...\n\n');
+                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
+               }
+           }
+           
+           if(action.done && action.key == 'worker_di_return'){
+               // possible results > 'at_di'
+               people.setAction(scene, mdc, md, person, 'worker_di_idle' );
+           }
        }
    };
 
@@ -4054,7 +4188,7 @@
            
            
            reg.set('TASKS_WORKER', TASKS_WORKER);
-           reg.set('ACTIONS_WORKER', {});
+           reg.set('ACTIONS_WORKER', ACTIONS_WORKER);
            
            
            //reg.set('TASKS', {
