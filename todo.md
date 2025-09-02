@@ -31,11 +31,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - start a common folder
     * (done) - break down all of the core actions into stand alone files in the common folder
     * () - start a customer folder
-
     * () - see about updating worker AI so that they do not get stuck.
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
-
-
     * () - make use of people data when creating people objects
   /json/sheets
     * () - new people_core sheet compleate with png and json
