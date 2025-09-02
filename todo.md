@@ -31,11 +31,12 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - start a common folder
     * (done) - break down all of the core actions into stand alone files in the common folder
     * (done) - start a customer folder with an ai_customer.js file
-    * () - finish breaking down worker actions in the new worker folder.
+    * (done) - finish breaking down worker actions in the new worker folder.
     * () - finish breaking down customer actions in the new customer folder.
     * () - see about updating worker AI so that they do not get stuck.
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
     * () - make use of people data when creating people objects
+    * () - break down action_worker_di down into fine grain files for each action
   /json/sheets
     * () - new people_core sheet compleate with png and json
   /states/boot.js

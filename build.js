@@ -234,7 +234,7 @@
        
    }
 
-   const log$8 = new ConsoleLogger({
+   const log$7 = new ConsoleLogger({
        cat: 'lib',
        id: 'items',
        appendId: true
@@ -349,11 +349,11 @@
            
        addItem (item) {
            if(item.iType === 'Container' && !item.canChildOnEmpty){
-               log$8( 'This Container can not be a Child of another' );
+               log$7( 'This Container can not be a Child of another' );
                return false;
            }
            if(item.iType === 'Container' && item.canChildOnEmpty && (item.drop_count > 0 || item.contents.length > 0) ){
-               log$8( 'can only child this Container when it is empty' );
+               log$7( 'can only child this Container when it is empty' );
                return false;
            }
            if(this.autoCull && this.contents.length >= this.capacity){
@@ -432,8 +432,8 @@
        }
    }
 
-   const ACTIONS$6 = {};
-   ACTIONS$6.pickup = {
+   const ACTIONS$9 = {};
+   ACTIONS$9.pickup = {
        opt : {
            container: false,
            canRecyle: false,
@@ -506,8 +506,8 @@
        }
    };
 
-   const ACTIONS$5 = {};
-   ACTIONS$5.drop = {
+   const ACTIONS$8 = {};
+   ACTIONS$8.drop = {
        opt : {
            max_tiles: 8,
            count: 1,
@@ -549,8 +549,8 @@
        }
    };
 
-   const ACTIONS$4 = {};
-   ACTIONS$4.goto_map = {
+   const ACTIONS$7 = {};
+   ACTIONS$7.goto_map = {
        opt: {
            index: 1,
            pos: null
@@ -581,16 +581,16 @@
        }
    };
 
-   const ACTIONS$3 = Object.assign({}, ACTIONS$6, ACTIONS$5, ACTIONS$4 );
-   ACTIONS$3.default = {
+   const ACTIONS$6 = Object.assign({}, ACTIONS$9, ACTIONS$8, ACTIONS$7 );
+   ACTIONS$6.default = {
        init: function (mdc, md, people, scene, person) {
        },
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
-   ACTIONS$3.player_control = {
+   ACTIONS$6.player_control = {
        init: function (mdc, md, people, scene, person) {}
    };
-   ACTIONS$3.wonder = {
+   ACTIONS$6.wonder = {
        opt: {
            next_spot: false,
            pause : 1200,
@@ -756,7 +756,7 @@
        }
    };
 
-   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$3, ACTIONS_CUSTOMER  );
+   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$6, ACTIONS_CUSTOMER);
    class Action {
        constructor (scene, people, person, key='wonder', opt={}) {
        
@@ -799,7 +799,7 @@
    // In addition I am using my own message.js for logging
    // ~ Dustin ( https://github.com/dustinpfister )
 
-   const log$7 = new ConsoleLogger ({
+   const log$6 = new ConsoleLogger ({
        cat: 'lib',
        id: 'pathfinding',
        appendId: true
@@ -1030,9 +1030,9 @@
            if (startX < 0 || startY < 0 || endX < 0 || endY < 0 || 
            startX > collisionGrid[0].length-1 || startY > collisionGrid.length-1 || 
            endX > collisionGrid[0].length-1 || endY > collisionGrid.length-1) {        
-               log$7('start or end point is out of bounds.');
-               log$7(startX, startY, endX, endY);
-               log$7(collisionGrid[0].length-1, collisionGrid.length-1);
+               log$6('start or end point is out of bounds.');
+               log$6(startX, startY, endX, endY);
+               log$6(collisionGrid[0].length-1, collisionGrid.length-1);
                throw "Your start or end point is outside the scope of your grid.";
            }
            //Start and end are the same tile.
@@ -1288,224 +1288,19 @@
 
    }
 
-   const log$6 = new ConsoleLogger({
+   new ConsoleLogger({
        cat: 'lib',
        id: 'task'
    });
    const TASKS_DEFAULT = {};
    TASKS_DEFAULT.default = {
-       init: function (mdc, md, people, scene, person) {
-           const pType = person.getData('type'),
-           psType = person.getData('subType');
-           if(pType === 'worker'){
-               people.setTask(scene, mdc, md, person, 'di' );
-           }     
-           if(pType === 'customer' && psType === 'donator'){
-               people.setTask(scene, mdc, md, person, 'donate' );
-           }
-           if(pType === 'customer' && psType === 'shopper'){
-               //log( person.name, psType );
-               people.setTask(scene, mdc, md, person, 'shopping' );
-           }
-       },
-       update: (mdc, md, people, scene, person) => {
-       
-       }
-   };
-   TASKS_DEFAULT.player_control = {
-       init: (mdc, md, people, scene, person) => {
-           people.setAction(scene, mdc, md, person, 'player_control' );
-       },
+       init: function (mdc, md, people, scene, person) {},
        update: (mdc, md, people, scene, person) => {}
    };
-   TASKS_DEFAULT.di = {
-       init: (mdc, md, people, scene, person, opt) => {
-           people.setAction(scene, mdc, md, person, 'worker_di_idle' );    
-       },
-       update: (mdc, md, people, scene, person, opt, delta) => {
-           person.getData('action_done');
-           const oh = person.getData('onHand');
-           person.getData('maxOnHand');
-           const action = person.getData('act');
-           const item = oh[0];
-           // for one reason or another a worker finds themselves to be idle
-           // while working di. There are a few outcomes here that involve where
-           // they are, and what they have on hand at the moment
-           if(action.done && action.key == 'worker_di_idle'){
-               if(action.result === 'empty_handed'){
-                   people.setAction(scene, mdc, md, person, 'worker_di_return' );
-               }
-               if(action.result === 'have_items'){
-                    if(md.index != 4){
-                        people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
-                    }
-                    if(md.index === 4){
-                        people.setAction(scene, mdc, md, person, 'goto_map', { index: 1 } );
-                    }
-               }
-               if( action.result === 'idle_without_items' ){
-                   if(md.index === 4){
-                       const count_empty = md.donations.getEmpties().length;
-                       const count_drops = md.donations.getDrops().length;
-                       if(count_empty > 0){
-                           people.setAction(scene, mdc, md, person, 'pickup_empty', { } );
-                           return;
-                       }
-                       if(count_drops > 0){
-                           people.setAction(scene, mdc, md, person, 'pickup_drop', { } );
-                           return;
-                       }
-                       people.setAction(scene, mdc, md, person, 'wonder', { 
-                           getOut : function(mdc, md, people, scene, person, opt){
-                               return count_empty > 0 || count_drops > 0;
-                           }
-                       });
-                   }
-                   if(md.index != 4){
-                       people.setAction(scene, mdc, md, person, 'worker_di_return' );
-                   }
-               }
-               if( action.result === 'idle_with_items' ){
-                   if(md.index === 4){
-                       if(item.iType === 'Item'){
-                           people.setAction(scene, mdc, md, person, 'goto_map', { index: 1 } );
-                       }
-                       if(item.iType === 'Container' && item.isEmpty() ){ 
-                           people.setAction(scene, mdc, md, person, 'worker_di_recycle_empty', { } );
-                       }
-                       if(item.iType === 'Container' && !item.isEmpty() );
-                   }
-                   if(md.index != 4){
-                       people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
-                   }
-               }
-           }
-           if( action.done && action.key == 'goto_map' ){
-               // (only one result 'at_map' )
-               if(md.index != 4){
-                   people.setAction(scene, mdc, md, person, 'worker_di_process', {   } );
-               }
-               if(md.index === 4){
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-               }
-           }
-           if( action.done && action.key === 'pickup'){
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-           }
-           if( action.done && action.key === 'pickup_drop'){
-               // possible results > 'no_empty_items'
-               if(action.result === 'no_empty_items'){
-                   log$6('di worker has a result of no_empty_items when set to pickup_drop action!');
-                   log$6('set to worker_di_idle then?...\n\n');
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-               }
-           }
-           if( action.done && action.key === 'pickup_empty'){
-               // possible results > 'have_empty'
-               if(action.result == 'have_empty'){
-                   people.setAction(scene, mdc, md, person, 'worker_di_recycle_empty', { } );
-               }
-               if(action.result != 'have_empty'){
-                   log$6('pickup_empty action ended in a result other than have_empty result is :' + action.result);
-               } 
-           }
-           if( action.done && action.key === 'worker_di_recycle_empty'){
-               // possible results > 'nothing_on_hand', 'no_spot', 'no_bin', 'at_bin'
-               if(action.result === 'at_bin'){
-                   const ioi = person.getData('itemOfInterest');
-                   people.setAction(scene, mdc, md, person, 'drop', { at: ioi, count: 1 });
-               }
-               if(action.result === 'nothing_on_hand' || action.result === 'no_spot' || action.result === 'no_bin' ){
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-               }
-           }
-           if( action.done && action.key === 'drop' ){
-               // possible results > 'no_space', 'items_droped'
-               if(action.result === 'items_droped'){
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-               }
-               if(action.result === 'no_space'){
-                   log$6('di worker can not complete a drop action, as there is no space!?');
-                   log$6('set to worker_di_idle then?...\n\n');
-                   people.setAction(scene, mdc, md, person, 'worker_di_idle', {   } );
-               }
-           }
-           
-           if(action.done && action.key == 'worker_di_return'){
-               // possible results > 'at_di'
-               people.setAction(scene, mdc, md, person, 'worker_di_idle' );
-           }
-       }
-   };
-   TASKS_DEFAULT.shopping = {
-       init: (mdc, md, people, scene, person) => {
-           people.setAction(scene, mdc, md, person, 'shopper_idle' );
-       },
-       update: (mdc, md, people, scene, person) => {
-           const act = person.getData('act');
-           if( act.key === 'shopper_idle' && act.done ){
-               if(act.result === 'no_items'){
-                   people.setAction(scene, mdc, md, person, 'shopper_wonder', { } );
-               }
-               if(act.result === 'items_to_buy'){
-                   people.setAction(scene, mdc, md, person, 'shopper_find_itemofinterest', { } );
-               }   
-           }
-           if( act.key === 'shopper_wonder' && act.done ){
-               if(act.result === 'items_found'){
-                   people.setAction(scene, mdc, md, person, 'shopper_find_itemofinterest', { } );
-               }
-           }
-           if( act.key === 'shopper_find_itemofinterest' && act.done ){
-               if(act.result === 'have_ioi'){
-                   people.setAction(scene, mdc, md, person, 'shopper_buy_itemofinterest', { } );
-               }
-               if(act.result === 'no_ioi'){
-                   people.setAction(scene, mdc, md, person, 'shopper_idle', { } );
-               }
-           }
-           if( act.key === 'shopper_buy_itemofinterest' && act.done ){
-               if( act.result === 'items_bought' || act.result === 'no_ioi_to_buy' ){
-                   people.setAction(scene, mdc, md, person, 'shopper_idle', { } );
-               }
-           }
-       }
-   };
-   TASKS_DEFAULT.donate = {
-       init: (mdc, md, people, scene, person) => {
-           people.setAction(scene, mdc, md, person, 'donation_goto_droplocation' );
-       },
-       update: (mdc, md, people, scene, person) => {
-           const action = person.getData('act');
-           if( action.done ){
-               if(action.key === 'donation_goto_droplocation'){
-                   people.setAction(scene, mdc, md, person, 'drop', { max_tiles: 16 } );
-                   return;
-               }
-               if(action.key === 'drop'){
-                   people.setAction(scene, mdc, md, person, 'customer_goto_exit' );
-                   return;
-               }
-               if(action.key === 'customer_goto_exit' && action.result === 'at_exit' ){
-                   people.kill(person);
-                   return;
-               }
-           } 
-           const max_donations = scene.registry.get('MAX_MAP_DONATIONS') || 10;
-           const donations = md.donations;
-           const donations_incoming = people.totalOnHandItems();
-           const donations_drop = donations.children.size;
-           const donations_total = donations_incoming + donations_drop;
-           if(donations_total >= max_donations){
-               people.setAction(scene, mdc, md, person, 'customer_goto_exit');
-           }
-       }
-   };
 
-   const TASK_DEFAULTS = { key : 'default' };
    class Task {
        constructor (scene, people, person, opt={}) {
-           opt = Object.assign({}, TASK_DEFAULTS, opt);
+           opt = Object.assign({}, { key : 'default' }, opt);
            this.TASKS = opt.TASKS || TASKS_DEFAULT;
            this.key = opt.key;
            this.opt = opt;
@@ -3833,7 +3628,7 @@
 
    }
 
-   const ACTIONS$2 = {};
+   const ACTIONS$5 = {};
 
    const find_drop_spot = function(tile){
        const md = this, items = md.getItemsAtTile( tile ), item = items[0];
@@ -3843,7 +3638,7 @@
        return false;
    };
 
-   ACTIONS$2.pickup_drop = {
+   ACTIONS$5.pickup_drop = {
        opt: {
            near: {x: 35, y: 4}, limit: 50,
            type: 'drop', container: false, max_items: 1
@@ -3865,118 +3660,9 @@
        }
    };
 
-   const ACTIONS$1 = Object.assign({}, ACTIONS$3, ACTIONS$2 );
+   const ACTIONS$4 = {};
 
-   ACTIONS$1.default = {
-       init: function (mdc, md, people, scene, person) {
-       },
-       noPath: function (mdc, md, people, scene, person, opt) {}
-   };
-
-   ACTIONS$1.worker_di_idle = {
-       opt:{},
-       update: function (mdc, md, people, scene, person, opt) {
-           //const player = scene.registry.get('player');
-           const oh = person.getData('onHand');
-           if( md.index != 4 && oh.length === 0 ){
-                this.setDone('empty_handed');
-           }
-           if( md.index != 4 && oh.length > 0 ){
-                this.setDone('have_items');
-           }
-           if( md.index === 4  && oh.length === 0 ){
-                this.setDone('idle_without_items');
-           }
-           if( md.index === 4  && oh.length > 0 ){
-                this.setDone('idle_with_items');
-           }
-       }
-   };
-   ACTIONS$1.worker_di_return = {
-       update: function (mdc, md, people, scene, person, opt) {
-           if(md.index === 4){
-               this.setDone('at_di');
-           }
-       },
-       noPath: function (mdc, md, people, scene, person, opt) {
-           const pos1 = person.getTilePos();
-           let door = md.getDoorAt(pos1.x, pos1.y);
-           if(!door || (door && md.index != 4)){   
-               const options = md.hardMapData.doors.map((door)=>{  return door.to.mapNum });
-               const min = Math.min.apply(null, options);  
-               const door_to_map = options.some(( mapNum )=>{ return mapNum === 4  });
-               const to_map = door_to_map ? 4 : min;
-               let pos2 = md.findDoorFrom(pos1.x, pos1.y, to_map, false);
-               if(pos2){
-                   person.setPath(scene, md, pos2.x, pos2.y);
-               }
-           }
-       }
-   };
-
-
-   ACTIONS$1.worker_di_recycle_empty = {
-       opt: {},
-       init: function(mdc, md, people, scene, person, opt, delta) {
-            person.setData('itemOfInterest', null);
-            const bin = md.getRecycling();
-            const onHand = person.getData('onHand');
-            if(onHand.length === 0){
-                this.setDone('nothing_on_hand');
-                return;
-            }
-            if(bin){
-                const pos_bin = bin.getTilePos();
-                const pos = md.findWalkToNear(pos_bin, 10);
-                if(pos){
-                    person.setData('itemOfInterest', bin);
-                    person.setPath(scene, md, pos.x, pos.y);
-                }
-                if(!pos){
-                    this.setDone('no_spot');
-                }
-            }
-            if(!bin){
-                person.say('No bin at this map!');
-                this.setDone('no_bin');
-            }       
-       },
-       update : function(mdc, md, people, scene, person, opt, delta) {
-           const ioi = person.getData('itemOfInterest');
-           const path = person.getData('path');
-           if(ioi && path.length === 0){
-                this.setDone('at_bin');
-           }
-       }
-   };
-
-   ACTIONS$1.worker_di_process = {
-       opt: {
-           maxCount: 5,
-           count: 5
-       },
-       init: function(mdc, md, people, scene, person, opt, delta) {
-           const oh = person.getData('onHand');  
-           oh.forEach( (item) => {
-               item.setPrice(0.50, 0);
-           });
-       },
-       update: function(mdc, md, people, scene, person, opt, delta) {},
-       noPath: function(mdc, md, people, scene, person, opt){
-           const oh = person.getData('onHand');
-           person.getData('maxOnHand');
-           if(oh.length > 0 && opt.count > 0 ){
-                const pos = md.getRandomWalkTo();
-                person.setPath(scene, md, pos.x, pos.y);
-                opt.count = opt.count - 1;    
-           }    
-           if(oh.length > 0 && opt.count <= 0 ){
-                people.setAction(scene, mdc, md, person, 'drop', { count: 1 } );
-           }
-       }
-   };
-
-   ACTIONS$1.pickup_empty = {
+   ACTIONS$4.pickup_empty = {
        opt : {
            container: true,
            canRecyle: true,
@@ -4030,13 +3716,125 @@
        }
    };
 
-   const ACTIONS = Object.assign({}, ACTIONS$1 );
+   const ACTIONS$3 = {};
 
-   const TASKS = {};
+   ACTIONS$3.worker_di_idle = {
+       opt:{},
+       update: function (mdc, md, people, scene, person, opt) {
+           //const player = scene.registry.get('player');
+           const oh = person.getData('onHand');
+           if( md.index != 4 && oh.length === 0 ){
+                this.setDone('empty_handed');
+           }
+           if( md.index != 4 && oh.length > 0 ){
+                this.setDone('have_items');
+           }
+           if( md.index === 4  && oh.length === 0 ){
+                this.setDone('idle_without_items');
+           }
+           if( md.index === 4  && oh.length > 0 ){
+                this.setDone('idle_with_items');
+           }
+       }
+   };
+   ACTIONS$3.worker_di_return = {
+       update: function (mdc, md, people, scene, person, opt) {
+           if(md.index === 4){
+               this.setDone('at_di');
+           }
+       },
+       noPath: function (mdc, md, people, scene, person, opt) {
+           const pos1 = person.getTilePos();
+           let door = md.getDoorAt(pos1.x, pos1.y);
+           if(!door || (door && md.index != 4)){   
+               const options = md.hardMapData.doors.map((door)=>{  return door.to.mapNum });
+               const min = Math.min.apply(null, options);  
+               const door_to_map = options.some(( mapNum )=>{ return mapNum === 4  });
+               const to_map = door_to_map ? 4 : min;
+               let pos2 = md.findDoorFrom(pos1.x, pos1.y, to_map, false);
+               if(pos2){
+                   person.setPath(scene, md, pos2.x, pos2.y);
+               }
+           }
+       }
+   };
+
+   ACTIONS$3.worker_di_recycle_empty = {
+       opt: {},
+       init: function(mdc, md, people, scene, person, opt, delta) {
+            person.setData('itemOfInterest', null);
+            const bin = md.getRecycling();
+            const onHand = person.getData('onHand');
+            if(onHand.length === 0){
+                this.setDone('nothing_on_hand');
+                return;
+            }
+            if(bin){
+                const pos_bin = bin.getTilePos();
+                const pos = md.findWalkToNear(pos_bin, 10);
+                if(pos){
+                    person.setData('itemOfInterest', bin);
+                    person.setPath(scene, md, pos.x, pos.y);
+                }
+                if(!pos){
+                    this.setDone('no_spot');
+                }
+            }
+            if(!bin){
+                person.say('No bin at this map!');
+                this.setDone('no_bin');
+            }       
+       },
+       update : function(mdc, md, people, scene, person, opt, delta) {
+           const ioi = person.getData('itemOfInterest');
+           const path = person.getData('path');
+           if(ioi && path.length === 0){
+                this.setDone('at_bin');
+           }
+       }
+   };
+
+   ACTIONS$3.worker_di_process = {
+       opt: {
+           maxCount: 5,
+           count: 5
+       },
+       init: function(mdc, md, people, scene, person, opt, delta) {
+           const oh = person.getData('onHand');  
+           oh.forEach( (item) => {
+               item.setPrice(0.50, 0);
+           });
+       },
+       update: function(mdc, md, people, scene, person, opt, delta) {},
+       noPath: function(mdc, md, people, scene, person, opt){
+           const oh = person.getData('onHand');
+           person.getData('maxOnHand');
+           if(oh.length > 0 && opt.count > 0 ){
+                const pos = md.getRandomWalkTo();
+                person.setPath(scene, md, pos.x, pos.y);
+                opt.count = opt.count - 1;    
+           }    
+           if(oh.length > 0 && opt.count <= 0 ){
+                people.setAction(scene, mdc, md, person, 'drop', { count: 1 } );
+           }
+       }
+   };
+
+   const ACTIONS$2 = Object.assign({}, ACTIONS$6, ACTIONS$5, ACTIONS$3, ACTIONS$4 );
+
+   ACTIONS$2.default = {
+       init: function (mdc, md, people, scene, person) {
+       },
+       noPath: function (mdc, md, people, scene, person, opt) {}
+   };
+
+   const ACTIONS$1 = Object.assign({}, ACTIONS$2 );
+
+   const TASKS$1 = {};
 
    const log$1 = console.log;
 
-   TASKS.default = {
+   TASKS$1.default = {
        init: function (mdc, md, people, scene, person) { 
            const main_task = person.getData('main_task');
            log$1('**********DEFAULT WORKER TASK **********');
@@ -4053,7 +3851,7 @@
        }
    };
 
-   TASKS.di = {
+   TASKS$1.di = {
        init: (mdc, md, people, scene, person, opt) => {
            people.setAction(scene, mdc, md, person, 'worker_di_idle' );    
        },
@@ -4173,6 +3971,226 @@
        }
    };
 
+   const ACTIONS = Object.assign({}, ACTIONS$6);
+   ACTIONS.customer_goto_exit = {
+       init: function (mdc, md, people, scene, person) {
+           md.hardMapData;
+           const pos_exit = people.getMapSpawnLocation( md, person );
+           person.setData('trigger_pos', {x: pos_exit.x, y: pos_exit.y });
+           person.setData('path', []);
+       },
+       update : function(mdc, md, people, scene, person, opt, delta){
+           const cPos = person.getTilePos();
+           const tPos = person.getData('trigger_pos');
+           if(cPos.x === tPos.x && cPos.y === tPos.y){
+               this.setDone('at_exit');
+           }
+       },
+       noPath: function (mdc, md, people, scene, person) {
+           person.getTilePos();
+           const tPos = person.getData('trigger_pos');
+           md.hardMapData;
+           if(tPos.x === -1 && tPos.y === -1){
+               const pos_exit = people.getMapSpawnLocation( md, person );
+               person.setData('trigger_pos', {x: pos_exit.x, y: pos_exit.y });
+           }
+           person.setPath(scene, md, tPos.x, tPos.y);
+       }
+   };
+   ACTIONS.shopper_idle = {
+       init: function (mdc, md, people, scene, person) {},
+       update : function(mdc, md, people, scene, person, opt, delta){
+           const items = md.donations.getItemType('Item');
+           if(items.length === 0){
+               this.setDone('no_items');
+           }
+           if(items.length >= 1){
+               this.setDone('items_to_buy');
+           }
+       }
+   };
+   ACTIONS.shopper_wonder = {
+       init: function (mdc, md, people, scene, person) {},
+       update : function(mdc, md, people, scene, person, opt, delta){
+           const items = md.donations.getItemType('Item', true),
+           action = person.getData('act');
+           if(items.length >= 1){
+               action.setDone('items_found');
+           }
+       },
+       noPath : function(mdc, md, people, scene, person){
+           const tile = md.getRandomWalkTo();
+           person.setPath(scene, md, tile.x, tile.y);
+       }
+   };
+   ACTIONS.shopper_find_itemofinterest = {
+       init: function (mdc, md, people, scene, person) {},
+       update : function(mdc, md, people, scene, person, opt, delta){
+           let ioi = person.getData('itemOfInterest');
+           const items = md.donations.getItemType('Item', true);
+           if(!ioi && items.length > 0){
+               const iLen = items.length;
+               const item = items[ Math.floor(Math.random() * iLen) ];
+               person.setData('itemOfInterest', item);
+               this.setDone('have_ioi');
+           }
+           if( !person.getData('itemOfInterest') || items.length === 0 ){
+               this.setDone('no_ioi');
+           }
+       }
+   };
+   ACTIONS.shopper_buy_itemofinterest = {
+       update: function (mdc, md, people, scene, person) {
+           let ioi = person.getData('itemOfInterest');
+           if(ioi){
+               const pos_item = ioi.getTilePos();
+               const pos_person = person.getTilePos();
+               if( pos_person.x === pos_item.x && pos_person.y === pos_item.y ){
+                   person.x = pos_item.x * 16 + 8;
+                   person.y = pos_item.y * 16 + 8;
+                   let gs = scene.registry.get('gameSave');
+                   gs.money += ioi.price.shelf;
+                   scene.registry.set('gameSave', gs);
+                   people.clearAllIOI(ioi);
+                   ioi.destroy();
+                   person.setData('itemOfInterest', null);
+                   this.setDone('items_bought');
+               }
+           }
+           if(!ioi){
+               this.setDone('no_ioi_to_buy');
+           }
+       },
+       noPath: function(mdc, md, people, scene, person, opt){
+           let ioi = person.getData('itemOfInterest');  
+           if(ioi){
+               const pos_item = ioi.getTilePos();
+               person.setPath(scene, md, pos_item.x, pos_item.y);
+           }
+       }
+   };
+   // an action where a person would like to find a location to drop off items
+   // that they have on hand that are unprocessed items to be donated to reuse.
+   // Once such a location has been found, the person will then go to that location.
+   ACTIONS.donation_goto_droplocation = {
+       init: function (mdc, md, people, scene, person) {
+           const tPos = person.getData('trigger_pos');
+           tPos.x = -1; tPos.y = -1;
+       },
+       update: function (mdc, md, people, scene, person) {
+           const onHand = person.getData('onHand');
+           const cPos = person.getTilePos();
+           const tPos = person.getData('trigger_pos');
+           if( onHand.length > 0 && tPos.x === -1 && tPos.y === -1 ){
+               const tiles_di = md.get_di_tiles( scene );
+               if(tiles_di.length > 0){    
+                   const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
+                   const tiles_near_di = md.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return md.canWalk(tile) });
+                   const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
+                   person.setData('trigger_pos', {x: t.x, y: t.y });
+               }
+           }
+           if( onHand.length === 0 ){
+               this.setDone('nothing_on_hand');
+           }
+           if( cPos.x === tPos.x && cPos.y === tPos.y ){
+              this.setDone('at_drop_location');
+              person.setData('path', []);
+          }
+       },
+       noPath: function (mdc, md, people, scene, person) {
+          const cPos = person.getTilePos();
+          const tPos = person.getData('trigger_pos');  
+          if(tPos.x != -1 && tPos.y != -1 && !(cPos.x === tPos.x && cPos.y === tPos.y) ){
+              person.setPath(scene, md, tPos.x, tPos.y);
+          }
+       }
+   };
+
+   const TASKS = {};
+
+   TASKS.default = {
+       init: function (mdc, md, people, scene, person) {
+           const pType = person.getData('type'),
+           psType = person.getData('subType');
+               
+           if(pType === 'customer' && psType === 'donator'){
+               people.setTask(scene, mdc, md, person, 'donate' );
+           }
+           if(pType === 'customer' && psType === 'shopper'){
+               people.setTask(scene, mdc, md, person, 'shopping' );
+           }
+       },
+       update: (mdc, md, people, scene, person) => {
+       
+       }
+   };
+
+   TASKS.shopping = {
+       init: (mdc, md, people, scene, person) => {
+           people.setAction(scene, mdc, md, person, 'shopper_idle' );
+       },
+       update: (mdc, md, people, scene, person) => {
+           const act = person.getData('act');
+           if( act.key === 'shopper_idle' && act.done ){
+               if(act.result === 'no_items'){
+                   people.setAction(scene, mdc, md, person, 'shopper_wonder', { } );
+               }
+               if(act.result === 'items_to_buy'){
+                   people.setAction(scene, mdc, md, person, 'shopper_find_itemofinterest', { } );
+               }   
+           }
+           if( act.key === 'shopper_wonder' && act.done ){
+               if(act.result === 'items_found'){
+                   people.setAction(scene, mdc, md, person, 'shopper_find_itemofinterest', { } );
+               }
+           }
+           if( act.key === 'shopper_find_itemofinterest' && act.done ){
+               if(act.result === 'have_ioi'){
+                   people.setAction(scene, mdc, md, person, 'shopper_buy_itemofinterest', { } );
+               }
+               if(act.result === 'no_ioi'){
+                   people.setAction(scene, mdc, md, person, 'shopper_idle', { } );
+               }
+           }
+           if( act.key === 'shopper_buy_itemofinterest' && act.done ){
+               if( act.result === 'items_bought' || act.result === 'no_ioi_to_buy' ){
+                   people.setAction(scene, mdc, md, person, 'shopper_idle', { } );
+               }
+           }
+       }
+   };
+   TASKS.donate = {
+       init: (mdc, md, people, scene, person) => {
+           people.setAction(scene, mdc, md, person, 'donation_goto_droplocation' );
+       },
+       update: (mdc, md, people, scene, person) => {
+           const action = person.getData('act');
+           if( action.done ){
+               if(action.key === 'donation_goto_droplocation'){
+                   people.setAction(scene, mdc, md, person, 'drop', { max_tiles: 16 } );
+                   return;
+               }
+               if(action.key === 'drop'){
+                   people.setAction(scene, mdc, md, person, 'customer_goto_exit' );
+                   return;
+               }
+               if(action.key === 'customer_goto_exit' && action.result === 'at_exit' ){
+                   people.kill(person);
+                   return;
+               }
+           } 
+           const max_donations = scene.registry.get('MAX_MAP_DONATIONS') || 10;
+           const donations = md.donations;
+           const donations_incoming = people.totalOnHandItems();
+           const donations_drop = donations.children.size;
+           const donations_total = donations_incoming + donations_drop;
+           if(donations_total >= max_donations){
+               people.setAction(scene, mdc, md, person, 'customer_goto_exit');
+           }
+       }
+   };
+
    const log = new ConsoleLogger({
        cat: 'state',
        id: 'boot',
@@ -4196,8 +4214,11 @@
            reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
            
            
-           reg.set('TASKS_WORKER', TASKS);
-           reg.set('ACTIONS_WORKER', ACTIONS);
+           reg.set('TASKS_WORKER', TASKS$1);
+           reg.set('ACTIONS_WORKER', ACTIONS$1);
+           
+           reg.set('TASKS_CUSTOMER', TASKS);
+           reg.set('ACTIONS_CUSTOMER', ACTIONS);
            
            
            reg.set('gameSave', {
