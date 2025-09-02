@@ -432,8 +432,8 @@
        }
    }
 
-   const ACTIONS$5 = {};
-   ACTIONS$5.pickup = {
+   const ACTIONS$6 = {};
+   ACTIONS$6.pickup = {
        opt : {
            container: false,
            canRecyle: false,
@@ -506,8 +506,8 @@
        }
    };
 
-   const ACTIONS$4 = {};
-   ACTIONS$4.drop = {
+   const ACTIONS$5 = {};
+   ACTIONS$5.drop = {
        opt : {
            max_tiles: 8,
            count: 1,
@@ -549,8 +549,8 @@
        }
    };
 
-   const ACTIONS$3 = {};
-   ACTIONS$3.goto_map = {
+   const ACTIONS$4 = {};
+   ACTIONS$4.goto_map = {
        opt: {
            index: 1,
            pos: null
@@ -581,16 +581,16 @@
        }
    };
 
-   const ACTIONS$2 = Object.assign({}, ACTIONS$5, ACTIONS$4, ACTIONS$3 );
-   ACTIONS$2.default = {
+   const ACTIONS$3 = Object.assign({}, ACTIONS$6, ACTIONS$5, ACTIONS$4 );
+   ACTIONS$3.default = {
        init: function (mdc, md, people, scene, person) {
        },
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
-   ACTIONS$2.player_control = {
+   ACTIONS$3.player_control = {
        init: function (mdc, md, people, scene, person) {}
    };
-   ACTIONS$2.wonder = {
+   ACTIONS$3.wonder = {
        opt: {
            next_spot: false,
            pause : 1200,
@@ -756,7 +756,7 @@
        }
    };
 
-   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$2, ACTIONS_CUSTOMER  );
+   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$3, ACTIONS_CUSTOMER  );
    class Action {
        constructor (scene, people, person, key='wonder', opt={}) {
        
@@ -3833,7 +3833,7 @@
 
    }
 
-   const ACTIONS$1 = {};
+   const ACTIONS$2 = {};
 
    const find_drop_spot = function(tile){
        const md = this, items = md.getItemsAtTile( tile ), item = items[0];
@@ -3843,7 +3843,7 @@
        return false;
    };
 
-   ACTIONS$1.pickup_drop = {
+   ACTIONS$2.pickup_drop = {
        opt: {
            near: {x: 35, y: 4}, limit: 50,
            type: 'drop', container: false, max_items: 1
@@ -3865,15 +3865,15 @@
        }
    };
 
-   const ACTIONS = Object.assign({}, ACTIONS$2, ACTIONS$1 );
+   const ACTIONS$1 = Object.assign({}, ACTIONS$3, ACTIONS$2 );
 
-   ACTIONS.default = {
+   ACTIONS$1.default = {
        init: function (mdc, md, people, scene, person) {
        },
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
 
-   ACTIONS.worker_di_idle = {
+   ACTIONS$1.worker_di_idle = {
        opt:{},
        update: function (mdc, md, people, scene, person, opt) {
            //const player = scene.registry.get('player');
@@ -3892,7 +3892,7 @@
            }
        }
    };
-   ACTIONS.worker_di_return = {
+   ACTIONS$1.worker_di_return = {
        update: function (mdc, md, people, scene, person, opt) {
            if(md.index === 4){
                this.setDone('at_di');
@@ -3915,7 +3915,7 @@
    };
 
 
-   ACTIONS.worker_di_recycle_empty = {
+   ACTIONS$1.worker_di_recycle_empty = {
        opt: {},
        init: function(mdc, md, people, scene, person, opt, delta) {
             person.setData('itemOfInterest', null);
@@ -3950,7 +3950,7 @@
        }
    };
 
-   ACTIONS.worker_di_process = {
+   ACTIONS$1.worker_di_process = {
        opt: {
            maxCount: 5,
            count: 5
@@ -3976,7 +3976,7 @@
        }
    };
 
-   ACTIONS.pickup_empty = {
+   ACTIONS$1.pickup_empty = {
        opt : {
            container: true,
            canRecyle: true,
@@ -4030,56 +4030,13 @@
        }
    };
 
-   //import { ACTIONS as ACTIONS_CORE } from "../common/action_common.js";
+   const ACTIONS = Object.assign({}, ACTIONS$1 );
 
-   const ACTIONS_WORKER = Object.assign({}, ACTIONS);
-
-   /*
-   const find_empty_spot = function(tile){
-       const md = this, items = md.getItemsAtTile( tile ), item = items[0];
-       if(item){
-           return item.drop_count === 0 && item.contents.length === 0 && item.canRecyle;
-       }
-       return false;
-   };
-
-   const find_drop_spot = function(tile){
-       const md = this, items = md.getItemsAtTile( tile ), item = items[0];
-       if(item){
-           return item.drop_count > 0;
-       }
-       return false;
-   };
-
-   ACTIONS_WORKER.pickup_drop = {
-       opt: {
-           near: {x: 35, y: 4}, limit: 50,
-           type: 'drop', container: false, max_items: 1
-       },
-       update: function (mdc, md, people, scene, person, opt) {
-           const oh = person.getData('onHand');
-           if(md.index === 4 && oh.length === 0){
-               const spot = md.findSpot(opt.near, find_drop_spot, opt.limit);
-               if(spot){
-                   people.setAction(scene, mdc, md, person, 'pickup', opt);
-               }
-               if(!spot){
-                   this.setDone('no_empty_items');
-               }
-           }
-       },
-       noPath: function (mdc, md, people, scene, person, opt) {
-           if(opt.spot){
-           }
-       }
-   };
-   */
-
-   const TASKS_WORKER = {};
+   const TASKS = {};
 
    const log$1 = console.log;
 
-   TASKS_WORKER.default = {
+   TASKS.default = {
        init: function (mdc, md, people, scene, person) { 
            const main_task = person.getData('main_task');
            log$1('**********DEFAULT WORKER TASK **********');
@@ -4096,7 +4053,7 @@
        }
    };
 
-   TASKS_WORKER.di = {
+   TASKS.di = {
        init: (mdc, md, people, scene, person, opt) => {
            people.setAction(scene, mdc, md, person, 'worker_di_idle' );    
        },
@@ -4239,20 +4196,9 @@
            reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
            
            
-           reg.set('TASKS_WORKER', TASKS_WORKER);
-           reg.set('ACTIONS_WORKER', ACTIONS_WORKER);
+           reg.set('TASKS_WORKER', TASKS);
+           reg.set('ACTIONS_WORKER', ACTIONS);
            
-           
-           //reg.set('TASKS', {
-               //player_control : {},
-               //default : {
-                   //init: function (mdc, md, people, scene, person) {},
-                   //update: function(mdc, md, people, scene, person) {}
-               //}
-           //});
-           //reg.set('ACTIONS', {
-               //default : {}
-           //});
            
            reg.set('gameSave', {
                money: 0

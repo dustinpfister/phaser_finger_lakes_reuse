@@ -1,6 +1,44 @@
-# People Lib for Finger Lakes Reuse
+# People Lib and supporting files for Finger Lakes Reuse
 
-The name should say it all for this one, but just in case it is not clear. Yes this lib folder contains logic that is used to create a Person, Groups of Person Objects that can be called People, and additional logic that composes the AI of People. This is proving to be a complex part of the game which is not at all surprising, so things are broken down into many files.
+The name should say it all for this one, but just in case it is not clear. Yes this lib folder contains logic that is used to create a Person, Groups of Person Objects that can be called People, and additional logic that composes the AI of People. As of R8 the over all AI for the game is broken down into many task and action files, placed in various additional child folders of this main lib folder. This is proving to be a complex part of the game which is not at all surprising, as such this part of the game is something I have been working on a little at a time for each revision.
+
+## Main AI js files for each child folder
+
+Each of the main folders \( worker, and customer as of R8 \) should contain a main ai_*.js file that should provide the main TASKS, and ACTIONS objects that will be used for workers and customers. The additional 'common' folder contains actions that are common to both customers, and workers, so I can then use some code from there as well when making both of the various collections of AI code.
+
+so then in the boot.js state I would want to do something like this:
+
+```js
+import { TASKS as TASKS_WORKER, ACTIONS as ACTIONS_WORKER } from "../lib/people/worker/ai_worker.js";
+```
+
+to create TASKS\_WORKER, and ACTIONS\_WORKER Objects that I would then add to the registry like so:
+
+```js
+reg.set('TASKS_WORKER', TASKS_WORKER);
+reg.set('ACTIONS_WORKER', ACTIONS_WORKER);
+```
+
+These can then be used when creating the People class instances for worker like so:
+
+```js
+// The following code should be in mapdata.js as of R8
+    this.worker = new People({
+        scene: scene,
+        defaultKey: 'people_16_16',       
+        maxSize: 10,
+        createCallback : (person) => {}
+    },{
+        type: 'worker',
+        TASKS: scene.registry.get('TASKS_WORKER'),
+        ACTIONS: scene.registry.get('ACTIONS_WORKER'),
+        md: md,
+        spawnRate: 0,
+        curveSpeed: 0.95,
+        subTypes: [ 'employee' ],
+        subTypeProbs: [ 1.00 ]
+    });
+```
 
 ## Person and People
 
