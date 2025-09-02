@@ -5,6 +5,7 @@ import { ConsoleLogger } from '../lib/message/message.js';
 import { ACTIONS_DEFAULT } from "../lib/people/action.js";
 
 import { TASKS as TASKS_WORKER, ACTIONS as ACTIONS_WORKER } from "../lib/people/worker/ai_worker.js";
+import { TASKS as TASKS_CUSTOMER, ACTIONS as ACTIONS_CUSTOMER } from "../lib/people/customer/ai_customer.js";
 
 const log = new ConsoleLogger({
     cat: 'state',
@@ -31,6 +32,9 @@ class Boot extends Phaser.Scene {
         
         reg.set('TASKS_WORKER', TASKS_WORKER);
         reg.set('ACTIONS_WORKER', ACTIONS_WORKER);
+        
+        reg.set('TASKS_CUSTOMER', TASKS_CUSTOMER);
+        reg.set('ACTIONS_CUSTOMER', ACTIONS_CUSTOMER);
         
         
         reg.set('gameSave', {
