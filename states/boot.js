@@ -4,7 +4,7 @@ import { MainMenu } from './menu.js';
 import { ConsoleLogger } from '../lib/message/message.js';
 import { ACTIONS_DEFAULT } from "../lib/people/action.js";
 
-import { TASKS_WORKER, ACTIONS_WORKER } from "../lib/people/worker/ai_worker.js";
+import { TASKS as TASKS_WORKER, ACTIONS as ACTIONS_WORKER } from "../lib/people/worker/ai_worker.js";
 
 const log = new ConsoleLogger({
     cat: 'state',
