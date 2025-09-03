@@ -432,8 +432,8 @@
        }
    }
 
-   const ACTIONS$9 = {};
-   ACTIONS$9.pickup = {
+   const ACTIONS$c = {};
+   ACTIONS$c.pickup = {
        opt : {
            container: false,
            canRecyle: false,
@@ -506,8 +506,8 @@
        }
    };
 
-   const ACTIONS$8 = {};
-   ACTIONS$8.drop = {
+   const ACTIONS$b = {};
+   ACTIONS$b.drop = {
        opt : {
            max_tiles: 8,
            count: 1,
@@ -549,8 +549,8 @@
        }
    };
 
-   const ACTIONS$7 = {};
-   ACTIONS$7.goto_map = {
+   const ACTIONS$a = {};
+   ACTIONS$a.goto_map = {
        opt: {
            index: 1,
            pos: null
@@ -581,16 +581,16 @@
        }
    };
 
-   const ACTIONS$6 = Object.assign({}, ACTIONS$9, ACTIONS$8, ACTIONS$7 );
-   ACTIONS$6.default = {
+   const ACTIONS$9 = Object.assign({}, ACTIONS$c, ACTIONS$b, ACTIONS$a );
+   ACTIONS$9.default = {
        init: function (mdc, md, people, scene, person) {
        },
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
-   ACTIONS$6.player_control = {
+   ACTIONS$9.player_control = {
        init: function (mdc, md, people, scene, person) {}
    };
-   ACTIONS$6.wonder = {
+   ACTIONS$9.wonder = {
        opt: {
            next_spot: false,
            pause : 1200,
@@ -620,143 +620,8 @@
        }
    };
 
-   const ACTIONS_CUSTOMER = {};
-   ACTIONS_CUSTOMER.customer_goto_exit = {
-       init: function (mdc, md, people, scene, person) {
-           md.hardMapData;
-           const pos_exit = people.getMapSpawnLocation( md, person );
-           person.setData('trigger_pos', {x: pos_exit.x, y: pos_exit.y });
-           person.setData('path', []);
-       },
-       update : function(mdc, md, people, scene, person, opt, delta){
-           const cPos = person.getTilePos();
-           const tPos = person.getData('trigger_pos');
-           if(cPos.x === tPos.x && cPos.y === tPos.y){
-               this.setDone('at_exit');
-           }
-       },
-       noPath: function (mdc, md, people, scene, person) {
-           person.getTilePos();
-           const tPos = person.getData('trigger_pos');
-           md.hardMapData;
-           if(tPos.x === -1 && tPos.y === -1){
-               const pos_exit = people.getMapSpawnLocation( md, person );
-               person.setData('trigger_pos', {x: pos_exit.x, y: pos_exit.y });
-           }
-           person.setPath(scene, md, tPos.x, tPos.y);
-       }
-   };
-   ACTIONS_CUSTOMER.shopper_idle = {
-       init: function (mdc, md, people, scene, person) {},
-       update : function(mdc, md, people, scene, person, opt, delta){
-           const items = md.donations.getItemType('Item');
-           if(items.length === 0){
-               this.setDone('no_items');
-           }
-           if(items.length >= 1){
-               this.setDone('items_to_buy');
-           }
-       }
-   };
-   ACTIONS_CUSTOMER.shopper_wonder = {
-       init: function (mdc, md, people, scene, person) {},
-       update : function(mdc, md, people, scene, person, opt, delta){
-           const items = md.donations.getItemType('Item', true),
-           action = person.getData('act');
-           if(items.length >= 1){
-               action.setDone('items_found');
-           }
-       },
-       noPath : function(mdc, md, people, scene, person){
-           const tile = md.getRandomWalkTo();
-           person.setPath(scene, md, tile.x, tile.y);
-       }
-   };
-   ACTIONS_CUSTOMER.shopper_find_itemofinterest = {
-       init: function (mdc, md, people, scene, person) {},
-       update : function(mdc, md, people, scene, person, opt, delta){
-           let ioi = person.getData('itemOfInterest');
-           const items = md.donations.getItemType('Item', true);
-           if(!ioi && items.length > 0){
-               const iLen = items.length;
-               const item = items[ Math.floor(Math.random() * iLen) ];
-               person.setData('itemOfInterest', item);
-               this.setDone('have_ioi');
-           }
-           if( !person.getData('itemOfInterest') || items.length === 0 ){
-               this.setDone('no_ioi');
-           }
-       }
-   };
-   ACTIONS_CUSTOMER.shopper_buy_itemofinterest = {
-       update: function (mdc, md, people, scene, person) {
-           let ioi = person.getData('itemOfInterest');
-           if(ioi){
-               const pos_item = ioi.getTilePos();
-               const pos_person = person.getTilePos();
-               if( pos_person.x === pos_item.x && pos_person.y === pos_item.y ){
-                   person.x = pos_item.x * 16 + 8;
-                   person.y = pos_item.y * 16 + 8;
-                   let gs = scene.registry.get('gameSave');
-                   gs.money += ioi.price.shelf;
-                   scene.registry.set('gameSave', gs);
-                   people.clearAllIOI(ioi);
-                   ioi.destroy();
-                   person.setData('itemOfInterest', null);
-                   this.setDone('items_bought');
-               }
-           }
-           if(!ioi){
-               this.setDone('no_ioi_to_buy');
-           }
-       },
-       noPath: function(mdc, md, people, scene, person, opt){
-           let ioi = person.getData('itemOfInterest');  
-           if(ioi){
-               const pos_item = ioi.getTilePos();
-               person.setPath(scene, md, pos_item.x, pos_item.y);
-           }
-       }
-   };
-   // an action where a person would like to find a location to drop off items
-   // that they have on hand that are unprocessed items to be donated to reuse.
-   // Once such a location has been found, the person will then go to that location.
-   ACTIONS_CUSTOMER.donation_goto_droplocation = {
-       init: function (mdc, md, people, scene, person) {
-           const tPos = person.getData('trigger_pos');
-           tPos.x = -1; tPos.y = -1;
-       },
-       update: function (mdc, md, people, scene, person) {
-           const onHand = person.getData('onHand');
-           const cPos = person.getTilePos();
-           const tPos = person.getData('trigger_pos');
-           if( onHand.length > 0 && tPos.x === -1 && tPos.y === -1 ){
-               const tiles_di = md.get_di_tiles( scene );
-               if(tiles_di.length > 0){    
-                   const dt = tiles_di[ Math.floor( tiles_di.length * Math.random() ) ];
-                   const tiles_near_di = md.map.getTilesWithin(dt.x - 1, dt.y -1, 3, 3).filter( (tile) => { return md.canWalk(tile) });
-                   const t = tiles_near_di[ Math.floor( tiles_near_di.length * Math.random() ) ];
-                   person.setData('trigger_pos', {x: t.x, y: t.y });
-               }
-           }
-           if( onHand.length === 0 ){
-               this.setDone('nothing_on_hand');
-           }
-           if( cPos.x === tPos.x && cPos.y === tPos.y ){
-              this.setDone('at_drop_location');
-              person.setData('path', []);
-          }
-       },
-       noPath: function (mdc, md, people, scene, person) {
-          const cPos = person.getTilePos();
-          const tPos = person.getData('trigger_pos');  
-          if(tPos.x != -1 && tPos.y != -1 && !(cPos.x === tPos.x && cPos.y === tPos.y) ){
-              person.setPath(scene, md, tPos.x, tPos.y);
-          }
-       }
-   };
-
-   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$6, ACTIONS_CUSTOMER);
+   //import { ACTIONS_CUSTOMER } from "./action_customer.js";
+   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$9 );
    class Action {
        constructor (scene, people, person, key='wonder', opt={}) {
        
@@ -3628,7 +3493,7 @@
 
    }
 
-   const ACTIONS$5 = {};
+   const ACTIONS$8 = {};
 
    const find_drop_spot = function(tile){
        const md = this, items = md.getItemsAtTile( tile ), item = items[0];
@@ -3638,7 +3503,7 @@
        return false;
    };
 
-   ACTIONS$5.pickup_drop = {
+   ACTIONS$8.pickup_drop = {
        opt: {
            near: {x: 35, y: 4}, limit: 50,
            type: 'drop', container: false, max_items: 1
@@ -3660,9 +3525,9 @@
        }
    };
 
-   const ACTIONS$4 = {};
+   const ACTIONS$7 = {};
 
-   ACTIONS$4.pickup_empty = {
+   ACTIONS$7.pickup_empty = {
        opt : {
            container: true,
            canRecyle: true,
@@ -3716,12 +3581,11 @@
        }
    };
 
-   const ACTIONS$3 = {};
+   const ACTIONS$6 = {};
 
-   ACTIONS$3.worker_di_idle = {
+   ACTIONS$6.worker_di_idle = {
        opt:{},
        update: function (mdc, md, people, scene, person, opt) {
-           //const player = scene.registry.get('player');
            const oh = person.getData('onHand');
            if( md.index != 4 && oh.length === 0 ){
                 this.setDone('empty_handed');
@@ -3737,7 +3601,10 @@
            }
        }
    };
-   ACTIONS$3.worker_di_return = {
+
+   const ACTIONS$5 = {};
+
+   ACTIONS$5.worker_di_return = {
        update: function (mdc, md, people, scene, person, opt) {
            if(md.index === 4){
                this.setDone('at_di');
@@ -3759,7 +3626,9 @@
        }
    };
 
-   ACTIONS$3.worker_di_recycle_empty = {
+   const ACTIONS$4 = {};
+
+   ACTIONS$4.worker_di_recycle_empty = {
        opt: {},
        init: function(mdc, md, people, scene, person, opt, delta) {
             person.setData('itemOfInterest', null);
@@ -3794,6 +3663,8 @@
        }
    };
 
+   const ACTIONS$3 = {};
+
    ACTIONS$3.worker_di_process = {
        opt: {
            maxCount: 5,
@@ -3820,11 +3691,12 @@
        }
    };
 
-   const ACTIONS$2 = Object.assign({}, ACTIONS$6, ACTIONS$5, ACTIONS$3, ACTIONS$4 );
+   const ACTIONS_WORKER = Object.assign( {}, ACTIONS$8, ACTIONS$7 );
+   const ACTIONS_DI = Object.assign( {}, ACTIONS$6, ACTIONS$5, ACTIONS$4, ACTIONS$3 );
+   const ACTIONS$2 = Object.assign({}, ACTIONS$9, ACTIONS_WORKER, ACTIONS_DI );
 
    ACTIONS$2.default = {
-       init: function (mdc, md, people, scene, person) {
-       },
+       init: function (mdc, md, people, scene, person) {},
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
 
@@ -3971,7 +3843,8 @@
        }
    };
 
-   const ACTIONS = Object.assign({}, ACTIONS$6);
+   const ACTIONS = Object.assign({}, ACTIONS$9);
+
    ACTIONS.customer_goto_exit = {
        init: function (mdc, md, people, scene, person) {
            md.hardMapData;
