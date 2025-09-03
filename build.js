@@ -432,8 +432,8 @@
        }
    }
 
-   const ACTIONS$c = {};
-   ACTIONS$c.pickup = {
+   const ACTIONS$j = {};
+   ACTIONS$j.pickup = {
        opt : {
            container: false,
            canRecyle: false,
@@ -506,8 +506,8 @@
        }
    };
 
-   const ACTIONS$b = {};
-   ACTIONS$b.drop = {
+   const ACTIONS$i = {};
+   ACTIONS$i.drop = {
        opt : {
            max_tiles: 8,
            count: 1,
@@ -549,8 +549,8 @@
        }
    };
 
-   const ACTIONS$a = {};
-   ACTIONS$a.goto_map = {
+   const ACTIONS$h = {};
+   ACTIONS$h.goto_map = {
        opt: {
            index: 1,
            pos: null
@@ -581,16 +581,9 @@
        }
    };
 
-   const ACTIONS$9 = Object.assign({}, ACTIONS$c, ACTIONS$b, ACTIONS$a );
-   ACTIONS$9.default = {
-       init: function (mdc, md, people, scene, person) {
-       },
-       noPath: function (mdc, md, people, scene, person, opt) {}
-   };
-   ACTIONS$9.player_control = {
-       init: function (mdc, md, people, scene, person) {}
-   };
-   ACTIONS$9.wonder = {
+   const ACTIONS$g = {};
+
+   ACTIONS$g.wonder = {
        opt: {
            next_spot: false,
            pause : 1200,
@@ -620,8 +613,19 @@
        }
    };
 
-   //import { ACTIONS_CUSTOMER } from "./action_customer.js";
-   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$9 );
+   const ACTIONS$f = Object.assign({}, ACTIONS$j, ACTIONS$i, ACTIONS$h, ACTIONS$g );
+
+   ACTIONS$f.player_control = {
+       init: function (mdc, md, people, scene, person) {}
+   };
+
+   const ACTIONS_DEFAULT = Object.assign({}, ACTIONS$f );
+
+   ACTIONS_DEFAULT.default = {
+       init: function (mdc, md, people, scene, person) {},
+       noPath: function (mdc, md, people, scene, person, opt) {}
+   };
+
    class Action {
        constructor (scene, people, person, key='wonder', opt={}) {
        
@@ -3493,7 +3497,7 @@
 
    }
 
-   const ACTIONS$8 = {};
+   const ACTIONS$e = {};
 
    const find_drop_spot = function(tile){
        const md = this, items = md.getItemsAtTile( tile ), item = items[0];
@@ -3503,7 +3507,7 @@
        return false;
    };
 
-   ACTIONS$8.pickup_drop = {
+   ACTIONS$e.pickup_drop = {
        opt: {
            near: {x: 35, y: 4}, limit: 50,
            type: 'drop', container: false, max_items: 1
@@ -3525,9 +3529,9 @@
        }
    };
 
-   const ACTIONS$7 = {};
+   const ACTIONS$d = {};
 
-   ACTIONS$7.pickup_empty = {
+   ACTIONS$d.pickup_empty = {
        opt : {
            container: true,
            canRecyle: true,
@@ -3581,9 +3585,9 @@
        }
    };
 
-   const ACTIONS$6 = {};
+   const ACTIONS$c = {};
 
-   ACTIONS$6.worker_di_idle = {
+   ACTIONS$c.worker_di_idle = {
        opt:{},
        update: function (mdc, md, people, scene, person, opt) {
            const oh = person.getData('onHand');
@@ -3602,9 +3606,9 @@
        }
    };
 
-   const ACTIONS$5 = {};
+   const ACTIONS$b = {};
 
-   ACTIONS$5.worker_di_return = {
+   ACTIONS$b.worker_di_return = {
        update: function (mdc, md, people, scene, person, opt) {
            if(md.index === 4){
                this.setDone('at_di');
@@ -3626,9 +3630,9 @@
        }
    };
 
-   const ACTIONS$4 = {};
+   const ACTIONS$a = {};
 
-   ACTIONS$4.worker_di_recycle_empty = {
+   ACTIONS$a.worker_di_recycle_empty = {
        opt: {},
        init: function(mdc, md, people, scene, person, opt, delta) {
             person.setData('itemOfInterest', null);
@@ -3663,9 +3667,9 @@
        }
    };
 
-   const ACTIONS$3 = {};
+   const ACTIONS$9 = {};
 
-   ACTIONS$3.worker_di_process = {
+   ACTIONS$9.worker_di_process = {
        opt: {
            maxCount: 5,
            count: 5
@@ -3691,16 +3695,16 @@
        }
    };
 
-   const ACTIONS_WORKER = Object.assign( {}, ACTIONS$8, ACTIONS$7 );
-   const ACTIONS_DI = Object.assign( {}, ACTIONS$6, ACTIONS$5, ACTIONS$4, ACTIONS$3 );
-   const ACTIONS$2 = Object.assign({}, ACTIONS$9, ACTIONS_WORKER, ACTIONS_DI );
+   const ACTIONS_WORKER = Object.assign( {}, ACTIONS$e, ACTIONS$d );
+   const ACTIONS_DI = Object.assign( {}, ACTIONS$c, ACTIONS$b, ACTIONS$a, ACTIONS$9 );
+   const ACTIONS$8 = Object.assign({}, ACTIONS$f, ACTIONS_WORKER, ACTIONS_DI );
 
-   ACTIONS$2.default = {
+   ACTIONS$8.default = {
        init: function (mdc, md, people, scene, person) {},
        noPath: function (mdc, md, people, scene, person, opt) {}
    };
 
-   const ACTIONS$1 = Object.assign({}, ACTIONS$2 );
+   const ACTIONS$7 = Object.assign({}, ACTIONS$8 );
 
    const TASKS$1 = {};
 
@@ -3843,9 +3847,9 @@
        }
    };
 
-   const ACTIONS = Object.assign({}, ACTIONS$9);
+   const ACTIONS$6 = {};
 
-   ACTIONS.customer_goto_exit = {
+   ACTIONS$6.customer_goto_exit = {
        init: function (mdc, md, people, scene, person) {
            md.hardMapData;
            const pos_exit = people.getMapSpawnLocation( md, person );
@@ -3870,7 +3874,10 @@
            person.setPath(scene, md, tPos.x, tPos.y);
        }
    };
-   ACTIONS.shopper_idle = {
+
+   const ACTIONS$5 = {};
+
+   ACTIONS$5.shopper_idle = {
        init: function (mdc, md, people, scene, person) {},
        update : function(mdc, md, people, scene, person, opt, delta){
            const items = md.donations.getItemType('Item');
@@ -3882,7 +3889,10 @@
            }
        }
    };
-   ACTIONS.shopper_wonder = {
+
+   const ACTIONS$4 = {};
+
+   ACTIONS$4.shopper_wonder = {
        init: function (mdc, md, people, scene, person) {},
        update : function(mdc, md, people, scene, person, opt, delta){
            const items = md.donations.getItemType('Item', true),
@@ -3896,7 +3906,10 @@
            person.setPath(scene, md, tile.x, tile.y);
        }
    };
-   ACTIONS.shopper_find_itemofinterest = {
+
+   const ACTIONS$3 = {};
+
+   ACTIONS$3.shopper_find_itemofinterest = {
        init: function (mdc, md, people, scene, person) {},
        update : function(mdc, md, people, scene, person, opt, delta){
            let ioi = person.getData('itemOfInterest');
@@ -3912,7 +3925,10 @@
            }
        }
    };
-   ACTIONS.shopper_buy_itemofinterest = {
+
+   const ACTIONS$2 = {};
+
+   ACTIONS$2.shopper_buy_itemofinterest = {
        update: function (mdc, md, people, scene, person) {
            let ioi = person.getData('itemOfInterest');
            if(ioi){
@@ -3942,10 +3958,13 @@
            }
        }
    };
+
+   const ACTIONS$1 = {};
+
    // an action where a person would like to find a location to drop off items
    // that they have on hand that are unprocessed items to be donated to reuse.
    // Once such a location has been found, the person will then go to that location.
-   ACTIONS.donation_goto_droplocation = {
+   ACTIONS$1.donation_goto_droplocation = {
        init: function (mdc, md, people, scene, person) {
            const tPos = person.getData('trigger_pos');
            tPos.x = -1; tPos.y = -1;
@@ -3978,6 +3997,20 @@
               person.setPath(scene, md, tPos.x, tPos.y);
           }
        }
+   };
+
+   const ACTIONS_CUSTOMER = Object.assign({}, ACTIONS$6 ); 
+   const ACTIONS_SHOPPER = Object.assign({}, ACTIONS$5, ACTIONS$4, 
+       ACTIONS$3, ACTIONS$2 ); 
+   const ACTIONS_DONATOR = Object.assign({}, ACTIONS$1 ); 
+
+
+   const ACTIONS = Object.assign({}, ACTIONS$f, ACTIONS_CUSTOMER, ACTIONS_SHOPPER, ACTIONS_DONATOR );
+
+   ACTIONS.default = {
+       init: function (mdc, md, people, scene, person) {
+       },
+       noPath: function (mdc, md, people, scene, person, opt) {}
    };
 
    const TASKS = {};
@@ -4088,7 +4121,7 @@
            
            
            reg.set('TASKS_WORKER', TASKS$1);
-           reg.set('ACTIONS_WORKER', ACTIONS$1);
+           reg.set('ACTIONS_WORKER', ACTIONS$7);
            
            reg.set('TASKS_CUSTOMER', TASKS);
            reg.set('ACTIONS_CUSTOMER', ACTIONS);
