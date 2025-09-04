@@ -14,6 +14,12 @@ class MainMenu extends Phaser.Scene {
     
     startMapView () {
         log('starting mapview...');
+        
+        
+        this.registry.set('gameSave', {
+            money: 0
+        });
+        
         this.scene.start('Mapview');
     }
     
@@ -43,6 +49,8 @@ class MainMenu extends Phaser.Scene {
         disp1.depth = 6;
         disp1.text = 'R' + this.registry.get('R');
         disp1.x = 320 - disp1.width / 2;
+        
+        
         
     }
     

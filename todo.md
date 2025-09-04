@@ -34,10 +34,13 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - finish breaking down worker actions in the new worker folder.
     * (done) - break down action_worker_di down into fine grain files for each action
     * (done) - finish breaking down customer actions in the new customer folder.
+ 
+    * (    ) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
+ 
+    * (    ) - make use of people data json when creating person objects
     
-    * (    ) - I will need a
     
-    * (    ) - make use of people data when creating person objects
+
     
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
@@ -46,10 +49,14 @@ Sense the focus is on people, I would like to take a moment to work a little mor
   /states/boot.js
     * (done) - have it so that TASKS_WORKER object is used in place of the MAIN task object for workers
     * (done) - have a TASKS_CUSTOMER, and ACTIONS_CUSTOMER in boot.js and add to the registry
+    * (done) - remove gameSave ref
   /states/load.js :
     * (done) - load people_core.json
     * (done) - call ItemTools.genIndex in create method
     * (done) - load new people_core png
+  /states/menu.js :
+    * (done) - create gameSave in menu state rather than boot state
+    * (    ) - create PeopleData instance as part of the gameSave
   /
     * (      ) - use rollup.js to create a final R8 build when ready to finish revision
     * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision
