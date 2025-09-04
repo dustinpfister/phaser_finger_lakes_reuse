@@ -38,13 +38,14 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
     * () - make use of people data when creating people objects
   /json/sheets
-    * () - new people_core sheet compleate with png and json
+    * (done) - new people_core sheet
   /states/boot.js
     * (done) - have it so that TASKS_WORKER object is used in place of the MAIN task object for workers
     * (done) - have a TASKS_CUSTOMER, and ACTIONS_CUSTOMER in boot.js and add to the registry
   /states/load.js :
     * (done) - load people_core.json
     * (done) - call ItemTools.genIndex in create method
+    * (done) - load new people_core png
   /
     * (      ) - use rollup.js to create a final R8 build when ready to finish revision
     * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision

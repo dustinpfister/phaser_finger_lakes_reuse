@@ -20,8 +20,12 @@ class Load extends Phaser.Scene {
         const scene =  this;
     
         this.load.setBaseURL('./');
-        // SHEETS               
+        // IMG             
         this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+        //SHEETS
+        //this.load.image('people_core', 'json/sheets/people_core.png');
+        this.load.spritesheet('people_core', 'json/sheets/people_core.png', { frameWidth: 16, frameHeight: 16 });
+        
         this.load.atlas('menu_1', 'json/sheets/menu_1.png', 'json/sheets/menu_1.json');
         this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
         this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
