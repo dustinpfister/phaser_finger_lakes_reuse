@@ -1,5 +1,6 @@
 import { ConsoleLogger } from '../lib/message/message.js';
 import { GlobalControl, Menu } from '../lib/ui/ui.js';
+import { PeopleData } from '../lib/people/people.js';
 const log = new ConsoleLogger({
     cat: 'state',
     id: 'menu',
@@ -15,9 +16,13 @@ class MainMenu extends Phaser.Scene {
     startMapView () {
         log('starting mapview...');
         
+        const peopleData = PeopleData.createNew( [
+            this.cache.json.get('people_core')
+        ] );
         
         this.registry.set('gameSave', {
-            money: 0
+            money: 0,
+            peopleData: peopleData
         });
         
         this.scene.start('Mapview');

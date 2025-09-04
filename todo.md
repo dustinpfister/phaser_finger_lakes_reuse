@@ -34,8 +34,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - finish breaking down worker actions in the new worker folder.
     * (done) - break down action_worker_di down into fine grain files for each action
     * (done) - finish breaking down customer actions in the new customer folder.
- 
-    * (    ) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
+    * (done) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
  
     * (    ) - make use of people data json when creating person objects
     
