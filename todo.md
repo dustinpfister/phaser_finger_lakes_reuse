@@ -34,9 +34,13 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - finish breaking down worker actions in the new worker folder.
     * (done) - break down action_worker_di down into fine grain files for each action
     * (done) - finish breaking down customer actions in the new customer folder.
+    
+    * (    ) - make use of people data when creating people objects
+    
+    
     * () - see about updating worker AI so that they do not get stuck.
     * () - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
-    * () - make use of people data when creating people objects
+
   /json/sheets
     * (done) - new people_core sheet
   /states/boot.js
