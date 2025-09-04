@@ -1,22 +1,33 @@
 {
     "frameset": [
-        { "name": "people_core", "frameSize" : 16  }
+        { "name": "people_16_16", "frameSize" : 16  },
+        { "name": "people_core",  "frameSize" : 16  }
     ],
     "people": [
         
-        {  "name": "Dustmister",       "speed" : 0.70, "frameset" : [ 0, 0 ]  },
-        {  "name": "Nickelback",       "speed" : 0.65, "frameset" : [ 0, 1 ]  },
-        {  "name": "NotPeter",         "speed" : 0.50, "frameset" : [ 0, 2 ]  },
-        {  "name": "ClayTea",          "speed" : 0.75, "frameset" : [ 0, 3 ]  },
+        {  "name": "Dustmister",       "speed" : 0.70, "frameset" : [ 0, 1 ]  },
+        {  "name": "Nickelback",       "speed" : 0.65, "frameset" : [ 1, 0 ]  },
+        {  "name": "NotPeter",         "speed" : 0.50, "frameset" : [ 1, 1 ]  },
+        {  "name": "ClayTea",          "speed" : 0.75, "frameset" : [ 1, 2 ]  },
         
-        {  "name": "John 1",           "speed" : 0.00, "frameset" : [ 0, 4 ]  },
-        {  "name": "John 2",           "speed" : 1.00, "frameset" : [ 0, 5 ]  },
-        {  "name": "John 3",           "speed" : 1.00, "frameset" : [ 0, 6 ]  },
-        {  "name": "John 4",           "speed" : 1.00, "frameset" : [ 0, 7 ]  },
+        {  "name": "John 1",           "speed" : 0.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 2",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 3",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 4",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 5",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 6",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 7",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 8",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
+        {  "name": "John 9",           "speed" : 1.00, "frameset" : [ 0, 2 ]  },
         
-        {  "name": "Jane 1",           "speed" : 1.00, "frameset" : [ 0, 8 ]  },
-        {  "name": "Jane 2",           "speed" : 1.00, "frameset" : [ 0, 9 ]  },
-        {  "name": "Jane 3",           "speed" : 1.00, "frameset" : [ 0, 10 ]  },
-        {  "name": "Jane 4",           "speed" : 1.00, "frameset" : [ 0, 11 ]  }
+        {  "name": "Jane 1",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 2",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 3",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 4",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 5",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 6",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 7",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 8",           "speed" : 1.00, "frameset" : [ 0, 3 ]  },
+        {  "name": "Jane 9",           "speed" : 1.00, "frameset" : [ 0, 3 ]  }
     ]
 }

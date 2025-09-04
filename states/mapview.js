@@ -155,7 +155,7 @@ class Mapview extends Phaser.Scene {
         
         // no player!? then set one
         if(!player){
-           let mi = mdc.startMapIndex, len = Object.keys(mdc.mapData).length;
+           let mi = 1, len = Object.keys(mdc.mapData).length;
            while(mi <= len){
                const md = mdc.getMapDataByIndex(mi);
                const options = md.worker.getChildren();
