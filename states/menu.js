@@ -18,7 +18,10 @@ class MainMenu extends Phaser.Scene {
         
         const peopleData = PeopleData.createNew( [
             this.cache.json.get('people_core')
-        ] );
+        ]);
+        
+        
+        log(peopleData)
         
         this.registry.set('gameSave', {
             money: 0,

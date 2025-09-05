@@ -36,6 +36,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - finish breaking down customer actions in the new customer folder.
     * (done) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
  
+    * (done) - make it so that a people data record has the texture, and frame to use
+ 
     * (    ) - make use of people data json when creating person objects
     
     
