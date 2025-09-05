@@ -40,18 +40,21 @@ These can then be used when creating the People class instances for worker like 
     });
 ```
 
-## Person and People
+## 1) - Person Class, People Class, and the PeopleData system
 
-The main people.js library in Finger Lakes Reuse Contains classes for a single Person Class instance, as well as the People Class that is a collection of these Person Class Objects.
+The main people.js library in Finger Lakes Reuse Contains classes for a single Person Class instance, as well as the People Class that is a collection of these Person Class Objects. In addition in R8 I added a 'PeopleData' system that is a way to create and update a collection of objects that will be the over all population that there is to work with when it comes to hiring workers, as well as who will show up to shop and donate.
 
-### The Person Class
+### 1.1) - The Person Class
 
 The Person class extends from the Phaser Sprite class and contains the current state of a single Person. A Person has a 'type' such as 'customer', and a subType such as 'shopper'. With that said there is a whole lot of other logic that will apply to a certain Person based mainly on this type and sub type. However Much of this will depend on the collection to which the Person is a member of, as well as the current task that the person is set to.
 
-### The People Class
+### 1.2) - The People Class
 
 On top of having a single Person class I also have a Collection of Person Class instances which is the People Class. This People Class extends from the [Group Class in Phaser](https://docs.phaser.io/api-documentation/class/gameobjects-group)
 
+### 1.3) - The PeopleData System
+
+When a new game is created a PeopleData Object should be created end up being part of the game state by using the PeopleData.createNew method. This object will contain info about each person that there is in the game that in turn can be created as a single type of person such as a worker, or customer. There are a number of people that can be cloned, but even then only a certain number of times, and for the most part I would say that these kinds of people are just place holders for the additional people that will be added in as I refine this over all people system much better. 
 
 ## Tasks and Actions
 
