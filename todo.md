@@ -52,11 +52,9 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - finish breaking down customer actions in the new customer folder.
     * (done) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
     * (done) - make it so that a people data record has the texture, and frame to use
- 
-    * (    ) - I will need a assignment system that will be used to assign what people are up for grabs for worker or customer
+    * (done) - I will need a assignment system that will be used to assign what people are up for grabs for worker or customer
     * (    ) - update spawnPerson method to make use of the new peopleData assignment system
     * (    ) - make use of people data json when creating person objects setting name, speed, and texture.
-    
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /json/sheets
