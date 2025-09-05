@@ -1593,9 +1593,18 @@
            const now = new Date();
            const ty = this.getData('type');
            const pt = get_pt(ty);
-           if( pt.canSpawn(mdc, md, this, scene, now) ){
-               const config = Object.assign({}, { number: this.number, people: children }, pConfig);
-               const person = this.get( { x: 0, y: 0, texture: 'people_16_16', frame:0 }, config );
+           const canSpawn = pt.canSpawn(mdc, md, this, scene, now);
+           if( !canSpawn ){
+               return null;
+           }
+           if( canSpawn ){
+               const opt_person = Object.assign({}, { number: this.number, people: children }, pConfig);
+               const opt_sprite = {
+                   x: 0, y: 0, 
+                   texture: 'people_16_16',
+                   frame: 0
+               };
+               const person = this.get( opt_sprite, opt_person );
                if(isPlayer){
                    scene.registry.set('player', person);
                }
@@ -1604,7 +1613,7 @@
                pt.setSubType(mdc, md, this, scene, person);
                const st = get_spt( person );
                st.create(mdc, md, this, scene, person);
-               person.setFrame( person.getData('subType') + '_down');
+               //person.setFrame( person.getData('subType') + '_down');
       
                people.setAction(scene, mdc, md, person, 'default' );
                people.setTask(scene, mdc, md, person, 'default' );
@@ -1764,7 +1773,46 @@
            }
        }
        
-   }
+   }/********* **********
+   4.0) PeopleData System
+   ********** *********/
+   const PeopleData = {};
+
+   // create new people data record helper
+   const create_pd_rec = function(hpd_index, clone_index, pd_hard, data){
+       const key = data.key + '_' + clone_index;
+       const hpd_frameset = pd_hard.frameset[ data.frameset[0] ];
+       const rec = {
+           key: key, name: data.name, hpd_index : hpd_index,
+           frame: data.frameset[1], texture: hpd_frameset.name,
+           speed : data.speed, 
+       };
+       return rec;
+   };
+
+   // create a new people data Object, with the given people data objects ( such as people_core.json )
+   PeopleData.createNew = function( hard_people_data=[] ) {
+       let hpd_index = 0;
+       const hpd_len = hard_people_data.length;
+       const pd = {};
+       while(hpd_index < hpd_len){
+           const pd_hard = hard_people_data[ hpd_index ];    
+           let p_index = 0;
+           const p_len = pd_hard.people.length;
+           while(p_index < p_len){
+               const data = pd_hard.people[p_index];
+               let n = 0;
+               while(n < data.clones){
+                   const rec = create_pd_rec(hpd_index, n, pd_hard, data);
+                   pd[rec.key] = rec;
+                   n += 1;
+               }
+               p_index += 1;
+           }
+           hpd_index += 1;
+       }
+       return pd;
+   };
 
    const log$4 = new ConsoleLogger ({
        cat: 'lib',
@@ -2286,10 +2334,15 @@
            const scene =  this;
        
            this.load.setBaseURL('./');
-           // SHEETS               
+           // IMG             
            this.load.image('map_16_16', 'json/sheets/map_16_16.png');
+           //SHEETS
+           //this.load.image('people_core', 'json/sheets/people_core.png');
+           this.load.spritesheet('people_core',  'json/sheets/people_core.png', { frameWidth: 16, frameHeight: 16 });
+           this.load.spritesheet('people_16_16', 'json/sheets/people_16_16.png', { frameWidth: 16, frameHeight: 16 });
+           
            this.load.atlas('menu_1', 'json/sheets/menu_1.png', 'json/sheets/menu_1.json');
-           this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
+           //this.load.atlas('people_16_16', 'json/sheets/people_16_16.png', 'json/sheets/people_16_16.json');
            this.load.atlas('donations_16_16', 'json/sheets/donations_16_16.png', 'json/sheets/donations_16_16.json');
            this.load.atlas('timebar', 'json/sheets/timebar.png', 'json/sheets/timebar.json');
            // FONTS
@@ -2298,7 +2351,7 @@
            // MAP DATA
            MapLoader({
              scene: this,
-             urlBase: 'json/maps/', //'drafts/mapdata/',
+             urlBase: 'json/maps/',
              mapIndicesStart: 1, mapIndicesStop: 5
            });
            // PEOPLE
@@ -2880,18 +2933,25 @@
            }
            if(k === 'Z' && dbs){
                
-               if(!mdc.zeroPlayerMode && player){
+               mdc.zeroPlayerMode = !mdc.zeroPlayerMode;
+               
+               //if(!mdc.zeroPlayerMode && player){
+               if(mdc.zeroPlayerMode && player){
                    const md = mdc.getMapDataByPerson(player);
                    md.worker.setTask(scene, mdc, md, player, 'default' );
                    scene.registry.remove('player');
-                   //scene.registry.set('player', null);
                }
                
-               if(mdc.zeroPlayerMode);
+               if(mdc.zeroPlayerMode && !player);
+               
+               if(!mdc.zeroPlayerMode && scene.nextWorker){
+                   //scene.registry.set('player', null);
+                   scene.nextWorker();
+               }
                
                
                
-               mdc.zeroPlayerMode = !mdc.zeroPlayerMode;
+
            }
        }
    };
@@ -3241,7 +3301,7 @@
            
            // no player!? then set one
            if(!player){
-              let mi = mdc.startMapIndex, len = Object.keys(mdc.mapData).length;
+              let mi = 1, len = Object.keys(mdc.mapData).length;
               while(mi <= len){
                   const md = mdc.getMapDataByIndex(mi);
                   const options = md.worker.getChildren();
@@ -3458,6 +3518,19 @@
        
        startMapView () {
            log$2('starting mapview...');
+           
+           const peopleData = PeopleData.createNew( [
+               this.cache.json.get('people_core')
+           ]);
+           
+           
+           log$2(peopleData);
+           
+           this.registry.set('gameSave', {
+               money: 0,
+               peopleData: peopleData
+           });
+           
            this.scene.start('Mapview');
        }
        
@@ -3487,6 +3560,8 @@
            disp1.depth = 6;
            disp1.text = 'R' + this.registry.get('R');
            disp1.x = 320 - disp1.width / 2;
+           
+           
            
        }
        
@@ -3713,14 +3788,9 @@
    TASKS$1.default = {
        init: function (mdc, md, people, scene, person) { 
            const main_task = person.getData('main_task');
-           log$1('**********DEFAULT WORKER TASK **********');
-           log$1('name : ' + person.name);
-           log$1('main task : ' + main_task);
            if(!main_task || main_task === 'default'){
-               log$1('sense I do not have a main task, I should get one.');
                person.setData('main_task', 'di');
-           }        
-           log$1('****************************************');
+           }
        },
        update: (mdc, md, people, scene, person) => {
            people.setTask(scene, mdc, md, person, person.getData('main_task') );
@@ -4126,10 +4196,6 @@
            reg.set('TASKS_CUSTOMER', TASKS);
            reg.set('ACTIONS_CUSTOMER', ACTIONS);
            
-           
-           reg.set('gameSave', {
-               money: 0
-           });
            log( 'Boooting Finger Lakes Reuse R' + reg.get('R') );
            game.events.on('step', () => {
                const scenes = game.scene.getScenes(true, false) || [] ;

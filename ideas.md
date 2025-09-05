@@ -7,7 +7,7 @@ If I get an idea for the game, or some other future project based on the code I 
 
 These are revisions that are next in line to start working on in the main todo list. At this point things might change in terms of whats next, and things might be pulled out of this list completely.
 
-## R12 (    ) - Save State Manager in menu state
+## RX (    ) - Save State Manager in menu state
 
 ```
 Of course a save state manager is a must have feature to get in place if I ever exspect for this game to be a final project that anyone will want to play. On the main menu I will want the top button to be 'start new / continue button' that will start a new game if there is no save at all, or continue a given game state in the manager. The second menu button will then be where the player can switch to a view in which they can create, copy, and delete game saves. This Save State manager can then also be used to set what game save will be the default save to use when clicking continue.
@@ -16,15 +16,11 @@ Saving the game is somehting that should just happen automaticly as part of the 
 
 ```
 
-## R11 (    ) - Worker Schedule Menu
 
-```
-I will want a menu that allows for a player to adjust when someone will come in to work. For now this just means what days that show up. Beond that I might want to also allow for a player to adjust the clock in and out times for the day. However much of the more advanced stuff can wate to an addtional future revision
-```
 
-## R10 (    ) - Higher, and Fire workers Menu
+## RX (    ) - Higher, and Fire workers Menu
 
-## R9 (    ) - Accounting
+## RX (    ) - Accounting
 
 ```
 Time for a proper Accounting system for the game. The main reason why is becuase additional revisions coming up will involve changes like adding payroal and so forth, so I will want code to help provide all of that.
