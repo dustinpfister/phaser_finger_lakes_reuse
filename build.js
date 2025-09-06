@@ -2240,13 +2240,21 @@
                i += 1;
            }
        }
-       
-       getTotalWorkerCount () {
+
+       getTotalPeopleCount (type='worker') {
           let count = 0;
           this.forAllMaps( this.scene, (scene, md, map_index) => {
-              count += md.worker.getChildren().length;
+              count += md[type].getChildren().length;
           } );
           return count;
+       }
+
+       getTotalCustomerCount () {
+           return this.getTotalPeopleCount('customer');
+       }
+
+       getTotalWorkerCount () {
+           return this.getTotalPeopleCount('worker');
        }
       
        setActiveMapByIndex (scene, index) {
@@ -4366,6 +4374,6 @@
            }
        }
    };
-   new Phaser.Game(config);
+   window.game = new Phaser.Game(config);
 
 })();

@@ -44,8 +44,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - no need for item index when calling getItemData any more.
   /lib/mapdata :
     * (done) : - have a getTotalWorkerCount method
-    * (    ) : - have a getTotalCustomerCount method
-    * (    ) : - have a getTotalPeopleCount method
+    * (done) : - have a getTotalCustomerCount method
+    * (done) : - have a getTotalPeopleCount method
   /lib/people :
     * (done) - start a worker folder, and with that a ai_worker.js file
     * (done) - start a common folder
