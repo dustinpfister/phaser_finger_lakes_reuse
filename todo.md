@@ -2,6 +2,17 @@
 
 This is what the current plan is when it comes to future work to get done on FLR. For additional ideas on what to do net be sure to check the ideas.md file. If any additional ideas come to mind be sure to park them there for starters, and only update this todo list when needed.
 
+## R12 (    ) - item database revisit
+```
+It is now time to take a long hard look at the item database system and make any nessacry improvments. Once I have a decent system in place 
+I would like to add a few more house hold items. Once I have a larger collection of items it will be possible to update people data to allow 
+for setting data that is used to define what kinds of items people like to buy.
+
+  /json/items :
+    * () I will want more items beyond just a plain white mug now
+
+```
+
 ## R11 (    ) - Worker Schedule Menu
 
 ```
@@ -10,7 +21,7 @@ I will want a menu that allows for a player to adjust when someone will come in 
 
 ## R10 (    ) - Worker Higher and Fire
 ```
-I will want to have a way to Hiher a given person as a worker, and with that also have a way to let them go as well.
+I will want to have a way to hierpushSpawnStack a given person as a worker, and with that also have a way to let them go as well.
 ```
 
 ## R9 (    ) - Population View
@@ -31,8 +42,6 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) move /maps to json/maps
     * (done) move /sheets to /json/sheets
     * (done) start a /json/people folder
-  /json/items :
-    * () I will want more items beyond just a plain white mug now
   /json/people :
     * (done) start a people_core.json file that will be a first 'core' set of people in the game.
     * (done) a person data object should contain name, speed, and sheetKey, and frameset values.
@@ -57,9 +66,9 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - new PeopleData Object for creation of a database for the current state off all people regardless if they are deployed or not
     * (done) - make it so that a people data record has the texture, and frame to use
     * (done) - I will need a assignment system that will be used to assign what people are up for grabs for worker or customer
-
-    * (    ) - update spawn stack system so that specfic names can be given
-    * (    ) - do away with the old data object system for worker people type in favor of spawn stacks
+    * (done) - do away with the old data object system for worker people type in favor of spawn stacks
+    * (done) - People.pushSpawnStack method now sets count to the length of a keys array if length is greater than the default which is zero
+    
     * (    ) - update spawnPerson method to make use of the new peopleData assignment system
     * (    ) - make use of people data json when creating person objects setting name, speed, and texture.
     * (    ) - see about updating worker AI so that they do not get stuck.
