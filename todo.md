@@ -55,14 +55,14 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - I will need a assignment system that will be used to assign what people are up for grabs for worker or customer
 
     * (    ) - update spawn stack system so that specfic names can be given
-
     * (    ) - do away with the old data object system for worker people type in favor of spawn stacks
-
     * (    ) - update spawnPerson method to make use of the new peopleData assignment system
-    
     * (    ) - make use of people data json when creating person objects setting name, speed, and texture.
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
+  /lib/schedule :
+    * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
+    * (    ) - update readme for schedule to reflect changes with display system
   /json/sheets
     * (done) - new people_core sheet
   /states/boot.js
@@ -76,7 +76,10 @@ Sense the focus is on people, I would like to take a moment to work a little mor
   /states/mapview.js :
     * (done) - commented out old spawn worker code that for now seems to do nothing
     * (done) - update debug info to give a detailed view of spawn stacks
-    * (    ) - add timed event code for workers
+    * (done) - have a add_donator_timed_events in favor of generic addTimedEvents method
+    * (    ) - have a add_shopper_timed_events in favor of generic addTimedEvents method
+    * (    ) - have a add_worker_timed_events method
+    * (    ) - remove old addTimedEvents method if it is no longer used
   /states/menu.js :
     * (done) - create gameSave in menu state rather than boot state
     * (done) - create PeopleData instance as part of the gameSave

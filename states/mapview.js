@@ -230,11 +230,46 @@ class Mapview extends Phaser.Scene {
         md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
     }
     
+    // method for adding donator timed events
+    add_donator_timed_events () {
+        const mdc = this.registry.get('mdc'); 
+        const tb = this.registry.get('tb');
+        const gt = tb.gt;
+        const te_count = tb.gt.timedEvents.length;
+        const md_donations = mdc.getMapDataByIndex(4);
+        
+        const len_donations = md_donations.donations.getChildren().length;
+        const max_donations = this.registry.get('MAX_MAP_DONATIONS');
+        
+        if( len_donations < max_donations && te_count === 0 ){
+            const t_base = 60;
+            const t_event_count = te_count * 25;
+            const t_rnd = Math.floor( Math.random() * 0 );
+            let time = gt.getByDelta( t_base + t_event_count + t_rnd  );
+            const count = 3;
+            tb.gt.addTimedEvent({
+                start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                on_tick : (te, gt, delta) => {
+                    te.disp_top = 'Donators';
+                    te.disp_bottom = time.hour;
+                },
+                on_start: (te, gt, delta) => {
+                    const people = md_donations.customer;
+                    people.pushSpawnStack({
+                        subTypes: [ ['donator', 1.00] ],
+                        ms_min: 1000, ms_max: 5000, count: count
+                    }); 
+                }
+            });
+        }
+    }
+    
+    /*
     addTimedEvents () {
         const mdc = this.registry.get('mdc'); 
         const tb = this.registry.get('tb');
         const gt = tb.gt;
-        const te_count = tb.gt.timedEvents.length
+        const te_count = tb.gt.timedEvents.length;
         if(te_count === 0){
             let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
             
@@ -278,6 +313,7 @@ class Mapview extends Phaser.Scene {
             
         }
     }
+    */
     
     update (time, delta) {
         const player = this.registry.get('player');
@@ -295,7 +331,10 @@ class Mapview extends Phaser.Scene {
            this.nextWorker();
         }
         
-        this.addTimedEvents();
+        //this.addTimedEvents();
+        
+        this.add_donator_timed_events();
+        
         tb.update( delta );
         mdc.update(time, delta);
         
