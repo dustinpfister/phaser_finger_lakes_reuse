@@ -68,6 +68,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - I will need a assignment system that will be used to assign what people are up for grabs for worker or customer
     * (done) - do away with the old data object system for worker people type in favor of spawn stacks
     * (done) - People.pushSpawnStack method now sets count to the length of a keys array if length is greater than the default which is zero
+    * (done) - have a PeopleData.switchPersonKey method
     
     * (    ) - update spawnPerson method to make use of the new peopleData assignment system
     * (    ) - make use of people data json when creating person objects setting name, speed, and texture.

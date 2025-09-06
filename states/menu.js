@@ -16,16 +16,22 @@ class MainMenu extends Phaser.Scene {
     startMapView () {
         log('starting mapview...');
         
-        const peopleData = PeopleData.createNew( [
+        const pd = PeopleData.createNew( [
             this.cache.json.get('people_core')
         ]);
         
-        
-        log(peopleData)
+        const switchPersonKey = PeopleData.switchPersonKey;     
+        switchPersonKey(pd, 'cp_unique_1_0', 'none', 'worker');
+        switchPersonKey(pd, 'cp_clone_2_2', 'none', 'customer');
+        switchPersonKey(pd, 'cp_clone_1_0', 'none', 'customer');
+        switchPersonKey(pd, 'cp_clone_1_1', 'none', 'customer');
+        switchPersonKey(pd, 'cp_clone_1_2', 'none', 'customer');
+        switchPersonKey(pd, 'cp_clone_1_3', 'none', 'customer');    
+        log( pd  )
         
         this.registry.set('gameSave', {
             money: 0,
-            peopleData: peopleData
+            pd : pd
         });
         
         this.scene.start('Mapview');

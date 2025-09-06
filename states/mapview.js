@@ -249,8 +249,9 @@ class Mapview extends Phaser.Scene {
                 },
                 on_start: (te, gt, delta) => {
                     people.pushSpawnStack({
-                        subTypes: [ ['employee', 1.00] ],
-                        ms_min: 1000, ms_max: 5000, count: count
+                        //subTypes: [ ['employee', 1.00] ],
+                        //ms_min: 1000, ms_max: 5000, count: count
+                        keys: ['cp_unique_1_0']
                     }); 
                 }
             });

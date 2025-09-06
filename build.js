@@ -1580,10 +1580,14 @@
        
        pushSpawnStack (opt={}) {
            const stack = this.getData('spawnStack');
-           const spawnData = {};
-           spawnData.ms_min = 1000;
-           spawnData.count = opt.count === undefined ? 5 : opt.count;
-           stack.push(spawnData);
+           opt = Object.assign({}, {
+               subTypes: [], ms_min: 1000, ms_max: 5000, count: 1, keys: []
+           }, opt);
+           if(opt.keys.length > 0){
+               opt.count = opt.keys.length; // count should = the number of keys
+               opt.subTypes = [];           // subTypes are not used in this case as we have a list of keys to use
+           }
+           stack.push( Object.assign( {}, opt ) );
        }
        
        setMapSpawnLocation (md, person) {
@@ -1830,6 +1834,17 @@
        }
        pd.count = Object.keys( pd.population ).length;
        return pd;
+   };
+
+   PeopleData.switchPersonKey = (pd, key='cp_unique_1_0', from='none', to='worker') => {
+       let i = pd.assignment[from].findIndex( (el_key) => {
+           return key === el_key;
+       });
+       if(i === -1){
+           return;
+       }
+       const key_pulled = pd.assignment.none.splice(i, 1)[0];
+       pd.assignment[to].push(key_pulled);
    };
 
    const log$4 = new ConsoleLogger ({
@@ -3434,8 +3449,9 @@
                    },
                    on_start: (te, gt, delta) => {
                        people.pushSpawnStack({
-                           subTypes: [ ['employee', 1.00] ],
-                           ms_min: 1000, ms_max: 5000, count: count
+                           //subTypes: [ ['employee', 1.00] ],
+                           //ms_min: 1000, ms_max: 5000, count: count
+                           keys: ['cp_unique_1_0']
                        }); 
                    }
                });
@@ -3662,16 +3678,22 @@
        startMapView () {
            log$2('starting mapview...');
            
-           const peopleData = PeopleData.createNew( [
+           const pd = PeopleData.createNew( [
                this.cache.json.get('people_core')
            ]);
            
-           
-           log$2(peopleData);
+           const switchPersonKey = PeopleData.switchPersonKey;     
+           switchPersonKey(pd, 'cp_unique_1_0', 'none', 'worker');
+           switchPersonKey(pd, 'cp_clone_2_2', 'none', 'customer');
+           switchPersonKey(pd, 'cp_clone_1_0', 'none', 'customer');
+           switchPersonKey(pd, 'cp_clone_1_1', 'none', 'customer');
+           switchPersonKey(pd, 'cp_clone_1_2', 'none', 'customer');
+           switchPersonKey(pd, 'cp_clone_1_3', 'none', 'customer');    
+           log$2( pd  );
            
            this.registry.set('gameSave', {
                money: 0,
-               peopleData: peopleData
+               pd : pd
            });
            
            this.scene.start('Mapview');
