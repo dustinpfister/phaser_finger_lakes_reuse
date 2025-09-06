@@ -230,6 +230,33 @@ class Mapview extends Phaser.Scene {
         md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
     }
     
+    add_worker_timed_events () {
+        const mdc = this.registry.get('mdc'); 
+        const tb = this.registry.get('tb');
+        const gt = tb.gt;
+        const te_count = tb.gt.timedEvents.length;
+        const md_wspawn = mdc.getMapDataByIndex(2);
+        const people = md_wspawn.worker;
+        const people_len = mdc.getTotalWorkerCount(); //people.getChildren().length;
+        if( people_len === 0 &&  te_count === 0 ){
+            let time = gt.getByDelta( 5  );
+            const count = 1;
+            tb.gt.addTimedEvent({
+                start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                on_tick : (te, gt, delta) => {
+                    te.disp_top = count + ' Worker';
+                    te.disp_bottom = '';
+                },
+                on_start: (te, gt, delta) => {
+                    people.pushSpawnStack({
+                        subTypes: [ ['employee', 1.00] ],
+                        ms_min: 1000, ms_max: 5000, count: count
+                    }); 
+                }
+            });
+        }
+    }
+    
     add_shopper_timed_events () {
         const mdc = this.registry.get('mdc'); 
         const tb = this.registry.get('tb');
@@ -247,8 +274,8 @@ class Mapview extends Phaser.Scene {
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                 on_tick : (te, gt, delta) => {
-                    te.disp_top = 'Shoppers';
-                    te.disp_bottom = count;
+                    te.disp_top = count + ' Shoppers';
+                    te.disp_bottom = '';
                 },
                 on_start: (te, gt, delta) => {
                     people.pushSpawnStack({
@@ -279,8 +306,8 @@ class Mapview extends Phaser.Scene {
             tb.gt.addTimedEvent({
                 start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                 on_tick : (te, gt, delta) => {
-                    te.disp_top = 'Donators';
-                    te.disp_bottom = time.hour;
+                    te.disp_top = count + ' Donators';
+                    te.disp_bottom = '';
                 },
                 on_start: (te, gt, delta) => {
                     people.pushSpawnStack({
@@ -361,6 +388,7 @@ class Mapview extends Phaser.Scene {
         
         //this.addTimedEvents();
         
+        this.add_worker_timed_events();
         this.add_shopper_timed_events();
         this.add_donator_timed_events();
         

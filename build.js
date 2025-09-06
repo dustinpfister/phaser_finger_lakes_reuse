@@ -1377,6 +1377,13 @@
                return true;
            }
            */
+           
+           const spawnStack = people.getData('spawnStack');
+           if(spawnStack.length > 0){
+               spawnStack.shift();
+               return true;
+           }
+           
            return false;
        }
 
@@ -2233,6 +2240,14 @@
                i += 1;
            }
        }
+       
+       getTotalWorkerCount () {
+          let count = 0;
+          this.forAllMaps( this.scene, (scene, md, map_index) => {
+              count += md.worker.getChildren().length;
+          } );
+          return count;
+       }
       
        setActiveMapByIndex (scene, index) {
            this.activeIndex = index;
@@ -2269,18 +2284,13 @@
        
        getMapDataByPerson(person){
            let mi = 0, len = Object.keys(this.mapData).length;
-           while(mi <= len){
-               
+           while(mi <= len){        
                const md = this.getMapDataByIndex(mi);
                if(md){
-               
                    if(md.worker.getChildren().some( (el)=>{ return el === person  } ) ){
-                   
                        return md;
-                   
                    }
                }
-               
                mi += 1;
            }
            return null;
@@ -2511,13 +2521,13 @@
           this.img.x = this.sprite.x;
           this.img.y = this.sprite.y;
           
-          ctx.fillStyle = 'white';
+          ctx.fillStyle = 'black';
 
           ctx.textBaseline = 'top';
-          const fs1 = 7, fs2 = 10;
-          ctx.font = fs1 + 'px arial';
+          const fs1 = 10, fs2 = 12;
+          ctx.font = fs1 + 'px monospace';
           ctx.fillText(this.disp_top, 2, 2);
-          ctx.font = fs2 + 'px arial';
+          ctx.font = fs2 + 'px monospace';
           ctx.fillText(this.disp_bottom, 2, (2 + fs1) + 2);
           
           
@@ -3397,6 +3407,33 @@
            md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
        }
        
+       add_worker_timed_events () {
+           const mdc = this.registry.get('mdc'); 
+           const tb = this.registry.get('tb');
+           const gt = tb.gt;
+           const te_count = tb.gt.timedEvents.length;
+           const md_wspawn = mdc.getMapDataByIndex(2);
+           const people = md_wspawn.worker;
+           const people_len = mdc.getTotalWorkerCount(); //people.getChildren().length;
+           if( people_len === 0 &&  te_count === 0 ){
+               let time = gt.getByDelta( 5  );
+               const count = 1;
+               tb.gt.addTimedEvent({
+                   start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                   on_tick : (te, gt, delta) => {
+                       te.disp_top = count + ' Worker';
+                       te.disp_bottom = '';
+                   },
+                   on_start: (te, gt, delta) => {
+                       people.pushSpawnStack({
+                           subTypes: [ ['employee', 1.00] ],
+                           ms_min: 1000, ms_max: 5000, count: count
+                       }); 
+                   }
+               });
+           }
+       }
+       
        add_shopper_timed_events () {
            const mdc = this.registry.get('mdc'); 
            const tb = this.registry.get('tb');
@@ -3414,8 +3451,8 @@
                tb.gt.addTimedEvent({
                    start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                    on_tick : (te, gt, delta) => {
-                       te.disp_top = 'Shoppers';
-                       te.disp_bottom = count;
+                       te.disp_top = count + ' Shoppers';
+                       te.disp_bottom = '';
                    },
                    on_start: (te, gt, delta) => {
                        people.pushSpawnStack({
@@ -3446,8 +3483,8 @@
                tb.gt.addTimedEvent({
                    start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
                    on_tick : (te, gt, delta) => {
-                       te.disp_top = 'Donators';
-                       te.disp_bottom = time.hour;
+                       te.disp_top = count + ' Donators';
+                       te.disp_bottom = '';
                    },
                    on_start: (te, gt, delta) => {
                        people.pushSpawnStack({
@@ -3528,6 +3565,7 @@
            
            //this.addTimedEvents();
            
+           this.add_worker_timed_events();
            this.add_shopper_timed_events();
            this.add_donator_timed_events();
            
