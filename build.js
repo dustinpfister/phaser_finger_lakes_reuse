@@ -1794,7 +1794,15 @@
    PeopleData.createNew = function( hard_people_data=[] ) {
        let hpd_index = 0;
        const hpd_len = hard_people_data.length;
-       const pd = {};
+       const pd = {
+          assignment: {
+              none: [],
+              worker:[],
+              customer: []
+          },
+          population: {},
+          count: 0
+       };
        while(hpd_index < hpd_len){
            const pd_hard = hard_people_data[ hpd_index ];    
            let p_index = 0;
@@ -1804,13 +1812,15 @@
                let n = 0;
                while(n < data.clones){
                    const rec = create_pd_rec(hpd_index, n, pd_hard, data);
-                   pd[rec.key] = rec;
+                   pd.population[rec.key] = rec;
+                   pd.assignment.none.push( rec.key );
                    n += 1;
                }
                p_index += 1;
            }
            hpd_index += 1;
        }
+       pd.count = Object.keys( pd.population ).length;
        return pd;
    };
 

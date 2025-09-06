@@ -32,8 +32,6 @@ class Mapview extends Phaser.Scene {
         const mdc = new MapDataCollection(this, { startMapIndex: start_map_index, zeroPlayerMode: true });
         this.registry.set('mdc', mdc);
         
-        //this.setPlayerPerson( this.registry.get('player'), start_map_index);
-        
         const tb = new TimeBar({
             x:320, y: 25,
             scene: this,
@@ -58,7 +56,6 @@ class Mapview extends Phaser.Scene {
         
         
         const confMenu = Menu.createConf({
-            //x: 580, y: 420,
             x:0, y: 0,
             frameWidth: 32, frameHeight: 32,
             textureKey: 'texture_menu_mapview',
@@ -92,16 +89,13 @@ class Mapview extends Phaser.Scene {
             ]
         });
         const menu = new Menu(this, confMenu);
-        //this.registry.set('menu_key', 'menu_mapview');
-        //this.registry.set('menu_mapview', menu);
-        
         
         mdc.setActiveMapByIndex(this, mdc.activeIndex);
         
         GlobalControl.setUp( this );
         GlobalControl.centerCamToMap(this, mdc.getActive() );
         
-        
+        /*
         mdc.forAllMaps(this, function(scene, md, map_index){         
            let wi = 0;
            const len = md.worker.maxSize;
@@ -124,6 +118,7 @@ class Mapview extends Phaser.Scene {
                wi += 1;
            }
        });
+       */
        
 
        
@@ -257,6 +252,7 @@ class Mapview extends Phaser.Scene {
                     const md_donations = mdc.getMapDataByIndex(4);
                     const md_t = mdc.getMapDataByIndex(1);
                     const cust_t_count = md_t.customer.children.entries.length;
+                    
                     if(cust_t_count == 0){
                         const people = md_t.customer;
                         people.pushSpawnStack({
@@ -348,10 +344,22 @@ class Mapview extends Phaser.Scene {
         
         });
         
-        dbs.lines2 = [
-            'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
-            'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
-        ];
+        // debug info for spawn stacks
+        dbs.lines2 = [];
+        
+        [1,4].forEach( (map_index) => {
+            const md = mdc.getMapDataByIndex( map_index );
+            const ss_cust = md.customer.getData('spawnStack');
+            const ss_work = md.worker.getData('spawnStack');
+            dbs.lines2.push( map_index + ' ) spawn stack lengths : ' );
+            dbs.lines2.push( ' customer : ' + ss_cust.length + ';  worker: ' + ss_work.length);
+            dbs.lines2.push('*****','');
+        } );
+        
+        //dbs.lines2 = [
+            //'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
+            //'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
+        //];
         dbs.draw();
         
     }
