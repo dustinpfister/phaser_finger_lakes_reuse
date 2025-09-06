@@ -1352,15 +1352,15 @@
    };
           
    PEOPLE_TYPES.worker = {
-
+   /*
        data : {
            0 :  { count: 0, spawn: 0 },
            1 :  { count: 0, spawn: 0 },
            2 :  { count: 0, spawn: 0 },
            3 :  { count: 0, spawn: 0 },
-           4  : { count: 1, spawn: 0 }
+           4  : { count: 0, spawn: 0 }
        },
-
+   */
        init: function(mdc, md, people, scene){},
 
        setSubType: function (mcd, md, people, scene, person ) {
@@ -1369,12 +1369,14 @@
        },
        
        canSpawn : function (mcd, md, people, scene, now) {
+       /*
            const dat = this.data[ md.index ];
-           people.children.size;
+           const len = people.children.size;
            if( dat.spawn < dat.count ){
                dat.spawn += 1;
                return true;
            }
+           */
            return false;
        }
 
@@ -1613,7 +1615,6 @@
                pt.setSubType(mdc, md, this, scene, person);
                const st = get_spt( person );
                st.create(mdc, md, this, scene, person);
-               //person.setFrame( person.getData('subType') + '_down');
       
                people.setAction(scene, mdc, md, person, 'default' );
                people.setTask(scene, mdc, md, person, 'default' );
@@ -3198,8 +3199,6 @@
            const mdc = new MapDataCollection(this, { startMapIndex: start_map_index, zeroPlayerMode: true });
            this.registry.set('mdc', mdc);
            
-           //this.setPlayerPerson( this.registry.get('player'), start_map_index);
-           
            const tb = new TimeBar({
                x:320, y: 25,
                scene: this,
@@ -3224,7 +3223,6 @@
            
            
            const confMenu = Menu.createConf({
-               //x: 580, y: 420,
                x:0, y: 0,
                frameWidth: 32, frameHeight: 32,
                textureKey: 'texture_menu_mapview',
@@ -3258,16 +3256,13 @@
                ]
            });
            new Menu(this, confMenu);
-           //this.registry.set('menu_key', 'menu_mapview');
-           //this.registry.set('menu_mapview', menu);
-           
            
            mdc.setActiveMapByIndex(this, mdc.activeIndex);
            
            GlobalControl.setUp( this );
            GlobalControl.centerCamToMap(this, mdc.getActive() );
            
-           
+           /*
            mdc.forAllMaps(this, function(scene, md, map_index){         
               let wi = 0;
               const len = md.worker.maxSize;
@@ -3276,10 +3271,21 @@
                   if(!worker){
                       break;
                   }
-                  if(mdc.activeIndex === map_index && wi === 0 );
+                  if( map_index === 4 ){
+                      //worker.action = 'di';
+                      //log( 'find empty drop spot test: ' );
+                      //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
+                      // exspected output [39, 3], [ 39, 4 ], ...
+                  } 
+                  if(mdc.activeIndex === map_index && wi === 0 ){   
+                  
+                      //scene.registry.set('player', worker);
+                      //worker.setToTilePos( md.hardMapData.spawnAt );       
+                  }
                   wi += 1;
               }
           });
+          */
           
 
           
@@ -3391,13 +3397,76 @@
            md.worker.setTask(this, this.registry.get('mdc'), md, worker, 'player_control');
        }
        
+       add_shopper_timed_events () {
+           const mdc = this.registry.get('mdc'); 
+           const tb = this.registry.get('tb');
+           const gt = tb.gt;
+           const te_count = tb.gt.timedEvents.length;
+           const md_t = mdc.getMapDataByIndex(1);
+           const people = md_t.customer;
+           const people_len = people.getChildren().length === 0;
+           if( people_len &&  te_count === 0 ){
+               const t_base = 60;
+               const t_event_count = te_count * 25;
+               const t_rnd = Math.floor( Math.random() * 0 );
+               let time = gt.getByDelta( t_base + t_event_count + t_rnd  );
+               const count = 1;
+               tb.gt.addTimedEvent({
+                   start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                   on_tick : (te, gt, delta) => {
+                       te.disp_top = 'Shoppers';
+                       te.disp_bottom = count;
+                   },
+                   on_start: (te, gt, delta) => {
+                       people.pushSpawnStack({
+                           subTypes: [ ['shoppers', 1.00] ],
+                           ms_min: 1000, ms_max: 5000, count: count
+                       }); 
+                   }
+               });
+           }
+       }
+       
+       // method for adding donator timed events
+       add_donator_timed_events () {
+           const mdc = this.registry.get('mdc'); 
+           const tb = this.registry.get('tb');
+           const gt = tb.gt;
+           const te_count = tb.gt.timedEvents.length;
+           const md_donations = mdc.getMapDataByIndex(4);
+           const people = md_donations.customer;
+           const len_donations = md_donations.donations.getChildren().length;
+           const max_donations = this.registry.get('MAX_MAP_DONATIONS');
+           if( len_donations < max_donations && te_count === 0 ){
+               const t_base = 60;
+               const t_event_count = te_count * 25;
+               const t_rnd = Math.floor( Math.random() * 0 );
+               let time = gt.getByDelta( t_base + t_event_count + t_rnd  );
+               const count = 3;
+               tb.gt.addTimedEvent({
+                   start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
+                   on_tick : (te, gt, delta) => {
+                       te.disp_top = 'Donators';
+                       te.disp_bottom = time.hour;
+                   },
+                   on_start: (te, gt, delta) => {
+                       people.pushSpawnStack({
+                           subTypes: [ ['donator', 1.00] ],
+                           ms_min: 1000, ms_max: 5000, count: count
+                       }); 
+                   }
+               });
+           }
+       }
+       
+       /*
        addTimedEvents () {
            const mdc = this.registry.get('mdc'); 
            const tb = this.registry.get('tb');
            const gt = tb.gt;
            const te_count = tb.gt.timedEvents.length;
            if(te_count === 0){
-               let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) );
+               let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
                
                const count = 5;
                
@@ -3413,6 +3482,7 @@
                        const md_donations = mdc.getMapDataByIndex(4);
                        const md_t = mdc.getMapDataByIndex(1);
                        const cust_t_count = md_t.customer.children.entries.length;
+                       
                        if(cust_t_count == 0){
                            const people = md_t.customer;
                            people.pushSpawnStack({
@@ -3438,6 +3508,7 @@
                
            }
        }
+       */
        
        update (time, delta) {
            const player = this.registry.get('player');
@@ -3455,7 +3526,11 @@
               this.nextWorker();
            }
            
-           this.addTimedEvents();
+           //this.addTimedEvents();
+           
+           this.add_shopper_timed_events();
+           this.add_donator_timed_events();
+           
            tb.update( delta );
            mdc.update(time, delta);
            
@@ -3504,10 +3579,22 @@
            
            });
            
-           dbs.lines2 = [
-               'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
-               'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
-           ];
+           // debug info for spawn stacks
+           dbs.lines2 = [];
+           
+           [1,4].forEach( (map_index) => {
+               const md = mdc.getMapDataByIndex( map_index );
+               const ss_cust = md.customer.getData('spawnStack');
+               const ss_work = md.worker.getData('spawnStack');
+               dbs.lines2.push( map_index + ' ) spawn stack lengths : ' );
+               dbs.lines2.push( ' customer : ' + ss_cust.length + ';  worker: ' + ss_work.length);
+               dbs.lines2.push('*****','');
+           } );
+           
+           //dbs.lines2 = [
+               //'md1 spawn_stack_count: ' + mdc.getMapDataByIndex(1).customer.getData('spawnStack').length,
+               //'md4 spawn_stack_count: ' + mdc.getMapDataByIndex(4).customer.getData('spawnStack').length
+           //];
            dbs.draw();
            
        }

@@ -77,7 +77,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - commented out old spawn worker code that for now seems to do nothing
     * (done) - update debug info to give a detailed view of spawn stacks
     * (done) - have a add_donator_timed_events in favor of generic addTimedEvents method
-    * (    ) - have a add_shopper_timed_events in favor of generic addTimedEvents method
+    * (done) - have a add_shopper_timed_events in favor of generic addTimedEvents method
     * (    ) - have a add_worker_timed_events method
     * (    ) - remove old addTimedEvents method if it is no longer used
   /states/menu.js :
