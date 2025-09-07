@@ -71,6 +71,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - have a PeopleData.switchPersonKey method
     * (done) - a people type def should have a getPConfig function that is called by People.spawnPerson to get person options
     
+    * (done) - I will want a PeopleData method to set if a person is spawned into the game or not
+    
     * (    ) - update peopleTypes to make use of the new peopleData assignment system
 
     * (    ) - see about updating worker AI so that they do not get stuck.
