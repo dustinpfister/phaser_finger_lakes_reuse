@@ -69,9 +69,10 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - do away with the old data object system for worker people type in favor of spawn stacks
     * (done) - People.pushSpawnStack method now sets count to the length of a keys array if length is greater than the default which is zero
     * (done) - have a PeopleData.switchPersonKey method
+    * (done) - a people type def should have a getPConfig function that is called by People.spawnPerson to get person options
     
-    * (    ) - update spawnPerson method to make use of the new peopleData assignment system
-    * (    ) - make use of people data json when creating person objects setting name, speed, and texture.
+    * (    ) - update peopleTypes to make use of the new peopleData assignment system
+
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /lib/schedule :
@@ -92,8 +93,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - update debug info to give a detailed view of spawn stacks
     * (done) - have a add_donator_timed_events in favor of generic addTimedEvents method
     * (done) - have a add_shopper_timed_events in favor of generic addTimedEvents method
-    * (    ) - have a add_worker_timed_events method
-    * (    ) - remove old addTimedEvents method if it is no longer used
+    * (done) - have a add_worker_timed_events method
+    * (done) - remove old addTimedEvents method if it is no longer used
   /states/menu.js :
     * (done) - create gameSave in menu state rather than boot state
     * (done) - create PeopleData instance as part of the gameSave
