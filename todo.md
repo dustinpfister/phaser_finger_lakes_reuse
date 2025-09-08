@@ -72,9 +72,9 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - a people type def should have a getPConfig function that is called by People.spawnPerson to get person options  
     * (done) - I will want a PeopleData method to set if a person is spawned into the game or not
     * (done) - Do alway with the canSpawn methods of peopleTypes in favor of having common logic in the People.spawnPerson method
-    
-    * (    ) - make use of getPConfig set in peopleTypes for setting sprite texture and frame
+    * (done) - make use of getPConfig set in peopleTypes for setting sprite texture and frame
     * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
+    * (    ) - with peopleTypes the getPConfig method should be for the subType
 
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
