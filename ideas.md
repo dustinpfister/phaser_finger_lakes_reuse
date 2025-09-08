@@ -93,6 +93,14 @@ These are general tasks I would like to complete when it comes to various side f
     * Accounting / payroal / grants
 ```
 
+## RX () - Fixed main MDC Population
+```
+In R8 I added a PeopleData object with a Population property that is used as a way to define a kinf of fixed population. However the system as it currntly stands is a little convaluted. So I would like to have a system where there is a fixed, centreal, total population of People class objects. It is then just a question if a given person is active in the main game or not, and if so what there roal is.
+
+It might still make sense to have worker, and customer class instances for each map.
+
+```
+
 ## RX () - Inventory, and Store ItemCollections
 
 ```

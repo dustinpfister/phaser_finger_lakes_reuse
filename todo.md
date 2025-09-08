@@ -69,11 +69,12 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - do away with the old data object system for worker people type in favor of spawn stacks
     * (done) - People.pushSpawnStack method now sets count to the length of a keys array if length is greater than the default which is zero
     * (done) - have a PeopleData.switchPersonKey method
-    * (done) - a people type def should have a getPConfig function that is called by People.spawnPerson to get person options
-    
+    * (done) - a people type def should have a getPConfig function that is called by People.spawnPerson to get person options  
     * (done) - I will want a PeopleData method to set if a person is spawned into the game or not
+    * (done) - Do alway with the canSpawn methods of peopleTypes in favor of having common logic in the People.spawnPerson method
     
-    * (    ) - update peopleTypes to make use of the new peopleData assignment system
+    * (    ) - make use of getPConfig set in peopleTypes for setting sprite texture and frame
+    * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
 
     * (    ) - see about updating worker AI so that they do not get stuck.
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
