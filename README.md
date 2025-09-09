@@ -70,6 +70,10 @@ If I ever get there, and of course that is a very big if, I might work on some s
 
 Progress on the development of this game has been very slow because of various factors including my real life job at Finger Lakes reuse. I am very much determined to see this one threw, so it would make sense to write a bit about the current status and direction of this game. As of R7 much of the core code that I want is very much in place at least. There is still a lot more to do in terms of working out bugs, and making the game playable for most people.
 
+## R8 ( done 09/09/2025 ) - People DataBase
+
+The main feature of R8 was to add a central people data base so that I can start having data for each person object in the game. The general idea here is that I will have a JOSN file that allows for me to add specific data for each and every person instance, this just sets speed for now, but in future revisions much more than that. As usual I was able to fix a whole lot of bugs while working on this one, and as such the over all state of the code is looking a little better. Still I have at least a few more revisions until I start to have something that looks like a game.
+
 ## R7 ( done 08/30/2025 ) - Menus
 
 In R7 I added Menus, and with that a new ui.js library to help with the process of creating menus and adding them into the game. During this time I also made a lot of other improvements with people.js and other supporting files that are used along with that library in a effort to make people.js more reusable.

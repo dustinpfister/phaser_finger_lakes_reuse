@@ -409,8 +409,11 @@
 
    class ItemCollection extends Phaser.GameObjects.Group {
 
-       constructor (scene, opt) {
-           super(scene, [], { maxSize: 40 });
+       constructor (scene) {
+           const max_items = scene.registry.get('MAX_ITEM_COLLECTION_SIZE') || 100;
+           super(scene, [], {
+               maxSize: max_items
+           });
        }
        
        getItemType ( iType='Item', canSell=false ){
@@ -539,6 +542,9 @@
                            item.y = pos_drop.y * 16 + 8;
                            item.droped = true;
                            mdc.addItemTo(item, md, 'donations');
+                           
+                           console.log( md.index );
+                           
                            people.onHand.remove(item);
                            person.setData('onHand', []);
                        }
@@ -1221,7 +1227,7 @@
            this.setCollideWorldBounds(true);
            this.depth = 3;
            this.nCurve = 0;
-           this.speedCurve = pConfig.curveSpeed || 0.20;
+           this.speedCurve = pConfig.speedCurve || 1.00;
            this.vecCurve = new Phaser.Math.Vector2();
            this.curve = null;     
            this.setData({
@@ -1352,66 +1358,67 @@
    };
           
    PEOPLE_TYPES.worker = {
-   /*
-       data : {
-           0 :  { count: 0, spawn: 0 },
-           1 :  { count: 0, spawn: 0 },
-           2 :  { count: 0, spawn: 0 },
-           3 :  { count: 0, spawn: 0 },
-           4  : { count: 0, spawn: 0 }
-       },
-   */
-       init: function(mdc, md, people, scene){},
+       getPConfig: (mdc, md, people, scene) => {
+       
+           people.getData('spawnStack');
+           const gs = scene.registry.get('gameSave');
+           gs.pd;
 
+           //log('!!! can set data here with the pd object !!!');
+           //log('I just need to get the spawn stack data though.');
+           //log(spawnStack);
+           //log(pd);
+       
+           return {
+               texture: 'people_16_16',
+               frame: 0,
+               speedCurve: 0.90
+           };
+       },
        setSubType: function (mcd, md, people, scene, person ) {
            person.setData('subType', 'employee');   
            person.name = mcd.newName( 'employee' );
        },
-       
-       canSpawn : function (mcd, md, people, scene, now) {
        /*
-           const dat = this.data[ md.index ];
-           const len = people.children.size;
-           if( dat.spawn < dat.count ){
-               dat.spawn += 1;
-               return true;
-           }
-           */
-           
+       canSpawn : function (mcd, md, people, scene, now) {
            const spawnStack = people.getData('spawnStack');
            if(spawnStack.length > 0){
-               spawnStack.shift();
+               //spawnStack.shift();
                return true;
            }
-           
            return false;
        }
-
+       */
    };
        
    PEOPLE_TYPES.worker.employee = {
-
+       init: (mdc, md, people, scene) => {
+           log$5( 'init method for worker.employee');
+       },
        update: (mdc, md, people, scene, person) => {},
-
        create: (mdc, md, people, scene, person) => {
            people.setMapSpawnLocation(md, person);
        }
-       
    };
        
    PEOPLE_TYPES.customer = {
-
+       getPConfig: (mdc, md, people, scene) => {
+           return {
+               texture: 'people_16_16',
+               frame: 1,
+               speedCurve: 0.90
+           };
+       },
        init: function(mdc, md, people, scene){
            people.setData('lastSpawn', new Date() );
            const sr = scene.registry.get('CUSTOMER_SPAWN_RATE') || 3000;
            people.setSpawnRate( sr.min, sr.delta );
        },
-
        setSubType: function (mdc, md, people, scene, person ) {
            people.setRandomSubType( person );
            person.name = mdc.newName( person.getData('subType') );
        },
-       
+       /*
        canSpawn : function (mdc, md, people, scene, now) {
            const lastSpawn = people.getData('lastSpawn');
            const t = now - lastSpawn;
@@ -1438,25 +1445,16 @@
            }   
            return false;
        }
-
+       */
    };
        
    PEOPLE_TYPES.customer.shopper = {
-       
-       update: (mdc, md, people, scene, person) => {},
-       
        create: (mdc, md, people, scene, person) => {
            people.setMapSpawnLocation(md, person);
-       },
-       
-       noPath: (mdc, md, people, scene, person) => {}
-           
+       }
    };
 
    PEOPLE_TYPES.customer.donator = {
-       
-       update: (mdc, md, people, scene, person) => {},
-
        create: (mdc, md, people, scene, person) => {
            const max_donations = scene.registry.get('MAX_MAP_DONATIONS') || 10;
            const donations = md.donations;
@@ -1465,16 +1463,16 @@
            const donations_total = donations_incoming + donations_drop;
            people.setMapSpawnLocation(md, person);
            if(donations_total < max_donations){
+           
+           console.log(max_donations);
+           
                const donation = new Container(scene, 'box_items_hh', {}, person.x, person.y);
                scene.add.existing(donation);
                person.setData('onHand', [ donation ] );
                people.onHand.add(donation);
            }
            person.setData('itemMode', 2);
-       },
-       
-       noPath: (mdc, md, people, scene, person) => {}
-       
+       }
    };
 
    const PEOPLE_DEFAULTS = {
@@ -1496,8 +1494,12 @@
       
            this.number = 0;
            this.data = new Phaser.Data.DataManager(this,  new Phaser.Events.EventEmitter() );
-           this.onHand = new ItemCollection();
+           this.onHand = new ItemCollection(scene);
+           
            this.setData('spawnStack', [] );
+           //this.setData('spawnObj',{ });
+           
+           
            this.setData('lastSpawn', new Date());
            this.setData('type', pConfig.type);
            this.setData('subTypes', pConfig.subTypes);
@@ -1506,7 +1508,9 @@
            this.spawnRate = pConfig.spawnRate;
            this.md = pConfig.md;
            const pt = get_pt( this );
-           pt.init(scene.registry.get('mdc'), this.md, this, config.scene);
+           if(pt.init){
+               pt.init(scene.registry.get('mdc'), this.md, this, config.scene);
+           }
        }
        
        getData (key, value){ return this.data.get(key); }
@@ -1598,7 +1602,69 @@
        setSpawnRate( tMin=500, Tdelta=500 ){
            this.spawnRate = tMin + Math.round(Tdelta * Math.random());
        }
+       spawnPerson (mdc, md, scene, isPlayer=false) {
+           const children = this.getChildren();
+           const people = this;
+           const pConfig = this.getData('pConfig');
+           const pType = this.getData('type');
+           const pt = get_pt(pType);
            
+           const max = 3;
+           
+           const current_count = people.children.size;
+           
+           const spawnStack = people.getData('spawnStack');
+           if(current_count < max && spawnStack.length > 0){
+               let spawnObj = spawnStack[0] || {};
+               
+               if(spawnObj.count <= 0){
+                   spawnStack.shift();
+                   spawnObj = spawnStack[0] || {};
+               }
+               
+               if(spawnObj.count > 0){
+               
+                   //log(spawnObj);
+                   let pconfig_pt = {};
+                   if( pt.getPConfig ){
+                       pconfig_pt = pt.getPConfig( mdc, md, this, scene );
+                   }
+                   const opt_sprite = { texture: 'people_16_16', frame: 0 };
+                   const opt_person = Object.assign({}, { number: this.number, people: children }, pConfig, pconfig_pt);
+                   const person = this.get( opt_sprite, opt_person );
+                   
+                   person.setData('type', pType );
+                   pt.setSubType(mdc, md, this, scene, person);
+                   
+                   
+                   if(pconfig_pt.texture){
+                       person.setTexture(pconfig_pt.texture);
+                   }
+                   if(pconfig_pt.frame != undefined ){
+                       person.setFrame(pconfig_pt.frame);
+                   }
+                   
+                   const spt = get_spt( person );
+                   spt.create(mdc, md, this, scene, person);
+      
+                   people.setAction(scene, mdc, md, person, 'default' );
+                   people.setTask(scene, mdc, md, person, 'default' );
+               
+               
+                   spawnObj.count -= 1;
+                   
+                   
+                   return person;
+               
+                   
+               }   
+           }
+           
+           
+           return null;
+       }
+
+       /*    
        spawnPerson (mdc, md, scene, isPlayer=false) {
            const children = this.getChildren();
            const people = this;
@@ -1606,12 +1672,16 @@
            const now = new Date();
            const ty = this.getData('type');
            const pt = get_pt(ty);
-           const canSpawn = pt.canSpawn(mdc, md, this, scene, now);
+           const canSpawn = pt.canSpawn(mdc, md, this, scene, now)
            if( !canSpawn ){
                return null;
            }
            if( canSpawn ){
-               const opt_person = Object.assign({}, { number: this.number, people: children }, pConfig);
+               let pconfig_pt = {};
+               if( pt.getPConfig ){
+                   pconfig_pt = pt.getPConfig( mdc, md, this, scene );
+               }
+               const opt_person = Object.assign({}, { number: this.number, people: children }, pConfig, pconfig_pt);
                const opt_sprite = {
                    x: 0, y: 0, 
                    texture: 'people_16_16',
@@ -1619,13 +1689,14 @@
                };
                const person = this.get( opt_sprite, opt_person );
                if(isPlayer){
-                   scene.registry.set('player', person);
+                   scene.registry.set('player', person)
                }
                this.number += 1;
                person.setData('type', this.getData('type') );
                pt.setSubType(mdc, md, this, scene, person);
-               const st = get_spt( person );
-               st.create(mdc, md, this, scene, person);
+               
+               const spt = get_spt( person );
+               spt.create(mdc, md, this, scene, person);
       
                people.setAction(scene, mdc, md, person, 'default' );
                people.setTask(scene, mdc, md, person, 'default' );
@@ -1635,7 +1706,7 @@
            }
            return null;
        }
-       
+       */
        kill (person) {
           person.getData('onHand').forEach( (item) => {
               item.destroy(true, true);
@@ -1756,7 +1827,9 @@
                const spt = get_spt( person, person.getData('subType') );
                //if(spt && ( person != player && !mdc.zeroPlayerMode ) ){
                if(spt){
-                   spt.update(mdc, md, this, scene, person);
+                   if(spt.update){
+                       spt.update(mdc, md, this, scene, person);
+                   }
                    const tx = Math.floor(person.x / 16);
                    const ty = Math.floor(person.y / 16);
                    md.map.getTileAt(tx, ty, false, 0);
@@ -1797,12 +1870,13 @@
        const rec = {
            key: key, name: data.name, hpd_index : hpd_index,
            frame: data.frameset[1], texture: hpd_frameset.name,
-           speed : data.speed, 
+           active: false,
+           speed : data.speed
        };
        return rec;
    };
 
-   // create a new people data Object, with the given people data objects ( such as people_core.json )
+   // create a new 'pd' Object, with the given people data objects ( such as people_core.json )
    PeopleData.createNew = function( hard_people_data=[] ) {
        let hpd_index = 0;
        const hpd_len = hard_people_data.length;
@@ -1834,6 +1908,11 @@
        }
        pd.count = Object.keys( pd.population ).length;
        return pd;
+   };
+
+   PeopleData.setActive = (pd, key='cp_unique_1_0', active=true ) => {
+       const rec = pd.population[key];
+       rec.active = active;
    };
 
    PeopleData.switchPersonKey = (pd, key='cp_unique_1_0', from='none', to='worker') => {
@@ -2069,7 +2148,7 @@
        }
        
        setupDonations(scene){
-           const donations = this.donations = new ItemCollection();
+           const donations = this.donations = new ItemCollection(scene);
            const containers = this.hardMapData.objects.containers || {};
            const items = this.hardMapData.objects.items;
            const keys = Object.keys( containers );    
@@ -2285,7 +2364,7 @@
        }
       
        addItemTo(item, md, collection='donations'){
-           md === undefined ? this.getActive() : md;
+           //md === undefined ? this.getActive() : md;
            if(typeof md === 'number'){
                md = this.getMapDataByIndex( md );
            }
@@ -2938,6 +3017,11 @@
            const mDigit = event.code.match(/Digit\d+/);
            const mdc = scene.registry.get('mdc');
            scene.registry.get('cam_state');
+           
+           if(!mdc){
+               return;
+           }
+           
            if(mDigit && !mdc.zeroPlayerMode){
                const d = Number( mDigit[0].replace('Digit', '') );
                const player = scene.registry.get('player'); 
@@ -2949,14 +3033,7 @@
            if(mDigit && mdc.zeroPlayerMode){
                const d = Number( mDigit[0].replace('Digit', '') );
                if(d >= 1 && d <= 4){
-               
                    GlobalControl.setMap(scene, d);
-               
-                   //const md = mdc.setActiveMapByIndex(scene, d);
-                   //const mx = md.map.widthInPixels, my = md.map.heightInPixels;   
-                   //cam_state.x = Math.round( md.map.widthInPixels / 2 );
-                   //cam_state.y = Math.round( md.map.heightInPixels / 2 );
-                   //GlobalControl.centerCamToMap(scene, md);
                }
            }
        }
@@ -2966,6 +3043,9 @@
        const mKey = event.code.match(/Key[a-zA-Z]+/);
        const mdc = scene.registry.get('mdc');
        const player = scene.registry.get('player');
+       if(!mdc){
+           return;
+       }
        if(mKey){
            const k = mKey[0].replace('Key', '').toUpperCase();
            if(k === 'W' && !mdc.zeroPlayerMode && scene.nextWorker ){
@@ -3500,8 +3580,8 @@
            const max_donations = this.registry.get('MAX_MAP_DONATIONS');
            if( len_donations < max_donations && te_count === 0 ){
                const t_base = 60;
-               const t_event_count = te_count * 25;
-               const t_rnd = Math.floor( Math.random() * 0 );
+               const t_event_count = te_count * 60;
+               const t_rnd = Math.floor( Math.random() * 30 );
                let time = gt.getByDelta( t_base + t_event_count + t_rnd  );
                const count = 3;
                tb.gt.addTimedEvent({
@@ -3520,57 +3600,6 @@
            }
        }
        
-       /*
-       addTimedEvents () {
-           const mdc = this.registry.get('mdc'); 
-           const tb = this.registry.get('tb');
-           const gt = tb.gt;
-           const te_count = tb.gt.timedEvents.length;
-           if(te_count === 0){
-               let time = gt.getByDelta( 60 + Math.floor( Math.random() * 30 ) )
-               
-               const count = 5;
-               
-               tb.gt.addTimedEvent({
-                   start: [time.hour, time.minute], end: [time.hour, time.minute + 1],
-                   
-                   on_tick : (te, gt, delta) => {
-                       te.disp_top = 'foo';
-                       te.disp_bottom = count;
-                   },
-                   
-                   on_start: (te, gt, delta) => {
-                       const md_donations = mdc.getMapDataByIndex(4);
-                       const md_t = mdc.getMapDataByIndex(1);
-                       const cust_t_count = md_t.customer.children.entries.length;
-                       
-                       if(cust_t_count == 0){
-                           const people = md_t.customer;
-                           people.pushSpawnStack({
-                               subTypes: [ ['shopper', 1.00] ],
-                               ms_min: 1000,
-                               ms_max: 5000,
-                               count: count
-                           });                    
-                       }
-                       {
-                           const people = md_donations.customer;
-                           people.pushSpawnStack({
-                               subTypes: [ ['donator', 1.00] ],
-                               ms_min: 1000,
-                               ms_max: 5000,
-                               count: count
-                           });
-                       }
-                   }
-                   
-               });
-               
-               
-           }
-       }
-       */
-       
        update (time, delta) {
            const player = this.registry.get('player');
            const disp1 = this.registry.get('disp1');
@@ -3586,8 +3615,6 @@
            if(!mdc.zeroPlayerMode && !player){
               this.nextWorker();
            }
-           
-           //this.addTimedEvents();
            
            this.add_worker_timed_events();
            this.add_shopper_timed_events();
@@ -3621,7 +3648,11 @@
            const dbs = this.registry.get('dbs');
            
            //const md = mdc.getMapDataByIndex(index_map);
-           dbs.lines = [];
+           dbs.lines = [
+               'Mapview child count: ' + scene.children.length,
+               'map4 donation count: ' + mdc.mapData.map4.donations.getChildren().length,
+               ''
+           ];
            
            mdc.forAllMaps(scene, (scene, md, index_map ) => {
            
@@ -4349,11 +4380,11 @@
            const game = this.game;
            const reg = game.registry;
            reg.set('R', 8);
-           reg.set('MAX_MAP_DONATIONS', 20);
+           reg.set('MAX_MAP_DONATIONS', 50);
            reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
            reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
            reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
-           
+           reg.set('MAX_ITEM_COLLECTION_SIZE', 200);
            
            reg.set('TASKS_WORKER', TASKS$1);
            reg.set('ACTIONS_WORKER', ACTIONS$7);

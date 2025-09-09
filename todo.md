@@ -26,10 +26,20 @@ I will want to have a way to hierpushSpawnStack a given person as a worker, and 
 
 ## R9 (    ) - Population View
 ```
-I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time.
+I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
+
+  /lib/people
+    * (    ) - see about updating worker AI so that they do not get stuck.
+    * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
+    * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
+    * (    ) - with peopleTypes the getPConfig method should be for the subType
+    * (    ) - The active prop in the game state pd object should be used as a way to find out if someone can spawn or not
+  /lib/schedule :
+    * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
+    * (    ) - update readme for schedule to reflect changes with display system
 ```
 
-## R8 (    ) - People Database
+## R8 ( done 09/09/2025 ) - People Database
 
 ```
 I am going to want to be able to supply data that will contain all kinds of information about people in general. This will contain info such as a persons name, and other details that will effect for example the speed at which they walk. Info about a person will be relevant to the possibility of them being a worker, or customer. For example the starting wage that they might want would be a key detail if they are deployed as a worker in the game, however the kinds of items that they like to buy would of course be relevant to how they will behave when deployed into the game as a customer.
@@ -74,14 +84,6 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - I will want a PeopleData method to set if a person is spawned into the game or not
     * (done) - Do alway with the canSpawn methods of peopleTypes in favor of having common logic in the People.spawnPerson method
     * (done) - make use of getPConfig set in peopleTypes for setting sprite texture and frame
-    * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
-    * (    ) - with peopleTypes the getPConfig method should be for the subType
-
-    * (    ) - see about updating worker AI so that they do not get stuck.
-    * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
-  /lib/schedule :
-    * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
-    * (    ) - update readme for schedule to reflect changes with display system
   /json/sheets
     * (done) - new people_core sheet
   /states/boot.js
@@ -103,8 +105,8 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - create gameSave in menu state rather than boot state
     * (done) - create PeopleData instance as part of the gameSave
   /
-    * (      ) - use rollup.js to create a final R8 build when ready to finish revision
-    * (      ) - update readme to reflect R8 changes, and commit R8 when done with this revision
+    * (done) - use rollup.js to create a final R8 build when ready to finish revision
+    * (done) - update readme to reflect R8 changes, and commit R8 when done with this revision
 ```
 
 ## R7 ( done 08/30/2025 ) - Menus, UI Buttons, better keyboard controls
