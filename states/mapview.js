@@ -368,7 +368,11 @@ class Mapview extends Phaser.Scene {
         const dbs = this.registry.get('dbs');
         
         //const md = mdc.getMapDataByIndex(index_map);
-        dbs.lines = [];
+        dbs.lines = [
+            'Mapview child count: ' + scene.children.length,
+            'map4 donation count: ' + mdc.mapData.map4.donations.getChildren().length,
+            ''
+        ];
         
         mdc.forAllMaps(scene, (scene, md, index_map ) => {
         

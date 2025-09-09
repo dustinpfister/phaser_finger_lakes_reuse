@@ -28,7 +28,7 @@ class Boot extends Phaser.Scene {
         reg.set('PEOPLE_SPAWN_RATE', { min: 500, delta: 1000 });   
         reg.set('CUSTOMER_MAX_SPAWN_PER_MAP', 10);
         reg.set('CUSTOMER_SPAWN_RATE', { min: 500, delta: 1000 });  // just used as a default, people.spawnStack objects set rate otherwise
-        
+        reg.set('MAX_ITEM_COLLECTION_SIZE', 200);
         
         reg.set('TASKS_WORKER', TASKS_WORKER);
         reg.set('ACTIONS_WORKER', ACTIONS_WORKER);

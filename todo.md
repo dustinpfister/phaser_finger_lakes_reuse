@@ -51,6 +51,7 @@ Sense the focus is on people, I would like to take a moment to work a little mor
     * (done) - an items file should contain the actual items data in an object called items, rather than the root object
     * (done) - an items file should allow for header data, and a sheets array in the header should be used in place of strings for each item
     * (done) - no need for item index when calling getItemData any more.
+    * (done) - fixed a bug my allowing for setting a 'MAX_ITEM_COLLECTION_SIZE' const for ItemCollections
   /lib/mapdata :
     * (done) : - have a getTotalWorkerCount method
     * (done) : - have a getTotalCustomerCount method
