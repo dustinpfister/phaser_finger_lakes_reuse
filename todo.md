@@ -37,12 +37,19 @@ I want to have a population view that shows the current state of all people in t
   /lib/schedule :
     * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (    ) - update readme for schedule to reflect changes with display system
+  /states/mapview.js
+    * (    ) - I will want to define a button that will switch current state to view_population
+    * (    ) - much of what happens here will need to be pulled into a main game update tick
+    * (    ) - rename mapview to view_map.js
+  /states/menu.js
+    * (done) - code that will run on each tick regardless of what the current state is will be define in the menu state for now.
   /states/population.js
     * (done) - start a population.js state by just simply having a file for starters
     * (    ) - I want an assignment pie chart that shows to how many people are assigned to worker, rather than others
   /states/boot.js
+    * (done) - I moved code that will run on each tick regardless of current state from here to menu.js
     * (    ) - I will want to add the new population state here along with all others
-    * (    ) - I am going to want to update much of what there is in the mapview state here now.
+
   /
     * (    ) - revize first paragraph of main readme
     * (    ) - use rollup.js to create a final R9 build when ready to finish revision

@@ -37,18 +37,8 @@ class Boot extends Phaser.Scene {
         reg.set('ACTIONS_CUSTOMER', ACTIONS_CUSTOMER);
         
         log( 'Boooting Finger Lakes Reuse R' + reg.get('R') );
-        game.events.on('step', () => {
-            const scenes = game.scene.getScenes(true, false) || [] ;
-            const scene = scenes[0];
-            if(scene){
-                // can work with current scene and main game object here
-                // That is that if there is any data that you want to update
-                // on each game tick, regardless of what the current scene
-                // object is
-                // reg.set('foo', 'bar')
-                // reg.get('foo')       
-            }
-        }, game);
+        
+
         this.scene.add('MainMenu', MainMenu, false);
         this.scene.add('Mapview', Mapview, false);
         this.scene.add('Load', Load, false);

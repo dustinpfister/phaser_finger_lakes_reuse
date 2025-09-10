@@ -14,6 +14,11 @@ const log = new ConsoleLogger({
 
 class Mapview extends Phaser.Scene {
 
+    constructor (config) {
+        super(config);
+        this.key = 'MapView';
+    }
+
     create () {
     
         const scene = this;
