@@ -29,14 +29,24 @@ I will want to have a way to hierpushSpawnStack a given person as a worker, and 
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
   /lib/people
-    * (    ) - see about updating worker AI so that they do not get stuck.
-    * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
     * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
     * (    ) - with peopleTypes the getPConfig method should be for the subType
     * (    ) - The active prop in the game state pd object should be used as a way to find out if someone can spawn or not
+    * (    ) - see about updating worker AI so that they do not get stuck.
+    * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /lib/schedule :
     * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (    ) - update readme for schedule to reflect changes with display system
+  /states/population.js
+    * (done) - start a population.js state by just simply having a file for starters
+    * (    ) - I want an assignment pie chart that shows to how many people are assigned to worker, rather than others
+  /states/boot.js
+    * (    ) - I will want to add the new population state here along with all others
+    * (    ) - I am going to want to update much of what there is in the mapview state here now.
+  /
+    * (    ) - revize first paragraph of main readme
+    * (    ) - use rollup.js to create a final R9 build when ready to finish revision
+    * (    ) - update readme to reflect R9 changes, and commit R9 when done with this revision
 ```
 
 ## R8 ( done 09/09/2025 ) - People Database
