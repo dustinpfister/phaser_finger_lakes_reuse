@@ -48,8 +48,7 @@ I want to have a population view that shows the current state of all people in t
     * (    ) - I want an assignment pie chart that shows to how many people are assigned to worker, rather than others
   /states/boot.js
     * (done) - I moved code that will run on each tick regardless of current state from here to menu.js
-    * (    ) - I will want to add the new population state here along with all others
-
+    * (done) - I will want to add the new population state in boot along with all others
   /
     * (    ) - revize first paragraph of main readme
     * (    ) - use rollup.js to create a final R9 build when ready to finish revision
