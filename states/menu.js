@@ -34,8 +34,9 @@ class MainMenu extends Phaser.Scene {
             pd : pd
         });
         
-        //this.scene.start('Mapview');
         this.scene.start('ViewPopulation');
+        
+        //this.scene.start('ViewMap');
         
     }
     

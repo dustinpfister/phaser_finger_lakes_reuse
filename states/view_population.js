@@ -1,5 +1,3 @@
-import { Load } from './load.js';
-import { Mapview } from './mapview.js';
 import { ConsoleLogger } from '../lib/message/message.js';
 import { Menu } from '../lib/ui/ui.js';
 
@@ -44,7 +42,8 @@ class ViewPopulation extends Phaser.Scene {
                     desc: 'Map View', x: 100, y: 100,
                     press: function(){
                         log('yeah hi');
-                        scene.scene.start('Mapview');
+                        //scene.scene.start('Mapview');
+                        scene.scene.start('ViewMap');
                     }
                 }
             ]

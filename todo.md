@@ -28,7 +28,7 @@ I will want to have a way to hierpushSpawnStack a given person as a worker, and 
 ```
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
-  /lib/people
+  /lib/people :
     * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
     * (    ) - with peopleTypes the getPConfig method should be for the subType
     * (    ) - The active prop in the game state pd object should be used as a way to find out if someone can spawn or not
@@ -39,10 +39,10 @@ I want to have a population view that shows the current state of all people in t
     * (    ) - update readme for schedule to reflect changes with display system
   /lib/ui :
     * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
-  /states/mapview.js
+  /states/view_map.js
+    * (done) - rename mapview to view_map.js
     * (    ) - I will want to define a button that will switch current state to view_population
     * (    ) - much of what happens here will need to be pulled into a main game update tick
-    * (    ) - rename mapview to view_map.js
   /states/menu.js
     * (done) - code that will run on each tick regardless of what the current state is will be define in the menu state for now.
   /states/view_population.js

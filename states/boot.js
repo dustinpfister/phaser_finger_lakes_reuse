@@ -1,5 +1,6 @@
 import { Load } from './load.js';
-import { Mapview } from './mapview.js';
+//import { Mapview } from './mapview.js';
+import { ViewMap } from './view_map.js';
 import { ViewPopulation } from './view_population.js';
 import { MainMenu } from './menu.js';
 import { ConsoleLogger } from '../lib/message/message.js';
@@ -41,7 +42,8 @@ class Boot extends Phaser.Scene {
         
 
         this.scene.add('MainMenu', MainMenu, false);
-        this.scene.add('Mapview', Mapview, false);
+        //this.scene.add('Mapview', Mapview, false);
+        this.scene.add('ViewMap', ViewMap, false);
         this.scene.add('ViewPopulation', ViewPopulation, false);
         this.scene.add('Load', Load, false);
         this.scene.start('Load');

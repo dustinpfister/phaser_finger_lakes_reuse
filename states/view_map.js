@@ -6,15 +6,15 @@ import { GlobalControl, Menu } from '../lib/ui/ui.js';
 
 const log = new ConsoleLogger({
     cat: 'state',
-    id: 'mapview',
+    id: 'viewmap',
     appendId: true
 });
 
-class Mapview extends Phaser.Scene {
+class ViewMap extends Phaser.Scene {
 
     constructor (config) {
         super(config);
-        this.key = 'MapView';
+        this.key = 'ViewMap';
     }
 
     create () {
@@ -61,8 +61,8 @@ class Mapview extends Phaser.Scene {
         const confMenu = Menu.createConf({
             x:0, y: 0,
             frameWidth: 32, frameHeight: 32,
-            textureKey: 'texture_menu_mapview',
-            menu_key : 'menu_mapview',
+            textureKey: 'texture_menu_view_map',
+            menu_key : 'menu_view_map',
             draw (ctx, canvas, i, menu) {
                 const button = this, fw = menu.fw, fh = menu.fh, lw = menu.lineWidth, hlw = lw / 2;
                 ctx.fillStyle = menu.colors[0] || '#ffffff';
@@ -332,7 +332,7 @@ class Mapview extends Phaser.Scene {
         const scene = this;
         const tb = this.registry.get('tb');
         
-        const menu = this.registry.get('menu_mapview');
+        const menu = this.registry.get('menu_view_map');
         menu.draw();
         
         if(!mdc.zeroPlayerMode && !player){
@@ -417,5 +417,5 @@ class Mapview extends Phaser.Scene {
     
 }
 
-export { Mapview }
+export { ViewMap }
 
