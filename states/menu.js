@@ -34,11 +34,14 @@ class MainMenu extends Phaser.Scene {
             pd : pd
         });
         
-        this.scene.start('Mapview');
+        //this.scene.start('Mapview');
+        this.scene.start('ViewPopulation');
+        
     }
     
     create () {
         const scene = this;
+        const game = scene.game;
         const logo = this.add.sprite(320, 130, 'menu_1');
         
         GlobalControl.setUp(this);
@@ -64,23 +67,14 @@ class MainMenu extends Phaser.Scene {
         disp1.text = 'R' + this.registry.get('R');
         disp1.x = 320 - disp1.width / 2;
         
-  
-  
-        this.game.events.on('step', () => {
+        game.events.on('step', function() {
             const scenes = game.scene.getScenes(true, false) || [] ;
-            const scene = scenes[0];
-            
-            if(scene){
-            
-            log(scene.key);
-            
-                // can work with current scene and main game object here
-                // That is that if there is any data that you want to update
-                // on each game tick, regardless of what the current scene
-                // object is
-                //log('well now this is a start');
+            const scene_current = scenes[0];
+            if(scene_current){
+                // can work with current scene and main game object here. This should always 
+                // fire on each game tick, regardless of what the current state is
             }
-        }, game);
+        }, scene);
         
         
         

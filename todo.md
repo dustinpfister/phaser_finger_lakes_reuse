@@ -37,14 +37,17 @@ I want to have a population view that shows the current state of all people in t
   /lib/schedule :
     * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (    ) - update readme for schedule to reflect changes with display system
+  /lib/ui :
+    * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
   /states/mapview.js
     * (    ) - I will want to define a button that will switch current state to view_population
     * (    ) - much of what happens here will need to be pulled into a main game update tick
     * (    ) - rename mapview to view_map.js
   /states/menu.js
     * (done) - code that will run on each tick regardless of what the current state is will be define in the menu state for now.
-  /states/population.js
-    * (done) - start a population.js state by just simply having a file for starters
+  /states/view_population.js
+    * (done) - start a view_population.js state by just simply having a file for starters
+    * (done) - I will want a ui menu with view_population just as with view_map.js
     * (    ) - I want an assignment pie chart that shows to how many people are assigned to worker, rather than others
   /states/boot.js
     * (done) - I moved code that will run on each tick regardless of current state from here to menu.js
