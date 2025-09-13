@@ -40,7 +40,8 @@ I want to have a population view that shows the current state of all people in t
     * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (    ) - update readme for schedule to reflect changes with display system
   /lib/ui :
-    * (done) - a bug was fixed that had to do with getting/creating a texture when creating a menu
+    * (done) - a bug was fixed that had to do with getting/creating a texture when creating a menu.
+    * (    ) - add features to allow for variable sizes for buttons
     * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
   /states/view_map.js
     * (done) - rename mapview to view_map.js
@@ -52,6 +53,7 @@ I want to have a population view that shows the current state of all people in t
     * (done) - start a view_population.js state by just simply having a file for starters
     * (done) - I will want a ui menu with view_population just as with view_map.js
     * (    ) - I want an assignment pie chart that shows to how many people are assigned to worker, rather than others
+    * (    ) - get keyboard controls working with view_population state
   /states/boot.js
     * (done) - I moved code that will run on each tick regardless of current state from here to menu.js
     * (done) - I will want to add the new population state in boot along with all others

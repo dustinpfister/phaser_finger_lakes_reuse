@@ -60,7 +60,7 @@ class ViewMap extends Phaser.Scene {
         
         const confMenu = Menu.createConf({
             x:0, y: 0,
-            frameWidth: 32, frameHeight: 32,
+            frameWidth: 64, frameHeight: 32,
             textureKey: 'texture_menu_view_map',
             menu_key : 'menu_view_map',
             draw (ctx, canvas, i, menu) {
@@ -79,17 +79,17 @@ class ViewMap extends Phaser.Scene {
                 ctx.fillText( button.getData('desc'), fw / 2, fh * i + fh * 0.60);
             },
             members: [
-                { desc: 'left', x: 580 + -32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, -8, 0); } },
-                { desc: 'right', x: 580 + 32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, 8, 0); } },
-                { desc: 'up', x: 580 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
-                { desc: 'down', x: 580 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
+                { desc: 'left', x: 540 + -64, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, -8, 0); } },
+                { desc: 'right', x: 540 + 64, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, 8, 0); } },
+                { desc: 'up', x: 540 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
+                { desc: 'down', x: 540 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
                 
-                { desc: 'map1', x: 200 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
-                { desc: 'map2', x: 200 + 50, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
-                { desc: 'map3', x: 200 + 100, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
-                { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
+                { desc: 'map1', x: 150 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
+                { desc: 'map2', x: 150 + 70, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
+                { desc: 'map3', x: 150 + 140, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
+                { desc: 'map4', x: 150 + 210, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
                 
-                { desc: 'pop', x: 50, y: 420 + 0, press: function(){
+                { desc: 'pop', x: 50, y: 420 , press: function(){
                 
                     //scene.scene.sleep('ViewMap');
                     //scene.scene.wake('ViewPopulation');

@@ -13,10 +13,6 @@ class ViewPopulation extends Phaser.Scene {
         super(config);
         this.key = 'ViewPopulation';
     }
-
-    preload () {
-        log('View Population \'preload\' method called');
-    }
     
     setup_menu () {
         const scene = this;
@@ -44,7 +40,7 @@ class ViewPopulation extends Phaser.Scene {
             },
             members: [
                 {
-                    desc: 'Map View', x: 100, y: 100,
+                    desc: 'Map View', x: 50, y: 420,
                     press: function(){
                     
                         //scene.scene.sleep('ViewPopulation');
@@ -60,12 +56,8 @@ class ViewPopulation extends Phaser.Scene {
 
     create () {
 
-        
-        log('View Population \'create\' method called');
-        
         this.setup_menu();
-        
-        
+                
     }
     
     update () {

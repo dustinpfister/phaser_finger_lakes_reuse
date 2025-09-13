@@ -177,7 +177,11 @@
                fontSize: 10, w:640, h: 480, x: 320, y: 240, d: 100, alpha: 0.75,
                active: false, lines_x: 10, lines2_x: 330
            }, opt );
-           opt.texture = opt.scene.textures.createCanvas('debug_screen', opt.w, opt.h);
+           
+           let texture = opt.scene.textures.get('debug_screen');
+           if(texture.key === '__MISSING'){
+               opt.scene.textures.createCanvas('debug_screen', opt.w, opt.h);
+           }
            super(opt.scene, opt.x, opt.y, 'debug_screen', 0);  
            this.setDepth(opt.d);
            this.setScrollFactor(0, 0);
@@ -234,7 +238,7 @@
        
    }
 
-   const log$8 = new ConsoleLogger({
+   const log$6 = new ConsoleLogger({
        cat: 'lib',
        id: 'items',
        appendId: true
@@ -349,11 +353,11 @@
            
        addItem (item) {
            if(item.iType === 'Container' && !item.canChildOnEmpty){
-               log$8( 'This Container can not be a Child of another' );
+               log$6( 'This Container can not be a Child of another' );
                return false;
            }
            if(item.iType === 'Container' && item.canChildOnEmpty && (item.drop_count > 0 || item.contents.length > 0) ){
-               log$8( 'can only child this Container when it is empty' );
+               log$6( 'can only child this Container when it is empty' );
                return false;
            }
            if(this.autoCull && this.contents.length >= this.capacity){
@@ -671,7 +675,7 @@
    // In addition I am using my own message.js for logging
    // ~ Dustin ( https://github.com/dustinpfister )
 
-   const log$7 = new ConsoleLogger ({
+   const log$5 = new ConsoleLogger ({
        cat: 'lib',
        id: 'pathfinding',
        appendId: true
@@ -902,9 +906,9 @@
            if (startX < 0 || startY < 0 || endX < 0 || endY < 0 || 
            startX > collisionGrid[0].length-1 || startY > collisionGrid.length-1 || 
            endX > collisionGrid[0].length-1 || endY > collisionGrid.length-1) {        
-               log$7('start or end point is out of bounds.');
-               log$7(startX, startY, endX, endY);
-               log$7(collisionGrid[0].length-1, collisionGrid.length-1);
+               log$5('start or end point is out of bounds.');
+               log$5(startX, startY, endX, endY);
+               log$5(collisionGrid[0].length-1, collisionGrid.length-1);
                throw "Your start or end point is outside the scope of your grid.";
            }
            //Start and end are the same tile.
@@ -1201,7 +1205,7 @@
        }
    }
 
-   const log$6 = new ConsoleLogger({
+   const log$4 = new ConsoleLogger({
        cat: 'lib',
        id: 'people',
        appendId: true
@@ -1390,7 +1394,7 @@
        
    PEOPLE_TYPES.worker.employee = {
        init: (mdc, md, people, scene) => {
-           log$6( 'init method for worker.employee');
+           log$4( 'init method for worker.employee');
        },
        update: (mdc, md, people, scene, person) => {},
        create: (mdc, md, people, scene, person) => {
@@ -1733,7 +1737,7 @@
            }   
            const pos_drop = md.findEmptyDropSpot( cPos, 8 );       
            if(pos_drop === null){
-               log$6('can not find a space for the drop!', 'SAY');
+               log$4('can not find a space for the drop!', 'SAY');
            }       
            if(pos_drop != null){
                person.setData('itemMode', 2);
@@ -1920,7 +1924,7 @@
        pd.assignment[to].push(key_pulled);
    };
 
-   const log$5 = new ConsoleLogger ({
+   const log$3 = new ConsoleLogger ({
        cat: 'lib',
        id: 'mapdata',
        appendId: true
@@ -1944,10 +1948,10 @@
            items = md.getItemsAtPX(px, py),
            item = items[0];
            if(mdc.zeroPlayerMode){
-               log$5('zero player mode');
-               log$5(tx + ', ' + ty);
-               log$5(items);
-               log$5('');
+               log$3('zero player mode');
+               log$3(tx + ', ' + ty);
+               log$3(items);
+               log$3('');
            }
            if(!mdc.zeroPlayerMode && player){
                const itemMode = player.getData('itemMode'),
@@ -1957,7 +1961,7 @@
                }
                if(tile && !item){
                    if(!md.canWalk(tile) ){
-                       log$5(tile.index);
+                       log$3(tile.index);
                    }
                    if(md.canWalk(tile) && itemMode != 2 && itemMode != 0 ){    
                        player.setPath(scene, scene.registry.get('mdc').getActive(), tx, ty);
@@ -1968,18 +1972,18 @@
                }    
                if(itemMode === 0){
                    if(tile){
-                       log$5('********** **********');
-                       log$5('tile info: ');
-                       log$5('pos: ' + tile.x + ',' + tile.y);
-                       log$5(tile);
-                       log$5('********** **********');
+                       log$3('********** **********');
+                       log$3('tile info: ');
+                       log$3('pos: ' + tile.x + ',' + tile.y);
+                       log$3(tile);
+                       log$3('********** **********');
                    }
                    if(items){
-                       log$5('********** **********');
-                       log$5('items info: ');
-                       log$5('num of items: ' + items.length);
-                       log$5(items);
-                       log$5('********** **********');
+                       log$3('********** **********');
+                       log$3('items info: ');
+                       log$3('num of items: ' + items.length);
+                       log$3(items);
+                       log$3('********** **********');
                    }
                }
            }
@@ -3283,7 +3287,7 @@
        
    }
 
-   const log$4 = new ConsoleLogger({
+   const log$2 = new ConsoleLogger({
        cat: 'state',
        id: 'viewmap',
        appendId: true
@@ -3339,7 +3343,7 @@
            
            const confMenu = Menu.createConf({
                x:0, y: 0,
-               frameWidth: 32, frameHeight: 32,
+               frameWidth: 64, frameHeight: 32,
                textureKey: 'texture_menu_view_map',
                menu_key : 'menu_view_map',
                draw (ctx, canvas, i, menu) {
@@ -3358,17 +3362,17 @@
                    ctx.fillText( button.getData('desc'), fw / 2, fh * i + fh * 0.60);
                },
                members: [
-                   { desc: 'left', x: 580 + -32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, -8, 0); } },
-                   { desc: 'right', x: 580 + 32, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, 8, 0); } },
-                   { desc: 'up', x: 580 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
-                   { desc: 'down', x: 580 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
+                   { desc: 'left', x: 540 + -64, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, -8, 0); } },
+                   { desc: 'right', x: 540 + 64, y: 420 + 0, press: function(){ GlobalControl.moveCam(scene, 8, 0); } },
+                   { desc: 'up', x: 540 + 0, y: 420 + -32, press: function(){ GlobalControl.moveCam(scene, 0, -8); } },
+                   { desc: 'down', x: 540 + 0, y: 420 + 32, press: function(){ GlobalControl.moveCam(scene, 0, 8); } },
                    
-                   { desc: 'map1', x: 200 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
-                   { desc: 'map2', x: 200 + 50, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
-                   { desc: 'map3', x: 200 + 100, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
-                   { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
+                   { desc: 'map1', x: 150 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
+                   { desc: 'map2', x: 150 + 70, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
+                   { desc: 'map3', x: 150 + 140, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
+                   { desc: 'map4', x: 150 + 210, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
                    
-                   { desc: 'pop', x: 50, y: 420 + 0, press: function(){
+                   { desc: 'pop', x: 50, y: 420 , press: function(){
                    
                        //scene.scene.sleep('ViewMap');
                        //scene.scene.wake('ViewPopulation');
@@ -3453,7 +3457,7 @@
                   mi += 1;
               }
               if(!player){
-                  log$4('no worker at any map!');
+                  log$2('no worker at any map!');
                   return;
               }
            }
@@ -3503,11 +3507,11 @@
            const md = mdc.getMapDataByIndex(mi);
            
            if(mdc.zeroPlayerMode){
-               log$4('can not set a player object as MDC is set to zero player mode ');
+               log$2('can not set a player object as MDC is set to zero player mode ');
            }
            
            if(!worker){
-               log$4('no worker object given to set to player');
+               log$2('no worker object given to set to player');
                return;
            }
            
@@ -3704,7 +3708,7 @@
        
    }
 
-   const log$3 = new ConsoleLogger({
+   new ConsoleLogger({
        cat: 'state',
        id: 'viewpopulation',
        appendId: true
@@ -3715,10 +3719,6 @@
        constructor (config) {
            super(config);
            this.key = 'ViewPopulation';
-       }
-
-       preload () {
-           log$3('View Population \'preload\' method called');
        }
        
        setup_menu () {
@@ -3747,7 +3747,7 @@
                },
                members: [
                    {
-                       desc: 'Map View', x: 100, y: 100,
+                       desc: 'Map View', x: 50, y: 420,
                        press: function(){
                        
                            //scene.scene.sleep('ViewPopulation');
@@ -3763,12 +3763,8 @@
 
        create () {
 
-           
-           log$3('View Population \'create\' method called');
-           
            this.setup_menu();
-           
-           
+                   
        }
        
        update () {
@@ -3779,7 +3775,7 @@
            
    }
 
-   const log$2 = new ConsoleLogger({
+   new ConsoleLogger({
        cat: 'state',
        id: 'menu',
        appendId: true
@@ -3792,7 +3788,6 @@
        }
        
        startMapView () {
-           log$2('starting mapview...');
            
            const pd = PeopleData.createNew( [
                this.cache.json.get('people_core')
@@ -3805,7 +3800,6 @@
            switchPersonKey(pd, 'cp_clone_1_1', 'none', 'customer');
            switchPersonKey(pd, 'cp_clone_1_2', 'none', 'customer');
            switchPersonKey(pd, 'cp_clone_1_3', 'none', 'customer');    
-           log$2( pd  );
            
            this.registry.set('gameSave', {
                money: 0,
