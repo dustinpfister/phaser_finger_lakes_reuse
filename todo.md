@@ -28,6 +28,8 @@ I will want to have a way to hierpushSpawnStack a given person as a worker, and 
 ```
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
+  /lib/message:
+    * (done) - fixed a bug that had to do with getting a texture used with the debug screen.
   /lib/people :
     * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
     * (    ) - with peopleTypes the getPConfig method should be for the subType
