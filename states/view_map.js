@@ -87,7 +87,15 @@ class ViewMap extends Phaser.Scene {
                 { desc: 'map1', x: 200 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
                 { desc: 'map2', x: 200 + 50, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
                 { desc: 'map3', x: 200 + 100, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
-                { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } }
+                { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
+                
+                { desc: 'pop', x: 50, y: 420 + 0, press: function(){
+                
+                    //scene.scene.sleep('ViewMap');
+                    //scene.scene.wake('ViewPopulation');
+                
+                    scene.scene.start('ViewPopulation');
+                } }
                 
             ]
         });

@@ -234,7 +234,7 @@
        
    }
 
-   const log$7 = new ConsoleLogger({
+   const log$8 = new ConsoleLogger({
        cat: 'lib',
        id: 'items',
        appendId: true
@@ -349,11 +349,11 @@
            
        addItem (item) {
            if(item.iType === 'Container' && !item.canChildOnEmpty){
-               log$7( 'This Container can not be a Child of another' );
+               log$8( 'This Container can not be a Child of another' );
                return false;
            }
            if(item.iType === 'Container' && item.canChildOnEmpty && (item.drop_count > 0 || item.contents.length > 0) ){
-               log$7( 'can only child this Container when it is empty' );
+               log$8( 'can only child this Container when it is empty' );
                return false;
            }
            if(this.autoCull && this.contents.length >= this.capacity){
@@ -542,9 +542,6 @@
                            item.y = pos_drop.y * 16 + 8;
                            item.droped = true;
                            mdc.addItemTo(item, md, 'donations');
-                           
-                           console.log( md.index );
-                           
                            people.onHand.remove(item);
                            person.setData('onHand', []);
                        }
@@ -674,7 +671,7 @@
    // In addition I am using my own message.js for logging
    // ~ Dustin ( https://github.com/dustinpfister )
 
-   const log$6 = new ConsoleLogger ({
+   const log$7 = new ConsoleLogger ({
        cat: 'lib',
        id: 'pathfinding',
        appendId: true
@@ -905,9 +902,9 @@
            if (startX < 0 || startY < 0 || endX < 0 || endY < 0 || 
            startX > collisionGrid[0].length-1 || startY > collisionGrid.length-1 || 
            endX > collisionGrid[0].length-1 || endY > collisionGrid.length-1) {        
-               log$6('start or end point is out of bounds.');
-               log$6(startX, startY, endX, endY);
-               log$6(collisionGrid[0].length-1, collisionGrid.length-1);
+               log$7('start or end point is out of bounds.');
+               log$7(startX, startY, endX, endY);
+               log$7(collisionGrid[0].length-1, collisionGrid.length-1);
                throw "Your start or end point is outside the scope of your grid.";
            }
            //Start and end are the same tile.
@@ -1204,7 +1201,7 @@
        }
    }
 
-   const log$5 = new ConsoleLogger({
+   const log$6 = new ConsoleLogger({
        cat: 'lib',
        id: 'people',
        appendId: true
@@ -1393,7 +1390,7 @@
        
    PEOPLE_TYPES.worker.employee = {
        init: (mdc, md, people, scene) => {
-           log$5( 'init method for worker.employee');
+           log$6( 'init method for worker.employee');
        },
        update: (mdc, md, people, scene, person) => {},
        create: (mdc, md, people, scene, person) => {
@@ -1463,9 +1460,6 @@
            const donations_total = donations_incoming + donations_drop;
            people.setMapSpawnLocation(md, person);
            if(donations_total < max_donations){
-           
-           console.log(max_donations);
-           
                const donation = new Container(scene, 'box_items_hh', {}, person.x, person.y);
                scene.add.existing(donation);
                person.setData('onHand', [ donation ] );
@@ -1739,7 +1733,7 @@
            }   
            const pos_drop = md.findEmptyDropSpot( cPos, 8 );       
            if(pos_drop === null){
-               log$5('can not find a space for the drop!', 'SAY');
+               log$6('can not find a space for the drop!', 'SAY');
            }       
            if(pos_drop != null){
                person.setData('itemMode', 2);
@@ -1926,7 +1920,7 @@
        pd.assignment[to].push(key_pulled);
    };
 
-   const log$4 = new ConsoleLogger ({
+   const log$5 = new ConsoleLogger ({
        cat: 'lib',
        id: 'mapdata',
        appendId: true
@@ -1950,10 +1944,10 @@
            items = md.getItemsAtPX(px, py),
            item = items[0];
            if(mdc.zeroPlayerMode){
-               log$4('zero player mode');
-               log$4(tx + ', ' + ty);
-               log$4(items);
-               log$4('');
+               log$5('zero player mode');
+               log$5(tx + ', ' + ty);
+               log$5(items);
+               log$5('');
            }
            if(!mdc.zeroPlayerMode && player){
                const itemMode = player.getData('itemMode'),
@@ -1963,7 +1957,7 @@
                }
                if(tile && !item){
                    if(!md.canWalk(tile) ){
-                       log$4(tile.index);
+                       log$5(tile.index);
                    }
                    if(md.canWalk(tile) && itemMode != 2 && itemMode != 0 ){    
                        player.setPath(scene, scene.registry.get('mdc').getActive(), tx, ty);
@@ -1974,18 +1968,18 @@
                }    
                if(itemMode === 0){
                    if(tile){
-                       log$4('********** **********');
-                       log$4('tile info: ');
-                       log$4('pos: ' + tile.x + ',' + tile.y);
-                       log$4(tile);
-                       log$4('********** **********');
+                       log$5('********** **********');
+                       log$5('tile info: ');
+                       log$5('pos: ' + tile.x + ',' + tile.y);
+                       log$5(tile);
+                       log$5('********** **********');
                    }
                    if(items){
-                       log$4('********** **********');
-                       log$4('items info: ');
-                       log$4('num of items: ' + items.length);
-                       log$4(items);
-                       log$4('********** **********');
+                       log$5('********** **********');
+                       log$5('items info: ');
+                       log$5('num of items: ' + items.length);
+                       log$5(items);
+                       log$5('********** **********');
                    }
                }
            }
@@ -3211,8 +3205,13 @@
            const fw = this.fw = confMenu.frameWidth;
            const fh = this.fh = confMenu.frameHeight;
            const w = fw, h = fh * confMenu.members.length;
-           const tb = this.texture_buttons = scene.textures.createCanvas(confMenu.textureKey, w, h);
-           scene.textures.addSpriteSheet('sheet_buttons', tb, confMenu);
+           
+           let tb = this.texture_buttons = scene.textures.get( confMenu.textureKey );
+           if(tb.key === '__MISSING'){
+               tb = this.texture_buttons = scene.textures.createCanvas( confMenu.textureKey , w, h);
+
+           }
+           scene.textures.addSpriteSheet(confMenu.textureKey + '_sheet', tb, confMenu);  
            
            confMenu.members.forEach( (data_button, bi) => {
            
@@ -3284,15 +3283,18 @@
        
    }
 
-   const log$3 = new ConsoleLogger({
+   const log$4 = new ConsoleLogger({
        cat: 'state',
-       id: 'mapview',
+       id: 'viewmap',
        appendId: true
    });
 
-   //const IMDESC = ['tile info', 'item pickup', 'item drop', 'container pickup\/drop' ];
+   class ViewMap extends Phaser.Scene {
 
-   class Mapview extends Phaser.Scene {
+       constructor (config) {
+           super(config);
+           this.key = 'ViewMap';
+       }
 
        create () {
        
@@ -3338,8 +3340,8 @@
            const confMenu = Menu.createConf({
                x:0, y: 0,
                frameWidth: 32, frameHeight: 32,
-               textureKey: 'texture_menu_mapview',
-               menu_key : 'menu_mapview',
+               textureKey: 'texture_menu_view_map',
+               menu_key : 'menu_view_map',
                draw (ctx, canvas, i, menu) {
                    const button = this, fw = menu.fw, fh = menu.fh, lw = menu.lineWidth, hlw = lw / 2;
                    ctx.fillStyle = menu.colors[0] || '#ffffff';
@@ -3364,7 +3366,15 @@
                    { desc: 'map1', x: 200 + 0, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 1); } },
                    { desc: 'map2', x: 200 + 50, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 2); } },
                    { desc: 'map3', x: 200 + 100, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 3); } },
-                   { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } }
+                   { desc: 'map4', x: 200 + 150, y: 420 + 0, press: function(){ GlobalControl.setMap(scene, 4); } },
+                   
+                   { desc: 'pop', x: 50, y: 420 + 0, press: function(){
+                   
+                       //scene.scene.sleep('ViewMap');
+                       //scene.scene.wake('ViewPopulation');
+                   
+                       scene.scene.start('ViewPopulation');
+                   } }
                    
                ]
            });
@@ -3443,7 +3453,7 @@
                   mi += 1;
               }
               if(!player){
-                  log$3('no worker at any map!');
+                  log$4('no worker at any map!');
                   return;
               }
            }
@@ -3493,11 +3503,11 @@
            const md = mdc.getMapDataByIndex(mi);
            
            if(mdc.zeroPlayerMode){
-               log$3('can not set a player object as MDC is set to zero player mode ');
+               log$4('can not set a player object as MDC is set to zero player mode ');
            }
            
            if(!worker){
-               log$3('no worker object given to set to player');
+               log$4('no worker object given to set to player');
                return;
            }
            
@@ -3609,7 +3619,7 @@
            const scene = this;
            const tb = this.registry.get('tb');
            
-           const menu = this.registry.get('menu_mapview');
+           const menu = this.registry.get('menu_view_map');
            menu.draw();
            
            if(!mdc.zeroPlayerMode && !player){
@@ -3694,6 +3704,81 @@
        
    }
 
+   const log$3 = new ConsoleLogger({
+       cat: 'state',
+       id: 'viewpopulation',
+       appendId: true
+   });
+
+   class ViewPopulation extends Phaser.Scene {
+
+       constructor (config) {
+           super(config);
+           this.key = 'ViewPopulation';
+       }
+
+       preload () {
+           log$3('View Population \'preload\' method called');
+       }
+       
+       setup_menu () {
+           const scene = this;
+           this.registry.get('menu_view_population');
+           
+           const confMenu = Menu.createConf({
+               x:0, y: 0,
+               frameWidth: 64, frameHeight: 32,
+               textureKey: 'texture_menu_view_population',
+               menu_key : 'menu_view_population',
+               draw (ctx, canvas, i, menu) {
+                   const button = this, fw = menu.fw, fh = menu.fh, lw = menu.lineWidth, hlw = lw / 2;
+                   ctx.fillStyle = menu.colors[0] || '#ffffff';
+                   ctx.fillRect( 0, fh * i, fw, fh);
+                   if(i === menu.member_index){
+                       ctx.lineWidth = lw;
+                       ctx.strokeStyle = menu.colors[2] || '#000000';
+                       ctx.strokeRect( hlw, fh * i + hlw, fw - lw, fh - lw);
+                   }
+                   ctx.fillStyle = menu.colors[1] || '#000000';
+                   ctx.textBaseline = 'middle';
+                   ctx.textAlign = 'center';
+                   ctx.font = '11px monospace';
+                   ctx.fillText( button.getData('desc'), fw / 2, fh * i + fh * 0.60);
+               },
+               members: [
+                   {
+                       desc: 'Map View', x: 100, y: 100,
+                       press: function(){
+                       
+                           //scene.scene.sleep('ViewPopulation');
+                           
+                           scene.scene.start('ViewMap');
+                       }
+                   }
+               ]
+           });
+           new Menu(this, confMenu);
+
+       }
+
+       create () {
+
+           
+           log$3('View Population \'create\' method called');
+           
+           this.setup_menu();
+           
+           
+       }
+       
+       update () {
+           const menu = this.registry.get('menu_view_population');
+           
+           menu.draw();
+       }
+           
+   }
+
    const log$2 = new ConsoleLogger({
        cat: 'state',
        id: 'menu',
@@ -3727,11 +3812,15 @@
                pd : pd
            });
            
-           this.scene.start('Mapview');
+           this.scene.start('ViewPopulation');
+           
+           //this.scene.start('ViewMap');
+           
        }
        
        create () {
            const scene = this;
+           const game = scene.game;
            this.add.sprite(320, 130, 'menu_1');
            
            GlobalControl.setUp(this);
@@ -3756,6 +3845,11 @@
            disp1.depth = 6;
            disp1.text = 'R' + this.registry.get('R');
            disp1.x = 320 - disp1.width / 2;
+           
+           game.events.on('step', function() {
+               const scenes = game.scene.getScenes(true, false) || [] ;
+               scenes[0];
+           }, scene);
            
            
            
@@ -4393,12 +4487,12 @@
            reg.set('ACTIONS_CUSTOMER', ACTIONS);
            
            log( 'Boooting Finger Lakes Reuse R' + reg.get('R') );
-           game.events.on('step', () => {
-               const scenes = game.scene.getScenes(true, false) || [] ;
-               scenes[0];
-           }, game);
+           
+
            this.scene.add('MainMenu', MainMenu, false);
-           this.scene.add('Mapview', Mapview, false);
+           //this.scene.add('Mapview', Mapview, false);
+           this.scene.add('ViewMap', ViewMap, false);
+           this.scene.add('ViewPopulation', ViewPopulation, false);
            this.scene.add('Load', Load, false);
            this.scene.start('Load');
            

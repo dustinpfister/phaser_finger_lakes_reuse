@@ -38,6 +38,7 @@ I want to have a population view that shows the current state of all people in t
     * (    ) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (    ) - update readme for schedule to reflect changes with display system
   /lib/ui :
+    * (done) - a bug was fixed that had to do with getting/creating a texture when creating a menu
     * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
   /states/view_map.js
     * (done) - rename mapview to view_map.js

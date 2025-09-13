@@ -14,8 +14,13 @@ class ViewPopulation extends Phaser.Scene {
         this.key = 'ViewPopulation';
     }
 
-    create () {
+    preload () {
+        log('View Population \'preload\' method called');
+    }
+    
+    setup_menu () {
         const scene = this;
+        let menu = this.registry.get('menu_view_population');
         
         const confMenu = Menu.createConf({
             x:0, y: 0,
@@ -41,19 +46,31 @@ class ViewPopulation extends Phaser.Scene {
                 {
                     desc: 'Map View', x: 100, y: 100,
                     press: function(){
-                        log('yeah hi');
-                        //scene.scene.start('Mapview');
+                    
+                        //scene.scene.sleep('ViewPopulation');
+                        
                         scene.scene.start('ViewMap');
                     }
                 }
             ]
         });
-        const menu = new Menu(this, confMenu);
+        menu = new Menu(this, confMenu);
+
+    }
+
+    create () {
+
+        
+        log('View Population \'create\' method called');
+        
+        this.setup_menu();
+        
         
     }
     
     update () {
         const menu = this.registry.get('menu_view_population');
+        
         menu.draw();
     }
         
