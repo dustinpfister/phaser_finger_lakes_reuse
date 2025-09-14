@@ -42,9 +42,6 @@ class ViewPopulation extends Phaser.Scene {
                 {
                     desc: 'Map View', x: 50, y: 420,
                     press: function(){
-                    
-                        //scene.scene.sleep('ViewPopulation');
-                        
                         scene.scene.start('ViewMap');
                     }
                 }
@@ -54,14 +51,27 @@ class ViewPopulation extends Phaser.Scene {
 
     }
 
+    setup_texture () {
+    
+        const texture_key = 'view_population_disp';
+        this.texture = this.game.textures.get(texture_key);
+        if( this.texture.key === '_missing' ){
+             this.texture = scene.textures.createCanvas( texture_key , 640, 480);
+        }
+    
+    }
+
     create () {
 
         this.setup_menu();
+        
+        this.setup_texture();
                 
     }
     
     update () {
-        const menu = this.registry.get('menu_view_population');
+        const menu = this.registry.get('menu_view_population');    
+        const gs = this.registry.get('gameSave');
         
         menu.draw();
     }
