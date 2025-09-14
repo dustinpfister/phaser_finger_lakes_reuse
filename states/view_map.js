@@ -382,7 +382,8 @@ class ViewMap extends Phaser.Scene {
         dbs.lines = [
             'Mapview child count: ' + scene.children.length,
             'map4 donation count: ' + mdc.mapData.map4.donations.getChildren().length,
-            ''
+            'game texture count: ' + Object.keys( this.game.textures.list ).length,
+            '',''
         ];
         
         mdc.forAllMaps(scene, (scene, md, index_map ) => {

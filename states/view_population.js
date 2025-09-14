@@ -58,6 +58,14 @@ class ViewPopulation extends Phaser.Scene {
         if( this.texture.key === '_missing' ){
              this.texture = scene.textures.createCanvas( texture_key , 640, 480);
         }
+        
+        console.log('','','');
+        console.log('there is a bug where these textures keep getting created over and over again when switching states.');
+        console.log( Object.keys( this.game.textures.list ).length );
+        console.log( this.game.textures.list);
+        console.log('','','');
+        
+        
     
     }
 
