@@ -3,7 +3,7 @@ import { COLOR, GameTime, TimeBar } from '../../lib/schedule/schedule.js';
 class Example extends Phaser.Scene {
 
     preload () {
-        this.load.atlas('timebar', '../../sheets/timebar.png', '../../sheets/timebar.json');
+        this.load.atlas('timebar', '../../json/sheets/timebar.png', '../../json/sheets/timebar.json');
         this.load.bitmapFont('min_3px_5px', '../../fonts/min_3px_5px.png', '../../fonts/min_3px_5px.xml');
     }
 
