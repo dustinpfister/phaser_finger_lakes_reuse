@@ -1,6 +1,6 @@
 # Phaser Finger Lakes Reuse
 
-This is a game where I am simulating things at a thrift store called [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). This project is still very much in development, so for now much of my focus is on the AI, Game Time System, and many other supporting libs that provide the core game logic. I am not writing all of the code from the ground up though mind you as this project works on top of [Phaser](https://phaser.io/)
+This is a game where I am simulating a thrift store called [finger lakes reuse mega center in Ithaca New York](https://ithacareuse.org/). This project is still very much in development, so for now much of my focus is on the AI, Items Database, map system, Game Time System, and many other supporting libs that provide the core game logic. I am not writing all of the code from the ground up though mind you as this project works on top of [Phaser](https://phaser.io/). Phaser is a popular open source game framework that is appropriate for creating web based games as it is authored in javaScript, the default scripting language of web browsers.
 
 ## Install
 
@@ -60,7 +60,7 @@ Then just go to the url in your web browser. In this case I can go to http://loc
 
 ## Create a Build using rollup
 
-I am using [rollup](https://rollupjs.org/introduction/) as a way to create a final build file using the main index.js file as a start point for the over all app.
+I am using [rollup](https://rollupjs.org/introduction/) as a way to create a final build file using the main index.js file as a start point for the over all app. For now this is just the main build.js file at the project root folder that contains all of the source code in a final single package.
 
 ```
 $ rollup ./index.js --file ./build.js --format iife
@@ -68,11 +68,13 @@ $ rollup ./index.js --file ./build.js --format iife
 
 ## Zero Player Game - R0+
 
-As of R5 I am just focusing on taking this project in a zero player game direction, like that of [progress quest](https://en.wikipedia.org/wiki/Progress_Quest). A game like this is also often known as a [True Idle game](https://www.reddit.com/r/incremental_games/comments/2kfozg/where_are_the_true_idle_games/). So in other words a kind of game where there is no human input at all, and thus all progression happens by way of logic that updates the state of AI controlled players. In R8 I started to stop support of taking direct control over a player object instance, as yet another step in this direction. However I would like to work on some drafts making use of the code in this over all project that will still be the kind of game that involve direct user interaction. It is just that I have to start making sacrifices when it comes to all the various ideas I have for the main game. Other ideas for a single player game, as well as the possibility of multiplayer, should be pulled out into side projects that may or may not ever progress into anything.
+For much of the development of this project I have been taking Finger lakes Reuse in a zero player game direction, like that of [progress quest](https://en.wikipedia.org/wiki/Progress_Quest). In R8 I started to stop support of taking direct control over a player object instance, as yet another step in this direction. Still I am now thinking that the main game will not be a true idle game, as I want to allow the player to take all kinds of manual actions that have to do with managing a thrift store.
+
+I would still like to work on some drafts making use of the code the provides direct user interaction over workers. This would make sense if the aim is to create a game that is a kind of worker simulator for training purposes. It is just that I have to start making sacrifices when it comes to all the various ideas I have for the main game. Other ideas for a single player games, as well as the possibility of multiplayer, and a whole lot of other ideas, should be pulled out into side projects that may or may not ever progress into much of anything.
 
 ## Progress thus far
 
-Progress on the development of this game has been very slow because of various factors including my real life job at Finger Lakes reuse. I am very much determined to see this one threw, so it would make sense to write a bit about the current status and direction of this game. As of R7 much of the core code that I want is very much in place at least. There is still a lot more to do in terms of working out bugs, and making the game playable for most people.
+Progress on the development of this game has been very slow because of various factors including my real life job at Finger Lakes reuse. I am very much determined to see this one threw though, so it would make sense to write a bit about the current status and direction of this game. Much of the core of the game is in place, but there is still a lot more to do in terms of working out bugs, and making the game playable, rather than having a weird alpha project kind of vibe going on with it.
 
 ### R8 ( done 09/09/2025 ) - People DataBase
 
