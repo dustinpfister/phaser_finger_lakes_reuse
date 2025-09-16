@@ -26,7 +26,7 @@ $ git clone --depth 1 --branch R8 https://github.com/dustinpfister/phaser_finger
 
 Another thing to keep in mind when switching around between various versions is that you might need to do a hard reload the game to clear out other versions of assets that might be cached in the browser ( right click the reload button while the javaScript console is open and select 'Empty Cache and Hard Reload') .
 
-### Starting a server ( using http-server on top of node.js )git clone --depth 1 --branch <tag_name> <repo_url>
+### Starting a server ( using http-server on top of node.js )
 
 Then use http-server, or do whatever you prefer to host the root folder of the project as a website on your local network. If you do wish to use http-server then you will need node.js, and a package manager for it such as npm. Once http-server is installed as a global script, just make the root folder of the game the current working directory, and run http-server.
 
