@@ -6,7 +6,7 @@ This is a game where I am simulating things at a thrift store called [finger lak
 
 As of R9 there is still no electron.js builds, and nothing is published on the open web anywhere as well. So for now the only way to get this working is to clone down the source code at a given point and then use a web sever ( such as [http-server](https://www.npmjs.com/package/http-server) which is what I use ) to host the root folder locally and then go to the address that it is being hosted in a web browser ( typically something like http://localhost:8080 )
 
-## Clone down the latest state of the game
+### Clone down the latest state of the game
 
 To download the latest state of the game one can just clone down a copy by just using the clone sub command of git, and then pass the URL to this Repo like so.
 
@@ -16,7 +16,7 @@ $ git clone --depth 1 https://github.com/dustinpfister/phaser_finger_lakes_reuse
 
 The depth option will make it so that the full change history of the game will not be downloaded, resulting in a much smaller download size.
 
-## Clone down a given version of the game
+### Clone down a given version of the game
 
 Some times the latest is not always the greatest, in fact these days this is often the default with software. To clone down an older version use the branch option along with depth. While I am at it I often like to also give a name for the root folder that will set it aside from other local clones I might have. To do this after the repo URL give a name for the folder that includes the version number. So if you are cloning down R8 you might call the folder something like flr\_r8.
 
@@ -26,7 +26,7 @@ $ git clone --depth 1 --branch R8 https://github.com/dustinpfister/phaser_finger
 
 Another thing to keep in mind when switching around between various versions is that you might need to do a hard reload the game to clear out other versions of assets that might be cached in the browser ( right click the reload button while the javaScript console is open and select 'Empty Cache and Hard Reload') .
 
-## Starting a server ( using http-server on top of node.js )git clone --depth 1 --branch <tag_name> <repo_url>
+### Starting a server ( using http-server on top of node.js )git clone --depth 1 --branch <tag_name> <repo_url>
 
 Then use http-server, or do whatever you prefer to host the root folder of the project as a website on your local network. If you do wish to use http-server then you will need node.js, and a package manager for it such as npm. Once http-server is installed as a global script, just make the root folder of the game the current working directory, and run http-server.
 
