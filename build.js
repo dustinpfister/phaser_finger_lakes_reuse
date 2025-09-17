@@ -2590,6 +2590,10 @@
            sprite.depth = 10;
            sprite.setScrollFactor(0, 0);
            const key = 'te_' + this.id;
+           
+           //!!! I WANT TO JUST REUSE A SINGLE CANVAS FOR THIS!
+           
+           
            this.canvas = this.scene.textures.createCanvas(key, 100, 25);
            Object.keys( this.scene.textures.list ).filter( (key) => {
                return key.match(/^te/);
@@ -2846,6 +2850,7 @@
            this.x = opt.x - opt.w / 2;
            this.y = opt.y - opt.h / 2;
            this.gt = opt.gt || new GameTime({scene: opt.scene});
+           /*
            this.img_bg = opt.scene.add.image( opt.x, opt.y, 'timebar', 'timebar_bg');
            this.img_bg.setScrollFactor(0, 0);
            this.img_bg.depth = 10;
@@ -2865,6 +2870,7 @@
            this.img_ct_cull  = opt.scene.add.image( opt.x + 128, opt.y + 8, 'timebar', 'colortag_0_4');
            this.img_ct_cull.depth = 10;
            this.img_ct_cull.setScrollFactor(0, 0);
+           */
            this.text_time = opt.scene.add.bitmapText( opt.x - 16, opt.y - 16, 'min_3px_5px', '');
            this.text_time.setScrollFactor(0, 0);
            this.text_time.depth = 10;
@@ -2894,19 +2900,9 @@
                const te = gt.timedEvents[i_te];
                const time_scale_min = 60;
                const time_cd_min = te.time_cd / 1000 / 60;
-               if(!te.sprite && time_cd_min <= time_scale_min){
-                   te.createGameObjects(tb);
-                   te.sprite.setScale(1);
-               }
-               if(te.sprite && time_cd_min <= time_scale_min && time_cd_min >= 0){
-                   const per = time_cd_min / time_scale_min;
-                   te.sprite.x = 50 + (640 + 50) * per;
-                   te.sprite.y = 50 + 10 * 1;
-               }
-               if(te.sprite && time_cd_min < 0){
-                   te.sprite.x = 50;
-                   te.sprite.y = 50 + 10 * 2;
-               }
+               if(!te.sprite && time_cd_min <= time_scale_min);
+               if(te.sprite && time_cd_min <= time_scale_min && time_cd_min >= 0);
+               if(te.sprite && time_cd_min < 0);
                i_te += 1;
            }
            const str_date = STR_WEEK_DAYS[gt.jsDate.getDay()] + ' ' +
@@ -2918,8 +2914,8 @@
                String(gt.second).padStart(2, '0');
            Object.keys(gt.color).forEach((key, ci) => {
                gt.color[ key ];
-               const frame = 'colortag_' + gt.print_index + '_' + ci;
-               tb['img_ct_' + key].setFrame(frame);
+               'colortag_' + gt.print_index + '_' + ci;
+              // tb['img_ct_' + key].setFrame(frame);
            });
            this.text_time.text = str_date + '  ' + str_time;
            this.text_time.setCharacterTint(0, this.text_time.text.length, true, 0x000000);     
@@ -3212,10 +3208,17 @@
            
            let tb = this.texture_buttons = scene.textures.get( confMenu.textureKey );
            if(tb.key === '__MISSING'){
+               console.log('this should only call once for ' + confMenu.textureKey);
                tb = this.texture_buttons = scene.textures.createCanvas( confMenu.textureKey , w, h);
-
+                       scene.textures.addSpriteSheet(confMenu.textureKey + '_sheet', tb, confMenu);
            }
-           scene.textures.addSpriteSheet(confMenu.textureKey + '_sheet', tb, confMenu);  
+
+           
+           
+
+           
+           
+           //scene.textures.addSpriteSheet(confMenu.textureKey + '_sheet', tb, confMenu);  
            
            confMenu.members.forEach( (data_button, bi) => {
            
@@ -3665,7 +3668,8 @@
            dbs.lines = [
                'Mapview child count: ' + scene.children.length,
                'map4 donation count: ' + mdc.mapData.map4.donations.getChildren().length,
-               ''
+               'game texture count: ' + Object.keys( this.game.textures.list ).length,
+               '',''
            ];
            
            mdc.forAllMaps(scene, (scene, md, index_map ) => {
@@ -3749,9 +3753,6 @@
                    {
                        desc: 'Map View', x: 50, y: 420,
                        press: function(){
-                       
-                           //scene.scene.sleep('ViewPopulation');
-                           
                            scene.scene.start('ViewMap');
                        }
                    }
@@ -3761,14 +3762,35 @@
 
        }
 
+       setup_texture () {
+       
+           const texture_key = 'view_population_disp';
+           this.texture = this.game.textures.get(texture_key);
+           if( this.texture.key === '_missing' ){
+                this.texture = scene.textures.createCanvas( texture_key , 640, 480);
+           }
+           
+           console.log('','','');
+           console.log('there is a bug where these textures keep getting created over and over again when switching states.');
+           console.log( Object.keys( this.game.textures.list ).length );
+           console.log( this.game.textures.list);
+           console.log('','','');
+           
+           
+       
+       }
+
        create () {
 
            this.setup_menu();
+           
+           this.setup_texture();
                    
        }
        
        update () {
-           const menu = this.registry.get('menu_view_population');
+           const menu = this.registry.get('menu_view_population');    
+           this.registry.get('gameSave');
            
            menu.draw();
        }

@@ -13,8 +13,8 @@ class MainMenu extends Phaser.Scene {
         this.key = 'Menu';
     }
     
-    startMapView () {
-        
+    setupGameSave () {
+    
         const pd = PeopleData.createNew( [
             this.cache.json.get('people_core')
         ]);
@@ -31,10 +31,12 @@ class MainMenu extends Phaser.Scene {
             money: 0,
             pd : pd
         });
+    
+    }
+    
+    startMapView () {
         
-        this.scene.start('ViewPopulation');
-        
-        //this.scene.start('ViewMap');
+        this.scene.start('ViewMap');
         
     }
     
@@ -44,6 +46,8 @@ class MainMenu extends Phaser.Scene {
         const logo = this.add.sprite(320, 130, 'menu_1');
         
         GlobalControl.setUp(this);
+        
+        this.setupGameSave();
         
         const confMenu = Menu.createConf({
             x: 320, y: 280,
@@ -75,7 +79,9 @@ class MainMenu extends Phaser.Scene {
             }
         }, scene);
         
-        
+        // directly start in a state?
+        //this.scene.start('ViewPopulation');
+        this.scene.start('ViewMap');
         
     }
     
