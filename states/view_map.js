@@ -105,49 +105,7 @@ class ViewMap extends Phaser.Scene {
         
         GlobalControl.setUp( this );
         GlobalControl.centerCamToMap(this, mdc.getActive() );
-        
-        /*
-        mdc.forAllMaps(this, function(scene, md, map_index){         
-           let wi = 0;
-           const len = md.worker.maxSize;
-           while(wi < len){
-               const worker = md.worker.spawnPerson(mdc, md, scene );  
-               if(!worker){
-                   break;
-               }
-               if( map_index === 4 ){
-                   //worker.action = 'di';
-                   //log( 'find empty drop spot test: ' );
-                   //log( md.findEmptyDropSpot( { x: 38, y: 3 } ) );
-                   // exspected output [39, 3], [ 39, 4 ], ...
-               } 
-               if(mdc.activeIndex === map_index && wi === 0 ){   
-               
-                   //scene.registry.set('player', worker);
-                   //worker.setToTilePos( md.hardMapData.spawnAt );       
-               }
-               wi += 1;
-           }
-       });
-       */
        
-
-       
-       
-       const gr = this.add.graphics();
-       gr.setScrollFactor(0,0);
-       gr.depth = 12;
-       gr.fillStyle(0xff0000, 0.0);
-       gr.fillRect(0,0, 640, 40);
-       gr.fill();
-       const disp1 = this.add.text(10, 10, '', { color: '#ffffff', align: 'left', fontSize: '10px' });
-       disp1.setScrollFactor(0,0);
-       disp1.depth = 12;
-       this.registry.set('disp1', disp1);
-       const disp2 = this.add.text(10, 30, '', { color: '#ffffff', align: 'left', fontSize: '8px' });
-       disp2.setScrollFactor(0,0);
-       disp2.depth = 12;
-       this.registry.set('disp2', disp2);
     }
     
     nextWorker () {    
@@ -333,8 +291,6 @@ class ViewMap extends Phaser.Scene {
     
     update (time, delta) {
         const player = this.registry.get('player');
-        const disp1 = this.registry.get('disp1');
-        const disp2 = this.registry.get('disp2');
         const gs = this.registry.get('gameSave');
         const mdc = this.registry.get('mdc');
         const scene = this;
@@ -371,8 +327,6 @@ class ViewMap extends Phaser.Scene {
             this.cameras.main.setZoom( cam_state.z ).centerOn( cam_state.x, cam_state.y );
         }
         
-        //disp1.text = 'Money: ' + gs.money;
-        //disp2.text = 'customers: ' + md.customer.getChildren().length;
         this.mp.update(delta);
         
         
