@@ -43,7 +43,8 @@ I want to have a population view that shows the current state of all people in t
     * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /lib/schedule :
     * (done) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
-    * (    ) - new single canvas drawing solution should still provide a view for current money, time, timed events, and color tags
+    * (done) - new single canvas drawing solution should still provide a view for current money, time, and timed events
+    * (    ) - work out new solution for displaying color tags
     * (    ) - update readme for schedule to reflect changes with display system
   /lib/ui :
     * (done) - a bug was fixed that had to do with getting/creating a texture when creating a menu.
