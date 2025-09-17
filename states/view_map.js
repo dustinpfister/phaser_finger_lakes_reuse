@@ -36,7 +36,7 @@ class ViewMap extends Phaser.Scene {
         this.registry.set('mdc', mdc);
         
         const tb = new TimeBar({
-            x:320, y: 25,
+            x:0, y: 0,
             scene: this,
             gt: new GameTime({
                 scene: this,
@@ -371,7 +371,7 @@ class ViewMap extends Phaser.Scene {
             this.cameras.main.setZoom( cam_state.z ).centerOn( cam_state.x, cam_state.y );
         }
         
-        disp1.text = 'Money: ' + gs.money;
+        //disp1.text = 'Money: ' + gs.money;
         //disp2.text = 'customers: ' + md.customer.getChildren().length;
         this.mp.update(delta);
         

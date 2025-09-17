@@ -79,6 +79,8 @@ class MainMenu extends Phaser.Scene {
             }
         }, scene);
         
+        
+        
         // directly start in a state?
         //this.scene.start('ViewPopulation');
         this.scene.start('ViewMap');
