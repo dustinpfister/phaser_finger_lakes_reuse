@@ -54,7 +54,7 @@ On top of having a single Person class I also have a Collection of Person Class 
 
 ### 1.3) - The PeopleData System
 
-When a new game is created a PeopleData Object should be created end up being part of the game state by using the PeopleData.createNew method. This object will contain info about each person that there is in the game that in turn can be created as a single type of person such as a worker, or customer. There are a number of people that can be cloned, but even then only a certain number of times, and for the most part I would say that these kinds of people are just place holders for the additional people that will be added in as I refine this over all people system much better. 
+When a new game is created a PeopleData Object should be created and end up being part of the game state by using the PeopleData.createNew method. This object will contain info about each person that there is in the game that in turn can be created as a single type of person such as a worker, or customer. There are a number of people that can be cloned, but even then only a certain number of times, and for the most part I would say that these kinds of people are just place holders for the additional people that will be added in as I refine this over all people system much better. 
 
 ## Tasks and Actions
 

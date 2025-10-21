@@ -27,33 +27,36 @@ I will want to have a way to hierpushSpawnStack a given person as a worker, and 
 ## R10 (    ) - Main Display Library
 ```
 I currently have code that has to do with a main display of sorts, but it is baked into schedule.js. Sense this main display will help to display info that has to do with things other than the current state of offares with the schedule, I think the code that has to do with this should be pulled into a library of it's own. While I am at it I can add features that have to do with interaction with this main display. This can happen in a way where it will have a menu instance of its own, or also just what heppens when interactive with certian areas of the display regardless if a button object is there or not.
+
+  /lib/people :
+    * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
+    * (    ) - with peopleTypes the getPConfig method should be for the subType
+    * (    ) - The active prop in the game state pd object should be used as a way to find out if someone can spawn or not
+    * (    ) - see about updating worker AI so that they do not get stuck.
+    * (    ) - see about updaing donator AI so that they do not just stop and do nothing when there is too much stuff in donations.
+  /lib/schedule :
+    * (    ) - work out new solution for displaying color tags
+    * (    ) - update readme for schedule to reflect changes with display system
+  /lib/ui :
+    * (    ) - add features to allow for variable sizes for buttons
+    * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
+
 ```
 
 ## R9 (    ) - Population View
 ```
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
-  /lib/message:
+  /lib/message :
     * (done) - fixed a bug that had to do with getting a texture used with the debug screen.
-  /lib/people :
-    * (    ) - the max value used in People.spawnPerson should be set when the People instance is created
-    * (    ) - with peopleTypes the getPConfig method should be for the subType
-    * (    ) - The active prop in the game state pd object should be used as a way to find out if someone can spawn or not
-    * (    ) - see about updating worker AI so that they do not get stuck.
-    * (    ) - see about updaing donator ai so that they do not just stop and do nothing when there is too much stuff in donations.
   /lib/schedule :
     * (done) - replace convaluted display objects display in favor for a system that involves drawing to a single canvas
     * (done) - new single canvas drawing solution should still provide a view for current money, time, and timed events
-    * (    ) - work out new solution for displaying color tags
-    * (    ) - update readme for schedule to reflect changes with display system
   /lib/ui :
     * (done) - a bug was fixed that had to do with getting/creating a texture when creating a menu.
-    * (    ) - add features to allow for variable sizes for buttons
-    * (    ) - I should only have to call GlobalControl setup once in a state like that of the menu state.
   /states/view_map.js
     * (done) - rename mapview to view_map.js
-    * (    ) - I will want to define a button that will switch current state to view_population
-    * (    ) - much of what happens here will need to be pulled into a main game update tick
+    * (done) - I will want to define a button that will switch current state to view_population
   /states/menu.js
     * (done) - code that will run on each tick regardless of what the current state is will be define in the menu state for now.
   /states/view_population.js
