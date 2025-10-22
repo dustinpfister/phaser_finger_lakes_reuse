@@ -54,14 +54,13 @@ class ViewPopulation extends Phaser.Scene {
     setup_texture () {
     
         const texture_key = 'view_population_disp';
-        this.texture = this.game.textures.get(texture_key);
+        this.texture = this.game.textures.get( texture_key );
         if( this.texture.key === '_missing' ){
              this.texture = scene.textures.createCanvas( texture_key , 640, 480);
         }
         
         console.log('','','');
-        console.log('there is a bug where these textures keep getting created over and over again when switching states.');
-        console.log( Object.keys( this.game.textures.list ).length );
+        console.log( 'game texture count: ' + Object.keys( this.game.textures.list ).length );
         console.log( this.game.textures.list);
         console.log('','','');
         
@@ -72,7 +71,6 @@ class ViewPopulation extends Phaser.Scene {
     create () {
 
         this.setup_menu();
-        
         this.setup_texture();
                 
     }
@@ -81,6 +79,11 @@ class ViewPopulation extends Phaser.Scene {
         const menu = this.registry.get('menu_view_population');    
         const gs = this.registry.get('gameSave');
         
+        const people_types = Object.keys( gs.pd.assignment );
+        people_types.forEach( (key) => {
+            const count = gs.pd.assignment[key].length;
+            console.log(key, count, '');
+        });
         menu.draw();
     }
         
