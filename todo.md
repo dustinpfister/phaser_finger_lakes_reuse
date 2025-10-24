@@ -47,6 +47,9 @@ I currently have code that has to do with a main display of sorts, but it is bak
 ```
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
+  /drafts :
+    * (done) - started a new map_system_chunks draft where a single map is updated over time from many data chunks
+    * (    ) - have many map chunks for map_system_chunks
   /lib/message :
     * (done) - fixed a bug that had to do with getting a texture used with the debug screen.
   /lib/schedule :
