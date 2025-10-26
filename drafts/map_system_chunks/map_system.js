@@ -1,25 +1,47 @@
 
-class MapChunks extends Phaser.Tilemaps.Tilemap {
-
-    createMapData () {
-    
-        //const mapData = new Phaser.Tilemaps.MapData();
+const chunk_collection = {
+    width: 4,
+    height: 4,
+    chunks: {
+        '0': {
+           data: [
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0
+           ]
+        },
+        '1': {
+           data: [
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0
+           ]
+        },
+        '2': {
+           data: [
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0
+           ]
+        },
+        '3': {
+           data: [
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0,
+               0,0,0,0
+           ]
+        }
     
     }
 
-    constructor ( conf={} ) {
-        conf.scene = conf.scene || new Phaser.Scene();
-        conf.mapData = conf.mapData || new Phaser.Tilemaps.MapData([]);
-        
-        console.log()
-        
-        super( conf.scene, conf.mapData );
-    }
+};
 
 
-} 
-
-class Demo extends Phaser.Scene {
+class Example extends Phaser.Scene {
 
     preload () {
         this.texture = this.textures.createCanvas('tiles', 32, 32);
@@ -34,42 +56,36 @@ class Demo extends Phaser.Scene {
         ctx.fillRect(16, 16, 16, 16);
         this.texture.refresh();
     }
-
-
-/*
+    
     initMap (w=8, h=8, fill_index=0) {
-        const mapData = [];
+        const scene = this;
+        const data = [];
         let my = 0;
         while(my < h){
-            mapData.push( new Array(w).fill(fill_index) );
+            data.push( new Array(w).fill( fill_index ) );
             my += 1;
         }
-        return this.map = this.make.tilemap({
-            data: mapData,
-            tileWidth: w, tileHeight: h
-        });   
-    }
-*/
-    create () {
-    
-    
-        const map = new MapChunks({
-           scene: this
+        const map = scene.make.tilemap({
+            data: data,
+            tileWidth: 16, tileHeight: 16
         });
-
-
         const tileset = map.addTilesetImage('tiles');
-        const x = 160 - map.width * map.tileWidth / 2;
-        const y = 120 - map.height * map.tileHeight / 2;
-        const layer = map.createLayer(0, tileset, x, y);
-
-
-        this.add.tilemap(map)
-    
+        map.createLayer(0, tileset)    
+        return map;
     }
+
+    create () {
+        const map = this.initMap();
+        
+        const tile = map.getTileAt(0, 0);
+        tile.index = 1;
+        
+        console.log(map)
+    }
+
 
     update (time, delta) {
-    }
+    }   
 }
 
 const config = {
@@ -78,7 +94,7 @@ const config = {
     height: 240,
     parent: 'container_flr',
     canvas: document.querySelector('#canvas_flr'),
-    scene: Demo
+    scene: Example
 };
 
 const game = new Phaser.Game(config);
