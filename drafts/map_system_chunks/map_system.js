@@ -17,16 +17,16 @@ const chunk_data = [
     7,0,0,7,    8,0,0,8,    9,0,0,9
 ];
 
-const to_data_chunks = (chunk_data=[], fi_per_row=4, mi_per_row=3) => {
+const to_data_chunks = (chunk_data=[], fipr=4, mipr=3) => {
     const data = [];
     let i_row = 0;
-    const len_row = Math.floor( chunk_data.length / fi_per_row );
+    const len_row = Math.floor( chunk_data.length / fipr );
     while(i_row < len_row){
-        const a = i_row % mi_per_row;
-        const n = mi_per_row * fi_per_row;
+        const a = i_row % mipr;
+        const n = mipr * fipr;
         const b = Math.floor( i_row / n );
-        const c = a + b * mi_per_row;
-        const data_row = chunk_data.slice(i_row * fi_per_row, i_row * fi_per_row + fi_per_row);
+        const c = a + b * mipr;
+        const data_row = chunk_data.slice(i_row * fipr, i_row * fipr + fipr);
         data[c] = data[c] == undefined ? [] : data[c];
         data[c].push(data_row);
         i_row += 1;
@@ -34,13 +34,25 @@ const to_data_chunks = (chunk_data=[], fi_per_row=4, mi_per_row=3) => {
     return data;
 };
 
-const chunk_collection = {
-    width: 4,
-    height: 4,
+const chunks = {
+    fipr: 4,
+    mipr: 3,
     data: to_data_chunks(chunk_data)
 };
 
-console.log(chunk_collection);
+const get_chunk_pos = ( chunks, wx=5, wy=5 ) => {
+    const cx = Math.floor( (wx / (chunks.fipr * chunks.mipr) * chunks.mipr));
+    const cy = Math.floor( (wy / (chunks.fipr * chunks.mipr) * chunks.mipr))
+    return {
+        x: cx,
+        y: cy,
+        i: cy * chunks.mipr + cx
+    };
+};
+
+
+console.log(chunks);
+console.log( get_chunk_pos(chunks, 9, 11) );
 
 
 class Example extends Phaser.Scene {
