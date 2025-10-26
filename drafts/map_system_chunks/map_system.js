@@ -1,44 +1,46 @@
 
+
+const chunk_data = [
+    1,0,0,1,    2,0,0,2,    3,0,0,3,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    1,0,0,1,    2,0,0,2,    3,0,0,3,
+
+    4,0,0,4,    5,0,0,5,    6,0,0,6,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    4,0,0,4,    5,0,0,5,    6,0,0,6,
+    
+    7,0,0,7,    8,0,0,8,    9,0,0,9,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    0,0,0,0,    0,0,0,0,    0,0,0,0,
+    7,0,0,7,    8,0,0,8,    9,0,0,9
+];
+
+const to_data_chunks = (chunk_data=[], fi_per_row=4, mi_per_row=3) => {
+    const data = [];
+    let i_row = 0;
+    const len_row = Math.floor( chunk_data.length / fi_per_row );
+    while(i_row < len_row){
+        const a = i_row % mi_per_row;
+        const n = mi_per_row * fi_per_row;
+        const b = Math.floor( i_row / n );
+        const c = a + b * mi_per_row;
+        const data_row = chunk_data.slice(i_row * fi_per_row, i_row * fi_per_row + fi_per_row);
+        data[c] = data[c] == undefined ? [] : data[c];
+        data[c].push(data_row);
+        i_row += 1;
+    }
+    return data;
+};
+
 const chunk_collection = {
     width: 4,
     height: 4,
-    chunks: {
-        '0': {
-           data: [
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0
-           ]
-        },
-        '1': {
-           data: [
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0
-           ]
-        },
-        '2': {
-           data: [
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0
-           ]
-        },
-        '3': {
-           data: [
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0,
-               0,0,0,0
-           ]
-        }
-    
-    }
-
+    data: to_data_chunks(chunk_data)
 };
+
+console.log(chunk_collection);
 
 
 class Example extends Phaser.Scene {
