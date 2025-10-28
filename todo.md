@@ -49,6 +49,7 @@ I want to have a population view that shows the current state of all people in t
 
   /drafts :
     * (done) - started a new map_system_chunks draft where a single map is updated over time from many data chunks
+    * (    ) - started a micro_store draft where the goal is to make a minimal style form of the game.
     * (    ) - have many map chunks for map_system_chunks
   /lib/message :
     * (done) - fixed a bug that had to do with getting a texture used with the debug screen.
