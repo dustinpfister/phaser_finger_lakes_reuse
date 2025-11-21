@@ -2,7 +2,7 @@
 
 This is what the current plan is when it comes to future work to get done on FLR. For additional ideas on what to do net be sure to check the ideas.md file. If any additional ideas come to mind be sure to park them there for starters, and only update this todo list when needed.
 
-## R13 (    ) - item database revisit
+## RX (    ) - item database revisit
 ```
 It is now time to take a long hard look at the item database system and make any nessacry improvments. Once I have a decent system in place 
 I would like to add a few more house hold items. Once I have a larger collection of items it will be possible to update people data to allow 
@@ -13,18 +13,18 @@ for setting data that is used to define what kinds of items people like to buy.
 
 ```
 
-## R12 (    ) - Worker Schedule Menu
+## RX (    ) - Worker Schedule Menu
 
 ```
 I will want a menu that allows for a player to adjust when someone will come in to work. This just setting what days they show up, and also allow for a player to adjust the clock in and out times for the day. 
 ```
 
-## R11 (    ) - Worker Higher and Fire
+## RX (    ) - Worker Higher and Fire
 ```
 I will want to have a way to hierpushSpawnStack a given person as a worker, and with that also have a way to let them go as well.
 ```
 
-## R10 (    ) - Main Display Library
+## RX (    ) - Main Display Library
 ```
 I currently have code that has to do with a main display of sorts, but it is baked into schedule.js. Sense this main display will help to display info that has to do with things other than the current state of offares with the schedule, I think the code that has to do with this should be pulled into a library of it's own. While I am at it I can add features that have to do with interaction with this main display. This can happen in a way where it will have a menu instance of its own, or also just what heppens when interactive with certian areas of the display regardless if a button object is there or not.
 
@@ -43,14 +43,21 @@ I currently have code that has to do with a main display of sorts, but it is bak
 
 ```
 
+# R10 (    ) - Micro store Draft
+```
+I have been not working on this project for a while, one reason why might be due to a kind of burnout with it. So to help adress this problem I think it would be a smart move to start a 'micro store draft' project. This micro store will be just a single map. On top of that this will allow for me to go with a whole new map system from that of what is used in the main game. Of couse that does not end there, I can also rethink what the main game should be as well, and focus on a small core set of features that make playing the game fun. If all goes well this new micro store draft will become the new main game.
+
+  /drafts :
+    * (    ) - started a micro_store draft where the goal is to make a minimal style form of the game.
+    * (    ) - have many map chunks for map_system_chunks
+```
+
 ## R9 (    ) - Population View
 ```
 I want to have a population view that shows the current state of all people in the game. This will show me who is assigned to what at any given time. For now this will just be a way to view the current state of things, rather than someone that can be used to take actions. This new feature alone should not take to long so the rest of the work this time will be one improveing a few things that are all ready in place. For one thing I am not happy with the state of the schedule lib, so I would like to fix that up a bit.
 
   /drafts :
     * (done) - started a new map_system_chunks draft where a single map is updated over time from many data chunks
-    * (    ) - started a micro_store draft where the goal is to make a minimal style form of the game.
-    * (    ) - have many map chunks for map_system_chunks
   /lib/message :
     * (done) - fixed a bug that had to do with getting a texture used with the debug screen.
   /lib/schedule :
@@ -72,7 +79,7 @@ I want to have a population view that shows the current state of all people in t
     * (done) - I moved code that will run on each tick regardless of current state from here to menu.js
     * (done) - I will want to add the new population state in boot along with all others
   /
-    * (    ) - revize first paragraph of main readme
+    * (    ) - revise first paragraph of main readme
     * (    ) - use rollup.js to create a final R9 build when ready to finish revision
     * (    ) - update readme to reflect R9 changes, and commit R9 when done with this revision
 ```
